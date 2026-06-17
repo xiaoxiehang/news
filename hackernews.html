@@ -290,7 +290,9 @@ body {
     <div class="loading">加载中...</div>
   </div>
 
-  <div class="pagination" id="pagination"></div>
+  <div class="load-more" id="load-more" style="display:none;">
+    <button class="load-more-btn" onclick="loadMore()">加载更多</button>
+  </div>
 </main>
 
 <footer class="footer">
@@ -299,92 +301,70 @@ body {
 </footer>
 
 <script>
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_LOAD = 10;
 let currentPage = 1;
 let stories = [];
+let displayedStories = [];
 
 function renderStories() {
   const container = document.getElementById('stories-container');
+  const loadMoreDiv = document.getElementById('load-more');
   
   if (!stories.length) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">📭</div>
+      <div class="empty-icon">⚠️</div>
       <div class="empty-title">暂无数据</div>
       <div class="empty-desc">请稍后刷新重试</div>
     </div>`;
-    document.getElementById('pagination').innerHTML = '';
+    loadMoreDiv.style.display = 'none';
     return;
   }
 
-  const totalPages = Math.ceil(stories.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, stories.length);
-  const pageStories = stories.slice(startIndex, endIndex);
-
+  displayedStories = stories.slice(0, currentPage * ITEMS_PER_LOAD);
+  
   container.innerHTML = `
     <div class="stories-list">
-      ${pageStories.map((story, idx) => {
-        const rank = startIndex + idx + 1;
-        return `
-          <a href="${story.url}" target="_blank" class="story-card">
-            <div class="story-rank">${rank}</div>
-            <div class="story-content">
-              <div class="story-title">${story.title}</div>
-              <div class="story-meta">
-                <div class="story-meta-item">
-                  <span class="story-meta-icon">👤</span>
-                  <span>${story.by}</span>
-                </div>
-                <div class="story-meta-item">
-                  <span class="story-meta-icon">⭐</span>
-                  <span>${story.score}</span>
-                </div>
-                <div class="story-meta-item">
-                  <span class="story-meta-icon">💬</span>
-                  <span>${story.descendants}</span>
-                </div>
-                <div class="story-meta-item">
-                  <span class="story-meta-icon">🕐</span>
-                  <span>${story.time}</span>
-                </div>
+      ${displayedStories.map((story, idx) => `
+        <a href="${story.url}" target="_blank" class="story-card">
+          <div class="story-rank">${idx + 1}</div>
+          <div class="story-content">
+            <div class="story-title">${story.title}</div>
+            <div class="story-meta">
+              <div class="story-meta-item">
+                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+                </svg>
+                <span class="meta-value">${story.score}</span>
+              </div>
+              <div class="story-meta-item">
+                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M1.5 1.75V13.5h13.75a.75.75 0 010 1.5H.75a.75.75 0 01-.75-.75V1.75a.75.75 0 011.5 0zm14.28 2.53l-5.25 5.25a.75.75 0 01-1.06 0L7 7.06 4.28 9.78a.75.75 0 01-1.06-1.06l3.25-3.25a.75.75 0 011.06 0L10 7.94l4.72-4.72a.75.75 0 011.06 1.06z"/>
+                </svg>
+                <span class="meta-value">${story.descendants}</span>
+              </div>
+              <div class="story-meta-item">
+                <span class="meta-value">${story.by}</span>
+              </div>
+              <div class="story-meta-item">
+                <span class="meta-value">${story.time}</span>
               </div>
             </div>
-          </a>
-        `;
-      }).join('')}
+          </div>
+        </a>
+      `).join('')}
     </div>
   `;
 
-  renderPagination(totalPages);
+  if (displayedStories.length < stories.length) {
+    loadMoreDiv.style.display = 'block';
+  } else {
+    loadMoreDiv.style.display = 'none';
+  }
 }
 
-function renderPagination(totalPages) {
-  const container = document.getElementById('pagination');
-  if (totalPages <= 1) {
-    container.innerHTML = '';
-    return;
-  }
-
-  let html = '';
-  html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>上一页</button>`;
-  
-  for (let i = 1; i <= totalPages; i++) {
-    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
-    } else if (i === currentPage - 2 || i === currentPage + 2) {
-      html += `<span class="page-info">...</span>`;
-    }
-  }
-  
-  html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>下一页</button>`;
-  
-  container.innerHTML = html;
-}
-
-function goToPage(page) {
-  currentPage = page;
+function loadMore() {
+  currentPage++;
   renderStories();
-  window.scrollTo({ top: 300, behavior: 'smooth' });
 }
 
 // 加载数据

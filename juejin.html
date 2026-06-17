@@ -169,8 +169,9 @@ body {
   align-items: center;
   gap: 4px;
 }
-.article-meta-icon {
-  font-size: 14px;
+.meta-icon {
+  width: 14px;
+  height: 14px;
 }
 .article-category {
   display: inline-block;
@@ -182,42 +183,29 @@ body {
   margin-right: 8px;
 }
 
-/* ===== Pagination ===== */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 32px;
+/* ===== Infinite Scroll ===== */
+.load-more {
+  text-align: center;
+  padding: 40px 20px;
 }
-.page-btn {
-  padding: 10px 16px;
+.load-more-btn {
+  padding: 12px 32px;
   background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-dark);
+  border-radius: 24px;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
 }
-.page-btn:hover:not(:disabled) {
+.load-more-btn:hover {
   border-color: var(--text-primary);
   color: var(--text-primary);
 }
-.page-btn:disabled {
-  opacity: 0.4;
+.load-more-btn.loading {
+  opacity: 0.6;
   cursor: not-allowed;
-}
-.page-btn.active {
-  background: var(--text-primary);
-  color: #fff;
-  border-color: var(--text-primary);
-}
-.page-info {
-  font-size: 14px;
-  color: var(--text-secondary);
-  padding: 0 12px;
 }
 
 /* ===== Loading ===== */
@@ -315,7 +303,9 @@ body {
     <div class="loading">加载中...</div>
   </div>
 
-  <div class="pagination" id="pagination"></div>
+  <div class="load-more" id="load-more" style="display:none;">
+    <button class="load-more-btn" onclick="loadMore()">加载更多</button>
+  </div>
 </main>
 
 <footer class="footer">
@@ -324,94 +314,86 @@ body {
 </footer>
 
 <script>
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_LOAD = 10;
 let currentPage = 1;
 let articles = [];
+let displayedArticles = [];
 
 function renderArticles() {
   const container = document.getElementById('articles-container');
+  const loadMoreDiv = document.getElementById('load-more');
   
   if (!articles.length) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">📭</div>
+      <div class="empty-icon">⚠️</div>
       <div class="empty-title">暂无数据</div>
       <div class="empty-desc">请稍后刷新重试</div>
     </div>`;
-    document.getElementById('pagination').innerHTML = '';
+    loadMoreDiv.style.display = 'none';
     return;
   }
 
-  const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, articles.length);
-  const pageArticles = articles.slice(startIndex, endIndex);
-
+  displayedArticles = articles.slice(0, currentPage * ITEMS_PER_LOAD);
+  
   container.innerHTML = `
     <div class="articles-list">
-      ${pageArticles.map((article, idx) => {
-        const rank = startIndex + idx + 1;
-        return `
-          <a href="${article.url}" target="_blank" class="article-card">
-            ${article.cover ? `<img src="${article.cover}" class="article-cover" alt="">` : ''}
-            <div class="article-content">
-              <div class="article-title">${rank}. ${article.title}</div>
-              <div class="article-desc">${article.digest}</div>
-              <div class="article-meta">
-                ${article.category ? `<span class="article-category">${article.category}</span>` : ''}
-                <div class="article-meta-item">
-                  <span class="article-meta-icon">👤</span>
-                  <span>${article.author}</span>
-                </div>
-                <div class="article-meta-item">
-                  <span class="article-meta-icon">👁</span>
-                  <span>${article.views}</span>
-                </div>
-                <div class="article-meta-item">
-                  <span class="article-meta-icon">👍</span>
-                  <span>${article.likes}</span>
-                </div>
-                <div class="article-meta-item">
-                  <span class="article-meta-icon">💬</span>
-                  <span>${article.comments}</span>
-                </div>
+      ${displayedArticles.map((article, idx) => `
+        <a href="${article.url}" target="_blank" class="article-card">
+          ${article.cover ? `<img src="${article.cover}" class="article-cover" alt="">` : ''}
+          <div class="article-content">
+            <div class="article-title">${idx + 1}. ${article.title}</div>
+            <div class="article-desc">${article.digest}</div>
+            <div class="article-meta">
+              ${article.category ? `<span class="article-category">${article.category}</span>` : ''}
+              <div class="article-meta-item">
+                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M2 5.5a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0zm12.5 7.5c0-2.485-2.015-4.5-4.5-4.5H4.5c-2.485 0-4.5 2.015-4.5 4.5 0 .138.058.27.162.369a.5.5 0 00.838-.297c.07-.188.188-.332.338-.441A3.5 3.5 0 014.5 11.5h7a3.5 3.5 0 013.162 1.631.5.5 0 00.838.297A.5.5 0 0015.5 13z"/>
+                </svg>
+                <span>${article.author}</span>
+              </div>
+              <div class="article-meta-item">
+                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.268 1.09 2.19 2.615 2.465 4.07a.5.5 0 01-.976.192C14.156 7.098 13.374 5.79 12.29 4.855 11.207 3.92 9.804 3 8 3s-3.207.92-4.29 1.855C2.626 5.79 1.844 7.098 1.578 8.34a.5.5 0 01-.976-.192c.275-1.455 1.197-2.98 2.465-4.07C4.329 2.992 6.019 2 8 2z"/>
+                  <circle cx="8" cy="8.5" r="2.5"/>
+                </svg>
+                <span>${formatNumber(article.views)}</span>
+              </div>
+              <div class="article-meta-item">
+                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 1.5a.5.5 0 01.44.26l1.822 3.436 3.966.714a.5.5 0 01.274.83l-2.79 2.936.558 3.948a.5.5 0 01-.71.518L8 11.882l-3.56 1.862a.5.5 0 01-.71-.518l.558-3.948-2.79-2.936a.5.5 0 01.274-.83l3.966-.714L7.56 1.76A.5.5 0 018 1.5z"/>
+                </svg>
+                <span>${formatNumber(article.likes)}</span>
+              </div>
+              <div class="article-meta-item">
+                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M14 1a1 1 0 011 1v8a1 1 0 01-1 1H4.414A2 2 0 003 11.586V12a1 1 0 01-1 1H1a1 1 0 01-1-1V2a1 1 0 011-1h13zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"/>
+                  <path d="M2 3.5a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zm0 3a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5a.5.5 0 01-.5-.5z"/>
+                </svg>
+                <span>${article.comments}</span>
               </div>
             </div>
-          </a>
-        `;
-      }).join('')}
+          </div>
+        </a>
+      `).join('')}
     </div>
   `;
 
-  renderPagination(totalPages);
+  if (displayedArticles.length < articles.length) {
+    loadMoreDiv.style.display = 'block';
+  } else {
+    loadMoreDiv.style.display = 'none';
+  }
 }
 
-function renderPagination(totalPages) {
-  const container = document.getElementById('pagination');
-  if (totalPages <= 1) {
-    container.innerHTML = '';
-    return;
-  }
-
-  let html = '';
-  html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>上一页</button>`;
-  
-  for (let i = 1; i <= totalPages; i++) {
-    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
-    } else if (i === currentPage - 2 || i === currentPage + 2) {
-      html += `<span class="page-info">...</span>`;
-    }
-  }
-  
-  html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>下一页</button>`;
-  
-  container.innerHTML = html;
-}
-
-function goToPage(page) {
-  currentPage = page;
+function loadMore() {
+  currentPage++;
   renderArticles();
-  window.scrollTo({ top: 300, behavior: 'smooth' });
+}
+
+function formatNumber(num) {
+  if (num >= 10000) return (num / 10000).toFixed(1) + 'w';
+  if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+  return num.toString();
 }
 
 // 加载数据
