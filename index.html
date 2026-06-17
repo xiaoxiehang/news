@@ -287,8 +287,8 @@
     </section>
 
     <main class="main-content">
-        <div class="container" id="news-container">
-            <!-- 新闻内容将通过 JavaScript 动态加载 -->
+        <div class="container">
+            <div class="news-grid" id="news-container"></div>
         </div>
     </main>
 
@@ -333,67 +333,33 @@
                 // 更新日期
                 document.getElementById('date-badge').textContent = dateStr;
                 
-                // 按分类分组
-                const grouped = {};
-                newsList.forEach(item => {
-                    const category = item.category || '其他';
-                    if (!grouped[category]) {
-                        grouped[category] = [];
-                    }
-                    grouped[category].push(item);
-                });
-
-                // 渲染新闻
+                // 渲染新闻（不分组）
                 const container = document.getElementById('news-container');
                 container.innerHTML = '';
-
-                // 按顺序显示分类
-                const categoryOrder = ['国内', '国际', '科技', '财经', '体育', '娱乐', '健康'];
                 
-                categoryOrder.forEach(category => {
-                    if (grouped[category] && grouped[category].length > 0) {
-                        const section = document.createElement('section');
-                        section.className = 'category-section';
-                        
-                        const icon = categoryIcons[category] || '📋';
-                        section.innerHTML = `
-                            <h2 class="category-title">
-                                <span class="category-icon">${icon}</span>
-                                <span>${category}要闻</span>
-                            </h2>
-                            <div class="news-grid"></div>
-                        `;
-
-                        const grid = section.querySelector('.news-grid');
-                        
-                        grouped[category].forEach(news => {
-                            const card = document.createElement('a');
-                            card.href = news.link || '#';
-                            card.target = '_blank';
-                            card.className = 'news-card';
-                            
-                            card.innerHTML = `
-                                <div class="news-card-content">
-                                    <span class="news-source">${news.source || '新闻源'}</span>
-                                    <h3 class="news-title">${news.title}</h3>
-                                    <p class="news-summary">${news.summary || ''}</p>
-                                    <div class="news-meta">
-                                        <span>${news.published || ''}</span>
-                                        <span class="read-more">
-                                            查看详情
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                                <path d="M8 0l-1.4 1.4L11.2 6H0v2h11.2L6.6 12.6 8 14l6-6z"/>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                            `;
-                            
-                            grid.appendChild(card);
-                        });
-
-                        container.appendChild(section);
-                    }
+                newsList.forEach(news => {
+                    const card = document.createElement('a');
+                    card.href = news.link || '#';
+                    card.target = '_blank';
+                    card.className = 'news-card';
+                    
+                    card.innerHTML = `
+                        <div class="news-card-content">
+                            <span class="news-source">${news.source || '新闻源'}</span>
+                            <h3 class="news-title">${news.title}</h3>
+                            <p class="news-summary">${news.summary || ''}</p>
+                            <div class="news-meta">
+                                <span class="read-more">
+                                    查看详情
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                        <path d="M8 0l-1.4 1.4L11.2 6H0v2h11.2L6.6 12.6 8 14l6-6z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                    
+                    container.appendChild(card);
                 });
             } catch (error) {
                 console.error('加载新闻失败:', error);
