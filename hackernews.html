@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker News 热榜</title>
+<style>
+:root {
+  --rausch: #FF5A5F;
+  --rausch-dark: #E00E2F;
+  --text-primary: #222222;
+  --text-secondary: #717171;
+  --text-tertiary: #B0B0B0;
+  --bg: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --border: #EBEBEB;
+  --border-dark: #DDDDDD;
+  --success: #00A699;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.12);
+  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --max-width: 1280px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Header ===== */
+.header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.header-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.header-nav {
+  display: flex;
+  gap: 8px;
+}
+.nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+.nav-link.active {
+  color: var(--rausch);
+  background: rgba(255, 90, 95, 0.1);
+}
+
+/* ===== Main ===== */
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* ===== Stories List ===== */
+.stories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.story-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  gap: 16px;
+}
+.story-card:hover {
+  border-color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.story-rank {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  min-width: 40px;
+  text-align: center;
+  padding-top: 4px;
+}
+.story-content {
+  flex: 1;
+  min-width: 0;
+}
+.story-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+.story-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+.story-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.story-meta-icon {
+  font-size: 14px;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+.page-btn {
+  padding: 10px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.page-btn:hover:not(:disabled) {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.page-btn.active {
+  background: var(--text-primary);
+  color: #fff;
+  border-color: var(--text-primary);
+}
+.page-info {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 0 12px;
+}
+
+/* ===== Loading ===== */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* ===== Empty ===== */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+}
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.empty-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ===== Footer ===== */
+.footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+}
+.footer-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.footer-link {
+  font-size: 13px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer-link:hover {
+  color: var(--rausch);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .header-nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .header-title { font-size: 19px; }
+  .main { padding: 24px 16px; }
+  .story-card { flex-direction: column; gap: 8px; }
+  .story-rank { font-size: 20px; }
+  .footer { padding: 32px 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div>
+        <div class="header-title">Hacker News 热榜</div>
+        <div class="header-subtitle">全球技术热点</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">新闻</a>
+      <a href="github.html" class="nav-link">GitHub</a>
+      <a href="hackernews.html" class="nav-link active">Hacker News</a>
+      <a href="juejin.html" class="nav-link">掘金</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div id="stories-container">
+    <div class="loading">加载中...</div>
+  </div>
+
+  <div class="pagination" id="pagination"></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-text">每日更新 · 值得关注</div>
+  <a href="https://github.com/xiaoxiehang/news" target="_blank" class="footer-link">GitHub 仓库</a>
+</footer>
+
+<script>
+const ITEMS_PER_PAGE = 20;
+let currentPage = 1;
+let stories = [];
+
+function renderStories() {
+  const container = document.getElementById('stories-container');
+  
+  if (!stories.length) {
+    container.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">📭</div>
+      <div class="empty-title">暂无数据</div>
+      <div class="empty-desc">请稍后刷新重试</div>
+    </div>`;
+    document.getElementById('pagination').innerHTML = '';
+    return;
+  }
+
+  const totalPages = Math.ceil(stories.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, stories.length);
+  const pageStories = stories.slice(startIndex, endIndex);
+
+  container.innerHTML = `
+    <div class="stories-list">
+      ${pageStories.map((story, idx) => {
+        const rank = startIndex + idx + 1;
+        return `
+          <a href="${story.url}" target="_blank" class="story-card">
+            <div class="story-rank">${rank}</div>
+            <div class="story-content">
+              <div class="story-title">${story.title}</div>
+              <div class="story-meta">
+                <div class="story-meta-item">
+                  <span class="story-meta-icon">👤</span>
+                  <span>${story.by}</span>
+                </div>
+                <div class="story-meta-item">
+                  <span class="story-meta-icon">⭐</span>
+                  <span>${story.score}</span>
+                </div>
+                <div class="story-meta-item">
+                  <span class="story-meta-icon">💬</span>
+                  <span>${story.descendants}</span>
+                </div>
+                <div class="story-meta-item">
+                  <span class="story-meta-icon">🕐</span>
+                  <span>${story.time}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        `;
+      }).join('')}
+    </div>
+  `;
+
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  const container = document.getElementById('pagination');
+  if (totalPages <= 1) {
+    container.innerHTML = '';
+    return;
+  }
+
+  let html = '';
+  html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>上一页</button>`;
+  
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+    } else if (i === currentPage - 2 || i === currentPage + 2) {
+      html += `<span class="page-info">...</span>`;
+    }
+  }
+  
+  html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>下一页</button>`;
+  
+  container.innerHTML = html;
+}
+
+function goToPage(page) {
+  currentPage = page;
+  renderStories();
+  window.scrollTo({ top: 300, behavior: 'smooth' });
+}
+
+// 加载数据
+fetch('data/hackernews.json?t=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    stories = data.stories || [];
+    renderStories();
+  })
+  .catch(err => {
+    console.error('加载失败:', err);
+    renderStories();
+  });
+</script>
+</body>
+</html>

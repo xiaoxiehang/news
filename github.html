@@ -48,8 +48,14 @@ body {
   margin: 0 auto;
   padding: 20px 24px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .header-title {
   font-size: 22px;
@@ -57,36 +63,24 @@ body {
   letter-spacing: -0.3px;
   color: var(--text-primary);
   line-height: 1.3;
-  flex-shrink: 0;
 }
-.header-date {
-  flex: 1;
-  text-align: center;
-}
-.header-date-day {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-.header-date-weekday {
-  font-size: 13px;
+.header-subtitle {
+  font-size: 14px;
   color: var(--text-secondary);
   margin-top: 2px;
 }
 .header-nav {
   display: flex;
   gap: 8px;
-  flex-shrink: 0;
 }
 .nav-link {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 20px;
   transition: all 0.2s;
-  white-space: nowrap;
 }
 .nav-link:hover {
   color: var(--text-primary);
@@ -101,23 +95,47 @@ body {
 .main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 32px 24px;
+}
+
+/* ===== Time Filter ===== */
+.time-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.time-btn {
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.time-btn:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+.time-btn.active {
+  background: var(--text-primary);
+  color: #fff;
+  border-color: var(--text-primary);
 }
 
 /* ===== Categories ===== */
 .categories {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 32px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border);
 }
 .category-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 20px;
+  padding: 10px 18px;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 24px;
@@ -137,28 +155,12 @@ body {
   border-color: var(--text-primary);
 }
 
-/* ===== Section ===== */
-.section-header {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-.section-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-.section-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
 /* ===== Projects Grid ===== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
 }
 .project-card {
   background: var(--bg);
@@ -168,7 +170,8 @@ body {
   transition: all 0.2s;
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 .project-card:hover {
   border-color: var(--text-primary);
@@ -180,6 +183,17 @@ body {
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 12px;
+}
+.project-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
 }
 .project-info {
   flex: 1;
@@ -202,6 +216,7 @@ body {
   color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 16px;
+  flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -221,9 +236,7 @@ body {
   gap: 4px;
 }
 .meta-icon {
-  width: 14px;
-  height: 14px;
-  display: inline-block;
+  font-size: 14px;
 }
 .meta-value {
   font-weight: 600;
@@ -233,6 +246,44 @@ body {
   height: 10px;
   border-radius: 50%;
   display: inline-block;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+.page-btn {
+  padding: 10px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.page-btn:hover:not(:disabled) {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.page-btn.active {
+  background: var(--text-primary);
+  color: #fff;
+  border-color: var(--text-primary);
+}
+.page-info {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 0 12px;
 }
 
 /* ===== Loading ===== */
@@ -247,6 +298,10 @@ body {
 .empty-state {
   text-align: center;
   padding: 80px 20px;
+}
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
 }
 .empty-title {
   font-size: 18px;
@@ -286,34 +341,28 @@ body {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .header-inner {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
-    padding: 16px 20px;
   }
-  .header-date {
-    order: -1;
-    text-align: left;
-    flex: 1 1 100%;
+  .header-nav {
+    width: 100%;
+    justify-content: flex-start;
   }
   .header-title { font-size: 19px; }
-  .main { padding: 24px 20px; }
+  .main { padding: 24px 16px; }
   .categories {
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding-bottom: 16px;
-    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
   }
   .category-btn {
     flex-shrink: 0;
   }
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  .footer { padding: 32px 20px; }
+  .footer { padding: 32px 16px; }
 }
 </style>
 </head>
@@ -321,19 +370,28 @@ body {
 
 <header class="header">
   <div class="header-inner">
-    <div class="header-title">GitHub 热门项目</div>
-    <div class="header-date">
-      <div class="header-date-day" id="header-date"></div>
-      <div class="header-date-weekday" id="header-weekday"></div>
+    <div class="header-brand">
+      <div>
+        <div class="header-title">GitHub 热门项目</div>
+        <div class="header-subtitle">发现优质开源项目</div>
+      </div>
     </div>
     <nav class="header-nav">
       <a href="index.html" class="nav-link">新闻</a>
       <a href="github.html" class="nav-link active">GitHub</a>
+      <a href="hackernews.html" class="nav-link">Hacker News</a>
+      <a href="juejin.html" class="nav-link">掘金</a>
     </nav>
   </div>
 </header>
 
 <main class="main">
+  <div class="time-filter">
+    <button class="time-btn active" onclick="setTimeRange('today')">今日</button>
+    <button class="time-btn" onclick="setTimeRange('week')">本周</button>
+    <button class="time-btn" onclick="setTimeRange('month')">本月</button>
+  </div>
+
   <div class="categories" id="categories">
     <!-- 动态生成 -->
   </div>
@@ -341,6 +399,8 @@ body {
   <div id="projects-container">
     <div class="loading">加载中...</div>
   </div>
+
+  <div class="pagination" id="pagination"></div>
 </main>
 
 <footer class="footer">
@@ -360,31 +420,11 @@ const CATEGORIES = [
   { id: 'backend', name: 'Backend', desc: '后端框架、数据库' }
 ];
 
-const TOPIC_MAP = {
-  'trending': 'stars:>10000',
-  'ai': 'topic:artificial-intelligence OR topic:machine-learning OR topic:deep-learning',
-  'frontend': 'topic:frontend OR topic:react OR topic:vue OR topic:javascript',
-  'devtools': 'topic:developer-tools OR topic:cli OR topic:devtools',
-  'productivity': 'topic:productivity OR topic:automation OR topic:workflow',
-  'fullstack': 'topic:fullstack OR topic:web-application OR topic:nextjs',
-  'mobile': 'topic:mobile OR topic:flutter OR topic:react-native OR topic:ios OR topic:android',
-  'backend': 'topic:backend OR topic:database OR topic:api OR topic:nodejs'
-};
-
+const ITEMS_PER_PAGE = 12;
 let currentCategory = 'trending';
-
+let currentPage = 1;
+let currentTimeRange = 'today';
 let githubData = null;
-
-const WEEKDAYS = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
-
-function setHeaderDate() {
-  const now = new Date();
-  const y = now.getFullYear();
-  const m = String(now.getMonth() + 1).padStart(2, '0');
-  const d = String(now.getDate()).padStart(2, '0');
-  document.getElementById('header-date').textContent = y + '年' + m + '月' + d + '日';
-  document.getElementById('header-weekday').textContent = WEEKDAYS[now.getDay()];
-}
 
 function renderCategories() {
   const container = document.getElementById('categories');
@@ -401,7 +441,16 @@ function renderCategories() {
 
 function switchCategory(categoryId) {
   currentCategory = categoryId;
+  currentPage = 1;
   renderCategories();
+  renderProjects();
+}
+
+function setTimeRange(range) {
+  currentTimeRange = range;
+  currentPage = 1;
+  document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelector(`.time-btn[onclick*="${range}"]`).classList.add('active');
   renderProjects();
 }
 
@@ -410,6 +459,7 @@ function renderProjects() {
   
   if (!githubData) {
     container.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">⚠️</div>
       <div class="empty-title">加载失败</div>
       <div class="empty-desc">请稍后刷新重试</div>
     </div>`;
@@ -419,19 +469,25 @@ function renderProjects() {
   const cat = githubData.categories[currentCategory];
   if (!cat) return;
   
-  const projects = cat.repos || [];
+  let projects = cat.repos || [];
+  
+  // Filter by time range (simulated - in real scenario would have separate data)
+  if (currentTimeRange === 'week') {
+    projects = projects.filter(p => {
+      const updated = new Date(p.updated_at);
+      const weekAgo = new Date();
+      weekAgo.setDate(weekAgo.getDate() - 7);
+      return updated >= weekAgo;
+    });
+  }
   
   if (!projects.length) {
-    container.innerHTML = `
-      <div class="section-header">
-        <h2 class="section-title">${cat.name}</h2>
-        <span class="section-desc">${cat.desc}</span>
-      </div>
-      <div class="empty-state">
-        <div class="empty-title">暂无项目</div>
-        <div class="empty-desc">该分类下暂无热门项目</div>
-      </div>
-    `;
+    container.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">📭</div>
+      <div class="empty-title">暂无项目</div>
+      <div class="empty-desc">该分类下暂无热门项目</div>
+    </div>`;
+    document.getElementById('pagination').innerHTML = '';
     return;
   }
 
@@ -443,19 +499,21 @@ function renderProjects() {
     'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c'
   };
 
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, projects.length);
+  const pageProjects = projects.slice(startIndex, endIndex);
+
   container.innerHTML = `
-    <div class="section-header">
-      <h2 class="section-title">${cat.name}</h2>
-      <span class="section-desc">${cat.desc}</span>
-    </div>
     <div class="projects-grid">
-      ${projects.map(project => {
+      ${pageProjects.map(project => {
         const stars = formatNumber(project.stars);
         const forks = formatNumber(project.forks);
         const langColor = langColors[project.language] || '#888';
         return `
           <a href="https://github.com/${project.full_name}" target="_blank" class="project-card">
             <div class="project-header">
+              <div class="project-icon">⭐</div>
               <div class="project-info">
                 <div class="project-name">${project.name}</div>
                 <div class="project-owner">${project.owner}</div>
@@ -470,15 +528,11 @@ function renderProjects() {
                 </div>
               ` : ''}
               <div class="meta-item">
-                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
-                </svg>
+                <span class="meta-icon">⭐</span>
                 <span class="meta-value">${stars}</span>
               </div>
               <div class="meta-item">
-                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.378v-.878zm-1.5 6.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm10.5-6.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm-1.5 6.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/>
-                </svg>
+                <span class="meta-icon">🍴</span>
                 <span class="meta-value">${forks}</span>
               </div>
             </div>
@@ -487,6 +541,37 @@ function renderProjects() {
       }).join('')}
     </div>
   `;
+
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  const container = document.getElementById('pagination');
+  if (totalPages <= 1) {
+    container.innerHTML = '';
+    return;
+  }
+
+  let html = '';
+  html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>上一页</button>`;
+  
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+    } else if (i === currentPage - 2 || i === currentPage + 2) {
+      html += `<span class="page-info">...</span>`;
+    }
+  }
+  
+  html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>下一页</button>`;
+  
+  container.innerHTML = html;
+}
+
+function goToPage(page) {
+  currentPage = page;
+  renderProjects();
+  window.scrollTo({ top: 300, behavior: 'smooth' });
 }
 
 function formatNumber(num) {
@@ -506,8 +591,6 @@ fetch('data/github.json?t=' + Date.now())
     console.error('加载失败:', err);
     renderProjects();
   });
-
-setHeaderDate();
 </script>
 </body>
 </html>
