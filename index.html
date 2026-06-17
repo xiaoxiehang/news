@@ -18,7 +18,7 @@
         .header {
             background: #ffffff;
             border-bottom: 1px solid #ebebeb;
-            padding: 20px 0;
+            padding: 24px 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -28,18 +28,28 @@
             margin: 0 auto;
             padding: 0 24px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
         }
-        .logo {
-            font-size: 20px;
+        .header-left {
+            flex: 1;
+        }
+        .logo-title {
+            font-size: 24px;
             font-weight: 700;
             color: #222;
+            margin-bottom: 4px;
+        }
+        .logo-subtitle {
+            font-size: 14px;
+            color: #717171;
         }
         .header-date {
             font-size: 15px;
             color: #717171;
             font-weight: 500;
+            white-space: nowrap;
+            margin-left: 24px;
         }
 
         /* Main */
@@ -53,18 +63,6 @@
         .hero {
             text-align: center;
             margin-bottom: 48px;
-        }
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: #222;
-            margin-bottom: 12px;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #717171;
-            margin-bottom: 28px;
         }
 
         /* Copy button */
@@ -92,28 +90,34 @@
         .news-item {
             padding: 24px 0;
             border-bottom: 1px solid #ebebeb;
+            display: flex;
+            gap: 20px;
         }
         .news-item:first-child {
             border-top: 1px solid #ebebeb;
         }
-        .news-item-header {
+        .news-left {
+            min-width: 60px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 8px;
+            gap: 8px;
         }
         .news-index {
-            font-size: 14px;
+            font-size: 24px;
             font-weight: 700;
             color: #ff5a5f;
-            min-width: 28px;
         }
         .news-source {
             font-size: 12px;
             color: #717171;
             background: #f7f7f7;
-            padding: 2px 10px;
+            padding: 4px 10px;
             border-radius: 12px;
+            white-space: nowrap;
+        }
+        .news-right {
+            flex: 1;
         }
         .news-title {
             font-size: 18px;
@@ -122,10 +126,28 @@
             line-height: 1.5;
             margin-bottom: 6px;
         }
+        .news-title a {
+            color: #222;
+            text-decoration: none;
+        }
+        .news-title a:hover {
+            color: #ff5a5f;
+        }
         .news-summary {
             font-size: 15px;
             color: #717171;
             line-height: 1.6;
+        }
+        .news-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #ff5a5f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .news-link:hover {
+            text-decoration: underline;
         }
 
         /* Covers section */
@@ -216,26 +238,30 @@
         }
 
         @media (max-width: 640px) {
-            .hero h1 { font-size: 28px; }
+            .logo-title { font-size: 20px; }
+            .logo-subtitle { font-size: 13px; }
             .hero p { font-size: 15px; }
             .covers-grid { grid-template-columns: 1fr; }
             .cover-item img { height: 160px; }
             .news-title { font-size: 16px; }
+            .news-left { min-width: 50px; }
+            .news-index { font-size: 20px; }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-inner">
-            <div class="logo">每日新闻简讯</div>
+            <div class="header-left">
+                <div class="logo-title">今日精选新闻</div>
+                <div class="logo-subtitle">每日更新国内外重要资讯，助你快速了解世界动态</div>
+            </div>
             <div class="header-date" id="header-date"></div>
         </div>
     </header>
 
     <main class="main">
         <section class="hero">
-            <h1>今日精选新闻</h1>
-            <p>每日更新国内外重要资讯，助你快速了解世界动态</p>
             <button class="copy-btn" id="copy-btn" onclick="copyAllNews()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -320,16 +346,29 @@
                 return;
             }
 
-            container.innerHTML = newsList.map((news, i) => `
+            container.innerHTML = newsList.map((news, i) => {
+                const hasLink = news.link && news.link.startsWith('http');
+                const titleHtml = hasLink
+                    ? `<a href="${news.link}" target="_blank">${news.title}</a>`
+                    : news.title;
+                const linkHtml = hasLink
+                    ? `<a href="${news.link}" target="_blank" class="news-link">查看原文 →</a>`
+                    : '';
+
+                return `
                 <div class="news-item">
-                    <div class="news-item-header">
+                    <div class="news-left">
                         <span class="news-index">${i + 1}</span>
                         ${news.source ? `<span class="news-source">${news.source}</span>` : ''}
                     </div>
-                    <div class="news-title">${news.title}</div>
-                    ${news.summary ? `<div class="news-summary">${news.summary}</div>` : ''}
+                    <div class="news-right">
+                        <div class="news-title">${titleHtml}</div>
+                        ${news.summary ? `<div class="news-summary">${news.summary}</div>` : ''}
+                        ${linkHtml}
+                    </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
 
             document.getElementById('covers-section').style.display = '';
         }
