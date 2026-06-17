@@ -319,12 +319,23 @@
                 const response = await fetch('news_data.json');
                 const data = await response.json();
                 
+                // 兼容数组格式和对象格式
+                let newsList = [];
+                let dateStr = '今日';
+                
+                if (Array.isArray(data)) {
+                    newsList = data;
+                } else if (data.news) {
+                    newsList = data.news;
+                    dateStr = data.date_str || '今日';
+                }
+                
                 // 更新日期
-                document.getElementById('date-badge').textContent = data.date_str || '今日';
+                document.getElementById('date-badge').textContent = dateStr;
                 
                 // 按分类分组
                 const grouped = {};
-                data.news.forEach(item => {
+                newsList.forEach(item => {
                     const category = item.category || '其他';
                     if (!grouped[category]) {
                         grouped[category] = [];
