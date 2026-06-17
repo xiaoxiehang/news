@@ -23,6 +23,7 @@
   --shadow-lg: 0 8px 28px rgba(0,0,0,0.12);
   --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
   --max-width: 1280px;
+  --header-height: 72px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -103,7 +104,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 32px;
 }
 .story-card {
   background: var(--bg);
@@ -153,46 +153,9 @@ body {
   align-items: center;
   gap: 4px;
 }
-.story-meta-icon {
-  font-size: 14px;
-}
-
-/* ===== Pagination ===== */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 32px;
-}
-.page-btn {
-  padding: 10px 16px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.page-btn:hover:not(:disabled) {
-  border-color: var(--text-primary);
-  color: var(--text-primary);
-}
-.page-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-.page-btn.active {
-  background: var(--text-primary);
-  color: #fff;
-  border-color: var(--text-primary);
-}
-.page-info {
-  font-size: 14px;
-  color: var(--text-secondary);
-  padding: 0 12px;
+.meta-icon {
+  width: 14px;
+  height: 14px;
 }
 
 /* ===== Loading ===== */
@@ -289,10 +252,6 @@ body {
   <div id="stories-container">
     <div class="loading">加载中...</div>
   </div>
-
-  <div class="load-more" id="load-more" style="display:none;">
-    <button class="load-more-btn" onclick="loadMore()">加载更多</button>
-  </div>
 </main>
 
 <footer class="footer">
@@ -301,14 +260,10 @@ body {
 </footer>
 
 <script>
-const ITEMS_PER_LOAD = 10;
-let currentPage = 1;
 let stories = [];
-let displayedStories = [];
 
 function renderStories() {
   const container = document.getElementById('stories-container');
-  const loadMoreDiv = document.getElementById('load-more');
   
   if (!stories.length) {
     container.innerHTML = `<div class="empty-state">
@@ -316,15 +271,12 @@ function renderStories() {
       <div class="empty-title">暂无数据</div>
       <div class="empty-desc">请稍后刷新重试</div>
     </div>`;
-    loadMoreDiv.style.display = 'none';
     return;
   }
 
-  displayedStories = stories.slice(0, currentPage * ITEMS_PER_LOAD);
-  
   container.innerHTML = `
     <div class="stories-list">
-      ${displayedStories.map((story, idx) => `
+      ${stories.map((story, idx) => `
         <a href="${story.url}" target="_blank" class="story-card">
           <div class="story-rank">${idx + 1}</div>
           <div class="story-content">
@@ -354,17 +306,6 @@ function renderStories() {
       `).join('')}
     </div>
   `;
-
-  if (displayedStories.length < stories.length) {
-    loadMoreDiv.style.display = 'block';
-  } else {
-    loadMoreDiv.style.display = 'none';
-  }
-}
-
-function loadMore() {
-  currentPage++;
-  renderStories();
 }
 
 // 加载数据
