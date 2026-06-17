@@ -1,399 +1,345 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日新闻简讯</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻简讯</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            background: #f7f7f7;
-            color: #222222;
-            line-height: 1.6;
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    line-height: 1.6;
+}
 
-        /* Header */
-        .header {
-            background: #ffffff;
-            border-bottom: 1px solid #ebebeb;
-            padding: 24px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-inner {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-        }
-        .header-left {
-            flex: 1;
-        }
-        .logo-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 4px;
-        }
-        .logo-subtitle {
-            font-size: 14px;
-            color: #717171;
-        }
-        .header-date {
-            font-size: 15px;
-            color: #717171;
-            font-weight: 500;
-            white-space: nowrap;
-            margin-left: 24px;
-        }
+/* Header */
+.header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-left h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+.header-left p {
+    font-size: 13px;
+    color: #888;
+    margin-top: 4px;
+}
+.header-right {
+    text-align: right;
+}
+.header-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+.header-weekday {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+}
 
-        /* Main */
-        .main {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 48px 24px;
-        }
+/* Main */
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        /* Hero */
-        .hero {
-            text-align: center;
-            margin-bottom: 48px;
-        }
+/* Copy button */
+.copy-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.copy-btn.copied {
+    background: #4CAF50;
+}
 
-        /* Copy button */
-        .copy-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
-            background: #222;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .copy-btn:hover { background: #000; }
-        .copy-btn.copied { background: #00a699; }
+/* News list */
+.news-list {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.news-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+.news-item:last-child {
+    border-bottom: none;
+}
+.news-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+.news-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.5;
+    flex: 1;
+}
+.news-title a {
+    color: #222;
+    text-decoration: none;
+}
+.news-title a:hover {
+    color: #0066cc;
+}
+.news-source {
+    font-size: 12px;
+    color: #999;
+    margin-left: 12px;
+    white-space: nowrap;
+}
+.news-summary {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+.news-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #0066cc;
+    text-decoration: none;
+}
+.news-link:hover {
+    text-decoration: underline;
+}
 
-        /* News list */
-        .news-list {
-            margin-bottom: 60px;
-        }
-        .news-item {
-            padding: 24px 0;
-            border-bottom: 1px solid #ebebeb;
-            display: flex;
-            gap: 20px;
-        }
-        .news-item:first-child {
-            border-top: 1px solid #ebebeb;
-        }
-        .news-left {
-            min-width: 60px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-        .news-index {
-            font-size: 24px;
-            font-weight: 700;
-            color: #ff5a5f;
-        }
-        .news-source {
-            font-size: 12px;
-            color: #717171;
-            background: #f7f7f7;
-            padding: 4px 10px;
-            border-radius: 12px;
-            white-space: nowrap;
-        }
-        .news-right {
-            flex: 1;
-        }
-        .news-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #222;
-            line-height: 1.5;
-            margin-bottom: 6px;
-        }
-        .news-title a {
-            color: #222;
-            text-decoration: none;
-        }
-        .news-title a:hover {
-            color: #ff5a5f;
-        }
-        .news-summary {
-            font-size: 15px;
-            color: #717171;
-            line-height: 1.6;
-        }
-        .news-link {
-            display: inline-block;
-            margin-top: 8px;
-            font-size: 13px;
-            color: #ff5a5f;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .news-link:hover {
-            text-decoration: underline;
-        }
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+    font-size: 15px;
+}
 
-        /* Covers section */
-        .covers-section {
-            margin-top: 60px;
-            padding-top: 48px;
-            border-top: 2px solid #ebebeb;
-        }
-        .covers-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-        .covers-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        .cover-item {
-            border-radius: 12px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-        .cover-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .cover-item img:hover { opacity: 0.9; }
-        .cover-label {
-            padding: 12px 16px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 600;
-            color: #222;
-        }
+/* Footer */
+.footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+.footer-content {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.8;
+}
+.footer-content a {
+    color: #0066cc;
+    text-decoration: none;
+}
 
-        /* Footer */
-        .footer {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 32px 24px;
-            text-align: center;
-            border-top: 1px solid #ebebeb;
-        }
-        .footer a {
-            color: #ff5a5f;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-        }
+/* Covers section */
+.covers-section {
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+.covers-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #222;
+}
+.covers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.cover-item {
+    text-align: center;
+}
+.cover-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.cover-label {
+    font-size: 13px;
+    color: #888;
+    margin-top: 8px;
+}
 
-        /* Toast */
-        .toast {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%) translateY(80px);
-            background: #222;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            opacity: 0;
-            transition: all 0.3s ease;
-            pointer-events: none;
-            z-index: 999;
-        }
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 80px 20px;
-            color: #717171;
-            font-size: 16px;
-        }
-
-        @media (max-width: 640px) {
-            .logo-title { font-size: 20px; }
-            .logo-subtitle { font-size: 13px; }
-            .hero p { font-size: 15px; }
-            .covers-grid { grid-template-columns: 1fr; }
-            .cover-item img { height: 160px; }
-            .news-title { font-size: 16px; }
-            .news-left { min-width: 50px; }
-            .news-index { font-size: 20px; }
-        }
-    </style>
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-right {
+        margin-top: 8px;
+        text-align: left;
+    }
+    .covers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-inner">
-            <div class="header-left">
-                <div class="logo-title">今日精选新闻</div>
-                <div class="logo-subtitle">每日更新国内外重要资讯，助你快速了解世界动态</div>
-            </div>
-            <div class="header-date" id="header-date"></div>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-left">
+            <h1 id="header-title">今日精选新闻</h1>
+            <p>每日更新国内外重要资讯，助你快速了解世界动态</p>
         </div>
-    </header>
-
-    <main class="main">
-        <section class="hero">
-            <button class="copy-btn" id="copy-btn" onclick="copyAllNews()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                <span id="copy-text">一键复制全部新闻</span>
-            </button>
-        </section>
-
-        <div class="news-list" id="news-container">
-            <div class="loading">加载中...</div>
+        <div class="header-right">
+            <div class="header-date" id="header-date">--</div>
+            <div class="header-weekday" id="header-weekday">--</div>
         </div>
+    </div>
+</header>
 
-        <section class="covers-section" id="covers-section" style="display:none;">
-            <h2 class="covers-title">📸 封面图</h2>
-            <div class="covers-grid">
-                <div class="cover-item">
-                    <img src="cover_wechat.png" alt="公众号封面" onclick="window.open('cover_wechat.png','_blank')">
-                    <div class="cover-label">公众号封面</div>
-                </div>
-                <div class="cover-item">
-                    <img src="cover_xhs.png" alt="小红书封面" onclick="window.open('cover_xhs.png','_blank')">
-                    <div class="cover-label">小红书封面</div>
-                </div>
+<main class="main">
+    <button class="copy-btn" id="copy-btn" onclick="copyAllNews()">一键复制所有新闻</button>
+    
+    <div class="news-list" id="news-container">
+        <div class="loading">加载中...</div>
+    </div>
+
+    <section class="covers-section" id="covers-section" style="display:none;">
+        <div class="covers-title">封面图</div>
+        <div class="covers-grid">
+            <div class="cover-item">
+                <img src="cover_wechat.png" alt="公众号封面" onclick="window.open('cover_wechat.png','_blank')">
+                <div class="cover-label">公众号封面</div>
             </div>
-        </section>
-    </main>
+            <div class="cover-item">
+                <img src="cover_xhs.png" alt="小红书封面" onclick="window.open('cover_xhs.png','_blank')">
+                <div class="cover-label">小红书封面</div>
+            </div>
+        </div>
+    </section>
+</main>
 
-    <footer class="footer">
-        <p style="color:#717171;font-size:14px;margin-bottom:8px;">每日更新 · 值得关注</p>
+<footer class="footer">
+    <div class="footer-content">
+        每日更新 · 值得关注<br>
         <a href="https://github.com/xiaoxiehang/news" target="_blank">GitHub 仓库</a>
-    </footer>
+    </div>
+</footer>
 
-    <div class="toast" id="toast"></div>
+<script>
+let allNews = [];
 
-    <script>
-        let allNews = [];
+function setHeaderDate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+    const weekday = weekdays[now.getDay()];
+    
+    document.getElementById('header-date').textContent = `${year}年${month}月${day}日`;
+    document.getElementById('header-weekday').textContent = weekday;
+}
 
-        const WEEKDAYS = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+function copyAllNews() {
+    if (!allNews.length) return;
+    
+    const text = allNews.map((news, i) => {
+        return `${i + 1}. ${news.title}\n${news.summary || ''}`;
+    }).join('\n\n');
+    
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = '已复制!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '一键复制所有新闻';
+            btn.classList.remove('copied');
+        }, 2000);
+    });
+}
 
-        function setHeaderDate() {
-            const now = new Date();
-            const y = now.getFullYear();
-            const m = String(now.getMonth() + 1).padStart(2, '0');
-            const d = String(now.getDate()).padStart(2, '0');
-            const w = WEEKDAYS[now.getDay()];
-            document.getElementById('header-date').textContent = `${y}年${m}月${d}日 ${w}`;
-        }
-        setHeaderDate();
-
-        function showToast(msg) {
-            const t = document.getElementById('toast');
-            t.textContent = msg;
-            t.classList.add('show');
-            setTimeout(() => t.classList.remove('show'), 2000);
-        }
-
-        function copyAllNews() {
-            if (!allNews.length) return;
-            const text = allNews.map((n, i) =>
-                `${i + 1}. ${n.title}\n${n.summary || ''}`
-            ).join('\n\n');
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = document.getElementById('copy-btn');
-                const txt = document.getElementById('copy-text');
-                btn.classList.add('copied');
-                txt.textContent = '已复制！';
-                showToast('已复制到剪贴板');
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    txt.textContent = '一键复制全部新闻';
-                }, 2000);
-            });
-        }
-
-        function renderNews(newsList) {
-            allNews = newsList;
-            const container = document.getElementById('news-container');
-
-            if (!newsList.length) {
-                container.innerHTML = '<div class="loading">暂无新闻数据</div>';
-                return;
-            }
-
-            container.innerHTML = newsList.map((news, i) => {
-                const hasLink = news.link && news.link.startsWith('http');
-                const titleHtml = hasLink
-                    ? `<a href="${news.link}" target="_blank">${news.title}</a>`
-                    : news.title;
-                const linkHtml = hasLink
-                    ? `<a href="${news.link}" target="_blank" class="news-link">查看原文 →</a>`
-                    : '';
-
-                return `
-                <div class="news-item">
-                    <div class="news-left">
-                        <span class="news-index">${i + 1}</span>
-                        ${news.source ? `<span class="news-source">${news.source}</span>` : ''}
-                    </div>
-                    <div class="news-right">
-                        <div class="news-title">${titleHtml}</div>
-                        ${news.summary ? `<div class="news-summary">${news.summary}</div>` : ''}
-                        ${linkHtml}
-                    </div>
+function renderNews(newsList) {
+    allNews = newsList;
+    const container = document.getElementById('news-container');
+    
+    if (!newsList.length) {
+        container.innerHTML = '<div class="loading">暂无新闻数据</div>';
+        return;
+    }
+    
+    container.innerHTML = newsList.map((news, i) => {
+        const hasLink = news.link && news.link.startsWith('http');
+        const titleHtml = hasLink
+            ? `<a href="${news.link}" target="_blank">${news.title}</a>`
+            : news.title;
+        const linkHtml = hasLink
+            ? `<a href="${news.link}" target="_blank" class="news-link">查看详情 →</a>`
+            : '';
+        
+        return `
+            <div class="news-item">
+                <div class="news-item-header">
+                    <div class="news-title">${titleHtml}</div>
+                    ${news.source ? `<div class="news-source">${news.source}</div>` : ''}
                 </div>
-                `;
-            }).join('');
+                ${news.summary ? `<div class="news-summary">${news.summary}</div>` : ''}
+                ${linkHtml}
+            </div>
+        `;
+    }).join('');
+    
+    document.getElementById('covers-section').style.display = '';
+}
 
-            document.getElementById('covers-section').style.display = '';
+async function loadNews() {
+    try {
+        const response = await fetch('news_data.json?t=' + Date.now());
+        const data = await response.json();
+        
+        let newsList = [];
+        if (Array.isArray(data)) {
+            newsList = data;
+        } else if (data.news) {
+            newsList = data.news;
         }
+        
+        renderNews(newsList);
+    } catch (error) {
+        console.error('加载新闻失败:', error);
+        document.getElementById('news-container').innerHTML = 
+            '<div class="loading">加载失败，请刷新重试</div>';
+    }
+}
 
-        async function loadNews() {
-            try {
-                const response = await fetch('news_data.json?t=' + Date.now());
-                const data = await response.json();
-
-                let newsList = [];
-                if (Array.isArray(data)) {
-                    newsList = data;
-                } else if (data.news) {
-                    newsList = data.news;
-                }
-
-                renderNews(newsList);
-            } catch (error) {
-                console.error('加载新闻失败:', error);
-                document.getElementById('news-container').innerHTML =
-                    '<div class="loading">加载失败，请刷新重试</div>';
-            }
-        }
-
-        loadNews();
-    </script>
+setHeaderDate();
+loadNews();
+</script>
 </body>
 </html>
