@@ -31,19 +31,27 @@ def fetch_juejin(limit=30):
         
         articles = []
         for item in data.get('data', []):
-            article_info = item.get('article_info', {})
+            item_info = item.get('item_info', {})
+            article_info = item_info.get('article_info', {})
             if article_info:
+                # Get author name from user_info
+                user_info = item_info.get('author_user_info', {})
+                author = user_info.get('user_name', '')
+                
+                # Get category name
+                category = item_info.get('category', {}).get('category_name', '')
+                
                 articles.append({
                     'id': article_info.get('article_id', ''),
                     'title': article_info.get('title', ''),
                     'url': f"https://juejin.cn/post/{article_info.get('article_id', '')}",
                     'cover': article_info.get('cover_image', ''),
-                    'digest': article_info.get('digest', '')[:200],
+                    'digest': article_info.get('brief_content', '')[:200],
                     'views': int(article_info.get('view_count', 0)),
                     'likes': int(article_info.get('digg_count', 0)),
                     'comments': int(article_info.get('comment_count', 0)),
-                    'author': article_info.get('author_name', ''),
-                    'category': article_info.get('category', {}).get('category_name', ''),
+                    'author': author,
+                    'category': category,
                     'created_at': datetime.fromtimestamp(
                         int(article_info.get('ctime', 0))
                     ).strftime('%Y-%m-%d') if article_info.get('ctime') else ''
