@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-06-18 14:20:43",
+  "updated_at": "2026-06-18 14:21:46",
   "categories": {
-    "yesterday_trending": {
-      "name": "昨日热门",
+    "hot": {
+      "name": "Hot",
       "desc": "前一天增星最多的项目",
       "repos": [
         {
@@ -63,7 +63,7 @@
           "description": "An agentic skills framework & software development methodology that works.",
           "html_url": "https://github.com/obra/superpowers",
           "language": "Shell",
-          "stars": 231424,
+          "stars": 231426,
           "forks": 20570,
           "topics": [],
           "created_at": "2025-10-09",
@@ -152,7 +152,7 @@
           "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
           "html_url": "https://github.com/open-webui/open-webui",
           "language": "Python",
-          "stars": 142081,
+          "stars": 142082,
           "forks": 20420,
           "topics": [
             "ai",
@@ -208,8 +208,8 @@
           "description": "Skills for Real Engineers. Straight from my .claude directory.",
           "html_url": "https://github.com/mattpocock/skills",
           "language": "Shell",
-          "stars": 134101,
-          "forks": 11640,
+          "stars": 134104,
+          "forks": 11642,
           "topics": [],
           "created_at": "2026-02-03",
           "updated_at": "2026-06-18"
@@ -275,7 +275,7 @@
           "description": "💫 Toolkit to help you get started with Spec-Driven Development",
           "html_url": "https://github.com/github/spec-kit",
           "language": "Python",
-          "stars": 113577,
+          "stars": 113578,
           "forks": 10017,
           "topics": [
             "ai",
@@ -313,7 +313,7 @@
           "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
           "html_url": "https://github.com/garrytan/gstack",
           "language": "TypeScript",
-          "stars": 111046,
+          "stars": 111047,
           "forks": 16524,
           "topics": [],
           "created_at": "2026-03-11",
@@ -554,6 +554,120 @@
       "desc": "近期最活跃的高星项目",
       "repos": [
         {
+          "name": "eliza",
+          "full_name": "elizaOS/eliza",
+          "owner": "elizaOS",
+          "description": "Open source agentic operating system",
+          "html_url": "https://github.com/elizaOS/eliza",
+          "language": "TypeScript",
+          "stars": 18596,
+          "forks": 5560,
+          "topics": [
+            "agent",
+            "agentic",
+            "ai",
+            "autonomous",
+            "chatbot"
+          ],
+          "created_at": "2024-07-09",
+          "updated_at": "2026-06-18"
+        },
+        {
+          "name": "openclaw",
+          "full_name": "openclaw/openclaw",
+          "owner": "openclaw",
+          "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+          "html_url": "https://github.com/openclaw/openclaw",
+          "language": "TypeScript",
+          "stars": 379285,
+          "forks": 79400,
+          "topics": [
+            "ai",
+            "assistant",
+            "crustacean",
+            "molty",
+            "openclaw"
+          ],
+          "created_at": "2025-11-24",
+          "updated_at": "2026-06-18"
+        },
+        {
+          "name": "core",
+          "full_name": "home-assistant/core",
+          "owner": "home-assistant",
+          "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
+          "html_url": "https://github.com/home-assistant/core",
+          "language": "Python",
+          "stars": 87786,
+          "forks": 37698,
+          "topics": [
+            "asyncio",
+            "hacktoberfest",
+            "home-automation",
+            "internet-of-things",
+            "iot"
+          ],
+          "created_at": "2013-09-17",
+          "updated_at": "2026-06-18"
+        },
+        {
+          "name": "bytebase",
+          "full_name": "bytebase/bytebase",
+          "owner": "bytebase",
+          "description": "World's most advanced database DevSecOps solution for Developer, Security, DBA and Platform Engineering teams. The GitHub/GitLab for database DevSecOps.",
+          "html_url": "https://github.com/bytebase/bytebase",
+          "language": "Go",
+          "stars": 14161,
+          "forks": 945,
+          "topics": [
+            "cicd",
+            "data-masking",
+            "data-security",
+            "database-access",
+            "dbeaver"
+          ],
+          "created_at": "2021-01-27",
+          "updated_at": "2026-06-18"
+        },
+        {
+          "name": "dowhy",
+          "full_name": "py-why/dowhy",
+          "owner": "py-why",
+          "description": "DoWhy is a Python library for causal inference that supports explicit modeling and testing of causal assumptions. DoWhy is based on a unified language for causal inference, combining causal graphical ",
+          "html_url": "https://github.com/py-why/dowhy",
+          "language": "Python",
+          "stars": 8162,
+          "forks": 1036,
+          "topics": [
+            "bayesian-networks",
+            "causal-inference",
+            "causal-machine-learning",
+            "causal-models",
+            "causality"
+          ],
+          "created_at": "2018-05-31",
+          "updated_at": "2026-06-18"
+        },
+        {
+          "name": "PX4-Autopilot",
+          "full_name": "PX4/PX4-Autopilot",
+          "owner": "PX4",
+          "description": "PX4 Autopilot Software",
+          "html_url": "https://github.com/PX4/PX4-Autopilot",
+          "language": "C++",
+          "stars": 11970,
+          "forks": 15577,
+          "topics": [
+            "autonomous",
+            "autopilot",
+            "avoidance",
+            "dds",
+            "drone"
+          ],
+          "created_at": "2012-08-04",
+          "updated_at": "2026-06-18"
+        },
+        {
           "name": "lightdash",
           "full_name": "lightdash/lightdash",
           "owner": "lightdash",
@@ -659,25 +773,6 @@
           "updated_at": "2026-06-18"
         },
         {
-          "name": "eliza",
-          "full_name": "elizaOS/eliza",
-          "owner": "elizaOS",
-          "description": "Open source agentic operating system",
-          "html_url": "https://github.com/elizaOS/eliza",
-          "language": "TypeScript",
-          "stars": 18596,
-          "forks": 5560,
-          "topics": [
-            "agent",
-            "agentic",
-            "ai",
-            "autonomous",
-            "chatbot"
-          ],
-          "created_at": "2024-07-09",
-          "updated_at": "2026-06-18"
-        },
-        {
           "name": "ragflow",
           "full_name": "infiniflow/ragflow",
           "owner": "infiniflow",
@@ -697,32 +792,13 @@
           "updated_at": "2026-06-18"
         },
         {
-          "name": "core",
-          "full_name": "home-assistant/core",
-          "owner": "home-assistant",
-          "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
-          "html_url": "https://github.com/home-assistant/core",
-          "language": "Python",
-          "stars": 87786,
-          "forks": 37698,
-          "topics": [
-            "asyncio",
-            "hacktoberfest",
-            "home-automation",
-            "internet-of-things",
-            "iot"
-          ],
-          "created_at": "2013-09-17",
-          "updated_at": "2026-06-18"
-        },
-        {
           "name": "academic-research-skills",
           "full_name": "Imbad0202/academic-research-skills",
           "owner": "Imbad0202",
           "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
           "html_url": "https://github.com/Imbad0202/academic-research-skills",
           "language": "Python",
-          "stars": 32534,
+          "stars": 32535,
           "forks": 2668,
           "topics": [
             "academic-pipeline",
@@ -751,6 +827,19 @@
             "data-warehouse"
           ],
           "created_at": "2020-01-23",
+          "updated_at": "2026-06-18"
+        },
+        {
+          "name": "GitNexus",
+          "full_name": "abhigyanpatwari/GitNexus",
+          "owner": "abhigyanpatwari",
+          "description": "GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a git repository (Github, Gitlab, Azure, Local)",
+          "html_url": "https://github.com/abhigyanpatwari/GitNexus",
+          "language": "TypeScript",
+          "stars": 42402,
+          "forks": 4796,
+          "topics": [],
+          "created_at": "2025-08-02",
           "updated_at": "2026-06-18"
         },
         {
@@ -846,25 +935,6 @@
             "nosql"
           ],
           "created_at": "2018-11-24",
-          "updated_at": "2026-06-18"
-        },
-        {
-          "name": "openclaw",
-          "full_name": "openclaw/openclaw",
-          "owner": "openclaw",
-          "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
-          "html_url": "https://github.com/openclaw/openclaw",
-          "language": "TypeScript",
-          "stars": 379285,
-          "forks": 79400,
-          "topics": [
-            "ai",
-            "assistant",
-            "crustacean",
-            "molty",
-            "openclaw"
-          ],
-          "created_at": "2025-11-24",
           "updated_at": "2026-06-18"
         },
         {
@@ -1022,73 +1092,6 @@
             "dart-platform"
           ],
           "created_at": "2015-03-06",
-          "updated_at": "2026-06-18"
-        },
-        {
-          "name": "onyx",
-          "full_name": "onyx-dot-app/onyx",
-          "owner": "onyx-dot-app",
-          "description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
-          "html_url": "https://github.com/onyx-dot-app/onyx",
-          "language": "Python",
-          "stars": 30397,
-          "forks": 4158,
-          "topics": [
-            "ai",
-            "ai-chat",
-            "chatgpt",
-            "chatui",
-            "enterprise-search"
-          ],
-          "created_at": "2023-04-27",
-          "updated_at": "2026-06-18"
-        },
-        {
-          "name": "last30days-skill",
-          "full_name": "mvanhorn/last30days-skill",
-          "owner": "mvanhorn",
-          "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
-          "html_url": "https://github.com/mvanhorn/last30days-skill",
-          "language": "Python",
-          "stars": 44104,
-          "forks": 3622,
-          "topics": [
-            "ai-prompts",
-            "ai-skill",
-            "bluesky",
-            "claude",
-            "claude-code"
-          ],
-          "created_at": "2026-01-23",
-          "updated_at": "2026-06-18"
-        },
-        {
-          "name": "chromium",
-          "full_name": "chromium/chromium",
-          "owner": "chromium",
-          "description": "The official GitHub mirror of the Chromium source",
-          "html_url": "https://github.com/chromium/chromium",
-          "language": null,
-          "stars": 23989,
-          "forks": 8976,
-          "topics": [
-            "browser",
-            "chromium"
-          ],
-          "created_at": "2018-02-05",
-          "updated_at": "2026-06-18"
-        },
-        {
-          "name": "Specs",
-          "full_name": "CocoaPods/Specs",
-          "owner": "CocoaPods",
-          "description": "The CocoaPods Master Repo",
-          "html_url": "https://github.com/CocoaPods/Specs",
-          "language": null,
-          "stars": 6816,
-          "forks": 8977,
-          "topics": [],
-          "created_at": "2011-09-11",
           "updated_at": "2026-06-18"
         }
       ]
@@ -2829,7 +2832,7 @@
           "html_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
           "language": null,
           "stars": 140820,
-          "forks": 34720,
+          "forks": 34721,
           "topics": [
             "ai",
             "bolt",
@@ -2860,7 +2863,7 @@
           "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
           "html_url": "https://github.com/garrytan/gstack",
           "language": "TypeScript",
-          "stars": 111046,
+          "stars": 111047,
           "forks": 16524,
           "topics": [],
           "created_at": "2026-03-11",
@@ -3121,7 +3124,7 @@
           "description": "Penpot: The open-source design tool for design and code collaboration",
           "html_url": "https://github.com/penpot/penpot",
           "language": "Clojure",
-          "stars": 50191,
+          "stars": 50192,
           "forks": 3239,
           "topics": [
             "clojure",
@@ -3309,7 +3312,7 @@
           "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
           "html_url": "https://github.com/shadcn-ui/ui",
           "language": "TypeScript",
-          "stars": 116863,
+          "stars": 116864,
           "forks": 9089,
           "topics": [
             "base-ui",
@@ -3569,7 +3572,7 @@
           "description": "The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more.  Makers of the AG-UI Protocol",
           "html_url": "https://github.com/CopilotKit/CopilotKit",
           "language": "TypeScript",
-          "stars": 35273,
+          "stars": 35274,
           "forks": 4377,
           "topics": [
             "agent",
@@ -4043,7 +4046,7 @@
           "description": "\"rsync for cloud storage\" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files",
           "html_url": "https://github.com/rclone/rclone",
           "language": "Go",
-          "stars": 57915,
+          "stars": 57916,
           "forks": 5165,
           "topics": [
             "azure-blob",
@@ -4422,7 +4425,7 @@
           "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
           "html_url": "https://github.com/open-webui/open-webui",
           "language": "Python",
-          "stars": 142081,
+          "stars": 142082,
           "forks": 20420,
           "topics": [
             "ai",
@@ -4609,7 +4612,7 @@
           "description": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for bui",
           "html_url": "https://github.com/gin-gonic/gin",
           "language": "Go",
-          "stars": 88705,
+          "stars": 88706,
           "forks": 8638,
           "topics": [
             "framework",
@@ -4673,7 +4676,7 @@
           "description": "The fastest path to AI-powered full stack observability, even for lean teams.",
           "html_url": "https://github.com/netdata/netdata",
           "language": "C",
-          "stars": 79269,
+          "stars": 79270,
           "forks": 6479,
           "topics": [
             "ai",
@@ -4692,7 +4695,7 @@
           "description": "VS Code in the browser",
           "html_url": "https://github.com/coder/code-server",
           "language": "TypeScript",
-          "stars": 77966,
+          "stars": 77967,
           "forks": 6712,
           "topics": [
             "browser-ide",
@@ -4786,7 +4789,7 @@
           "description": "Dear ImGui: Bloat-free Graphical User interface for C++ with minimal dependencies",
           "html_url": "https://github.com/ocornut/imgui",
           "language": "C++",
-          "stars": 73915,
+          "stars": 73916,
           "forks": 11828,
           "topics": [
             "api",
@@ -4918,7 +4921,7 @@
           "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
           "html_url": "https://github.com/earendil-works/pi",
           "language": "TypeScript",
-          "stars": 63675,
+          "stars": 63676,
           "forks": 7739,
           "topics": [],
           "created_at": "2025-08-09",
