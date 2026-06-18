@@ -295,8 +295,8 @@ function renderArticles(articles) {
   
   if (!articles.length) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">⚠️</div>
-      <div class="empty-title">暂无数据</div>
+      <div class="empty-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div>
+      <div class="empty-title">暂无文章</div>
       <div class="empty-desc">请稍后刷新重试</div>
     </div>`;
     return;
