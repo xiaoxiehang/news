@@ -395,15 +395,7 @@ a.news-title:hover {
   </section>
 </main>
 
-<footer class="footer">
-  <div id="misc-widget" style="margin-bottom:20px;padding:16px;background:var(--bg-secondary);border-radius:var(--radius);max-width:600px;margin-left:auto;margin-right:auto;text-align:left;">
-    <div id="quote-text" style="font-size:14px;color:var(--text-secondary);font-style:italic;margin-bottom:8px;"></div>
-    <div id="quote-author" style="font-size:13px;color:var(--text-tertiary);text-align:right;"></div>
-    <div id="weather-info" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;color:var(--text-secondary);"></div>
-  </div>
-  <div class="footer-text">每日更新 · 值得关注</div>
-  <a href="https://github.com/xiaoxiehang/news" target="_blank" class="footer-link">GitHub 仓库</a>
-</footer>
+<footer class="footer"></footer>
 
 <div class="toast" id="toast"></div>
 
@@ -510,25 +502,7 @@ async function loadNews() {
 
 setHeaderDate();
 loadNews();
-loadMiscWidget();
-
-function loadMiscWidget() {
-  fetch('data/misc.json?t=' + Date.now())
-    .then(r => r.json())
-    .then(data => {
-      if (data.quote) {
-        document.getElementById('quote-text').textContent = '"' + data.quote.text + '"';
-        document.getElementById('quote-author').textContent = '— ' + data.quote.author;
-      }
-      if (data.weather) {
-        const w = data.weather;
-        document.getElementById('weather-info').innerHTML = 
-          '🌤️ ' + w.city + ' ' + w.temperature + '°C ' + w.weather + 
-          ' | 💧 ' + w.humidity + '% | 🌬️ ' + w.wind_speed + 'm/s';
-      }
-    })
-    .catch(err => console.error('加载misc失败:', err));
-}
 </script>
+<script src="scripts/footer.js"></script>
 </body>
 </html>
