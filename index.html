@@ -434,6 +434,15 @@ function renderNews(newsList) {
     return;
   }
 
+  function stripHtml(html) {
+    const tmp = document.createElement('span');
+    tmp.innerHTML = html;
+    let text = tmp.textContent || tmp.innerText || '';
+    // 截断过长的摘要
+    if (text.length > 200) text = text.substring(0, 200) + '...';
+    return text;
+  }
+
   let html = '';
   for (let i = 0; i < newsList.length; i++) {
     const news = newsList[i];
@@ -452,7 +461,7 @@ function renderNews(newsList) {
           titleHtml +
           (news.source ? '<span class="news-source">' + news.source + '</span>' : '') +
         '</div>' +
-        (news.summary ? '<div class="news-summary">' + news.summary + '</div>' : '') +
+        (news.summary ? '<div class="news-summary">' + stripHtml(news.summary) + '</div>' : '') +
         linkHtml +
       '</div>' +
     '</div>';
