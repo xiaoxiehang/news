@@ -366,13 +366,7 @@ body {
 </header>
 
 <main class="main">
-  <div class="time-filter">
-    <button class="time-btn active" onclick="setTimeRange('today')">今日</button>
-    <button class="time-btn" onclick="setTimeRange('week')">本周</button>
-    <button class="time-btn" onclick="setTimeRange('month')">本月</button>
-  </div>
-
-  <div class="categories" id="categories">
+    <div class="categories" id="categories">
     <!-- 动态生成 -->
   </div>
 
@@ -396,7 +390,6 @@ const CATEGORIES = [
 ];
 
 let currentCategory = 'trending';
-let currentTimeRange = 'today';
 let githubData = null;
 let filteredProjects = [];
 
@@ -419,13 +412,6 @@ function switchCategory(categoryId) {
   renderProjects();
 }
 
-function setTimeRange(range) {
-  currentTimeRange = range;
-  document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelector(`.time-btn[onclick*="${range}"]`).classList.add('active');
-  renderProjects();
-}
-
 function renderProjects() {
   const container = document.getElementById('projects-container');
   
@@ -443,22 +429,7 @@ function renderProjects() {
   
   let projects = cat.repos || [];
   
-  // Filter by time range
-  const now = new Date();
-  if (currentTimeRange === 'today') {
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    projects = projects.filter(p => new Date(p.updated_at) >= today);
-  } else if (currentTimeRange === 'week') {
-    const weekAgo = new Date(now);
-    weekAgo.setDate(weekAgo.getDate() - 7);
-    projects = projects.filter(p => new Date(p.updated_at) >= weekAgo);
-  } else if (currentTimeRange === 'month') {
-    const monthAgo = new Date(now);
-    monthAgo.setDate(monthAgo.getDate() - 30);
-    projects = projects.filter(p => new Date(p.updated_at) >= monthAgo);
-  }
-  
-  filteredProjects = projects;
+    filteredProjects = projects;
   
   if (!projects.length) {
     container.innerHTML = `<div class="empty-state">

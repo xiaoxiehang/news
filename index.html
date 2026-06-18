@@ -471,6 +471,9 @@ function renderNews(newsList) {
 async function loadNews() {
   try {
     const response = await fetch('data/news_data.json?t=' + Date.now());
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: 数据文件不存在或无法访问`);
+    }
     const data = await response.json();
 
     let newsList = [];
@@ -482,11 +485,24 @@ async function loadNews() {
       newsList = data.items;
     }
 
-    renderNews(newsList);
+    if (newsList.length === 0) {
+      renderNewsError('暂无新闻数据，请稍后刷新');
+    } else {
+      renderNews(newsList);
+    }
   } catch (error) {
     console.error('加载新闻失败:', error);
-    renderNews([]);
+    renderNewsError('新闻数据加载失败：' + error.message);
   }
+}
+
+function renderNewsError(message) {
+  const container = document.getElementById('news-container');
+  container.innerHTML = `<div class="empty-state">
+    <div class="empty-icon">⚠️</div>
+    <div class="empty-title">加载失败</div>
+    <div class="empty-desc">${message}</div>
+  </div>`;
 }
 
 setHeaderDate();
