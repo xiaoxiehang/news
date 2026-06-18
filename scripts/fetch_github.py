@@ -21,8 +21,8 @@ def get_recent_date(days=30):
     return (datetime.now() - timedelta(days=days)).strftime('%Y-%m-%d')
 
 CATEGORIES = {
-    'yesterday_trending': {
-        'name': '昨日热门',
+    'hot': {
+        'name': 'Hot',
         'desc': '前一天增星最多的项目',
         'query': 'stars:>100 pushed:' + get_recent_date(1),
         'sort': 'stars'
