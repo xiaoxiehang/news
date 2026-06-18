@@ -8,9 +8,11 @@
     73:'🌨️中雪',75:'🌨️大雪',80:'🌦️阵雨',95:'⛈️雷暴'
   };
 
+  let weatherStr = '';
+
   function pad(n) { return String(n).padStart(2, '0'); }
 
-  function updateTime() {
+  function update() {
     const now = new Date();
     const y = now.getFullYear();
     const m = pad(now.getMonth() + 1);
@@ -20,37 +22,34 @@
     const sec = pad(now.getSeconds());
     const w = WEEKDAYS[now.getDay()];
 
-    const subtitleEl = document.getElementById('header-subtitle');
-    if (subtitleEl) {
-      subtitleEl.textContent = `${y}年${m}月${d}日 周${w} ${h}:${min}:${sec}`;
+    const el = document.getElementById('header-subtitle');
+    if (!el) return;
+
+    let text = `${y}年${m}月${d}日 周${w} ${h}:${min}:${sec}`;
+    if (weatherStr) {
+      text += ' · ' + weatherStr;
     }
+    el.textContent = text;
   }
 
   function fetchWeather() {
     fetch('https://api.open-meteo.com/v1/forecast?latitude=30.2741&longitude=120.1551&current=temperature_2m,weather_code&timezone=Asia/Shanghai')
       .then(r => r.json())
       .then(data => {
-        const subtitleEl = document.getElementById('header-subtitle');
-        if (!subtitleEl || !data.current) return;
-        const code = data.current.weather_code || 0;
-        const temp = Math.round(data.current.temperature_2m);
-        const info = WEATHER_CODES[code] || '';
-        const now = new Date();
-        const y = now.getFullYear();
-        const m = pad(now.getMonth() + 1);
-        const d = pad(now.getDate());
-        const h = pad(now.getHours());
-        const min = pad(now.getMinutes());
-        const sec = pad(now.getSeconds());
-        const w = WEEKDAYS[now.getDay()];
-        subtitleEl.textContent = `${y}年${m}月${d}日 周${w} ${h}:${min}:${sec} · 杭州${temp}°C ${info}`;
+        if (data.current) {
+          const code = data.current.weather_code || 0;
+          const temp = Math.round(data.current.temperature_2m);
+          const info = WEATHER_CODES[code] || '';
+          weatherStr = `杭州${temp}°C ${info}`;
+          update();
+        }
       })
       .catch(() => {
-        updateTime();
+        weatherStr = '杭州 天气加载失败';
+        update();
       });
   }
 
-  updateTime();
-  setInterval(updateTime, 1000);
   fetchWeather();
+  setInterval(update, 1000);
 })();
