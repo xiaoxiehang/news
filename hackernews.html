@@ -239,6 +239,10 @@ body {
         <div class="header-subtitle">全球技术热点</div>
       </div>
     </div>
+    <div class="header-date">
+      <div class="header-date-day" id="header-date"></div>
+      <div class="header-date-weekday" id="header-weekday"></div>
+    </div>
     <nav class="header-nav">
       <a href="index.html" class="nav-link">新闻</a>
       <a href="github.html" class="nav-link">GitHub</a>
@@ -316,6 +320,15 @@ fetch('data/hackernews.json?t=' + Date.now())
     console.error('加载失败:', err);
     renderStories();
   });
+</script>
+<script>
+const WEEKDAYS = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+const now = new Date();
+const y = now.getFullYear();
+const m = String(now.getMonth() + 1).padStart(2, '0');
+const d = String(now.getDate()).padStart(2, '0');
+document.getElementById('header-date').textContent = y + '年' + m + '月' + d + '日';
+document.getElementById('header-weekday').textContent = WEEKDAYS[now.getDay()];
 </script>
 <script src="scripts/footer.js"></script>
 </body>
