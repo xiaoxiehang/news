@@ -534,15 +534,7 @@ fetch('data/github.json?t=' + Date.now())
     renderProjects();
   });
 </script>
-<script>
-const WEEKDAYS = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
-const now = new Date();
-const y = now.getFullYear();
-const m = String(now.getMonth() + 1).padStart(2, '0');
-const d = String(now.getDate()).padStart(2, '0');
-document.getElementById('header-date').textContent = y + '年' + m + '月' + d + '日';
-document.getElementById('header-weekday').textContent = WEEKDAYS[now.getDay()];
-</script>
+<script src="scripts/header.js"></script>
 <script src="scripts/footer.js"></script>
 </body>
 </html>
