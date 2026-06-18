@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Fetch GitHub trending repos and save as static JSON"""
+"""Fetch GitHub trending repos and save as static JSON.
+Fetches repos updated in the last 30 days; frontend filters by today/week/month."""
 
 import json
 import os
 import time
-import re
 import requests
 from datetime import datetime, timedelta
 
@@ -17,86 +17,14 @@ HEADERS = {
 if GITHUB_TOKEN:
     HEADERS['Authorization'] = f'token {GITHUB_TOKEN}'
 
-def get_recent_date(days=7):
+def get_recent_date(days=30):
     return (datetime.now() - timedelta(days=days)).strftime('%Y-%m-%d')
-
-def fetch_trending():
-    """Scrape GitHub trending page for truly trending repos"""
-    print("Fetching trending (from github.com/trending)...")
-    try:
-        resp = requests.get(
-            'https://github.com/trending?since=daily',
-            headers={'User-Agent': 'Mozilla/5.0'},
-            timeout=30
-        )
-        resp.raise_for_status()
-        html = resp.text
-        
-        # Extract repo links from trending page
-        repos = []
-        # Pattern: <h2 class="h3 lh-condensed">...<a href="/owner/repo"...>
-        pattern = r'<h2[^>]*>\s*<a[^>]*href="(/[^"]+)"'
-        matches = re.findall(pattern, html)
-        
-        for match in matches[:30]:
-            full_name = match.strip('/')
-            if '/' not in full_name or full_name.count('/') != 1:
-                continue
-            owner, name = full_name.split('/')
-            repos.append({
-                'name': name,
-                'full_name': full_name,
-                'owner': owner,
-                'description': '',
-                'stars': 0,
-                'forks': 0,
-                'language': None,
-                'topics': [],
-                '_need_details': True
-            })
-        
-        # Fetch details for each trending repo
-        detailed_repos = []
-        for repo in repos:
-            try:
-                detail = fetch_repo_details(repo['full_name'])
-                if detail:
-                    detailed_repos.append(detail)
-                time.sleep(0.5)
-            except Exception as e:
-                print(f"  ⚠️ {repo['full_name']}: {e}")
-        
-        print(f"  ✅ trending: {len(detailed_repos)} repos")
-        return detailed_repos
-    except Exception as e:
-        print(f"  ❌ trending: {e}")
-        return []
-
-def fetch_repo_details(full_name):
-    """Fetch details for a single repo"""
-    url = f'https://api.github.com/repos/{full_name}'
-    resp = requests.get(url, headers=HEADERS, timeout=15)
-    resp.raise_for_status()
-    item = resp.json()
-    return {
-        'name': item['name'],
-        'full_name': item['full_name'],
-        'owner': item['owner']['login'],
-        'description': (item.get('description') or '')[:200],
-        'html_url': item['html_url'],
-        'language': item.get('language'),
-        'stars': item['stargazers_count'],
-        'forks': item['forks_count'],
-        'topics': item.get('topics', [])[:5],
-        'created_at': item.get('created_at', '')[:10],
-        'updated_at': item.get('updated_at', '')[:10]
-    }
 
 CATEGORIES = {
     'trending': {
         'name': 'Trending',
         'desc': '近期最活跃的高星项目',
-        'query': 'stars:>5000 pushed:>' + get_recent_date(),
+        'query': 'stars:>5000 pushed:>' + get_recent_date(30),
         'sort': 'updated'
     },
     'ai': {
@@ -199,7 +127,7 @@ def main():
             'desc': config['desc'],
             'repos': repos
         }
-        time.sleep(2)  # Be nice to GitHub API
+        time.sleep(2)
     
     output_file = os.path.join(repo_dir, 'github.json')
     with open(output_file, 'w', encoding='utf-8') as f:

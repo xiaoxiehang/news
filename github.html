@@ -437,17 +437,7 @@ function renderProjects() {
   const cat = githubData.categories[currentCategory];
   if (!cat) return;
   
-  let projects = cat.repos || [];
-  
-  // Filter by time range
-  if (currentTimeRange === 'week') {
-    projects = projects.filter(p => {
-      const updated = new Date(p.updated_at);
-      const weekAgo = new Date();
-      weekAgo.setDate(weekAgo.getDate() - 7);
-      return updated >= weekAgo;
-    });
-  }
+  let projects = cat.repos[currentTimeRange] || [];
   
   filteredProjects = projects;
   
