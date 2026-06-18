@@ -437,7 +437,22 @@ function renderProjects() {
   const cat = githubData.categories[currentCategory];
   if (!cat) return;
   
-  let projects = cat.repos[currentTimeRange] || [];
+  let projects = cat.repos || [];
+  
+  // Filter by time range
+  const now = new Date();
+  if (currentTimeRange === 'today') {
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    projects = projects.filter(p => new Date(p.updated_at) >= today);
+  } else if (currentTimeRange === 'week') {
+    const weekAgo = new Date(now);
+    weekAgo.setDate(weekAgo.getDate() - 7);
+    projects = projects.filter(p => new Date(p.updated_at) >= weekAgo);
+  } else if (currentTimeRange === 'month') {
+    const monthAgo = new Date(now);
+    monthAgo.setDate(monthAgo.getDate() - 30);
+    projects = projects.filter(p => new Date(p.updated_at) >= monthAgo);
+  }
   
   filteredProjects = projects;
   
