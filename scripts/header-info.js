@@ -28,9 +28,23 @@
 
     let text = `${y}年${m}月${d}日 周${w} ${h}:${min}:${sec}`;
     if (weatherStr) {
-      text += ' · ' + weatherStr;
+      text += ' ' + weatherStr;
     }
     el.textContent = text;
+  }
+
+  // 城市名中英文映射
+  const CITY_NAMES = {
+    'hangzhou': '杭州', 'beijing': '北京', 'shanghai': '上海',
+    'shenzhen': '深圳', 'guangzhou': '广州', 'chengdu': '成都',
+    'wuhan': '武汉', 'nanjing': '南京', 'xian': '西安',
+    'tianjin': '天津', 'suzhou': '苏州', 'hangzhou': '杭州',
+    'zhengzhou': '郑州', 'changsha': '长沙', 'qingdao': '青岛',
+    'dalian': '大连', 'xiamen': '厦门', 'ningbo': '宁波'
+  };
+
+  function getCityNameZh(en) {
+    return CITY_NAMES[en.toLowerCase()] || en;
   }
 
   // 获取 IP 定位城市
@@ -39,7 +53,7 @@
       .then(r => r.json())
       .then(data => {
         if (data.city) {
-          cityName = data.city;
+          cityName = getCityNameZh(data.city);
           return { city: data.city, country: data.country_name || '' };
         }
         throw new Error('无法获取城市信息');
@@ -50,7 +64,7 @@
           .then(r => r.json())
           .then(data => {
             if (data.city) {
-              cityName = data.city;
+              cityName = getCityNameZh(data.city);
               return { city: data.city, country: data.country || '' };
             }
             throw new Error('无法获取城市信息');
@@ -58,7 +72,7 @@
       })
       .catch(() => {
         // 默认使用杭州
-        cityName = 'Hangzhou';
+        cityName = '杭州';
         return { city: 'Hangzhou', country: 'China' };
       });
   }
