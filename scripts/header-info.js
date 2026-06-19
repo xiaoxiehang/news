@@ -103,7 +103,7 @@
           const code = data.current.weather_code || 0;
           const temp = Math.round(data.current.temperature_2m);
           const info = WEATHER_CODES[code] || '';
-          weatherStr = `${cityName}${temp}°C ${info}`;
+          weatherStr = `${cityName} ${temp}°C ${info}`;
           update();
         }
       })
