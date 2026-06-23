@@ -7,21 +7,24 @@ import requests
 from datetime import datetime
 
 def fetch_quotes():
-    """Fetch random programming quotes"""
+    """Fetch random programming quotes with multiple fallback sources."""
     print("Fetching quotes...")
-    try:
-        # Using programming quotes API
-        resp = requests.get('https://api.quotable.io/random?tags=technology|programming|wisdom', timeout=10)
-        if resp.status_code == 200:
-            data = resp.json()
-            return {
-                'text': data.get('content', ''),
-                'author': data.get('author', '')
-            }
-    except Exception as e:
-        print(f"  ⚠️ Quotable API: {e}")
-    
-    # Fallback to hardcoded quotes
+
+    sources = [
+        ('Quotable', lambda: _fetch_from_quotable()),
+        ('AdviceSlip', lambda: _fetch_from_adviceslip()),
+    ]
+
+    for name, fetcher in sources:
+        try:
+            result = fetcher()
+            if result and result.get('text'):
+                print(f"  ✅ Quote via {name}")
+                return result
+        except Exception as e:
+            print(f"  ⚠️ {name} API: {e}")
+
+    print(f"  ℹ️ Using local fallback quote")
     quotes = [
         {"text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", "author": "Martin Fowler"},
         {"text": "First, solve the problem. Then, write the code.", "author": "John Johnson"},
@@ -33,6 +36,31 @@ def fetch_quotes():
         {"text": "The most damaging phrase in the language is.. it's always been done this way", "author": "Grace Hopper"}
     ]
     return quotes[int(datetime.now().timestamp()) % len(quotes)]
+
+def _fetch_from_quotable():
+    """Fetch quote from Quotable API."""
+    resp = requests.get(
+        'https://api.quotable.io/random?tags=technology|programming|wisdom',
+        timeout=10,
+        verify=False
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    return {
+        'text': data.get('content', ''),
+        'author': data.get('author', '')
+    }
+
+def _fetch_from_adviceslip():
+    """Fetch quote from AdviceSlip API (fallback)."""
+    resp = requests.get('https://api.adviceslip.com/advice', timeout=10)
+    resp.raise_for_status()
+    data = resp.json()
+    slip = data.get('slip', {})
+    return {
+        'text': slip.get('advice', ''),
+        'author': 'Daily Wisdom'
+    }
 
 def fetch_weather(city='Beijing'):
     """Fetch weather from Open-Meteo"""
@@ -75,7 +103,9 @@ def fetch_weather(city='Beijing'):
     return None
 
 def main():
-    repo_dir = '/workspace/news-repo/data'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_dir = os.path.join(script_dir, '..', 'data')
+    repo_dir = os.path.abspath(repo_dir)
     os.makedirs(repo_dir, exist_ok=True)
     
     output = {

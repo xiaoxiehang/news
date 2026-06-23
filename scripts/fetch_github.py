@@ -117,7 +117,9 @@ def fetch_repos(category_id, config):
         return []
 
 def main():
-    repo_dir = '/workspace/news-repo/data'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_dir = os.path.join(script_dir, '..', 'data')
+    repo_dir = os.path.abspath(repo_dir)
     os.makedirs(repo_dir, exist_ok=True)
     
     all_data = {

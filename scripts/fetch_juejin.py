@@ -64,7 +64,9 @@ def fetch_juejin(limit=30):
         return []
 
 def main():
-    repo_dir = '/workspace/news-repo/data'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_dir = os.path.join(script_dir, '..', 'data')
+    repo_dir = os.path.abspath(repo_dir)
     os.makedirs(repo_dir, exist_ok=True)
     
     articles = fetch_juejin(30)
