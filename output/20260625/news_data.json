@@ -1,0 +1,133 @@
+{
+  "date": "2026-06-25",
+  "date_str": "2026年06月25日",
+  "count": 14,
+  "news": [
+    {
+      "title": "OpenAI 发布首款与博通合作的定制 AI 推理芯片",
+      "summary": "OpenAI 发布了其首款定制 AI 推理芯片（代号 Jalapeno），该芯片由博通联合设计并由台积电在短短九个月内制造完成。据报道，与典型的 AI GPU 相比，这款新芯片可节省约 50%的成本。 这一举措标志着 OpenAI 向垂直整合的重大战略转变，减少了对英伟达主导的 AI 硬件的依赖，并可能颠覆更广泛的 AI 芯片市场。通过掌控自己的定制芯片，OpenAI 可以针对其模型专门优化硬件，",
+      "source": "jamdesk",
+      "link": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "《自然》论文质疑微软 Majorana 1 拓扑量子比特声明",
+      "summary": "发表在《自然》杂志上的一篇新评论文章对微软 Majorana 1 量子芯片背后的基础技术提出质疑，反驳了该公司关于实现拓扑量子比特突破的说法。 这一同行评审的反驳直接影响拓扑量子计算研究的轨迹，并可能影响未来的行业投资和微软的战略路线图。它凸显了围绕容错量子硬件声明的激烈科学审查。 微软于 2025 年 2 月发布了 Majorana 1 芯片，声称其利用一种新型拓扑导体材料制造了本质上能抵御局部",
+      "source": "The Verge",
+      "link": "https://www.theverge.com/tech/956450/nature-microsoft-quantum-computing-majorana-1-claims",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "谷歌向全球 Play 商店开放替代计费系统",
+      "summary": "谷歌正在全球范围内推出改革，允许在 Play 商店中使用替代计费系统，使开发者能够绕过传统的 30%交易抽成。这一政策转变源于该公司与 Epic Games 就应用商店垄断问题达成的反垄断和解。 这标志着一个改变行业的重大转变，打破了谷歌在 Android 应用计费方面的长期垄断，对移动开发者的收入模式产生了重大影响。这可能会降低消费者的成本，并重塑更广泛的移动应用经济。 即使在法院正式批准 Ep",
+      "source": "The Verge",
+      "link": "https://www.theverge.com/policy/956296/google-play-app-store-alternative-billing-fee-antitrust",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "全球终局行动重创主要网络犯罪工具",
+      "summary": "一项名为“终局行动”的全球协调执法行动成功破坏了两个广泛使用的网络犯罪工具。此次同步打击对支持网络犯罪生态系统的基础设施造成了重大影响。 破坏这些工具对“恶意软件即服务”模式和网络犯罪流水线造成了重大打击，增加了犯罪分子发动攻击的难度。这证明了国际合作在打击复杂的跨国网络威胁方面日益显著的有效性。 该行动专门针对网络犯罪生态系统中的赋能者，摧毁了用于促进非法活动的关键基础设施。全球执法机构合作执行",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/06/one-two-punch-delivered-in-global-operation-disrupts-cybercrime-assembly-line/",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "Mistral 发布 OCR 4，实现企业级文档结构化提取",
+      "summary": "Mistral AI 发布了 OCR 4，这是一款先进的文档智能模型，能够提取文档的结构化表示，包括边界框、块类型分类和置信度分数。它支持 170 种语言，并可作为单个容器在本地部署，专为受监管行业设计。 此次发布通过提供可追溯的结构化数据而非纯文本，解决了检索增强生成（RAG）管道中的关键瓶颈，这对于企业合规和审计至关重要。其本地部署选项也满足了受监管行业的数据主权需求，这些行业无法使用美国管辖",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/data/mistral-launches-ocr-4-turning-document-extraction-into-a-full-enterprise-ai-play",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "小米推出 HarnessX，任务中自主优化 AI 智能体脚手架",
+      "summary": "小米研究人员推出了 HarnessX 框架，将 AI 智能体脚手架视为一等对象，在任务执行过程中自主重写和优化其代码。这种动态自适应带来了显著的性能提升，尤其是对 Qwen3.5-9B 等较小的语言模型，其在具身规划任务中的性能提升了 44%。 这一进展表明，扩展基础模型并非提升 AI 能力的唯一途径，因为动态、自我改进的脚手架可以显著提升较小模型的性能。它通过用自动化的模块化生成器取代静态、手工",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/orchestration/xiaomis-harnessx-rewrites-its-own-ai-scaffolding-mid-task-and-smaller-models-gain-the-most",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "阿里巴巴发布 Qwen-AgentWorld，创新预测式智能体训练",
+      "summary": "阿里巴巴 Qwen 团队发布了 Qwen-AgentWorld，这是一种新颖的方法，训练模型预测环境返回结果而不是在智能体环境中执行动作，从而在七个基准测试中提升了性能。该统一架构涵盖了 MCP、搜索、终端、软件工程、Android、Web 和操作系统等七个领域。 这种范式转变解决了大规模训练智能体时面临的一个主要瓶颈，即允许模型从难以注入到实际生产环境中的模拟边缘情况中学习。通过将世界模型训练作",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/technology/alibabas-model-never-trained-as-an-agent-and-improved-agent-performance-across-seven-benchmarks",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "谷歌再失两名 Gemini 核心骨干转投 Anthropic",
+      "summary": "谷歌 Gemini 大模型研发的核心骨干、顶尖 AI 研究员 Jonas Adler 和 Alexander Pritzel 即将离职并加入 Anthropic。此前，Noam Shazeer 和诺贝尔奖得主 John Jumper 也已分别跳槽至 OpenAI 和 Anthropic。 核心研究员的持续流失凸显了谷歌面临的人才流失危机，因为 OpenAI 和 Anthropic 等竞争对手正筹备",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/968/224.htm",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "数据推翻 AI 取代论：工程师最抗风险",
+      "summary": "SignalFire 对超 8000 万名员工的分析显示，工程岗位是科技行业抗风险能力最强的，自 2019 年以来招聘量仅下降 11%，远低于整体 25%的降幅。这一数据直接反驳了 AI 工具正在迅速取代软件工程师的普遍观点。 这挑战了科技行业因 AI 导致大规模失业的普遍担忧，表明 AI 工具目前是在增强而非取代工程人才。它凸显了“杰文斯悖论”的实际应用，即 AI 带来的效率提升反而增加了对工程",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/968/223.htm",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "企业实施严格的 Token 配给以控制 AI 预算超支",
+      "summary": "由于员工在琐碎任务上耗尽了 AI 预算，企业正从无限制使用大语言模型转向严格的 Token 配给和使用政策。这标志着短暂的无节制 Token 消耗时代结束，企业正式进入严格的成本控制时代。 这一趋势凸显了企业 AI 采用中一个关键的运营和财务挑战，迫使工程领导者和 FinOps 团队在创新与严格的成本管理之间取得平衡。它标志着 LLM 运维的成熟，无限制的访问正在被受治理、具备预算意识的工作流所取",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/06/24/companies-are-scrambling-to-stop-employees-from-maxing-out-ai-budgets-with-small-tasks/",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "如何退出谷歌搜索的 AI 数据训练功能",
+      "summary": "谷歌更新了其搜索历史功能，将存储用户的交互记录（包括以图搜图等上传的媒体文件）用于训练其 AI 模型，但用户现在可以选择退出此数据收集。 这一更新凸显了大型科技公司扩展 AI 训练数据集与用户日益增长的数据隐私和知情同意担忧之间的持续矛盾。它为用户提供了实用的步骤，以保护其个人搜索和媒体数据不被用于机器学习。 该数据收集专门针对搜索历史和媒体上传（例如用于以图搜图的图片），这些内容现在被保留用于 ",
+      "source": "Wired",
+      "link": "https://www.wired.com/story/how-to-opt-out-of-google-search-new-ai-data-training/",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "中美顶尖 AI 专家对 AI 军备竞赛表达共同担忧",
+      "summary": "《连线》杂志的一篇文章揭示，中美两国顶尖的 AI 研究人员对正在进行的 AI 军备竞赛以及可能发生的灾难性“切尔诺贝利时刻”感到日益焦虑。 这种共同的焦虑标志着一个关键转变，即地缘政治竞争对手认识到不受控制的 AI 发展所带来的共同生存风险。它凸显了在更广泛的技术竞争背景下，国际社会在 AI 安全方面开展合作的紧迫性。 该评论侧重于地缘政治和安全影响而非技术深度，并使用“切尔诺贝利时刻”这一比喻来",
+      "source": "Wired",
+      "link": "https://www.wired.com/story/ai-arms-race-china-us-cooperation/",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "Mindstone 发布本地优先 AI 智能体编排平台 Rebel",
+      "summary": "Mindstone 正式发布了 Rebel，这是一款本地优先的 AI 智能体编排平台，它利用 Markdown 文件和组织记忆层自动将任务路由到最优的 AI 模型。该平台采用 Fair Source 许可证，允许 100 人以下的团队免费使用，而更大的组织则需要购买企业许可证。 通过基于共享的组织记忆在本地和云端模型之间动态切换，Rebel 帮助企业优化 API 成本、维护数据隐私并避免供应商锁定",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/orchestration/your-enterprise-ai-agents-should-automatically-remember-which-model-is-right-for-which-task-mindstone-built-the-capability-with-rebel",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "关键 Windows 安全启动证书到期影响数十亿设备",
+      "summary": "对 Windows 安全启动和 Linux shim 引导加载程序至关重要的 Microsoft UEFI CA 2011 安全证书即将到期，并将被新的 Windows UEFI CA 2023 证书取代。这一过渡影响超过 10 亿台 Windows PC 和多个 Linux 发行版，需要验证系统是否准备就绪。 如果在到期前未使用新证书更新系统，设备可能无法启动或拒绝合法的操作系统更新，从而给企业",
+      "source": "ZDNet",
+      "link": "https://www.zdnet.com/article/secure-boot-certificate-updates-2026/",
+      "published": "2026年06月25日",
+      "category": "科技",
+      "score": 6.0
+    }
+  ]
+}
