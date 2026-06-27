@@ -84,14 +84,17 @@ with open(f'{output_dir}/news_data.json', 'w', encoding='utf-8') as f:
     }, f, ensure_ascii=False, indent=2)
 print(f'  📁 保存: {output_dir}/news_data.json')
 
-# 同时更新根目录的 news_data.json（供前端读取）
+# 同时更新根目录和 data 目录的 news_data.json（供前端读取）
+news_json = {
+    'date': today,
+    'date_str': date_str,
+    'count': len(top_news),
+    'news': top_news
+}
 with open('/workspace/news-repo/news_data.json', 'w', encoding='utf-8') as f:
-    json.dump({
-        'date': today,
-        'date_str': date_str,
-        'count': len(top_news),
-        'news': top_news
-    }, f, ensure_ascii=False, indent=2)
+    json.dump(news_json, f, ensure_ascii=False, indent=2)
+with open('/workspace/news-repo/data/news_data.json', 'w', encoding='utf-8') as f:
+    json.dump(news_json, f, ensure_ascii=False, indent=2)
 
 # ===== Step 4: 生成小红书文案 =====
 def format_xhs_content(news_list, date_str):
@@ -142,28 +145,76 @@ with open('/workspace/news-repo/content_wechat.txt', 'w', encoding='utf-8') as f
 # ===== Step 6: 生成封面 HTML =====
 def generate_cover_html(news_list, date_str, variant='xhs'):
     """生成封面 HTML（小红书 3:4 或公众号 2.35:1）"""
-    top5 = news_list[:5]
+    # 小红书显示8条新闻，公众号显示5条
+    display_count = 8 if variant == 'xhs' else 5
+    top_news_display = news_list[:display_count]
+    
+    # 分类图标映射
+    category_icons = {
+        'AI': '🤖',
+        '科技': '💻',
+        '数码': '📱',
+        '开发': '🛠️',
+        '国内': '🇨🇳',
+        '国际': '🌍',
+        '财经': '💰',
+        '其他': '📋'
+    }
     
     if variant == 'xhs':
         width, height = 1080, 1440
-        bg_gradient = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)'
+        # 小红书：更鲜艳的渐变 + 装饰背景
+        bg_gradient = 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)'
+        decor_circles = '''
+        <div style="position:absolute;top:-50px;right:-50px;width:300px;height:300px;
+             background:rgba(255,255,255,0.1);border-radius:50%;"></div>
+        <div style="position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;
+             background:rgba(255,255,255,0.08);border-radius:50%;"></div>
+        <div style="position:absolute;top:50%;right:10%;width:200px;height:200px;
+             background:rgba(255,255,255,0.05);border-radius:50%;"></div>
+        '''
     else:
         width, height = 1080, 460
-        bg_gradient = 'linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%)'
+        bg_gradient = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%)'
+        decor_circles = '''
+        <div style="position:absolute;top:-30px;right:-30px;width:200px;height:200px;
+             background:rgba(255,255,255,0.1);border-radius:50%;"></div>
+        <div style="position:absolute;bottom:-50px;left:-50px;width:250px;height:250px;
+             background:rgba(255,255,255,0.08);border-radius:50%;"></div>
+        '''
     
+    # 生成新闻列表（带分类图标）
     news_html = ''
-    for i, news in enumerate(top5, 1):
+    for i, news in enumerate(top_news_display, 1):
         title = news['title']
-        if len(title) > 40:
-            title = title[:37] + '...'
-        news_html += f'''
-        <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
-            <span style="background:#e94560;color:white;font-size:20px;font-weight:700;
-                  min-width:32px;height:32px;border-radius:50%;display:flex;
-                  align-items:center;justify-content:center;">{i}</span>
-            <span style="color:#f0f0f0;font-size:{24 if variant=='xhs' else 22}px;
-                  line-height:1.5;font-weight:500;">{title}</span>
-        </div>'''
+        category = news.get('category', '其他')
+        icon = category_icons.get(category, '📋')
+        
+        # 根据变体调整标题长度
+        max_len = 45 if variant == 'xhs' else 40
+        if len(title) > max_len:
+            title = title[:max_len-3] + '...'
+        
+        # 小红书：卡片式布局；公众号：简洁列表
+        if variant == 'xhs':
+            news_html += f'''
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;
+                 background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);
+                 border-radius:16px;padding:18px 24px;box-shadow:0 8px 32px rgba(0,0,0,0.1);">
+                <div style="font-size:32px;min-width:48px;height:48px;display:flex;
+                     align-items:center;justify-content:center;">{icon}</div>
+                <div style="flex:1;color:white;font-size:26px;line-height:1.4;
+                     font-weight:600;">{title}</div>
+            </div>'''
+        else:
+            news_html += f'''
+            <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+                <span style="background:#e94560;color:white;font-size:18px;font-weight:700;
+                      min-width:28px;height:28px;border-radius:50%;display:flex;
+                      align-items:center;justify-content:center;">{i}</span>
+                <span style="color:#f0f0f0;font-size:22px;line-height:1.5;
+                      font-weight:500;">{icon} {title}</span>
+            </div>'''
     
     return f'''<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
@@ -171,26 +222,31 @@ def generate_cover_html(news_list, date_str, variant='xhs'):
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 body {{ width:{width}px; height:{height}px; overflow:hidden;
-       font-family:'Noto Sans SC',sans-serif; }}
+       font-family:'Noto Sans SC',sans-serif;position:relative; }}
 .cover {{ width:{width}px; height:{height}px; background:{bg_gradient};
-          padding:{50 if variant=='xhs' else 30}px {50 if variant=='xhs' else 40}px;
-          display:flex; flex-direction:column; justify-content:center; }}
-.header {{ margin-bottom:30px; }}
-.date {{ color:#e94560; font-size:18px; font-weight:700; letter-spacing:2px; }}
-.title {{ color:white; font-size:{36 if variant=='xhs' else 30}px; font-weight:900;
-          margin-top:8px; line-height:1.3; }}
-.divider {{ width:60px; height:4px; background:#e94560; margin:20px 0; border-radius:2px; }}
-.news-list {{ flex:1; }}
-.footer {{ margin-top:20px; color:rgba(255,255,255,0.5); font-size:14px; }}
+          padding:{50 if variant=='xhs' else 30}px;
+          display:flex; flex-direction:column; position:relative; }}
+.header {{ margin-bottom:30px;position:relative;z-index:10; }}
+.date {{ color:rgba(255,255,255,0.9); font-size:20px; font-weight:700; 
+         letter-spacing:2px;text-shadow:0 2px 8px rgba(0,0,0,0.2); }}
+.title {{ color:white; font-size:{42 if variant=='xhs' else 32}px; font-weight:900;
+          margin-top:10px; line-height:1.3; text-shadow:0 2px 8px rgba(0,0,0,0.2); }}
+.divider {{ width:80px; height:5px; background:white; margin:25px 0; border-radius:3px;
+           box-shadow:0 2px 8px rgba(0,0,0,0.2); }}
+.news-list {{ flex:1; position:relative;z-index:10; }}
+.footer {{ margin-top:auto; color:rgba(255,255,255,0.8); font-size:16px; 
+          font-weight:600; position:relative;z-index:10;
+          text-shadow:0 2px 8px rgba(0,0,0,0.2); }}
 </style></head>
 <body><div class="cover">
+    {decor_circles}
     <div class="header">
         <div class="date">📰 每日新闻简讯</div>
         <div class="title">{date_str}</div>
     </div>
     <div class="divider"></div>
     <div class="news-list">{news_html}</div>
-    <div class="footer">今日精选 {len(news_list)} 条重要新闻</div>
+    <div class="footer">✨ 今日精选 {len(news_list)} 条重要新闻</div>
 </div></body></html>'''
 
 # 生成小红书封面
