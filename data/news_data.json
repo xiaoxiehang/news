@@ -1,16 +1,160 @@
 {
-  "date": "2026-06-28",
-  "date_str": "2026年06月28日",
-  "count": 1,
+  "date": "2026-06-29",
+  "date_str": "2026年06月29日",
+  "count": 17,
   "news": [
     {
-      "title": "AI 编码工具将瓶颈从代码实现转向产品决策",
-      "summary": "Anthropic 报告称，Claude Code 等 AI 工具使工程团队的产出达到实际人数的三倍，促使公司雇佣更多产品经理来应对增加的产出。这标志着软件开发的主要瓶颈已从编写代码转向决定构建什么。 这一范式转变表明，随着 AI 承担繁重的编码工作，科技行业的竞争优势将越来越依赖于产品愿景、战略决策和清晰的规范。未能适应这种以产品为中心的现实的个人和组织，在 AI 增强开发时代将面临发展停滞的风",
-      "source": "VentureBeat",
-      "link": "https://venturebeat.com/infrastructure/claude-code-turned-every-engineer-into-three-now-companies-need-more-product-thinkers",
-      "published": "2026年06月28日",
+      "title": "开发者使用 Claude Code 获取 MRI 第二诊疗意见",
+      "summary": "一位开发者进行了一项实验，使用 Claude Code 分析自己的 MRI 扫描图像，并针对其肩部状况寻求第二诊疗意见。这一案例研究展示了大型语言模型在解读复杂医学影像方面的实际应用。 这项实验凸显了 AI 在医疗保健中提供便捷、按需第二诊疗意见的巨大潜力，并对传统诊断工作流程提出了挑战。它还引发了关于 AI 信任、人类医疗诊断局限性以及解读人体复杂性的重要讨论。 作者指出其 AI 辅助分析与之前",
+      "source": "engmarketer",
+      "link": "https://antoine.fi/mri-analysis-using-claude-code-opus",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "智元机器人第 15000 台精灵 G2 量产下线",
+      "summary": "智元机器人宣布其第 15000 台通用具身机器人精灵 G2 正式量产下线，标志着其规模化量产达到新高度。这一快速进展紧随该公司于今年 3 月和去年 12 月分别实现第 10000 台和第 5000 台机器人下线之后。 这一里程碑标志着中国人形机器人产业迈上了大规模真实场景应用和商业化落地的新阶段。通过规模化量产，智元旨在构建数据飞轮，在真实物理世界的交互中获取数据，从而不断提升机器人的智能水平和运",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/969/636.htm",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "中国重夺世界最快超级计算机称号",
+      "summary": "中国新型超级计算机 LineShine 登顶 TOP500 榜单，自 2018 年以来首次重夺世界最快超级计算机称号，取代了美国系统 El Capitan。值得注意的是，尽管美国持续限制先进计算硬件出口，该系统在未使用任何 GPU 的情况下实现了这一里程碑。 重夺榜首证明了中国在面临美国严格贸易制裁和芯片出口管制时，在高性能计算领域的韧性和技术自主能力。这凸显了全球超算格局和持续的地缘科技竞争的重",
+      "source": "The Verge",
+      "link": "https://www.theverge.com/tech/958768/china-claims-the-worlds-fastest-supercomputer",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "GLM 5.2 在 Semgrep 网络安全基准测试中击败 Claude",
+      "summary": "智谱 AI 发布的开源模型 GLM 5.2（拥有 753B 参数）在 Semgrep 的网络安全和漏洞发现基准测试中超越了 Claude。这一成就凸显了中国开源模型与西方领先商业模型在专业安全任务上的能力差距正在显著缩小。 这一进展对于评估用于智能体编程和漏洞检测的高性价比开源替代方案的开发者和安全从业者至关重要。它还引发了关于商业模型中的安全护栏如何影响基准测试表现（与无限制的开源模型相比）的更",
+      "source": "jms703",
+      "link": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
+      "published": "2026年06月29日",
       "category": "科技",
       "score": 7.0
+    },
+    {
+      "title": "OpenClaw 插件市场曝出命名空间抢注供应链漏洞",
+      "summary": "安全研究人员发现 ClawHub 市场中存在 23 个冒充 OpenClaw 和 ClawHub 官方技能的插件，另有 557 个使用了误导性命名。对此，ClawHub 已更新命名空间管理规则并移除了这些具有欺骗性的插件，以防止供应链投毒。 这种命名空间抢注漏洞凸显了 AI 智能体生态系统中严重的供应链安全风险，因为恶意行为者可能利用看似可信的插件来执行恶意代码或进行敏感操作。这强调了 AI 市场",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/969/693.htm",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "三星与 SK 海力士将宣布大规模半导体投资计划",
+      "summary": "三星电子和 SK 海力士将宣布未来十年超过 1000 万亿韩元的大规模半导体投资计划，以加速芯片集群建设。该计划将在韩国总统主持的全国报告会上发布，并详细说明现有龙仁半导体集群大幅提前的建设时间表。 这一前所未有的投资凸显了在 AI 芯片需求爆发之际，争夺 AI 硬件基础设施的关键竞争。它将显著影响全球半导体供应链，巩固韩国在先进存储和逻辑芯片市场的地位，同时加速国内半导体集群的发展。 投资将涵盖",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/969/664.htm",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "苹果游说美国政府，寻求采购被制裁的长鑫存储内存芯片",
+      "summary": "苹果公司正游说美国政府寻求豁免，以采购目前被列入美国实体清单的中国长鑫存储（CXMT）的 DRAM 内存芯片。此举旨在缓解由 AI 需求激增导致的内存价格持续上涨所带来的财务压力。 这凸显了美国大型科技公司在 AI 硬件需求激增与严格的地缘政治半导体制裁之间所面临的严峻两难境地。它深刻反映了全球供应链的矛盾，即 AI 驱动的数据中心扩张与美国出口管制政策之间的冲突。 长鑫存储是中国最大的 DRAM",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/969/651.htm",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "DeepSeek 发布 DSpark 加速大模型推理速度",
+      "summary": "DeepSeek 推出了 DSpark，这是一种新的推测解码框架，无需重新训练旗舰版 V4 Pro 模型即可将大语言模型推理速度提升高达 85%。它通过在现有检查点上附加一个额外的推理模块来实现这一目标。 通过将大模型部署视为复杂的系统工程问题，DSpark 显著降低了推理成本和延迟，使大语言模型在实时应用中更加高效。这一进展凸显了行业重心向优化推理基础设施而非仅仅关注模型训练的转变。 DSpar",
+      "source": "爱范儿",
+      "link": "https://www.ifanr.com/1670249?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "检方在帕利塞兹野火纵火案审判中使用 ChatGPT 记录作为证据",
+      "summary": "在帕利塞兹野火纵火案审判中，检方将被告 Jonathan Rinderknecht 的 ChatGPT 对话记录与传统数字和物理证据一起作为关键证据。这标志着大型语言模型的交互记录被直接用于重大刑事案件的一个显著案例。 此案确立了一个重要的法律先例，表明 AI 对话记录可以被传唤并用作刑事审判的直接证据。它引发了关于用户隐私、AI 公司数据保留政策以及与生成式 AI 工具交互的更广泛法律影响的关键",
+      "source": "The Verge",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/958751/prosecutors-chatgpt-palisades-wildfire-arson-mistrial",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "期刊撤回普朗克两篇 1940 年代论文",
+      "summary": "一家科学期刊正式撤回了基础物理学家、诺贝尔奖得主马克斯·普朗克在 20 世纪 40 年代发表的两篇论文。被撤回的文章现已无法访问，其在线链接指向空白页面和空的 PDF 文件。 撤回量子力学奠基人几十年前的论文是一个非常不寻常的举动，引发了关于历史学术诚信和现代出版标准的批判性讨论。这凸显了科学界在所有历史时期的科学文献中维持严格伦理标准的持续努力。 被撤回的论文在网上现已完全无法访问，其链接会跳转",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/science/2026/06/why-did-this-journal-retract-two-1940s-papers-by-max-planck/",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "提示词注入利用企业 AI 代理与 RAG 管道的设计缺陷",
+      "summary": "OWASP 和 CrowdStrike 的最新报告强调，提示词注入仍是企业 AI 的首要漏洞，攻击者正越来越多地针对 RAG 管道、AI 代理和模型路由器等复杂架构。诸如 Microsoft 365 Copilot 中 EchoLeak 漏洞的真实零点击攻击表明，恶意提示词可以绕过安全机制窃取敏感数据。 随着企业扩大 AI 在自动化和分析方面的部署，LLM 无法区分指令和数据的根本缺陷带来了严重的",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/security/prompt-injection-is-exploiting-enterprise-ais-biggest-design-flaws-by-targeting-agents-rag-pipelines-and-model-routers",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "比亚迪自研智驾芯片璇玑 A3 预计 2027 年首搭腾势量产车型",
+      "summary": "比亚迪计划于 2027 年在腾势品牌量产车型上首次搭载自研的“璇玑 A3”智驾芯片。该芯片已于 2026 年 5 月正式发布并开启规模化量产，支持 L3 和 L4 级自动驾驶。 此举凸显了比亚迪从电动化向智能化转型的战略重心，强调了在智能汽车下半场自研芯片的重要性。它展示了国产自动驾驶芯片商业化的重大进展，有望降低对英伟达等海外供应商的依赖。 三颗“璇玑 A3”芯片（配备 16 核 CPU）可提供",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/969/681.htm",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "高通以差异化战略挑战英伟达 AI 垄断",
+      "summary": "高通计划通过跨越移动设备到云平台的差异化战略，挑战英伟达在 AI 硬件市场的主导地位。 这一转变意义重大，因为它有望打破英伟达目前在 AI 计算领域的垄断，为行业提供替代硬件方案，并可能降低 AI 部署的成本。 提供的文本是一个简短的预告，缺乏具体的架构细节，但它强调了高通在利用现有移动端专业知识的同时向云端 AI 扩展的重点。",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8044290.html",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "DeepSeek 论文揭示基础设施优化与降本增效秘诀",
+      "summary": "一篇媒体预告文章重点介绍了一篇技术论文，该论文详细说明了 DeepSeek 如何优化其 AI 基础设施以防止系统崩溃并显著降低运营成本。 随着大语言模型规模的扩大，基础设施的稳定性和成本效率成为关键瓶颈，这使得 DeepSeek 的工程解决方案对整个 AI 行业具有重要的参考价值。 提供的文本仅仅是一个简短的“标题党”式引言，缺乏底层论文中实际的技术深度、具体的架构变更或定量指标。",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8044306.html",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "中国科技巨头全面打响具身智能生态战",
+      "summary": "华为、腾讯、百度等中国科技巨头正大力投资并构建具身智能与机器人基础模型的全面生态系统。这一战略转变正吸引大量风险投资和热钱涌入机器人“大脑”的研发领域。 这标志着一个关键的行业趋势，即顶级科技公司正将重心从纯数字 AI 转向物理世界应用，从而加速自主机器人的商业化进程。它预示着资本向具身智能的大规模重新分配，可能会重塑制造业和服务业的未来。 这场竞争主要集中在开发作为机器人“大脑”的基础模型上，使",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8044419.html",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "福特在 AI 实验失败后重新雇佣资深工程师",
+      "summary": "福特在发现完全依赖人工智能无法生产出高质量的汽车产品后，开始重新雇佣经验丰富的资深工程师。该公司承认，他们曾错误地认为仅仅引入人工智能就能自动带来卓越的工程成果。 这一转变对汽车和科技行业来说是一个重要的现实检验，凸显了人工智能在复杂的物理工程任务中目前的局限性。它强调了在确保汽车制造的产品质量和安全性方面，人类的专业知识和经验积累仍然是不可替代的。 该计划专门针对具有深厚领域专业知识的资深工程师",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "Suno 推出 Spark 孵化器计划以获取独立艺术家音乐授权",
+      "summary": "AI 音乐生成公司 Suno 推出了 Spark 孵化器计划，为未签约的独立艺术家提供资金、指导和营销支持，以换取授权其音乐数据用于训练 AI 模型。 这一举措标志着生成式 AI 公司的战略转变，从未经授权的网页抓取转向正式的数据授权与合作，以应对持续的版权诉讼并构建合法的音乐流媒体生态系统。 申请 Spark 计划的艺术家必须是未签约的歌手、词曲作者或制作人，这反映了 Suno 更宏大的目标：从",
+      "source": "The Verge",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/958801/suno-launches-spark-incubator-program-to-feed-independent-artists-to-its-ai-machine",
+      "published": "2026年06月29日",
+      "category": "科技",
+      "score": 6.0
     }
   ]
 }
