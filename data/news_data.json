@@ -1,131 +1,32 @@
 {
-  "date": "2026-07-03",
-  "date_str": "2026年07月03日",
-  "count": 14,
+  "date": "2026-07-05",
+  "date_str": "2026年07月05日",
+  "count": 3,
   "news": [
     {
-      "title": "New Alibaba AI framework skips loading every tool, cutting agent token use 99%",
-      "summary": "Alibaba researchers developed SkillWeaver, a novel AI framework that optimizes agent tool routing through execution graphs and iterative feedback, reportedly cutting token usage by 99%.",
-      "source": "VentureBeat",
-      "link": "https://venturebeat.com/orchestration/new-alibaba-ai-framework-skips-loading-every-tool-cutting-agent-token-use-99",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "库克最后 1 次以 CEO 身份参与，苹果 7 月 30 日公布第 3 财季财报",
-      "summary": "Apple announces its Q3 2026 earnings release date, marking Tim Cook's last financial report as CEO before John Ternus assumes the role in September.",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/971/962.htm",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "IQM, Europe’s first public quantum company, admits the future of the tech is uncertain",
-      "summary": "European full-stack quantum computing company IQM has gone public on the Nasdaq with a $1.9 billion valuation while acknowledging the uncertain future of the technology.",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/02/iqm-europes-first-public-quantum-company-admits-the-future-of-the-tech-is-uncertain/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "Anthropic is discussing a new custom chip with Samsung",
-      "summary": "Anthropic is in discussions with Samsung to develop custom AI chips, mirroring OpenAI's recent partnership with Broadcom to reduce reliance on standard GPU suppliers.",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "Can Cursor Remain a Platform for OpenAI and Anthropic’s Models Inside SpaceX?",
-      "summary": "An analysis of whether Cursor can maintain its open, multi-model platform strategy following its acquisition by SpaceX, highlighting the shifting dynamics between AI developer tools and frontier labs.",
-      "source": "Wired",
-      "link": "https://www.wired.com/story/can-cursor-remain-an-open-platform-inside-of-spacex/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "Newly discovered PamStealer isn't your typical macOS malware",
-      "summary": "Security researchers have identified PamStealer, a new macOS infostealer utilizing clever stealth tradecraft, underscoring the increasing sophistication of Mac-targeted malware.",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/security/2026/07/new-pamstealer-macos-malware-uses-clever-tradecraft-to-remain-stealthy/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "iOS 27 helps apps detect when a user may be getting scammed in real time",
-      "summary": "Apple is introducing a new framework in iOS 27 that enables apps to detect and prevent social engineering scams in real time across various communication channels.",
-      "source": "9to5Mac",
-      "link": "https://9to5mac.com/2026/07/02/ios-27-helps-apps-detect-when-a-user-may-be-getting-scammed-in-real-time/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "Virginia bans sale of geolocation data",
-      "summary": "Virginia has passed legislation banning the sale of geolocation data, sparking discussions on privacy, data broker regulations, and the practical implications of user consent.",
-      "source": "toomuchtodo",
-      "link": "https://www.hunton.com/privacy-and-cybersecurity-law-blog/virginia-bans-sale-of-geolocation-data",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "Exapunks (2018)",
-      "summary": "A Hacker News thread discussing the enduring appeal of the 2018 programming puzzle game Exapunks and its influence on developers' approaches to code optimization and system architecture.",
-      "source": "yu3zhou4",
-      "link": "https://www.zachtronics.com/exapunks/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "Private space pilots are flying orbital missions for the US Space Force",
-      "summary": "Private space companies True Anomaly and Rocket Lab are conducting orbital satellite fly-by missions for the U.S. Space Force, highlighting the growing privatization of military space operations.",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/02/private-space-pilots-are-flying-orbital-missions-for-the-us-space-force/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "A warning sign about AI’s real cost, courtesy of Google and Amazon",
-      "summary": "The article highlights how the massive energy demands of AI are making it increasingly difficult for major tech companies like Google and Amazon to meet their net-zero carbon pledges.",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/02/a-warning-sign-about-ais-real-cost-courtesy-of-google-and-amazon/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "Meta quietly launches vibe-coded gaming app Pocket",
-      "summary": "Meta has quietly launched Pocket, an experimental AI application that allows users to generate and share interactive mini-games using natural language text prompts.",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/",
-      "published": "2026年07月03日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "Tesla driver faces manslaughter charges over Texas crash that killed a woman inside her home",
-      "summary": "A Texas man is facing manslaughter charges after his Tesla, which he claimed was operating on Full Self-Driving, crashed into a home and killed a woman.",
+      "title": "NASA 委托 Katalyst Space 拯救 Swift 天文台免于轨道衰减",
+      "summary": "NASA 启动了一项紧急任务，使用 Katalyst Space Technologies 的 Link 航天器拦截并提升老化的 Swift 天文台的轨道，该天文台因太阳风暴的影响，面临今年在地球大气层中烧毁的风险。 这项任务代表了商业在轨卫星服务的一个重要里程碑，证明了机器人航天器拯救宝贵科学资产并延长其使用寿命的可行性。它突显了行业向主动轨道碎片管理和卫星寿命延长服务发展的趋势。 Link 航",
       "source": "The Verge",
-      "link": "https://www.theverge.com/transportation/961161/tesla-fsd-katy-tx-manslaughter-charges",
-      "published": "2026年07月03日",
+      "link": "https://www.theverge.com/science/961459/nasa-emergency-save-swift-observatory-katalyst-space-technologies",
+      "published": "2026年07月05日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "命令与征服：将军使用 AI 原生移植至苹果平台",
+      "summary": "一位爱好者开发者使用 Fable AI 辅助代码转换工具，成功将经典即时战略游戏《命令与征服：将军》原生移植到了 macOS、iPhone 和 iPad 平台。该项目基于 EA 发布的 GPL v3 源代码以及现有的 macOS/Linux 移植版本构建。 该项目凸显了 AI 工具在协助复杂、大规模代码库迁移以及将传统游戏移植到现代硬件方面日益增长的能力。同时，它也为社区提供了一个实际案例，展示了",
+      "source": "asronline",
+      "link": "https://github.com/ammaarreshi/Generals-Mac-iOS-iPad/tree/main",
+      "published": "2026年07月05日",
       "category": "科技",
       "score": 6.0
     },
     {
-      "title": "Fable 5 just set a new AI freelance work performance record - but it can't replace humans yet",
-      "summary": "An Anthropic AI model has set a new performance record for automating freelance tasks, showcasing significant progress in AI automation while highlighting that human workers are not yet fully replacea",
-      "source": "ZDNet",
-      "link": "https://www.zdnet.com/article/anthropic-fable-5-freelance-work-performance-record/",
-      "published": "2026年07月03日",
+      "title": "特斯拉无人驾驶 Robotaxi 服务进军迈阿密且无安全员",
+      "summary": "特斯拉已将其无人驾驶 Robotaxi 服务扩展至迈阿密西部的一小块区域，且车内不配备安全员。这继达拉斯和休斯敦之后，同样避开了繁忙的市中心区域。 在迈阿密部署无安全员的 Robotaxi 加剧了特斯拉与 Waymo 和 Zoox 等成熟企业在自动驾驶网约车市场的竞争。这标志着特斯拉在将其自动驾驶车队扩展到美国多个城市的过程中迈出了重要的运营里程碑。 与最初在奥斯汀推出时因安全员引发争议不同，迈阿",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/972/678.htm",
+      "published": "2026年07月05日",
       "category": "科技",
       "score": 6.0
     }
