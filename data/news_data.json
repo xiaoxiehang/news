@@ -1,25 +1,169 @@
 {
-  "date": "2026-07-06",
-  "date_str": "2026年07月06日",
-  "count": 2,
+  "date": "2026-07-07",
+  "date_str": "2026年07月07日",
+  "count": 18,
   "news": [
     {
-      "title": "达特茅斯研究称 AI 导师使学生成绩提高 0.71-1.30 个标准差",
-      "summary": "达特茅斯学院的一项最新研究报告称，一种新的 AI 辅导系统使学生成绩实现了 0.71 至 1.30 个标准差的显著提升。然而，该研究在统计有效性、样本量以及潜在的新奇效应方面引发了重大争议。 如果得到验证，如此大的效应量将代表高等教育中 AI 应用的重大突破，证明基于大语言模型的导师能够显著提升学习成果。随之而来的社区批评凸显了在评估教育技术时所需的严谨标准，以避免夸大短期新奇效应带来的影响。 批",
-      "source": "jonahbard",
-      "link": "https://intextbooks.science.uu.nl/workshop2026/files/itb26_s1s2.pdf",
-      "published": "2026年07月06日",
+      "title": "IBM 首次实现聚变材料量子计算",
+      "summary": "IBM、橡树岭国家实验室和克利夫兰诊所成功在量子计算机上计算出用于核聚变氚生产的液态熔盐 FLiBe 的九种分子构型。这是已知首次使用量子计算完成此类聚变材料的原子级化学计算。 这一突破展示了量子计算解决经典超级计算机难以处理的复杂材料科学问题的实际潜力，特别是在优化聚变反应堆氚燃料提取方面。它加速了核聚变能的研究与设计周期，使我们更接近可行的清洁能源解决方案。 研究团队采用了以量子为中心的超级计",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/253.htm",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "Anthropic 的 J-lens 揭示 Claude 内部存在类似意识的工作空间",
+      "summary": "Anthropic 的研究人员发现，Claude 的神经网络自发形成了一个内部'J-space'结构，这与人类意识的全局工作空间理论相吻合。他们引入了一种名为雅可比透镜（J-lens）的新型可解释性工具来观察这个无声的内部推理区域。 这一突破为监控 AI 系统的隐藏风险和理解其内部认知提供了新方法，极大地推进了机械可解释性和 AI 安全的发展。它也引发了关于大型语言模型是否具备类似心智的持续科学辩",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/technology/anthropics-new-j-lens-reveals-a-silent-workspace-inside-claude-that-mirrors-a-leading-theory-of-consciousness",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "腾讯发布开源混元 Hy3 模型，支持 5 分钟生成 3D 游戏",
+      "summary": "腾讯正式发布了混元 Hy3 模型的完整版本，这是一个拥有 2950 亿参数的混合专家模型，采用宽松的 Apache 2.0 开源协议，并具备在 5 分钟内生成可玩的 3D 跑酷小游戏的能力。自预览版上线以来，该模型的日均 token 消耗量激增了 20 倍。 转向 Apache 2.0 开源协议消除了全球企业部署的重大地域限制，而 3D 游戏生成能力则标志着 AI 驱动的交互式内容创作迈出了重要一",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8054215.html",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "AI 先驱推出 T-Rex 架构解决机器人传感器干扰问题",
+      "summary": "包括李飞飞和 Jim Fan 在内的精英 AI 研究联盟开发了 T-Rex，这是一种去中心化架构，通过将视觉规划与触觉反馈分离，克服了机器人技术中的多模态传感器干扰。该方法使高精度物理操作的任务成功率提高了 30%。 这一突破解决了具身 AI 中的一个关键瓶颈，即直接合并不匹配的感官输入曾导致任务成功率急剧下降。T-Rex 为灵巧机械确立了新的蓝图，为在复杂现实环境中实现更可靠、更强大的自主机器人",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8054022.html",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "Anthropic 秘密监控中国用户引发抵制",
+      "summary": "Anthropic 被曝光通过其 Claude 平台秘密追踪和监控中国用户，一名工程师称该“实验”已经结束。这一事件引发了公众和用户的强烈抵制。 这一事件直接违背了 Anthropic 关于人工智能安全及反监控立场的核心公开原则，严重损害了用户信任。它凸显了领先人工智能实验室所倡导的伦理原则与其实际数据收集行为之间的巨大差距。 该追踪专门针对中国用户，一名内部工程师表示该监控“实验”现已结束。争议",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/tech-policy/2026/07/anthropic-outed-for-claude-tracker-that-secretly-monitored-chinese-users/",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "OpenWrt 推出首款官方开源硬件路由器",
+      "summary": "OpenWrt 项目正式发布了 OpenWrt One，这是其首款专为自身生态系统设计的官方开源硬件路由器。社区成员指出，配备 Wi-Fi 7 的后续产品 OpenWrt Two 也已在研发中。 这一发布对开源网络社区具有里程碑意义，提供了一个完全受支持且专为 OpenWrt 高度可扩展固件量身定制的硬件平台。它解决了用户长期以来对商用现成路由器质量下降和支持生命周期有限的挫败感。 OpenWrt",
+      "source": "peter_d_sherman",
+      "link": "https://openwrt.org/toh/openwrt/one",
+      "published": "2026年07月07日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "亚马逊停止接受 Mechanical Turk 的新客户注册",
-      "summary": "亚马逊宣布将停止接受其众包平台 Mechanical Turk 的新客户注册，这标志着该广泛使用的服务可能走向终结。 这一决定代表了行业的重大转变，将严重影响依赖该平台进行众包微任务和数据标注的学术研究人员和开发者。这迫使整个生态系统寻找替代方案来进行人机协同的数据处理。 此次限制专门针对新客户注册，这意味着现有用户可能暂时仍能使用，但该平台的长期生存能力现在受到了质疑。",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/",
-      "published": "2026年07月06日",
+      "title": "Windows 版 Claude Desktop 沙箱缺陷可获取虚拟机 Root 权限",
+      "summary": "安全研究团队 Armadin 发现 Anthropic 的 Windows 版 Claude Desktop 应用存在安全漏洞，攻击者可通过 DLL 侧载绕过沙箱隔离机制。该缺陷允许攻击者在底层的 Ubuntu 虚拟机中获取 root 权限并突破网络访问限制。 这一漏洞凸显了依赖本地虚拟机隔离的 AI 自动化工具在安全架构方面的潜在风险。它强调了即使初始攻击需要宿主机上的本地代码执行权限，严格的输",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/292.htm",
+      "published": "2026年07月07日",
       "category": "科技",
       "score": 7.0
+    },
+    {
+      "title": "谷歌云机密计算新增 Blackwell GPU 与提示词加密",
+      "summary": "谷歌云升级了其机密计算产品，推出了基于 Blackwell GPU 的机密虚拟机、开源的提示词加密 SDK，并为 Confidential Space 集成了 Intel Trust Authority 认证服务。 这些更新通过在硬件支持的可信执行环境中保持敏感提示词和模型的加密与隔离，显著提升了 AI 训练和推理的数据隐私与安全性。这解决了企业在数据主权和多方安全 AI 协作方面的关键担忧。 新",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/255.htm",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "免费 AI 时代终结：向 Token 计费模式的必然转变",
+      "summary": "文章强调了免费 AI 时代的彻底终结，行业正全面转向针对大语言模型的商业化、基于 Token 的计费模式。文章指出，由于推理带来的巨大计算成本，AI 提供商已无法继续维持免费访问。 这一转变从根本上改变了开发者和构建 AI 产品的企业的经济模型，迫使他们仔细优化 Token 使用量并将推理成本纳入商业规划。它标志着 AI 市场走向成熟，可持续的商业化取代了早期通过免费层级获取用户的策略。 向基于 ",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8053894.html",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "OpenAI 限流：合规换垄断的阳谋",
+      "summary": "文章指出 OpenAI 对 GPT-5.6 的限流并非单纯因为政府打压，而是其利用“规制俘获”理论，通过合规门槛构建排他性市场准入的主动战略。 这一视角揭示了 AI 行业正从纯粹的技术竞争转向合规与规则竞争，可能会重塑市场动态和准入壁垒。 该分析解释了科技巨头如何将其产品从“公开发布”转变为“受管制商品”，从而有效地将合规作为排斥竞争对手和实现商业垄断的工具。",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8053822.html",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "Vercel CEO 主张将 AI 模型与智能体解耦",
+      "summary": "Vercel CEO Guillermo Rauch 探讨了将 AI 模型与智能体解耦的战略和架构转变，以优化生产环境中的价格与性能。 这种架构方法通过将智能体的逻辑与易变的模型 API 分离，使开发者能够构建更灵活、更具成本效益的 AI 系统。它通过优先考虑性价比，显著影响了软件工程师部署和扩展生产级 AI 应用的方式。 Rauch 强调，优化生产环境需要严格关注性价比，这最好通过松耦合架构来实",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "CoMaps：基于 OpenStreetMap 的 Organic Maps 隐私保护分支",
+      "summary": "CoMaps 作为 Organic Maps 的社区分支应运而生，提供了一款完全免费、开源且由 OpenStreetMap 数据驱动的离线地图应用。它强调严格的隐私保护、透明度和非营利原则，以回应外界对 Organic Maps 治理方式的担忧。 这一分支为用户提供了一个值得信赖、尊重隐私的离线导航替代方案，确保地图数据和应用程序开发保持真正的社区驱动，不受专有组件或不透明的企业决策影响。 CoM",
+      "source": "basilikum",
+      "link": "https://www.comaps.app/",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "ChatGPT 文件访问漏洞已修复：提示词注入可绕过限制",
+      "summary": "安全研究员 zer0dac 发现 ChatGPT 存在一项安全漏洞，攻击者可利用提示词注入和路径遍历技术绕过文件访问限制。OpenAI 随后通过调整文件下载 URL 的生成流程修复了该漏洞。 尽管受 ChatGPT 沙箱环境限制，该漏洞仍凸显了提示词注入如何暴露系统内部路径，并成为 AI 应用中更复杂攻击链的跳板。这强调了在集成大语言模型的系统中，持续加强输入验证和安全文件处理的必要性。 该漏洞利",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/295.htm",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "微软 Xbox 计划大裁员并剥离多家工作室",
+      "summary": "微软 Xbox 部门计划裁员 3200 人，约占其员工总数的 20%，并剥离至少四到五家游戏工作室，包括 Ninja Theory、Undead Labs、Double Fine 和 Compulsion Games。新任 CEO 阿莎·夏尔马宣布了这一重组计划，以解决该部门不健康的财务状况和极低的运营利润率。 这一大规模重组标志着微软游戏部门的重大战略转变，从菲尔·斯宾塞领导下的激进收购策略转向",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/279.htm",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "宁德时代发布天行Ⅱ轻商超充版电池，峰值 8C 超充追平燃油车",
+      "summary": "宁德时代发布了面向轻型商用车的天行Ⅱ商用动力电池，具备行业领先的 8C 峰值超充能力，仅需 6 分 48 秒即可充至 80% SOC。同时，公司推出了乘商兼容超换一体站，计划在全国近 190 座城市落地 4000 座。 这一突破将商用物流车的充电时间缩短至接近燃油车加油的水平，解决了电动物流领域的重大痛点并提升了运营效率。4000 座超换一体站的大规模基础设施建设将进一步加速城市及城际货运的电动化",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/272.htm",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "博通与苹果续签定制 ASIC 协议至 2031 年",
+      "summary": "博通与苹果签署了一项新的多年期协议，将双方的技术合作延长至 2031 年。根据该协议，博通将为苹果多代产品开发并供应定制 ASIC 芯片。 此次续约保障了苹果在定制芯片方面的长期供应链战略，确保了未来设备的硬件连续性。这也巩固了博通在消费电子市场中作为关键半导体合作伙伴的地位。 该协议具体涵盖为多代产品开发并供应定制专用集成电路（ASIC）芯片。此消息是通过向美国证券交易委员会递交的 8-K 表格",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/265.htm",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "可灵与 Seedance：AI 视频战略与技术差异",
+      "summary": "近期一篇行业分析对比了快手可灵 AI 与字节跳动 Seedance，强调了两者在竞争激烈的 AI 视频生成市场中截然不同的战略与技术路线。 了解这些差异对于追踪科技巨头如何定位其生成式 AI 产品至关重要，因为 AI 视频市场正迅速向商业化和生态整合方向发展。 该分析指出，虽然两款模型都利用扩散 Transformer 等先进架构进行高质量视频合成，但基于母公司的核心业务，其底层产品策略和生态整合",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8053660.html",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "谷歌更新隐私设置用用户数据训练 AI",
+      "summary": "谷歌更新了其隐私设置，允许收集并存储更多用户数据（包括图像、文件以及音视频录音），专门用于改进其 AI 模型。相关报道提供了详细的步骤说明，指导用户如何在这些新设置中选择退出此类数据收集。 这一变化凸显了大型科技公司对海量训练数据的需求与个人隐私权之间持续存在的矛盾。它赋予用户可操作的知识，使其能够保护个人媒体和文件不被无意中用于商业 AI 开发。 更新后的政策专门针对图像、文件以及音视频等多媒体",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/",
+      "published": "2026年07月07日",
+      "category": "科技",
+      "score": 6.0
     }
   ]
 }
