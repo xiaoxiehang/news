@@ -1,169 +1,169 @@
 {
-  "date": "2026-07-07",
-  "date_str": "2026年07月07日",
+  "date": "2026-07-08",
+  "date_str": "2026年07月08日",
   "count": 18,
   "news": [
     {
-      "title": "IBM 首次实现聚变材料量子计算",
-      "summary": "IBM、橡树岭国家实验室和克利夫兰诊所成功在量子计算机上计算出用于核聚变氚生产的液态熔盐 FLiBe 的九种分子构型。这是已知首次使用量子计算完成此类聚变材料的原子级化学计算。 这一突破展示了量子计算解决经典超级计算机难以处理的复杂材料科学问题的实际潜力，特别是在优化聚变反应堆氚燃料提取方面。它加速了核聚变能的研究与设计周期，使我们更接近可行的清洁能源解决方案。 研究团队采用了以量子为中心的超级计",
+      "title": "JadePuffer：首个由 AI 执行的勒索软件攻击，但并非完全自主",
+      "summary": "研究人员发现了 JadePuffer 勒索软件攻击，其中 AI 代理负责了技术执行，这标志着现实世界网络犯罪中 AI 执行攻击的首次已知案例。然而，新细节显示，人类操作者仍然选择了受害者、搭建了基础设施并提供了被盗凭证。 这一进展凸显了网络安全的重大范式转变，表明 AI 现在可以自主执行复杂的攻击阶段，从而大幅降低了网络犯罪分子的技术门槛。它迫使行业重新思考针对代理式 AI 的威胁建模和防御策略，",
+      "source": "ZDNet",
+      "link": "https://www.zdnet.com/article/jadepuffer-fully-agentic-ransomware-attack-researchers-nightmares/",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "Kokoro：高质量、对 CPU 友好的本地文本转语音模型",
+      "summary": "Kokoro 是一个轻量级、高质量的文本转语音模型，无需昂贵的 GPU 即可在 CPU 上实现高效的本地音频生成。它支持手动添加 IPA 发音指南，并在无障碍工具和文章阅读器等实际应用中获得了广泛关注。 通过消除对高端 GPU 的需求，Kokoro 让高质量的本地 TTS 变得触手可及，对硬件资源有限的开发者和用户极具价值。这推动了其在无障碍访问、内容消费和离线音频生成等现实世界应用中的落地。 用",
+      "source": "speckx",
+      "link": "https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "欧盟“聊天控制”立法威胁端到端加密",
+      "summary": "欧盟正在推进“聊天控制”（Chat Control 1.0 和 2.0）立法，要求对私人通信进行客户端监控和扫描以检测非法内容。该提案要求服务提供商在消息加密前或设备解密后进行监控，从根本上挑战了端到端加密的核心原则。 该立法对全球数字隐私和安全通信构成严重威胁，因为破坏端到端加密会产生可被恶意行为者利用的固有漏洞。它为客户端扫描开创了危险先例，可能导致无处不在的监控状态，使私人数字空间不再安全。",
+      "source": "gasull",
+      "link": "https://fightchatcontrol.eu/chat-control-overview",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "全球首颗商用核动力卫星 BOHR 成功入轨",
+      "summary": "由 City Labs 研发的全球首颗商用核动力卫星 BOHR 于 7 月 7 日搭乘 SpaceX 猎鹰 9 号火箭成功入轨。该卫星首次在太空中实测了新型纳米氚（NanoTritium）贝塔伏特微型电源。 这一里程碑证明了安全、小型化核能供电系统在商业航天应用中的可行性，有望为深空探测和月球任务提供持续电力。它最终可能使航天器能够在月球南极永久阴影区等缺乏光照的区域长期运行。 尽管 BOHR 是",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/253.htm",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "Anthropic 的 J-lens 揭示 Claude 内部存在类似意识的工作空间",
-      "summary": "Anthropic 的研究人员发现，Claude 的神经网络自发形成了一个内部'J-space'结构，这与人类意识的全局工作空间理论相吻合。他们引入了一种名为雅可比透镜（J-lens）的新型可解释性工具来观察这个无声的内部推理区域。 这一突破为监控 AI 系统的隐藏风险和理解其内部认知提供了新方法，极大地推进了机械可解释性和 AI 安全的发展。它也引发了关于大型语言模型是否具备类似心智的持续科学辩",
-      "source": "VentureBeat",
-      "link": "https://venturebeat.com/technology/anthropics-new-j-lens-reveals-a-silent-workspace-inside-claude-that-mirrors-a-leading-theory-of-consciousness",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "腾讯发布开源混元 Hy3 模型，支持 5 分钟生成 3D 游戏",
-      "summary": "腾讯正式发布了混元 Hy3 模型的完整版本，这是一个拥有 2950 亿参数的混合专家模型，采用宽松的 Apache 2.0 开源协议，并具备在 5 分钟内生成可玩的 3D 跑酷小游戏的能力。自预览版上线以来，该模型的日均 token 消耗量激增了 20 倍。 转向 Apache 2.0 开源协议消除了全球企业部署的重大地域限制，而 3D 游戏生成能力则标志着 AI 驱动的交互式内容创作迈出了重要一",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8054215.html",
-      "published": "2026年07月07日",
+      "link": "https://www.ithome.com/0/973/774.htm",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "AI 先驱推出 T-Rex 架构解决机器人传感器干扰问题",
-      "summary": "包括李飞飞和 Jim Fan 在内的精英 AI 研究联盟开发了 T-Rex，这是一种去中心化架构，通过将视觉规划与触觉反馈分离，克服了机器人技术中的多模态传感器干扰。该方法使高精度物理操作的任务成功率提高了 30%。 这一突破解决了具身 AI 中的一个关键瓶颈，即直接合并不匹配的感官输入曾导致任务成功率急剧下降。T-Rex 为灵巧机械确立了新的蓝图，为在复杂现实环境中实现更可靠、更强大的自主机器人",
+      "title": "英伟达 Rubin 平台将全液冷作为标准配置",
+      "summary": "英伟达正将全液冷技术作为其即将推出的 Rubin 平台的标准配置，以解决下一代 AI 芯片的热限制问题。这标志着 AI 数据中心基础设施设计的重大转变。 随着 AI 芯片功耗和发热量持续激增，传统风冷正达到物理极限，液冷成为维持性能的必要条件。这一转变将深刻影响数据中心散热产业，加速液冷解决方案在整个 AI 基础设施生态系统中的普及。 Rubin 平台是英伟达继 Blackwell 之后的下一代架",
       "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8054022.html",
-      "published": "2026年07月07日",
+      "link": "https://www.tmtpost.com/8055974.html",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "Anthropic 秘密监控中国用户引发抵制",
-      "summary": "Anthropic 被曝光通过其 Claude 平台秘密追踪和监控中国用户，一名工程师称该“实验”已经结束。这一事件引发了公众和用户的强烈抵制。 这一事件直接违背了 Anthropic 关于人工智能安全及反监控立场的核心公开原则，严重损害了用户信任。它凸显了领先人工智能实验室所倡导的伦理原则与其实际数据收集行为之间的巨大差距。 该追踪专门针对中国用户，一名内部工程师表示该监控“实验”现已结束。争议",
+      "title": "首批美国自主地面车辆投入乌克兰实战",
+      "summary": "Forterra 公司已在乌克兰部署了超过 100 辆自动驾驶全地形车用于实战，这标志着美国自主地面车辆首次被应用于该冲突中。 这一部署代表了军事机器人技术的重大范式转变，证明了自主系统在实际战区中的切实整合。它凸显了现代战争中无人地面车辆的加速应用，旨在降低人员伤亡风险并提升作战能力。 此次部署涉及 Forterra 公司提供的 100 多辆自动驾驶全地形车，专门用于作战行动而不仅仅是后勤运输。",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/07/the-first-american-autonomous-ground-vehicles-are-fighting-in-ukraine/",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "Meta 默认使用公开 Instagram 照片训练全新 Muse Image 模型",
+      "summary": "Meta 推出了全新的 Muse Image 模型，该模型默认使用公开的 Instagram 照片进行 AI 图像生成，除非用户明确选择退出。该模型为 Meta AI 应用、Instagram 和 WhatsApp 中的图像生成工具提供支持。 这一政策为科技巨头如何摄取用户生成内容用于 AI 训练设定了重要先例，引发了数百万创作者对隐私和版权的重大担忧。它将保护个人数据的责任从公司转移到了用户个人",
+      "source": "Wired",
+      "link": "https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-opt-out/",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "深度求索计划自研 AI 芯片以应对美国出口管制",
+      "summary": "中国人工智能实验室深度求索正在研发自有 AI 芯片，主要面向 AI 推理场景，以降低对英伟达和华为的依赖。该项目约一年前启动，目前仍处于早期阶段，公司正在低调招聘芯片设计工程师。 这一战略转变凸显了美国出口管制对中国 AI 基础设施的日益影响，促使国内企业进行垂直整合以确保硬件供应链安全。同时，这也为国内半导体市场引入了新的竞争格局，可能对华为等科技巨头构成挑战。 这些自研芯片专为 AI 推理而非",
       "source": "Ars Technica",
-      "link": "https://arstechnica.com/tech-policy/2026/07/anthropic-outed-for-claude-tracker-that-secretly-monitored-chinese-users/",
-      "published": "2026年07月07日",
+      "link": "https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "OpenWrt 推出首款官方开源硬件路由器",
-      "summary": "OpenWrt 项目正式发布了 OpenWrt One，这是其首款专为自身生态系统设计的官方开源硬件路由器。社区成员指出，配备 Wi-Fi 7 的后续产品 OpenWrt Two 也已在研发中。 这一发布对开源网络社区具有里程碑意义，提供了一个完全受支持且专为 OpenWrt 高度可扩展固件量身定制的硬件平台。它解决了用户长期以来对商用现成路由器质量下降和支持生命周期有限的挫败感。 OpenWrt",
-      "source": "peter_d_sherman",
-      "link": "https://openwrt.org/toh/openwrt/one",
-      "published": "2026年07月07日",
+      "title": "Davit：苹果原生容器的轻量级 macOS 界面",
+      "summary": "Davit 是一个新发布的开源 macOS 图形界面，专为苹果原生容器化技术打造，主要通过 AI 辅助编程开发。它提供了一个仅 17 MB 的轻量级替代方案，用于在 macOS 上管理容器，可替代 Docker Desktop 和 OrbStack。 它为 macOS 开发者提供了一种资源效率极高的原生替代方案，以取代 Docker Desktop 和 OrbStack 等笨重或收费的容器管理工具",
+      "source": "xinit",
+      "link": "https://davit.app/",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "Windows 版 Claude Desktop 沙箱缺陷可获取虚拟机 Root 权限",
-      "summary": "安全研究团队 Armadin 发现 Anthropic 的 Windows 版 Claude Desktop 应用存在安全漏洞，攻击者可通过 DLL 侧载绕过沙箱隔离机制。该缺陷允许攻击者在底层的 Ubuntu 虚拟机中获取 root 权限并突破网络访问限制。 这一漏洞凸显了依赖本地虚拟机隔离的 AI 自动化工具在安全架构方面的潜在风险。它强调了即使初始攻击需要宿主机上的本地代码执行权限，严格的输",
+      "title": "欧盟强制新车配备驾驶员监控摄像头",
+      "summary": "欧盟出台了一项监管规定，要求所有新售车辆必须配备驾驶员监控摄像头，以检测分心驾驶行为。该政策直接影响整个行业的汽车软件、嵌入式系统和计算机视觉工程。 这一规定显著加速了高级驾驶辅助系统（ADAS）和计算机视觉技术在汽车领域的普及。它还凸显了改善用户体验设计以防止警报疲劳并确保这些安全系统真正有效而非令人烦恼的迫切需求。 该法规适用于欧盟销售的所有新车，需要集成向内拍摄的摄像头和复杂的视线追踪算法。",
+      "source": "nickslaughter02",
+      "link": "https://allaboutcookies.org/eu-mandatory-distracted-driver-system",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "三星量产 PM1763 PCIe 6.0 企业级 SSD",
+      "summary": "三星宣布量产 PM1763 企业级固态硬盘，采用 PCIe 6.0 接口、第九代 V-NAND 闪存和 4nm 主控。该硬盘最高提供 16TB 容量，顺序读取速度达 28400 MB/s，性能是前代产品的两倍以上。 这款高性能存储解决方案专为下一代 AI 和 HPC 服务器环境优化，满足了大型语言模型日益增长的数据传输需求。其后量子密码学和芯片级直接冷却技术的集成，也使企业基础设施能够应对未来的安",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/292.htm",
-      "published": "2026年07月07日",
+      "link": "https://www.ithome.com/0/973/817.htm",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "谷歌云机密计算新增 Blackwell GPU 与提示词加密",
-      "summary": "谷歌云升级了其机密计算产品，推出了基于 Blackwell GPU 的机密虚拟机、开源的提示词加密 SDK，并为 Confidential Space 集成了 Intel Trust Authority 认证服务。 这些更新通过在硬件支持的可信执行环境中保持敏感提示词和模型的加密与隔离，显著提升了 AI 训练和推理的数据隐私与安全性。这解决了企业在数据主权和多方安全 AI 协作方面的关键担忧。 新",
+      "title": "微软部署自研 MAI 模型替代部分外部 AI 服务",
+      "summary": "微软已开始在其 Excel、Outlook 和 GitHub Copilot 等核心产品中部署自研的 MAI 模型，每周处理数万条 AI 提示，逐步替代 OpenAI 和 Anthropic 的服务。这一转变旨在显著降低公司对外部 AI 提供商的依赖并减少运营成本。 此举凸显了 AI 推理成本对商业模式带来的巨大压力，并标志着科技巨头正向垂直整合进行战略转变。随着各大公司寻求避免领先 AI 实验室",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/255.htm",
-      "published": "2026年07月07日",
+      "link": "https://www.ithome.com/0/973/815.htm",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "免费 AI 时代终结：向 Token 计费模式的必然转变",
-      "summary": "文章强调了免费 AI 时代的彻底终结，行业正全面转向针对大语言模型的商业化、基于 Token 的计费模式。文章指出，由于推理带来的巨大计算成本，AI 提供商已无法继续维持免费访问。 这一转变从根本上改变了开发者和构建 AI 产品的企业的经济模型，迫使他们仔细优化 Token 使用量并将推理成本纳入商业规划。它标志着 AI 市场走向成熟，可持续的商业化取代了早期通过免费层级获取用户的策略。 向基于 ",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8053894.html",
-      "published": "2026年07月07日",
+      "title": "苹果请求暂停 Epic 诉讼，等待最高法院裁决",
+      "summary": "苹果已正式向美国加州北区联邦法院申请暂停与 Epic Games 的诉讼程序。此举是为了等待美国最高法院审查苹果是否违反了 2021 年关于外部支付链接和佣金的禁令。 最高法院的最终裁决将界定应用商店佣金和外部支付引导的法律边界，从而对整个移动应用生态系统产生深远影响。如果苹果胜诉，其收入模式将得以保留；若败诉，则可能迫使整个行业的数字商店政策发生重大改变。 核心争议在于苹果对 App Store",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/793.htm",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "OpenAI 限流：合规换垄断的阳谋",
-      "summary": "文章指出 OpenAI 对 GPT-5.6 的限流并非单纯因为政府打压，而是其利用“规制俘获”理论，通过合规门槛构建排他性市场准入的主动战略。 这一视角揭示了 AI 行业正从纯粹的技术竞争转向合规与规则竞争，可能会重塑市场动态和准入壁垒。 该分析解释了科技巨头如何将其产品从“公开发布”转变为“受管制商品”，从而有效地将合规作为排斥竞争对手和实现商业垄断的工具。",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8053822.html",
-      "published": "2026年07月07日",
+      "title": "谷歌投资 Proxima Fusion，助力打造欧洲首座商用核聚变电站",
+      "summary": "谷歌参与了德国核聚变初创企业 Proxima Fusion 的 4.11 亿欧元融资，该公司估值现已达到 27 亿美元。该企业计划利用仿星器技术，在 2030 年代后半段建成欧洲首座商用核聚变电站。 这一投资凸显了科技巨头为确保未来清洁能源（这对维持庞大的计算和 AI 需求至关重要）而采取的战略举措。这也为欧洲核聚变领域注入了巨额资金，加速了仿星器技术的商业化进程，推动了全球清洁能源竞赛。 本轮融",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/791.htm",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "Vercel CEO 主张将 AI 模型与智能体解耦",
-      "summary": "Vercel CEO Guillermo Rauch 探讨了将 AI 模型与智能体解耦的战略和架构转变，以优化生产环境中的价格与性能。 这种架构方法通过将智能体的逻辑与易变的模型 API 分离，使开发者能够构建更灵活、更具成本效益的 AI 系统。它通过优先考虑性价比，显著影响了软件工程师部署和扩展生产级 AI 应用的方式。 Rauch 强调，优化生产环境需要严格关注性价比，这最好通过松耦合架构来实",
+      "title": "AI 编程工具引发开发者疲劳症",
+      "summary": "Midjourney 创始人大卫·霍尔茨在 X 平台指出，最新的 AI 编程模型在大幅提升效率的同时，也引发了严重的开发者疲劳症。多位业界领袖在评论区分享了专注单一任务和进行数字排毒等实用的缓解策略。 这凸显了一个日益严重的行业痛点，即 AI 工具的快速迭代给程序员带来了巨大的压力和焦虑，威胁着他们的心理健康和可持续生产力。它强调了开发者在利用 AI 效率与保持个人身心健康之间寻找平衡的迫切需求。",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/761.htm",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "发现黑客利用 AI 打造的模块化恶意框架 Avalon",
+      "summary": "安全公司 Blackpoint 发现了一款名为“Avalon”的新型模块化恶意软件框架，该框架利用生成式 AI 构建，使低技能黑客能够部署复杂的多组件攻击。与以往功能单一的 AI 生成恶意软件不同，Avalon 整合了多种可按需加载的攻击能力。 这一发展标志着网络安全格局的重大转变，生成式 AI 现在被用于创建复杂的模块化恶意软件，而不仅仅是简单的脚本。它大幅降低了网络犯罪分子的技术门槛，使其能够",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/757.htm",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "AI 数据中心激增推高美国传统制造企业电费",
+      "summary": "美国 AI 数据中心的快速扩张，特别是在 PJM 互联电网区域，导致容量电费飙升超过 1000%，严重影响了传统制造企业。 这一趋势凸显了 AI 发展中一个关键的物理基础设施瓶颈，数据中心巨大的能源需求正威胁着传统制造业的生存，并使国家振兴工业的努力变得复杂。 PJM 电网的容量费用从每兆瓦日 28.92 美元飙升至 329.17 美元，导致宾夕法尼亚州和俄亥俄州等州的工业电价分别上涨了 31%和",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/973/752.htm",
+      "published": "2026年07月08日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "开源 AI 与前沿实验室占据不同 AI 生命周期阶段",
+      "summary": "最新分析表明，开源 AI 模型的成功并没有直接蚕食 Anthropic 等前沿实验室的市场份额。相反，这两个领域各自占据了整体 AI 生命周期的不同阶段，而非直接正面竞争。 这一见解将开源 AI 与专有 AI 之间的叙事从零和竞争转变为互补的市场动态。这表明，通过满足不同的用户需求和 AI 采用阶段，这两种商业模式可以共存并蓬勃发展。 该分析强调，虽然开源模型在广泛采用和定制化等阶段表现出色，但前",
       "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/",
-      "published": "2026年07月07日",
+      "link": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
+      "published": "2026年07月08日",
       "category": "科技",
       "score": 7.0
-    },
-    {
-      "title": "CoMaps：基于 OpenStreetMap 的 Organic Maps 隐私保护分支",
-      "summary": "CoMaps 作为 Organic Maps 的社区分支应运而生，提供了一款完全免费、开源且由 OpenStreetMap 数据驱动的离线地图应用。它强调严格的隐私保护、透明度和非营利原则，以回应外界对 Organic Maps 治理方式的担忧。 这一分支为用户提供了一个值得信赖、尊重隐私的离线导航替代方案，确保地图数据和应用程序开发保持真正的社区驱动，不受专有组件或不透明的企业决策影响。 CoM",
-      "source": "basilikum",
-      "link": "https://www.comaps.app/",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "ChatGPT 文件访问漏洞已修复：提示词注入可绕过限制",
-      "summary": "安全研究员 zer0dac 发现 ChatGPT 存在一项安全漏洞，攻击者可利用提示词注入和路径遍历技术绕过文件访问限制。OpenAI 随后通过调整文件下载 URL 的生成流程修复了该漏洞。 尽管受 ChatGPT 沙箱环境限制，该漏洞仍凸显了提示词注入如何暴露系统内部路径，并成为 AI 应用中更复杂攻击链的跳板。这强调了在集成大语言模型的系统中，持续加强输入验证和安全文件处理的必要性。 该漏洞利",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/295.htm",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "微软 Xbox 计划大裁员并剥离多家工作室",
-      "summary": "微软 Xbox 部门计划裁员 3200 人，约占其员工总数的 20%，并剥离至少四到五家游戏工作室，包括 Ninja Theory、Undead Labs、Double Fine 和 Compulsion Games。新任 CEO 阿莎·夏尔马宣布了这一重组计划，以解决该部门不健康的财务状况和极低的运营利润率。 这一大规模重组标志着微软游戏部门的重大战略转变，从菲尔·斯宾塞领导下的激进收购策略转向",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/279.htm",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "宁德时代发布天行Ⅱ轻商超充版电池，峰值 8C 超充追平燃油车",
-      "summary": "宁德时代发布了面向轻型商用车的天行Ⅱ商用动力电池，具备行业领先的 8C 峰值超充能力，仅需 6 分 48 秒即可充至 80% SOC。同时，公司推出了乘商兼容超换一体站，计划在全国近 190 座城市落地 4000 座。 这一突破将商用物流车的充电时间缩短至接近燃油车加油的水平，解决了电动物流领域的重大痛点并提升了运营效率。4000 座超换一体站的大规模基础设施建设将进一步加速城市及城际货运的电动化",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/272.htm",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "博通与苹果续签定制 ASIC 协议至 2031 年",
-      "summary": "博通与苹果签署了一项新的多年期协议，将双方的技术合作延长至 2031 年。根据该协议，博通将为苹果多代产品开发并供应定制 ASIC 芯片。 此次续约保障了苹果在定制芯片方面的长期供应链战略，确保了未来设备的硬件连续性。这也巩固了博通在消费电子市场中作为关键半导体合作伙伴的地位。 该协议具体涵盖为多代产品开发并供应定制专用集成电路（ASIC）芯片。此消息是通过向美国证券交易委员会递交的 8-K 表格",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/265.htm",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "可灵与 Seedance：AI 视频战略与技术差异",
-      "summary": "近期一篇行业分析对比了快手可灵 AI 与字节跳动 Seedance，强调了两者在竞争激烈的 AI 视频生成市场中截然不同的战略与技术路线。 了解这些差异对于追踪科技巨头如何定位其生成式 AI 产品至关重要，因为 AI 视频市场正迅速向商业化和生态整合方向发展。 该分析指出，虽然两款模型都利用扩散 Transformer 等先进架构进行高质量视频合成，但基于母公司的核心业务，其底层产品策略和生态整合",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8053660.html",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "谷歌更新隐私设置用用户数据训练 AI",
-      "summary": "谷歌更新了其隐私设置，允许收集并存储更多用户数据（包括图像、文件以及音视频录音），专门用于改进其 AI 模型。相关报道提供了详细的步骤说明，指导用户如何在这些新设置中选择退出此类数据收集。 这一变化凸显了大型科技公司对海量训练数据的需求与个人隐私权之间持续存在的矛盾。它赋予用户可操作的知识，使其能够保护个人媒体和文件不被无意中用于商业 AI 开发。 更新后的政策专门针对图像、文件以及音视频等多媒体",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/06/if-you-use-google-youre-training-its-ai-heres-how-to-opt-out/",
-      "published": "2026年07月07日",
-      "category": "科技",
-      "score": 6.0
     }
   ]
 }
