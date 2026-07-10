@@ -1,167 +1,167 @@
 {
-  "date": "2026-07-08",
-  "date_str": "2026年07月08日",
+  "date": "2026-07-11",
+  "date_str": "2026年07月11日",
   "count": 18,
   "news": [
     {
-      "title": "JadePuffer：首个由 AI 执行的勒索软件攻击，但并非完全自主",
-      "summary": "研究人员发现了 JadePuffer 勒索软件攻击，其中 AI 代理负责了技术执行，这标志着现实世界网络犯罪中 AI 执行攻击的首次已知案例。然而，新细节显示，人类操作者仍然选择了受害者、搭建了基础设施并提供了被盗凭证。 这一进展凸显了网络安全的重大范式转变，表明 AI 现在可以自主执行复杂的攻击阶段，从而大幅降低了网络犯罪分子的技术门槛。它迫使行业重新思考针对代理式 AI 的威胁建模和防御策略，",
-      "source": "ZDNet",
-      "link": "https://www.zdnet.com/article/jadepuffer-fully-agentic-ransomware-attack-researchers-nightmares/",
-      "published": "2026年07月08日",
+      "title": "SK 海力士募资 265 亿美元创美国外资 IPO 纪录",
+      "summary": "韩国存储芯片巨头 SK 海力士在纳斯达克发行美国存托凭证（ADR），募资高达 265 亿美元，打破阿里巴巴的纪录，成为美国历史上规模最大的外资企业 IPO。同时，该公司正面临在美国本土新建半导体晶圆厂以满足 AI 芯片激增需求的压力。 这一历史性的 IPO 凸显了 AI 硬件热潮的巨大资金规模，尤其是对 AI 加速器至关重要的高带宽存储器（HBM）领域。这也反映了地缘政治推动下，将先进半导体制造本",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 9.0
     },
     {
-      "title": "Kokoro：高质量、对 CPU 友好的本地文本转语音模型",
-      "summary": "Kokoro 是一个轻量级、高质量的文本转语音模型，无需昂贵的 GPU 即可在 CPU 上实现高效的本地音频生成。它支持手动添加 IPA 发音指南，并在无障碍工具和文章阅读器等实际应用中获得了广泛关注。 通过消除对高端 GPU 的需求，Kokoro 让高质量的本地 TTS 变得触手可及，对硬件资源有限的开发者和用户极具价值。这推动了其在无障碍访问、内容消费和离线音频生成等现实世界应用中的落地。 用",
+      "title": "Oratomic 获 3 亿美元融资打造 2 万量子比特量子计算机",
+      "summary": "量子计算初创公司 Oratomic 获得了由 ARCH Venture Partners、Spark Capital 和 Khosla Ventures 联合领投的 3 亿美元融资，旨在开发一种仅需 2 万个量子比特的可行量子计算机架构。 以大幅减少的 2 万个量子比特实现容错量子计算，有望克服当前的硬件可扩展性瓶颈，从而极大地加速实用型商业量子应用的到来。这笔巨额融资表明投资者强烈相信，先进的纠",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs-only-20k-qubits/",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "OpenAI 推出 ChatGPT Work，一款自主云端 AI 代理",
+      "summary": "OpenAI 推出了由 GPT-5.6 模型驱动的自主 AI 代理 ChatGPT Work，能够在电子邮件、Slack 和日历等企业应用中执行复杂的多步骤工作流。与传统聊天机器人不同，它可以独立收集上下文、分解任务，并连续工作数小时以生成完整的文档、网站和报告。 此次发布标志着从对话式 AI 向代理式工作平台的重大范式转变，将 ChatGPT 定位为全面的职场工具，而不仅仅是问答界面。它显著增强",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/technology/openai-introduces-chatgpt-work-a-cloud-based-ai-agent-that-manages-tasks-across-email-slack-and-calendars",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "QuadRF：开源硬件实现穿墙射频信号可视化",
+      "summary": "技术评测员 Jeff Geerling 测试了 QuadRF，这是一款新颖的开源硬件工具，能够可视化射频信号，从而穿透墙壁检测无人机和隐藏的 WiFi 发射器。该工具的创作者正积极与社区互动，根据用户反馈改进用户界面。 这款工具通过提供易于获取的开源解决方案，将以前仅限于昂贵专有设备或政府机构的射频可视化技术普及化，在安全和隐私应用中具有重要意义。它使个人能够检测隐藏的发射器、进行反监视，并监控其",
       "source": "speckx",
-      "link": "https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/",
-      "published": "2026年07月08日",
+      "link": "https://www.jeffgeerling.com/blog/2026/quadrf-can-spot-drones-and-see-wifi-through-my-wall/",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "欧盟“聊天控制”立法威胁端到端加密",
-      "summary": "欧盟正在推进“聊天控制”（Chat Control 1.0 和 2.0）立法，要求对私人通信进行客户端监控和扫描以检测非法内容。该提案要求服务提供商在消息加密前或设备解密后进行监控，从根本上挑战了端到端加密的核心原则。 该立法对全球数字隐私和安全通信构成严重威胁，因为破坏端到端加密会产生可被恶意行为者利用的固有漏洞。它为客户端扫描开创了危险先例，可能导致无处不在的监控状态，使私人数字空间不再安全。",
-      "source": "gasull",
-      "link": "https://fightchatcontrol.eu/chat-control-overview",
-      "published": "2026年07月08日",
+      "title": "苹果起诉 OpenAI 涉嫌窃取商业机密",
+      "summary": "苹果对 OpenAI 提起重大诉讼，指控该 AI 公司及其高层管理人员系统性地指使前苹果员工窃取商业机密和机密信息。诉讼称，OpenAI 的招募人员被指示隐瞒离职去向，并通过电子邮件将包括用于接触苹果供应商的硬件细节在内的专有数据发送给自己。 这两大科技巨头之间的高风险法律战可能会为快速增长的 AI 行业内的知识产权法和招聘实践树立重要先例。这也引发了对企业信任的严重担忧，如果 OpenAI 的产",
+      "source": "9to5Mac",
+      "link": "https://9to5mac.com/2026/07/10/apple-sues-openai-trade-secret-theft/",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "全球首颗商用核动力卫星 BOHR 成功入轨",
-      "summary": "由 City Labs 研发的全球首颗商用核动力卫星 BOHR 于 7 月 7 日搭乘 SpaceX 猎鹰 9 号火箭成功入轨。该卫星首次在太空中实测了新型纳米氚（NanoTritium）贝塔伏特微型电源。 这一里程碑证明了安全、小型化核能供电系统在商业航天应用中的可行性，有望为深空探测和月球任务提供持续电力。它最终可能使航天器能够在月球南极永久阴影区等缺乏光照的区域长期运行。 尽管 BOHR 是",
+      "title": "GPT-5.6 Sol Ultra 声称证明了循环双覆盖猜想",
+      "summary": "据报道，OpenAI 的 GPT-5.6 Sol Ultra 为图论中一个长期存在的开放性问题——循环双覆盖猜想生成了证明。此次发布包含了证明本身以及用于生成它的提示词，在人工智能和数学界引发了广泛争论。 如果得到验证，这将代表人工智能数学推理和自动定理证明能力的重大里程碑，超越了简单的计算，走向了复杂的理论构建。它凸显了大型语言模型解决纯数学中未解决问题的巨大潜力。 该证明以极其简洁而著称，导致",
+      "source": "scrlk",
+      "link": "https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "欧盟责令 Meta 整改成瘾功能否则罚款",
+      "summary": "欧盟委员会初步认定，Meta 未能缓解 Instagram 和 Facebook 上无限滚动和自动播放等成瘾性设计功能的风险，违反了《数字服务法案》。如果 Meta 不修改这些旨在提高用户参与度的 UI/UX 模式，将面临高达其全球年营业额 6% 的罚款。 这一监管行动树立了重大先例，直接针对大型科技平台的核心用户参与策略和 UI/UX 设计。它迫使整个行业重新思考产品管理和设计理念，将重点从最大",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/774.htm",
-      "published": "2026年07月08日",
+      "link": "https://www.ithome.com/0/975/321.htm",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "英伟达 Rubin 平台将全液冷作为标准配置",
-      "summary": "英伟达正将全液冷技术作为其即将推出的 Rubin 平台的标准配置，以解决下一代 AI 芯片的热限制问题。这标志着 AI 数据中心基础设施设计的重大转变。 随着 AI 芯片功耗和发热量持续激增，传统风冷正达到物理极限，液冷成为维持性能的必要条件。这一转变将深刻影响数据中心散热产业，加速液冷解决方案在整个 AI 基础设施生态系统中的普及。 Rubin 平台是英伟达继 Blackwell 之后的下一代架",
+      "title": "长十乙首飞成功回收，中国商业航天迈入可重复时代",
+      "summary": "中国在长征十号乙运载火箭的首飞中成功发射并回收了第一级助推器，使其成为首个完成海上全流程回收的中国火箭，也是全球第三个达成此里程碑的火箭。 这一突破标志着中国商业航天领域的历史性范式转变，将大幅降低发射成本，使中国能够与 SpaceX 等企业在全球可重复使用运载火箭市场中展开更有效的竞争。 长征十号乙是一款高约 63 米、直径 5 米的可重复使用液体燃料商业运载火箭，成功执行了受控返回飞行、垂直终",
       "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8055974.html",
-      "published": "2026年07月08日",
+      "link": "https://www.tmtpost.com/8059836.html",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "首批美国自主地面车辆投入乌克兰实战",
-      "summary": "Forterra 公司已在乌克兰部署了超过 100 辆自动驾驶全地形车用于实战，这标志着美国自主地面车辆首次被应用于该冲突中。 这一部署代表了军事机器人技术的重大范式转变，证明了自主系统在实际战区中的切实整合。它凸显了现代战争中无人地面车辆的加速应用，旨在降低人员伤亡风险并提升作战能力。 此次部署涉及 Forterra 公司提供的 100 多辆自动驾驶全地形车，专门用于作战行动而不仅仅是后勤运输。",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/07/the-first-american-autonomous-ground-vehicles-are-fighting-in-ukraine/",
-      "published": "2026年07月08日",
+      "title": "腾讯开源混元 Hy3 大模型，WorkBuddy 紧急扩容应对流量",
+      "summary": "腾讯正式发布并开源了混元 Hy3 大语言模型，该模型采用 295B 参数的混合专家（MoE）架构，激活参数为 21B。发布后引发的巨大用户关注促使腾讯紧急对其 WorkBuddy AI 智能体平台的基础设施进行了扩容。 开源像 Hy3 这样强大的 MoE 模型显著增强了开源 AI 生态系统，为开发者构建应用提供了强大的新基础。WorkBuddy 需要立即扩容，凸显了市场对腾讯最新 AI 进展在真实",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8059720.html",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "Meta 默认使用公开 Instagram 照片训练全新 Muse Image 模型",
-      "summary": "Meta 推出了全新的 Muse Image 模型，该模型默认使用公开的 Instagram 照片进行 AI 图像生成，除非用户明确选择退出。该模型为 Meta AI 应用、Instagram 和 WhatsApp 中的图像生成工具提供支持。 这一政策为科技巨头如何摄取用户生成内容用于 AI 训练设定了重要先例，引发了数百万创作者对隐私和版权的重大担忧。它将保护个人数据的责任从公司转移到了用户个人",
+      "title": "AI 算力的真正颠覆在于光互联与去 DSP，而非晶体管",
+      "summary": "文章指出了 AI 计算基础设施的范式转变，关注点从晶体管密度转向光互联和“去 DSP”技术。它提出了 Hi-ONE 架构这一新赛道，将产业价值从传统 DSP 转移到光芯片和先进封装上。 这一转变对于克服数据中心网络中当前的 AI 功耗和带宽瓶颈至关重要。它代表了硬件价值链的重大重组，将竞争优势从半导体制造转移到光集成和封装领域。 这一新范式的成功将由三个关键指标决定：采用量、上市时间和生态系统发展",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8056791.html",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "谷歌推出 TabFM：无需单独训练的表格数据零样本基础模型",
+      "summary": "谷歌研究院推出了 TabFM，这是一个零样本基础模型，它利用上下文学习进行表格数据预测，无需针对每个数据集进行单独训练。它通过将数据视为结构化网格，在单次前向传播中即可对未见过的表格生成预测。 这一突破将企业机器学习的范式从复杂的数据集专属管道工程和超参数调优转变为简单的 API 调用，大幅缩短了投产时间。它将文本和视觉模型中常见的零样本推理能力引入到了庞大的结构化商业数据领域。 与因上下文限制和",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/technology/googles-tabfm-skips-per-dataset-training-and-still-predicts-on-tables-its-never-seen",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "SK 集团会长：AI 驱动内存需求呈指数级增长",
+      "summary": "SK 集团会长崔泰源表示，SK 海力士计划在未来五年内将内存产能翻倍，但这仍无法满足由 AI 智能体和 KV 缓存需求驱动的指数级内存需求增长。 这凸显了 AI 基础设施中关键的硬件瓶颈，表明在通用人工智能（AGI）普及之前，内存供应限制将持续挑战大语言模型和 AI 智能体的扩展。 内存需求的结构性转变具体由 AI 智能体、物理 AI、机器人以及 AI 推理过程中产生的大量 KV 缓存驱动，部分客",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/975/364.htm",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "为什么 Vibe Coding 能降本却不一定增效？",
+      "summary": "近期的一篇分析指出，虽然 AI 驱动的“Vibe Coding”（氛围编程）显著加速了代码生成，但并未从根本上提升软件开发的整体效率。文章强调，AI 无法替代人类在定义问题、理解用户、设计系统架构以及对最终产品负责方面的能力。 这一观点对于正在探索 AI 辅助工作流的开发者和科技领导者至关重要，因为它将关注点从单纯的代码生成速度转移到了软件工程的真正瓶颈上。它提醒人们警惕“生产力错觉”，并强调在复",
+      "source": "少数派",
+      "link": "https://sspai.com/post/111975",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "国产先进封装高端国产化率不足 10%",
+      "summary": "行业分析显示，尽管投入了高达 274 亿元人民币，中国高端先进封装的国产化率仍不足 10%。该报告指出了阻碍国内半导体封装行业追赶全球领先者的重大瓶颈。 这凸显了中国半导体供应链中的一个关键缺口，因为先进封装对于突破摩尔定律限制和生产高性能计算芯片至关重要。较低的国产化率表明，仅靠巨额资金无法迅速解决根深蒂固的技术和设备瓶颈。 分析指出，虽然传统封装已相对成熟，但高端先进封装需要混合键合和先进中介",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8060111.html",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "MiniMax 暴跌 24%凸显 AI 行业估值瓶颈",
+      "summary": "头部 AI 初创公司 MiniMax 近期在两天内经历了高达 24%的股价暴跌，引发了业界对其商业化和估值瓶颈的广泛分析。这一事件成为了生成式 AI 公司在维持高估值方面所面临更广泛挑战的重要案例研究。 这一大幅下跌反映了市场对 AI 初创公司能否将巨额技术投资转化为可持续收入来源的日益怀疑。它凸显了一个关键转折点，即 AI 行业必须将重心从纯粹的模型能力转向可行的商业化和现实的估值指标。 Min",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8060213.html",
+      "published": "2026年07月11日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "辉能科技拟凭固态电池挑战中国巨头",
+      "summary": "《连线》杂志报道了初创公司辉能科技，该公司正致力于大规模生产固态电池，以期颠覆电动汽车市场并挑战中国电池制造商目前的统治地位。 固态电池的商业化可能会显著改变全球电动汽车和储能供应链，为非中国公司提供夺回市场份额的关键机会。 虽然与传统锂离子电池相比，固态电池具有更高的安全性和能量密度，但它们面临着重大的技术和制造障碍，尤其是在经济高效地扩大生产规模方面。",
       "source": "Wired",
-      "link": "https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-opt-out/",
-      "published": "2026年07月08日",
+      "link": "https://www.wired.com/story/prologium-battery-startup-betting-against-china/",
+      "published": "2026年07月11日",
       "category": "科技",
-      "score": 8.0
+      "score": 7.0
     },
     {
-      "title": "深度求索计划自研 AI 芯片以应对美国出口管制",
-      "summary": "中国人工智能实验室深度求索正在研发自有 AI 芯片，主要面向 AI 推理场景，以降低对英伟达和华为的依赖。该项目约一年前启动，目前仍处于早期阶段，公司正在低调招聘芯片设计工程师。 这一战略转变凸显了美国出口管制对中国 AI 基础设施的日益影响，促使国内企业进行垂直整合以确保硬件供应链安全。同时，这也为国内半导体市场引入了新的竞争格局，可能对华为等科技巨头构成挑战。 这些自研芯片专为 AI 推理而非",
+      "title": "轨道后向反射器卫星实现对广义相对论的最精确测试",
+      "summary": "研究人员利用卫星激光测距技术，通过一颗覆盖后向反射器的卫星测量地球的时空扭曲，对爱因斯坦的广义相对论进行了迄今为止最精确的测试。 这种前所未有的精度为实验物理学提供了一个极具价值的里程碑，进一步证实了爱因斯坦百年前的理论，并为引力研究和天体物理学设定了新的标准。 该实验利用了 LAGEOS 卫星，其表面覆盖着数百个后向反射器，用于反射地面站的激光脉冲，从而实现毫米级的距离测量，以探测微小的相对论效",
       "source": "Ars Technica",
-      "link": "https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "Davit：苹果原生容器的轻量级 macOS 界面",
-      "summary": "Davit 是一个新发布的开源 macOS 图形界面，专为苹果原生容器化技术打造，主要通过 AI 辅助编程开发。它提供了一个仅 17 MB 的轻量级替代方案，用于在 macOS 上管理容器，可替代 Docker Desktop 和 OrbStack。 它为 macOS 开发者提供了一种资源效率极高的原生替代方案，以取代 Docker Desktop 和 OrbStack 等笨重或收费的容器管理工具",
-      "source": "xinit",
-      "link": "https://davit.app/",
-      "published": "2026年07月08日",
+      "link": "https://arstechnica.com/science/2026/07/an-orbiting-disco-ball-gave-einsteins-theory-its-most-precise-test-yet/",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "欧盟强制新车配备驾驶员监控摄像头",
-      "summary": "欧盟出台了一项监管规定，要求所有新售车辆必须配备驾驶员监控摄像头，以检测分心驾驶行为。该政策直接影响整个行业的汽车软件、嵌入式系统和计算机视觉工程。 这一规定显著加速了高级驾驶辅助系统（ADAS）和计算机视觉技术在汽车领域的普及。它还凸显了改善用户体验设计以防止警报疲劳并确保这些安全系统真正有效而非令人烦恼的迫切需求。 该法规适用于欧盟销售的所有新车，需要集成向内拍摄的摄像头和复杂的视线追踪算法。",
-      "source": "nickslaughter02",
-      "link": "https://allaboutcookies.org/eu-mandatory-distracted-driver-system",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "三星量产 PM1763 PCIe 6.0 企业级 SSD",
-      "summary": "三星宣布量产 PM1763 企业级固态硬盘，采用 PCIe 6.0 接口、第九代 V-NAND 闪存和 4nm 主控。该硬盘最高提供 16TB 容量，顺序读取速度达 28400 MB/s，性能是前代产品的两倍以上。 这款高性能存储解决方案专为下一代 AI 和 HPC 服务器环境优化，满足了大型语言模型日益增长的数据传输需求。其后量子密码学和芯片级直接冷却技术的集成，也使企业基础设施能够应对未来的安",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/817.htm",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "微软部署自研 MAI 模型替代部分外部 AI 服务",
-      "summary": "微软已开始在其 Excel、Outlook 和 GitHub Copilot 等核心产品中部署自研的 MAI 模型，每周处理数万条 AI 提示，逐步替代 OpenAI 和 Anthropic 的服务。这一转变旨在显著降低公司对外部 AI 提供商的依赖并减少运营成本。 此举凸显了 AI 推理成本对商业模式带来的巨大压力，并标志着科技巨头正向垂直整合进行战略转变。随着各大公司寻求避免领先 AI 实验室",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/815.htm",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "苹果请求暂停 Epic 诉讼，等待最高法院裁决",
-      "summary": "苹果已正式向美国加州北区联邦法院申请暂停与 Epic Games 的诉讼程序。此举是为了等待美国最高法院审查苹果是否违反了 2021 年关于外部支付链接和佣金的禁令。 最高法院的最终裁决将界定应用商店佣金和外部支付引导的法律边界，从而对整个移动应用生态系统产生深远影响。如果苹果胜诉，其收入模式将得以保留；若败诉，则可能迫使整个行业的数字商店政策发生重大改变。 核心争议在于苹果对 App Store",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/793.htm",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "谷歌投资 Proxima Fusion，助力打造欧洲首座商用核聚变电站",
-      "summary": "谷歌参与了德国核聚变初创企业 Proxima Fusion 的 4.11 亿欧元融资，该公司估值现已达到 27 亿美元。该企业计划利用仿星器技术，在 2030 年代后半段建成欧洲首座商用核聚变电站。 这一投资凸显了科技巨头为确保未来清洁能源（这对维持庞大的计算和 AI 需求至关重要）而采取的战略举措。这也为欧洲核聚变领域注入了巨额资金，加速了仿星器技术的商业化进程，推动了全球清洁能源竞赛。 本轮融",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/791.htm",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "AI 编程工具引发开发者疲劳症",
-      "summary": "Midjourney 创始人大卫·霍尔茨在 X 平台指出，最新的 AI 编程模型在大幅提升效率的同时，也引发了严重的开发者疲劳症。多位业界领袖在评论区分享了专注单一任务和进行数字排毒等实用的缓解策略。 这凸显了一个日益严重的行业痛点，即 AI 工具的快速迭代给程序员带来了巨大的压力和焦虑，威胁着他们的心理健康和可持续生产力。它强调了开发者在利用 AI 效率与保持个人身心健康之间寻找平衡的迫切需求。",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/761.htm",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "发现黑客利用 AI 打造的模块化恶意框架 Avalon",
-      "summary": "安全公司 Blackpoint 发现了一款名为“Avalon”的新型模块化恶意软件框架，该框架利用生成式 AI 构建，使低技能黑客能够部署复杂的多组件攻击。与以往功能单一的 AI 生成恶意软件不同，Avalon 整合了多种可按需加载的攻击能力。 这一发展标志着网络安全格局的重大转变，生成式 AI 现在被用于创建复杂的模块化恶意软件，而不仅仅是简单的脚本。它大幅降低了网络犯罪分子的技术门槛，使其能够",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/757.htm",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "AI 数据中心激增推高美国传统制造企业电费",
-      "summary": "美国 AI 数据中心的快速扩张，特别是在 PJM 互联电网区域，导致容量电费飙升超过 1000%，严重影响了传统制造企业。 这一趋势凸显了 AI 发展中一个关键的物理基础设施瓶颈，数据中心巨大的能源需求正威胁着传统制造业的生存，并使国家振兴工业的努力变得复杂。 PJM 电网的容量费用从每兆瓦日 28.92 美元飙升至 329.17 美元，导致宾夕法尼亚州和俄亥俄州等州的工业电价分别上涨了 31%和",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/973/752.htm",
-      "published": "2026年07月08日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "开源 AI 与前沿实验室占据不同 AI 生命周期阶段",
-      "summary": "最新分析表明，开源 AI 模型的成功并没有直接蚕食 Anthropic 等前沿实验室的市场份额。相反，这两个领域各自占据了整体 AI 生命周期的不同阶段，而非直接正面竞争。 这一见解将开源 AI 与专有 AI 之间的叙事从零和竞争转变为互补的市场动态。这表明，通过满足不同的用户需求和 AI 采用阶段，这两种商业模式可以共存并蓬勃发展。 该分析强调，虽然开源模型在广泛采用和定制化等阶段表现出色，但前",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
-      "published": "2026年07月08日",
+      "title": "探究汽车 ECU 调校中的安全攻防战",
+      "summary": "Ars Technica 发表了一篇技术深度报道，调查了汽车原始设备制造商（OEM）与独立调校者之间围绕发动机控制单元（ECU）芯片持续进行的安全攻防战。文章探讨了 OEM 如何日益加强对这些嵌入式系统的锁定，而调校者又如何不断开发新方法来破解和修改它们。 这凸显了汽车行业嵌入式系统安全和逆向工程面临的更广泛挑战，因为软件定义的汽车严重依赖安全的 ECU。这种持续的猫鼠游戏不仅影响车辆性能和保修有",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/cars/2026/07/like-a-cheat-code-for-your-car-we-investigate-ecu-tuning/",
+      "published": "2026年07月11日",
       "category": "科技",
       "score": 7.0
     }
