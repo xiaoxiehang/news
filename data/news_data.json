@@ -1,169 +1,133 @@
 {
-  "date": "2026-07-11",
-  "date_str": "2026年07月11日",
-  "count": 18,
+  "date": "2026-07-13",
+  "date_str": "2026年07月13日",
+  "count": 14,
   "news": [
     {
-      "title": "SK 海力士募资 265 亿美元创美国外资 IPO 纪录",
-      "summary": "韩国存储芯片巨头 SK 海力士在纳斯达克发行美国存托凭证（ADR），募资高达 265 亿美元，打破阿里巴巴的纪录，成为美国历史上规模最大的外资企业 IPO。同时，该公司正面临在美国本土新建半导体晶圆厂以满足 AI 芯片激增需求的压力。 这一历史性的 IPO 凸显了 AI 硬件热潮的巨大资金规模，尤其是对 AI 加速器至关重要的高带宽存储器（HBM）领域。这也反映了地缘政治推动下，将先进半导体制造本",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "Oratomic 获 3 亿美元融资打造 2 万量子比特量子计算机",
-      "summary": "量子计算初创公司 Oratomic 获得了由 ARCH Venture Partners、Spark Capital 和 Khosla Ventures 联合领投的 3 亿美元融资，旨在开发一种仅需 2 万个量子比特的可行量子计算机架构。 以大幅减少的 2 万个量子比特实现容错量子计算，有望克服当前的硬件可扩展性瓶颈，从而极大地加速实用型商业量子应用的到来。这笔巨额融资表明投资者强烈相信，先进的纠",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs-only-20k-qubits/",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "OpenAI 推出 ChatGPT Work，一款自主云端 AI 代理",
-      "summary": "OpenAI 推出了由 GPT-5.6 模型驱动的自主 AI 代理 ChatGPT Work，能够在电子邮件、Slack 和日历等企业应用中执行复杂的多步骤工作流。与传统聊天机器人不同，它可以独立收集上下文、分解任务，并连续工作数小时以生成完整的文档、网站和报告。 此次发布标志着从对话式 AI 向代理式工作平台的重大范式转变，将 ChatGPT 定位为全面的职场工具，而不仅仅是问答界面。它显著增强",
-      "source": "VentureBeat",
-      "link": "https://venturebeat.com/technology/openai-introduces-chatgpt-work-a-cloud-based-ai-agent-that-manages-tasks-across-email-slack-and-calendars",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "QuadRF：开源硬件实现穿墙射频信号可视化",
-      "summary": "技术评测员 Jeff Geerling 测试了 QuadRF，这是一款新颖的开源硬件工具，能够可视化射频信号，从而穿透墙壁检测无人机和隐藏的 WiFi 发射器。该工具的创作者正积极与社区互动，根据用户反馈改进用户界面。 这款工具通过提供易于获取的开源解决方案，将以前仅限于昂贵专有设备或政府机构的射频可视化技术普及化，在安全和隐私应用中具有重要意义。它使个人能够检测隐藏的发射器、进行反监视，并监控其",
-      "source": "speckx",
-      "link": "https://www.jeffgeerling.com/blog/2026/quadrf-can-spot-drones-and-see-wifi-through-my-wall/",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "苹果起诉 OpenAI 涉嫌窃取商业机密",
-      "summary": "苹果对 OpenAI 提起重大诉讼，指控该 AI 公司及其高层管理人员系统性地指使前苹果员工窃取商业机密和机密信息。诉讼称，OpenAI 的招募人员被指示隐瞒离职去向，并通过电子邮件将包括用于接触苹果供应商的硬件细节在内的专有数据发送给自己。 这两大科技巨头之间的高风险法律战可能会为快速增长的 AI 行业内的知识产权法和招聘实践树立重要先例。这也引发了对企业信任的严重担忧，如果 OpenAI 的产",
-      "source": "9to5Mac",
-      "link": "https://9to5mac.com/2026/07/10/apple-sues-openai-trade-secret-theft/",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "GPT-5.6 Sol Ultra 声称证明了循环双覆盖猜想",
-      "summary": "据报道，OpenAI 的 GPT-5.6 Sol Ultra 为图论中一个长期存在的开放性问题——循环双覆盖猜想生成了证明。此次发布包含了证明本身以及用于生成它的提示词，在人工智能和数学界引发了广泛争论。 如果得到验证，这将代表人工智能数学推理和自动定理证明能力的重大里程碑，超越了简单的计算，走向了复杂的理论构建。它凸显了大型语言模型解决纯数学中未解决问题的巨大潜力。 该证明以极其简洁而著称，导致",
-      "source": "scrlk",
-      "link": "https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "欧盟责令 Meta 整改成瘾功能否则罚款",
-      "summary": "欧盟委员会初步认定，Meta 未能缓解 Instagram 和 Facebook 上无限滚动和自动播放等成瘾性设计功能的风险，违反了《数字服务法案》。如果 Meta 不修改这些旨在提高用户参与度的 UI/UX 模式，将面临高达其全球年营业额 6% 的罚款。 这一监管行动树立了重大先例，直接针对大型科技平台的核心用户参与策略和 UI/UX 设计。它迫使整个行业重新思考产品管理和设计理念，将重点从最大",
+      "title": "中国先进隔热材料助力可重复使用火箭历史性回收",
+      "summary": "中国利用海上网系回收系统成功回收了长征十号乙火箭的一子级，标志着全球首次实现运载火箭网系回收。这一里程碑得益于能够承受极端高温而不变形的先进隔热材料，使中国的热防护系统技术跻身世界第一梯队。 可重复使用火箭技术能显著降低发射成本，而掌握热防护系统对于确保火箭级段在再入过程中的结构完整性至关重要。这一突破加速了中国商业航天产业的发展，并提升了其在全球可重复使用运载火箭市场的竞争力。 回收的隔热材料在",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/975/321.htm",
-      "published": "2026年07月11日",
+      "link": "https://www.ithome.com/0/975/837.htm",
+      "published": "2026年07月13日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "长十乙首飞成功回收，中国商业航天迈入可重复时代",
-      "summary": "中国在长征十号乙运载火箭的首飞中成功发射并回收了第一级助推器，使其成为首个完成海上全流程回收的中国火箭，也是全球第三个达成此里程碑的火箭。 这一突破标志着中国商业航天领域的历史性范式转变，将大幅降低发射成本，使中国能够与 SpaceX 等企业在全球可重复使用运载火箭市场中展开更有效的竞争。 长征十号乙是一款高约 63 米、直径 5 米的可重复使用液体燃料商业运载火箭，成功执行了受控返回飞行、垂直终",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8059836.html",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "腾讯开源混元 Hy3 大模型，WorkBuddy 紧急扩容应对流量",
-      "summary": "腾讯正式发布并开源了混元 Hy3 大语言模型，该模型采用 295B 参数的混合专家（MoE）架构，激活参数为 21B。发布后引发的巨大用户关注促使腾讯紧急对其 WorkBuddy AI 智能体平台的基础设施进行了扩容。 开源像 Hy3 这样强大的 MoE 模型显著增强了开源 AI 生态系统，为开发者构建应用提供了强大的新基础。WorkBuddy 需要立即扩容，凸显了市场对腾讯最新 AI 进展在真实",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8059720.html",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "AI 算力的真正颠覆在于光互联与去 DSP，而非晶体管",
-      "summary": "文章指出了 AI 计算基础设施的范式转变，关注点从晶体管密度转向光互联和“去 DSP”技术。它提出了 Hi-ONE 架构这一新赛道，将产业价值从传统 DSP 转移到光芯片和先进封装上。 这一转变对于克服数据中心网络中当前的 AI 功耗和带宽瓶颈至关重要。它代表了硬件价值链的重大重组，将竞争优势从半导体制造转移到光集成和封装领域。 这一新范式的成功将由三个关键指标决定：采用量、上市时间和生态系统发展",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8056791.html",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "谷歌推出 TabFM：无需单独训练的表格数据零样本基础模型",
-      "summary": "谷歌研究院推出了 TabFM，这是一个零样本基础模型，它利用上下文学习进行表格数据预测，无需针对每个数据集进行单独训练。它通过将数据视为结构化网格，在单次前向传播中即可对未见过的表格生成预测。 这一突破将企业机器学习的范式从复杂的数据集专属管道工程和超参数调优转变为简单的 API 调用，大幅缩短了投产时间。它将文本和视觉模型中常见的零样本推理能力引入到了庞大的结构化商业数据领域。 与因上下文限制和",
+      "title": "DeepSeek 降价 75%仍难解 AI 智能体百倍 Token 消耗难题",
+      "summary": "DeepSeek 将其 V4-Pro 模型的价格大幅下调了 75%，但企业 AI 供应商发现利润率依然承压。这是因为 AI 智能体消耗 Token 的速度呈指数级增长，远超推理成本下降的速度。 这凸显了 AI 部署经济学的关键范式转变，即智能体工作流的指数级 Token 消耗抵消了模型降价带来的财务收益。随着 AI 智能体成为标配，这迫使企业重新思考软件架构和成本管理。 单轮聊天机器人的输入与计费",
       "source": "VentureBeat",
-      "link": "https://venturebeat.com/technology/googles-tabfm-skips-per-dataset-training-and-still-predicts-on-tables-its-never-seen",
-      "published": "2026年07月11日",
+      "link": "https://venturebeat.com/orchestration/deepseek-cut-prices-75-the-100x-problem-remains",
+      "published": "2026年07月13日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "SK 集团会长：AI 驱动内存需求呈指数级增长",
-      "summary": "SK 集团会长崔泰源表示，SK 海力士计划在未来五年内将内存产能翻倍，但这仍无法满足由 AI 智能体和 KV 缓存需求驱动的指数级内存需求增长。 这凸显了 AI 基础设施中关键的硬件瓶颈，表明在通用人工智能（AGI）普及之前，内存供应限制将持续挑战大语言模型和 AI 智能体的扩展。 内存需求的结构性转变具体由 AI 智能体、物理 AI、机器人以及 AI 推理过程中产生的大量 KV 缓存驱动，部分客",
+      "title": "Chromium 148 的 Math.tanh 实现可用于操作系统指纹识别",
+      "summary": "一项技术分析表明，Chromium 148 中的 Math.tanh 函数会根据底层操作系统的不同产生微小的浮点数结果差异，从而使其可被用作一种浏览器指纹识别技术。 这凸显了一个新的隐私问题，即浏览器中未标准化的数学实现可能会无意中泄露底层系统细节，从而增加了伪造用户代理或保持匿名性的难度。这也引发了关于公司发布此类漏洞以改善自身网页抓取能力的道德争议。 这种指纹识别依赖于这样一个事实：像 Mat",
+      "source": "joahnn_s",
+      "link": "https://scrapfly.dev/posts/browser-math-os-fingerprint/",
+      "published": "2026年07月13日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "Claude Code 初始 Token 开销达 33k，远超 OpenCode",
+      "summary": "一项经验分析显示，Claude Code 在读取用户提示词之前会发送约 33,000 个 token，而 OpenCode 仅发送 7,000 个。这凸显了这两款 AI 编码助手在初始 token 开销和缓存策略上的显著差异。 这种隐藏的 token 开销直接影响开发者的 API 成本，并凸显了 AI 编码助手在管理上下文和编排子代理方面的低效。了解这些隐藏成本对于优化 AI 工作流和管理预算的工",
+      "source": "systima",
+      "link": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+      "published": "2026年07月13日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "Meta 发布 Muse Spark 1.1 强化 AI 智能体能力",
+      "summary": "Meta 正式发布了专为 AI 智能体设计的多模态推理模型 Muse Spark 1.1，重点提升了多智能体协作、百万级上下文处理及跨应用自动化能力。该模型现已通过 Meta AI App、meta.ai 的 Thinking 模式以及 Meta Model API 预览版开放使用。 此次发布凸显了 Meta 在自主 AI 智能体领域的战略布局，使其能够以最少的人工干预处理复杂的长期工作流。通过集",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/975/364.htm",
-      "published": "2026年07月11日",
+      "link": "https://www.ithome.com/0/975/832.htm",
+      "published": "2026年07月13日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "为什么 Vibe Coding 能降本却不一定增效？",
-      "summary": "近期的一篇分析指出，虽然 AI 驱动的“Vibe Coding”（氛围编程）显著加速了代码生成，但并未从根本上提升软件开发的整体效率。文章强调，AI 无法替代人类在定义问题、理解用户、设计系统架构以及对最终产品负责方面的能力。 这一观点对于正在探索 AI 辅助工作流的开发者和科技领导者至关重要，因为它将关注点从单纯的代码生成速度转移到了软件工程的真正瓶颈上。它提醒人们警惕“生产力错觉”，并强调在复",
-      "source": "少数派",
-      "link": "https://sspai.com/post/111975",
-      "published": "2026年07月11日",
+      "title": "微软研究院推出开源可视化中间语言 Flint，助力 AI 智能体生成专业图表",
+      "summary": "微软研究院联合中国人民大学推出了开源可视化中间语言 Flint，允许 AI 智能体通过自然语言为 Vega-Lite 和 ECharts 等库生成专业图表。他们还发布了 MCP 服务器，使 AI 智能体能够直接在聊天界面中创建和预览图表。 通过将图表意图与特定库的实现分离，Flint 显著降低了 AI 生成可视化的复杂度和错误率，使用户更容易创建准确且美观的数据图表。MCP 的集成将这一能力无缝嵌",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/975/816.htm",
+      "published": "2026年07月13日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "国产先进封装高端国产化率不足 10%",
-      "summary": "行业分析显示，尽管投入了高达 274 亿元人民币，中国高端先进封装的国产化率仍不足 10%。该报告指出了阻碍国内半导体封装行业追赶全球领先者的重大瓶颈。 这凸显了中国半导体供应链中的一个关键缺口，因为先进封装对于突破摩尔定律限制和生产高性能计算芯片至关重要。较低的国产化率表明，仅靠巨额资金无法迅速解决根深蒂固的技术和设备瓶颈。 分析指出，虽然传统封装已相对成熟，但高端先进封装需要混合键合和先进中介",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8060111.html",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "MiniMax 暴跌 24%凸显 AI 行业估值瓶颈",
-      "summary": "头部 AI 初创公司 MiniMax 近期在两天内经历了高达 24%的股价暴跌，引发了业界对其商业化和估值瓶颈的广泛分析。这一事件成为了生成式 AI 公司在维持高估值方面所面临更广泛挑战的重要案例研究。 这一大幅下跌反映了市场对 AI 初创公司能否将巨额技术投资转化为可持续收入来源的日益怀疑。它凸显了一个关键转折点，即 AI 行业必须将重心从纯粹的模型能力转向可行的商业化和现实的估值指标。 Min",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8060213.html",
-      "published": "2026年07月11日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "辉能科技拟凭固态电池挑战中国巨头",
-      "summary": "《连线》杂志报道了初创公司辉能科技，该公司正致力于大规模生产固态电池，以期颠覆电动汽车市场并挑战中国电池制造商目前的统治地位。 固态电池的商业化可能会显著改变全球电动汽车和储能供应链，为非中国公司提供夺回市场份额的关键机会。 虽然与传统锂离子电池相比，固态电池具有更高的安全性和能量密度，但它们面临着重大的技术和制造障碍，尤其是在经济高效地扩大生产规模方面。",
+      "title": "结合人工智能与量子计算生成用于药物研发的新肽",
+      "summary": "研究人员成功结合了人工智能和量子计算来生成新型肽，从而加速了针对罕见病和弱势群体的药物研发。这一早期项目展示了如何整合这些先进的计算方法来设计新的治疗分子。 这种方法凸显了人工智能和量子计算极具前景的交叉领域，能够显著减少罕见病治疗药物的开发时间和成本，而这类疾病通常被传统制药流程所忽视。它还展示了量子计算在计算生物学中超越理论模型的实际应用。 该项目是作为副业拼凑资金和时间开发出来的，表明它目前",
       "source": "Wired",
-      "link": "https://www.wired.com/story/prologium-battery-startup-betting-against-china/",
-      "published": "2026年07月11日",
+      "link": "https://www.wired.com/story/scientists-using-ai-and-quantum-computing-to-generate-new-peptides/",
+      "published": "2026年07月13日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "轨道后向反射器卫星实现对广义相对论的最精确测试",
-      "summary": "研究人员利用卫星激光测距技术，通过一颗覆盖后向反射器的卫星测量地球的时空扭曲，对爱因斯坦的广义相对论进行了迄今为止最精确的测试。 这种前所未有的精度为实验物理学提供了一个极具价值的里程碑，进一步证实了爱因斯坦百年前的理论，并为引力研究和天体物理学设定了新的标准。 该实验利用了 LAGEOS 卫星，其表面覆盖着数百个后向反射器，用于反射地面站的激光脉冲，从而实现毫米级的距离测量，以探测微小的相对论效",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/science/2026/07/an-orbiting-disco-ball-gave-einsteins-theory-its-most-precise-test-yet/",
-      "published": "2026年07月11日",
+      "title": "苹果跳过 M6 Pro/Max/Ultra 芯片，全力押注 AI 导向的 M7 系列",
+      "summary": "苹果计划仅发布基础版 M6 芯片，完全跳过 M6 Pro、Max 和 Ultra 版本，以加速开发以 AI 为中心的 M7 系列。预计 M7 Ultra 将带来显著的神经网络处理升级，并从 2029 年开始为 Apple Intelligence 服务器提供算力。 这一战略转变凸显了人工智能正在从根本上重塑苹果的硬件设计周期和产品路线图。通过优先考虑神经网络引擎能力而非传统的性能分级，苹果表明包括",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/975/835.htm",
+      "published": "2026年07月13日",
       "category": "科技",
-      "score": 7.0
+      "score": 6.0
     },
     {
-      "title": "探究汽车 ECU 调校中的安全攻防战",
-      "summary": "Ars Technica 发表了一篇技术深度报道，调查了汽车原始设备制造商（OEM）与独立调校者之间围绕发动机控制单元（ECU）芯片持续进行的安全攻防战。文章探讨了 OEM 如何日益加强对这些嵌入式系统的锁定，而调校者又如何不断开发新方法来破解和修改它们。 这凸显了汽车行业嵌入式系统安全和逆向工程面临的更广泛挑战，因为软件定义的汽车严重依赖安全的 ECU。这种持续的猫鼠游戏不仅影响车辆性能和保修有",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/cars/2026/07/like-a-cheat-code-for-your-car-we-investigate-ecu-tuning/",
-      "published": "2026年07月11日",
+      "title": "苹果 M7 Ultra 芯片据称最高支持 1.5TB 统一内存",
+      "summary": "马克·古尔曼透露，预计于 2028 年推出的苹果 M7 Ultra 芯片在设计上最高支持 1.5TB 统一内存，容量是 M5 Ultra 的两倍。该消息还公布了更广泛的路线图，包括主打 AI 的 M8 芯片以及 2028 年向 1.4 纳米制造工艺的过渡。 这种巨大的内存容量对人工智能和机器学习社区意义重大，因为它将使专业人士能够在 Mac 硬件上本地运行超大型语言模型。这凸显了苹果在高端 AI ",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/975/833.htm",
+      "published": "2026年07月13日",
       "category": "科技",
-      "score": 7.0
+      "score": 6.0
+    },
+    {
+      "title": "功率半导体市场达 413 亿美元，三大竞争赛道加速分化",
+      "summary": "最新行业分析显示，全球功率半导体市场规模已达 413 亿美元，且市场正在三大关键竞争赛道中加速分化。这一细分趋势凸显了企业在电力电子领域定位策略的转变。 这种市场分化对硬件工程师和投资者具有重要意义，因为它表明竞争正从广泛的市场转向特定的细分赛道，尤其是在新能源汽车和先进电能转换等新兴应用领域。了解这三大竞争赛道对于应对日益复杂和细分的功率半导体供应链至关重要。 分析指出，413 亿美元的市场正分",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8061644.html",
+      "published": "2026年07月13日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "智谱内部信揭示 AGI 野心与战略压力",
+      "summary": "智谱 AI 发布了一封内部信，概述了其实现通用人工智能（AGI）的激进野心，同时应对高度竞争的 AI 市场中激烈的战略压力。 这封信为了解中国领先 AI 初创公司的战略方向和商业化路径提供了宝贵见解，凸显了在通往 AGI 的竞赛中激烈的竞争和高昂的代价。 分析表明，智谱 AI 的愿景比公众预期的更为激进，表明其正转向激进的市场定位和产品商业化，以在当前的 AI 格局中生存。",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8061646.html",
+      "published": "2026年07月13日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "AI 基建扩张放缓，巨头转向算力变现",
+      "summary": "据报道，大型科技公司正将战略重点从激进扩张 AI 计算基础设施转向变现现有算力。这一转变标志着 AI 行业进入新阶段，硬件方面的资本支出可能会面临暂时的放缓。 这一转变表明 AI 行业正走向成熟，从纯粹的基础设施建设阶段转向关注投资回报和商业应用。这可能会通过改变对高端 GPU 和数据中心设备的需求预期，对半导体制造商、云服务提供商以及更广泛的 AI 供应链产生重大影响。 该分析强调，最初囤积计算",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8061647.html",
+      "published": "2026年07月13日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "具身智能 460 亿融资背后的异类玩家分析",
+      "summary": "一篇行业分析文章探讨了具身智能领域一位异类玩家的商业战略与巨额融资，凸显了该领域正在经历显著的资本涌入。 具身智能领域的巨额融资表明了投资者的强烈信心，并加速了人工智能从数字领域向物理机器人的过渡。这一趋势将深刻影响未来机器人技术和人工智能商业化的格局。 该文章主要侧重于商业和财务分析，而非深度的技术规格，并使用隐喻来描述该公司的基础战略。简短的摘录中并未提供关于该公司机器人或人工智能模型的具体技",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8061597.html",
+      "published": "2026年07月13日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "苹果取消的造车项目推动了其 AI 芯片的发展",
+      "summary": "苹果被取消的自动驾驶汽车项目（Project Titan）无意中推动了其 Apple Silicon 芯片中强大的端侧 AI 处理能力的开发。尽管汽车处理器最终未能完成，但自动驾驶的严苛需求塑造了当前 AI 硬件的架构。 这揭示了苹果的硬件战略和端侧 AI 能力是如何受到一项长达十年但最终失败的汽车项目深刻影响的。它突显了公司向端侧 AI 处理的战略转型，这对于其当前生态系统中的隐私和性能至关重要",
+      "source": "The Verge",
+      "link": "https://www.theverge.com/tech/964519/apple-silicon-self-driving-car-ai-m7-ultra",
+      "published": "2026年07月13日",
+      "category": "科技",
+      "score": 6.0
     }
   ]
 }
