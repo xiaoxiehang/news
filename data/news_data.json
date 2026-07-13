@@ -1,131 +1,167 @@
 {
-  "date": "2026-07-13",
-  "date_str": "2026年07月13日",
-  "count": 14,
+  "date": "2026-07-14",
+  "date_str": "2026年07月14日",
+  "count": 18,
   "news": [
     {
-      "title": "中国先进隔热材料助力可重复使用火箭历史性回收",
-      "summary": "中国利用海上网系回收系统成功回收了长征十号乙火箭的一子级，标志着全球首次实现运载火箭网系回收。这一里程碑得益于能够承受极端高温而不变形的先进隔热材料，使中国的热防护系统技术跻身世界第一梯队。 可重复使用火箭技术能显著降低发射成本，而掌握热防护系统对于确保火箭级段在再入过程中的结构完整性至关重要。这一突破加速了中国商业航天产业的发展，并提升了其在全球可重复使用运载火箭市场的竞争力。 回收的隔热材料在",
+      "title": "中国团队刷新钙钛矿-有机叠层太阳能电池 28.04%效率纪录",
+      "summary": "中国科学院研究团队在钙钛矿-有机叠层太阳能电池上实现了 28.04%的认证稳态光电转换效率，创下新的世界纪录。这一发表在《自然》杂志上的突破得益于引入了一种名为 TDB 的新型添加剂分子。 这一进展显著提高了叠层太阳能电池的效率和稳定性，使其更接近实际商业应用。这些电池的轻薄和柔性特性为建筑光伏一体化、可穿戴设备和航空航天供电系统开辟了新的可能性。 研究团队利用 TDB 分子实现了全阶段调控，在结",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/975/837.htm",
-      "published": "2026年07月13日",
+      "link": "https://www.ithome.com/0/976/233.htm",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "我国自研 AI 芯片取得架构突破，14nm 制程实现每秒 520 万亿次浮点运算",
+      "summary": "我国首颗采用软件定义与三维近存计算技术的 AI 芯片正式亮相，在 14 纳米制程下实现了每秒 520 万亿次浮点运算的算力。这一突破探索出了一条不依赖先进制程的高端算力发展新路径。 通过将发展重心从制程微缩转向架构创新，这一成果大幅降低了对受限先进半导体制造的依赖，为国内 AI 基础设施提供了更稳定可控的供应链。它为大模型训练与推理提供了规模化、可落地的国产化算力支撑。 该芯片通过三维垂直堆叠技术",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/976/197.htm",
+      "published": "2026年07月14日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "DeepSeek 降价 75%仍难解 AI 智能体百倍 Token 消耗难题",
-      "summary": "DeepSeek 将其 V4-Pro 模型的价格大幅下调了 75%，但企业 AI 供应商发现利润率依然承压。这是因为 AI 智能体消耗 Token 的速度呈指数级增长，远超推理成本下降的速度。 这凸显了 AI 部署经济学的关键范式转变，即智能体工作流的指数级 Token 消耗抵消了模型降价带来的财务收益。随着 AI 智能体成为标配，这迫使企业重新思考软件架构和成本管理。 单轮聊天机器人的输入与计费",
-      "source": "VentureBeat",
-      "link": "https://venturebeat.com/orchestration/deepseek-cut-prices-75-the-100x-problem-remains",
-      "published": "2026年07月13日",
+      "title": "防御者采用“上下文轰炸”提示词注入技术拦截恶意 AI 代理",
+      "summary": "安全防御者正在采用一种名为“上下文轰炸”的新技术，该技术利用防御性提示词注入，诱使恶意 AI 代理触发其自身的安全护栏并自行关闭。 这代表了 AI 安全领域的一次重大范式转变，将一种主要的攻击漏洞转化为主动的防御机制，从而中和自主黑客代理。 “上下文炸弹”是一段策略性地放置在攻击路径上的简短文本，旨在触发攻击性 AI 代理内置的安全过滤器，从而在执行有害操作之前有效阻止攻击。",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
+      "published": "2026年07月14日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "Chromium 148 的 Math.tanh 实现可用于操作系统指纹识别",
-      "summary": "一项技术分析表明，Chromium 148 中的 Math.tanh 函数会根据底层操作系统的不同产生微小的浮点数结果差异，从而使其可被用作一种浏览器指纹识别技术。 这凸显了一个新的隐私问题，即浏览器中未标准化的数学实现可能会无意中泄露底层系统细节，从而增加了伪造用户代理或保持匿名性的难度。这也引发了关于公司发布此类漏洞以改善自身网页抓取能力的道德争议。 这种指纹识别依赖于这样一个事实：像 Mat",
-      "source": "joahnn_s",
-      "link": "https://scrapfly.dev/posts/browser-math-os-fingerprint/",
-      "published": "2026年07月13日",
+      "title": "完全通过命令行和 LLM 构建与发布 Apple 应用",
+      "summary": "一份新指南详细介绍了一种工作流，完全通过命令行工具和 LLM 生成的脚本来构建、签名和发布 Mac 及 iOS 应用，彻底绕过了 Xcode 图形界面。 这种方法展示了 AI 代理如何自动化复杂的、传统上依赖 GUI 的开发者工作流，从而可能为 Apple 生态系统应用启用如 Linux 等跨平台开发环境。 该工作流依赖 LLM 生成并执行用于归档、Developer ID 签名、公证和安装应用的",
+      "source": "speckx",
+      "link": "https://scottwillsey.com/building-and-shipping-mac-and-ios-apps-without-ever-opening-xcode/",
+      "published": "2026年07月14日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "Claude Code 初始 Token 开销达 33k，远超 OpenCode",
-      "summary": "一项经验分析显示，Claude Code 在读取用户提示词之前会发送约 33,000 个 token，而 OpenCode 仅发送 7,000 个。这凸显了这两款 AI 编码助手在初始 token 开销和缓存策略上的显著差异。 这种隐藏的 token 开销直接影响开发者的 API 成本，并凸显了 AI 编码助手在管理上下文和编排子代理方面的低效。了解这些隐藏成本对于优化 AI 工作流和管理预算的工",
-      "source": "systima",
-      "link": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
-      "published": "2026年07月13日",
+      "title": "苹果全新 SpeechAnalyzer API 与 Whisper 基准测试对比",
+      "summary": "苹果在 iOS 26 和 macOS 26 中推出了全新的 SpeechAnalyzer 和 SpeechTranscriber API，以取代旧版的 SFSpeechRecognizer。最近的一项技术基准测试将这些新的设备端 API 与 OpenAI 的 Whisper 模型进行了对比，结果显示其速度有显著提升，但准确率略有下降。 该基准测试为开发者提供了关于苹果原生、保护隐私的设备端 ASR",
+      "source": "get-inscribe",
+      "link": "https://get-inscribe.com/blog/apple-speech-api-benchmark.html",
+      "published": "2026年07月14日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "Meta 发布 Muse Spark 1.1 强化 AI 智能体能力",
-      "summary": "Meta 正式发布了专为 AI 智能体设计的多模态推理模型 Muse Spark 1.1，重点提升了多智能体协作、百万级上下文处理及跨应用自动化能力。该模型现已通过 Meta AI App、meta.ai 的 Thinking 模式以及 Meta Model API 预览版开放使用。 此次发布凸显了 Meta 在自主 AI 智能体领域的战略布局，使其能够以最少的人工干预处理复杂的长期工作流。通过集",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/975/832.htm",
-      "published": "2026年07月13日",
+      "title": "苹果 M7 Ultra 或支持 1.5TB 内存；宇树机器人完成活体手术",
+      "summary": "据报道，苹果即将推出的 M7 Ultra 芯片将支持高达 1.5TB 的统一内存，同时宇树 G1 人形机器人成功完成两例活体手术并登上《自然》杂志。此外，Meta CEO 强调 AI 算力需求依然巨大，凸显了行业对算力的无尽渴求。 M7 Ultra 庞大的内存容量有望通过缩小与旧版 Intel 工作站的差距来彻底改变本地 AI 模型的运行，而宇树机器人在手术上的成功则凸显了人形机器人在精密医疗领域",
+      "source": "爱范儿",
+      "link": "https://www.ifanr.com/1671746?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "published": "2026年07月14日",
       "category": "科技",
       "score": 7.0
     },
     {
-      "title": "微软研究院推出开源可视化中间语言 Flint，助力 AI 智能体生成专业图表",
-      "summary": "微软研究院联合中国人民大学推出了开源可视化中间语言 Flint，允许 AI 智能体通过自然语言为 Vega-Lite 和 ECharts 等库生成专业图表。他们还发布了 MCP 服务器，使 AI 智能体能够直接在聊天界面中创建和预览图表。 通过将图表意图与特定库的实现分离，Flint 显著降低了 AI 生成可视化的复杂度和错误率，使用户更容易创建准确且美观的数据图表。MCP 的集成将这一能力无缝嵌",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/975/816.htm",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "结合人工智能与量子计算生成用于药物研发的新肽",
-      "summary": "研究人员成功结合了人工智能和量子计算来生成新型肽，从而加速了针对罕见病和弱势群体的药物研发。这一早期项目展示了如何整合这些先进的计算方法来设计新的治疗分子。 这种方法凸显了人工智能和量子计算极具前景的交叉领域，能够显著减少罕见病治疗药物的开发时间和成本，而这类疾病通常被传统制药流程所忽视。它还展示了量子计算在计算生物学中超越理论模型的实际应用。 该项目是作为副业拼凑资金和时间开发出来的，表明它目前",
-      "source": "Wired",
-      "link": "https://www.wired.com/story/scientists-using-ai-and-quantum-computing-to-generate-new-peptides/",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "苹果跳过 M6 Pro/Max/Ultra 芯片，全力押注 AI 导向的 M7 系列",
-      "summary": "苹果计划仅发布基础版 M6 芯片，完全跳过 M6 Pro、Max 和 Ultra 版本，以加速开发以 AI 为中心的 M7 系列。预计 M7 Ultra 将带来显著的神经网络处理升级，并从 2029 年开始为 Apple Intelligence 服务器提供算力。 这一战略转变凸显了人工智能正在从根本上重塑苹果的硬件设计周期和产品路线图。通过优先考虑神经网络引擎能力而非传统的性能分级，苹果表明包括",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/975/835.htm",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "苹果 M7 Ultra 芯片据称最高支持 1.5TB 统一内存",
-      "summary": "马克·古尔曼透露，预计于 2028 年推出的苹果 M7 Ultra 芯片在设计上最高支持 1.5TB 统一内存，容量是 M5 Ultra 的两倍。该消息还公布了更广泛的路线图，包括主打 AI 的 M8 芯片以及 2028 年向 1.4 纳米制造工艺的过渡。 这种巨大的内存容量对人工智能和机器学习社区意义重大，因为它将使专业人士能够在 Mac 硬件上本地运行超大型语言模型。这凸显了苹果在高端 AI ",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/975/833.htm",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "功率半导体市场达 413 亿美元，三大竞争赛道加速分化",
-      "summary": "最新行业分析显示，全球功率半导体市场规模已达 413 亿美元，且市场正在三大关键竞争赛道中加速分化。这一细分趋势凸显了企业在电力电子领域定位策略的转变。 这种市场分化对硬件工程师和投资者具有重要意义，因为它表明竞争正从广泛的市场转向特定的细分赛道，尤其是在新能源汽车和先进电能转换等新兴应用领域。了解这三大竞争赛道对于应对日益复杂和细分的功率半导体供应链至关重要。 分析指出，413 亿美元的市场正分",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8061644.html",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "智谱内部信揭示 AGI 野心与战略压力",
-      "summary": "智谱 AI 发布了一封内部信，概述了其实现通用人工智能（AGI）的激进野心，同时应对高度竞争的 AI 市场中激烈的战略压力。 这封信为了解中国领先 AI 初创公司的战略方向和商业化路径提供了宝贵见解，凸显了在通往 AGI 的竞赛中激烈的竞争和高昂的代价。 分析表明，智谱 AI 的愿景比公众预期的更为激进，表明其正转向激进的市场定位和产品商业化，以在当前的 AI 格局中生存。",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8061646.html",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "AI 基建扩张放缓，巨头转向算力变现",
-      "summary": "据报道，大型科技公司正将战略重点从激进扩张 AI 计算基础设施转向变现现有算力。这一转变标志着 AI 行业进入新阶段，硬件方面的资本支出可能会面临暂时的放缓。 这一转变表明 AI 行业正走向成熟，从纯粹的基础设施建设阶段转向关注投资回报和商业应用。这可能会通过改变对高端 GPU 和数据中心设备的需求预期，对半导体制造商、云服务提供商以及更广泛的 AI 供应链产生重大影响。 该分析强调，最初囤积计算",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8061647.html",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "具身智能 460 亿融资背后的异类玩家分析",
-      "summary": "一篇行业分析文章探讨了具身智能领域一位异类玩家的商业战略与巨额融资，凸显了该领域正在经历显著的资本涌入。 具身智能领域的巨额融资表明了投资者的强烈信心，并加速了人工智能从数字领域向物理机器人的过渡。这一趋势将深刻影响未来机器人技术和人工智能商业化的格局。 该文章主要侧重于商业和财务分析，而非深度的技术规格，并使用隐喻来描述该公司的基础战略。简短的摘录中并未提供关于该公司机器人或人工智能模型的具体技",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8061597.html",
-      "published": "2026年07月13日",
-      "category": "科技",
-      "score": 6.0
-    },
-    {
-      "title": "苹果取消的造车项目推动了其 AI 芯片的发展",
-      "summary": "苹果被取消的自动驾驶汽车项目（Project Titan）无意中推动了其 Apple Silicon 芯片中强大的端侧 AI 处理能力的开发。尽管汽车处理器最终未能完成，但自动驾驶的严苛需求塑造了当前 AI 硬件的架构。 这揭示了苹果的硬件战略和端侧 AI 能力是如何受到一项长达十年但最终失败的汽车项目深刻影响的。它突显了公司向端侧 AI 处理的战略转型，这对于其当前生态系统中的隐私和性能至关重要",
+      "title": "iOS 公测版 Siri AI 功能上手体验",
+      "summary": "苹果发布了 iOS 27 的首个公测版，将全新集成的 Siri AI 功能带给普通用户。这篇上手体验探讨了这些 AI 增强功能如何改变日常的 iPhone 使用体验。 将先进 AI 集成到 Siri 中标志着用户与移动设备交互方式的重大转变，向着更自然、更具上下文感知能力的辅助功能迈进。作为主流的设备端 AI 部署，它为消费级 AI 功能在移动操作系统中的实际落地树立了标杆。 作者将今年的 iOS",
       "source": "The Verge",
-      "link": "https://www.theverge.com/tech/964519/apple-silicon-self-driving-car-ai-m7-ultra",
-      "published": "2026年07月13日",
+      "link": "https://www.theverge.com/tech/964714/siri-ai-public-beta-preview-ios-27-hands-on",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "旧金山警方无人机泄露暴露监控",
+      "summary": "旧金山警察局泄露的数小时无人机视频揭示了其空中监控行动的广泛规模。此次泄露凸显了用于这些任务的 Skydio 无人机平台所面临的重大数据暴露风险。 这一事件凸显了在城市环境中部署自主监控无人机所带来的深远隐私和安全影响。它敲响了警钟，提醒人们敏感的执法数据可能会如何无意中泄露到网上，从而影响生活在这些监控区域内的数百万公民。 泄露的视频源自 Skydio 平台，该平台被广泛用于全美 42 个州的“",
+      "source": "Wired",
+      "link": "https://www.wired.com/story/sfpd-drone-video-leak-surveillance/",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "苹果起诉 OpenAI 涉嫌前员工窃取商业机密",
+      "summary": "苹果已对 OpenAI 提起诉讼，指控该 AI 公司与前苹果工程师串通，利用软件漏洞窃取专有商业机密。诉状称，一名前员工在离职加入 OpenAI 很久之后，仍从苹果网络中下载了敏感文件。 这场重大的法律纠纷凸显了 AI 行业激烈的竞争，以及人们对知识产权保护和网络安全的日益关注。它可能会为科技巨头如何处理商业机密以及管理人才向竞争对手流动树立重要的先例。 诉状中包含了一些引人注目的指控，例如员工开",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/tech-policy/2026/07/apple-sues-openai-after-ex-engineer-allegedly-used-bug-to-steal-trade-secrets/",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "模拟万物，某种程度上：世界模型的前景与局限",
+      "summary": "专家分析探讨了人工智能世界模型在模拟复杂环境时的底层机制、能力及其当前局限性。",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/ai/2026/07/simulating-everything-sort-of-the-promise-and-limits-of-world-models/",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "ACRouter 动态路由 AI 任务，成本降低 2.6 倍",
+      "summary": "研究人员推出了开源框架 ACRouter，它利用基于智能体的“上下文-行动-反馈”循环，将任务动态路由到最合适的 AI 模型。与专门使用 Opus 等高端模型相比，该方法将成本降低了 2.6 倍。 通过用能够从执行结果中学习的自我优化系统取代静态、硬编码的路由规则，企业可以在不牺牲性能的情况下显著降低 AI 基础设施成本。这种动态方法还能防止系统在新基础模型发布时变得过时。 与存在信息缺失且在分布",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/orchestration/acrouter-picks-the-smartest-ai-model-per-task-beating-opus-only-setups-by-2-6x-on-cost",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "Slopsquatting：AI 引发的新型软件供应链威胁",
+      "summary": "一种名为 slopsquatting（AI 幻觉包劫持）的新型供应链攻击利用了 AI 编码助手的幻觉，攻击者通过注册 AI 虚构的包名并注入恶意代码来实施攻击。 这种威胁绕过了传统的拼写错误劫持防护，因为 AI 会生成听起来合理但完全虚构的包名，可能会危及无数开发者的环境和生产系统。 与传统的拼写错误劫持不同，软件包注册表缺乏针对这些 AI 幻觉名称的大规模防护机制，恶意包可能会在生产环境中潜伏数",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/security/forget-typosquatting-slopsquatting-is-the-software-supply-chain-threat-created-by-ai-coding-tools",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "苹果起诉 OpenAI：9to5Mac 每日播客回顾",
+      "summary": "2026 年 7 月 13 日的 9to5Mac Daily 播客节目重点报道了苹果正式起诉 OpenAI 这一重大法律进展。 消费技术和人工智能领域最具影响力的两家公司之间的法律战，可能会重塑行业标准、知识产权规范以及未来的科技合作关系。 提供的文本严格来说只是一个播客目录页面，不包含实际的文字记录、法律论点或诉讼中提出的具体索赔。",
+      "source": "9to5Mac",
+      "link": "https://9to5mac.com/2026/07/13/daily-july-13-2026/",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "苹果发布 iOS 27 公测版，引入 Siri AI 与 Liquid Glass UI",
+      "summary": "苹果发布了 iOS 27 的首个公测版，引入了全新的 Siri AI、重新设计的屏幕使用时间体验以及可定制的 Liquid Glass UI 改进。该更新还带来了整体性能提升，使系统在旧款 iPhone 上运行也更加流畅。 此次发布标志着苹果将 AI 深度整合到其核心移动助手中的重要一步，直接与其他 AI 驱动的移动生态系统展开竞争。公测版让数百万用户和开发者能够在秋季正式发布前测试这些重大的 U",
+      "source": "9to5Mac",
+      "link": "https://9to5mac.com/2026/07/13/ios-27-public-beta/",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "苹果发布 iPadOS 27 公测版",
+      "summary": "苹果正式推出了 iPadOS 27 的公测版，允许任何用户在秋季正式发布前下载并测试这款新操作系统。虽然简短的更新中未详细列出具体功能，但这标志着普通公众首次可以体验这款即将推出的软件。 公测版的发布对移动应用开发者和软件工程师来说是一个关键里程碑，因为它提供了一个更广泛的测试环境，以确保他们的应用与新系统完全兼容。这也让普通用户能够在最终版本推送到数百万台设备之前，提供关于错误和性能问题的宝贵反",
+      "source": "9to5Mac",
+      "link": "https://9to5mac.com/2026/07/13/apple-releases-ipados-27-public-beta-heres-whats-new/",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "韩国计划 2026 年推出全民免费 AI 聊天机器人服务",
+      "summary": "韩国科学技术信息通信部宣布，计划通过政府招标在 2026 年内为全体国民推出免费的通用人工智能聊天机器人服务。该计划要求主要使用韩国自研 AI 模型，并由政府每年提供 512 块 NVIDIA B200 GPU 的算力资金支持。 这一举措凸显了全球日益增长的数字主权趋势，各国正努力减少对外国 AI 技术的依赖并弥合国内的 AI 使用鸿沟。通过补贴本土模型并提供专属算力资源，韩国旨在培育本土 AI ",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/976/223.htm",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "苹果为欧盟开发新 API，支持第三方设备跨设备自动配对",
+      "summary": "苹果正为欧盟地区开发一项全新的 iOS API，允许第三方设备（首批包括 Meta Quest 头显和 Ray-Ban 智能眼镜）在用户的苹果设备间自动同步配对。此举是为了响应 Meta 根据欧盟《数字市场法》提出的互操作性请求。 这标志着苹果生态系统的一次重大转变，打破了以往仅限 AirPods 和 Apple Watch 等第一方配件的无缝跨设备配对特权。它树立了由监管合规驱动的第三方硬件集成",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/976/222.htm",
+      "published": "2026年07月14日",
+      "category": "科技",
+      "score": 6.0
+    },
+    {
+      "title": "Forg365：针对微软 365 的 AI 订阅制钓鱼平台曝光",
+      "summary": "安全公司 ZeroBEC 披露了一个名为 Forg365 的暗网订阅制钓鱼平台，该平台利用 AI 和设备验证码攻击窃取微软 365 的 OAuth 令牌。此外，该平台还提供专用浏览器扩展，帮助攻击者维持对被盗账号的长期访问权限。 该平台大幅降低了网络犯罪分子针对企业环境发起复杂、AI 增强型钓鱼攻击的门槛，并能有效绕过传统多因素认证。这凸显了针对微软 365 等身份与访问管理系统的“钓鱼即服务”模",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/976/206.htm",
+      "published": "2026年07月14日",
       "category": "科技",
       "score": 6.0
     }
