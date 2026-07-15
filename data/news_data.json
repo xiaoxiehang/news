@@ -1,169 +1,169 @@
 {
-  "date": "2026-07-15",
-  "date_str": "2026年07月15日",
+  "date": "2026-07-16",
+  "date_str": "2026年07月16日",
   "count": 18,
   "news": [
     {
-      "title": "微软安全启动漏洞被隐藏超十年",
-      "summary": "研究人员发现，由于未撤销的旧版兼容层（shims），微软的安全启动（Secure Boot）十多年来一直存在可被轻易绕过的漏洞。这些被遗忘的兼容层允许攻击者在数百万台设备上轻松绕过这一基础安全机制。 这一长达十年的漏洞严重破坏了 Windows 设备的信任根，可能允许攻击者在操作系统启动前加载未经授权的引导加载程序或恶意软件。这凸显了微软在基础系统安全的长期漏洞管理和撤销流程中存在严重缺陷。 该绕",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/security/2026/07/microsoft-secure-boot-has-been-broken-for-most-of-its-existence/",
-      "published": "2026年07月15日",
+      "title": "SpaceXAI 开源 Grok Build AI 编程智能体",
+      "summary": "SpaceXAI 正式开源了 Grok Build，这是一个集成在终端中的 AI 编程智能体，能够处理从规划到 Git 提交的全流程编码工作。包括智能体逻辑、工具和用户界面组件在内的完整源代码现已在 GitHub 上公开，供公众使用和修改。 这一举措显著提高了透明度，允许开发者检查 AI 如何构建上下文和调度工具调用，从而促进信任和定制化。它还支持本地优先运行，使用户能够使用自己的本地推理模型运行",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/977/265.htm",
+      "published": "2026年07月16日",
       "category": "科技",
       "score": 9.0
     },
     {
-      "title": "OpenAI 首款硬件：无屏智能音箱与 AI 伴侣",
-      "summary": "彭博社报道称，OpenAI 正在开发其首款消费级硬件设备，这是一款便携式无屏智能音箱，旨在作为 AI 伴侣和智能家居中枢。该设备将内置摄像头、环境传感器，并搭载 GPT-Live 系列等先进语音模型进行交互式沟通。 这标志着 OpenAI 从纯软件向物理消费级硬件和环境计算扩展的重大战略转变。它预示着整个行业正朝着深度融入日常生活和智能家居生态系统的专用 AI 设备方向发展。 该设备在内部被描述为",
+      "title": "X 平台将零保留开源全部代码并引入第三方核验",
+      "summary": "埃隆·马斯克宣布，X 平台将在完成内部安全审查后，零保留地开源其全部代码库。该平台还将引入第三方审核机构，确保对外公开的代码与线上实际运行的代码完全一致。 此举通过解决公众对“形式化透明”的质疑，挑战了行业惯例，并可能显著影响 Lens Protocol 等去中心化社交媒体竞争对手。其目标是在保留中心化平台网络效应的同时，获得完全技术透明带来的信任优势。 与 2025 年仅公开推荐算法等部分代码不",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/976/769.htm",
-      "published": "2026年07月15日",
+      "link": "https://www.ithome.com/0/977/233.htm",
+      "published": "2026年07月16日",
       "category": "科技",
-      "score": 8.0
+      "score": 9.0
     },
     {
-      "title": "英特尔将大部分 Nova Lake 计算芯粒生产转回自家 18A 工艺",
-      "summary": "据报道，英特尔已推翻最初将大部分 Nova Lake 计算芯粒外包给台积电 2nm 节点的计划。现在，80-90% 的计算芯粒将使用英特尔自家的 18A 工艺在内部制造。 这一战略转变表明英特尔对其 18A 工艺节点的成熟度和良率充满信心。这也大幅减少了英特尔对台积电在下一代客户端处理器上的依赖，从而影响竞争激烈的晶圆代工格局。 这一决定得益于 18A 工艺良率的提升以及令人满意的晶圆废弃率。目前",
+      "title": "苹果携手百度与阿里巴巴在中国推出 Apple Intelligence",
+      "summary": "消息证实，苹果正与百度合作提供人工智能搜索功能，并与阿里巴巴合作集成其通义千问模型以支持更广泛的生成式 AI 功能。这一合作为中国 iPhone 用户带来了本地化的 Apple Intelligence 服务，包括升级版的 Siri 和端侧内容生成功能。 此次合作标志着关键的监管和技术里程碑，使苹果能够在遵守中国严格的生成式 AI 法律的同时，在全球最大的智能手机市场之一部署其先进的 AI 套件。",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/976/748.htm",
-      "published": "2026年07月15日",
+      "link": "https://www.ithome.com/0/977/164.htm",
+      "published": "2026年07月16日",
       "category": "科技",
-      "score": 8.0
+      "score": 9.0
     },
     {
-      "title": "DeepMind CEO 提议建立独立 AI 标准机构",
-      "summary": "DeepMind CEO Demis Hassabis 提议建立一个类似美国金融业监管局（FINRA）的独立标准机构，以测试和监管前沿 AI 模型的发布。他正积极游说美国政府、其他 AI 实验室和欧洲官员，希望该机构能在年底前投入运作。 这一提议标志着前沿 AI 的治理从行业自律向标准化、全行业的安全测试和监管转变。如果该提议被采纳，将有望建立一个全球性框架，以缓解灾难性风险并协调各竞争实验室的 ",
+      "title": "黑客攻击揭露 Suno 抓取 YouTube 数据训练 AI 音乐模型",
+      "summary": "AI 音乐生成器 Suno 遭遇安全漏洞，暴露的源代码显示其未经授权从 YouTube Music、Deezer 和 Genius 等平台抓取音频数据。黑客通过获取员工凭证，揭示了数百万首歌曲和歌词被用于模型训练且未公开披露的事实。 这一事件证实了人们长期以来对生成式 AI 公司未经许可使用版权材料的怀疑，可能引发重大的法律和监管后果。它凸显了快速发展的 AI 音乐行业在数据隐私和网络安全方面的关",
       "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/",
-      "published": "2026年07月15日",
+      "link": "https://techcrunch.com/2026/07/15/hack-suggests-ai-music-generator-suno-scraped-youtube-for-training-data/",
+      "published": "2026年07月16日",
       "category": "科技",
-      "score": 8.0
+      "score": 9.0
     },
     {
-      "title": "DeepSeek 正洽谈融资 15 亿美元并筹备 2027 年 IPO",
-      "summary": "据报道，中国人工智能开发商 DeepSeek 正在洽谈以 710 亿美元的估值筹集约 15 亿美元的新资金。该公司同时也在筹备计划于 2027 年进行的首次公开募股。 这一巨额估值和 IPO 筹备工作凸显了 DeepSeek 在全球人工智能和开源大语言模型领域的重要影响力。这表明尽管面临更广泛的市场挑战，投资者对中国人工智能发展的信心依然强劲。 本轮融资目标为 15 亿美元，公司估值达到 710 ",
+      "title": "据报道 Stripe 和 Advent 出价 534 亿美元收购 PayPal",
+      "summary": "据报道，Stripe 与私募股权公司 Advent International 已联合提交了一份以约 534 亿美元收购 PayPal 的报价。这笔潜在交易将把数字支付领域的两大巨头合二为一。 此次收购将通过根本性改变数字支付的竞争格局，成为金融科技行业的一个范式转变事件。它标志着一种重大的整合趋势，可能会重新定义全球在线交易的处理方式。 据报道，该交易的估值约为 534 亿美元，涉及支付处理商 ",
       "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/14/deepseek-reportedly-in-talks-to-raise-1-5b-then-ipo/",
-      "published": "2026年07月15日",
+      "link": "https://techcrunch.com/2026/07/15/stripe-and-advent-reportedly-offered-to-buy-paypal-for-around-53-4b/",
+      "published": "2026年07月16日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "Thinking Machines Lab 发布 9750 亿参数开源多模态模型 Inkling",
+      "summary": "Thinking Machines Lab 发布了 Inkling，这是一个拥有 9750 亿参数的开源权重多模态模型，能够在 Apache 2.0 许可下处理文本、图像和音频。此次发布还包括一个名为 Inkling-Small 的 2760 亿参数较小版本，并引入了可控制思考努力程度的机制以平衡成本和性能。 此次发布为企业提供了一个强大的、可定制的闭源模型替代方案，用于代理 AI 工作负载，允许",
+      "source": "Wired",
+      "link": "https://www.wired.com/story/thinking-machines-lab-releases-its-first-model-inkling/",
+      "published": "2026年07月16日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "谷歌被强制要求在 Android 上允许第三方应用商店",
+      "summary": "随着 Epic Games 和解协议的撤回，谷歌现在必须执行法院命令的全部反垄断补救措施，包括从下周开始在 Android 上允许第三方应用商店。这一强制执行标志着从之前的自愿合规尝试转向严格的司法强制。 这一决定通过打破谷歌在应用分发上的垄断，从根本上改变了 Android 生态系统，可能降低开发者的费用并增加消费者的选择。它为移动技术领域的全球反垄断执法树立了重要先例。 此次实施是由先前和解协",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/gadgets/2026/07/third-party-app-stores-coming-to-google-play-next-week-as-epic-settlement-withdrawn/",
+      "published": "2026年07月16日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "OpenAI 推出用于智能体工作流的 Codex Micro 键盘",
+      "summary": "OpenAI 推出了其首款品牌硬件产品 Codex Micro，这是一款旨在同时可视化和监控多个 AI 智能体线程的发光键盘。该设备标志着该公司首次进入物理硬件市场，专注于增强自主 AI 任务的人机交互体验。 此次发布代表了一个重大的范式转变，因为 OpenAI 从软件领域扩展到为智能体工作流创建专用硬件，这可能重新定义用户与自主 AI 系统的交互方式。它预示着一个更广泛的行业趋势，即科技巨头正在",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/ai/2026/07/openais-first-branded-hardware-is-a-light-up-keyboard/",
+      "published": "2026年07月16日",
+      "category": "科技",
+      "score": 9.0
+    },
+    {
+      "title": "OpenAI 推出 GPT-Red 实现自动化 AI 安全红队测试",
+      "summary": "OpenAI 推出了 GPT-Red，这是一个利用自我对弈机制来增强 AI 安全性、对齐性和提示注入鲁棒性的自动化红队测试系统。该系统标志着从静态测试向动态、自我改进的对抗性评估的转变。 这一进步显著提高了识别大型语言模型漏洞的可扩展性和有效性，解决了 AI 安全领域的关键行业挑战。通过自动化发现提示注入等复杂攻击向量，它有助于确保更可靠和安全的 AI 部署。 GPT-Red 利用自我对弈强化学习",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/unlocking-self-improvement-gpt-red",
+      "published": "2026年07月16日",
+      "category": "AI",
+      "score": 9.0
+    },
+    {
+      "title": "苹果寻求数十亿美元级 AI 芯片收购并调整财务策略",
+      "summary": "据报道，苹果正积极寻求收购人工智能芯片公司，可能涉及数十亿美元的交易，以增强其 AI 服务器能力。该公司已放弃长期奉行的现金净额中性财务策略，以支持这些大规模收购。 这一战略转变标志着苹果在 AI 基础设施竞争中积极寻求硬件优势，可能会影响半导体初创企业的格局。通过放弃现金中性政策，苹果表明其愿意动用大量现金储备进行关键技术整合。 苹果最近完成了对 Q.Ai 的 20 亿美元收购，这是其史上第二大",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/977/243.htm",
+      "published": "2026年07月16日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "纽约州暂停所有新建数据中心建设",
-      "summary": "纽约州州长 Kathy Hochul 签署了一项行政命令，暂时停止批准和建设大型数据中心一年。这使得纽约州成为首个因担忧 AI 驱动的建设潮对当地资源产生影响而暂停此类发展的州。 这一史无前例的禁令凸显了 AI 基础设施快速扩张与地方资源管理之间日益加剧的矛盾，可能会为其他州树立监管蓝图。它将直接影响计划在该地区扩大运营的云计算提供商和 AI 公司。 该行政命令将建设暂停期设定为整整一年，专门针对",
+      "title": "华为引望作为核心成员参与联合国自动驾驶法规制定",
+      "summary": "华为旗下引望公司作为中国专家组核心成员，深度参与了联合国新批准的自动驾驶系统全球技术法规（ADS GTR）的制定工作。该法规于 2026 年 6 月正式获批，为全球 L3 和 L4 级自动驾驶车辆确立了首个统一的安全标准。 这一里程碑事件调和了碎片化的区域法规，显著降低了全球研发成本并加速了自动驾驶汽车的标准化量产。华为的参与凸显了其基于海量真实数据和全栈自研技术，在塑造国际技术标准方面的战略影响",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/977/215.htm",
+      "published": "2026年07月16日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "知网下架 AI 署名论文并强制要求人类作者身份",
+      "summary": "知网已下架将 DeepSeek 和 Gemini 等人工智能模型列为作者的学术论文，理由是此举违反了中国著作权法。该平台现在严格要求所有作者必须为人类实体，并强制要求在研究中透明披露任何人工智能工具的使用情况。 这一决定为中国学术出版确立了关键的法律和伦理先例，明确人工智能不能拥有版权或承担学术责任。它通过强制执行严格的责任制和人工智能辅助学术工作的透明度标准，对研究人员产生了重大影响。 知网指出",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/977/204.htm",
+      "published": "2026年07月16日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "印度推出 198 亿美元计划提振半导体和智能手机制造",
+      "summary": "印度宣布了总额达 133 亿美元的“印度半导体计划 2.0”（ISM 2.0），并设立 65 亿美元的专项资金用于智能手机制造，旨在减少对中国供应链的依赖。该倡议在原有的 ISM 1.0 框架基础上进行了升级，扩大了对芯片设计、设备生产和先进封装领域的激励措施。 这项巨额投资标志着重大的地缘政治转变，因为印度旨在成为电子制造和半导体生产领域替代中国的全球选择。随着持续的贸易紧张局势，它可能通过吸引",
       "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/14/new-york-state-halts-construction-of-all-new-data-centers/",
-      "published": "2026年07月15日",
+      "link": "https://techcrunch.com/2026/07/15/india-bets-billions-on-breaking-chinas-grip-on-smartphone-manufacturing/",
+      "published": "2026年07月16日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "伊朗利用移动网络漏洞定位并打击美军",
-      "summary": "报告显示，伊朗政府利用蜂窝网络中已知的漏洞，对中东地区的美军人员进行了地理定位并随后实施了打击。这发生在冲突爆发前夕和初期阶段。 这一事件凸显了已知的电信漏洞在现实世界和地缘政治中可能造成的严重后果，证明这些漏洞可被武器化用于实体军事打击。它为网络安全和国防部门敲响了警钟，提醒他们关键通信基础设施的脆弱性。 此次攻击利用了移动网络中已知的缺陷，可能指的是用于信令和位置追踪的 SS7 或 Diame",
+      "title": "Anthropic 与黑石集团推出 Ode 专注企业级 AI 实施",
+      "summary": "Anthropic、黑石集团、Hellman & Friedman 和高盛共同成立了名为 Ode with Anthropic 的 15 亿美元合资企业，旨在提供 AI 实施服务。该公司专注于将前置部署工程师直接嵌入企业客户中，以加速前沿 AI 模型的落地应用。 这一举措标志着行业战略重心从纯粹的模型开发转向高价值的实施服务，表明实际集成能力是下一个万亿美元级的机遇。它凸显了大型科技实验室如何与金",
       "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/14/iran-abused-mobile-networks-vulnerabilities-to-locate-u-s-military-in-the-middle-east-report-says/",
-      "published": "2026年07月15日",
+      "link": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+      "published": "2026年07月16日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "Reflection AI 与 Nebius 达成 10 亿美元算力交易",
-      "summary": "成立于 2024 年的开源人工智能初创公司 Reflection AI 已与 Nebius 签署了一项价值 10 亿美元的协议，以获取其技术开发所需的关键算力基础设施。 这笔高达 10 亿美元的投资凸显了人工智能基础设施领域的激烈竞争和资本流动，强调了开源人工智能开发者对强大算力提供商的严重依赖，以实现其模型的扩展。 Reflection AI 成立于 2024 年，专注于开发开源人工智能技术，这",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/14/reflection-inks-1b-compute-deal-with-nebius/",
-      "published": "2026年07月15日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "Grok Build AI 工具被发现将用户完整代码库上传至云端。",
-      "summary": "Cereblab 的安全研究人员发现，SpaceXAI 的 Grok Build 命令行工具正在将用户的完整代码仓库打包并上传至 Google Cloud 存储。该工具还无视了明确的文件排除规则，直到公司在接到报告后禁用了此功能。 这一事件凸显了与 AI 开发者工具相关的严重隐私和知识产权风险，这些工具会在暗中窃取敏感的源代码。这强调了软件工程师必须严格审查第三方 AI 编程助手的数据传输行为。 ",
+      "title": "xAI 起诉用户利用 Grok 生成儿童性虐待材料",
+      "summary": "xAI 已对 Terry Wayne Harwood 提起诉讼，指控其故意绕过 Grok 的安全防护机制，生成并传播儿童性虐待材料（CSAM）。这一法律行动标志着 AI 提供商在针对涉及非法内容的严重滥用行为执行服务条款方面迈出了重要一步。 此案为用户利用 AI 模型制作有害非法内容时的责任认定和执行树立了关键的法律先例。它凸显了 AI 公司在平衡开放访问与防范恶意行为者的强大安全措施之间所面临的",
       "source": "The Verge",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/965600/spacexai-grok-build-repository-upload",
-      "published": "2026年07月15日",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/966293/xai-grok-user-lawsuit-csam",
+      "published": "2026年07月16日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "PrismML 的 Bonsai 27B 通过高级量化在手机上运行 27B 模型",
-      "summary": "PrismML 推出了 Bonsai 27B，这是一个拥有 270 亿参数的大语言模型，通过先进的量化技术从 50GB 压缩至仅 4GB。这一突破使得该模型能够在现代智能手机上直接进行设备端推理，同时保留了其大部分原有智能。 在移动设备上本地运行大型 AI 模型显著提升了用户隐私，降低了延迟，并消除了对云连接的依赖。这一进展为边缘设备上更强大、支持离线的 AI 应用铺平了道路，并据报道引起了苹果等",
-      "source": "xenova",
-      "link": "https://prismml.com/news/bonsai-27b",
-      "published": "2026年07月15日",
+      "title": "Sheetz 将 838 家门店从 VMware 迁移至 StorMagic",
+      "summary": "连锁便利店 Sheetz 正将其 838 家门店的 IT 基础设施从 VMware 迁移至 StorMagic。这一战略转变是由 Broadcom 收购 VMware 所带来的不确定性所驱动的。 此举凸显了 Broadcom 收购案对企业基础设施战略的实际影响，提供了一个重要的现实案例。它表明许可政策的不确定性如何促使大型组织放弃行业标准的虚拟化平台。 此次迁移涉及 Sheetz 全部 838 家",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/information-technology/2026/07/sheetz-moves-838-stores-off-vmware-broadcom-created-too-much-uncertainty/",
+      "published": "2026年07月16日",
       "category": "科技",
-      "score": 7.0
+      "score": 8.0
     },
     {
-      "title": "Armin Ronacher 探讨软件复杂性与 AI 编程挑战",
-      "summary": "Flask 创造者 Armin Ronacher 发表了一篇名为《The Tower Keeps Rising》的文章，探讨了 AI 代理和“氛围编程”如何加剧软件复杂性和架构不一致性。 随着 AI 工具使代码生成速度加快，行业面临着在大型项目中积累技术债务和丧失架构一致性的日益增长的风险。这凸显了在 AI 辅助的生产力与长期软件可维护性及团队协作之间取得平衡的迫切需求。 该文章将这一现象与“Li",
-      "source": "cdrnsf",
-      "link": "https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/",
-      "published": "2026年07月15日",
+      "title": "微软创纪录补丁日发布之际出现 HiveLegacy 零日漏洞",
+      "summary": "微软在 2026 年 7 月的更新中发布了创纪录的 570 个安全补丁，同时当天发现了一个名为 HiveLegacy 的新 Windows 零日漏洞。此次更新修复了 61 个严重漏洞以及另外三个零日缺陷。 像 HiveLegacy 这样强大的新原语与大规模补丁周期同时出现，凸显了 Windows 安全维护日益复杂的现状。这强调了系统管理员在定期更新之外，迫切需要优先采取即时缓解措施。 HiveLe",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/07/windows-0-day-drops-the-same-day-microsoft-releases-record-number-of-patches/",
+      "published": "2026年07月16日",
       "category": "科技",
-      "score": 7.0
+      "score": 8.0
     },
     {
-      "title": "Cursor AI 编辑器未修补的任意代码执行漏洞引发争议",
-      "summary": "Mindgard 的安全研究人员披露了 Cursor AI 代码编辑器中一个未修补的任意代码执行漏洞，此前供应商在六个多月和 197 个版本发布后仍未解决该问题。最初的漏洞赏金报告被驳回，但后来被 HackerOne 确认，从而导致了全面的公开披露。 此事件凸显了 AI 驱动的开发工具中日益增长的安全风险，以及在供应商不响应时进行负责任的漏洞披露所面临的挑战。它迫使开发者重新考虑现代集成开发环境的",
-      "source": "Synthetic7346",
-      "link": "https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left",
-      "published": "2026年07月15日",
+      "title": "亚马逊 AGI 总监：可靠性而非能力阻碍企业 AI 智能体部署",
+      "summary": "在 VB Transform 2026 大会上，亚马逊 AGI 自主性总监 Bryan Silverthorn 指出，企业 AI 智能体的部署停滞是由于可靠性问题而非能力差距。他提出了一个包含一致性、鲁棒性、可预测性和安全性的四部分框架来应对这些挑战。 这一见解解释了为何 85%的企业试点 AI 智能体但仅有 5%将其投入生产，突显了采用过程中的关键瓶颈。它将行业焦点从追求更高的基准测试分数转向工",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/technology/amazon-agi-director-says-ai-agent-reliability-not-capability-is-blocking-enterprise-deployment-at-vb-transform-2026",
+      "published": "2026年07月16日",
       "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "长鑫科技确定科创板 IPO 发行价为 8.66 元",
-      "summary": "国产 DRAM 龙头长鑫科技确定科创板 IPO 发行价为 8.66 元/股，预计募资约 579 亿元。这使其成为 2026 年以来 A 股规模最大的 IPO，也是科创板历史上第二大 IPO。 作为国内领先的 DRAM 制造商，长鑫科技的巨额募资对中国半导体产业链和自主可控目标具有重要的战略意义。极高的估值反映了市场对国内存储芯片行业的强烈信心。 该发行价对应的市盈率高达 308.92 倍，远高于 ",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/976/731.htm",
-      "published": "2026年07月15日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "深度求索拟以 710 亿美元估值开启新一轮融资",
-      "summary": "深度求索已开始与新投资者就新一轮融资展开初步磋商，计划投前估值达到 710 亿美元，距离上一轮融资仅过去两个月。这笔资金主要用于为大规模数据中心建设和人工智能芯片采购提供资金支持。 短短两个月内估值从 520 亿美元跃升至 710 亿美元，凸显了人工智能行业激烈的资本竞争和庞大的基础设施需求。这表明领先的 AI 公司正在积极扩大其算力规模，以在模型开发中保持竞争优势。 今年 5 月末完成的首轮外部",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/976/713.htm",
-      "published": "2026年07月15日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "苏州首创剔除骑手合规等红灯的配送计时",
-      "summary": "苏州交管部门实施全国首创政策，自动将外卖骑手合规等红灯的时间从配送计时中剔除并顺延订单截止时间。此外，该政策还引入了连续跑单 4 小时强制休息提醒和连续跑单 12 小时强制下线机制。 这一系统性调整解决了配送算法迫使骑手交通违规的严重问题，消除了“守法就超时”的困境。它代表了算法伦理和平台治理的重要进步，将骑手安全和合法合规置于纯粹的配送速度之上。 新系统依赖交管部门与配送平台之间的数据双向融合，",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/976/691.htm",
-      "published": "2026年07月15日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "AI 进入“重工业时代”：万亿算力基建与盈利模式探讨",
-      "summary": "近期的一项行业分析探讨了科技巨头在 AI 算力基础设施上投入的万亿美元巨额资本支出。该分析重点研究了 AI 发展进入“重工业”阶段后的经济可行性、潜在市场泡沫以及新兴的盈利模式。 随着行业从软件驱动的创新转向资本密集型的硬件部署，理解 AI 基础设施的经济动态至关重要。它揭示了潜在市场泡沫的财务风险，并帮助利益相关者评估大规模算力投资的长期盈利能力。 该分析将当前的 AI 热潮定性为向“重工业时代",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8063974.html",
-      "published": "2026年07月15日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "阶跃星辰印奇阐述坚持开发 AI 智能体手机的战略逻辑",
-      "summary": "在深度访谈中，阶跃星辰创始人印奇详细阐述了公司坚持开发 AI 智能体手机的战略逻辑，选择了一条资源密集型的硬件路径来落地 AI 智能体。 这一决策凸显了行业向边缘 AI 和实用大模型应用发展的重大趋势，旨在通过专用硬件克服云计算的瓶颈。它展示了领先的 AI 初创公司如何通过深度硬件整合来应对 AI 智能体商业化落地的复杂挑战。 阶跃星辰选择了一条被外界认为最重的路径，这要求他们在底层深度整合并优化",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8064239.html",
-      "published": "2026年07月15日",
-      "category": "科技",
-      "score": 7.0
-    },
-    {
-      "title": "字节跳动以物理 AI 进军自动驾驶",
-      "summary": "字节跳动的世界模型团队正通过部署全新的“物理 AI”方法进军自动驾驶领域。该方法不依赖昂贵的传感器或庞大的数据车队，而是利用数字大脑来理解和预测物理世界的动态规律。 这代表了自动驾驶领域的重大范式转变，从依赖重硬件和密集数据的扩展转向由 AI 驱动的物理理解。它有可能降低自动驾驶汽车开发的成本和复杂性，同时通过更好的环境预测来提高安全性。 核心技术依赖于“世界模型”，它充当一个能够模拟支配现实世界",
-      "source": "钛媒体",
-      "link": "https://www.tmtpost.com/8064199.html",
-      "published": "2026年07月15日",
-      "category": "科技",
-      "score": 7.0
+      "score": 8.0
     }
   ]
 }
