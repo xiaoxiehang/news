@@ -1,169 +1,169 @@
 {
-  "date": "2026-07-16",
-  "date_str": "2026年07月16日",
+  "date": "2026-07-17",
+  "date_str": "2026年07月17日",
   "count": 18,
   "news": [
     {
-      "title": "SpaceXAI 开源 Grok Build AI 编程智能体",
-      "summary": "SpaceXAI 正式开源了 Grok Build，这是一个集成在终端中的 AI 编程智能体，能够处理从规划到 Git 提交的全流程编码工作。包括智能体逻辑、工具和用户界面组件在内的完整源代码现已在 GitHub 上公开，供公众使用和修改。 这一举措显著提高了透明度，允许开发者检查 AI 如何构建上下文和调度工具调用，从而促进信任和定制化。它还支持本地优先运行，使用户能够使用自己的本地推理模型运行",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/977/265.htm",
-      "published": "2026年07月16日",
+      "title": "月之暗面发布 Kimi K3 开源前沿模型",
+      "summary": "月之暗面宣布推出 Kimi K3，这是一款新的开源权重前沿语言模型，在其评估中声称具有顶级性能，仅次于 Claude Fable 5 和 GPT-5.6 Sol。完整的模型权重和详细的技术报告将在未来几天内发布。 中国实验室发布高性能开源权重模型，显著加速了全球前沿人工智能能力的普及和商品化进程。这也引发了关于 API 服务条款中数据隐私以及开源先进人工智能背后宏观经济战略的关键行业讨论。 用户指",
+      "source": "vincent_s",
+      "link": "https://www.kimi.com/blog/kimi-k3",
+      "published": "2026年07月17日",
       "category": "科技",
       "score": 9.0
     },
     {
-      "title": "X 平台将零保留开源全部代码并引入第三方核验",
-      "summary": "埃隆·马斯克宣布，X 平台将在完成内部安全审查后，零保留地开源其全部代码库。该平台还将引入第三方审核机构，确保对外公开的代码与线上实际运行的代码完全一致。 此举通过解决公众对“形式化透明”的质疑，挑战了行业惯例，并可能显著影响 Lens Protocol 等去中心化社交媒体竞争对手。其目标是在保留中心化平台网络效应的同时，获得完全技术透明带来的信任优势。 与 2025 年仅公开推荐算法等部分代码不",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/977/233.htm",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "苹果携手百度与阿里巴巴在中国推出 Apple Intelligence",
-      "summary": "消息证实，苹果正与百度合作提供人工智能搜索功能，并与阿里巴巴合作集成其通义千问模型以支持更广泛的生成式 AI 功能。这一合作为中国 iPhone 用户带来了本地化的 Apple Intelligence 服务，包括升级版的 Siri 和端侧内容生成功能。 此次合作标志着关键的监管和技术里程碑，使苹果能够在遵守中国严格的生成式 AI 法律的同时，在全球最大的智能手机市场之一部署其先进的 AI 套件。",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/977/164.htm",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "黑客攻击揭露 Suno 抓取 YouTube 数据训练 AI 音乐模型",
-      "summary": "AI 音乐生成器 Suno 遭遇安全漏洞，暴露的源代码显示其未经授权从 YouTube Music、Deezer 和 Genius 等平台抓取音频数据。黑客通过获取员工凭证，揭示了数百万首歌曲和歌词被用于模型训练且未公开披露的事实。 这一事件证实了人们长期以来对生成式 AI 公司未经许可使用版权材料的怀疑，可能引发重大的法律和监管后果。它凸显了快速发展的 AI 音乐行业在数据隐私和网络安全方面的关",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/15/hack-suggests-ai-music-generator-suno-scraped-youtube-for-training-data/",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "据报道 Stripe 和 Advent 出价 534 亿美元收购 PayPal",
-      "summary": "据报道，Stripe 与私募股权公司 Advent International 已联合提交了一份以约 534 亿美元收购 PayPal 的报价。这笔潜在交易将把数字支付领域的两大巨头合二为一。 此次收购将通过根本性改变数字支付的竞争格局，成为金融科技行业的一个范式转变事件。它标志着一种重大的整合趋势，可能会重新定义全球在线交易的处理方式。 据报道，该交易的估值约为 534 亿美元，涉及支付处理商 ",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/15/stripe-and-advent-reportedly-offered-to-buy-paypal-for-around-53-4b/",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "Thinking Machines Lab 发布 9750 亿参数开源多模态模型 Inkling",
-      "summary": "Thinking Machines Lab 发布了 Inkling，这是一个拥有 9750 亿参数的开源权重多模态模型，能够在 Apache 2.0 许可下处理文本、图像和音频。此次发布还包括一个名为 Inkling-Small 的 2760 亿参数较小版本，并引入了可控制思考努力程度的机制以平衡成本和性能。 此次发布为企业提供了一个强大的、可定制的闭源模型替代方案，用于代理 AI 工作负载，允许",
-      "source": "Wired",
-      "link": "https://www.wired.com/story/thinking-machines-lab-releases-its-first-model-inkling/",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "谷歌被强制要求在 Android 上允许第三方应用商店",
-      "summary": "随着 Epic Games 和解协议的撤回，谷歌现在必须执行法院命令的全部反垄断补救措施，包括从下周开始在 Android 上允许第三方应用商店。这一强制执行标志着从之前的自愿合规尝试转向严格的司法强制。 这一决定通过打破谷歌在应用分发上的垄断，从根本上改变了 Android 生态系统，可能降低开发者的费用并增加消费者的选择。它为移动技术领域的全球反垄断执法树立了重要先例。 此次实施是由先前和解协",
+      "title": "欧盟强制谷歌共享搜索数据并开放安卓 AI 功能",
+      "summary": "欧盟委员会正式要求谷歌必须与 OpenAI 等竞争对手共享匿名化搜索数据，并在安卓系统上向竞争对手开放 11 项关键 AI 系统功能。这些结构性改变计划于明年 1 月开始实施数据共享，并于 2027 年 7 月起在安卓系统中上线 AI 集成功能。 这是《数字市场法案》具有里程碑意义的执法行动，通过打破谷歌在安卓 AI 助手和搜索数据生态系统中的垄断，从根本上改变了竞争格局。它为第三方 AI 助手和",
       "source": "Ars Technica",
-      "link": "https://arstechnica.com/gadgets/2026/07/third-party-app-stores-coming-to-google-play-next-week-as-epic-settlement-withdrawn/",
-      "published": "2026年07月16日",
+      "link": "https://arstechnica.com/gadgets/2026/07/its-official-eu-will-force-google-to-share-search-data-and-open-up-ai-on-android/",
+      "published": "2026年07月17日",
       "category": "科技",
       "score": 9.0
     },
     {
-      "title": "OpenAI 推出用于智能体工作流的 Codex Micro 键盘",
-      "summary": "OpenAI 推出了其首款品牌硬件产品 Codex Micro，这是一款旨在同时可视化和监控多个 AI 智能体线程的发光键盘。该设备标志着该公司首次进入物理硬件市场，专注于增强自主 AI 任务的人机交互体验。 此次发布代表了一个重大的范式转变，因为 OpenAI 从软件领域扩展到为智能体工作流创建专用硬件，这可能重新定义用户与自主 AI 系统的交互方式。它预示着一个更广泛的行业趋势，即科技巨头正在",
-      "source": "Ars Technica",
-      "link": "https://arstechnica.com/ai/2026/07/openais-first-branded-hardware-is-a-light-up-keyboard/",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 9.0
-    },
-    {
-      "title": "OpenAI 推出 GPT-Red 实现自动化 AI 安全红队测试",
-      "summary": "OpenAI 推出了 GPT-Red，这是一个利用自我对弈机制来增强 AI 安全性、对齐性和提示注入鲁棒性的自动化红队测试系统。该系统标志着从静态测试向动态、自我改进的对抗性评估的转变。 这一进步显著提高了识别大型语言模型漏洞的可扩展性和有效性，解决了 AI 安全领域的关键行业挑战。通过自动化发现提示注入等复杂攻击向量，它有助于确保更可靠和安全的 AI 部署。 GPT-Red 利用自我对弈强化学习",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/unlocking-self-improvement-gpt-red",
-      "published": "2026年07月16日",
-      "category": "AI",
-      "score": 9.0
-    },
-    {
-      "title": "苹果寻求数十亿美元级 AI 芯片收购并调整财务策略",
-      "summary": "据报道，苹果正积极寻求收购人工智能芯片公司，可能涉及数十亿美元的交易，以增强其 AI 服务器能力。该公司已放弃长期奉行的现金净额中性财务策略，以支持这些大规模收购。 这一战略转变标志着苹果在 AI 基础设施竞争中积极寻求硬件优势，可能会影响半导体初创企业的格局。通过放弃现金中性政策，苹果表明其愿意动用大量现金储备进行关键技术整合。 苹果最近完成了对 Q.Ai 的 20 亿美元收购，这是其史上第二大",
+      "title": "世界人工智能合作组织协定在上海签署",
+      "summary": "世界人工智能合作组织协定在上海正式签署，29 个创始成员国及联合国代表参与。该独立政府间组织总部将设在中国上海，旨在促进全球人工智能治理与合作。 这标志着全球人工智能治理的重要里程碑，建立了一个新的政府间框架，以确保人工智能朝着有益、安全和公平的方向发展。它凸显了中国在塑造国际人工智能政策以及弥合全球南方数字鸿沟方面日益增长的作用。 该组织遵循《联合国宪章》宗旨，秉持共商共建共享理念。此外，即将在",
       "source": "IT之家",
-      "link": "https://www.ithome.com/0/977/243.htm",
-      "published": "2026年07月16日",
+      "link": "https://www.ithome.com/0/977/793.htm",
+      "published": "2026年07月17日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "华为引望作为核心成员参与联合国自动驾驶法规制定",
-      "summary": "华为旗下引望公司作为中国专家组核心成员，深度参与了联合国新批准的自动驾驶系统全球技术法规（ADS GTR）的制定工作。该法规于 2026 年 6 月正式获批，为全球 L3 和 L4 级自动驾驶车辆确立了首个统一的安全标准。 这一里程碑事件调和了碎片化的区域法规，显著降低了全球研发成本并加速了自动驾驶汽车的标准化量产。华为的参与凸显了其基于海量真实数据和全栈自研技术，在塑造国际技术标准方面的战略影响",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/977/215.htm",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "知网下架 AI 署名论文并强制要求人类作者身份",
-      "summary": "知网已下架将 DeepSeek 和 Gemini 等人工智能模型列为作者的学术论文，理由是此举违反了中国著作权法。该平台现在严格要求所有作者必须为人类实体，并强制要求在研究中透明披露任何人工智能工具的使用情况。 这一决定为中国学术出版确立了关键的法律和伦理先例，明确人工智能不能拥有版权或承担学术责任。它通过强制执行严格的责任制和人工智能辅助学术工作的透明度标准，对研究人员产生了重大影响。 知网指出",
-      "source": "IT之家",
-      "link": "https://www.ithome.com/0/977/204.htm",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "印度推出 198 亿美元计划提振半导体和智能手机制造",
-      "summary": "印度宣布了总额达 133 亿美元的“印度半导体计划 2.0”（ISM 2.0），并设立 65 亿美元的专项资金用于智能手机制造，旨在减少对中国供应链的依赖。该倡议在原有的 ISM 1.0 框架基础上进行了升级，扩大了对芯片设计、设备生产和先进封装领域的激励措施。 这项巨额投资标志着重大的地缘政治转变，因为印度旨在成为电子制造和半导体生产领域替代中国的全球选择。随着持续的贸易紧张局势，它可能通过吸引",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/15/india-bets-billions-on-breaking-chinas-grip-on-smartphone-manufacturing/",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "Anthropic 与黑石集团推出 Ode 专注企业级 AI 实施",
-      "summary": "Anthropic、黑石集团、Hellman & Friedman 和高盛共同成立了名为 Ode with Anthropic 的 15 亿美元合资企业，旨在提供 AI 实施服务。该公司专注于将前置部署工程师直接嵌入企业客户中，以加速前沿 AI 模型的落地应用。 这一举措标志着行业战略重心从纯粹的模型开发转向高价值的实施服务，表明实际集成能力是下一个万亿美元级的机遇。它凸显了大型科技实验室如何与金",
-      "source": "TechCrunch",
-      "link": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "xAI 起诉用户利用 Grok 生成儿童性虐待材料",
-      "summary": "xAI 已对 Terry Wayne Harwood 提起诉讼，指控其故意绕过 Grok 的安全防护机制，生成并传播儿童性虐待材料（CSAM）。这一法律行动标志着 AI 提供商在针对涉及非法内容的严重滥用行为执行服务条款方面迈出了重要一步。 此案为用户利用 AI 模型制作有害非法内容时的责任认定和执行树立了关键的法律先例。它凸显了 AI 公司在平衡开放访问与防范恶意行为者的强大安全措施之间所面临的",
-      "source": "The Verge",
-      "link": "https://www.theverge.com/ai-artificial-intelligence/966293/xai-grok-user-lawsuit-csam",
-      "published": "2026年07月16日",
-      "category": "科技",
-      "score": 8.0
-    },
-    {
-      "title": "Sheetz 将 838 家门店从 VMware 迁移至 StorMagic",
-      "summary": "连锁便利店 Sheetz 正将其 838 家门店的 IT 基础设施从 VMware 迁移至 StorMagic。这一战略转变是由 Broadcom 收购 VMware 所带来的不确定性所驱动的。 此举凸显了 Broadcom 收购案对企业基础设施战略的实际影响，提供了一个重要的现实案例。它表明许可政策的不确定性如何促使大型组织放弃行业标准的虚拟化平台。 此次迁移涉及 Sheetz 全部 838 家",
+      "title": "xAI 起诉使用 Grok 生成儿童色情内容的用户",
+      "summary": "埃隆·马斯克的 xAI 公司首次对一名被指控使用其 Grok AI 模型生成儿童性虐待材料（CSAM）的用户提起诉讼。此举是在该公司无法再否认 Grok 的安全护栏未能阻止此类非法内容生成之后采取的。 这起诉讼凸显了生成式 AI 安全护栏中的关键漏洞，并为 AI 生成非法内容的用户责任确立了重要的法律先例。它强调了科技公司在审核 AI 输出和管理责任方面所面临的日益严峻的法律和伦理挑战。 该诉讼是",
       "source": "Ars Technica",
-      "link": "https://arstechnica.com/information-technology/2026/07/sheetz-moves-838-stores-off-vmware-broadcom-created-too-much-uncertainty/",
-      "published": "2026年07月16日",
+      "link": "https://arstechnica.com/tech-policy/2026/07/xai-cant-deny-grok-makes-csam-anymore-so-its-suing-users/",
+      "published": "2026年07月17日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "微软创纪录补丁日发布之际出现 HiveLegacy 零日漏洞",
-      "summary": "微软在 2026 年 7 月的更新中发布了创纪录的 570 个安全补丁，同时当天发现了一个名为 HiveLegacy 的新 Windows 零日漏洞。此次更新修复了 61 个严重漏洞以及另外三个零日缺陷。 像 HiveLegacy 这样强大的新原语与大规模补丁周期同时出现，凸显了 Windows 安全维护日益复杂的现状。这强调了系统管理员在定期更新之外，迫切需要优先采取即时缓解措施。 HiveLe",
+      "title": "现代工人因计划部署 2.5 万台 Atlas 机器人而罢工",
+      "summary": "现代汽车计划从 2028 年开始在其美国工厂等制造基地部署 2.5 万台波士顿动力 Atlas 人形机器人，这一计划因引发工人对失业的担忧而导致了罢工。 这一事件凸显了在工业自动化中快速整合先进人形机器人所引发的重大社会经济摩擦和劳动力替代担忧。它作为一个关键案例，展示了大规模 AI 和机器人部署将如何影响劳资关系以及制造业的未来。 这 2.5 万台 Atlas 机器人的部署计划于 2028 年开",
       "source": "Ars Technica",
-      "link": "https://arstechnica.com/security/2026/07/windows-0-day-drops-the-same-day-microsoft-releases-record-number-of-patches/",
-      "published": "2026年07月16日",
+      "link": "https://arstechnica.com/ai/2026/07/fear-of-humanoid-robots-spurs-human-workers-to-strike-at-hyundai-auto-factory/",
+      "published": "2026年07月17日",
       "category": "科技",
       "score": 8.0
     },
     {
-      "title": "亚马逊 AGI 总监：可靠性而非能力阻碍企业 AI 智能体部署",
-      "summary": "在 VB Transform 2026 大会上，亚马逊 AGI 自主性总监 Bryan Silverthorn 指出，企业 AI 智能体的部署停滞是由于可靠性问题而非能力差距。他提出了一个包含一致性、鲁棒性、可预测性和安全性的四部分框架来应对这些挑战。 这一见解解释了为何 85%的企业试点 AI 智能体但仅有 5%将其投入生产，突显了采用过程中的关键瓶颈。它将行业焦点从追求更高的基准测试分数转向工",
+      "title": "林纳斯·托瓦兹拒绝在 Linux 内核中禁止 AI 编码",
+      "summary": "林纳斯·托瓦兹正式驳回了在 Linux 内核中禁止使用 AI 生成代码的呼吁，表示他将高调地无视批评者，并将 AI 仅仅视为一种有用的工具。他明确告诉那些反对这种做法的人，要么去分叉该项目，要么直接离开。 Linux 创始人的这一明确立场为开源治理树立了重要先例，表明 AI 辅助开发将被整合到基础系统工程中，而不是受到限制。这将极大地影响其他大型开源项目如何处理 AI 工具的采用和代码贡献政策。 ",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/ai/2026/07/linus-torvalds-to-critics-of-ai-coding-in-linux-fork-it-or-just-walk-away/",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "企业 AI 代理面临生产部署评估差距",
+      "summary": "VentureBeat Pulse Research 对 157 家企业的一项新调查揭示了一个关键的评估差距，50%的组织部署了通过内部测试但在生产环境中失败的 AI 代理。尽管只有 5%的企业完全信任自动化评估，但 66%的企业正朝着无人工干预的部署方向发展。 这凸显了 LLMOps 中严重的现实对齐问题，即代理自主权的快速推进超过了评估框架的成熟度，增加了面向客户的故障风险并削弱了对企业 AI",
       "source": "VentureBeat",
-      "link": "https://venturebeat.com/technology/amazon-agi-director-says-ai-agent-reliability-not-capability-is-blocking-enterprise-deployment-at-vb-transform-2026",
-      "published": "2026年07月16日",
+      "link": "https://venturebeat.com/ai/the-agent-evaluation-gap-enterprise-ai-organizations-have-a-reality-alignment-problem-not-a-coverage-problem-and-most-are-shipping-to-production-anyway",
+      "published": "2026年07月17日",
       "category": "科技",
       "score": 8.0
+    },
+    {
+      "title": "iOS 27 公测版引入独立 Siri 应用",
+      "summary": "苹果发布了 iOS 27 公测版，首次将独立的 Siri 应用程序直接预装在 iPhone 主屏幕上。此次更新还带来了大量全新的 Siri 和 Apple Intelligence 功能，以增强用户交互体验。 这标志着移动 AI 交互方式的重大范式转变，将 Siri 从后台语音助手提升为主要的独立应用程序。这表明苹果正通过赋予其 AI 助手类似应用程序的显著地位，战略性地加大在端侧 AI 领域的竞",
+      "source": "9to5Mac",
+      "link": "https://9to5mac.com/2026/07/16/ios-27-adds-an-all-new-app-to-your-iphones-home-screen/",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "1Password 现支持 Claude 登录网站，且无需获取您的密码",
+      "summary": "1Password 推出全新 Mac 集成功能，允许 Anthropic 的 Claude AI 智能体安全登录网站，且无需访问用户的密码或双重验证码。",
+      "source": "9to5Mac",
+      "link": "https://9to5mac.com/2026/07/16/1password-now-lets-claude-sign-in-to-websites-without-seeing-your-passwords/",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 8.0
+    },
+    {
+      "title": "中国联通与华为在北京部署全球最大规模 5G-A 大上行网络",
+      "summary": "中国联通与华为在北京部署了全球最大规模的 5G-A 大上行网络，覆盖超过 10000 个基站，支持 100MHz 上行能力。该部署使 AI 眼镜和智能相机等 AI 设备能够实现毫秒级的数据传输。 这一部署标志着移动网络从以下载为中心向以上传为中心的设计发生了重大范式转变，这对于新兴的移动 AI 时代至关重要。它为实时云端处理和边缘计算应用提供了必要的基础设施，直接影响 AI 可穿戴设备和智能设备的",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/977/791.htm",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "中广核发布全球首个 8.6 米开口光热熔盐槽式集热器",
+      "summary": "中国广核集团正式发布了全球首个 8.6 米开口光热熔盐槽式集热器“元曜一号”。该型号单回路集热面积达 5970 平方米，性能显著优于传统的 5.7 米开口导热油槽式集热器。 这一突破为我国光热发电的规模化发展提供了核心技术支撑，在集热面积和光热效率方面达到了国际领先水平。通过减少占地面积和设备成本，它为更具经济性和可扩展性的清洁能源基础设施铺平了道路。 该集热器采用太阳盐作为传热储热介质，运行温度",
+      "source": "IT之家",
+      "link": "https://www.ithome.com/0/977/757.htm",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "AI 数据中心步入 GW 时代，考验系统工程能力",
+      "summary": "AI 数据中心（AIDC）步入 GW（吉瓦）时代，标志着行业重心从单纯的硬件采购军备竞赛转向复杂的系统工程挑战。这一转变要求具备全面的基础设施能力，以应对前所未有的电力和散热需求。 随着 AI 模型呈指数级增长，将数据中心扩展至 GW 级别对于支持下一代计算工作负载至关重要。这一转变表明，未来 AI 基础设施的瓶颈将不再仅仅是芯片的可用性，而是由电力输送、热管理和整体系统集成能力所决定。 达到 G",
+      "source": "钛媒体",
+      "link": "https://www.tmtpost.com/8067651.html",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "谷歌扩展 AI 模式，支持在第三方应用中执行任务",
+      "summary": "谷歌正在更新其 AI 模式，使其与部分第三方应用程序集成，允许 AI 跨平台执行任务，而不仅仅是回答问题。这一转变使该工具从纯粹的对话界面转变为主动执行任务的智能体。 这一更新标志着智能体 AI 在消费者生态系统中的实际应用迈出了重要一步，展示了主要科技公司如何超越简单的聊天机器人。它凸显了行业向能够跨不同软件平台无缝交互和自动化工作流程的 AI 智能体转变的更广泛趋势。 目前的集成仅限于部分第三",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/16/googles-ai-mode-now-lets-you-link-and-interact-with-select-apps/",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "英国判处两名 Scattered Spider 年轻黑客入狱",
+      "summary": "臭名昭著的 Scattered Spider 黑客组织的两名年轻成员 Owen Flowers 和 Thalha Jubair 因黑客攻击伦敦大都会交通系统，被判处五年半监禁。 这些关键成员的逮捕和判刑代表了执法部门对顶级网络犯罪集团的重大胜利，该集团曾对全球组织构成重大威胁。这打乱了以针对知名公司和关键基础设施而闻名的多产黑客组织的行动。 这两名黑客对指控表示认罪，其具体攻击目标是伦敦大都会交通",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/07/16/uk-cops-say-arrest-of-two-young-hackers-disrupted-the-operations-of-an-infamous-hacking-group/",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "俄罗斯黑客采用 ClickFix 技术",
+      "summary": "俄罗斯国家级精英黑客已开始使用 ClickFix 社会工程技术感染设备，而该技术此前主要由受经济利益驱动的网络犯罪分子使用。这标志着一个重大转变，即高级持续性威胁组织开始采用传统上与牟利攻击相关的手段。 国家级黑客与牟利黑客技术的融合代表了网络安全威胁格局的重大转变，迫使防御者更新其威胁模型。安全专业人员现在必须做好准备，应对精英 APT 组织利用 ClickFix 等高度有效的、以用户为中心的社",
+      "source": "Ars Technica",
+      "link": "https://arstechnica.com/security/2026/07/now-even-russias-most-elite-hackers-are-using-clickfix-to-infect-devices/",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "54%的企业因身份控制薄弱遭遇 AI 代理安全事件",
+      "summary": "VentureBeat 对 107 家企业的调查显示，54%的企业曾遭遇 AI 代理安全事件或险些发生事故，这主要归咎于身份和隔离控制不足。大多数组织仍允许代理共享凭证，且仅有 30%的企业将最高风险的代理隔离在沙箱中。 这凸显了一个关键的安全差距，即赋予 AI 代理的自主权远远超过了用于限制它们的安全控制，对企业基础设施构成重大风险。随着代理获得更广泛的系统访问权限，对共享凭证的依赖将为潜在的漏",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "企业 AI 面临上下文信任危机，转向语义层架构",
+      "summary": "VentureBeat 的研究显示，57%的企业曾遭遇 AI 代理因业务上下文缺失或不一致而给出自信但错误的回答。为解决这一上下文差距，企业正越来越多地采用受治理的语义层和混合检索技术，同时提供商原生检索工具在实际使用中正超越专用向量数据库。 这一转变凸显了企业 AI 发展的一个关键成熟阶段，重点正从单纯部署检索增强生成转向确保底层业务上下文的可靠性与可信度。这也标志着一次重大的架构转型，基础 A",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/ai/the-ai-context-gap-enterprise-ai-organizations-have-a-trust-problem-not-a-retrieval-problem-and-most-are-still-building-the-fix",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
+    },
+    {
+      "title": "iOS 27 公测版发布、Siri AI 体验及苹果起诉 OpenAI",
+      "summary": "苹果发布了 iOS 27 公测版，允许全球用户测试新软件及其更新的 Siri AI 功能。此外，苹果对 OpenAI 提起高调诉讼，指控其窃取商业机密。 iOS 27 公测版标志着苹果将先进 AI 整合到其核心生态系统的重要一步，将直接影响数百万普通用户。同时，对 OpenAI 的诉讼凸显了 AI 行业中围绕知识产权日益加剧的法律和竞争紧张局势。 该消息基于 9to5Mac 的播客回顾而非一手技术",
+      "source": "9to5Mac",
+      "link": "https://9to5mac.com/2026/07/16/happy-hour-599/",
+      "published": "2026年07月17日",
+      "category": "科技",
+      "score": 7.0
     }
   ]
 }
