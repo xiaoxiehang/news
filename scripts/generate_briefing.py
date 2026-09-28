@@ -134,6 +134,7 @@ def main():
         print('❌ 没有候选新闻，跳过')
         return
     print(f'📰 候选 {len(candidates)} 条，调用 {LLM_MODEL} 生成早报...')
+    print(f'   网关: {LLM_BASE_URL}/chat/completions')
 
     try:
         result = call_llm(build_prompt(candidates))
