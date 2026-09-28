@@ -75,7 +75,7 @@ def fetch_weather(city='Beijing'):
     return None
 
 def main():
-    repo_dir = '/workspace/news-repo/data'
+    repo_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
     os.makedirs(repo_dir, exist_ok=True)
     
     output = {
