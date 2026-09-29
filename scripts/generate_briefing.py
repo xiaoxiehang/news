@@ -23,7 +23,7 @@ SITE_URL = 'https://xiaojj.pro'
 
 LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.deepseek.com').rstrip('/')
-LLM_MODEL = os.environ.get('LLM_MODEL', 'deepseek-chat')
+LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'deepseek-chat'
 
 MAX_CANDIDATES = 24
 MAX_PICKS = 8
@@ -126,7 +126,14 @@ def _post_llm(headers, payload):
             return data
         except Exception as e:
             last_err = e
-            print(f'   ⚠️ {url} 失败: {e}')
+            detail = ''
+            resp = getattr(e, 'response', None)
+            if resp is not None:
+                try:
+                    detail = f' | 网关返回: {resp.text[:300]}'
+                except Exception:
+                    pass
+            print(f'   ⚠️ {url} 失败: {e}{detail}')
     raise last_err
 
 

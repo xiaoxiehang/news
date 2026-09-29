@@ -17,7 +17,7 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 
 LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.openai.com/v1').strip().rstrip('/')
-LLM_MODEL = os.environ.get('LLM_MODEL', 'deepseek-chat').strip()
+LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'deepseek-chat'
 
 MAX_REPOS = 12
 
@@ -42,7 +42,14 @@ def _post_llm(headers, payload):
             return data
         except Exception as e:
             last_err = e
-            print(f'   ⚠️ {url} 失败: {e}')
+            detail = ''
+            resp = getattr(e, 'response', None)
+            if resp is not None:
+                try:
+                    detail = f' | 网关返回: {resp.text[:300]}'
+                except Exception:
+                    pass
+            print(f'   ⚠️ {url} 失败: {e}{detail}')
     raise last_err
 
 
