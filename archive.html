@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史早报归档 - 今日科技早报</title>
+<meta name="description" content="今日科技早报历史归档，每天一份 AI 精选科技新闻。">
+<style>
+:root {
+  --rausch: #FF5A5F;
+  --text-primary: #222222;
+  --text-secondary: #717171;
+  --text-tertiary: #B0B0B0;
+  --bg: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --border: #EBEBEB;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --max-width: 1280px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header-brand { flex: 1; }
+.header-title { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+.header-subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+.header-nav { display: flex; gap: 8px; flex-shrink: 0; }
+.nav-link {
+  font-size: 14px; font-weight: 600; color: var(--text-secondary);
+  text-decoration: none; padding: 6px 12px; border-radius: 20px;
+  transition: all 0.2s; white-space: nowrap;
+}
+.nav-link:hover { color: var(--text-primary); background: var(--bg-secondary); }
+.nav-link.active { color: var(--rausch); background: rgba(255, 90, 95, 0.1); }
+
+.main { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.page-title { font-size: 24px; font-weight: 700; padding: 32px 0 8px; }
+.page-desc { font-size: 14px; color: var(--text-secondary); padding-bottom: 16px; }
+
+.archive-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.archive-head {
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.15s;
+}
+.archive-head:hover { background: var(--bg-secondary); }
+.archive-date { font-size: 17px; font-weight: 700; white-space: nowrap; }
+.archive-count {
+  font-size: 12px; font-weight: 700; color: #fff;
+  background: var(--rausch); padding: 2px 10px; border-radius: 20px;
+  white-space: nowrap;
+}
+.archive-overview {
+  flex: 1; font-size: 14px; color: var(--text-secondary);
+  overflow: hidden; text-overflow: ellipsis;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.archive-toggle { font-size: 14px; color: var(--text-tertiary); flex-shrink: 0; }
+.archive-body { display: none; border-top: 1px solid var(--border); padding: 8px 24px 20px; }
+.archive-item.open .archive-body { display: block; }
+.archive-item.open .archive-toggle { transform: rotate(180deg); }
+.archive-pick {
+  display: flex; gap: 12px; padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.archive-pick:last-child { border-bottom: none; }
+.archive-num { font-size: 14px; font-weight: 700; color: var(--rausch); min-width: 22px; }
+.archive-pick-title { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; line-height: 1.5; }
+a.archive-pick-title:hover { color: var(--rausch); }
+.archive-pick-summary { font-size: 13px; color: var(--text-secondary); margin-top: 4px; line-height: 1.6; }
+.archive-pick-source { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; }
+
+.loading { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 15px; }
+.empty-state { text-align: center; padding: 80px 20px; }
+.empty-icon { font-size: 48px; margin-bottom: 16px; }
+.empty-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.empty-desc { font-size: 14px; color: var(--text-secondary); }
+
+.footer {
+  max-width: var(--max-width); margin: 0 auto; padding: 40px 24px;
+  text-align: center; border-top: 1px solid var(--border); margin-top: 40px;
+}
+.footer-text { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+.footer-link { font-size: 13px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
+.footer-link:hover { color: var(--rausch); }
+
+@media (max-width: 600px) {
+  .header-inner { flex-wrap: wrap; gap: 12px; padding: 16px 20px; }
+  .header-subtitle { order: -1; flex: 1 1 100%; }
+  .header-title { font-size: 19px; }
+  .main { padding: 0 20px; }
+  .archive-head { flex-wrap: wrap; gap: 8px; }
+  .archive-overview { flex: 1 1 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-title">今日科技早报</div>
+      <div class="header-subtitle" id="header-subtitle">加载中...</div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">早报</a>
+      <a href="github.html" class="nav-link">GitHub</a>
+      <a href="hackernews.html" class="nav-link">Hacker News</a>
+      <a href="juejin.html" class="nav-link">掘金</a>
+      <a href="archive.html" class="nav-link active">归档</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="page-title">历史早报归档</div>
+  <div class="page-desc">每天早上 8 点更新，点击任意一期展开查看完整内容，也可通过 <a href="feed.xml" style="color:var(--rausch);font-weight:600;">RSS</a> 订阅。</div>
+  <div id="archive-list"><div class="loading">加载中...</div></div>
+</main>
+
+<footer class="footer"></footer>
+
+<script>
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+const cache = {};
+
+async function toggleItem(date, el) {
+  const item = el.closest('.archive-item');
+  const body = item.querySelector('.archive-body');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.archive-item.open').forEach(function(o) {
+    o.classList.remove('open');
+  });
+  if (isOpen) return;
+  item.classList.add('open');
+
+  if (!cache[date]) {
+    body.innerHTML = '<div class="loading">加载中...</div>';
+    try {
+      const r = await fetch('data/archive/briefing-' + date + '.json?t=' + Date.now());
+      if (!r.ok) throw new Error('not found');
+      cache[date] = await r.json();
+    } catch (e) {
+      body.innerHTML = '<div class="empty-desc" style="padding:16px 0;">该期内容加载失败</div>';
+      return;
+    }
+  }
+  const data = cache[date];
+  let html = '';
+  (data.picks || []).forEach(function(p, i) {
+    const hasLink = p.url && p.url.indexOf('http') === 0;
+    const titleHtml = hasLink
+      ? '<a class="archive-pick-title" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>'
+      : '<div class="archive-pick-title">' + esc(p.title) + '</div>';
+    html += '<div class="archive-pick"><div class="archive-num">' + (i + 1) + '</div>' +
+      '<div>' + titleHtml +
+      (p.summary ? '<div class="archive-pick-summary">' + esc(p.summary) + '</div>' : '') +
+      (p.source ? '<div class="archive-pick-source">来源：' + esc(p.source) + '</div>' : '') +
+      '</div></div>';
+  });
+  body.innerHTML = html || '<div class="empty-desc" style="padding:16px 0;">本期暂无内容</div>';
+}
+
+async function loadArchive() {
+  const container = document.getElementById('archive-list');
+  try {
+    const r = await fetch('data/archive/index.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    const index = await r.json();
+    if (!index.length) throw new Error('empty');
+
+    let html = '';
+    index.forEach(function(e) {
+      html += '<div class="archive-item">' +
+        '<div class="archive-head" onclick="toggleItem(\'' + esc(e.date) + '\', this)">' +
+          '<div class="archive-date">' + esc(e.date_str || e.date) + '</div>' +
+          '<div class="archive-count">' + (e.count || 0) + ' 条</div>' +
+          '<div class="archive-overview">' + esc(e.overview || '') + '</div>' +
+          '<div class="archive-toggle">▼</div>' +
+        '</div>' +
+        '<div class="archive-body"></div>' +
+      '</div>';
+    });
+    container.innerHTML = html;
+  } catch (e) {
+    container.innerHTML = '<div class="empty-state">' +
+      '<div class="empty-icon">📚</div>' +
+      '<div class="empty-title">归档尚未开始</div>' +
+      '<div class="empty-desc">第一期 AI 早报生成后，这里会自动开始积累历史内容</div></div>';
+  }
+}
+
+loadArchive();
+</script>
+<script src="scripts/header-info.js"></script>
+<script src="scripts/footer.js"></script>
+</body>
+</html>

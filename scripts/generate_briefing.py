@@ -14,8 +14,12 @@ import os
 import re
 import requests
 from datetime import datetime
+from xml.sax.saxutils import escape as xml_escape
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
+SITE_ROOT = os.path.dirname(DATA_DIR)  # 网站根目录
+ARCHIVE_DIR = os.path.join(DATA_DIR, 'archive')
+SITE_URL = 'https://xiaojj.pro'
 
 LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.deepseek.com').rstrip('/')
@@ -121,9 +125,78 @@ def call_llm(prompt):
     return json.loads(m.group(0) if m else content)
 
 
+def save_outputs(briefing, today):
+    """保存早报：briefing.json + 归档快照 + 归档索引 + RSS"""
+    # 1. 最新早报
+    out_path = os.path.join(DATA_DIR, 'briefing.json')
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(briefing, f, ensure_ascii=False, indent=2)
+    print(f'✅ 早报已生成: {len(briefing["picks"])} 条 -> {out_path}')
+
+    # 2. 归档快照
+    os.makedirs(ARCHIVE_DIR, exist_ok=True)
+    snap_path = os.path.join(ARCHIVE_DIR, f'briefing-{today}.json')
+    with open(snap_path, 'w', encoding='utf-8') as f:
+        json.dump(briefing, f, ensure_ascii=False, indent=2)
+
+    # 3. 归档索引
+    index_path = os.path.join(ARCHIVE_DIR, 'index.json')
+    index = []
+    if os.path.exists(index_path):
+        try:
+            with open(index_path, encoding='utf-8') as f:
+                index = json.load(f)
+        except Exception:
+            index = []
+    index = [e for e in index if e.get('date') != today]
+    index.append({
+        'date': today,
+        'date_str': briefing.get('date_str', today),
+        'overview': briefing.get('overview', ''),
+        'count': len(briefing['picks']),
+    })
+    index.sort(key=lambda e: e['date'], reverse=True)
+    with open(index_path, 'w', encoding='utf-8') as f:
+        json.dump(index, f, ensure_ascii=False, indent=2)
+    print(f'✅ 归档已更新: {snap_path}（共 {len(index)} 期）')
+
+    # 4. RSS
+    pub_date = datetime.strptime(today, '%Y-%m-%d').strftime('%a, %d %b %Y 08:00:00 +0800')
+    items_xml = []
+    for p in briefing['picks']:
+        title = xml_escape(p.get('title', ''))
+        link = xml_escape(p.get('url', SITE_URL))
+        desc = xml_escape(p.get('summary', ''))
+        source = xml_escape(p.get('source', ''))
+        items_xml.append(
+            f'    <item>\n'
+            f'      <title>{title}</title>\n'
+            f'      <link>{link}</link>\n'
+            f'      <guid>{link}</guid>\n'
+            f'      <description>{desc}（来源：{source}）</description>\n'
+            f'      <pubDate>{pub_date}</pubDate>\n'
+            f'    </item>'
+        )
+    feed = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0">\n'
+        '<channel>\n'
+        f'  <title>今日科技早报 | xiaojj.pro</title>\n'
+        f'  <link>{SITE_URL}/</link>\n'
+        f'  <description>每天早上 8 点，一份中文科技早报：AI 精选 GitHub、Hacker News、掘金最值得读的新闻。</description>\n'
+        f'  <language>zh-CN</language>\n'
+        f'  <lastBuildDate>{pub_date}</lastBuildDate>\n'
+        + '\n'.join(items_xml) + '\n'
+        + '</channel>\n</rss>\n'
+    )
+    feed_path = os.path.join(SITE_ROOT, 'feed.xml')
+    with open(feed_path, 'w', encoding='utf-8') as f:
+        f.write(feed)
+    print(f'✅ RSS 已生成: {feed_path}')
+
+
 def main():
     today = datetime.now().strftime('%Y-%m-%d')
-    out_path = os.path.join(DATA_DIR, 'briefing.json')
 
     if not LLM_API_KEY:
         print('⏭️ 未设置 LLM_API_KEY，跳过 AI 早报生成（保留旧数据）')
@@ -158,9 +231,7 @@ def main():
         print(f'❌ AI 生成失败: {e}')
         return
 
-    with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(briefing, f, ensure_ascii=False, indent=2)
-    print(f'✅ 早报已生成: {len(briefing["picks"])} 条 -> {out_path}')
+    save_outputs(briefing, today)
 
 
 if __name__ == '__main__':
