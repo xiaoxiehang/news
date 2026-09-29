@@ -37,7 +37,9 @@ def _font(size):
 
 
 def _wrap(draw, text, font, max_w):
-    """按像素宽度换行（中文逐字切分）。"""
+    """按像素宽度换行（中文逐字切分，标点不单独成行）。"""
+    # 行首禁则：这些标点不能出现在行首，收到上一行末尾
+    NO_START = set('，。！？；：、」』）】”’%·…—')
     lines, cur = [], ''
     for ch in text:
         t = cur + ch
@@ -49,7 +51,15 @@ def _wrap(draw, text, font, max_w):
             cur = ch
     if cur:
         lines.append(cur)
-    return lines or ['']
+    # 标点挤回上一行
+    fixed = []
+    for ln in lines:
+        if fixed and ln and ln[0] in NO_START:
+            fixed[-1] += ln[0]
+            ln = ln[1:]
+        if ln:
+            fixed.append(ln)
+    return fixed or ['']
 
 
 def _bg():
