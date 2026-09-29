@@ -82,6 +82,18 @@ jobs:
       continue-on-error: true
       run: python scripts/generate_video.py
 
+    - name: Generate Xiaohongshu post (title/body/tags/comments)
+      continue-on-error: true
+      env:
+        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+        LLM_MODEL: ${{ secrets.LLM_MODEL }}
+      run: python scripts/generate_xhs_post.py
+
+    - name: Generate Xiaohongshu cards (3:4 images)
+      continue-on-error: true
+      run: python scripts/generate_xhs_cards.py
+
     - name: Commit and push
       run: |
         git config user.name "GitHub Actions Bot"
