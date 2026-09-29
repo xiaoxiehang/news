@@ -1,56 +1,56 @@
 {
   "date": "2026-09-29",
   "date_str": "2026年09月29日",
-  "overview": "今日热点集中在 AI 模型、产业整合与开发工具：Sonnet 5.5 引发关注，World Labs 宣布加入 AMD，围绕 AI 实验室的审视也在升温。开源项目则聚焦插件化智能体、推理缓存和办公自动化，开发者对 AI 编程工具的实际体验同样值得关注。",
+  "overview": "今日热点集中在AI模型、智能体工具与产业整合，Sonnet 5.5、World Labs加入AMD及轻量决策模型值得关注。与此同时，AI实验室监督、数据库治理和开发岗位变化，让安全与职业转型成为另一条主线。",
   "picks": [
     {
-      "title": "Claude Sonnet 5.5 引发关注",
-      "summary": "Claude Sonnet 5.5 模型页面成为技术社区热议焦点。",
+      "title": "Claude Sonnet 5.5",
+      "summary": "Sonnet 5.5成为社区焦点，值得关注其官方介绍。",
       "url": "https://www.anthropic.com/claude-sonnet-5-5",
       "source": "Hacker News"
     },
     {
-      "title": "World Labs 宣布加入 AMD",
-      "summary": "World Labs 宣布加入 AMD，AI 产业整合动向值得关注。",
+      "title": "World Labs宣布加入AMD",
+      "summary": "World Labs宣布加入AMD，AI产业整合再添看点。",
       "url": "https://www.worldlabs.ai/blog/amd-announcement",
       "source": "Hacker News"
     },
     {
-      "title": "是时候调查 AI 实验室了",
-      "summary": "评论文章呼吁调查 AI 实验室，将行业监督推向讨论焦点。",
+      "title": "是时候调查AI实验室了",
+      "summary": "评论文章呼吁调查AI实验室，聚焦行业监督议题。",
       "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
       "source": "Hacker News"
     },
     {
-      "title": "Jeff：可在家训练的轻量决策模型",
-      "summary": "Jeff 兼容 Jev，拥有8亿参数，可在家训练，响应约30毫秒。",
+      "title": "Jeff：兼容Jev的8亿参数决策模型",
+      "summary": "家庭训练的8亿参数决策模型，响应耗时约30毫秒。",
       "url": "https://github.com/firelex/jeff",
       "source": "Hacker News"
     },
     {
       "title": "DeepSeek Harness：一切皆插件",
-      "summary": "DeepSeek Harness 以插件化为核心组织智能体运行框架。",
+      "summary": "DeepSeek的智能体框架主打插件化设计。",
       "url": "https://github.com/deepseek-ai/deepseek-harness",
       "source": "GitHub"
     },
     {
-      "title": "LMCache：大模型推理缓存加速层",
-      "summary": "LMCache 提供 KV 缓存层，旨在提升大模型推理效率。",
-      "url": "https://github.com/LMCache/LMCache",
+      "title": "Bytebase：面向人与智能体的数据库治理",
+      "summary": "统一管控多种数据库的变更与访问，兼顾人与智能体。",
+      "url": "https://github.com/bytebase/bytebase",
       "source": "GitHub"
     },
     {
-      "title": "Univer：面向 AI 智能体的办公运行环境",
-      "summary": "Univer 将表格、文档、幻灯片及 PDF 整合到统一运行环境。",
-      "url": "https://github.com/dream-num/univer",
-      "source": "GitHub"
+      "title": "劫持PS5的RTMP直播流",
+      "summary": "技术文章探讨PS5直播流劫持，提示串流安全风险。",
+      "url": "https://yashgarg.dev/posts/hijacking-ps5-rtmp-stream/",
+      "source": "Hacker News"
     },
     {
-      "title": "从 Cursor 转向 Codex：半个多月的真实体验",
-      "summary": "开发者分享从 Cursor 转向 Codex 半个多月的使用感受。",
-      "url": "https://juejin.cn/post/7637856870833635343",
+      "title": "字节内部调整传闻：QA转研发？",
+      "summary": "文章讨论字节QA转研发的说法，具体情况仍待核实。",
+      "url": "https://juejin.cn/post/7689818941397778478",
       "source": "掘金"
     }
   ],
-  "generated_at": "2026-09-29 08:00:16"
+  "generated_at": "2026-09-29 08:16:22"
 }
