@@ -72,16 +72,47 @@ def build_script(briefing):
 async def synthesize_with_subs(script, workdir):
     """合成音频并返回词级字幕 [(start_ms, end_ms, text)]"""
     import edge_tts
-    communicate = edge_tts.Communicate(script, VOICE)
+    # edge-tts 7.x 默认只返回 SentenceBoundary，必须显式要求 WordBoundary
+    try:
+        communicate = edge_tts.Communicate(script, VOICE, boundary='WordBoundary')
+    except TypeError:
+        communicate = edge_tts.Communicate(script, VOICE)  # 兼容旧版本
     mp3_path = os.path.join(workdir, 'audio.mp3')
     subs = []
     with open(mp3_path, 'wb') as f:
         async for chunk in communicate.stream():
             if chunk['type'] == 'audio':
                 f.write(chunk['data'])
-            elif chunk['type'] == 'WordBoundary':
+            elif chunk['type'] in ('WordBoundary', 'SentenceBoundary'):
                 subs.append((chunk['offset'] // 10000, (chunk['offset'] + chunk['duration']) // 10000, chunk['text']))
     return mp3_path, subs
+
+
+def get_audio_duration_ms(mp3_path):
+    """用 ffprobe 获取音频时长（毫秒）"""
+    try:
+        r = subprocess.run(
+            ['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+             '-of', 'default=noprint_wrappers=1:nokey=1', mp3_path],
+            capture_output=True, text=True, timeout=30)
+        return int(float(r.stdout.strip()) * 1000)
+    except Exception:
+        return 0
+
+
+def proportional_subs(script, duration_ms):
+    """按字数把口播稿均分到音频时长上（拿不到词级时间戳时的兜底字幕）"""
+    import re
+    sentences = [s for s in re.split(r'(?<=[，。！？；：])', script) if s.strip()]
+    if not sentences or not duration_ms:
+        return []
+    total_chars = sum(len(s) for s in sentences)
+    subs, cursor = [], 0
+    for s in sentences:
+        end = cursor + int(duration_ms * len(s) / total_chars)
+        subs.append((cursor, end, s.strip()))
+        cursor = end
+    return subs
 
 
 def merge_subs(subs):
@@ -225,7 +256,10 @@ def main():
         print(f'❌ TTS 合成失败: {e}')
         return
     if not subs:
-        print('❌ 未获取到字幕时间戳，跳过')
+        print('  ⚠️ 未获取到词级时间戳，改用按字数均分字幕...')
+        subs = proportional_subs(script, get_audio_duration_ms(mp3_path))
+    if not subs:
+        print('❌ 字幕生成失败，跳过')
         return
 
     entries = merge_subs(subs)
