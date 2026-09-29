@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-29",
+  "date_str": "2026年09月29日",
+  "overview": "今日焦点集中在大模型与 AI 产业：Sonnet 5.5 引发热议，World Labs 宣布加入 AMD，调查 AI 实验室的呼声也受到关注。开发者工具侧，并行智能体、低延迟小模型和 GPU 集群管理值得留意，本地控制与隐私优先的智能家居项目同样具有实用价值。",
+  "picks": [
+    {
+      "title": "Sonnet 5.5 模型引发热议",
+      "summary": "Sonnet 5.5 成为社区关注的大模型话题。",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "source": "Hacker News"
+    },
+    {
+      "title": "World Labs 宣布加入 AMD",
+      "summary": "World Labs 宣布加入 AMD，AI 与芯片产业联动受关注。",
+      "url": "https://www.worldlabs.ai/blog/amd-announcement",
+      "source": "Hacker News"
+    },
+    {
+      "title": "是时候调查 AI 实验室了",
+      "summary": "评论文章呼吁对 AI 实验室展开调查。",
+      "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Jeff：可在家训练的低延迟决策模型",
+      "summary": "Jeff 决策模型有八亿参数，可在家训练，耗时约三十毫秒。",
+      "url": "https://github.com/firelex/jeff",
+      "source": "Hacker News"
+    },
+    {
+      "title": "ECC：编程智能体性能优化系统",
+      "summary": "为多种编程智能体提供技能、记忆与安全等优化机制。",
+      "url": "https://github.com/affaan-m/ECC",
+      "source": "GitHub"
+    },
+    {
+      "title": "Orca：并行编程智能体开发环境",
+      "summary": "支持自有订阅运行编程智能体，覆盖桌面、移动及远程环境。",
+      "url": "https://github.com/stablyai/orca",
+      "source": "GitHub"
+    },
+    {
+      "title": "GPUStack：面向 AI 推理的 GPU 集群管理器",
+      "summary": "管理 GPU 集群，支持高性能模型服务与按需 GPU 实例。",
+      "url": "https://github.com/gpustack/gpustack",
+      "source": "GitHub"
+    },
+    {
+      "title": "Home Assistant：本地控制优先的开源智能家居",
+      "summary": "开源家庭自动化平台，将本地控制与隐私保护放在首位。",
+      "url": "https://github.com/home-assistant/core",
+      "source": "GitHub"
+    }
+  ],
+  "generated_at": "2026-09-29 07:20:20"
+}
