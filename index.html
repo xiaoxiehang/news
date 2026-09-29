@@ -194,6 +194,27 @@ transition: background 0.2s, transform 0.1s;
 .copy-btn.copied { background: var(--success);}
 .copy-btn svg { width: 16px; height: 16px;}
 
+/* ===== 播客推广 ===== */
+.podcast-promo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFF 70%);
+  border: 1px solid #FFE9B8;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: box-shadow 0.2s;
+}
+.podcast-promo:hover { box-shadow: var(--shadow-md); }
+.podcast-promo-icon { font-size: 28px; }
+.podcast-promo-text { flex: 1; }
+.podcast-promo-title { font-size: 15px; font-weight: 700; }
+.podcast-promo-desc { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.podcast-promo-arrow { font-size: 18px; color: var(--rausch); font-weight: 700; }
+
 /* ===== 分组新闻 ===== */
 .group-section {
 padding: 28px 0 8px;
@@ -397,6 +418,7 @@ flex: 1 1 100%;
 <a href="hackernews.html" class="nav-link">Hacker News</a>
 <a href="juejin.html" class="nav-link">掘金</a>
       <a href="archive.html" class="nav-link">归档</a>
+      <a href="podcast.html" class="nav-link">播客</a>
 </nav>
 </div>
 </header>
@@ -421,6 +443,15 @@ flex: 1 1 100%;
 <span id="copy-text">复制今日早报</span>
 </button>
 </div>
+
+  <a href="podcast.html" class="podcast-promo">
+    <div class="podcast-promo-icon">🎙️</div>
+    <div class="podcast-promo-text">
+      <div class="podcast-promo-title">科技早报 · 播客版</div>
+      <div class="podcast-promo-desc">鸡仔每天用五分钟，带你听完科技圈大事</div>
+    </div>
+    <div class="podcast-promo-arrow">→</div>
+  </a>
 
 <div id="groups">
 <div class="loading">加载中...</div>
