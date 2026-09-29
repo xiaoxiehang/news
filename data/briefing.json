@@ -1,56 +1,56 @@
 {
   "date": "2026-09-29",
   "date_str": "2026年09月29日",
-  "overview": "今日焦点集中在大模型与 AI 产业：Sonnet 5.5 引发热议，World Labs 宣布加入 AMD，调查 AI 实验室的呼声也受到关注。开发者工具侧，并行智能体、低延迟小模型和 GPU 集群管理值得留意，本地控制与隐私优先的智能家居项目同样具有实用价值。",
+  "overview": "今日热点集中在AI模型、编程智能体与产业整合，Claude Sonnet 5.5和World Labs加入AMD引发关注。轻量模型与终端编程工具展现不同技术路线，AI实验室监督及程序员价值也成为讨论焦点。高性能JavaScript工具和PS5推流技术则提供了AI之外的看点。",
   "picks": [
     {
-      "title": "Sonnet 5.5 模型引发热议",
-      "summary": "Sonnet 5.5 成为社区关注的大模型话题。",
+      "title": "Claude Sonnet 5.5",
+      "summary": "Claude Sonnet 5.5相关页面成为社区热议焦点。",
       "url": "https://www.anthropic.com/claude-sonnet-5-5",
       "source": "Hacker News"
     },
     {
-      "title": "World Labs 宣布加入 AMD",
-      "summary": "World Labs 宣布加入 AMD，AI 与芯片产业联动受关注。",
+      "title": "World Labs宣布加入AMD",
+      "summary": "World Labs宣布加入AMD，AI与芯片产业联动受关注。",
       "url": "https://www.worldlabs.ai/blog/amd-announcement",
       "source": "Hacker News"
     },
     {
-      "title": "是时候调查 AI 实验室了",
-      "summary": "评论文章呼吁对 AI 实验室展开调查。",
-      "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
-      "source": "Hacker News"
+      "title": "Qwen Code：终端里的开源AI编程智能体",
+      "summary": "Qwen Code将开源AI编程智能体带入终端工作流。",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "source": "GitHub"
     },
     {
-      "title": "Jeff：可在家训练的低延迟决策模型",
-      "summary": "Jeff 决策模型有八亿参数，可在家训练，耗时约三十毫秒。",
+      "title": "Jeff：可在家训练的8亿参数决策模型",
+      "summary": "Jeff介绍兼容Jev的8亿参数决策模型，标称延迟约30毫秒。",
       "url": "https://github.com/firelex/jeff",
       "source": "Hacker News"
     },
     {
-      "title": "ECC：编程智能体性能优化系统",
-      "summary": "为多种编程智能体提供技能、记忆与安全等优化机制。",
-      "url": "https://github.com/affaan-m/ECC",
+      "title": "是时候调查AI实验室了",
+      "summary": "文章呼吁调查AI实验室，将行业监督问题推向讨论中心。",
+      "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Oxc：基于Rust的高性能JavaScript工具集",
+      "summary": "Oxc以Rust构建高性能JavaScript工具集，面向开发工具链。",
+      "url": "https://github.com/oxc-project/oxc",
       "source": "GitHub"
     },
     {
-      "title": "Orca：并行编程智能体开发环境",
-      "summary": "支持自有订阅运行编程智能体，覆盖桌面、移动及远程环境。",
-      "url": "https://github.com/stablyai/orca",
-      "source": "GitHub"
+      "title": "劫持PS5的RTMP视频流",
+      "summary": "文章探讨劫持PS5的RTMP视频流，聚焦游戏主机推流技术。",
+      "url": "https://yashgarg.dev/posts/hijacking-ps5-rtmp-stream/",
+      "source": "Hacker News"
     },
     {
-      "title": "GPUStack：面向 AI 推理的 GPU 集群管理器",
-      "summary": "管理 GPU 集群，支持高性能模型服务与按需 GPU 实例。",
-      "url": "https://github.com/gpustack/gpustack",
-      "source": "GitHub"
-    },
-    {
-      "title": "Home Assistant：本地控制优先的开源智能家居",
-      "summary": "开源家庭自动化平台，将本地控制与隐私保护放在首位。",
-      "url": "https://github.com/home-assistant/core",
-      "source": "GitHub"
+      "title": "AI能写80%的代码，公司为什么还需要你？",
+      "summary": "从面试问题切入，讨论AI编程时代程序员的价值与定位。",
+      "url": "https://juejin.cn/post/7655245911811784750",
+      "source": "掘金"
     }
   ],
-  "generated_at": "2026-09-29 07:20:20"
+  "generated_at": "2026-09-29 07:55:05"
 }
