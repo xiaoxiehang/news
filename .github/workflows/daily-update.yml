@@ -82,6 +82,8 @@ jobs:
       run: |
         git config user.name "GitHub Actions Bot"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/ feed.xml feed-podcast.xml
+        git add data/
+        git add feed.xml 2>/dev/null || true
+        git add feed-podcast.xml 2>/dev/null || true
         git diff --staged --quiet || git commit -m "chore: daily data update $(date -u +'%Y-%m-%d')"
         git push
