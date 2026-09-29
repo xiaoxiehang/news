@@ -309,10 +309,11 @@ def merge_subs(subs):
 
 
 def ass_time(ms):
+    ms = int(ms)
     h, rem = divmod(ms, 3600000)
     m, rem = divmod(rem, 60000)
-    s, cs = divmod(rem, 10)
-    return f'{h:d}:{m:02d}:{s:02d}.{cs:02d}'
+    s, rem = divmod(rem, 1000)
+    return f'{h:d}:{m:02d}:{s:02d}.{rem // 10:02d}'
 
 
 def write_ass(entries, path):
