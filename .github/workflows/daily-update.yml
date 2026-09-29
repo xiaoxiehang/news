@@ -74,6 +74,10 @@ jobs:
       run: python scripts/generate_quiz.py
 
 
+
+    - name: Install ffmpeg
+      run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      
     - name: Generate short video briefing
       continue-on-error: true
       run: python scripts/generate_video.py
