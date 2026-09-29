@@ -139,6 +139,8 @@ def assemble_body(post, picks):
             parts.append(f"💡 你能怎么用：{item['usage']}")
         if item.get('comment'):
             parts.append(f"💬 鸡仔说：{item['comment']}")
+        if p.get('source'):
+            parts.append(f"（来源：{p['source']}）")
         parts.append('')
     parts.append('📌 收藏这篇，明早接着看')
     parts.append(post.get('question') or DEFAULT_QUESTION)

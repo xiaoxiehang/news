@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """AI 每日早报：从各数据源挑选最值得读的新闻，生成中文一句话摘要。
 
-读取 data/github.json、data/hackernews.json、data/juejin.json，
+读取 data/github.json、data/hackernews.json、data/juejin.json、data/rss.json（官方+RSS 权威源），
 调用 OpenAI 兼容的 LLM API（默认 DeepSeek），输出 data/briefing.json。
 
 环境变量：
@@ -78,6 +78,18 @@ def collect_candidates():
                 'meta': '',
             })
 
+    rss = load_json('rss.json')
+    if rss:
+        for feed in rss.get('feeds', []):
+            for it in feed.get('items', [])[:8]:
+                candidates.append({
+                    'title': it.get('title', ''),
+                    'url': it.get('url', ''),
+                    'source': feed.get('name', 'RSS'),
+                    'desc': (it.get('desc') or '')[:200],
+                    'meta': it.get('published') or '',
+                })
+
     # 去重（按 url）
     seen, uniq = set(), []
     for c in candidates:
@@ -95,8 +107,14 @@ def build_prompt(candidates):
         desc = f'\n简介：{c["desc"]}' if c['desc'] else ''
         lines.append(f'{i}. [{c["source"]}] {c["title"]} {meta}\n链接：{c["url"]}{desc}')
     items = '\n\n'.join(lines)
-    return f"""你是科技新闻编辑。从下面的候选新闻中挑选出今天最值得中文读者关注的 {MAX_PICKS} 条，
-为每条写一句不超过 40 字的中文摘要（英文标题要翻译成中文），并写一段 2-3 句话的「今日速览」概括整体热点。
+    return f"""你是科技新闻编辑，读者是对 AI 感兴趣的普通中文读者（非程序员）。
+从下面的候选新闻中挑选出今天最值得关注的 {MAX_PICKS} 条，为每条写一句不超过 40 字的中文摘要
+（英文标题要翻译成中文），并写一段 2-3 句话的「今日速览」概括整体热点。
+
+选题标准（按优先级）：
+1. 一手官方发布（OpenAI 官方等大厂公告）和权威媒体（量子位/The Verge/TechCrunch/MIT 科技评论）优先；
+2. 兼顾受众广度：8 条大致按「大厂/官方动态 2-3 条、权威媒体解读 2-3 条、AI 工具新品 1-2 条、社区热议 1-2 条」搭配；
+3. 优先选普通人能看懂、觉得有用的，纯技术黑话、重复报道靠后。
 
 候选新闻：
 {items}

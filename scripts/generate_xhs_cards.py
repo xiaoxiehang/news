@@ -3,7 +3,7 @@
 
 读取 data/xhs/<YYYY-MM-DD>/picks.json（新闻数据）与 post.json（文案/点评），
 输出到同一目录：
-  cover.png        封面：日期 + 今日科技早报 + 3 条头条
+  cover.png        封面：日期 + 今日AI早报 + 3 条头条
   card_01..08.png  每条新闻一张卡片：编号 / 标题 / 摘要 / 一句话点评 / 来源
   end.png          末页：今日金句 + 互动提问 + 引导收藏
 
@@ -76,11 +76,11 @@ def _bg():
 
 def _header(d, date_str):
     f1, f2 = _font(44), _font(36)
-    d.text((70, 60), '鸡仔科技早报', font=f1, fill=C_YELLOW)
+    d.text((70, 60), '鸡仔AI早报', font=f1, fill=C_YELLOW)
     d.text((70, 125), date_str, font=f2, fill=C_DIM)
 
 
-def _footer(d, text='🐤 鸡仔 · 每天 8 点的科技早报'):
+def _footer(d, text='🐤 鸡仔 · 每天 8 点的AI早报'):
     # PIL 字体无 emoji，用文字替代
     f = _font(32)
     label = text.replace('🐤 ', '')
@@ -111,7 +111,7 @@ def draw_cover(picks, date_str, path):
     img, d = _bg()
     _header(d, date_str)
     f_title = _font(110)
-    _centered(d, 330, '今日科技早报', f_title, C_WHITE)
+    _centered(d, 330, '今日AI早报', f_title, C_WHITE)
     # 黄色分隔线
     d.rectangle([(W - 120) / 2, 500, (W + 120) / 2, 510], fill=C_YELLOW)
     # 3 条头条
@@ -185,9 +185,6 @@ def draw_card(pick, item, idx, total, path):
                 d.text((110, cy), ln, font=f_cmt, fill=C_WHITE)
                 cy += 62
             y += 20 + box_h
-    # 来源（紧跟内容，避免大片留白）
-    f_src = _font(34)
-    d.text((70, y + 70), f"来源 · {_clean(pick.get('source', ''))}", font=f_src, fill=C_DIM)
     _footer(d)
     img.save(path)
 
