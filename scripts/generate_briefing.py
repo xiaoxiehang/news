@@ -23,7 +23,7 @@ SITE_URL = 'https://xiaojj.pro'
 
 LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.deepseek.com').rstrip('/')
-LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'deepseek-chat'
+LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'gpt-6-sol'
 
 MAX_CANDIDATES = 24
 MAX_PICKS = 8

@@ -17,7 +17,7 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 
 LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.openai.com/v1').strip().rstrip('/')
-LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'deepseek-chat'
+LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'gpt-6-sol'
 
 MAX_REPOS = 12
 

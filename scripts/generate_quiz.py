@@ -21,7 +21,7 @@ ARCHIVE_DIR = os.path.join(QUIZ_DIR, 'archive')
 
 LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.openai.com/v1').strip().rstrip('/')
-LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'deepseek-chat'
+LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'gpt-6-sol'
 
 TOPICS = [
     'JavaScript 语言特性', 'TypeScript 类型体操', 'Python 实战',
