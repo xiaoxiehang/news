@@ -236,6 +236,24 @@ def main():
     print(f'✅ 小红书卡片已生成 ({total + 2} 张) -> {out_dir}/')
     print('   cover.png + ' + ' '.join(f'card_{i + 1:02d}.png' for i in range(total)) + ' + end.png')
 
+    # 更新发布包索引（供 xhs.html 日期切换）
+    xhs_root = os.path.join(DATA_DIR, 'xhs')
+    index = []
+    for d in sorted(os.listdir(xhs_root), reverse=True):
+        pp = os.path.join(xhs_root, d, 'post.json')
+        if not os.path.isfile(pp):
+            continue
+        try:
+            with open(pp, encoding='utf-8') as f:
+                pj = json.load(f)
+            index.append({'date': d, 'title': pj.get('title', ''),
+                          'fallback': bool(pj.get('fallback'))})
+        except Exception:
+            continue
+    with open(os.path.join(xhs_root, 'index.json'), 'w', encoding='utf-8') as f:
+        json.dump(index, f, ensure_ascii=False, indent=2)
+    print(f'✅ 发布包索引已更新: {len(index)} 期')
+
 
 if __name__ == '__main__':
     main()

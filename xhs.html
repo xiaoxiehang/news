@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小红书发布审核 - 今日科技早报</title>
+<meta name="description" content="鸡仔科技早报小红书图文发布包审核：标题、正文、标签一键复制，3:4 卡片预览。">
+<style>
+:root {
+  --rausch: #FF5A5F;
+  --text-primary: #222222;
+  --text-secondary: #717171;
+  --text-tertiary: #B0B0B0;
+  --bg: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --border: #EBEBEB;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --max-width: 1280px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header-brand { flex: 1; }
+.header-title { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+.header-subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+.header-nav { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+.nav-link {
+  font-size: 14px; font-weight: 600; color: var(--text-secondary);
+  text-decoration: none; padding: 6px 12px; border-radius: 20px;
+  transition: all 0.2s; white-space: nowrap;
+}
+.nav-link:hover { color: var(--text-primary); background: var(--bg-secondary); }
+.nav-link.active { color: var(--rausch); background: rgba(255, 90, 95, 0.1); }
+
+.main { max-width: 860px; margin: 0 auto; padding: 0 24px 60px; }
+.page-title { font-size: 24px; font-weight: 700; padding: 32px 0 8px; }
+.page-desc { font-size: 14px; color: var(--text-secondary); padding-bottom: 24px; }
+
+.date-row { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.date-row label { font-size: 14px; font-weight: 600; }
+.date-row select {
+  font-size: 15px; padding: 8px 12px; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); background: var(--bg); font-family: var(--font);
+}
+.badge {
+  font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
+  background: #E8F5E9; color: #2E7D32;
+}
+.badge.warn { background: #FFF3E0; color: #E65100; }
+
+.card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: 20px; margin-bottom: 20px;
+}
+.card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.card-head h2 { font-size: 16px; font-weight: 700; }
+.copy-btn {
+  font-size: 13px; font-weight: 600; color: var(--rausch); background: rgba(255,90,95,0.1);
+  border: none; border-radius: 20px; padding: 6px 14px; cursor: pointer; font-family: var(--font);
+}
+.copy-btn:hover { background: rgba(255,90,95,0.2); }
+.copy-btn.ok { color: #2E7D32; background: #E8F5E9; }
+.title-text { font-size: 18px; font-weight: 700; }
+.tags-text { font-size: 15px; color: #0A66C2; line-height: 2; }
+.body-text { font-size: 15px; white-space: pre-wrap; word-break: break-word; }
+
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 640px) { .gallery { grid-template-columns: 1fr; } }
+.shot { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-secondary); }
+.shot img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; cursor: zoom-in; }
+.shot-label {
+  font-size: 13px; color: var(--text-secondary); padding: 8px 12px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.shot-label a { color: var(--rausch); text-decoration: none; font-weight: 600; }
+.section-title { font-size: 18px; font-weight: 700; margin: 32px 0 16px; }
+.empty { text-align: center; color: var(--text-tertiary); padding: 60px 0; font-size: 15px; }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-title">🐤 鸡仔科技早报</div>
+      <div class="header-subtitle">每天 8 点的 AI 科技早报</div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">早报</a>
+      <a href="github.html" class="nav-link">GitHub</a>
+      <a href="hackernews.html" class="nav-link">Hacker News</a>
+      <a href="juejin.html" class="nav-link">掘金</a>
+      <a href="archive.html" class="nav-link">归档</a>
+      <a href="podcast.html" class="nav-link">播客</a>
+      <a href="video.html" class="nav-link">短视频</a>
+      <a href="quiz.html" class="nav-link">每日一题</a>
+      <a href="xhs.html" class="nav-link active">小红书</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <h1 class="page-title">小红书发布审核</h1>
+  <p class="page-desc">每天自动生成的图文发布包：标题、正文、标签一键复制，3:4 卡片按顺序预览。审核通过后手动发布到小红书。</p>
+
+  <div class="date-row">
+    <label for="dateSel">选择日期</label>
+    <select id="dateSel"></select>
+    <span id="modeBadge" class="badge" style="display:none"></span>
+  </div>
+
+  <div id="content"></div>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const pad2 = n => String(n).padStart(2, '0');
+
+function copyText(btn, text) {
+  const done = () => {
+    btn.textContent = '已复制 ✓';
+    btn.classList.add('ok');
+    setTimeout(() => { btn.textContent = '复制'; btn.classList.remove('ok'); }, 1500);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); done(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+function cardEl(title, innerHTML, copyValue) {
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = `<div class="card-head"><h2>${title}</h2><button class="copy-btn">复制</button></div>${innerHTML}`;
+  div.querySelector('.copy-btn').addEventListener('click', e => copyText(e.target, copyValue));
+  return div;
+}
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+async function loadDate(date) {
+  const box = $('content');
+  box.innerHTML = '<div class="empty">加载中…</div>';
+  try {
+    const post = await (await fetch(`data/xhs/${date}/post.json`)).json();
+    box.innerHTML = '';
+
+    const badge = $('modeBadge');
+    if (post.fallback) {
+      badge.style.display = '';
+      badge.className = 'badge warn';
+      badge.textContent = '模板降级（LLM 未生成）';
+    } else {
+      badge.style.display = '';
+      badge.className = 'badge';
+      badge.textContent = 'AI 生成';
+    }
+
+    box.appendChild(cardEl('标题', `<div class="title-text">${esc(post.title)}</div>`, post.title));
+
+    const tagsStr = post.tags.map(t => '#' + t).join(' ');
+    box.appendChild(cardEl('标签', `<div class="tags-text">${esc(tagsStr)}</div>`, tagsStr));
+
+    box.appendChild(cardEl('正文', `<div class="body-text">${esc(post.body)}</div>`, post.body));
+
+    const sec = document.createElement('h2');
+    sec.className = 'section-title';
+    sec.textContent = `卡片预览（${post.items.length + 2} 张 · 3:4）`;
+    box.appendChild(sec);
+
+    const gal = document.createElement('div');
+    gal.className = 'gallery';
+    const shots = [{ f: 'cover.png', l: '封面' }];
+    post.items.forEach((_, i) => shots.push({ f: `card_${pad2(i + 1)}.png`, l: `新闻 ${i + 1}` }));
+    shots.push({ f: 'end.png', l: '末页' });
+    shots.forEach(s => {
+      const url = `data/xhs/${date}/${s.f}`;
+      const d = document.createElement('div');
+      d.className = 'shot';
+      d.innerHTML = `<a href="${url}" target="_blank" rel="noopener"><img src="${url}" alt="${s.l}" loading="lazy"></a>
+        <div class="shot-label"><span>${s.l}</span><a href="${url}" download>下载</a></div>`;
+      gal.appendChild(d);
+    });
+    box.appendChild(gal);
+  } catch (e) {
+    box.innerHTML = '<div class="empty">该日期的发布包不存在或加载失败。</div>';
+  }
+}
+
+async function init() {
+  try {
+    const idx = await (await fetch('data/xhs/index.json')).json();
+    const sel = $('dateSel');
+    idx.forEach(e => {
+      const o = document.createElement('option');
+      o.value = e.date;
+      o.textContent = `${e.date}${e.title ? ' · ' + e.title : ''}`;
+      sel.appendChild(o);
+    });
+    sel.addEventListener('change', () => loadDate(sel.value));
+    if (idx.length) loadDate(idx[0].date);
+    else $('content').innerHTML = '<div class="empty">暂无发布包，等待明日 workflow 生成。</div>';
+  } catch (e) {
+    $('content').innerHTML = '<div class="empty">暂无发布包，等待明日 workflow 生成。</div>';
+  }
+}
+init();
+</script>
+</body>
+</html>
