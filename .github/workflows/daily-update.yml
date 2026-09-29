@@ -55,6 +55,29 @@ jobs:
       continue-on-error: true
       run: python scripts/generate_podcast.py
 
+
+    - name: Generate GitHub insights
+      continue-on-error: true
+      env:
+        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+        LLM_MODEL: ${{ secrets.LLM_MODEL }}
+      run: python scripts/generate_github_insights.py
+
+
+    - name: Generate daily quiz
+      continue-on-error: true
+      env:
+        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+        LLM_MODEL: ${{ secrets.LLM_MODEL }}
+      run: python scripts/generate_quiz.py
+
+
+    - name: Generate short video briefing
+      continue-on-error: true
+      run: python scripts/generate_video.py
+
     - name: Commit and push
       run: |
         git config user.name "GitHub Actions Bot"
