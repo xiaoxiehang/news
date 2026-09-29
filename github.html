@@ -241,6 +241,23 @@ body {
   padding-top: 12px;
   border-top: 1px solid var(--border);
 }
+.project-insight {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFF5F5 100%);
+  border: 1px solid #FFE9B8;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.insight-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--rausch);
+  margin-bottom: 4px;
+}
+.insight-what { color: var(--text-primary); margin-bottom: 4px; }
+.insight-meta { color: var(--text-secondary); font-size: 12px; }
 .meta-item {
   display: flex;
   align-items: center;
@@ -357,6 +374,8 @@ body {
       <a href="juejin.html" class="nav-link">掘金</a>
       <a href="archive.html" class="nav-link">归档</a>
       <a href="podcast.html" class="nav-link">播客</a>
+      <a href="video.html" class="nav-link">短视频</a>
+      <a href="quiz.html" class="nav-link">每日一题</a>
     </nav>
   </div>
 </header>
@@ -406,6 +425,26 @@ function switchCategory(categoryId) {
   currentCategory = categoryId;
   renderCategories();
   renderProjects();
+}
+
+function escHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+let insightsData = {};
+
+function renderInsight(fullName) {
+  const ins = insightsData[fullName];
+  if (!ins) return '';
+  return `
+    <div class="project-insight">
+      <div class="insight-label">🤖 AI 点评</div>
+      <div class="insight-what">${escHtml(ins.what)}</div>
+      ${ins.why_hot ? `<div class="insight-meta">🔥 ${escHtml(ins.why_hot)}</div>` : ''}
+      ${ins.who ? `<div class="insight-meta">👀 ${escHtml(ins.who)}</div>` : ''}
+    </div>`;
 }
 
 function renderProjects() {
@@ -460,6 +499,7 @@ function renderProjects() {
               </div>
             </div>
             <div class="project-desc">${project.description || '暂无描述'}</div>
+            ${renderInsight(project.full_name)}
             <div class="project-meta">
               ${project.language ? `
                 <div class="meta-item">
@@ -489,10 +529,13 @@ function formatNumber(num) {
 }
 
 // 加载数据
-fetch('data/github.json?t=' + Date.now())
-  .then(r => r.json())
-  .then(data => {
+Promise.all([
+  fetch('data/github.json?t=' + Date.now()).then(r => r.json()),
+  fetch('data/github_insights.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
+])
+  .then(([data, insights]) => {
     githubData = data;
+    if (insights && insights.insights) insightsData = insights.insights;
     renderCategories();
     renderProjects();
   })

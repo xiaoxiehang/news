@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开发者每日一题 - 今日科技早报</title>
+<meta name="description" content="每天一道开发者面试题，AI 出题+解析，坚持打卡。">
+<style>
+:root {
+  --rausch: #FF5A5F;
+  --green: #1DB954;
+  --text-primary: #222222;
+  --text-secondary: #717171;
+  --text-tertiary: #B0B0B0;
+  --bg: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --border: #EBEBEB;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --max-width: 1280px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header-brand { flex: 1; }
+.header-title { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+.header-subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+.header-nav { display: flex; gap: 8px; flex-shrink: 0; }
+.nav-link {
+  font-size: 14px; font-weight: 600; color: var(--text-secondary);
+  text-decoration: none; padding: 6px 12px; border-radius: 20px;
+  transition: all 0.2s; white-space: nowrap;
+}
+.nav-link:hover { color: var(--text-primary); background: var(--bg-secondary); }
+.nav-link.active { color: var(--rausch); background: rgba(255, 90, 95, 0.1); }
+
+.main { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+.page-title { font-size: 24px; font-weight: 700; padding: 32px 0 8px; }
+.page-desc { font-size: 14px; color: var(--text-secondary); padding-bottom: 20px; }
+
+.stats {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  flex: 1;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+.stat-num { font-size: 24px; font-weight: 700; color: var(--rausch); }
+.stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+
+.quiz-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 32px;
+}
+.quiz-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.topic-tag {
+  font-size: 12px; font-weight: 700; color: #fff;
+  background: var(--rausch); padding: 3px 12px; border-radius: 20px;
+}
+.quiz-date { font-size: 13px; color: var(--text-tertiary); }
+.quiz-question { font-size: 18px; font-weight: 600; line-height: 1.6; margin-bottom: 20px; }
+.quiz-options { display: flex; flex-direction: column; gap: 10px; }
+.option-btn {
+  text-align: left;
+  font-size: 15px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font);
+  line-height: 1.5;
+}
+.option-btn:hover:not(:disabled) { border-color: var(--rausch); background: #FFF9F9; }
+.option-btn:disabled { cursor: default; }
+.option-btn.correct { border-color: var(--green); background: #F0FAF4; color: #0d7a3a; font-weight: 600; }
+.option-btn.wrong { border-color: var(--rausch); background: #FFF1F1; color: #c0392b; }
+.option-btn.dim { opacity: 0.55; }
+.quiz-result {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  line-height: 1.7;
+  display: none;
+}
+.quiz-result.show { display: block; }
+.quiz-result.good { background: #F0FAF4; border: 1px solid #BEE5CD; }
+.quiz-result.bad { background: #FFF8E7; border: 1px solid #FFE9B8; }
+.result-title { font-weight: 700; margin-bottom: 8px; font-size: 15px; }
+.quiz-result.good .result-title { color: #0d7a3a; }
+.quiz-result.bad .result-title { color: #b7791f; }
+
+.history-title { font-size: 19px; font-weight: 700; padding: 8px 0 4px; }
+.history-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 12px;
+  overflow: hidden;
+}
+.history-head {
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.history-head:hover { background: var(--bg-secondary); }
+.history-q {
+  flex: 1; font-size: 14px; font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.history-topic { font-size: 11px; font-weight: 700; color: var(--rausch); white-space: nowrap; }
+.history-date { font-size: 12px; color: var(--text-tertiary); white-space: nowrap; }
+.history-body { display: none; border-top: 1px solid var(--border); padding: 16px 20px; }
+.history-item.open .history-body { display: block; }
+.history-opt { font-size: 14px; padding: 6px 0; color: var(--text-secondary); }
+.history-opt.is-answer { color: #0d7a3a; font-weight: 700; }
+.history-exp { font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 12px; margin-top: 10px; line-height: 1.7; }
+
+.loading { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 15px; }
+.empty-state { text-align: center; padding: 80px 20px; }
+.empty-icon { font-size: 48px; margin-bottom: 16px; }
+.empty-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.empty-desc { font-size: 14px; color: var(--text-secondary); }
+
+.footer {
+  max-width: var(--max-width); margin: 0 auto; padding: 40px 24px;
+  text-align: center; border-top: 1px solid var(--border); margin-top: 40px;
+}
+.footer-text { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+.footer-link { font-size: 13px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
+.footer-link:hover { color: var(--rausch); }
+
+@media (max-width: 600px) {
+  .header-inner { flex-wrap: wrap; gap: 12px; padding: 16px 20px; }
+  .header-subtitle { order: -1; flex: 1 1 100%; }
+  .header-title { font-size: 19px; }
+  .main { padding: 0 20px; }
+  .quiz-card { padding: 20px; }
+  .history-q { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-title">今日科技早报</div>
+      <div class="header-subtitle" id="header-subtitle">加载中...</div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">早报</a>
+      <a href="github.html" class="nav-link">GitHub</a>
+      <a href="hackernews.html" class="nav-link">Hacker News</a>
+      <a href="juejin.html" class="nav-link">掘金</a>
+      <a href="archive.html" class="nav-link">归档</a>
+      <a href="podcast.html" class="nav-link">播客</a>
+      <a href="video.html" class="nav-link">短视频</a>
+      <a href="quiz.html" class="nav-link active">每日一题</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+  <div class="page-title">📝 开发者每日一题</div>
+  <div class="page-desc">每天一道面试题，AI 出题 + 解析。答对了别骄傲，答错了正好补上。</div>
+
+  <div class="stats">
+    <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">连续打卡（天）</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-total">0</div><div class="stat-label">累计答题</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-rate">-</div><div class="stat-label">答对率</div></div>
+  </div>
+
+  <div id="today-quiz"><div class="loading">出题中...</div></div>
+
+  <div class="history-title">往期题目</div>
+  <div id="history"><div class="loading">加载中...</div></div>
+</main>
+
+<footer class="footer"></footer>
+
+<script>
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+const LETTERS = ['A', 'B', 'C', 'D'];
+
+function getStats() {
+  try { return JSON.parse(localStorage.getItem('quiz_stats') || '{}'); }
+  catch (e) { return {}; }
+}
+function saveStats(s) { localStorage.setItem('quiz_stats', JSON.stringify(s)); }
+
+function renderStats() {
+  const s = getStats();
+  document.getElementById('stat-streak').textContent = s.streak || 0;
+  document.getElementById('stat-total').textContent = s.total || 0;
+  document.getElementById('stat-rate').textContent =
+    s.total ? Math.round((s.correct || 0) / s.total * 100) + '%' : '-';
+}
+
+function recordAnswer(date, isCorrect) {
+  const s = getStats();
+  const answeredKey = 'quiz_answered_' + date;
+  if (localStorage.getItem(answeredKey)) return; // 今天已答过，不重复计数
+  localStorage.setItem(answeredKey, isCorrect ? '1' : '0');
+  s.total = (s.total || 0) + 1;
+  if (isCorrect) s.correct = (s.correct || 0) + 1;
+  // 连续打卡：昨天答过则 +1，否则重置为 1
+  const y = new Date(date); y.setDate(y.getDate() - 1);
+  const yKey = 'quiz_answered_' + y.toISOString().slice(0, 10);
+  s.streak = localStorage.getItem(yKey) ? (s.streak || 0) + 1 : 1;
+  saveStats(s);
+  renderStats();
+}
+
+function renderToday(quiz) {
+  const container = document.getElementById('today-quiz');
+  const answered = localStorage.getItem('quiz_answered_' + quiz.date);
+  let optsHtml = quiz.options.map(function(opt, i) {
+    let cls = '';
+    if (answered) {
+      if (i === quiz.answer) cls = 'correct';
+      else if (answered === '0') cls = 'dim';
+    }
+    const dis = answered ? 'disabled' : '';
+    return '<button class="option-btn ' + cls + '" ' + dis +
+      ' onclick="answer(' + i + ')"><b>' + LETTERS[i] + '.</b> ' + esc(opt) + '</button>';
+  }).join('');
+
+  let resultHtml = '';
+  if (answered) {
+    const good = answered === '1';
+    resultHtml = '<div class="quiz-result show ' + (good ? 'good' : 'bad') + '">' +
+      '<div class="result-title">' + (good ? '🎉 答对了！' : '💡 答错了，看看解析') + '</div>' +
+      '<div>' + esc(quiz.explanation || '暂无解析') + '</div></div>';
+  }
+
+  container.innerHTML =
+    '<div class="quiz-card">' +
+      '<div class="quiz-meta"><span class="topic-tag">' + esc(quiz.topic) + '</span>' +
+      '<span class="quiz-date">' + esc(quiz.date_str || quiz.date) + '</span></div>' +
+      '<div class="quiz-question">' + esc(quiz.question) + '</div>' +
+      '<div class="quiz-options" id="quiz-options">' + optsHtml + '</div>' +
+      '<div id="quiz-result">' + resultHtml + '</div>' +
+    '</div>';
+
+  window._quiz = quiz;
+}
+
+function answer(i) {
+  const quiz = window._quiz;
+  if (!quiz || localStorage.getItem('quiz_answered_' + quiz.date)) return;
+  const isCorrect = i === quiz.answer;
+  recordAnswer(quiz.date, isCorrect);
+
+  const btns = document.querySelectorAll('#quiz-options .option-btn');
+  btns.forEach(function(b, j) {
+    b.disabled = true;
+    if (j === quiz.answer) b.classList.add('correct');
+    else if (j === i) b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+
+  document.getElementById('quiz-result').innerHTML =
+    '<div class="quiz-result show ' + (isCorrect ? 'good' : 'bad') + '">' +
+    '<div class="result-title">' + (isCorrect ? '🎉 答对了！' : '💡 答错了，看看解析') + '</div>' +
+    '<div>' + esc(quiz.explanation || '暂无解析') + '</div></div>';
+}
+
+function toggleHistory(el) {
+  el.closest('.history-item').classList.toggle('open');
+}
+
+async function load() {
+  renderStats();
+  try {
+    const r = await fetch('data/quiz.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    const quiz = await r.json();
+    if (!quiz.question) throw new Error('empty');
+    renderToday(quiz);
+  } catch (e) {
+    document.getElementById('today-quiz').innerHTML = '<div class="empty-state">' +
+      '<div class="empty-icon">📝</div><div class="empty-title">今日题目尚未出炉</div>' +
+      '<div class="empty-desc">每天早上 8 点更新，敬请期待</div></div>';
+  }
+
+  try {
+    const r = await fetch('data/quiz/index.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    const list = await r.json();
+    const today = (window._quiz && window._quiz.date) || '';
+    const past = list.filter(function(e) { return e.date !== today; }).slice(0, 30);
+    if (!past.length) {
+      document.getElementById('history').innerHTML =
+        '<div class="empty-desc" style="padding:16px 0;">还没有往期题目</div>';
+      return;
+    }
+    document.getElementById('history').innerHTML = past.map(function(e) {
+      const opts = (e.options || []).map(function(opt, i) {
+        return '<div class="history-opt' + (i === e.answer ? ' is-answer' : '') + '">' +
+          LETTERS[i] + '. ' + esc(opt) + (i === e.answer ? ' ✓' : '') + '</div>';
+      }).join('');
+      return '<div class="history-item">' +
+        '<div class="history-head" onclick="toggleHistory(this)">' +
+          '<span class="history-topic">' + esc(e.topic || '') + '</span>' +
+          '<span class="history-q">' + esc(e.question) + '</span>' +
+          '<span class="history-date">' + esc(e.date_str || e.date) + '</span>' +
+        '</div>' +
+        '<div class="history-body">' + opts +
+          (e.explanation ? '<div class="history-exp">' + esc(e.explanation) + '</div>' : '') +
+        '</div></div>';
+    }).join('');
+  } catch (e) {
+    document.getElementById('history').innerHTML =
+      '<div class="empty-desc" style="padding:16px 0;">暂无往期题目</div>';
+  }
+}
+
+load();
+</script>
+<script src="scripts/header-info.js"></script>
+<script src="scripts/footer.js"></script>
+</body>
+</html>
