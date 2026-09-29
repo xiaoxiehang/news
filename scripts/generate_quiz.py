@@ -31,8 +31,31 @@ TOPICS = [
 ]
 
 
+def _chat_urls():
+    urls = [f'{LLM_BASE_URL}/chat/completions']
+    if not LLM_BASE_URL.rstrip('/').endswith('/v1'):
+        urls.append(f'{LLM_BASE_URL}/v1/chat/completions')
+    return urls
+
+
+def _post_llm(headers, payload):
+    """POST chat completions；自动兼容网关地址带/不带 /v1 的情况"""
+    last_err = None
+    for url in _chat_urls():
+        try:
+            r = requests.post(url, headers=headers, json=payload, timeout=120)
+            r.raise_for_status()
+            data = r.json()
+            if 'choices' not in data:
+                raise ValueError(f'网关返回异常: {str(data)[:150]}')
+            return data
+        except Exception as e:
+            last_err = e
+            print(f'   ⚠️ {url} 失败: {e}')
+    raise last_err
+
+
 def call_llm(prompt):
-    url = f'{LLM_BASE_URL}/chat/completions'
     headers = {'Authorization': f'Bearer {LLM_API_KEY}', 'Content-Type': 'application/json'}
     payload = {
         'model': LLM_MODEL,
@@ -43,9 +66,8 @@ def call_llm(prompt):
         'temperature': 0.8,
         'response_format': {'type': 'json_object'},
     }
-    r = requests.post(url, headers=headers, json=payload, timeout=120)
-    r.raise_for_status()
-    content = r.json()['choices'][0]['message']['content']
+    data = _post_llm(headers, payload)
+    content = data['choices'][0]['message']['content']
     return json.loads(content)
 
 

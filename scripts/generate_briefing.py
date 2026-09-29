@@ -106,20 +106,41 @@ def build_prompt(candidates):
 picks 数组中 url 和 source 必须与候选新闻中的原文一致，不要编造链接。"""
 
 
+def _chat_urls():
+    urls = [f'{LLM_BASE_URL}/chat/completions']
+    if not LLM_BASE_URL.rstrip('/').endswith('/v1'):
+        urls.append(f'{LLM_BASE_URL}/v1/chat/completions')
+    return urls
+
+
+def _post_llm(headers, payload):
+    """POST chat completions；自动兼容网关地址带/不带 /v1 的情况"""
+    last_err = None
+    for url in _chat_urls():
+        try:
+            r = requests.post(url, headers=headers, json=payload, timeout=120)
+            r.raise_for_status()
+            data = r.json()
+            if 'choices' not in data:
+                raise ValueError(f'网关返回异常: {str(data)[:150]}')
+            return data
+        except Exception as e:
+            last_err = e
+            print(f'   ⚠️ {url} 失败: {e}')
+    raise last_err
+
+
 def call_llm(prompt):
-    resp = requests.post(
-        f'{LLM_BASE_URL}/chat/completions',
-        headers={'Authorization': f'Bearer {LLM_API_KEY}', 'Content-Type': 'application/json'},
-        json={
+    data = _post_llm(
+        {'Authorization': f'Bearer {LLM_API_KEY}', 'Content-Type': 'application/json'},
+        {
             'model': LLM_MODEL,
             'messages': [{'role': 'user', 'content': prompt}],
             'temperature': 0.3,
             'response_format': {'type': 'json_object'},
         },
-        timeout=120,
     )
-    resp.raise_for_status()
-    content = resp.json()['choices'][0]['message']['content']
+    content = data['choices'][0]['message']['content']
     # 兼容模型返回 markdown 包裹的情况
     m = re.search(r'\{.*\}', content, re.DOTALL)
     return json.loads(m.group(0) if m else content)
