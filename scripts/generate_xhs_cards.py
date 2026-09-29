@@ -146,13 +146,30 @@ def draw_card(pick, item, idx, total, path):
         d.text((70, y), ln, font=f_title, fill=C_WHITE)
         y += 92
     d.rectangle([70, y + 10, W - 70, y + 13], fill=C_LINE)
-    # 摘要
+    y += 70
+    # 口语化介绍（代替公文腔摘要）
+    point = (item or {}).get('point', '').strip() or pick.get('summary', '')
     f_sum = _font(40)
-    y += 60
-    for ln in _wrap(d, _clean(pick.get('summary', '')), f_sum, W - 140)[:5]:
+    for ln in _wrap(d, _clean(point), f_sum, W - 140)[:4]:
+        if y > H - 560:
+            break
         d.text((70, y), ln, font=f_sum, fill=C_GRAY)
         y += 66
-    # 一句话点评（引用块）
+    # "你能怎么用"高亮行
+    usage = (item or {}).get('usage', '').strip()
+    if usage and y < H - 460:
+        f_use = _font(38)
+        ulines = _wrap(d, _clean('你能怎么用：' + usage), f_use, W - 140)[:2]
+        box_h = 36 + len(ulines) * 58
+        if y + box_h < H - 330:
+            d.rounded_rectangle([70, y + 10, W - 70, y + 10 + box_h], radius=16, fill=(58, 48, 12))
+            d.rectangle([70, y + 10, 82, y + 10 + box_h], fill=C_YELLOW)
+            uy = y + 28
+            for ln in ulines:
+                d.text((104, uy), ln, font=f_use, fill=C_YELLOW)
+                uy += 58
+            y += 10 + box_h + 10
+    # 一句话点评（引用块，有空间才画）
     comment = (item or {}).get('comment', '').strip()
     if comment:
         f_cmt = _font(38)

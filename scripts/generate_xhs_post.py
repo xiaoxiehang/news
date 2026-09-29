@@ -23,8 +23,8 @@ LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.deepseek.com').rstrip('/')
 LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'gpt-6-sol'
 
-DEFAULT_TAGS = ['科技早报', 'AI资讯', '人工智能', '科技新闻', '数码科技', '每日早报']
-DEFAULT_QUESTION = '今天哪条新闻最让你意外？评论区聊聊👇'
+DEFAULT_TAGS = ['鸡仔AI早报', 'AI资讯', '打工人日常', 'AI提效', '人工智能', '科技早报']
+DEFAULT_QUESTION = '这 8 条里，你最想亲手试试的是哪个？评论区说说👇'
 AI_DISCLAIMER = '🤖 本内容由 AI 辅助生成，仅供资讯参考'
 
 
@@ -72,23 +72,33 @@ def build_prompt(briefing):
         lines.append(f"{i}. {p['title']}\n   摘要：{p['summary']}\n   来源：{p['source']}")
     items = '\n\n'.join(lines)
     date_str = briefing.get('date_str', '')
-    return f"""你是小红书科技区博主"鸡仔"，每天发"科技早报"图文笔记。
+    return f"""你是小红书科技区博主"鸡仔"，每天发"鸡仔AI早报"图文笔记。
+你的读者不是程序员，而是对 AI 感兴趣的普通打工人、学生党、自媒体人。
+你的核心能力是"翻译"：把 AI 圈的黑话新闻，翻译成普通人能听懂、觉得有用的话。
+
 今天是{date_str}，下面是今天的 8 条科技新闻：
 
 {items}
 
 请为今天的早报笔记写小红书文案。要求：
-1. 标题不超过 20 个字，包含日期，格式参考"9月29日科技早报｜Sonnet 5.5引爆，8条AI大新闻"，前 18 字内包含"科技早报""AI"两个关键词，不用"最/第一"等极限词。
-2. 开头 hook：2 行口语化文案，先给结论、制造期待，比如"今天AI圈有3个大动静，打工人的饭碗又悬了👇"。
-3. 为每条新闻写：point（2-3 句口语化介绍，第一人称，像朋友聊天，不说公文腔），comment（一句话毒辣点评，带观点、有梗，不超过 40 字）。
-4. 结尾 question：一句开放性提问，引导评论。
-5. tags：5-8 个全中文话题标签，大词+精准词组合。
-6. jinju：今日金句一句话，和科技/效率/好奇心相关。
+1. 标题不超过 20 个字，固定栏目名前缀"{date_str}鸡仔AI早报｜"，后面接人群词+利益点，
+   比如"打工人必看8条""这3个工具先收藏"。前 18 字内含"AI"关键词，不用"最/第一"等极限词。
+2. 开头 hook：2 行口语化文案，先给结论、制造期待。
+3. 为每条新闻写：
+   - point（2-3 句口语化介绍，第一人称像朋友聊天，把技术黑话翻译成人话，不说公文腔）；
+   - usage（一句话"普通人能怎么用"，具体、可行动，不超过 40 字；没有明确用法的就写实在话如"吃瓜了解一下就行"）；
+   - comment（一句话点评，大白话、有观点，程序员和非程序员都能看懂，不超过 40 字）。
+4. order：把 8 条按"普通人获得感"从强到弱排序，输出原序号数组（如 [7,6,1,5,4,2,3,8]），
+   最有用的放最前，纯行业/时事放最后。
+5. 结尾 question：一句具体的开放性提问，引导评论。
+6. tags：5-8 个全中文话题标签，大词+人群词+精准词组合，必须包含"鸡仔AI早报"。
+7. jinju：今日金句一句话，和效率/好奇心/打工人相关，口语化。
 
 只返回 JSON，不要有其他内容，格式：
 {{"title": "标题", "hook": "开头两行文案（用\\n分隔）",
- "items": [{{"point": "口语化介绍", "comment": "一句话点评"}}],
- "question": "结尾提问", "tags": ["科技早报", "..."], "jinju": "今日金句"}}
+ "items": [{{"point": "口语化介绍", "usage": "普通人能怎么用", "comment": "一句话点评"}}],
+ "order": [7, 6, 1, 5, 4, 2, 3, 8],
+ "question": "结尾提问", "tags": ["鸡仔AI早报", "..."], "jinju": "今日金句"}}
 items 数组顺序必须与上面 8 条新闻一一对应。"""
 
 
@@ -101,37 +111,49 @@ def fallback_post(briefing):
     except Exception:
         short_date = briefing.get('date_str', today)
     picks = briefing['picks']
-    title = f'{short_date}科技早报｜8条AI大新闻速览'
+    title = f'{short_date}鸡仔AI早报｜打工人必看8条'
     hook = '每天 3 分钟，跟上 AI 圈动态👇\n今天这 8 条值得你看看'
-    items = [{'point': p['summary'], 'comment': ''} for p in picks]
+    items = [{'point': p['summary'], 'usage': '', 'comment': ''} for p in picks]
     return {
         'title': title[:20],
         'hook': hook,
         'items': items,
         'question': DEFAULT_QUESTION,
         'tags': DEFAULT_TAGS[:6],
-        'jinju': '保持好奇，明天见。',
+        'jinju': '别追每一个新模型，追那个让你少加班的。',
         'fallback': True,
+        'order': list(range(1, len(picks) + 1)),
     }
 
 
-def assemble_body(post, briefing):
-    """组装完整正文：hook + 清单 + 结尾引导 + AI 声明。"""
+def assemble_body(post, picks):
+    """组装完整正文：hook + 清单 + 结尾引导 + AI 声明。picks 为重排后的新闻列表。"""
     parts = [post['hook'], '', '📋 今日 8 条速览', '']
     numerals = '①②③④⑤⑥⑦⑧'
-    for i, p in enumerate(briefing['picks']):
+    for i, p in enumerate(picks):
         item = post['items'][i] if i < len(post['items']) else {}
         parts.append(f"{numerals[i]} {p['title']}")
         if item.get('point'):
             parts.append(item['point'])
+        if item.get('usage'):
+            parts.append(f"💡 你能怎么用：{item['usage']}")
         if item.get('comment'):
-            parts.append(f"💬 {item['comment']}")
+            parts.append(f"💬 鸡仔说：{item['comment']}")
         parts.append('')
     parts.append('📌 收藏这篇，明早接着看')
     parts.append(post.get('question') or DEFAULT_QUESTION)
     parts.append('')
     parts.append(AI_DISCLAIMER)
     return '\n'.join(parts).strip()
+
+
+def apply_order(picks, order):
+    """按 LLM 返回的 order（原序号 1-based）重排 picks；非法时返回原序。"""
+    n = len(picks)
+    if (not isinstance(order, list) or len(order) != n
+            or sorted(order) != list(range(1, n + 1))):
+        return picks
+    return [picks[i - 1] for i in order]
 
 
 def main():
@@ -148,30 +170,28 @@ def main():
 
     out_dir = os.path.join(DATA_DIR, 'xhs', today)
     os.makedirs(out_dir, exist_ok=True)
-    # 快照当天的 picks，供制卡脚本使用（与线上数据解耦）
-    with open(os.path.join(out_dir, 'picks.json'), 'w', encoding='utf-8') as f:
-        json.dump(
-            {'date': today, 'date_str': briefing.get('date_str', today),
-             'overview': briefing.get('overview', ''), 'picks': briefing['picks']},
-            f, ensure_ascii=False, indent=2)
 
     if LLM_API_KEY:
         print(f'📝 调用 {LLM_MODEL} 生成小红书文案...')
         try:
             result = call_llm(build_prompt(briefing))
+            n = len(briefing['picks'])
             items = result.get('items', [])
             # 对齐条数：少了就用 summary 补
-            while len(items) < len(briefing['picks']):
-                items.append({'point': briefing['picks'][len(items)]['summary'], 'comment': ''})
+            while len(items) < n:
+                items.append({'point': briefing['picks'][len(items)]['summary'],
+                              'usage': '', 'comment': ''})
             post = {
                 'title': (result.get('title') or '')[:20],
                 'hook': result.get('hook', ''),
-                'items': [{'point': it.get('point', ''), 'comment': it.get('comment', '')}
-                          for it in items[:len(briefing['picks'])]],
+                'items': [{'point': it.get('point', ''), 'usage': it.get('usage', ''),
+                           'comment': it.get('comment', '')}
+                          for it in items[:n]],
                 'question': result.get('question') or DEFAULT_QUESTION,
                 'tags': [t for t in result.get('tags', []) if t][:8] or DEFAULT_TAGS[:6],
                 'jinju': result.get('jinju', ''),
                 'fallback': False,
+                'order': result.get('order') or list(range(1, n + 1)),
             }
         except Exception as e:
             print(f'❌ LLM 生成失败，降级为模板文案: {e}')
@@ -180,7 +200,22 @@ def main():
         print('⏭️ 未设置 LLM_API_KEY，使用模板降级文案')
         post = fallback_post(briefing)
 
-    post['body'] = assemble_body(post, briefing)
+    # 按获得感排序重排 picks 与 items（正文/卡片/封面头条保持一致）
+    n = len(briefing['picks'])
+    order = post.get('order') or list(range(1, n + 1))
+    ordered_picks = apply_order(briefing['picks'], order)
+    idx = [i - 1 for i in order]
+    if len(post['items']) == n and sorted(idx) == list(range(n)):
+        post['items'] = [post['items'][i] for i in idx]
+        post['order'] = order
+    # 快照当天重排后的 picks，供制卡脚本使用（与线上数据解耦）
+    with open(os.path.join(out_dir, 'picks.json'), 'w', encoding='utf-8') as f:
+        json.dump(
+            {'date': today, 'date_str': briefing.get('date_str', today),
+             'overview': briefing.get('overview', ''), 'picks': ordered_picks},
+            f, ensure_ascii=False, indent=2)
+
+    post['body'] = assemble_body(post, ordered_picks)
     post['date'] = today
     post['generated_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
