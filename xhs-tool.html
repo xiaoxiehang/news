@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>鸡仔·小红书文案</title>
+<style>
+:root {
+  --bg: #f6f4ef;
+  --card: #ffffff;
+  --ink: #1c1a17;
+  --muted: #8a857c;
+  --brand: #ff2442;
+  --brand-soft: #ffe9ed;
+  --line: #ece7dd;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 640px; margin: 0 auto; padding: 20px 16px 80px; }
+header { text-align: center; margin: 12px 0 20px; }
+header .logo { font-size: 40px; }
+header h1 { font-size: 22px; margin: 8px 0 4px; }
+header p { color: var(--muted); font-size: 13px; margin: 0; }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 16px; padding: 18px; margin-bottom: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.04);
+}
+label { display: block; font-size: 14px; font-weight: 600; margin: 0 0 8px; }
+textarea, input[type=text] {
+  width: 100%; border: 1.5px solid var(--line); border-radius: 12px;
+  padding: 12px; font-size: 15px; font-family: inherit; resize: vertical;
+  background: #fbfaf7;
+}
+textarea:focus, input[type=text]:focus { outline: none; border-color: var(--brand); background: #fff; }
+textarea { min-height: 76px; }
+.field { margin-bottom: 16px; }
+.field:last-child { margin-bottom: 0; }
+.styles { display: flex; gap: 10px; }
+.styles label {
+  flex: 1; margin: 0; font-weight: 500; text-align: center; cursor: pointer;
+  border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 4px; font-size: 14px;
+  background: #fbfaf7;
+}
+.styles input { display: none; }
+.styles input:checked + span { font-weight: 700; }
+.styles label:has(input:checked) { border-color: var(--brand); background: var(--brand-soft); color: var(--brand); }
+.btn {
+  display: block; width: 100%; border: none; cursor: pointer;
+  background: var(--brand); color: #fff; font-size: 17px; font-weight: 700;
+  padding: 14px; border-radius: 14px; font-family: inherit;
+}
+.btn:disabled { opacity: .55; cursor: default; }
+.btn-ghost {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line);
+  font-size: 15px; padding: 11px; margin-top: 10px;
+}
+.result { display: none; }
+.result.show { display: block; }
+.result h2 { font-size: 16px; margin: 0 0 12px; }
+.block { background: #fbfaf7; border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+.block .cap { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;}
+.block .txt { font-size: 15px; line-height: 1.75; white-space: pre-wrap; word-break: break-word; }
+.block .txt.title { font-size: 18px; font-weight: 700; }
+.copy {
+  border: 1px solid var(--line); background: #fff; border-radius: 8px;
+  font-size: 12px; padding: 5px 12px; cursor: pointer; font-family: inherit; color: var(--ink);
+}
+.copy:active { background: var(--brand-soft); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { background: var(--brand-soft); color: var(--brand); font-size: 13px; padding: 6px 12px; border-radius: 20px; }
+.cover-wrap { text-align: center; }
+#cover { width: 100%; max-width: 360px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+.row2 { display: flex; gap: 10px; }
+.row2 .btn-ghost { flex: 1; margin-top: 12px; }
+.err {
+  display: none; background: #fff1f2; color: #be123c; border: 1px solid #fecdd3;
+  border-radius: 12px; padding: 12px 14px; font-size: 14px; margin-bottom: 16px;
+}
+.err.show { display: block; }
+.loading { text-align: center; color: var(--muted); font-size: 14px; padding: 24px 0; display: none; }
+.loading.show { display: block; }
+.spin { display: inline-block; animation: spin 1s linear infinite; font-size: 22px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">🐤</div>
+    <h1>鸡仔·小红书文案</h1>
+    <p>输入主题，一键生成标题 / 正文 / 标签 / 封面图</p>
+  </header>
+
+  <div class="err" id="err"></div>
+
+  <div class="card">
+    <div class="field">
+      <label for="topic">主题 *</label>
+      <textarea id="topic" placeholder="比如：推荐 3 个免费 AI 修图 App，学生党必备"></textarea>
+    </div>
+    <div class="field">
+      <label for="points">补充卖点 / 要点（可选）</label>
+      <input type="text" id="points" placeholder="比如：无广告、支持中文、导出无水印">
+    </div>
+    <div class="field">
+      <label>笔记风格</label>
+      <div class="styles">
+        <label><input type="radio" name="style" value="zhongcao" checked><span>🌱 种草推荐</span></label>
+        <label><input type="radio" name="style" value="ganhuo"><span>📚 干货教程</span></label>
+        <label><input type="radio" name="style" value="ceping"><span>🔍 真实测评</span></label>
+      </div>
+    </div>
+    <button class="btn" id="go">✨ 生成文案</button>
+  </div>
+
+  <div class="loading" id="loading"><span class="spin">🐤</span><br><br>鸡仔正在写稿…</div>
+
+  <div class="result" id="result">
+    <div class="card">
+      <h2>📝 文案</h2>
+      <div class="block">
+        <div class="cap">标题 <button class="copy" data-copy="r-title">复制</button></div>
+        <div class="txt title" id="r-title"></div>
+      </div>
+      <div class="block">
+        <div class="cap">正文 <button class="copy" data-copy="r-body">复制</button></div>
+        <div class="txt" id="r-body"></div>
+      </div>
+      <div class="block">
+        <div class="cap">标签 <button class="copy" data-copy="r-tags">复制</button></div>
+        <div class="tags" id="r-tags"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>🖼️ 封面图 <span style="font-weight:400;color:var(--muted);font-size:12px;">1080×1440</span></h2>
+      <div class="cover-wrap"><canvas id="cover" width="1080" height="1440"></canvas></div>
+      <div class="row2">
+        <button class="btn-ghost btn" id="redraw">🎲 换个排版</button>
+        <button class="btn-ghost btn" id="dl">⬇️ 下载封面</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>AI 生成内容仅供参考，发布前请检查 · 每天免费 20 次</footer>
+</div>
+
+<script>
+// ---------- 工具 ----------
+function showErr(msg) {
+  const el = document.getElementById('err');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 5000);
+}
+document.querySelectorAll('.copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const id = btn.getAttribute('data-copy');
+    let text = '';
+    if (id === 'r-tags') {
+      text = [...document.querySelectorAll('#r-tags .tag')].map(t => '#' + t.textContent).join(' ');
+    } else {
+      text = document.getElementById(id).textContent;
+    }
+    try { await navigator.clipboard.writeText(text); btn.textContent = '已复制 ✓'; }
+    catch (e) { showErr('复制失败，请手动长按复制'); }
+    setTimeout(() => btn.textContent = '复制', 1500);
+  });
+});
+
+// ---------- 封面图绘制（复用鸡仔早报卡片设计：深蓝底 + 黄点缀） ----------
+const W = 1080, H = 1440;
+const C = {
+  bgTop: '#0f172a', bgBot: '#1e2d50', yellow: '#ffd166',
+  white: '#ffffff', gray: '#cbd5e1', dim: '#64748b', card: '#182442',
+};
+const NO_START = new Set('，。！？；：、」』）】”’%·…—'.split(''));
+let coverData = null;
+
+function wrapText(ctx, text, maxW) {
+  const lines = [];
+  let cur = '';
+  for (const ch of text) {
+    const t = cur + ch;
+    if (ctx.measureText(t).width <= maxW) cur = t;
+    else { if (cur) lines.push(cur); cur = ch; }
+  }
+  if (cur) lines.push(cur);
+  const fixed = [];
+  for (const ln of lines) {
+    let line = ln;
+    if (fixed.length && NO_START.has(line[0])) {
+      fixed[fixed.length - 1] += line[0];
+      line = line.slice(1);
+    }
+    if (line) fixed.push(line);
+  }
+  return fixed.length ? fixed : [''];
+}
+function centered(ctx, y, text, font, fill) {
+  ctx.font = font;
+  const tw = ctx.measureText(text).width;
+  ctx.fillStyle = fill;
+  ctx.fillText(text, (W - tw) / 2, y);
+}
+const FONT = (size, weight = 600) =>
+  `${weight} ${size}px "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif`;
+
+function drawCover(variant) {
+  if (!coverData) return;
+  const { title, cover_points, dateStr } = coverData;
+  const cv = document.getElementById('cover');
+  const ctx = cv.getContext('2d');
+
+  // 背景渐变
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, C.bgTop); g.addColorStop(1, C.bgBot);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  // 顶部黄条
+  ctx.fillStyle = C.yellow; ctx.fillRect(0, 0, W, 10);
+
+  // 页眉
+  ctx.textBaseline = 'top';
+  ctx.font = FONT(44); ctx.fillStyle = C.yellow;
+  ctx.fillText('鸡仔·小红书文案', 70, 60);
+  ctx.font = FONT(36, 400); ctx.fillStyle = C.dim;
+  ctx.fillText(dateStr, 70, 128);
+
+  // 大标题（variant 0 居中 / 1 左对齐）
+  ctx.font = FONT(104);
+  const titleLines = wrapText(ctx, title.replace(/[^\u4e00-\u9fa5\w，。！？、：；「」『』…—·✨🌱📚🔍💡🎉]/g, ''), W - 160).slice(0, 3);
+  let y = 300;
+  ctx.fillStyle = C.white;
+  if (variant === 0) {
+    for (const ln of titleLines) { centered(ctx, y, ln, FONT(104), C.white); y += 140; }
+  } else {
+    for (const ln of titleLines) { ctx.fillText(ln, 80, y); y += 140; }
+  }
+  // 黄色分隔线
+  const lw = 120;
+  ctx.fillStyle = C.yellow;
+  ctx.fillRect(variant === 0 ? (W - lw) / 2 : 80, y + 10, lw, 10);
+  y += 80;
+
+  // 3 条亮点
+  ctx.font = FONT(52); 
+  const pts = cover_points.filter(Boolean).slice(0, 3);
+  pts.forEach((p, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    ctx.fillStyle = C.yellow; ctx.font = FONT(56);
+    ctx.fillText(num, 90, y);
+    ctx.fillStyle = C.gray; ctx.font = FONT(46);
+    const plines = wrapText(ctx, p, W - 280).slice(0, 2);
+    plines.forEach((ln, j) => ctx.fillText(ln, 190, y + j * 68));
+    y += plines.length * 68 + 56;
+  });
+
+  // 底部
+  ctx.font = FONT(38, 400); ctx.fillStyle = C.dim;
+  centered(ctx, y + 60, '👇 正文看完整版', FONT(38, 400), C.dim);
+  const foot = '🐤 鸡仔 · 每天灵感不缺席';
+  ctx.font = FONT(32, 400);
+  const fw = ctx.measureText(foot).width;
+  ctx.fillStyle = C.dim;
+  ctx.fillText(foot, (W - fw) / 2, H - 110);
+}
+
+// ---------- 生成流程 ----------
+let variant = 0;
+document.getElementById('go').addEventListener('click', async () => {
+  const topic = document.getElementById('topic').value.trim();
+  const points = document.getElementById('points').value.trim();
+  const style = document.querySelector('input[name=style]:checked').value;
+  if (!topic) { showErr('请先填写主题'); return; }
+
+  const btn = document.getElementById('go');
+  btn.disabled = true;
+  document.getElementById('loading').classList.add('show');
+  document.getElementById('result').classList.remove('show');
+
+  try {
+    const r = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic, points, style }),
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || '生成失败');
+    if (!data.title) throw new Error('生成结果为空，请重试');
+
+    document.getElementById('r-title').textContent = data.title;
+    document.getElementById('r-body').textContent =
+      data.hook + '\n\n' + data.body + '\n\n📌 喜欢就收藏，关注鸡仔不迷路';
+    document.getElementById('r-tags').innerHTML =
+      data.tags.map(t => `<span class="tag">${t.replace(/</g, '&lt;')}</span>`).join('');
+
+    const now = new Date();
+    coverData = {
+      title: data.title,
+      cover_points: data.cover_points || [],
+      dateStr: `${now.getMonth() + 1}月${now.getDate()}日`,
+    };
+    variant = 0;
+    drawCover(variant);
+    document.getElementById('result').classList.add('show');
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+  } catch (e) {
+    showErr(e.message || '网络开小差了，请重试');
+  } finally {
+    btn.disabled = false;
+    document.getElementById('loading').classList.remove('show');
+  }
+});
+
+document.getElementById('redraw').addEventListener('click', () => {
+  variant = (variant + 1) % 2;
+  drawCover(variant);
+});
+document.getElementById('dl').addEventListener('click', () => {
+  const cv = document.getElementById('cover');
+  cv.toBlob(blob => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'xhs-cover.png';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  }, 'image/png');
+});
+</script>
+</body>
+</html>
