@@ -2,7 +2,8 @@
 """把 data/briefing.json 转成竖屏短视频（1080x1920，带字幕）。
 
 流程：
-  1. 口播稿按「开场 + 每条新闻 + 结尾」分段
+  1. 口播稿按「开场钩子 + 今日菜单 + 大局 + 每条新闻 + 结尾」分段
+     （开场拆成 3 个节拍，每节拍独立卡片，钩子/菜单卡带缓慢推镜）
   2. 每段单独 edge-tts 合成（带词级时间戳）
   3. 每段用 PIL 生成一张内容卡片（编号/标题/摘要/来源），音频多长卡片播多长
   4. 分段拼成完整视频，再烧录全局字幕
@@ -74,7 +75,14 @@ def ensure_pillow():
 
 
 def build_parts(briefing):
-    """把早报拆成口播分段：intro / pickN / outro，每段带卡片信息。"""
+    """把早报拆成口播分段。
+
+    开场拆成 3 个节拍（每节拍独立卡片，避免一张静态图撑 20 秒）：
+      intro_hook    今日头条钩子：抛悬念，3 秒抓住人
+      intro_menu    今日菜单：N 条标题速览，给观众留下的理由
+      intro_overview 大局：overview 背景（无 overview 时跳过）
+    之后是 pick1..N 和 outro。
+    """
     today = briefing.get('date', datetime.now().strftime('%Y-%m-%d'))
     dt = datetime.strptime(today, '%Y-%m-%d')
     date_str = briefing.get('date_str') or dt.strftime('%Y年%m月%d日')
@@ -83,12 +91,27 @@ def build_parts(briefing):
     cn = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
 
     parts = []
-    intro = f'大家好，我是{HOST_NAME}，欢迎收听今日科技早报。今天是{date_str}，星期{weekday}。'
+    head = picks[0] if picks else {}
+    head_title = head.get('title', '')
+    # --- 节拍 1：钩子 ---
+    hook_narr = f'大家好，我是{HOST_NAME}。今天最重磅的一条：{head_title}。先别划走，完整经过马上就讲。'
+    parts.append({'key': 'intro_hook', 'narr': hook_narr, 'kind': 'intro_hook',
+                  'date_str': date_str, 'weekday': weekday,
+                  'headline': head_title, 'zoom': True})
+
+    # --- 节拍 2：今日菜单 ---
+    menu_narr = f'今天的{len(picks)}条已经备好，条条有料，咱们一条一条过。'
+    parts.append({'key': 'intro_menu', 'narr': menu_narr, 'kind': 'intro_menu',
+                  'date_str': date_str,
+                  'menu': [(p.get('title', ''), p.get('source') or '') for p in picks],
+                  'zoom': True})
+
+    # --- 节拍 3：大局 ---
     if briefing.get('overview'):
-        intro += f'先来听听今天的大局：{briefing["overview"]}'
-    intro += f'接下来是今天的{len(picks)}条必读。'
-    parts.append({'key': 'intro', 'narr': intro, 'kind': 'intro',
-                  'date_str': date_str, 'weekday': weekday, 'count': len(picks)})
+        parts.append({'key': 'intro_overview',
+                      'narr': f'正式开始前，先看今天的大局：{briefing["overview"]}',
+                      'kind': 'intro_overview', 'date_str': date_str,
+                      'overview': briefing['overview']})
 
     for i, p in enumerate(picks, 1):
         num = cn[i - 1] if i <= 10 else str(i)
@@ -202,6 +225,94 @@ def _footer(d, text):
     d.text(((W - tw) / 2, H - 130), text, font=f, fill=C_DIM)
 
 
+def _oneline(draw, text, font, max_w):
+    """截成单行，超长加省略号"""
+    if draw.textlength(text, font=font) <= max_w:
+        return text
+    while text and draw.textlength(text + '…', font=font) > max_w:
+        text = text[:-1]
+    return text + '…' if text else ''
+
+
+def draw_intro_hook(part, path):
+    """节拍1：今日头条钩子卡 —— 大标题 + 悬念，3 秒抓住人"""
+    from PIL import ImageDraw
+    img, d = _bg()
+    _header(d, f'{part["date_str"]} 星期{part["weekday"]}')
+
+    # 黄色徽章
+    f_badge = _font(44)
+    badge_t = '今日头条'
+    bw = d.textlength(badge_t, font=f_badge) + 70
+    bx, by = 70, 300
+    d.rounded_rectangle([bx, by, bx + bw, by + 92], radius=46, fill=C_YELLOW)
+    d.text((bx + 35, by + 16), badge_t, font=f_badge, fill=C_BG_TOP)
+
+    # 头条标题（大字）
+    y = 460
+    f_title = _font(78)
+    lines = _wrap(d, part['headline'], f_title, W - 140)
+    if len(lines) > 5:
+        lines = lines[:5]
+        lines[-1] = lines[-1][:-1] + '…'
+    for ln in lines:
+        d.text((70, y), ln, font=f_title, fill=C_WHITE)
+        y += 108
+
+    # 悬念行
+    y += 40
+    d.rectangle([70, y, W - 70, y + 3], fill=C_LINE)
+    y += 45
+    f_tease = _font(48)
+    tease = '到底发生了什么？先别划走'
+    d.text((70, y), tease, font=f_tease, fill=C_YELLOW)
+    _footer(d, 'xiaojj.pro')
+    img.save(path)
+
+
+def draw_intro_menu(part, path):
+    """节拍2：今日菜单卡 —— N 条标题编号速览"""
+    from PIL import ImageDraw
+    img, d = _bg()
+    _header(d, part['date_str'])
+    f_h = _font(60)
+    h = f'今日 {len(part["menu"])} 条速览'
+    d.text((70, 280), h, font=f_h, fill=C_YELLOW)
+
+    y = 420
+    f_num, f_t = _font(40), _font(40)
+    for i, (title, _src) in enumerate(part['menu'], 1):
+        num = f'{i:02d}'
+        d.text((70, y), num, font=f_num, fill=C_YELLOW)
+        t = _oneline(d, title, f_t, W - 140 - d.textlength(num + '  ', font=f_num))
+        d.text((70 + d.textlength(num + '  ', font=f_num), y), t, font=f_t, fill=C_WHITE)
+        y += 118
+        if y > H - 220:
+            break
+    _footer(d, 'xiaojj.pro')
+    img.save(path)
+
+
+def draw_intro_overview(part, path):
+    """节拍3：大局卡 —— overview 全文展示"""
+    from PIL import ImageDraw
+    img, d = _bg()
+    _header(d, part['date_str'])
+    f_h = _font(60)
+    d.text((70, 280), '先看今天的大局', font=f_h, fill=C_YELLOW)
+    y = 430
+    f_body = _font(46)
+    lines = _wrap(d, part['overview'], f_body, W - 140)
+    if len(lines) > 12:
+        lines = lines[:12]
+        lines[-1] = lines[-1][:-1] + '…'
+    for ln in lines:
+        d.text((70, y), ln, font=f_body, fill=C_GRAY)
+        y += 72
+    _footer(d, 'xiaojj.pro')
+    img.save(path)
+
+
 def draw_intro(part, path):
     from PIL import ImageDraw
     img, d = _bg()
@@ -282,9 +393,16 @@ def draw_outro(part, path):
 
 
 def build_slide(part, path):
-    if part['kind'] == 'intro':
+    kind = part['kind']
+    if kind == 'intro_hook':
+        draw_intro_hook(part, path)
+    elif kind == 'intro_menu':
+        draw_intro_menu(part, path)
+    elif kind == 'intro_overview':
+        draw_intro_overview(part, path)
+    elif kind == 'intro':
         draw_intro(part, path)
-    elif part['kind'] == 'outro':
+    elif kind == 'outro':
         draw_outro(part, path)
     else:
         draw_pick(part, path)
@@ -361,15 +479,32 @@ def install_font():
 
 # ================= 合成 =================
 
-def make_segment(slide_path, mp3_path, seg_path):
-    """一张卡片 + 一段音频 -> 一个分段视频"""
-    cmd = ['ffmpeg', '-y',
-           '-loop', '1', '-framerate', '2', '-i', slide_path,
-           '-i', mp3_path,
-           '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '28',
-           '-pix_fmt', 'yuv420p', '-r', '30',
-           '-c:a', 'aac', '-b:a', '96k',
-           '-shortest', '-movflags', '+faststart', seg_path]
+def make_segment(slide_path, mp3_path, seg_path, zoom=False, audio_dur_ms=0):
+    """一张卡片 + 一段音频 -> 一个分段视频。
+    zoom=True 时做缓慢推镜（Ken Burns）：单帧输入 + zoompan，输出帧数按音频
+    时长算，-shortest 按音频截断。"""
+    if zoom and audio_dur_ms > 0:
+        n_frames = int(audio_dur_ms / 1000 * 30) + 45
+        vf = ("scale=2160:3840,"
+              "zoompan=z='min(max(zoom,pzoom)+0.0008,1.15)':"
+              f"d={n_frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+              "s=1080x1920:fps=30")
+        cmd = ['ffmpeg', '-y',
+               '-i', slide_path,
+               '-i', mp3_path,
+               '-vf', vf,
+               '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '28',
+               '-pix_fmt', 'yuv420p', '-r', '30',
+               '-c:a', 'aac', '-b:a', '96k',
+               '-shortest', '-movflags', '+faststart', seg_path]
+    else:
+        cmd = ['ffmpeg', '-y',
+               '-loop', '1', '-framerate', '2', '-i', slide_path,
+               '-i', mp3_path,
+               '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '28',
+               '-pix_fmt', 'yuv420p', '-r', '30',
+               '-c:a', 'aac', '-b:a', '96k',
+               '-shortest', '-movflags', '+faststart', seg_path]
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
     if r.returncode != 0:
         print(f'  分段合成失败 {os.path.basename(slide_path)}: {r.stderr[-300:]}')
@@ -459,7 +594,8 @@ def main():
             shutil.copy(COVER_PATH, slide)
 
         seg = os.path.join(workdir, f'{part["key"]}.mp4')
-        if not make_segment(slide, mp3, seg):
+        if not make_segment(slide, mp3, seg,
+                            zoom=part.get('zoom', False), audio_dur_ms=dur):
             print('❌ 分段视频合成失败')
             return
         seg_paths.append(seg)
