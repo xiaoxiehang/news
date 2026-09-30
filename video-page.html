@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>鸡仔电影 · 发现好电影</title>
+<style>
+:root {
+  --bg: #0b0e17; --card: #151b2e; --ink: #f1f0eb; --muted: #8b93b0;
+  --brand: #e50914; --gold: #f5c518; --line: #232b45;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11,14,23,.88); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.hwrap { max-width: 1100px; margin: 0 auto; padding: 12px 16px; display: flex; gap: 12px; align-items: center; }
+.logo { font-size: 20px; font-weight: 800; white-space: nowrap; text-decoration: none; }
+.logo span { color: var(--brand); }
+.search { flex: 1; display: flex; }
+.search input {
+  flex: 1; background: var(--card); border: 1px solid var(--line); color: var(--ink);
+  border-radius: 10px; padding: 10px 14px; font-size: 15px; font-family: inherit;
+}
+.search input:focus { outline: none; border-color: var(--brand); }
+.home-link { color: var(--muted); font-size: 13px; text-decoration: none; white-space: nowrap; }
+#hero { position: relative; min-height: 340px; display: flex; align-items: flex-end; overflow: hidden; }
+#hero .bg { position: absolute; inset: 0; background-size: cover; background-position: center 20%; }
+#hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,14,23,.25), rgba(11,14,23,.92)); }
+#hero .info { position: relative; max-width: 1100px; margin: 0 auto; padding: 24px 16px; width: 100%; }
+#hero h1 { margin: 0 0 8px; font-size: 30px; }
+#hero p { margin: 0 0 14px; color: #cfd4e6; font-size: 14px; line-height: 1.7; max-width: 640px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.btn {
+  display: inline-block; background: var(--brand); color: #fff; border: none; cursor: pointer;
+  font-size: 15px; font-weight: 700; padding: 10px 22px; border-radius: 10px; font-family: inherit; text-decoration: none;
+}
+.btn.ghost { background: var(--card); border: 1px solid var(--line); }
+main { max-width: 1100px; margin: 0 auto; padding: 8px 16px 60px; }
+.rowsec { margin-top: 28px; }
+.rowsec h2 { font-size: 18px; margin: 0 0 12px; }
+.scroller { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; }
+.mcard {
+  flex: 0 0 132px; cursor: pointer; border-radius: 10px; overflow: hidden;
+  background: var(--card); border: 1px solid var(--line); transition: transform .15s;
+}
+.mcard:hover { transform: translateY(-3px); }
+.mcard img { width: 132px; height: 198px; object-fit: cover; display: block; background: #1d2440; }
+.mcard .t { padding: 8px 9px; }
+.mcard .t .name { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mcard .t .meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.mcard .t .meta b { color: var(--gold); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 12px; }
+.grid .mcard { flex: none; }
+.grid .mcard img { width: 100%; height: auto; aspect-ratio: 2/3; }
+#modal { position: fixed; inset: 0; z-index: 100; display: none; }
+#modal.show { display: block; }
+#modal .mask { position: absolute; inset: 0; background: rgba(0,0,0,.72); }
+#modal .sheet {
+  position: absolute; inset: 4% 0 0; max-width: 860px; margin: 0 auto;
+  background: var(--bg); border-radius: 18px 18px 0 0; overflow-y: auto; border: 1px solid var(--line);
+}
+#modal .banner { height: 220px; background-size: cover; background-position: center 25%; position: relative; }
+#modal .banner::after { content:''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, var(--bg)); }
+#modal .close {
+  position: sticky; top: 12px; margin-left: calc(100% - 52px); z-index: 2;
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
+  background: rgba(11,14,23,.8); color: #fff; font-size: 18px; cursor: pointer;
+}
+.dbody { padding: 0 20px 32px; margin-top: -70px; position: relative; }
+.dtop { display: flex; gap: 16px; }
+.dtop img.poster { width: 130px; border-radius: 10px; border: 1px solid var(--line); }
+.dtop .inf h2 { margin: 4px 0 8px; font-size: 24px; }
+.dtop .inf .m { color: var(--muted); font-size: 13px; line-height: 1.8; }
+.dtop .inf .m b { color: var(--gold); font-size: 16px; }
+.genres { margin-top: 8px; }
+.genres span { display: inline-block; background: var(--card); border: 1px solid var(--line);
+  font-size: 12px; padding: 4px 10px; border-radius: 14px; margin: 0 6px 6px 0; color: var(--muted); }
+.overview { margin: 16px 0; font-size: 14px; line-height: 1.85; color: #d7dbe9; }
+.dsec { margin-top: 22px; }
+.dsec h3 { font-size: 15px; margin: 0 0 10px; }
+.cast { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+.cast .c { flex: 0 0 76px; text-align: center; }
+.cast img { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; background: var(--card); }
+.cast .n { font-size: 11px; margin-top: 6px; color: var(--muted); line-height: 1.4; }
+.providers { display: flex; flex-wrap: wrap; gap: 10px; }
+.pv { display: flex; align-items: center; gap: 8px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px 8px 8px; font-size: 13px; }
+.pv img { width: 34px; height: 34px; border-radius: 8px; }
+.pv small { display: block; color: var(--muted); font-size: 11px; }
+.trailer-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.note { color: var(--muted); font-size: 13px; }
+.loading, .empty { text-align: center; color: var(--muted); padding: 40px 0; font-size: 14px; }
+footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px 0 40px; }
+footer a { color: var(--muted); }
+@media (min-width: 700px) { #modal .sheet { inset: 6% auto; border-radius: 18px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="hwrap">
+    <a class="logo" href="./">🎬 鸡仔<span>电影</span></a>
+    <div class="search"><input id="q" type="search" placeholder="搜索电影，比如：星际穿越" autocomplete="off"></div>
+    <a class="home-link" href="../">早报 →</a>
+  </div>
+</header>
+
+<div id="hero"><div class="loading">加载中…</div></div>
+
+<main id="home">
+  <section class="rowsec"><h2>🔥 本周热门</h2><div class="scroller" id="row-trending"></div></section>
+  <section class="rowsec"><h2>⭐ 高分佳片</h2><div class="scroller" id="row-top"></div></section>
+  <section class="rowsec"><h2>📅 即将上映</h2><div class="scroller" id="row-upcoming"></div></section>
+  <section class="rowsec" id="sec-search" hidden>
+    <h2>🔍 搜索结果</h2><div class="grid" id="grid-search"></div>
+  </section>
+</main>
+
+<div id="modal"><div class="mask" id="mask"></div><div class="sheet" id="sheet"></div></div>
+
+<footer>资料来源 <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a> · 本站仅做电影发现，不提供正片播放</footer>
+
+<script>
+const IMG = 'https://image.tmdb.org/t/p/';
+const img = (p, size) => p ? IMG + size + p : '';
+
+async function api(path, params = {}) {
+  const qs = new URLSearchParams({ path, ...params });
+  const r = await fetch('/api/tmdb?' + qs.toString());
+  const data = await r.json();
+  if (!r.ok) throw new Error(data.error || '请求失败');
+  return data;
+}
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const yearOf = d => (d || '').slice(0, 4);
+
+function card(m) {
+  const y = yearOf(m.release_date);
+  const score = m.vote_average ? m.vote_average.toFixed(1) : '–';
+  return `<div class="mcard" data-id="${m.id}">
+    <img loading="lazy" src="${img(m.poster_path, 'w342')}" alt="${esc(m.title)}" onerror="this.style.visibility='hidden'">
+    <div class="t"><div class="name">${esc(m.title)}</div>
+    <div class="meta"><b>★ ${score}</b> · ${y || '未知'}</div></div>
+  </div>`;
+}
+function bindCards(root) {
+  root.querySelectorAll('.mcard').forEach(el => {
+    el.onclick = () => openDetail(el.dataset.id);
+  });
+}
+async function fillRow(elId, path, params) {
+  const el = document.getElementById(elId);
+  try {
+    const data = await api(path, params);
+    const items = (data.results || []).filter(m => m.poster_path).slice(0, 20);
+    el.innerHTML = items.map(card).join('') || '<div class="empty">暂无数据</div>';
+    bindCards(el);
+    return items;
+  } catch (e) {
+    el.innerHTML = `<div class="empty">${esc(e.message)}</div>`;
+    return [];
+  }
+}
+
+async function init() {
+  const trending = await fillRow('row-trending', '/trending/movie/week');
+  fillRow('row-top', '/movie/top_rated');
+  fillRow('row-upcoming', '/movie/upcoming', { region: 'CN' });
+  // hero 取热门第一部
+  const hero = document.getElementById('hero');
+  const m = trending[0];
+  if (m) {
+    hero.innerHTML = `
+      <div class="bg" style="background-image:url('${img(m.backdrop_path, 'w1280')}')"></div>
+      <div class="shade"></div>
+      <div class="info">
+        <h1>${esc(m.title)}</h1>
+        <p>${esc(m.overview) || '暂无简介'}</p>
+        <button class="btn" onclick="openDetail(${m.id})">查看详情</button>
+      </div>`;
+  } else {
+    hero.innerHTML = '<div class="empty">加载失败，请刷新重试</div>';
+  }
+}
+
+// ---------- 搜索 ----------
+let timer = null;
+document.getElementById('q').addEventListener('input', e => {
+  clearTimeout(timer);
+  const kw = e.target.value.trim();
+  timer = setTimeout(() => doSearch(kw), 450);
+});
+async function doSearch(kw) {
+  const sec = document.getElementById('sec-search');
+  const grid = document.getElementById('grid-search');
+  if (!kw) { sec.hidden = true; return; }
+  sec.hidden = false;
+  grid.innerHTML = '<div class="loading">搜索中…</div>';
+  try {
+    const data = await api('/search/movie', { query: kw, include_adult: 'false', page: '1' });
+    const items = (data.results || []).filter(m => m.poster_path);
+    grid.innerHTML = items.map(card).join('') || '<div class="empty">没找到相关电影，换个关键词试试</div>';
+    bindCards(grid);
+    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (e) {
+    grid.innerHTML = `<div class="empty">${esc(e.message)}</div>`;
+  }
+}
+
+// ---------- 详情 ----------
+function providerGroup(title, list) {
+  if (!list || !list.length) return '';
+  return `<div style="margin-bottom:10px"><div class="note" style="margin-bottom:6px">${title}</div><div class="providers">` +
+    list.map(p => `<div class="pv"><img loading="lazy" src="${img(p.logo_path, 'w92')}" alt=""><div>${esc(p.provider_name)}</div></div>`).join('') +
+    `</div></div>`;
+}
+
+async function openDetail(id) {
+  const modal = document.getElementById('modal');
+  const sheet = document.getElementById('sheet');
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  sheet.innerHTML = '<div class="loading" style="padding:80px 0">加载中…</div>';
+  try {
+    const [d, wp] = await Promise.all([
+      api('/movie/' + id, { append_to_response: 'videos,credits' }),
+      api('/movie/' + id + '/watch/providers').catch(() => ({})),
+    ]);
+    const vids = (d.videos && d.videos.results || []).filter(v => v.site === 'YouTube');
+    const trailer = vids.find(v => v.type === 'Trailer') || vids[0];
+    const cast = (d.credits && d.credits.cast || []).slice(0, 10);
+    const cn = wp.results && wp.results.CN;
+    const runtime = d.runtime ? `${Math.floor(d.runtime / 60)}小时${d.runtime % 60}分` : '未知';
+    sheet.innerHTML = `
+      <div class="banner" style="background-image:url('${img(d.backdrop_path, 'w1280')}')"></div>
+      <button class="close" id="mclose">✕</button>
+      <div class="dbody">
+        <div class="dtop">
+          <img class="poster" src="${img(d.poster_path, 'w342')}" alt="">
+          <div class="inf">
+            <h2>${esc(d.title)}</h2>
+            <div class="m"><b>★ ${d.vote_average ? d.vote_average.toFixed(1) : '–'}</b> · ${yearOf(d.release_date)} · ${runtime}</div>
+            <div class="m">${esc(d.original_title)}${d.original_language !== 'zh' ? ' · ' + esc(d.original_language.toUpperCase()) : ''}</div>
+            <div class="genres">${(d.genres || []).map(g => `<span>${esc(g.name)}</span>`).join('')}</div>
+          </div>
+        </div>
+        <p class="overview">${esc(d.overview) || '暂无简介'}</p>
+        ${trailer ? `<div class="dsec"><h3>🎞️ 预告片</h3><div class="trailer-row">
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${trailer.key}">▶ 在 YouTube 观看预告</a>
+        </div><div class="note" style="margin-top:8px">YouTube 国内需科学上网，也可去 B 站搜"${esc(d.title)} 预告"</div></div>` : ''}
+        <div class="dsec"><h3>📺 去哪看正版</h3>
+          ${cn ? providerGroup('订阅观看', cn.flatrate) + providerGroup('租赁', cn.rent) + providerGroup('购买', cn.buy)
+               : '<div class="note">TMDB 暂无该片在中国大陆的正版渠道信息，可去爱优腾、B 站搜片名看看</div>'}
+        </div>
+        ${cast.length ? `<div class="dsec"><h3>🎭 演员</h3><div class="cast">` +
+          cast.map(c => `<div class="c"><img loading="lazy" src="${img(c.profile_path, 'w185')}" onerror="this.style.visibility='hidden'"><div class="n">${esc(c.name)}</div></div>`).join('') +
+          `</div></div>` : ''}
+      </div>`;
+    document.getElementById('mclose').onclick = closeDetail;
+  } catch (e) {
+    sheet.innerHTML = `<div style="padding:80px 20px" class="empty">${esc(e.message)}<br><br><button class="btn ghost" id="mclose2">关闭</button></div>`;
+    document.getElementById('mclose2').onclick = closeDetail;
+  }
+}
+function closeDetail() {
+  document.getElementById('modal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.getElementById('mask').onclick = closeDetail;
+
+init();
+</script>
+</body>
+</html>
