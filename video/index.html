@@ -83,7 +83,8 @@ header {
 main { padding: 8px var(--pad-x) 72px; }
 .rowsec { margin-top: 44px; }
 .rowsec h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 18px; }
-.scroller { display: flex; gap: 14px; overflow-x: auto; padding: 4px 2px 14px; scrollbar-width: thin; }
+.scroller { display: flex; gap: 14px; overflow-x: auto; padding: 4px 2px 14px; scrollbar-width: none; -ms-overflow-style: none; }
+.scroller::-webkit-scrollbar { display: none; }
 .mcard {
   flex: 0 0 150px; cursor: pointer; border-radius: 14px; overflow: hidden;
   background: var(--card); border: 1px solid var(--hairline); transition: transform 0.2s, box-shadow 0.2s;
@@ -128,7 +129,8 @@ main { padding: 8px var(--pad-x) 72px; }
 .overview { margin: 18px 0; font-size: 15px; line-height: 1.9; color: #d6d6db; }
 .dsec { margin-top: 26px; }
 .dsec h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px; }
-.cast { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; }
+.cast { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; -ms-overflow-style: none; }
+.cast::-webkit-scrollbar { display: none; }
 .cast .c { flex: 0 0 80px; text-align: center; }
 .cast img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; background: var(--card); }
 .cast .n { font-size: 11px; margin-top: 8px; color: var(--muted); line-height: 1.45; }
