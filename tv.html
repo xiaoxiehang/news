@@ -52,7 +52,12 @@
   background: var(--card); border: 1px solid var(--hairline);
   border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm);
 }
-.feat .icon { font-size: 34px; margin-bottom: 14px; }
+.feat .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 13px;
+  background: var(--accent-soft); color: var(--accent);
+  font-size: 15px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 16px;
+}
 .feat h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
 .feat p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
@@ -82,12 +87,20 @@
 }
 @media (min-width: 900px) { .remote-demo { grid-template-columns: 1fr 1fr; } }
 .remote-card {
-  background: #0b0f1a; color: #e8ecf5; border-radius: 24px; padding: 30px;
-  box-shadow: var(--shadow-md);
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 24px; padding: 32px;
+  box-shadow: var(--shadow-sm);
 }
-.remote-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
-.remote-card p, .remote-card li { font-size: 14px; color: #a8b0c4; line-height: 1.8; }
+.remote-card .step-tag {
+  display: inline-block; font-size: 12px; font-weight: 700; color: var(--accent);
+  background: var(--accent-soft); padding: 5px 14px; border-radius: var(--radius-pill);
+  margin-bottom: 14px; letter-spacing: 0.06em;
+}
+.remote-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
+.remote-card p, .remote-card li { font-size: 14px; color: var(--muted); line-height: 1.8; }
 .remote-card ul { padding-left: 20px; margin: 0; }
+.remote-card li { margin-bottom: 6px; }
+.remote-card li::marker { color: var(--accent); }
 .qr-note {
   background: var(--amber-soft); border: 1px solid #ffe9b0;
   border-radius: var(--radius); padding: 20px 24px;
@@ -95,25 +108,26 @@
 }
 
 .dl-card {
-  background: linear-gradient(135deg, #0b0f1a 0%, #1c2a4a 100%);
-  color: #fff; border-radius: 28px; padding: clamp(28px, 5vw, 56px);
-  text-align: center; box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #e7f0ff 0%, #f5f9ff 55%, #ffffff 100%);
+  border: 1px solid rgba(0, 113, 227, 0.14);
+  border-radius: 28px; padding: clamp(36px, 6vw, 64px);
+  text-align: center; box-shadow: var(--shadow-md);
 }
 .dl-card h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
-.dl-card p { color: #a8b0c4; font-size: 15px; margin-bottom: 28px; line-height: 1.7; }
+.dl-card p { color: var(--muted); font-size: 15px; margin-bottom: 28px; line-height: 1.7; max-width: 620px; margin-left: auto; margin-right: auto; }
 .dl-info {
   display: flex; gap: 10px 28px; justify-content: center; flex-wrap: wrap;
-  font-size: 13px; color: #8b93a8; margin-top: 24px;
+  font-size: 13px; color: var(--muted); margin-top: 24px;
 }
-.dl-info code { background: rgba(255,255,255,0.08); color: #c8cfdf; }
+.dl-info code { background: rgba(0, 113, 227, 0.08); color: var(--accent-dark); }
 .btn-download {
-  display: inline-block; background: #fff; color: #0b0f1a;
+  display: inline-block; background: var(--accent); color: #fff;
   font-size: 18px; font-weight: 700; padding: 16px 56px;
   border-radius: var(--radius-pill); text-decoration: none;
-  transition: transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 10px 28px rgba(0, 113, 227, 0.35);
 }
-.btn-download:hover { transform: translateY(-2px); }
+.btn-download:hover { background: var(--accent-dark); transform: translateY(-2px); }
 .btn-download:active { transform: scale(0.98); }
 
 /* 独立产品页顶栏 */
@@ -127,9 +141,10 @@
 }
 .tv-nav-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; font-size: 15px; }
 .tv-nav-logo {
-  width: 30px; height: 30px; border-radius: 8px; background: #E50914; color: #fff;
+  width: 30px; height: 30px; border-radius: 8px; background: var(--accent); color: #fff;
   display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;
 }
+.tv-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #e8a100; flex: none; }
 .tv-nav .btn { padding: 9px 22px; font-size: 14px; }
 
 /* 卡片滚动进入动画 */
@@ -143,6 +158,12 @@
 .tv-hero-inner > *:nth-child(5) { animation-delay: .32s; }
 @keyframes heroIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .tv-hero-inner > * { animation: none; } }
+
+/* 区块标题与内容宽度约束 */
+.section > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+.section-head { text-align: center; margin-bottom: 44px; }
+.section-head .section-title { margin-bottom: 12px; }
+.section-desc { font-size: 17px; color: var(--muted); margin: 0; }
 
 .tv-footer {
   border-top: 1px solid var(--hairline); margin-top: 40px;
@@ -164,11 +185,11 @@
 
 <section class="tv-hero">
   <div class="tv-hero-inner">
-    <div class="tv-badge">⚠️ 测试版 · 尚未完成真机验证</div>
+    <div class="tv-badge"><span class="dot"></span>测试版 · 尚未完成真机验证</div>
     <h1>鸡仔浏览器<br>为大屏而生</h1>
     <p class="sub">Android TV 上的轻量浏览器：遥控器原生导航、手机秒变遥控器、网页视频一键全屏。包体仅 1MB，无广告。</p>
     <div class="tv-cta">
-      <a class="btn btn-primary btn-lg" href="downloads/jizai-tv-browser-0.3.1.apk">⬇ 下载 APK</a>
+      <a class="btn btn-primary btn-lg" href="downloads/jizai-tv-browser-0.3.1.apk">下载 APK</a>
       <a class="btn btn-ghost btn-lg" href="#install">安装指南</a>
     </div>
     <div class="tv-ver">版本 0.3.1 · 约 1 MB · SHA-256 <code>7aa07aa4…8f0f2dfeb8f7a9a0</code></div>
@@ -199,12 +220,12 @@
       <p class="section-desc">专为电视遥控器和沙发场景打磨</p>
     </div>
     <div class="feat-grid">
-      <div class="feat reveal"><div class="icon">🎯</div><h3>遥控器原生导航</h3><p>D-pad 方向键移动焦点，OK 键模拟点击，虚拟光标浏览任意网页——再也不用接鼠标。</p></div>
-      <div class="feat reveal"><div class="icon">📱</div><h3>手机秒变遥控器</h3><p>电视扫码配对后，手机就是方向键遥控器，还能直接输入文字、一键把网址推到电视上。</p></div>
-      <div class="feat reveal"><div class="icon">🎬</div><h3>视频自动全屏</h3><p>检测到网页视频自动切换全屏播放，退出返回浏览页，追剧看球都顺手。</p></div>
-      <div class="feat reveal"><div class="icon">🔖</div><h3>书签与历史</h3><p>常用网站一键收藏，浏览历史随时找回，首页直达。</p></div>
-      <div class="feat reveal"><div class="icon">🔍</div><h3>地址栏 + 搜索</h3><p>直接输入网址或关键词搜索，桌面 / 移动 UA 一键切换，网页想怎么看就怎么看。</p></div>
-      <div class="feat reveal"><div class="icon">🪶</div><h3>轻量无广告</h3><p>安装包仅 1MB，无开屏、无推送、无广告，打开就是浏览器。</p></div>
+      <div class="feat reveal"><div class="num">01</div><h3>遥控器原生导航</h3><p>D-pad 方向键移动焦点，OK 键模拟点击，虚拟光标浏览任意网页——再也不用接鼠标。</p></div>
+      <div class="feat reveal"><div class="num">02</div><h3>手机秒变遥控器</h3><p>电视扫码配对后，手机就是方向键遥控器，还能直接输入文字、一键把网址推到电视上。</p></div>
+      <div class="feat reveal"><div class="num">03</div><h3>视频自动全屏</h3><p>检测到网页视频自动切换全屏播放，退出返回浏览页，追剧看球都顺手。</p></div>
+      <div class="feat reveal"><div class="num">04</div><h3>书签与历史</h3><p>常用网站一键收藏，浏览历史随时找回，首页直达。</p></div>
+      <div class="feat reveal"><div class="num">05</div><h3>地址栏 + 搜索</h3><p>直接输入网址或关键词搜索，桌面 / 移动 UA 一键切换，网页想怎么看就怎么看。</p></div>
+      <div class="feat reveal"><div class="num">06</div><h3>轻量无广告</h3><p>安装包仅 1MB，无开屏、无推送、无广告，打开就是浏览器。</p></div>
     </div>
   </section>
 
@@ -240,7 +261,8 @@
     </div>
     <div class="remote-demo">
       <div class="remote-card reveal">
-        <h3>📲 配对步骤</h3>
+        <span class="step-tag">配对</span>
+        <h3>配对步骤</h3>
         <ul>
           <li>电视和手机连上同一个 Wi-Fi</li>
           <li>电视端打开「手机遥控」，显示 6 位配对码和二维码</li>
@@ -249,12 +271,13 @@
         </ul>
       </div>
       <div class="remote-card reveal">
-        <h3>⌨️ 文字输入</h3>
+        <span class="step-tag">输入</span>
+        <h3>文字输入</h3>
         <p>在电视地址栏需要打字时，手机遥控页面会自动弹出输入框——手机键盘打字，比遥控器一个个选字母快十倍。看到好文章想投到电视上？在手机页面粘贴网址，一键推送。</p>
       </div>
     </div>
     <div class="qr-note">
-      🔒 <b>安全提示</b>：手机遥控通过局域网 HTTP + WebSocket 连接电视，仅在你信任的 Wi-Fi（家里）或 Tailscale 内网使用。请勿在公共 Wi-Fi 或开放网络下开启配对。
+      <b>安全提示</b>：手机遥控通过局域网 HTTP + WebSocket 连接电视，仅在你信任的 Wi-Fi（家里）或 Tailscale 内网使用。请勿在公共 Wi-Fi 或开放网络下开启配对。
     </div>
   </section>
 
@@ -262,7 +285,7 @@
     <div class="dl-card reveal">
       <h2>免费下载 · 无广告</h2>
       <p>测试版 0.3.1（图标底 + 卡片投影细节优化），欢迎试用并反馈。当前版本尚未完成海信真机验证，遇到问题请告诉我。</p>
-      <a class="btn-download" href="downloads/jizai-tv-browser-0.3.1.apk">⬇ 下载 APK（约 1 MB）</a>
+      <a class="btn-download" href="downloads/jizai-tv-browser-0.3.1.apk">下载 APK（约 1 MB）</a>
       <div class="dl-info">
         <span>包名 <code>com.jizai.tvbrowser</code></span>
         <span>版本 <code>0.3.1 (4)</code></span>
