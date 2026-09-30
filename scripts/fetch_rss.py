@@ -22,6 +22,10 @@ UA = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'}
 FEEDS = [
     ('OpenAI 官方', 'https://openai.com/news/rss.xml', False, 5),
     ('量子位', 'https://www.qbitai.com/feed', False, 8),
+    ('IT之家', 'https://www.ithome.com/rss/', True, 8),
+    ('少数派', 'https://sspai.com/feed', True, 6),
+    ('爱范儿', 'https://www.ifanr.com/feed', True, 6),
+    ('V2EX', 'https://www.v2ex.com/index.xml', True, 8),
     ('The Verge', 'https://www.theverge.com/rss/index.xml', True, 6),
     ('TechCrunch', 'https://techcrunch.com/feed/', True, 6),
     ('MIT 科技评论', 'https://www.technologyreview.com/feed/', True, 6),
