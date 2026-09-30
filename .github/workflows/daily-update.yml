@@ -28,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests edge-tts feedparser
+        pip install requests edge-tts feedparser pillow
 
     - name: Fetch GitHub trending
       if: ${{ inputs.only == 'all' }}
