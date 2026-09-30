@@ -2,231 +2,51 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hacker News 热榜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Hacker News 热榜 - 鸡仔早报</title>
+<meta name="description" content="Hacker News 每日热议：全球黑客社区在讨论什么。">
+<link rel="stylesheet" href="assets/apple.css">
 <style>
-:root {
-  --rausch: #FF5A5F;
-  --rausch-dark: #E00E2F;
-  --text-primary: #222222;
-  --text-secondary: #717171;
-  --text-tertiary: #B0B0B0;
-  --bg: #FFFFFF;
-  --bg-secondary: #F7F7F7;
-  --border: #EBEBEB;
-  --border-dark: #DDDDDD;
-  --success: #00A699;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-lg: 0 8px 28px rgba(0,0,0,0.12);
-  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --max-width: 1280px;
-  --header-height: 72px;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text-primary);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ===== Header ===== */
-.header {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 20px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-.header-title {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  color: var(--text-primary);
-  line-height: 1.3;
-  flex-shrink: 0;
-}
-.header-brand {
-  flex: 1;
-}
-.header-subtitle {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-top: 2px;
-}
-
-.header-nav {
-  display: flex;
-  gap: 8px;
-}
-.nav-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: all 0.2s;
-}
-.nav-link:hover {
-  color: var(--text-primary);
-  background: var(--bg-secondary);
-}
-.nav-link.active {
-  color: var(--rausch);
-  background: rgba(255, 90, 95, 0.1);
-}
-
-/* ===== Main ===== */
-.main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px;
-}
-
-/* ===== Stories List ===== */
-.stories-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+.stories-list { display: flex; flex-direction: column; gap: 14px; }
 .story-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--card);
+  border: 1px solid var(--hairline);
   border-radius: var(--radius);
-  padding: 20px;
-  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+  padding: 24px 28px;
+  transition: transform 0.18s, box-shadow 0.18s;
   text-decoration: none;
   color: inherit;
   display: flex;
-  gap: 16px;
+  gap: 20px;
+  align-items: flex-start;
 }
-.story-card:hover {
-  border-color: var(--text-primary);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
+.story-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .story-rank {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-tertiary);
-  min-width: 40px;
-  text-align: center;
-  padding-top: 4px;
-}
-.story-content {
-  flex: 1;
-  min-width: 0;
-}
-.story-title {
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.4;
-  margin-bottom: 8px;
-  word-break: break-word;
-}
-.story-meta {
-  display: flex;
-  gap: 16px;
-  font-size: 13px;
-  color: var(--text-secondary);
-  flex-wrap: wrap;
-}
-.story-meta-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.meta-icon {
-  width: 14px;
-  height: 14px;
-}
-
-/* ===== Loading ===== */
-.loading {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--text-secondary);
   font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  min-width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
-
-/* ===== Empty ===== */
-.empty-state {
-  text-align: center;
-  padding: 80px 20px;
-}
-.empty-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-.empty-title {
+.story-content { flex: 1; min-width: 0; }
+.story-title {
   font-size: 18px;
   font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+  word-break: break-word;
 }
-.empty-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-/* ===== Footer ===== */
-.footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 40px 24px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  margin-top: 60px;
-}
-.footer-text {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-.footer-link {
-  font-size: 13px;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-}
-.footer-link:hover {
-  color: var(--rausch);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .header-nav {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .header-title { font-size: 19px; }
-  .main { padding: 24px 16px; }
-  .story-card { flex-direction: column; gap: 8px; }
-  .story-rank { font-size: 20px; }
-  .footer { padding: 32px 16px; }
-}
+.story-meta { display: flex; gap: 18px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+.story-meta-item { display: flex; align-items: center; gap: 6px; }
+.meta-value { font-weight: 600; color: var(--ink); }
 </style>
 </head>
 <body>
@@ -234,7 +54,7 @@ body {
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <div class="header-title">Hacker News 热榜</div>
+      <div class="header-title">🐤 鸡仔早报</div>
       <div class="header-subtitle" id="header-subtitle">加载中...</div>
     </div>
     <nav class="header-nav">
@@ -243,14 +63,23 @@ body {
       <a href="hackernews.html" class="nav-link active">Hacker News</a>
       <a href="archive.html" class="nav-link">归档</a>
       <a href="quiz.html" class="nav-link">每日一题</a>
+      <a href="xhs.html" class="nav-link">小红书</a>
+      <a href="xhs-tool.html" class="nav-link">文案工具</a>
+      <a href="tv.html" class="nav-link">电视浏览器</a>
     </nav>
   </div>
 </header>
 
-<main class="main">
-  <div id="stories-container">
-    <div class="loading">加载中...</div>
-  </div>
+<section class="hero hero-compact">
+  <div class="hero-eyebrow">全球黑客社区</div>
+  <h1 class="hero-title">Hacker News 热榜</h1>
+  <p class="hero-sub">极客们今天在讨论什么——技术、创业与那些值得深思的观点。</p>
+</section>
+
+<main>
+  <section class="section section-tight">
+    <div id="stories-container"><div class="loading">加载中...</div></div>
+  </section>
 </main>
 
 <footer class="footer"></footer>
@@ -260,10 +89,10 @@ let stories = [];
 
 function renderStories() {
   const container = document.getElementById('stories-container');
-  
+
   if (!stories.length) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="empty-icon">📰</div>
       <div class="empty-title">暂无数据</div>
       <div class="empty-desc">请稍后刷新重试</div>
     </div>`;
@@ -278,24 +107,10 @@ function renderStories() {
           <div class="story-content">
             <div class="story-title">${story.title}</div>
             <div class="story-meta">
-              <div class="story-meta-item">
-                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
-                </svg>
-                <span class="meta-value">${story.score}</span>
-              </div>
-              <div class="story-meta-item">
-                <svg class="meta-icon" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M1.5 1.75V13.5h13.75a.75.75 0 010 1.5H.75a.75.75 0 01-.75-.75V1.75a.75.75 0 011.5 0zm14.28 2.53l-5.25 5.25a.75.75 0 01-1.06 0L7 7.06 4.28 9.78a.75.75 0 01-1.06-1.06l3.25-3.25a.75.75 0 011.06 0L10 7.94l4.72-4.72a.75.75 0 011.06 1.06z"/>
-                </svg>
-                <span class="meta-value">${story.descendants}</span>
-              </div>
-              <div class="story-meta-item">
-                <span class="meta-value">${story.by}</span>
-              </div>
-              <div class="story-meta-item">
-                <span class="meta-value">${story.time}</span>
-              </div>
+              <div class="story-meta-item"><span>▲</span><span class="meta-value">${story.score}</span></div>
+              <div class="story-meta-item"><span>💬</span><span class="meta-value">${story.descendants}</span></div>
+              <div class="story-meta-item"><span class="meta-value">${story.by}</span></div>
+              <div class="story-meta-item"><span>${story.time}</span></div>
             </div>
           </div>
         </a>
@@ -304,7 +119,6 @@ function renderStories() {
   `;
 }
 
-// 加载数据
 fetch('data/hackernews.json?t=' + Date.now())
   .then(r => r.json())
   .then(data => {

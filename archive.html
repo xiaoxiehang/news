@@ -2,125 +2,55 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>历史早报归档 - 今日科技早报</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>历史早报归档 - 鸡仔早报</title>
 <meta name="description" content="今日科技早报历史归档，每天一份 AI 精选科技新闻。">
+<link rel="stylesheet" href="assets/apple.css">
 <style>
-:root {
-  --rausch: #FF5A5F;
-  --text-primary: #222222;
-  --text-secondary: #717171;
-  --text-tertiary: #B0B0B0;
-  --bg: #FFFFFF;
-  --bg-secondary: #F7F7F7;
-  --border: #EBEBEB;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
-  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --max-width: 1280px;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text-primary);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-.header {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.header-brand { flex: 1; }
-.header-title { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
-.header-subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
-.header-nav { display: flex; gap: 8px; flex-shrink: 0; }
-.nav-link {
-  font-size: 14px; font-weight: 600; color: var(--text-secondary);
-  text-decoration: none; padding: 6px 12px; border-radius: 20px;
-  transition: all 0.2s; white-space: nowrap;
-}
-.nav-link:hover { color: var(--text-primary); background: var(--bg-secondary); }
-.nav-link.active { color: var(--rausch); background: rgba(255, 90, 95, 0.1); }
-
-.main { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-.page-title { font-size: 24px; font-weight: 700; padding: 32px 0 8px; }
-.page-desc { font-size: 14px; color: var(--text-secondary); padding-bottom: 16px; }
-
+.archive-list { display: flex; flex-direction: column; gap: 14px; }
 .archive-item {
-  border: 1px solid var(--border);
+  background: var(--card);
+  border: 1px solid var(--hairline);
   border-radius: var(--radius);
-  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 .archive-head {
-  padding: 20px 24px;
+  padding: 22px 28px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 16px;
   transition: background 0.15s;
 }
-.archive-head:hover { background: var(--bg-secondary); }
-.archive-date { font-size: 17px; font-weight: 700; white-space: nowrap; }
+.archive-head:hover { background: rgba(0, 0, 0, 0.02); }
+.archive-date { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
 .archive-count {
   font-size: 12px; font-weight: 700; color: #fff;
-  background: var(--rausch); padding: 2px 10px; border-radius: 20px;
+  background: var(--accent); padding: 4px 12px; border-radius: var(--radius-pill);
   white-space: nowrap;
 }
 .archive-overview {
-  flex: 1; font-size: 14px; color: var(--text-secondary);
+  flex: 1; font-size: 14px; color: var(--muted);
   overflow: hidden; text-overflow: ellipsis;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
 }
-.archive-toggle { font-size: 14px; color: var(--text-tertiary); flex-shrink: 0; }
-.archive-body { display: none; border-top: 1px solid var(--border); padding: 8px 24px 20px; }
+.archive-toggle { font-size: 14px; color: var(--faint); flex-shrink: 0; transition: transform 0.2s; }
+.archive-body { display: none; border-top: 1px solid var(--hairline); padding: 8px 28px 24px; }
 .archive-item.open .archive-body { display: block; }
 .archive-item.open .archive-toggle { transform: rotate(180deg); }
-.archive-pick {
-  display: flex; gap: 12px; padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-}
+.archive-pick { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--hairline); }
 .archive-pick:last-child { border-bottom: none; }
-.archive-num { font-size: 14px; font-weight: 700; color: var(--rausch); min-width: 22px; }
-.archive-pick-title { font-size: 15px; font-weight: 600; color: var(--text-primary); text-decoration: none; line-height: 1.5; }
-a.archive-pick-title:hover { color: var(--rausch); }
-.archive-pick-summary { font-size: 13px; color: var(--text-secondary); margin-top: 4px; line-height: 1.6; }
-.archive-pick-source { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; }
-
-.loading { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 15px; }
-.empty-state { text-align: center; padding: 80px 20px; }
-.empty-icon { font-size: 48px; margin-bottom: 16px; }
-.empty-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-.empty-desc { font-size: 14px; color: var(--text-secondary); }
-
-.footer {
-  max-width: var(--max-width); margin: 0 auto; padding: 40px 24px;
-  text-align: center; border-top: 1px solid var(--border); margin-top: 40px;
-}
-.footer-text { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
-.footer-link { font-size: 13px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
-.footer-link:hover { color: var(--rausch); }
-
+.archive-num { font-size: 14px; font-weight: 700; color: var(--accent); min-width: 24px; padding-top: 2px; }
+.archive-pick-title { font-size: 16px; font-weight: 600; line-height: 1.55; text-decoration: none; }
+a.archive-pick-title:hover { color: var(--accent); }
+.archive-pick-summary { font-size: 14px; color: var(--muted); margin-top: 6px; line-height: 1.65; }
+.archive-pick-source { font-size: 12px; color: var(--faint); margin-top: 6px; }
+.rss-link { color: var(--accent); font-weight: 600; text-decoration: none; }
 @media (max-width: 600px) {
-  .header-inner { flex-wrap: wrap; gap: 12px; padding: 16px 20px; }
-  .header-subtitle { order: -1; flex: 1 1 100%; }
-  .header-title { font-size: 19px; }
-  .main { padding: 0 20px; }
-  .archive-head { flex-wrap: wrap; gap: 8px; }
+  .archive-head { flex-wrap: wrap; gap: 10px; padding: 18px 20px; }
   .archive-overview { flex: 1 1 100%; }
+  .archive-body { padding: 8px 20px 20px; }
 }
 </style>
 </head>
@@ -129,7 +59,7 @@ a.archive-pick-title:hover { color: var(--rausch); }
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <div class="header-title">今日科技早报</div>
+      <div class="header-title">🐤 鸡仔早报</div>
       <div class="header-subtitle" id="header-subtitle">加载中...</div>
     </div>
     <nav class="header-nav">
@@ -138,14 +68,23 @@ a.archive-pick-title:hover { color: var(--rausch); }
       <a href="hackernews.html" class="nav-link">Hacker News</a>
       <a href="archive.html" class="nav-link active">归档</a>
       <a href="quiz.html" class="nav-link">每日一题</a>
+      <a href="xhs.html" class="nav-link">小红书</a>
+      <a href="xhs-tool.html" class="nav-link">文案工具</a>
+      <a href="tv.html" class="nav-link">电视浏览器</a>
     </nav>
   </div>
 </header>
 
-<main class="main">
-  <div class="page-title">历史早报归档</div>
-  <div class="page-desc">每天早上 8 点更新，点击任意一期展开查看完整内容，也可通过 <a href="feed.xml" style="color:var(--rausch);font-weight:600;">RSS</a> 订阅。</div>
-  <div id="archive-list"><div class="loading">加载中...</div></div>
+<section class="hero hero-compact">
+  <div class="hero-eyebrow">每天一份 · 从不错过</div>
+  <h1 class="hero-title">历史早报归档</h1>
+  <p class="hero-sub">点击任意一期展开查看完整内容，也可通过 <a class="rss-link" href="feed.xml">RSS</a> 订阅。</p>
+</section>
+
+<main>
+  <section class="section section-tight">
+    <div class="archive-list" id="archive-list"><div class="loading">加载中...</div></div>
+  </section>
 </main>
 
 <footer class="footer"></footer>

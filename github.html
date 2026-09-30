@@ -2,361 +2,99 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub 热门项目</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GitHub 热门项目 - 鸡仔早报</title>
+<meta name="description" content="GitHub 每日热门项目：AI、前端、开发工具，附 AI 点评。">
+<link rel="stylesheet" href="assets/apple.css">
 <style>
-:root {
-  --rausch: #FF5A5F;
-  --rausch-dark: #E00E2F;
-  --text-primary: #222222;
-  --text-secondary: #717171;
-  --text-tertiary: #B0B0B0;
-  --bg: #FFFFFF;
-  --bg-secondary: #F7F7F7;
-  --border: #EBEBEB;
-  --border-dark: #DDDDDD;
-  --success: #00A699;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-lg: 0 8px 28px rgba(0,0,0,0.12);
-  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --max-width: 1280px;
-  --header-height: 90px;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text-primary);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ===== Header ===== */
-.header {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+.filter-bar {
   position: sticky;
-  top: 0;
-  z-index: 100;
+  top: var(--nav-h);
+  z-index: 60;
+  background: rgba(245, 245, 247, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--hairline);
+  padding: 14px var(--pad-x);
 }
-.header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 20px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-.header-title {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  color: var(--text-primary);
-  line-height: 1.3;
-  flex-shrink: 0;
-}
-.header-brand {
-  flex: 1;
-}
-.header-subtitle {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-top: 2px;
-}
-
-.header-nav {
-  display: flex;
-  gap: 8px;
-}
-.nav-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: all 0.2s;
-}
-.nav-link:hover {
-  color: var(--text-primary);
-  background: var(--bg-secondary);
-}
-.nav-link.active {
-  color: var(--rausch);
-  background: rgba(255, 90, 95, 0.1);
-}
-
-/* ===== Main ===== */
-.main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 32px 24px;
-}
-
-/* ===== Time Filter ===== */
-.time-filter {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-  position: sticky;
-  top: var(--header-height);
-  background: var(--bg);
-  padding: 16px 0 8px;
-  z-index: 50;
-}
-.time-btn {
-  padding: 8px 16px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.time-btn:hover {
-  border-color: var(--text-primary);
-  color: var(--text-primary);
-}
-.time-btn.active {
-  background: var(--text-primary);
-  color: #fff;
-  border-color: var(--text-primary);
-}
-
-/* ===== Categories ===== */
 .categories {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-  position: sticky;
-  top: var(--header-height);
-  background: var(--bg);
-  padding: 8px 0 16px;
-  z-index: 49;
-  border-bottom: 1px solid var(--border);
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
 }
+.categories::-webkit-scrollbar { display: none; }
 .category-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 18px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 24px;
+  font-family: var(--font);
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-secondary);
+  padding: 9px 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--muted);
   cursor: pointer;
   transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
-.category-btn:hover {
-  border-color: var(--text-primary);
-  color: var(--text-primary);
-}
-.category-btn.active {
-  background: var(--text-primary);
-  color: #fff;
-  border-color: var(--text-primary);
-}
-
-/* ===== Projects Grid ===== */
+.category-btn:hover { color: var(--ink); border-color: var(--faint); }
+.category-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 18px;
 }
 .project-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--card);
+  border: 1px solid var(--hairline);
   border-radius: var(--radius);
-  padding: 20px;
-  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
   color: inherit;
   display: flex;
   flex-direction: column;
 }
-.project-card:hover {
-  border-color: var(--text-primary);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-.project-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 12px;
-}
+.project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.project-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
 .project-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
+  width: 46px; height: 46px;
+  border-radius: 14px;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+  color: var(--muted);
 }
-.project-info {
-  flex: 1;
-  min-width: 0;
-}
-.project-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.3;
-  margin-bottom: 4px;
-  word-break: break-word;
-}
-.project-owner {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
+.project-info { flex: 1; min-width: 0; }
+.project-name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 3px; word-break: break-word; }
+.project-owner { font-size: 13px; color: var(--muted); }
 .project-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 16px;
-  flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: 14px; color: var(--muted); line-height: 1.65;
+  margin-bottom: 16px; flex: 1;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 .project-meta {
-  display: flex;
-  gap: 16px;
-  font-size: 13px;
-  color: var(--text-secondary);
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
+  display: flex; gap: 18px;
+  font-size: 13px; color: var(--muted);
+  padding-top: 14px; border-top: 1px solid var(--hairline);
 }
+.meta-item { display: flex; align-items: center; gap: 6px; }
+.meta-value { font-weight: 600; color: var(--ink); }
+.language-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 .project-insight {
-  background: linear-gradient(135deg, #FFF8E7 0%, #FFF5F5 100%);
-  border: 1px solid #FFE9B8;
+  background: var(--accent-soft);
   border-radius: var(--radius-sm);
-  padding: 10px 12px;
-  margin-bottom: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
-.insight-label {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--rausch);
-  margin-bottom: 4px;
-}
-.insight-what { color: var(--text-primary); margin-bottom: 4px; }
-.insight-meta { color: var(--text-secondary); font-size: 12px; }
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.meta-icon {
-  font-size: 14px;
-}
-.meta-value {
-  font-weight: 600;
-}
-.language-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-/* ===== Loading ===== */
-.loading {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--text-secondary);
-  font-size: 15px;
-}
-
-/* ===== Empty ===== */
-.empty-state {
-  text-align: center;
-  padding: 80px 20px;
-}
-.empty-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-.empty-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-.empty-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-/* ===== Footer ===== */
-.footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 40px 24px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  margin-top: 60px;
-}
-.footer-text {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-.footer-link {
-  font-size: 13px;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-}
-.footer-link:hover {
-  color: var(--rausch);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 1024px) {
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .header-nav {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .header-title { font-size: 19px; }
-  .main { padding: 24px 16px; }
-  .categories {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 8px;
-  }
-  .category-btn {
-    flex-shrink: 0;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer { padding: 32px 16px; }
-}
+.insight-label { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.insight-what { color: var(--ink); margin-bottom: 4px; }
+.insight-meta { color: var(--muted); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -364,7 +102,7 @@ body {
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <div class="header-title">GitHub 热门项目</div>
+      <div class="header-title">🐤 鸡仔早报</div>
       <div class="header-subtitle" id="header-subtitle">加载中...</div>
     </div>
     <nav class="header-nav">
@@ -373,18 +111,27 @@ body {
       <a href="hackernews.html" class="nav-link">Hacker News</a>
       <a href="archive.html" class="nav-link">归档</a>
       <a href="quiz.html" class="nav-link">每日一题</a>
+      <a href="xhs.html" class="nav-link">小红书</a>
+      <a href="xhs-tool.html" class="nav-link">文案工具</a>
+      <a href="tv.html" class="nav-link">电视浏览器</a>
     </nav>
   </div>
 </header>
 
-<main class="main">
-    <div class="categories" id="categories">
-    <!-- 动态生成 -->
-  </div>
+<section class="hero hero-compact">
+  <div class="hero-eyebrow">开源世界每日速览</div>
+  <h1 class="hero-title">GitHub 热门项目</h1>
+  <p class="hero-sub">AI、前端、开发工具——每天最值得 star 的项目，附 AI 一句话点评。</p>
+</section>
 
-  <div id="projects-container">
-    <div class="loading">加载中...</div>
-  </div>
+<div class="filter-bar">
+  <div class="categories" id="categories"></div>
+</div>
+
+<main>
+  <section class="section section-tight">
+    <div id="projects-container"><div class="loading">加载中...</div></div>
+  </section>
 </main>
 
 <footer class="footer"></footer>
@@ -410,8 +157,8 @@ function renderCategories() {
   const cats = githubData ? Object.keys(githubData.categories).map(id => ({
     id, ...githubData.categories[id]
   })) : CATEGORIES;
-  container.innerHTML = cats.map(cat => 
-    `<button class="category-btn ${cat.id === currentCategory ? 'active' : ''}" 
+  container.innerHTML = cats.map(cat =>
+    `<button class="category-btn ${cat.id === currentCategory ? 'active' : ''}"
              onclick="switchCategory('${cat.id}')">
       ${cat.name}
     </button>`
@@ -446,26 +193,25 @@ function renderInsight(fullName) {
 
 function renderProjects() {
   const container = document.getElementById('projects-container');
-  
+
   if (!githubData) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="empty-icon">⚠️</div>
       <div class="empty-title">加载失败</div>
       <div class="empty-desc">请稍后刷新重试</div>
     </div>`;
     return;
   }
-  
+
   const cat = githubData.categories[currentCategory];
   if (!cat) return;
-  
+
   let projects = cat.repos || [];
-  
-    filteredProjects = projects;
-  
+  filteredProjects = projects;
+
   if (!projects.length) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 5L2 7"/></svg></div>
+      <div class="empty-icon">📦</div>
       <div class="empty-title">暂无项目</div>
       <div class="empty-desc">该分类下暂无热门项目</div>
     </div>`;
@@ -489,7 +235,7 @@ function renderProjects() {
         return `
           <a href="https://github.com/${project.full_name}" target="_blank" class="project-card">
             <div class="project-header">
-              <div class="project-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <div class="project-icon">✦</div>
               <div class="project-info">
                 <div class="project-name">${project.name}</div>
                 <div class="project-owner">${project.owner}</div>
@@ -504,14 +250,8 @@ function renderProjects() {
                   <span class="meta-value">${project.language}</span>
                 </div>
               ` : ''}
-              <div class="meta-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <span class="meta-value">${stars}</span>
-              </div>
-              <div class="meta-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                <span class="meta-value">${forks}</span>
-              </div>
+              <div class="meta-item"><span>⭐</span><span class="meta-value">${stars}</span></div>
+              <div class="meta-item"><span>⑂</span><span class="meta-value">${forks}</span></div>
             </div>
           </a>
         `;
@@ -525,7 +265,6 @@ function formatNumber(num) {
   return num.toString();
 }
 
-// 加载数据
 Promise.all([
   fetch('data/github.json?t=' + Date.now()).then(r => r.json()),
   fetch('data/github_insights.json?t=' + Date.now()).then(r => r.json()).catch(() => null)

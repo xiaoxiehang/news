@@ -2,174 +2,93 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>开发者每日一题 - 今日科技早报</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>开发者每日一题 - 鸡仔早报</title>
 <meta name="description" content="每天一道开发者面试题，AI 出题+解析，坚持打卡。">
+<link rel="stylesheet" href="assets/apple.css">
 <style>
-:root {
-  --rausch: #FF5A5F;
-  --green: #1DB954;
-  --text-primary: #222222;
-  --text-secondary: #717171;
-  --text-tertiary: #B0B0B0;
-  --bg: #FFFFFF;
-  --bg-secondary: #F7F7F7;
-  --border: #EBEBEB;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --max-width: 1280px;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text-primary);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-.header {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.header-brand { flex: 1; }
-.header-title { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
-.header-subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
-.header-nav { display: flex; gap: 8px; flex-shrink: 0; }
-.nav-link {
-  font-size: 14px; font-weight: 600; color: var(--text-secondary);
-  text-decoration: none; padding: 6px 12px; border-radius: 20px;
-  transition: all 0.2s; white-space: nowrap;
-}
-.nav-link:hover { color: var(--text-primary); background: var(--bg-secondary); }
-.nav-link.active { color: var(--rausch); background: rgba(255, 90, 95, 0.1); }
-
-.main { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-.page-title { font-size: 24px; font-weight: 700; padding: 32px 0 8px; }
-.page-desc { font-size: 14px; color: var(--text-secondary); padding-bottom: 20px; }
-
-.stats {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-}
+.stats { display: flex; gap: 14px; margin-bottom: 28px; }
 .stat-card {
   flex: 1;
-  background: var(--bg-secondary);
+  background: var(--card);
+  border: 1px solid var(--hairline);
   border-radius: var(--radius);
-  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  padding: 22px 16px;
   text-align: center;
 }
-.stat-num { font-size: 24px; font-weight: 700; color: var(--rausch); }
-.stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
-
+.stat-num { font-size: 32px; font-weight: 700; color: var(--accent); letter-spacing: -0.02em; }
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .quiz-card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 32px;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  padding: clamp(24px, 4vw, 44px);
+  margin-bottom: 40px;
 }
-.quiz-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.quiz-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 .topic-tag {
   font-size: 12px; font-weight: 700; color: #fff;
-  background: var(--rausch); padding: 3px 12px; border-radius: 20px;
+  background: var(--accent); padding: 5px 14px; border-radius: var(--radius-pill);
 }
-.quiz-date { font-size: 13px; color: var(--text-tertiary); }
-.quiz-question { font-size: 18px; font-weight: 600; line-height: 1.6; margin-bottom: 20px; }
-.quiz-options { display: flex; flex-direction: column; gap: 10px; }
+.quiz-date { font-size: 13px; color: var(--faint); }
+.quiz-question { font-size: 20px; font-weight: 600; line-height: 1.65; letter-spacing: -0.01em; margin-bottom: 24px; }
+.quiz-options { display: flex; flex-direction: column; gap: 12px; }
 .option-btn {
   text-align: left;
-  font-size: 15px;
-  padding: 14px 16px;
-  border: 1.5px solid var(--border);
+  font-size: 16px;
+  padding: 16px 20px;
+  border: 1.5px solid var(--line);
   border-radius: var(--radius-sm);
   background: var(--bg);
   cursor: pointer;
   transition: all 0.15s;
   font-family: var(--font);
-  line-height: 1.5;
+  line-height: 1.55;
+  color: var(--ink);
 }
-.option-btn:hover:not(:disabled) { border-color: var(--rausch); background: #FFF9F9; }
+.option-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
 .option-btn:disabled { cursor: default; }
-.option-btn.correct { border-color: var(--green); background: #F0FAF4; color: #0d7a3a; font-weight: 600; }
-.option-btn.wrong { border-color: var(--rausch); background: #FFF1F1; color: #c0392b; }
+.option-btn.correct { border-color: var(--green); background: var(--green-soft); color: #0d7a3a; font-weight: 600; }
+.option-btn.wrong { border-color: var(--red); background: #fff1f1; color: #c0392b; }
 .option-btn.dim { opacity: 0.55; }
 .quiz-result {
-  margin-top: 20px;
-  padding: 16px 18px;
+  margin-top: 22px;
+  padding: 18px 22px;
   border-radius: var(--radius-sm);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.75;
   display: none;
 }
 .quiz-result.show { display: block; }
-.quiz-result.good { background: #F0FAF4; border: 1px solid #BEE5CD; }
-.quiz-result.bad { background: #FFF8E7; border: 1px solid #FFE9B8; }
-.result-title { font-weight: 700; margin-bottom: 8px; font-size: 15px; }
+.quiz-result.good { background: var(--green-soft); border: 1px solid #bee5cd; }
+.quiz-result.bad { background: var(--amber-soft); border: 1px solid #ffe9b8; }
+.result-title { font-weight: 700; margin-bottom: 8px; font-size: 16px; }
 .quiz-result.good .result-title { color: #0d7a3a; }
-.quiz-result.bad .result-title { color: #b7791f; }
-
-.history-title { font-size: 19px; font-weight: 700; padding: 8px 0 4px; }
+.quiz-result.bad .result-title { color: var(--amber); }
+.history-title { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 6px; }
+.history-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
 .history-item {
-  border: 1px solid var(--border);
+  background: var(--card);
+  border: 1px solid var(--hairline);
   border-radius: var(--radius);
-  margin-top: 12px;
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
-.history-head {
-  padding: 16px 20px;
-  cursor: pointer;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.history-head:hover { background: var(--bg-secondary); }
-.history-q {
-  flex: 1; font-size: 14px; font-weight: 600;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-.history-topic { font-size: 11px; font-weight: 700; color: var(--rausch); white-space: nowrap; }
-.history-date { font-size: 12px; color: var(--text-tertiary); white-space: nowrap; }
-.history-body { display: none; border-top: 1px solid var(--border); padding: 16px 20px; }
+.history-head { padding: 18px 22px; cursor: pointer; display: flex; gap: 14px; align-items: center; }
+.history-head:hover { background: rgba(0, 0, 0, 0.02); }
+.history-q { flex: 1; font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.history-topic { font-size: 11px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+.history-date { font-size: 12px; color: var(--faint); white-space: nowrap; }
+.history-body { display: none; border-top: 1px solid var(--hairline); padding: 18px 22px; }
 .history-item.open .history-body { display: block; }
-.history-opt { font-size: 14px; padding: 6px 0; color: var(--text-secondary); }
+.history-opt { font-size: 14px; padding: 7px 0; color: var(--muted); }
 .history-opt.is-answer { color: #0d7a3a; font-weight: 700; }
-.history-exp { font-size: 13px; color: var(--text-secondary); background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 12px; margin-top: 10px; line-height: 1.7; }
-
-.loading { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 15px; }
-.empty-state { text-align: center; padding: 80px 20px; }
-.empty-icon { font-size: 48px; margin-bottom: 16px; }
-.empty-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-.empty-desc { font-size: 14px; color: var(--text-secondary); }
-
-.footer {
-  max-width: var(--max-width); margin: 0 auto; padding: 40px 24px;
-  text-align: center; border-top: 1px solid var(--border); margin-top: 40px;
-}
-.footer-text { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
-.footer-link { font-size: 13px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
-.footer-link:hover { color: var(--rausch); }
-
+.history-exp { font-size: 14px; color: var(--muted); background: var(--bg); border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 12px; line-height: 1.75; }
 @media (max-width: 600px) {
-  .header-inner { flex-wrap: wrap; gap: 12px; padding: 16px 20px; }
-  .header-subtitle { order: -1; flex: 1 1 100%; }
-  .header-title { font-size: 19px; }
-  .main { padding: 0 20px; }
-  .quiz-card { padding: 20px; }
+  .stats { gap: 10px; }
+  .stat-num { font-size: 26px; }
   .history-q { white-space: normal; }
 }
 </style>
@@ -179,7 +98,7 @@ body {
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <div class="header-title">今日科技早报</div>
+      <div class="header-title">🐤 鸡仔早报</div>
       <div class="header-subtitle" id="header-subtitle">加载中...</div>
     </div>
     <nav class="header-nav">
@@ -188,24 +107,32 @@ body {
       <a href="hackernews.html" class="nav-link">Hacker News</a>
       <a href="archive.html" class="nav-link">归档</a>
       <a href="quiz.html" class="nav-link active">每日一题</a>
+      <a href="xhs.html" class="nav-link">小红书</a>
+      <a href="xhs-tool.html" class="nav-link">文案工具</a>
+      <a href="tv.html" class="nav-link">电视浏览器</a>
     </nav>
   </div>
 </header>
 
-<main class="main">
-  <div class="page-title">📝 开发者每日一题</div>
-  <div class="page-desc">每天一道面试题，AI 出题 + 解析。答对了别骄傲，答错了正好补上。</div>
+<section class="hero hero-compact">
+  <div class="hero-eyebrow">AI 出题 · 每天一道</div>
+  <h1 class="hero-title">开发者每日一题</h1>
+  <p class="hero-sub">面试题天天练，答对攒 streak，答错看解析——悄悄变强。</p>
+</section>
 
-  <div class="stats">
-    <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">连续打卡（天）</div></div>
-    <div class="stat-card"><div class="stat-num" id="stat-total">0</div><div class="stat-label">累计答题</div></div>
-    <div class="stat-card"><div class="stat-num" id="stat-rate">-</div><div class="stat-label">答对率</div></div>
-  </div>
+<main>
+  <section class="section section-tight">
+    <div class="stats">
+      <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">连续打卡（天）</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-total">0</div><div class="stat-label">累计答题</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-rate">-</div><div class="stat-label">答对率</div></div>
+    </div>
 
-  <div id="today-quiz"><div class="loading">出题中...</div></div>
+    <div id="today-quiz"><div class="loading">出题中...</div></div>
 
-  <div class="history-title">往期题目</div>
-  <div id="history"><div class="loading">加载中...</div></div>
+    <div class="history-title">往期题目</div>
+    <div class="history-list" id="history"><div class="loading">加载中...</div></div>
+  </section>
 </main>
 
 <footer class="footer"></footer>
@@ -236,11 +163,10 @@ function renderStats() {
 function recordAnswer(date, isCorrect) {
   const s = getStats();
   const answeredKey = 'quiz_answered_' + date;
-  if (localStorage.getItem(answeredKey)) return; // 今天已答过，不重复计数
+  if (localStorage.getItem(answeredKey)) return;
   localStorage.setItem(answeredKey, isCorrect ? '1' : '0');
   s.total = (s.total || 0) + 1;
   if (isCorrect) s.correct = (s.correct || 0) + 1;
-  // 连续打卡：昨天答过则 +1，否则重置为 1
   const y = new Date(date); y.setDate(y.getDate() - 1);
   const yKey = 'quiz_answered_' + y.toISOString().slice(0, 10);
   s.streak = localStorage.getItem(yKey) ? (s.streak || 0) + 1 : 1;

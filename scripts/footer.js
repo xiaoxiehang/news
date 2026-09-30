@@ -1,9 +1,9 @@
 // 统一 footer 组件
 (function() {
   const footerHTML = `
-    <div id="footer-widget" style="margin-bottom:20px;padding:16px;background:var(--bg-secondary);border-radius:var(--radius);max-width:600px;margin-left:auto;margin-right:auto;text-align:left;">
-      <div id="quote-text" style="font-size:14px;color:var(--text-secondary);font-style:italic;margin-bottom:8px;">加载中...</div>
-      <div id="quote-author" style="font-size:13px;color:var(--text-tertiary);text-align:right;"></div>
+    <div id="footer-widget" style="margin:0 auto 20px;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--hairline);border-radius:var(--radius);max-width:640px;text-align:left;">
+      <div id="quote-text" style="font-size:14px;color:var(--muted);font-style:italic;line-height:1.7;margin-bottom:8px;">加载中...</div>
+      <div id="quote-author" style="font-size:13px;color:var(--faint);text-align:right;"></div>
     </div>
     <div class="footer-text">每日更新 · 值得关注</div>
     <a href="https://github.com/xiaoxiehang/news" target="_blank" class="footer-link">GitHub 仓库</a>
