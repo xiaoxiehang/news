@@ -169,41 +169,6 @@ font-size: 12px;
 color: var(--text-tertiary);
 margin-top: 4px;
 }
-.briefing-vote {
-margin-top: 8px;
-display: none;
-}
-.briefing-vote.show { display: block; }
-.vote-btn {
-font-size: 12px;
-font-weight: 600;
-padding: 5px 14px;
-border-radius: 16px;
-border: 1px solid var(--border);
-background: var(--bg);
-color: var(--text-secondary);
-cursor: pointer;
-transition: all 0.15s;
-font-family: var(--font);
-}
-.vote-btn:hover:not(:disabled) { border-color: var(--rausch); color: var(--rausch); }
-.vote-btn:disabled { cursor: default; }
-.vote-btn.voted { border-color: var(--rausch); color: var(--rausch); background: rgba(255,90,95,0.08); }
-.vote-btn .vote-n { font-weight: 700; }
-.vs-strip {
-display: none;
-margin: 4px 0 12px;
-padding: 12px 16px;
-background: linear-gradient(135deg, #FFF8E7 0%, #F0F7FF 100%);
-border: 1px solid #FFE9B8;
-border-radius: var(--radius-sm);
-font-size: 13px;
-line-height: 1.7;
-color: var(--text-primary);
-}
-.vs-strip.show { display: block; }
-.vs-strip b { color: var(--rausch); }
-
 /* ===== Actions ===== */
 .actions {
 padding: 24px 0;
@@ -465,7 +430,6 @@ flex: 1 1 100%;
 <span class="briefing-date" id="briefing-date"></span>
 </div>
 <div class="briefing-overview" id="briefing-overview"></div>
-<div class="vs-strip" id="vs-strip"></div>
 <div id="briefing-picks"></div>
 </section>
 
@@ -604,10 +568,6 @@ briefingData = data;
 document.getElementById('briefing-date').textContent = data.date_str || data.date || '';
 document.getElementById('briefing-overview').textContent = data.overview || '';
 
-const date = data.date || '';
-const votedKey = 'voted_' + date;
-let voted = [];
-try { voted = JSON.parse(localStorage.getItem(votedKey) || '[]'); } catch (e) {}
 
 let html = '';
 data.picks.forEach(function(pick, i) {
@@ -620,92 +580,13 @@ html += '<div class="briefing-pick">' +
 '<div class="briefing-pick-body">' + titleHtml +
 (pick.summary? '<div class="briefing-pick-summary">' + esc(pick.summary) + '</div>': '') +
 (pick.source? '<div class="briefing-pick-source">来源：' + esc(pick.source) + '</div>': '') +
-'<div class="briefing-vote" id="vote-wrap-' + i + '">' +
-'<button class="vote-btn" data-pick="' + i + '" onclick="castVote(' + i + ')">👍 值得读 · <span class="vote-n" id="vote-n-' + i + '">0</span></button>' +
-'</div>' +
 '</div></div>';
 });
 document.getElementById('briefing-picks').innerHTML = html;
 document.getElementById('briefing-section').style.display = '';
 
-loadVotes(date, data.picks, voted, votedKey);
 } catch (error) {
 console.error('加载早报失败:', error);
-}
-}
-
-async function loadVotes(date, picks, voted, votedKey) {
-let voteData = null;
-try {
-const r = await fetch('/api/vote?date=' + encodeURIComponent(date));
-if (r.ok) voteData = await r.json();
-} catch (e) {}
-if (!voteData) return;
-const votes = voteData.votes || {};
-picks.forEach(function(pick, i) {
-const wrap = document.getElementById('vote-wrap-' + i);
-if (!wrap) return;
-wrap.classList.add('show');
-const n = document.getElementById('vote-n-' + i);
-if (n) n.textContent = votes[String(i)] || 0;
-});
-voted.forEach(function(i) {
-const btn = document.querySelector('.vote-btn[data-pick="' + i + '"]');
-if (btn) {
-btn.disabled = true;
-btn.classList.add('voted');
-btn.innerHTML = '✓ 已投票 · <span class="vote-n">' + (votes[String(i)] || 0) + '</span>';
-}
-});
-window._voteCtx = { date: date, votedKey: votedKey };
-renderVsStrip(picks, votes, voteData.total || 0);
-}
-
-function renderVsStrip(picks, votes, total) {
-const strip = document.getElementById('vs-strip');
-if (!strip || total === 0) return;
-let topPick = 0, topVotes = -1;
-picks.forEach(function(p, i) {
-const v = votes[String(i)] || 0;
-if (v > topVotes) { topVotes = v; topPick = i; }
-});
-const aiTitle = picks[0] ? picks[0].title : '';
-const readerTitle = picks[topPick] ? picks[topPick].title : '';
-strip.innerHTML = '🤖 <b>AI 首选</b>：' + esc(aiTitle) +
-'<br>🗳️ <b>读者首选</b>（' + topVotes + ' 票）：' + esc(readerTitle) +
-(topPick === 0 ? '<br>👏 AI 和读者的品味英雄所见略同' : '');
-strip.classList.add('show');
-}
-
-async function castVote(i) {
-const ctx = window._voteCtx;
-if (!ctx) return;
-const btn = document.querySelector('.vote-btn[data-pick="' + i + '"]');
-if (!btn || btn.disabled) return;
-btn.disabled = true;
-try {
-const r = await fetch('/api/vote', {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({ date: ctx.date, pick: i })
-});
-if (!r.ok) throw new Error('vote failed');
-const data = await r.json();
-const votes = data.votes || {};
-Object.keys(votes).forEach(function(k) {
-const n = document.getElementById('vote-n-' + k);
-if (n) n.textContent = votes[k];
-});
-let voted = [];
-try { voted = JSON.parse(localStorage.getItem(ctx.votedKey) || '[]'); } catch (e) {}
-if (voted.indexOf(i) === -1) { voted.push(i); localStorage.setItem(ctx.votedKey, JSON.stringify(voted)); }
-btn.classList.add('voted');
-btn.innerHTML = '✓ 已投票 · <span class="vote-n">' + (votes[String(i)] || 0) + '</span>';
-const picks = (typeof briefingData !== 'undefined' && briefingData.picks) || [];
-if (picks.length) renderVsStrip(picks, votes, data.total || 0);
-} catch (e) {
-btn.disabled = false;
-alert('投票失败，请稍后重试');
 }
 }
 
