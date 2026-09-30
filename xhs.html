@@ -98,6 +98,65 @@ body {
 .shot-label a { color: var(--rausch); text-decoration: none; font-weight: 600; }
 .section-title { font-size: 18px; font-weight: 700; margin: 32px 0 16px; }
 .empty { text-align: center; color: var(--text-tertiary); padding: 60px 0; font-size: 15px; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+.tab {
+  font-size: 15px; font-weight: 700; padding: 10px 22px; border-radius: 24px;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary);
+  cursor: pointer; font-family: var(--font);
+}
+.tab.active { background: var(--rausch); border-color: var(--rausch); color: #fff; }
+.tabpane { display: none; }
+.tabpane.active { display: block; }
+
+.featured {
+  display: flex; gap: 28px; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; box-shadow: var(--shadow-sm); margin-bottom: 32px; flex-wrap: wrap;
+}
+.video-wrap {
+  width: 270px; flex-shrink: 0; border-radius: var(--radius-sm);
+  overflow: hidden; background: #000; aspect-ratio: 9 / 16;
+}
+.video-wrap video { width: 100%; height: 100%; display: block; }
+.featured-info { flex: 1; min-width: 240px; }
+.featured-label {
+  display: inline-block; font-size: 12px; font-weight: 700; color: #fff;
+  background: var(--rausch); padding: 3px 12px; border-radius: 20px; margin-bottom: 12px;
+}
+.featured-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.featured-meta { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+.featured-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+.btn {
+  display: inline-block; font-size: 14px; font-weight: 600;
+  padding: 10px 20px; border-radius: 24px; text-decoration: none;
+  margin-right: 10px; margin-bottom: 10px;
+}
+.btn-primary { background: var(--rausch); color: #fff; }
+.list-title { font-size: 19px; font-weight: 700; padding: 8px 0 4px; }
+.video-item {
+  display: flex; gap: 16px; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px; margin-top: 12px; align-items: center;
+}
+.video-thumb {
+  width: 72px; height: 128px; flex-shrink: 0;
+  border-radius: var(--radius-sm); overflow: hidden; background: #000;
+}
+.video-thumb video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-info { flex: 1; min-width: 0; }
+.video-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.video-meta { font-size: 12px; color: var(--text-tertiary); margin-bottom: 8px; }
+.video-actions { display: flex; gap: 8px; }
+.mini-btn {
+  font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 16px;
+  text-decoration: none; background: var(--bg-secondary); color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+.mini-btn:hover { border-color: var(--rausch); color: var(--rausch); }
+.loading { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 15px; }
+.empty-state { text-align: center; padding: 80px 20px; }
+.empty-icon { font-size: 48px; margin-bottom: 16px; }
+.empty-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.empty-desc { font-size: 14px; color: var(--text-secondary); }
 </style>
 </head>
 <body>
@@ -111,10 +170,7 @@ body {
       <a href="index.html" class="nav-link">早报</a>
       <a href="github.html" class="nav-link">GitHub</a>
       <a href="hackernews.html" class="nav-link">Hacker News</a>
-      <a href="juejin.html" class="nav-link">掘金</a>
       <a href="archive.html" class="nav-link">归档</a>
-      <a href="podcast.html" class="nav-link">播客</a>
-      <a href="video.html" class="nav-link">短视频</a>
       <a href="quiz.html" class="nav-link">每日一题</a>
       <a href="xhs.html" class="nav-link active">小红书</a>
     </nav>
@@ -123,8 +179,14 @@ body {
 
 <main class="main">
   <h1 class="page-title">小红书发布审核</h1>
-  <p class="page-desc">每天自动生成的图文发布包：标题、正文、标签一键复制，3:4 卡片按顺序预览。审核通过后手动发布到小红书。</p>
+  <p class="page-desc">每天自动生成的图文发布包：标题、正文、标签一键复制，3:4 卡片按顺序预览。审核通过后手动发布到小红书。短视频版早报也在此页：竖屏带字幕，下载后可发抖音、视频号。</p>
 
+  <div class="tabs">
+    <button class="tab active" id="tabXhs">图文发布包</button>
+    <button class="tab" id="tabVideo">短视频</button>
+  </div>
+
+  <div class="tabpane active" id="paneXhs">
   <div class="date-row">
     <label for="dateSel">选择日期</label>
     <select id="dateSel"></select>
@@ -132,6 +194,13 @@ body {
   </div>
 
   <div id="content"></div>
+  </div>
+
+  <div class="tabpane" id="paneVideo">
+    <div id="videoFeatured"><div class="loading">加载中…</div></div>
+    <div class="list-title">往期视频</div>
+    <div id="videoList"><div class="loading">加载中…</div></div>
+  </div>
 </main>
 
 <script>
@@ -234,7 +303,71 @@ async function init() {
     $('content').innerHTML = '<div class="empty">暂无发布包，等待明日 workflow 生成。</div>';
   }
 }
+async function loadVideo() {
+  const feat = $('videoFeatured'), listBox = $('videoList');
+  let list = [];
+  try {
+    const r = await fetch('data/video/index.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    list = await r.json();
+  } catch (e) { list = []; }
+
+  if (!list.length) {
+    feat.innerHTML = '<div class="empty-state">' +
+      '<div class="empty-icon">🎬</div><div class="empty-title">视频尚未开播</div>' +
+      '<div class="empty-desc">每天早上 8 点更新，敬请期待</div></div>';
+    listBox.innerHTML = '';
+    return;
+  }
+
+  const latest = list[0];
+  feat.innerHTML =
+    '<div class="featured">' +
+      '<div class="video-wrap"><video src="' + esc(latest.file) + '" controls preload="metadata" playsinline></video></div>' +
+      '<div class="featured-info">' +
+        '<span class="featured-label">最新一期</span>' +
+        '<div class="featured-title">' + esc(latest.title) + '</div>' +
+        '<div class="featured-meta">' + esc(latest.date_str || latest.date) +
+          (latest.count ? ' · ' + latest.count + ' 条新闻' : '') +
+          (latest.size_mb ? ' · ' + latest.size_mb + ' MB' : '') + '</div>' +
+        (latest.overview ? '<div class="featured-desc">' + esc(latest.overview) + '</div>' : '') +
+        '<a class="btn btn-primary" href="' + esc(latest.file) + '" download>⬇ 下载视频</a>' +
+      '</div>' +
+    '</div>';
+
+  const rest = list.slice(1);
+  listBox.innerHTML = rest.length ? rest.map(function(v) {
+    return '<div class="video-item">' +
+      '<div class="video-thumb"><video src="' + esc(v.file) + '" preload="metadata" playsinline muted></video></div>' +
+      '<div class="video-info">' +
+        '<div class="video-title">' + esc(v.title) + '</div>' +
+        '<div class="video-meta">' + esc(v.date_str || v.date) +
+          (v.count ? ' · ' + v.count + ' 条新闻' : '') + '</div>' +
+        '<div class="video-actions">' +
+          '<a class="mini-btn" href="' + esc(v.file) + '" download>⬇ 下载</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('') : '<div class="empty-desc" style="padding:16px 0;">暂无更多视频</div>';
+}
+
+function switchTab(which) {
+  const isVideo = which === 'video';
+  $('tabXhs').classList.toggle('active', !isVideo);
+  $('tabVideo').classList.toggle('active', isVideo);
+  $('paneXhs').classList.toggle('active', !isVideo);
+  $('paneVideo').classList.toggle('active', isVideo);
+  if (isVideo && !$('paneVideo').dataset.loaded) {
+    $('paneVideo').dataset.loaded = '1';
+    loadVideo();
+  }
+  history.replaceState(null, '', isVideo ? '#video' : '#');
+}
+$('tabXhs').addEventListener('click', () => switchTab('xhs'));
+$('tabVideo').addEventListener('click', () => switchTab('video'));
+
 init();
+if (location.hash === '#video') switchTab('video');
 </script>
 </body>
 </html>

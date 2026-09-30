@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>今日科技早报 - 每日新闻简讯</title>
-<meta name="description" content="每天早上 8 点，一份中文科技早报：GitHub 热榜、Hacker News、掘金精选，AI 帮你挑出 8 条最值得读的新闻。">
+<meta name="description" content="每天早上 8 点，一份中文科技早报：GitHub 热榜、Hacker News、权威科技媒体，AI 帮你挑出 8 条最值得读的新闻。">
 <link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
 <style>
 :root {
@@ -450,10 +450,7 @@ flex: 1 1 100%;
 <a href="index.html" class="nav-link active">早报</a>
 <a href="github.html" class="nav-link">GitHub</a>
 <a href="hackernews.html" class="nav-link">Hacker News</a>
-<a href="juejin.html" class="nav-link">掘金</a>
       <a href="archive.html" class="nav-link">归档</a>
-      <a href="podcast.html" class="nav-link">播客</a>
-      <a href="video.html" class="nav-link">短视频</a>
       <a href="quiz.html" class="nav-link">每日一题</a>
       <a href="xhs.html" class="nav-link">小红书</a>
 </nav>
@@ -482,16 +479,7 @@ flex: 1 1 100%;
 </button>
 </div>
 
-  <a href="podcast.html" class="podcast-promo">
-    <div class="podcast-promo-icon">🎙️</div>
-    <div class="podcast-promo-text">
-      <div class="podcast-promo-title">科技早报 · 播客版</div>
-      <div class="podcast-promo-desc">鸡仔每天用五分钟，带你听完科技圈大事</div>
-    </div>
-    <div class="podcast-promo-arrow">→</div>
-  </a>
-
-  <a href="video.html" class="podcast-promo">
+  <a href="xhs.html#video" class="podcast-promo">
     <div class="podcast-promo-icon">🎬</div>
     <div class="podcast-promo-text">
       <div class="podcast-promo-title">科技早报 · 短视频版</div>
@@ -723,10 +711,9 @@ alert('投票失败，请稍后重试');
 
 async function loadGroups() {
 const container = document.getElementById('groups');
-const [gh, hn, jj, misc] = await Promise.all([
+const [gh, hn, misc] = await Promise.all([
 fetchJson('data/github.json'),
 fetchJson('data/hackernews.json'),
-fetchJson('data/juejin.json'),
 fetchJson('data/misc.json')
 ]);
 
@@ -764,24 +751,6 @@ title: 'Hacker News',
 desc: '全球黑客社区热议',
 moreLink: 'hackernews.html',
 updated: hn.updated_at,
-items: items
-});
-}
-
-if (jj && jj.articles && jj.articles.length) {
-const items = jj.articles.slice(0, 8).map(function(a) {
-return {
-title: a.title,
-link: a.url,
-summary: a.digest,
-meta: (a.author? a.author + ' · ': '') + '👁 ' + (a.views || '-') + ' · 👍 ' + (a.likes || 0)
-};
-});
-html += renderGroup({
-title: '掘金精选',
-desc: '中文开发者社区热文',
-moreLink: 'juejin.html',
-updated: jj.updated_at,
 items: items
 });
 }
