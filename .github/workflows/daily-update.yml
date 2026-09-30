@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 0 * * *'  # 每天 UTC 00:00 (北京时间 08:00)
   workflow_dispatch:  # 手动触发
+    inputs:
+      only:
+        description: '只运行指定环节（all=全部，video=仅重制今日短视频）'
+        required: false
+        default: 'all'
 
 jobs:
   update-data:
@@ -26,28 +31,29 @@ jobs:
         pip install requests edge-tts feedparser
 
     - name: Fetch GitHub trending
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: python scripts/fetch_github.py
 
     - name: Fetch Hacker News
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       run: python scripts/fetch_hackernews.py
 
-    - name: Fetch Juejin trending
-      continue-on-error: true
-      run: python scripts/fetch_juejin.py
-
     - name: Fetch misc (quotes & weather)
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       run: python scripts/fetch_misc.py
 
     - name: Fetch RSS (official blogs & tech media)
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       run: python scripts/fetch_rss.py
 
     - name: Generate AI briefing
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -55,12 +61,9 @@ jobs:
         LLM_MODEL: ${{ secrets.LLM_MODEL }}
       run: python scripts/generate_briefing.py
 
-    - name: Generate podcast episode
-      continue-on-error: true
-      run: python scripts/generate_podcast.py
-
 
     - name: Generate GitHub insights
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -70,6 +73,7 @@ jobs:
 
 
     - name: Generate daily quiz
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -87,6 +91,7 @@ jobs:
       run: python scripts/generate_video.py
 
     - name: Generate Xiaohongshu post (title/body/tags/comments)
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -95,6 +100,7 @@ jobs:
       run: python scripts/generate_xhs_post.py
 
     - name: Generate Xiaohongshu cards (3:4 images)
+      if: ${{ inputs.only != 'video' }}
       continue-on-error: true
       run: python scripts/generate_xhs_cards.py
 
@@ -104,6 +110,5 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add data/
         git add feed.xml 2>/dev/null || true
-        git add feed-podcast.xml 2>/dev/null || true
         git diff --staged --quiet || git commit -m "chore: daily data update $(date -u +'%Y-%m-%d')"
         git push
