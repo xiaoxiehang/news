@@ -1,65 +1,65 @@
 {
-  "updated_at": "2026-09-29 09:10:12",
+  "updated_at": "2026-09-30 02:31:00",
   "insights": {
-    "public-apis/public-apis": {
-      "what": "把各类免费 API 汇总起来，方便找接口做应用。",
-      "why_hot": "可能是做 AI 应用和小工具的人多了，找现成接口省事。",
-      "who": "做原型、练手项目和第三方集成的开发者。"
+    "freeCodeCamp/freeCodeCamp": {
+      "what": "免费学编程、数学和计算机知识的开源课程平台。",
+      "why_hot": "免费课程够系统，想入门或转行的人总会来找。",
+      "who": "适合编程新手和自学转行的人。"
     },
     "nilbuild/developer-roadmap": {
-      "what": "用交互式路线图和指南，帮开发者规划学习方向。",
-      "why_hot": "技术选择越来越多，清晰的学习路线更容易被收藏。",
-      "who": "编程新人、转岗者和想补齐技能的开发者。"
+      "what": "用交互式路线图帮开发者规划学习路径。",
+      "why_hot": "技术选择太多，清晰的学习路线很容易被收藏。",
+      "who": "适合想补技能或换方向的开发者。"
     },
     "vinta/awesome-python": {
-      "what": "按用途整理 Python 工具库，帮你快速选型。",
-      "why_hot": "AI 和自动化需求带热 Python，工具选型清单很实用。",
-      "who": "想找 Python 库、少走选型弯路的人。"
+      "what": "按用途整理 Python 工具和库的精选清单。",
+      "why_hot": "选库时翻一翻就有方向，省去不少搜索时间。",
+      "who": "适合经常选型的 Python 开发者。"
     },
-    "practical-tutorials/project-based-learning": {
-      "what": "收集项目式编程教程，让你边做东西边学。",
-      "why_hot": "只看教程容易卡住，能做出成品的学习方式更吸引人。",
-      "who": "学过基础、想靠实战巩固技能的人。"
+    "awesome-selfhosted/awesome-selfhosted": {
+      "what": "收集能部署在自己服务器上的开源服务。",
+      "why_hot": "想自己掌控数据和服务的人越来越爱找替代方案。",
+      "who": "适合喜欢自建服务和折腾服务器的人。"
     },
-    "affaan-m/ECC": {
-      "what": "为 AI 编程代理提供技能、记忆、安全与流程优化。",
-      "why_hot": "AI 编程普及后，大家开始关注代理怎么用得稳、跑得好。",
-      "who": "重度使用 AI 编程工具、想优化流程的人。"
+    "mattpocock/skills": {
+      "what": "分享面向工程师的 Agent 技能配置。",
+      "why_hot": "大家都在摸索怎么让编码 Agent 更懂实际开发。",
+      "who": "适合用 AI 辅助写代码的开发者。"
+    },
+    "react/react": {
+      "what": "构建网页和原生应用界面的组件库。",
+      "why_hot": "前端生态离不开它，学习和项目选型都会关注。",
+      "who": "适合前端和跨端应用开发者。"
     },
     "deepseek-ai/deepseek-harness": {
-      "what": "以插件为核心组织功能的 DeepSeek 代理框架。",
-      "why_hot": "可能踩中了代理工具热潮，插件化也方便扩展和定制。",
-      "who": "想搭建或定制 AI 代理工具的开发者。"
+      "what": "以插件为核心组织 AI Agent 能力的框架。",
+      "why_hot": "插件化方便扩展，正好契合 Agent 工具链需求。",
+      "who": "适合开发 AI Agent 和工具链的人。"
     },
     "TheAlgorithms/Python": {
-      "what": "用 Python 实现各类算法，方便阅读和练习。",
-      "why_hot": "算法学习和面试需求常在，直观的代码示例容易传播。",
-      "who": "准备算法面试、学数据结构的同学。"
+      "what": "用 Python 实现各类经典算法的代码库。",
+      "why_hot": "算法题常学常新，能直接读代码的资料很受欢迎。",
+      "who": "适合刷题、备面试和学算法的人。"
     },
-    "avelino/awesome-go": {
-      "what": "按类别收集 Go 框架、库和软件，方便找工具。",
-      "why_hot": "Go 常用于后端和云原生，成熟工具清单能省选型时间。",
-      "who": "写 Go 服务、准备做技术选型的开发者。"
+    "ohmyzsh/ohmyzsh": {
+      "what": "用主题和插件管理 zsh 终端配置的框架。",
+      "why_hot": "装上就能改善终端体验，插件多也省得自己折腾。",
+      "who": "适合天天用终端的开发者。"
     },
-    "521xueweihan/HelloGitHub": {
-      "what": "用中文分享有趣、适合入门的 GitHub 开源项目。",
-      "why_hot": "开源项目太多，中文筛选和介绍降低了发现好工具的门槛。",
-      "who": "想逛开源、找灵感或挑练手项目的人。"
+    "Significant-Gravitas/AutoGPT": {
+      "what": "提供构建和使用自主 AI 工具的开源项目。",
+      "why_hot": "自动执行任务仍是 AI 热点，老牌项目也容易被回看。",
+      "who": "适合探索 AI 自动化的开发者。"
     },
-    "github/gitignore": {
-      "what": "收集各种技术栈的 gitignore 模板，避免误提交文件。",
-      "why_hot": "新建项目就用得上，复制模板比自己查忽略规则省心。",
-      "who": "用 Git 管代码、经常初始化项目的人。"
+    "anthropics/skills": {
+      "what": "公开分享可供 Agent 使用的技能内容。",
+      "why_hot": "大家想让 Agent 稳定干活，现成技能值得参考。",
+      "who": "适合设计或使用 AI Agent 的人。"
     },
-    "msitarzewski/agency-agents": {
-      "what": "提供分工明确的 AI 代理角色，覆盖开发、运营等任务。",
-      "why_hot": "可能受多代理协作热潮推动，现成角色比从零写提示词省事。",
-      "who": "想尝试多角色 AI 工作流的开发者和运营。"
-    },
-    "open-webui/open-webui": {
-      "what": "给 Ollama、OpenAI API 等模型提供易用的网页聊天界面。",
-      "why_hot": "本地模型和私有部署需求升温，现成界面让使用门槛更低。",
-      "who": "想自建 AI 聊天界面的个人和团队。"
+    "twbs/bootstrap": {
+      "what": "快速搭建响应式网页的前端框架。",
+      "why_hot": "做原型和后台页面够快，成熟组件一直有需求。",
+      "who": "适合想快速做网页的开发者。"
     }
   }
 }
