@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """AI 每日早报：从各数据源挑选最值得读的新闻，生成中文一句话摘要。
 
-读取 data/github.json、data/hackernews.json、data/juejin.json、data/rss.json（官方+RSS 权威源），
+读取 data/github.json、data/hackernews.json、data/rss.json（官方+RSS 权威源），
 调用 OpenAI 兼容的 LLM API（默认 DeepSeek），输出 data/briefing.json。
 
 环境变量：
@@ -65,17 +65,6 @@ def collect_candidates():
                 'source': 'Hacker News',
                 'desc': (s.get('desc') or s.get('text') or '')[:200],
                 'meta': f"▲ {s.get('score', 0)}",
-            })
-
-    jj = load_json('juejin.json')
-    if jj:
-        for a in jj.get('articles', [])[:8]:
-            candidates.append({
-                'title': a.get('title', ''),
-                'url': a.get('url', ''),
-                'source': '掘金',
-                'desc': (a.get('desc') or a.get('brief') or '')[:200],
-                'meta': '',
             })
 
     rss = load_json('rss.json')
@@ -229,7 +218,7 @@ def save_outputs(briefing, today):
         '<channel>\n'
         f'  <title>今日科技早报 | xiaojj.pro</title>\n'
         f'  <link>{SITE_URL}/</link>\n'
-        f'  <description>每天早上 8 点，一份中文科技早报：AI 精选 GitHub、Hacker News、掘金最值得读的新闻。</description>\n'
+        f'  <description>每天早上 8 点，一份中文科技早报：AI 精选 GitHub、Hacker News 与权威科技媒体最值得读的新闻。</description>\n'
         f'  <language>zh-CN</language>\n'
         f'  <lastBuildDate>{pub_date}</lastBuildDate>\n'
         + '\n'.join(items_xml) + '\n'
