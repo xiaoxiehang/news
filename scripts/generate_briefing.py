@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""AI 每日早报：从各数据源挑选最值得读的新闻，生成中文一句话摘要。
+"""AI 每日早报：从权威 RSS 新闻源挑选最值得读的 AI 新闻，生成中文一句话摘要。
 
-读取 data/github.json、data/hackernews.json、data/rss.json（官方+RSS 权威源），
+读取 data/rss.json（10 个 AI/科技媒体 RSS 源），
 调用 OpenAI 兼容的 LLM API（默认 DeepSeek），输出 data/briefing.json。
+
+定位：AI 行业早报（官方动态 + 权威媒体 + AI 新品），
+与「极客资讯」（GitHub/HN 原始流）零重叠。
 
 环境变量：
   LLM_API_KEY   必填，没有则跳过（不报错，保留旧早报）
@@ -39,33 +42,9 @@ def load_json(name):
 
 
 def collect_candidates():
-    """从各数据源收集候选条目，返回 [{title, url, source, desc}]"""
+    """从 RSS 新闻源收集候选条目，返回 [{title, url, source, desc}]
+    （GitHub/HN 已移出选题池，归极客资讯，避免内容重复）"""
     candidates = []
-
-    gh = load_json('github.json')
-    if gh:
-        cats = gh.get('categories', {})
-        for cat_id in ('hot', 'trending'):
-            for r in cats.get(cat_id, {}).get('repos', [])[:6]:
-                candidates.append({
-                    'title': r.get('full_name') or r.get('name', ''),
-                    'url': r.get('html_url', ''),
-                    'source': 'GitHub',
-                    'desc': (r.get('description') or '')[:200],
-                    'meta': f"⭐ {r.get('stars', 0)} · {r.get('language') or ''}",
-                })
-
-    hn = load_json('hackernews.json')
-    if hn:
-        stories = sorted(hn.get('stories', []), key=lambda s: s.get('score', 0), reverse=True)
-        for s in stories[:8]:
-            candidates.append({
-                'title': s.get('title', ''),
-                'url': s.get('url', ''),
-                'source': 'Hacker News',
-                'desc': (s.get('desc') or s.get('text') or '')[:200],
-                'meta': f"▲ {s.get('score', 0)}",
-            })
 
     rss = load_json('rss.json')
     if rss:
@@ -113,8 +92,8 @@ def build_prompt(candidates):
 （英文标题要翻译成中文），并写一段 2-3 句话的「今日速览」概括整体热点。
 
 选题标准（按优先级）：
-1. 一手官方发布（OpenAI 官方等大厂公告）和权威媒体（量子位/The Verge/TechCrunch/MIT 科技评论）优先；
-2. 兼顾受众广度：8 条大致按「大厂/官方动态 2-3 条、权威媒体解读 2-3 条、AI 工具新品 1-2 条、社区热议 1-2 条」搭配；
+1. 一手官方发布（OpenAI 官方等大厂公告）和权威媒体（机器之心/虎嗅/InfoQ/The Verge/TechCrunch/MIT 科技评论）优先；
+2. 兼顾受众广度：8 条大致按「官方/大厂动态 2-3 条、权威媒体解读 3-4 条、AI 工具新品 1-2 条」搭配；
 3. 优先选普通人能看懂、觉得有用的，纯技术黑话、重复报道靠后。
 
 候选新闻：
@@ -230,7 +209,7 @@ def save_outputs(briefing, today):
         '<channel>\n'
         f'  <title>今日科技早报 | xiaojj.pro</title>\n'
         f'  <link>{SITE_URL}/</link>\n'
-        f'  <description>每天早上 8 点，一份中文科技早报：AI 精选 GitHub、Hacker News 与权威科技媒体最值得读的新闻。</description>\n'
+        f'  <description>每天早上 8 点，一份中文 AI 早报：精选权威科技媒体最值得读的 AI 新闻。</description>\n'
         f'  <language>zh-CN</language>\n'
         f'  <lastBuildDate>{pub_date}</lastBuildDate>\n'
         + '\n'.join(items_xml) + '\n'

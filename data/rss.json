@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-01 02:04:38",
+  "fetched_at": "2026-10-01 10:50:30",
   "feeds": [
     {
       "name": "OpenAI 官方",
@@ -91,7 +91,20 @@
     },
     {
       "name": "虎嗅",
-      "items": []
+      "items": [
+        {
+          "title": "特朗普宣布推出AI政府门户网站：America.gov",
+          "url": "https://www.huxiu.com/article/4894974.html?f=rss",
+          "desc": "",
+          "published": "Thu, 01 Oct 2026"
+        },
+        {
+          "title": "未来五年，最紧缺的AI人才之一：FDE",
+          "url": "https://www.huxiu.com/article/4894968.html?f=rss",
+          "desc": "",
+          "published": "Thu, 01 Oct 2026"
+        }
+      ]
     },
     {
       "name": "Solidot",
@@ -319,10 +332,22 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "Bruto",
-          "url": "https://www.producthunt.com/products/bruto",
-          "desc": "A task board that lives in your repo, for you and your AI Discussion | Link",
-          "published": "2026-09-25T05:54"
+          "title": "Overpath",
+          "url": "https://www.producthunt.com/products/overpath-ai",
+          "desc": "Your AI Teammate for Revenue Execution Discussion | Link",
+          "published": "2026-06-09T08:33"
+        },
+        {
+          "title": "Squint",
+          "url": "https://www.producthunt.com/products/squint",
+          "desc": "Drag a box on your screen and ask AI about it Discussion | Link",
+          "published": "2026-09-27T13:58"
+        },
+        {
+          "title": "Macaly Cloud",
+          "url": "https://www.producthunt.com/products/macaly",
+          "desc": "Build and publish sites with your Claude or ChatGPT Discussion | Link",
+          "published": "2026-09-22T04:55"
         },
         {
           "title": "m’kay",
@@ -331,40 +356,28 @@
           "published": "2026-09-28T19:18"
         },
         {
-          "title": "GitBot",
-          "url": "https://www.producthunt.com/products/gitbot-2",
-          "desc": "Build bots on the coding agent you already use Discussion | Link",
-          "published": "2026-09-28T04:05"
-        },
-        {
-          "title": "CrawlRaven MCP",
-          "url": "https://www.producthunt.com/products/crawlraven-mcp",
-          "desc": "Your SEO work, done from your AI agent Discussion | Link",
-          "published": "2026-09-29T23:51"
-        },
-        {
-          "title": "Zumbo",
-          "url": "https://www.producthunt.com/products/zumbo",
-          "desc": "Open source local AI voice-to-text for Mac for private STT Discussion | Link",
-          "published": "2026-09-28T00:36"
-        },
-        {
-          "title": "Agent Identity",
-          "url": "https://www.producthunt.com/products/agent-identity",
-          "desc": "Give every AI agent real identities, inboxes, and a phone Discussion | Link",
-          "published": "2026-09-28T15:09"
-        },
-        {
-          "title": "freddy.health",
-          "url": "https://www.producthunt.com/products/freddy",
-          "desc": "talk to your body in Claude, ChatGPT, Muse, or any other AI Discussion | Link",
-          "published": "2026-09-29T07:17"
-        },
-        {
           "title": "Rinkata",
           "url": "https://www.producthunt.com/products/rinkata",
           "desc": "One source of truth for your team and its AI agents Discussion | Link",
           "published": "2026-09-24T22:07"
+        },
+        {
+          "title": "Flocker Agent Profiles",
+          "url": "https://www.producthunt.com/products/flocker-agent-profiles",
+          "desc": "Profile Pages for Agents: your live AI collaboration network Discussion | Link",
+          "published": "2026-09-28T06:48"
+        },
+        {
+          "title": "Upsolve Data Models",
+          "url": "https://www.producthunt.com/products/upsolve-ai",
+          "desc": "Teach AI your metric definitions and business vocabulary Discussion | Link",
+          "published": "2026-09-29T14:40"
+        },
+        {
+          "title": "Campfire",
+          "url": "https://www.producthunt.com/products/campfire-12",
+          "desc": "The shared workspace for humans and coding agents Discussion | Link",
+          "published": "2026-09-29T20:18"
         }
       ]
     }

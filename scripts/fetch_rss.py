@@ -33,7 +33,7 @@ FEEDS = [
 ]
 
 AI_KEYWORDS = re.compile(
-    r'ai\b|人工智能|artificial intelligence|openai|anthropic|claude|gemini|'
+    r'(?<![a-z])ai(?![a-z])|人工智能|artificial intelligence|openai|anthropic|claude|gemini|'
     r'gpt|llm|大模型|chatgpt|copilot|智能体|agent|机器学习|深度学习|'
     r'machine learning|deep learning|neural|神经网络|diffusion|transformer|'
     r'sora|midjourney|stable diffusion|机器人|robot|自动驾驶|autonomous|'
