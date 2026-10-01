@@ -54,6 +54,20 @@ def fetch_review(appid):
         return None, None
 
 
+def resolve_image(appid):
+    """返回可用的封面图 URL；都不可用返回空字符串（前端用占位样式）"""
+    base = f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appid}"
+    for name in ("header.jpg", "capsule_616x353.jpg"):
+        url = f"{base}/{name}"
+        try:
+            r = requests.head(url, headers=UA, timeout=10)
+            if r.status_code == 200:
+                return url
+        except Exception:
+            pass
+    return ""
+
+
 def main():
     print("抓取 Steam 特惠/热销榜...", flush=True)
     cats = fetch_categories()
@@ -86,7 +100,7 @@ def main():
             "currency": it.get("currency") or "CNY",
             "positive_rate": round(rate * 100, 1),
             "total_reviews": total,
-            "header_image": f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appid}/header.jpg",
+            "header_image": resolve_image(appid),
             "url": f"https://store.steampowered.com/app/{appid}/",
             "score": round(score, 3),
         })
