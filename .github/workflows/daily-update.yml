@@ -105,6 +105,27 @@ jobs:
       continue-on-error: true
       run: python scripts/generate_xhs_cards.py
 
+    - name: QC Xiaohongshu package
+      if: ${{ inputs.only == 'all' || inputs.only == 'xhs' }}
+      id: qc1
+      continue-on-error: true
+      run: python scripts/qc_xhs_package.py
+
+    - name: Regenerate Xiaohongshu package (retry once after QC failure)
+      if: ${{ (inputs.only == 'all' || inputs.only == 'xhs') && steps.qc1.outcome == 'failure' }}
+      continue-on-error: true
+      env:
+        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+        LLM_MODEL: ${{ secrets.LLM_MODEL }}
+      run: |
+        python scripts/generate_xhs_post.py
+        python scripts/generate_xhs_cards.py
+
+    - name: QC Xiaohongshu package (second check, fails the job on bad package)
+      if: ${{ (inputs.only == 'all' || inputs.only == 'xhs') && steps.qc1.outcome == 'failure' }}
+      run: python scripts/qc_xhs_package.py
+
     - name: Commit and push
       run: |
         git config user.name "GitHub Actions Bot"
