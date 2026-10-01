@@ -3,7 +3,7 @@
 
 读取 data/xhs/<YYYY-MM-DD>/picks.json（新闻数据）与 post.json（文案/点评），
 输出到同一目录：
-  cover.png        封面：日期 + 今日AI早报 + 3 条头条
+  cover.png        封面：今日AI早报 + 3 条头条（不放日期，做长尾流量）
   card_01..08.png  每条新闻一张卡片：编号 / 标题 / 摘要 / 一句话点评 / 来源
   end.png          末页：今日金句 + 互动提问 + 引导收藏
 
@@ -107,9 +107,9 @@ def _centered(d, y, text, font, fill):
     return y
 
 
-def draw_cover(picks, date_str, path):
+def draw_cover(picks, path):
     img, d = _bg()
-    _header(d, date_str)
+    _header(d, '')  # 封面不放日期：去日期化有利于搜索长尾流量
     f_title = _font(110)
     _centered(d, 330, '今日AI早报', f_title, C_WHITE)
     # 黄色分隔线
@@ -233,14 +233,7 @@ def main():
         print('❌ 缺少 Pillow，请 pip install pillow')
         return
 
-    date_str = snap.get('date_str', today)
-    try:
-        dt = datetime.strptime(today, '%Y-%m-%d')
-        date_str = f'{dt.month}月{dt.day}日 星期{WEEKDAYS[dt.weekday()]}'
-    except Exception:
-        pass
-
-    draw_cover(picks, date_str, os.path.join(out_dir, 'cover.png'))
+    draw_cover(picks, os.path.join(out_dir, 'cover.png'))
     total = len(picks)
     for i, p in enumerate(picks):
         draw_card(p, items[i] if i < len(items) else {}, i, total,
