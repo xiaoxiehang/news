@@ -97,6 +97,28 @@
   .field-row { grid-template-columns: 1fr; }
   .item-prices { gap: 18px; }
 }
+/* 今日好价 */
+.deal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 8px; }
+.deal-card {
+  display: block; background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 18px; overflow: hidden; text-decoration: none; color: inherit;
+  box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
+}
+.deal-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.deal-img { position: relative; aspect-ratio: 460 / 215; background: var(--bg-secondary); }
+.deal-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.deal-badge {
+  position: absolute; left: 10px; bottom: 10px; padding: 5px 10px; border-radius: 10px;
+  background: #0a84ff; color: #fff; font-size: 13px; font-weight: 800;
+}
+.deal-body { padding: 12px 14px 14px; }
+.deal-name { font-size: 14px; font-weight: 700; margin: 0 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.deal-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.deal-final { font-size: 17px; font-weight: 800; color: var(--ink); }
+.deal-orig { font-size: 13px; color: var(--faint); text-decoration: line-through; }
+.deal-rate { font-size: 12px; color: var(--muted); }
+.deal-foot { font-size: 12px; color: var(--faint); margin: 0 0 26px; }
+@media (max-width: 720px) { .deal-grid { grid-template-columns: repeat(2, 1fr); } }
 </style>
 </head>
 <body>
@@ -116,7 +138,7 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="page-head">
   <div class="hero-eyebrow">鸡仔出品 · 工具</div>
   <h1 class="hero-title">降价提醒助手</h1>
   <p class="hero-sub">把想买的东西加进来，设一个心理价位。Steam 游戏和 App Store 应用每天自动查价，降到目标价就提醒你。</p>
@@ -126,6 +148,15 @@
 <div class="price-wrap">
 
   <div id="alert-zone"></div>
+
+  <section id="deals-section" style="display:none;">
+    <div class="section-head">
+      <h2 class="section-title">今日好价</h2>
+      <p class="section-desc" id="deals-date"></p>
+    </div>
+    <div class="deal-grid" id="deal-grid"></div>
+    <p class="deal-foot">Steam 国区特惠 · 按折扣力度 × 好评率 × 评价数排序，每天自动更新</p>
+  </section>
 
   <section class="card">
     <h2 class="card-title">添加追踪</h2>
@@ -463,6 +494,30 @@ function exportJson() {
 
 load();
 render();
+renderDeals();
+
+/* ---------- 今日好价 ---------- */
+function renderDeals() {
+  fetch('/data/deals.json')
+    .then(function(r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function(d) {
+      var items = (d && d.items) || [];
+      if (!items.length) return;
+      document.getElementById('deals-section').style.display = '';
+      document.getElementById('deals-date').textContent = (d.date || '') + ' · 共 ' + items.length + ' 款';
+      document.getElementById('deal-grid').innerHTML = items.map(function(it) {
+        return '<a class="deal-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
+          '<div class="deal-img"><img loading="lazy" src="' + esc(it.header_image) + '" alt="">' +
+          '<span class="deal-badge">-' + it.discount_percent + '%</span></div>' +
+          '<div class="deal-body"><p class="deal-name">' + esc(it.name) + '</p>' +
+          '<div class="deal-price"><span class="deal-final">¥' + it.final_price + '</span>' +
+          '<span class="deal-orig">¥' + it.original_price + '</span></div>' +
+          '<div class="deal-rate">好评 ' + it.positive_rate + '% · ' + it.total_reviews + ' 条评价</div>' +
+          '</div></a>';
+      }).join('');
+    })
+    .catch(function() { /* 无榜单数据时整个区块保持隐藏 */ });
+}
 </script>
 </body>
 </html>

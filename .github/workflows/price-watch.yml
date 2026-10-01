@@ -25,11 +25,14 @@ jobs:
           BARK_KEY: ${{ secrets.BARK_KEY }}
         run: python scripts/price_watch.py
 
+      - name: 抓取 Steam 每日好价榜
+        run: python scripts/fetch_deals.py
+
       - name: 提交价格更新
         run: |
           git config user.name "price-watch-bot"
           git config user.email "bot@xiaojj.pro"
-          git add data/prices.json
+          git add data/prices.json data/deals.json
           if git diff --cached --quiet; then
             echo "无价格变化，跳过提交"
           else
