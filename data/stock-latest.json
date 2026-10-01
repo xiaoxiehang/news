@@ -1,0 +1,103 @@
+{
+  "updated_at": "2026-10-01T01:37:25+00:00",
+  "updated_at_utc": "2026-10-01T01:37:25+00:00",
+  "source": "yahoo",
+  "note": "由 stock-watch workflow 每 15 分钟更新；页面在行情接口不可用时降级读取本文件",
+  "quotes": {
+    "AAPL": {
+      "price": 333.02,
+      "prev_close": 337.02,
+      "change_pct": -1.19,
+      "volume": 49875295,
+      "vol_base": 31508600,
+      "source": "yahoo",
+      "vol_ratio": 1.58,
+      "alerts": {
+        "change": {
+          "active": false,
+          "day": "2026-10-01"
+        },
+        "volume": {
+          "active": false,
+          "day": "2026-10-01"
+        }
+      }
+    },
+    "NVDA": {
+      "price": 228.38,
+      "prev_close": 225.51,
+      "change_pct": 1.27,
+      "volume": 118683065,
+      "vol_base": 102814200,
+      "source": "yahoo",
+      "vol_ratio": 1.15,
+      "alerts": {
+        "change": {
+          "active": false,
+          "day": "2026-10-01"
+        },
+        "volume": {
+          "active": false,
+          "day": "2026-10-01"
+        }
+      }
+    },
+    "TSLA": {
+      "price": 354.81,
+      "prev_close": 380.12,
+      "change_pct": -6.66,
+      "volume": 38511510,
+      "vol_base": 36027625,
+      "source": "yahoo",
+      "vol_ratio": 1.07,
+      "alerts": {
+        "change": {
+          "active": true,
+          "day": "2026-10-01"
+        },
+        "volume": {
+          "active": false,
+          "day": "2026-10-01"
+        }
+      }
+    },
+    "MSFT": {
+      "price": 512.9,
+      "prev_close": 500.59,
+      "change_pct": 2.46,
+      "volume": 27014238,
+      "vol_base": 23954850,
+      "source": "yahoo",
+      "vol_ratio": 1.13,
+      "alerts": {
+        "change": {
+          "active": false,
+          "day": "2026-10-01"
+        },
+        "volume": {
+          "active": false,
+          "day": "2026-10-01"
+        }
+      }
+    },
+    "AMZN": {
+      "price": 249.15,
+      "prev_close": 249.27,
+      "change_pct": -0.05,
+      "volume": 41456321,
+      "vol_base": 33407775,
+      "source": "yahoo",
+      "vol_ratio": 1.24,
+      "alerts": {
+        "change": {
+          "active": false,
+          "day": "2026-10-01"
+        },
+        "volume": {
+          "active": false,
+          "day": "2026-10-01"
+        }
+      }
+    }
+  }
+}

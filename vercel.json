@@ -1,0 +1,84 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "stock.xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "stock.xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)",
+      "destination": "/data/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "stock.xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/stock/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "stock.xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "price.xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "price.xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)",
+      "destination": "/data/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "price.xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/price/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "price.xiaojj.pro"
+        }
+      ]
+    }
+  ]
+}

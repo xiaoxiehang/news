@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>降价提醒助手 - 盯住想买的东西</title>
+<meta name="description" content="降价提醒助手：追踪 Steam 游戏、App Store 应用的价格，降到目标价就提醒你。">
+<link rel="stylesheet" href="/assets/apple.css">
+<style>
+/* 本页特有 */
+.price-wrap { max-width: 760px; margin: 0 auto; }
+.card {
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 24px; padding: clamp(22px, 4vw, 32px); margin-bottom: 20px;
+  box-shadow: var(--shadow-md);
+}
+.card-title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 6px; }
+.card-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0 0 18px; }
+/* 类型切换 */
+.type-seg { display: flex; gap: 8px; margin-bottom: 18px; }
+.type-seg button {
+  flex: 1; padding: 12px 8px; border-radius: 14px; border: 1px solid var(--hairline);
+  background: var(--bg-secondary); color: var(--muted); font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all .2s ease;
+}
+.type-seg button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+/* 表单 */
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+.field input {
+  width: 100%; box-sizing: border-box; padding: 13px 16px; font-size: 15px;
+  border: 1px solid var(--hairline); border-radius: 14px; background: var(--bg);
+  color: var(--ink); outline: none; transition: border-color .2s ease;
+}
+.field input:focus { border-color: var(--accent); }
+.field .hint { font-size: 12px; color: var(--faint); margin-top: 6px; line-height: 1.6; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+/* 提醒横幅 */
+.alert-banner {
+  border-radius: 20px; padding: 20px 22px; margin-bottom: 20px;
+  background: linear-gradient(135deg, #e8f1ff, #f5f9ff);
+  border: 1px solid #bcd6ff;
+}
+.alert-banner h3 { margin: 0 0 10px; font-size: 16px; color: #0a54c2; }
+.alert-banner ul { margin: 0; padding: 0; list-style: none; }
+.alert-banner li { font-size: 14px; color: #1c3f8f; padding: 6px 0; border-top: 1px dashed #bcd6ff; }
+.alert-banner li:first-child { border-top: none; }
+.alert-banner a { color: #0a54c2; text-decoration: none; font-weight: 600; }
+/* 商品卡 */
+.item {
+  background: var(--card); border: 1px solid var(--hairline); border-radius: 20px;
+  padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow-sm);
+}
+.item.hit { border-color: #bcd6ff; background: linear-gradient(180deg, #f2f7ff, var(--card) 60%); }
+.item-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.item-name { font-size: 16px; font-weight: 700; flex: 1; min-width: 0; }
+.item-name a { color: var(--ink); text-decoration: none; }
+.item-name a:hover { color: var(--accent); }
+.item-tag {
+  font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  background: rgba(0,122,255,.1); color: var(--accent);
+}
+.item-tag.manual { background: rgba(255,149,0,.12); color: #c26a00; }
+.item-prices { display: flex; gap: 26px; flex-wrap: wrap; margin-bottom: 10px; }
+.p-block .p-label { font-size: 12px; color: var(--faint); margin-bottom: 4px; }
+.p-block .p-val { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.p-block .p-val.hit { color: #0a54c2; }
+.p-block .p-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.item-status { font-size: 13px; color: var(--muted); margin-bottom: 12px; line-height: 1.6; }
+.item-status.hit { color: #0a54c2; font-weight: 600; }
+.item-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.mini-btn {
+  padding: 8px 16px; font-size: 13px; font-weight: 600; border-radius: 10px; cursor: pointer;
+  border: 1px solid var(--hairline); background: var(--bg-secondary); color: var(--ink);
+  transition: all .2s ease;
+}
+.mini-btn:hover { border-color: var(--accent); color: var(--accent); }
+.mini-btn.danger:hover { border-color: #ff3b30; color: #ff3b30; }
+.mini-btn:disabled { opacity: .5; cursor: wait; }
+.inline-edit { display: flex; gap: 8px; margin-top: 10px; }
+.inline-edit input {
+  flex: 1; padding: 9px 12px; font-size: 14px; border: 1px solid var(--accent);
+  border-radius: 10px; outline: none; background: var(--bg); color: var(--ink);
+}
+.empty { text-align: center; padding: 40px 20px; color: var(--faint); font-size: 14px; }
+.toast {
+  position: fixed; left: 50%; bottom: 32px; transform: translateX(-50%) translateY(20px);
+  background: rgba(20,20,22,.92); color: #fff; font-size: 14px; padding: 12px 22px;
+  border-radius: 999px; opacity: 0; pointer-events: none; transition: all .3s ease; z-index: 99;
+  max-width: 88vw; text-align: center;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.spin { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff; border-radius: 50%; animation: sp .7s linear infinite; vertical-align: -2px; }
+@keyframes sp { to { transform: rotate(360deg); } }
+@media (max-width: 560px) {
+  .field-row { grid-template-columns: 1fr; }
+  .item-prices { gap: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-title"><span class="brand-mark">鸡</span>鸡仔</div>
+      <div class="header-subtitle" id="header-subtitle">加载中...</div>
+    </div>
+    <nav class="header-nav">
+      <a href="/" class="nav-link">首页</a>
+      <a href="/xhs-tool.html" class="nav-link">小红书助手</a>
+      <a href="/zaobao.html" class="nav-link">AI早报</a>
+      <a href="/github.html" class="nav-link">极客资讯</a>
+      <a href="/video/" class="nav-link">电影发现</a>
+      <a href="/tv.html" class="nav-link">电视浏览器</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">鸡仔出品 · 工具</div>
+  <h1 class="hero-title">降价提醒助手</h1>
+  <p class="hero-sub">把想买的东西加进来，设一个心理价位。Steam 游戏和 App Store 应用每天自动查价，降到目标价就提醒你。</p>
+</section>
+
+<main>
+<div class="price-wrap">
+
+  <div id="alert-zone"></div>
+
+  <section class="card">
+    <h2 class="card-title">添加追踪</h2>
+    <p class="card-desc">数据保存在本机浏览器。想要关掉页面也能收到推送，可看下方「服务端推送」说明。</p>
+    <div class="type-seg" id="type-seg">
+      <button data-type="steam" class="on">Steam 游戏</button>
+      <button data-type="apple">App Store 应用</button>
+      <button data-type="manual">手动登记</button>
+    </div>
+
+    <div id="form-steam">
+      <div class="field">
+        <label>Steam App ID</label>
+        <input id="in-steam-id" inputmode="numeric" placeholder="例如 292030">
+        <div class="hint">打开 Steam 商店页面，网址里 app 后面的数字就是，例如 store.steampowered.com/app/292030/ 。添加时会自动查到游戏名和现价。</div>
+      </div>
+    </div>
+    <div id="form-apple" style="display:none;">
+      <div class="field">
+        <label>App Store ID</label>
+        <input id="in-apple-id" inputmode="numeric" placeholder="例如 284882215">
+        <div class="hint">App Store 分享链接里 id 后面的数字。添加时会自动查到应用名和国区现价。</div>
+      </div>
+    </div>
+    <div id="form-manual" style="display:none;">
+      <div class="field">
+        <label>商品名称</label>
+        <input id="in-m-name" placeholder="例如 某某耳机">
+      </div>
+      <div class="field">
+        <label>商品链接（可选）</label>
+        <input id="in-m-url" placeholder="https://">
+      </div>
+      <div class="field">
+        <label>当前价格（元）</label>
+        <input id="in-m-price" inputmode="decimal" placeholder="例如 299">
+        <div class="hint">淘宝、京东等暂不支持自动查价，需要你手动更新。建议每周看一眼顺手更新。</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>目标价（元）</label>
+      <input id="in-target" inputmode="decimal" placeholder="降到这个价格就提醒我，例如 99">
+    </div>
+    <button class="btn btn-primary btn-lg" id="add-btn" style="width:100%;" onclick="addItem()">开始追踪</button>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2 class="section-title">我的追踪</h2>
+      <p class="section-desc" id="list-count"></p>
+    </div>
+    <div id="item-list"></div>
+  </section>
+
+  <section class="card">
+    <h2 class="card-title">服务端推送</h2>
+    <p class="card-desc">网页版只在打开页面时提醒。想要每天自动巡检、降价后手机直接收到推送：<br>1. 在手机上安装 Bark App，把 BARK_KEY 配到仓库 Secrets；<br>2. 点击下方按钮导出追踪列表，粘贴到仓库 data/prices.json 的 items 里提交。<br>之后每天 01:00（UTC）自动查价，达标即推送。</p>
+    <button class="btn btn-secondary" onclick="exportJson()">导出追踪列表 JSON</button>
+  </section>
+
+</div>
+</main>
+
+<footer class="footer"></footer>
+<div class="toast" id="toast"></div>
+
+<script src="/scripts/header-info.js"></script>
+<script src="/scripts/footer.js"></script>
+<script>
+var LS_KEY = 'price_watch_items_v1';
+var items = [];
+var curType = 'steam';
+
+function load() {
+  try { items = JSON.parse(localStorage.getItem(LS_KEY)) || []; }
+  catch (e) { items = []; }
+}
+function save() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(items)); } catch (e) {}
+}
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._tm);
+  t._tm = setTimeout(function() { t.classList.remove('show'); }, 2400);
+}
+function fmt(n) {
+  if (n == null || isNaN(n)) return '—';
+  return '¥' + Number(n).toFixed(2);
+}
+function fetchTimeout(url, ms) {
+  var c = new AbortController();
+  var tm = setTimeout(function() { c.abort(); }, ms || 12000);
+  return fetch(url, { signal: c.signal }).finally(function() { clearTimeout(tm); });
+}
+
+/* ---------- 查价 ---------- */
+function parseSteam(data, appid) {
+  var e = data && data[String(appid)];
+  if (!e || !e.success) throw new Error('未找到该游戏，请检查 App ID');
+  var d = e.data || {};
+  var po = d.price_overview;
+  if (!po) return { name: d.name || ('Steam ' + appid), price: 0, currency: 'CNY', free: true };
+  return {
+    name: d.name || ('Steam ' + appid),
+    price: po.final / 100, currency: po.currency || 'CNY',
+    discount: po.discount_percent, initial: po.initial / 100
+  };
+}
+async function steamPrice(appid, full) {
+  // 先直连，失败（CORS 等）降级走服务端代理
+  var direct = 'https://store.steampowered.com/api/appdetails?appids=' + appid +
+    '&cc=cn' + (full ? '' : '&filters=price_overview');
+  try {
+    var r = await fetchTimeout(direct, 12000);
+    if (!r.ok) throw 0;
+    return parseSteam(await r.json(), appid);
+  } catch (e) {
+    var r2 = await fetchTimeout('/api/steam-price?appid=' + appid + (full ? '&full=1' : ''), 15000);
+    if (!r2.ok) throw new Error('查价失败，请稍后重试');
+    return parseSteam(await r2.json(), appid);
+  }
+}
+async function applePrice(id) {
+  var r = await fetchTimeout('https://itunes.apple.com/lookup?id=' + id + '&country=CN', 12000);
+  if (!r.ok) throw new Error('查价失败，请稍后重试');
+  var d = await r.json();
+  if (!d.resultCount) throw new Error('未找到该应用，请检查 ID');
+  var a = d.results[0];
+  return { name: a.trackName, price: Number(a.price) || 0, currency: a.currency || 'CNY' };
+}
+
+/* ---------- 添加 ---------- */
+document.getElementById('type-seg').addEventListener('click', function(e) {
+  var b = e.target.closest('button'); if (!b) return;
+  curType = b.dataset.type;
+  document.querySelectorAll('#type-seg button').forEach(function(x) {
+    x.classList.toggle('on', x === b);
+  });
+  ['steam', 'apple', 'manual'].forEach(function(t) {
+    document.getElementById('form-' + t).style.display = t === curType ? '' : 'none';
+  });
+});
+
+async function addItem() {
+  var target = parseFloat(document.getElementById('in-target').value);
+  if (!(target >= 0)) { toast('请填写目标价'); return; }
+  var btn = document.getElementById('add-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span> 查价中…';
+  try {
+    var item = null;
+    if (curType === 'steam') {
+      var appid = document.getElementById('in-steam-id').value.trim();
+      if (!/^\d+$/.test(appid)) throw new Error('请填写正确的 App ID');
+      if (items.some(function(x) { return x.type === 'steam' && x.appid === appid; }))
+        throw new Error('该游戏已在追踪中');
+      var s = await steamPrice(appid, true);
+      item = {
+        id: 's' + Date.now(), type: 'steam', appid: appid, name: s.name,
+        url: 'https://store.steampowered.com/app/' + appid + '/',
+        target: target, current: s.price, firstPrice: s.price,
+        currency: s.currency, updatedAt: Date.now(),
+        notified: s.price <= target
+      };
+    } else if (curType === 'apple') {
+      var aid = document.getElementById('in-apple-id').value.trim();
+      if (!/^\d+$/.test(aid)) throw new Error('请填写正确的 App ID');
+      if (items.some(function(x) { return x.type === 'apple' && x.appid === aid; }))
+        throw new Error('该应用已在追踪中');
+      var a = await applePrice(aid);
+      item = {
+        id: 'a' + Date.now(), type: 'apple', appid: aid, name: a.name,
+        url: 'https://apps.apple.com/cn/app/id' + aid,
+        target: target, current: a.price, firstPrice: a.price,
+        currency: a.currency, updatedAt: Date.now(),
+        notified: a.price <= target
+      };
+    } else {
+      var name = document.getElementById('in-m-name').value.trim();
+      var price = parseFloat(document.getElementById('in-m-price').value);
+      var url = document.getElementById('in-m-url').value.trim();
+      if (!name) throw new Error('请填写商品名称');
+      if (!(price >= 0)) throw new Error('请填写当前价格');
+      item = {
+        id: 'm' + Date.now(), type: 'manual', appid: '', name: name,
+        url: url, target: target, current: price, firstPrice: price,
+        currency: 'CNY', updatedAt: Date.now(),
+        notified: price <= target
+      };
+    }
+    items.unshift(item);
+    save(); render();
+    document.getElementById('in-target').value = '';
+    toast(item.notified ? '已添加，且已达到目标价' : '已开始追踪');
+  } catch (e) {
+    toast(e.message || '添加失败');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '开始追踪';
+  }
+}
+
+/* ---------- 列表 ---------- */
+function dropPct(it) {
+  if (!it.firstPrice || it.firstPrice <= 0 || it.current == null) return null;
+  return (it.firstPrice - it.current) / it.firstPrice * 100;
+}
+function render() {
+  var zone = document.getElementById('alert-zone');
+  var hits = items.filter(function(x) { return x.current != null && x.current <= x.target; });
+  if (hits.length) {
+    zone.innerHTML =
+      '<div class="alert-banner"><h3>降价提醒：' + hits.length + ' 件商品已达到目标价</h3><ul>' +
+      hits.map(function(x) {
+        return '<li><a href="' + esc(x.url || '#') + '" target="_blank" rel="noopener">' + esc(x.name) +
+          '</a>　现价 ' + fmt(x.current) + ' / 目标 ' + fmt(x.target) + '</li>';
+      }).join('') + '</ul></div>';
+  } else {
+    zone.innerHTML = '';
+  }
+
+  var list = document.getElementById('item-list');
+  document.getElementById('list-count').textContent = items.length ? '共 ' + items.length + ' 件' : '';
+  if (!items.length) {
+    list.innerHTML = '<div class="empty">还没有追踪任何商品，先从上面添加一件吧</div>';
+    return;
+  }
+  list.innerHTML = items.map(function(x) {
+    var hit = x.current != null && x.current <= x.target;
+    var dp = dropPct(x);
+    var tag = x.type === 'manual'
+      ? '<span class="item-tag manual">手动 · 需手动更新价格</span>'
+      : '<span class="item-tag">自动查价</span>';
+    var status;
+    if (x.current == null) status = '上次查价失败，点「刷新价格」重试';
+    else if (hit) status = '已低于目标价 ' + fmt(x.target - x.current);
+    else if (x.type === 'manual') status = '需手动更新价格 · 还差 ' + fmt(x.current - x.target) + ' 到达目标';
+    else status = '监控中 · 还差 ' + fmt(x.current - x.target) + ' 到达目标';
+    var dropLine = dp == null ? ''
+      : '<div class="p-sub">' + (dp > 0.05 ? '已降 ' + dp.toFixed(1) + '%' : (dp < -0.05 ? '上涨 ' + Math.abs(dp).toFixed(1) + '%' : '价格持平')) + '</div>';
+    var refreshBtn = x.type === 'manual' ? '' :
+      '<button class="mini-btn" onclick="refreshItem(\'' + x.id + '\', this)">刷新价格</button>';
+    var manualBtn = x.type === 'manual' ?
+      '<button class="mini-btn" onclick="editManual(\'' + x.id + '\')">更新价格</button>' : '';
+    return '<div class="item' + (hit ? ' hit' : '') + '" data-id="' + x.id + '">' +
+      '<div class="item-top"><div class="item-name">' +
+      (x.url ? '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.name) + '</a>' : esc(x.name)) +
+      '</div>' + tag + '</div>' +
+      '<div class="item-prices">' +
+      '<div class="p-block"><div class="p-label">现价</div><div class="p-val' + (hit ? ' hit' : '') + '">' + fmt(x.current) + '</div>' + dropLine + '</div>' +
+      '<div class="p-block"><div class="p-label">目标价</div><div class="p-val">' + fmt(x.target) + '</div></div>' +
+      '</div>' +
+      '<div class="item-status' + (hit ? ' hit' : '') + '">' + esc(status) + '</div>' +
+      '<div class="item-actions">' + refreshBtn + manualBtn +
+      '<button class="mini-btn danger" onclick="removeItem(\'' + x.id + '\')">删除</button></div>' +
+      '<div class="inline-edit" id="edit-' + x.id + '" style="display:none;"></div>' +
+      '</div>';
+  }).join('');
+}
+
+async function refreshItem(id, btn) {
+  var it = items.find(function(x) { return x.id === id; });
+  if (!it) return;
+  btn.disabled = true; btn.textContent = '查价中…';
+  try {
+    var r = it.type === 'steam' ? await steamPrice(it.appid, false) : await applePrice(it.appid);
+    it.current = r.price; it.currency = r.currency; it.updatedAt = Date.now();
+    if (it.current <= it.target && !it.notified) {
+      it.notified = true;
+      toast('降价了：' + it.name + ' 现价 ' + fmt(it.current));
+    } else if (it.current > it.target && it.notified) {
+      it.notified = false;
+    }
+    save(); render();
+  } catch (e) {
+    toast(e.message || '查价失败');
+    btn.disabled = false; btn.textContent = '刷新价格';
+  }
+}
+
+function editManual(id) {
+  var it = items.find(function(x) { return x.id === id; });
+  if (!it) return;
+  var box = document.getElementById('edit-' + id);
+  box.style.display = 'flex';
+  box.innerHTML = '<input id="edit-in-' + id + '" inputmode="decimal" value="' + it.current + '">' +
+    '<button class="mini-btn" onclick="saveManual(\'' + id + '\')">保存</button>' +
+    '<button class="mini-btn" onclick="cancelManual(\'' + id + '\')">取消</button>';
+  document.getElementById('edit-in-' + id).focus();
+}
+function cancelManual(id) {
+  document.getElementById('edit-' + id).style.display = 'none';
+}
+function saveManual(id) {
+  var it = items.find(function(x) { return x.id === id; });
+  var v = parseFloat(document.getElementById('edit-in-' + id).value);
+  if (!(v >= 0) || !it) { toast('请填写正确的价格'); return; }
+  it.current = v; it.updatedAt = Date.now();
+  if (v <= it.target && !it.notified) { it.notified = true; toast('已更新，且已达到目标价'); }
+  else if (v > it.target && it.notified) { it.notified = false; toast('已更新'); }
+  else { toast('已更新'); }
+  save(); render();
+}
+
+function removeItem(id) {
+  if (!confirm('确定删除这件商品吗？')) return;
+  items = items.filter(function(x) { return x.id !== id; });
+  save(); render();
+}
+
+/* ---------- 导出（服务端格式） ---------- */
+function exportJson() {
+  var doc = {
+    items: items.map(function(x) {
+      return {
+        type: x.type, appid: x.appid || '', name: x.name, url: x.url || '',
+        target: x.target, currency: x.currency || 'CNY',
+        current: x.current, notified: !!x.notified, history: []
+      };
+    })
+  };
+  var text = JSON.stringify(doc, null, 2);
+  navigator.clipboard.writeText(text).then(
+    function() { toast('已复制，到仓库 data/prices.json 粘贴提交即可'); },
+    function() { toast('复制失败，请手动复制'); }
+  );
+}
+
+load();
+render();
+</script>
+</body>
+</html>

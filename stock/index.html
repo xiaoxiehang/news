@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>美股异动推送 - 自选股实时异动提醒</title>
+<meta name="description" content="美股交易时段实时监控自选股：涨跌幅突破阈值、成交量异常放量，第一时间页面置顶告警并浏览器通知。">
+<link rel="stylesheet" href="/assets/apple.css">
+<style>
+/* 本页特有 */
+.stock-status {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: 20px 24px; margin-bottom: 20px;
+}
+.status-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); flex: none; }
+.status-dot.live { animation: pulse 1.6s ease-in-out infinite; }
+.status-dot.closed { background: var(--faint); animation: none; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+.status-main { flex: 1; min-width: 200px; }
+.status-title { font-size: 17px; font-weight: 700; }
+.status-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.status-sub .mono { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.stock-row {
+  background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm); padding: 16px 18px; margin-bottom: 12px;
+  display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; align-items: center;
+}
+.stock-sym { font-size: 18px; font-weight: 700; letter-spacing: .02em; }
+.stock-price { font-size: 15px; color: var(--muted); margin-left: 10px; font-variant-numeric: tabular-nums; }
+.stock-chg { font-size: 15px; font-weight: 700; margin-left: 8px; font-variant-numeric: tabular-nums; }
+.stock-chg.up { color: var(--red); }
+.stock-chg.down { color: var(--green); }
+.tri { display: inline-block; width: 0; height: 0; margin-right: 4px; vertical-align: 1px;
+  border-left: 5px solid transparent; border-right: 5px solid transparent; }
+.tri.up { border-bottom: 7px solid var(--red); }
+.tri.down { border-top: 7px solid var(--green); }
+.stock-vol { font-size: 13px; color: var(--muted); grid-column: 1 / -1; font-variant-numeric: tabular-nums; }
+.stock-ctl { grid-column: 1 / -1; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  border-top: 1px solid var(--hairline); padding-top: 10px; margin-top: 4px; }
+.stock-ctl label { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.stock-ctl input { width: 64px; padding: 6px 8px; font-size: 14px; border: 1px solid var(--line);
+  border-radius: 8px; background: var(--bg); color: var(--ink); }
+.btn-del { border: none; background: rgba(229,9,20,.08); color: var(--red); font-size: 13px;
+  padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.btn-del:hover { background: rgba(229,9,20,.16); }
+.add-row { display: flex; gap: 10px; margin-top: 16px; }
+.add-row input { flex: 1; padding: 12px 16px; font-size: 15px; border: 1px solid var(--line);
+  border-radius: var(--radius-sm); background: var(--card); color: var(--ink); text-transform: uppercase; }
+.alert-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--card); border: 1px solid var(--hairline); border-left: 3px solid var(--red);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); padding: 14px 16px; margin-bottom: 10px;
+}
+.alert-item.vol { border-left-color: var(--amber); }
+.alert-tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+  background: rgba(229,9,20,.1); color: var(--red); white-space: nowrap; }
+.alert-item.vol .alert-tag { background: var(--amber-soft); color: var(--amber); }
+.alert-body { flex: 1; font-size: 14px; line-height: 1.6; }
+.alert-time { font-size: 12px; color: var(--faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.empty-note { text-align: center; color: var(--faint); font-size: 14px; padding: 28px 0; }
+.note-list { font-size: 14px; color: var(--muted); line-height: 1.9; margin: 0; padding-left: 20px; }
+.note-list li { margin-bottom: 4px; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="https://xiaojj.pro/" style="text-decoration:none;color:inherit;display:inline-flex;align-items:center;">
+        <span class="brand-mark">鸡</span>
+      </a>
+      <div class="header-title">美股异动</div>
+      <div class="header-subtitle" id="header-subtitle">加载中...</div>
+    </div>
+    <nav class="header-nav">
+      <a href="https://xiaojj.pro/" class="nav-link">鸡仔首页</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">美股盘中实时监控</div>
+  <h1 class="hero-title">美股异动推送</h1>
+  <p class="hero-sub">自选股涨跌幅突破阈值、成交量异常放量时，第一时间在页面置顶告警，并通过浏览器通知提醒你。</p>
+</section>
+
+<main>
+  <section class="section" style="padding-top:0;">
+    <div class="stock-status reveal">
+      <span class="status-dot closed" id="status-dot"></span>
+      <div class="status-main">
+        <div class="status-title" id="status-title">正在判断市场状态…</div>
+        <div class="status-sub" id="status-sub"></div>
+      </div>
+      <button class="btn btn-secondary" id="notify-btn" style="padding:10px 20px;font-size:14px;">开启浏览器通知</button>
+    </div>
+
+    <div class="section-head reveal">
+      <h2 class="section-title">自选股</h2>
+      <p class="section-desc">阈值修改后自动保存，仅保存在本机浏览器</p>
+    </div>
+    <div id="stock-list"></div>
+    <div class="add-row reveal">
+      <input id="add-input" placeholder="输入代码，如 AAPL" maxlength="10" autocomplete="off">
+      <button class="btn btn-primary" id="add-btn" style="padding:12px 24px;">添加</button>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="section-head reveal">
+      <h2 class="section-title">告警流</h2>
+      <p class="section-desc">触发阈值的异动会置顶显示在这里</p>
+    </div>
+    <div id="alert-stream"></div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="section-head reveal">
+      <h2 class="section-title">说明</h2>
+    </div>
+    <ul class="note-list reveal">
+      <li>涨跌幅按当日相对前收盘价计算；放量按当日累计成交量相对近 5 个交易日均量计算。</li>
+      <li>行情优先走 Stooq，失败自动降级 Yahoo Finance；页面每 60 秒刷新一次（仅交易时段）。</li>
+      <li>告警为边沿触发：同一股票同类告警每天只提醒一次，避免刷屏。</li>
+      <li>手机推送：服务端每 15 分钟巡检一次，触发后经 Bark 推送到 iPhone（需在仓库 Secrets 配置 BARK_KEY）。</li>
+      <li>美股交易时段为美东时间周一至周五 9:30–16:00，节假日休市。</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer"></footer>
+
+<script src="/scripts/header-info.js"></script>
+<script src="/scripts/footer.js"></script>
+<script>
+(function() {
+  'use strict';
+  var LS_WL = 'stock_watchlist_v1';
+  var LS_ALERTS = 'stock_alerts_v1';
+  var LS_STATE = 'stock_alert_state_v1';
+  var LS_LAST = 'stock_last_price_v1';
+
+  var DEFAULTS = [
+    { symbol: 'AAPL', change_pct: 3, vol_mult: 2 },
+    { symbol: 'NVDA', change_pct: 3, vol_mult: 2 },
+    { symbol: 'TSLA', change_pct: 3, vol_mult: 2 },
+    { symbol: 'MSFT', change_pct: 3, vol_mult: 2 },
+    { symbol: 'AMZN', change_pct: 3, vol_mult: 2 }
+  ];
+
+  function load(k, fb) {
+    try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? fb : v; }
+    catch (e) { return fb; }
+  }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  var watchlist = load(LS_WL, null);
+  if (!Array.isArray(watchlist) || !watchlist.length) {
+    watchlist = DEFAULTS.map(function(d) { return { symbol: d.symbol, change_pct: d.change_pct, vol_mult: d.vol_mult }; });
+    save(LS_WL, watchlist);
+  }
+  var alerts = load(LS_ALERTS, []);
+  var alertState = load(LS_STATE, {});
+  var lastPrice = load(LS_LAST, {});
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function fmtVol(v) {
+    v = +v || 0;
+    if (v >= 1e8) return (v / 1e8).toFixed(2) + '亿';
+    if (v >= 1e4) return (v / 1e4).toFixed(1) + '万';
+    return String(Math.round(v));
+  }
+  function utcDay() { return new Date().toISOString().slice(0, 10); }
+
+  /* ---------- 美东时间 ---------- */
+  function etParts(d) {
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', weekday: 'short', year: 'numeric', month: '2-digit',
+      day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+    }).formatToParts(d);
+    var o = {};
+    parts.forEach(function(p) { o[p.type] = p.value; });
+    return o;
+  }
+  function isMarketOpen(d) {
+    d = d || new Date();
+    var p = etParts(d);
+    if (p.weekday === 'Sat' || p.weekday === 'Sun') return false;
+    var mins = (+p.hour % 24) * 60 + (+p.minute);
+    return mins >= 570 && mins < 960; // 9:30–16:00
+  }
+  function zonedToUtc(y, mo, d, h, mi) {
+    var guess = Date.UTC(y, mo - 1, d, h, mi);
+    var p = etParts(new Date(guess));
+    var asUTC = Date.UTC(+p.year, +p.month - 1, +p.day, (+p.hour) % 24, +p.minute, +p.second);
+    return new Date(guess - (asUTC - guess));
+  }
+  function nextOpen() {
+    var now = new Date();
+    for (var i = 0; i < 8; i++) {
+      var probe = new Date(now.getTime() + i * 864e5);
+      var p = etParts(probe);
+      if (p.weekday === 'Sat' || p.weekday === 'Sun') continue;
+      var t = zonedToUtc(+p.year, +p.month, +p.day, 9, 30);
+      if (t > now) return t;
+    }
+    return null;
+  }
+  function nextClose() {
+    var now = new Date(), p = etParts(now);
+    return zonedToUtc(+p.year, +p.month, +p.day, 16, 0);
+  }
+  function fmtCountdown(ms) {
+    if (ms < 0) ms = 0;
+    var s = Math.floor(ms / 1000);
+    var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = s % 60;
+    function pad(n) { return String(n).padStart(2, '0'); }
+    return pad(h) + ':' + pad(m) + ':' + pad(ss);
+  }
+
+  /* ---------- 渲染 ---------- */
+  var quotes = {}; // symbol -> {price, change_pct, volume, vol_base, vol_ratio}
+
+  function renderList() {
+    var el = document.getElementById('stock-list');
+    el.innerHTML = watchlist.map(function(w) {
+      var q = quotes[w.symbol] || {};
+      var chg = (typeof q.change_pct === 'number') ? q.change_pct : null;
+      var chgHtml = chg == null
+        ? '<span class="stock-chg">--</span>'
+        : '<span class="stock-chg ' + (chg >= 0 ? 'up' : 'down') + '"><span class="tri ' + (chg >= 0 ? 'up' : 'down') + '"></span>' + (chg >= 0 ? '+' : '') + chg.toFixed(2) + '%</span>';
+      var priceHtml = (typeof q.price === 'number') ? '<span class="stock-price">' + q.price.toFixed(2) + '</span>' : '<span class="stock-price">--</span>';
+      var volHtml = (typeof q.volume === 'number')
+        ? '成交量 ' + fmtVol(q.volume) + (q.vol_ratio ? '（' + q.vol_ratio.toFixed(1) + 'x）' : '')
+        : '暂无行情';
+      return '<div class="stock-row reveal in" data-sym="' + esc(w.symbol) + '">' +
+        '<div><span class="stock-sym">' + esc(w.symbol) + '</span>' + priceHtml + chgHtml + '</div>' +
+        '<button class="btn-del" data-del="' + esc(w.symbol) + '">删除</button>' +
+        '<div class="stock-vol">' + esc(volHtml) + '</div>' +
+        '<div class="stock-ctl">' +
+          '<label>涨跌阈值 ±<input type="number" min="0.5" max="50" step="0.5" value="' + (+w.change_pct) + '" data-thr="change_pct" data-sym="' + esc(w.symbol) + '"> %</label>' +
+          '<label>放量 <input type="number" min="1" max="20" step="0.5" value="' + (+w.vol_mult) + '" data-thr="vol_mult" data-sym="' + esc(w.symbol) + '"> 倍</label>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function renderAlerts() {
+    var el = document.getElementById('alert-stream');
+    if (!alerts.length) {
+      el.innerHTML = '<div class="empty-note">暂无告警。交易时段内触发阈值会第一时间显示在这里。</div>';
+      return;
+    }
+    el.innerHTML = alerts.map(function(a) {
+      return '<div class="alert-item' + (a.kind === 'volume' ? ' vol' : '') + '">' +
+        '<span class="alert-tag">' + (a.kind === 'volume' ? '放量' : '异动') + '</span>' +
+        '<div class="alert-body">' + esc(a.text) + '</div>' +
+        '<span class="alert-time">' + esc(a.time) + '</span>' +
+      '</div>';
+    }).join('');
+  }
+
+  function pushAlert(sym, kind, text) {
+    var now = new Date();
+    var time = now.toLocaleString('zh-CN', { hour12: false });
+    alerts.unshift({ sym: sym, kind: kind, text: text, time: time });
+    alerts = alerts.slice(0, 30);
+    save(LS_ALERTS, alerts);
+    renderAlerts();
+    if ('Notification' in window && Notification.permission === 'granted') {
+      try { new Notification(kind === 'volume' ? '美股放量' : '美股异动', { body: text }); } catch (e) {}
+    }
+  }
+
+  function checkAlerts() {
+    var day = utcDay();
+    watchlist.forEach(function(w) {
+      var q = quotes[w.symbol];
+      if (!q || typeof q.change_pct !== 'number') return;
+      var st = alertState[w.symbol] || {};
+      var jobs = [];
+      var chg = q.change_pct;
+      if (Math.abs(chg) >= (+w.change_pct)) {
+        jobs.push(['change', (chg >= 0 ? '+' : '') + chg.toFixed(2) + '%（阈值±' + (+w.change_pct) + '%），现价 ' + q.price.toFixed(2)]);
+      }
+      var vr = q.vol_ratio || 0;
+      if (vr >= (+w.vol_mult) && (q.vol_base || 0) > 0) {
+        jobs.push(['volume', '放量 ' + vr.toFixed(1) + 'x（阈值 ' + (+w.vol_mult) + 'x），成交量 ' + fmtVol(q.volume)]);
+      }
+      jobs.forEach(function(job) {
+        var kind = job[0], desc = job[1];
+        var prev = st[kind];
+        var fired = prev && prev.day === day && prev.active;
+        st[kind] = { day: day, active: true };
+        if (!fired) pushAlert(w.symbol, kind, w.symbol + ' ' + desc);
+      });
+      // 条件解除则重置，允许下次再触发
+      if (!jobs.some(function(j) { return j[0] === 'change'; })) st.change = { day: day, active: false };
+      if (!jobs.some(function(j) { return j[0] === 'volume'; })) st.volume = { day: day, active: false };
+      alertState[w.symbol] = st;
+    });
+    save(LS_STATE, alertState);
+  }
+
+  /* ---------- 行情 ---------- */
+  function normalize(sym, q) {
+    var out = { price: +q.price || 0, volume: +q.volume || 0, vol_base: +q.vol_base || 0 };
+    if (typeof q.change_pct === 'number') {
+      out.change_pct = q.change_pct;
+    } else if (lastPrice[sym] && out.price > 0) {
+      out.change_pct = Math.round((out.price - lastPrice[sym]) / lastPrice[sym] * 10000) / 100;
+    } else {
+      out.change_pct = 0;
+    }
+    out.vol_ratio = out.vol_base > 0 ? out.volume / out.vol_base : 0;
+    if (out.price > 0) lastPrice[sym] = out.price;
+    return out;
+  }
+
+  var lastSource = '';
+  function loadQuotes() {
+    var syms = watchlist.map(function(w) { return w.symbol; }).join(',');
+    if (!syms) return Promise.resolve(false);
+    function viaApi() {
+      return fetch('/api/stock?symbols=' + encodeURIComponent(syms)).then(function(r) {
+        if (!r.ok) throw 0;
+        return r.json();
+      }).then(function(j) {
+        if (!j || !j.ok || !j.quotes) throw 0;
+        Object.keys(j.quotes).forEach(function(s) {
+          if (!j.quotes[s].error) quotes[s] = normalize(s, j.quotes[s]);
+        });
+        lastSource = '实时行情（' + (j.source || '') + '）';
+        return true;
+      });
+    }
+    function viaSnapshot() {
+      return fetch('/data/stock-latest.json').then(function(r) {
+        if (!r.ok) throw 0;
+        return r.json();
+      }).then(function(j) {
+        if (!j || !j.quotes) throw 0;
+        Object.keys(j.quotes).forEach(function(s) {
+          if (watchlist.some(function(w) { return w.symbol === s; })) quotes[s] = normalize(s, j.quotes[s]);
+        });
+        lastSource = '服务端快照' + (j.updated_at ? '（' + j.updated_at.slice(5, 16).replace('T', ' ') + '）' : '');
+        return true;
+      });
+    }
+    return viaApi().catch(viaSnapshot).catch(function() { return false; })
+      .then(function(ok) { save(LS_LAST, lastPrice); return ok; });
+  }
+
+  /* ---------- 状态栏 ---------- */
+  function updateStatus() {
+    var dot = document.getElementById('status-dot');
+    var title = document.getElementById('status-title');
+    var sub = document.getElementById('status-sub');
+    if (isMarketOpen()) {
+      dot.className = 'status-dot live';
+      title.textContent = '交易中';
+      var ms = nextClose() - new Date();
+      sub.innerHTML = '距收盘 <span class="mono">' + fmtCountdown(ms) + '</span> · 每 60 秒刷新 · ' + esc(lastSource);
+    } else {
+      dot.className = 'status-dot closed';
+      title.textContent = '休市中';
+      var no = nextOpen();
+      var cd = no ? fmtCountdown(no - new Date()) : '--';
+      sub.innerHTML = '下次开盘倒计时 <span class="mono">' + cd + '</span> · ' + esc(lastSource);
+    }
+  }
+
+  /* ---------- 事件 ---------- */
+  document.getElementById('stock-list').addEventListener('click', function(e) {
+    var del = e.target.getAttribute && e.target.getAttribute('data-del');
+    if (del) {
+      watchlist = watchlist.filter(function(w) { return w.symbol !== del; });
+      save(LS_WL, watchlist);
+      renderList();
+    }
+  });
+  document.getElementById('stock-list').addEventListener('change', function(e) {
+    var t = e.target;
+    if (!t.getAttribute || !t.getAttribute('data-thr')) return;
+    var sym = t.getAttribute('data-sym'), key = t.getAttribute('data-thr');
+    var v = parseFloat(t.value);
+    if (!(v > 0)) { renderList(); return; }
+    watchlist.forEach(function(w) { if (w.symbol === sym) w[key] = v; });
+    save(LS_WL, watchlist);
+  });
+  function addSymbol() {
+    var inp = document.getElementById('add-input');
+    var sym = inp.value.trim().toUpperCase().replace(/[^A-Z.]/g, '').slice(0, 10);
+    if (!sym) return;
+    if (watchlist.some(function(w) { return w.symbol === sym; })) { inp.value = ''; return; }
+    watchlist.push({ symbol: sym, change_pct: 3, vol_mult: 2 });
+    save(LS_WL, watchlist);
+    inp.value = '';
+    renderList();
+    tick(true);
+  }
+  document.getElementById('add-btn').addEventListener('click', addSymbol);
+  document.getElementById('add-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') addSymbol();
+  });
+  document.getElementById('notify-btn').addEventListener('click', function() {
+    if (!('Notification' in window)) { this.textContent = '当前浏览器不支持通知'; return; }
+    var btn = this;
+    Notification.requestPermission().then(function(p) {
+      btn.textContent = p === 'granted' ? '通知已开启' : '通知未授权';
+    });
+  });
+  if ('Notification' in window && Notification.permission === 'granted') {
+    document.getElementById('notify-btn').textContent = '通知已开启';
+  }
+
+  /* ---------- 主循环 ---------- */
+  function tick(force) {
+    loadQuotes().then(function() {
+      renderList();
+      if (isMarketOpen() || force) checkAlerts();
+      updateStatus();
+    });
+  }
+
+  renderList();
+  renderAlerts();
+  updateStatus();
+  tick(true);
+  setInterval(function() { updateStatus(); }, 1000);
+  setInterval(function() { if (isMarketOpen()) tick(false); }, 60000);
+
+  // 进入动画
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en, i) {
+        if (en.isIntersecting) {
+          en.target.style.transitionDelay = (i * 60) + 'ms';
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(function(el) { io.observe(el); });
+  } else {
+    els.forEach(function(el) { el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
