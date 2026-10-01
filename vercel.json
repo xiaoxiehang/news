@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/rewrite-test",
+      "destination": "/stock/index.html"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/$1",
       "has": [
