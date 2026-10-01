@@ -85,7 +85,7 @@ def build_prompt(briefing):
    比如"打工人必看8条""这3个工具先收藏"。前 18 字内含"AI"关键词，不用"最/第一"等极限词。
 2. 开头 hook：2 行口语化文案，先给结论、制造期待。
 3. 为每条新闻写：
-   - point（2-3 句口语化介绍，第一人称像朋友聊天，把技术黑话翻译成人话，不说公文腔）；
+   - point（1-2 句口语化介绍，第一人称像朋友聊天，把技术黑话翻译成人话，不说公文腔，不超过 60 字）；
    - usage（一句话"普通人能怎么用"，具体、可行动，不超过 40 字；没有明确用法的就写实在话如"吃瓜了解一下就行"）；
    - comment（一句话点评，大白话、有观点，程序员和非程序员都能看懂，不超过 40 字）。
 4. order：把 8 条按"普通人获得感"从强到弱排序，输出原序号数组（如 [7,6,1,5,4,2,3,8]），
@@ -93,6 +93,8 @@ def build_prompt(briefing):
 5. 结尾 question：一句具体的开放性提问，引导评论。
 6. tags：5-8 个全中文话题标签，大词+人群词+精准词组合，必须包含"鸡仔AI早报"。
 7. jinju：今日金句一句话，和效率/好奇心/打工人相关，口语化。
+8. 平台限制：小红书正文最多 1000 字（含末尾 #标签行）。请控制 point/usage/comment
+   的长度，让组装后的正文（hook + 8 条 + 结尾提问 + 声明 + 标签行）尽量不超过 1000 字。
 
 只返回 JSON，不要有其他内容，格式：
 {{"title": "标题", "hook": "开头两行文案（用\\n分隔）",
@@ -126,14 +128,18 @@ def fallback_post(briefing):
     }
 
 
-def assemble_body(post, picks):
-    """组装完整正文：hook + 清单 + 结尾引导 + AI 声明。picks 为重排后的新闻列表。"""
+def assemble_body(post, picks, include_point=True):
+    """组装完整正文：hook + 清单 + 结尾引导 + AI 声明。picks 为重排后的新闻列表。
+
+    include_point=False 时去掉每条的 point 长描述（小红书正文上限 1000 字时的
+    精简模式：保留标题/用法/点评/来源）。
+    """
     parts = [post['hook'], '', '📋 今日 8 条速览', '']
     numerals = '①②③④⑤⑥⑦⑧'
     for i, p in enumerate(picks):
         item = post['items'][i] if i < len(post['items']) else {}
         parts.append(f"{numerals[i]} {p['title']}")
-        if item.get('point'):
+        if include_point and item.get('point'):
             parts.append(item['point'])
         if item.get('usage'):
             parts.append(f"💡 你能怎么用：{item['usage']}")
@@ -147,6 +153,12 @@ def assemble_body(post, picks):
     parts.append('')
     parts.append(AI_DISCLAIMER)
     return '\n'.join(parts).strip()
+
+
+def published_text(post):
+    """发布时实际填入平台的完整文本：正文 + 换行 + #标签。"""
+    tags_line = ' '.join('#' + t for t in (post.get('tags') or []))
+    return (post.get('body') or '').strip() + '\n' + tags_line
 
 
 def apply_order(picks, order):
@@ -218,6 +230,10 @@ def main():
             f, ensure_ascii=False, indent=2)
 
     post['body'] = assemble_body(post, ordered_picks)
+    # 小红书正文上限 1000 字（含末尾 #标签行）：超限则去掉每条的 point 长描述
+    if len(published_text(post)) > 1000:
+        post['body'] = assemble_body(post, ordered_picks, include_point=False)
+        print(f"   正文超 1000 字，已按精简模式重组（去 point 长描述）")
     post['date'] = today
     post['generated_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 

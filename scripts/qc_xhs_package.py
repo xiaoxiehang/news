@@ -63,6 +63,15 @@ def check_package(date):
     elif tags[0] != "鸡仔AI早报":
         fails.append(f"FAIL: tags 规范 - 首位应为'鸡仔AI早报'，实际为: {tags[0]}")
 
+    # c2. 正文 + #标签行 合计不超过 1000 字（小红书平台正文上限）
+    body = post.get("body") or ""
+    tags_line = " ".join("#" + str(t) for t in (tags or []))
+    published_len = len(body.strip()) + 1 + len(tags_line)
+    if published_len > 1000:
+        fails.append(
+            f"FAIL: 正文长度 - 正文+标签行共 {published_len} 字，超过小红书 1000 字上限"
+        )
+
     # d. picks.json 存在；len(items) == len(picks)；每条 item 的 usage 非空
     picks_path = pkg / "picks.json"
     items = post.get("items") or []
