@@ -17,7 +17,7 @@
 .card-title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 6px; }
 .card-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0 0 18px; }
 /* 类型切换 */
-.type-seg { display: flex; gap: 8px; margin-bottom: 18px; }
+.type-seg { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
 .type-seg button {
   flex: 1; padding: 12px 8px; border-radius: 14px; border: 1px solid var(--hairline);
   background: var(--bg-secondary); color: var(--muted); font-size: 14px; font-weight: 600;
@@ -61,6 +61,8 @@
   background: rgba(0,122,255,.1); color: var(--accent);
 }
 .item-tag.manual { background: rgba(255,149,0,.12); color: #c26a00; }
+.item-tag.travel { background: rgba(10,132,255,.12); color: #0a6cd6; }
+.item-tag.ticket { background: rgba(88,86,214,.12); color: #4a48b8; }
 .item-prices { display: flex; gap: 26px; flex-wrap: wrap; margin-bottom: 10px; }
 .p-block .p-label { font-size: 12px; color: var(--faint); margin-bottom: 4px; }
 .p-block .p-val { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
@@ -170,6 +172,9 @@
       <button data-type="steam" class="on">Steam 游戏</button>
       <button data-type="apple">App Store 应用</button>
       <button data-type="manual">手动登记</button>
+      <button data-type="flight">机票</button>
+      <button data-type="hotel">酒店</button>
+      <button data-type="ticket">演出票务</button>
     </div>
 
     <div id="form-steam">
@@ -202,7 +207,53 @@
       </div>
     </div>
 
-    <div class="field">
+    <div id="form-flight" style="display:none;">
+      <div class="field">
+        <label>出发地</label>
+        <input id="in-f-origin" placeholder="例如 上海">
+      </div>
+      <div class="field">
+        <label>目的地</label>
+        <input id="in-f-dest" placeholder="例如 北京">
+      </div>
+      <div class="field">
+        <label>出行日期</label>
+        <input id="in-f-date" type="date">
+        <div class="hint">每天自动帮你查一次这条航线的价格，降到目标价就通知你。</div>
+      </div>
+    </div>
+    <div id="form-hotel" style="display:none;">
+      <div class="field">
+        <label>城市</label>
+        <input id="in-h-city" placeholder="例如 上海">
+      </div>
+      <div class="field">
+        <label>酒店关键词</label>
+        <input id="in-h-kw" placeholder="例如 外滩茂悦大酒店">
+      </div>
+      <div class="field">
+        <label>入住日期</label>
+        <input id="in-h-date" type="date">
+        <div class="hint">每天自动帮你查一次该酒店的价格，降到目标价就通知你。</div>
+      </div>
+    </div>
+    <div id="form-ticket" style="display:none;">
+      <div class="field">
+        <label>演出名称</label>
+        <input id="in-t-name" placeholder="例如 周杰伦 2026 上海演唱会">
+      </div>
+      <div class="field">
+        <label>演出链接</label>
+        <input id="in-t-url" placeholder="大麦 / 猫眼演出详情页链接">
+      </div>
+      <div class="field">
+        <label>场次备注（可选）</label>
+        <input id="in-t-note" placeholder="例如 10月1日场，想买看台票">
+        <div class="hint">每天自动检查开票状态，一开票就通知你。票务不需要填目标价。</div>
+      </div>
+    </div>
+
+    <div class="field" id="field-target">
       <label>目标价（元）</label>
       <input id="in-target" inputmode="decimal" placeholder="降到这个价格就提醒我，例如 99">
     </div>
@@ -219,7 +270,7 @@
 
   <section class="card">
     <h2 class="card-title">服务端推送</h2>
-    <p class="card-desc">网页版只在打开页面时提醒。想要每天自动巡检、降价后手机直接收到推送：<br>1. 在手机上安装 Bark App，把 BARK_KEY 配到仓库 Secrets；<br>2. 点击下方按钮导出追踪列表，粘贴到仓库 data/prices.json 的 items 里提交。<br>之后每天 01:00（UTC）自动查价，达标即推送。</p>
+    <p class="card-desc">网页版只在打开页面时提醒。Steam / App Store：在手机上安装 Bark App，把 BARK_KEY 配到仓库 Secrets，再点击下方按钮导出追踪列表，粘贴到仓库 data/prices.json 的 items 里提交，之后每天 01:00（UTC）自动查价，达标即推送。<br><br>机票 / 酒店 / 演出票务：由我每天自动检查一次，有降价或开票直接在这儿聊天里告诉你。点下方导出后把 JSON 发给我，我来录入。</p>
     <button class="btn btn-secondary" onclick="exportJson()">导出追踪列表 JSON</button>
   </section>
 
@@ -307,14 +358,15 @@ document.getElementById('type-seg').addEventListener('click', function(e) {
   document.querySelectorAll('#type-seg button').forEach(function(x) {
     x.classList.toggle('on', x === b);
   });
-  ['steam', 'apple', 'manual'].forEach(function(t) {
+  ['steam', 'apple', 'manual', 'flight', 'hotel', 'ticket'].forEach(function(t) {
     document.getElementById('form-' + t).style.display = t === curType ? '' : 'none';
   });
+  document.getElementById('field-target').style.display = curType === 'ticket' ? 'none' : '';
 });
 
 async function addItem() {
-  var target = parseFloat(document.getElementById('in-target').value);
-  if (!(target >= 0)) { toast('请填写目标价'); return; }
+  var target = curType === 'ticket' ? null : parseFloat(document.getElementById('in-target').value);
+  if (curType !== 'ticket' && !(target >= 0)) { toast('请填写目标价'); return; }
   var btn = document.getElementById('add-btn');
   btn.disabled = true;
   btn.innerHTML = '<span class="spin"></span> 查价中…';
@@ -346,6 +398,49 @@ async function addItem() {
         currency: a.currency, updatedAt: Date.now(),
         notified: a.price <= target
       };
+    } else if (curType === 'flight') {
+      var o = document.getElementById('in-f-origin').value.trim();
+      var d = document.getElementById('in-f-dest').value.trim();
+      var dt = document.getElementById('in-f-date').value;
+      if (!o || !d) throw new Error('请填写出发地和目的地');
+      if (!dt) throw new Error('请选择出行日期');
+      var fname = o + ' → ' + d + ' · ' + dt;
+      if (items.some(function(x) { return x.type === 'flight' && x.name === fname; }))
+        throw new Error('该航线已在追踪中');
+      item = {
+        id: 'f' + Date.now(), type: 'flight', appid: '', name: fname,
+        origin: o, dest: d, date: dt, url: '',
+        target: target, current: null, firstPrice: null,
+        currency: 'CNY', updatedAt: Date.now(), notified: false
+      };
+    } else if (curType === 'hotel') {
+      var hc = document.getElementById('in-h-city').value.trim();
+      var hk = document.getElementById('in-h-kw').value.trim();
+      var hd = document.getElementById('in-h-date').value;
+      if (!hc || !hk) throw new Error('请填写城市和酒店关键词');
+      if (!hd) throw new Error('请选择入住日期');
+      var hname = hc + ' · ' + hk + ' · ' + hd;
+      if (items.some(function(x) { return x.type === 'hotel' && x.name === hname; }))
+        throw new Error('该酒店已在追踪中');
+      item = {
+        id: 'h' + Date.now(), type: 'hotel', appid: '', name: hname,
+        city: hc, keyword: hk, date: hd, url: '',
+        target: target, current: null, firstPrice: null,
+        currency: 'CNY', updatedAt: Date.now(), notified: false
+      };
+    } else if (curType === 'ticket') {
+      var tname = document.getElementById('in-t-name').value.trim();
+      var turl = document.getElementById('in-t-url').value.trim();
+      var tnote = document.getElementById('in-t-note').value.trim();
+      if (!tname) throw new Error('请填写演出名称');
+      if (items.some(function(x) { return x.type === 'ticket' && x.name === tname && x.url === turl; }))
+        throw new Error('该演出已在追踪中');
+      item = {
+        id: 't' + Date.now(), type: 'ticket', appid: '', name: tname,
+        url: turl, note: tnote, target: null, current: null,
+        status: '待检查', onSale: false,
+        currency: 'CNY', updatedAt: Date.now(), notified: false
+      };
     } else {
       var name = document.getElementById('in-m-name').value.trim();
       var price = parseFloat(document.getElementById('in-m-price').value);
@@ -376,13 +471,20 @@ function dropPct(it) {
   if (!it.firstPrice || it.firstPrice <= 0 || it.current == null) return null;
   return (it.firstPrice - it.current) / it.firstPrice * 100;
 }
+function isHit(x) {
+  if (x.type === 'ticket') return !!x.onSale;
+  return x.current != null && x.target != null && x.current <= x.target;
+}
 function render() {
   var zone = document.getElementById('alert-zone');
-  var hits = items.filter(function(x) { return x.current != null && x.current <= x.target; });
+  var hits = items.filter(isHit);
   if (hits.length) {
     zone.innerHTML =
-      '<div class="alert-banner"><h3>降价提醒：' + hits.length + ' 件商品已达到目标价</h3><ul>' +
+      '<div class="alert-banner"><h3>' + (hits.some(function(x){return x.type==='ticket';}) ? '提醒' : '降价提醒') + '：' + hits.length + ' 项有新动态</h3><ul>' +
       hits.map(function(x) {
+        if (x.type === 'ticket')
+          return '<li><a href="' + esc(x.url || '#') + '" target="_blank" rel="noopener">' + esc(x.name) +
+            '</a>　已开票，' + esc(x.status || '') + '</li>';
         return '<li><a href="' + esc(x.url || '#') + '" target="_blank" rel="noopener">' + esc(x.name) +
           '</a>　现价 ' + fmt(x.current) + ' / 目标 ' + fmt(x.target) + '</li>';
       }).join('') + '</ul></div>';
@@ -397,32 +499,46 @@ function render() {
     return;
   }
   list.innerHTML = items.map(function(x) {
-    var hit = x.current != null && x.current <= x.target;
+    var hit = isHit(x);
     var dp = dropPct(x);
-    var tag = x.type === 'manual'
-      ? '<span class="item-tag manual">手动 · 需手动更新价格</span>'
-      : '<span class="item-tag">自动查价</span>';
+    var tag;
+    if (x.type === 'manual') tag = '<span class="item-tag manual">手动 · 需手动更新价格</span>';
+    else if (x.type === 'flight' || x.type === 'hotel') tag = '<span class="item-tag travel">旅行 · 每天自动查价</span>';
+    else if (x.type === 'ticket') tag = '<span class="item-tag ticket">票务 · 每天检查开票</span>';
+    else tag = '<span class="item-tag">自动查价</span>';
     var status;
-    if (x.current == null) status = '上次查价失败，点「刷新价格」重试';
+    if (x.type === 'ticket') {
+      status = x.onSale ? '已开票，快去抢票' : '监控中 · ' + (x.status || '待检查');
+    }
+    else if (x.current == null) status = '等待首次自动查价（每天一次）';
     else if (hit) status = '已低于目标价 ' + fmt(x.target - x.current);
     else if (x.type === 'manual') status = '需手动更新价格 · 还差 ' + fmt(x.current - x.target) + ' 到达目标';
     else status = '监控中 · 还差 ' + fmt(x.current - x.target) + ' 到达目标';
-    var dropLine = dp == null ? ''
+    var dropLine = (x.type === 'ticket' || dp == null) ? ''
       : '<div class="p-sub">' + (dp > 0.05 ? '已降 ' + dp.toFixed(1) + '%' : (dp < -0.05 ? '上涨 ' + Math.abs(dp).toFixed(1) + '%' : '价格持平')) + '</div>';
-    var refreshBtn = x.type === 'manual' ? '' :
-      '<button class="mini-btn" onclick="refreshItem(\'' + x.id + '\', this)">刷新价格</button>';
-    var manualBtn = x.type === 'manual' ?
+    var priceBlock;
+    if (x.type === 'ticket') {
+      priceBlock =
+        '<div class="p-block"><div class="p-label">当前状态</div><div class="p-val' + (hit ? ' hit' : '') + '">' + esc(x.status || '待检查') + '</div></div>' +
+        '<div class="p-block"><div class="p-label">提醒条件</div><div class="p-val">开票即推</div></div>';
+    } else {
+      priceBlock =
+        '<div class="p-block"><div class="p-label">现价</div><div class="p-val' + (hit ? ' hit' : '') + '">' + fmt(x.current) + '</div>' + dropLine + '</div>' +
+        '<div class="p-block"><div class="p-label">目标价</div><div class="p-val">' + fmt(x.target) + '</div></div>';
+    }
+    var refreshBtn = (x.type === 'steam' || x.type === 'apple') ?
+      '<button class="mini-btn" onclick="refreshItem(\'' + x.id + '\', this)">刷新价格</button>' : '';
+    var manualBtn = (x.type === 'manual' || x.type === 'flight' || x.type === 'hotel') ?
       '<button class="mini-btn" onclick="editManual(\'' + x.id + '\')">更新价格</button>' : '';
+    var ticketBtn = x.type === 'ticket' ?
+      '<button class="mini-btn" onclick="editTicket(\'' + x.id + '\')">更新状态</button>' : '';
     return '<div class="item' + (hit ? ' hit' : '') + '" data-id="' + x.id + '">' +
       '<div class="item-top"><div class="item-name">' +
       (x.url ? '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.name) + '</a>' : esc(x.name)) +
       '</div>' + tag + '</div>' +
-      '<div class="item-prices">' +
-      '<div class="p-block"><div class="p-label">现价</div><div class="p-val' + (hit ? ' hit' : '') + '">' + fmt(x.current) + '</div>' + dropLine + '</div>' +
-      '<div class="p-block"><div class="p-label">目标价</div><div class="p-val">' + fmt(x.target) + '</div></div>' +
-      '</div>' +
+      '<div class="item-prices">' + priceBlock + '</div>' +
       '<div class="item-status' + (hit ? ' hit' : '') + '">' + esc(status) + '</div>' +
-      '<div class="item-actions">' + refreshBtn + manualBtn +
+      '<div class="item-actions">' + refreshBtn + manualBtn + ticketBtn +
       '<button class="mini-btn danger" onclick="removeItem(\'' + x.id + '\')">删除</button></div>' +
       '<div class="inline-edit" id="edit-' + x.id + '" style="display:none;"></div>' +
       '</div>';
@@ -473,6 +589,31 @@ function saveManual(id) {
   save(); render();
 }
 
+function editTicket(id) {
+  var it = items.find(function(x) { return x.id === id; });
+  if (!it) return;
+  var box = document.getElementById('edit-' + id);
+  box.style.display = 'flex';
+  var opts = ['待检查', '未开票', '开票中', '已售罄'].map(function(s) {
+    return '<option value="' + s + '"' + (it.status === s ? ' selected' : '') + '>' + s + '</option>';
+  }).join('');
+  box.innerHTML = '<select id="edit-in-' + id + '">' + opts + '</select>' +
+    '<button class="mini-btn" onclick="saveTicket(\'' + id + '\')">保存</button>' +
+    '<button class="mini-btn" onclick="cancelManual(\'' + id + '\')">取消</button>';
+}
+function saveTicket(id) {
+  var it = items.find(function(x) { return x.id === id; });
+  var v = document.getElementById('edit-in-' + id).value;
+  if (!it) return;
+  it.status = v;
+  it.onSale = (v === '开票中');
+  it.updatedAt = Date.now();
+  if (it.onSale && !it.notified) { it.notified = true; toast('状态已更新：已开票'); }
+  else if (!it.onSale && it.notified) { it.notified = false; toast('已更新'); }
+  else { toast('已更新'); }
+  save(); render();
+}
+
 function removeItem(id) {
   if (!confirm('确定删除这件商品吗？')) return;
   items = items.filter(function(x) { return x.id !== id; });
@@ -483,11 +624,15 @@ function removeItem(id) {
 function exportJson() {
   var doc = {
     items: items.map(function(x) {
-      return {
+      var o = {
         type: x.type, appid: x.appid || '', name: x.name, url: x.url || '',
         target: x.target, currency: x.currency || 'CNY',
         current: x.current, notified: !!x.notified, history: []
       };
+      if (x.type === 'flight') { o.origin = x.origin; o.dest = x.dest; o.date = x.date; }
+      if (x.type === 'hotel') { o.city = x.city; o.keyword = x.keyword; o.date = x.date; }
+      if (x.type === 'ticket') { o.note = x.note || ''; o.status = x.status || '待检查'; o.onSale = !!x.onSale; }
+      return o;
     })
   };
   var text = JSON.stringify(doc, null, 2);
