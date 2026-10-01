@@ -5,6 +5,26 @@
       "destination": "/stock/index.html"
     },
     {
+      "source": "/host-test",
+      "destination": "/stock/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "xiaojj.pro"
+        }
+      ]
+    },
+    {
+      "source": "/host-test2",
+      "destination": "/stock/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "stock.xiaojj.pro"
+        }
+      ]
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/$1",
       "has": [
