@@ -9,11 +9,12 @@ export default function middleware(request) {
   const host = (request.headers.get('host') || '').split(':')[0].toLowerCase();
   const pathname = url.pathname;
 
-  // 共享路径：永远直通（接口、静态资源、数据）
+  // 共享路径：永远直通（接口、静态资源、数据、共享脚本）
   if (
     pathname.startsWith('/api/') ||
     pathname.startsWith('/assets/') ||
-    pathname.startsWith('/data/')
+    pathname.startsWith('/data/') ||
+    pathname.startsWith('/scripts/')
   ) {
     return next();
   }
