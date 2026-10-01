@@ -31,8 +31,14 @@
       ]
     },
     {
-      "source": "/",
-      "destination": "/price/index.html"
+      "source": "/index.html",
+      "destination": "/price/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "stock.xiaojj.pro"
+        }
+      ]
     },
     {
       "source": "/(.*)",
