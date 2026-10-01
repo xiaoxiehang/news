@@ -21,11 +21,11 @@ UA = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'}
 # (显示名, RSS 地址, 是否需要 AI 关键词过滤, 取几条)
 FEEDS = [
     ('OpenAI 官方', 'https://openai.com/news/rss.xml', False, 5),
-    ('量子位', 'https://www.qbitai.com/feed', False, 8),
-    ('IT之家', 'https://www.ithome.com/rss/', True, 8),
-    ('少数派', 'https://sspai.com/feed', True, 6),
-    ('爱范儿', 'https://www.ifanr.com/feed', True, 6),
-    ('V2EX', 'https://www.v2ex.com/index.xml', True, 8),
+    ('机器之心', 'https://wechat2rss.bestblogs.dev/feed/8d97af31b0de9e48da74558af128a4673d78c9a3.xml', False, 8),
+    ('虎嗅', 'https://rss.huxiu.com/', True, 8),
+    ('Solidot', 'https://www.solidot.org/index.rss', True, 8),
+    ('大模型智能', 'https://wechat2rss.bestblogs.dev/feed/bfc6440c1a2443fab9a6bf607137d41db5cd5c93.xml', False, 6),
+    ('InfoQ 推荐', 'https://plink.anyfeeder.com/infoq/recommend', True, 6),
     ('The Verge', 'https://www.theverge.com/rss/index.xml', True, 6),
     ('TechCrunch', 'https://techcrunch.com/feed/', True, 6),
     ('MIT 科技评论', 'https://www.technologyreview.com/feed/', True, 6),

@@ -25,7 +25,7 @@ LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.deepseek.com').rstrip('/')
 LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'gpt-6-sol'
 
-MAX_CANDIDATES = 24
+MAX_CANDIDATES = 40
 MAX_PICKS = 8
 
 
@@ -69,15 +69,27 @@ def collect_candidates():
 
     rss = load_json('rss.json')
     if rss:
-        for feed in rss.get('feeds', []):
-            for it in feed.get('items', [])[:8]:
-                candidates.append({
-                    'title': it.get('title', ''),
-                    'url': it.get('url', ''),
-                    'source': feed.get('name', 'RSS'),
-                    'desc': (it.get('desc') or '')[:200],
-                    'meta': it.get('published') or '',
-                })
+        feeds = rss.get('feeds', [])
+        # 轮询取条目：每个源每轮贡献 1 条，保证所有源都有机会进入候选池
+        #（之前按源顺序取，前面的源会把 MAX_CANDIDATES 占满，后面的源永远进不来）
+        per_feed = [f.get('items', [])[:8] for f in feeds]
+        idx = 0
+        while len(candidates) < MAX_CANDIDATES:
+            added = False
+            for fi, items in enumerate(per_feed):
+                if idx < len(items) and len(candidates) < MAX_CANDIDATES:
+                    it = items[idx]
+                    candidates.append({
+                        'title': it.get('title', ''),
+                        'url': it.get('url', ''),
+                        'source': feeds[fi].get('name', 'RSS'),
+                        'desc': (it.get('desc') or '')[:200],
+                        'meta': it.get('published') or '',
+                    })
+                    added = True
+            if not added:
+                break
+            idx += 1
 
     # 去重（按 url）
     seen, uniq = set(), []
