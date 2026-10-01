@@ -9,15 +9,18 @@ export default function middleware(request) {
   const host = (request.headers.get('host') || '').split(':')[0].toLowerCase();
   const pathname = url.pathname;
 
-  // 共享路径：永远直通（接口、静态资源、数据、共享脚本）
+  // 共享路径：永远直通（接口、静态资源、数据、共享脚本、下载文件）
   if (
     pathname.startsWith('/api/') ||
     pathname.startsWith('/assets/') ||
     pathname.startsWith('/data/') ||
-    pathname.startsWith('/scripts/')
+    pathname.startsWith('/scripts/') ||
+    pathname.startsWith('/downloads/')
   ) {
     return next();
   }
+
+  const SUBDOMAINS = ['stock.xiaojj.pro', 'price.xiaojj.pro', 'video.xiaojj.pro', 'tv.xiaojj.pro'];
 
   // 旧页面 301 跳转（2026-10 网站结构重组：资讯/创作聚合页）
   const LEGACY_REDIRECTS = {
@@ -29,11 +32,20 @@ export default function middleware(request) {
     '/xhs.html': '/studio.html',
     '/xhs-tool.html': '/studio.html#tool',
   };
-  if (LEGACY_REDIRECTS[pathname] && host !== 'stock.xiaojj.pro' && host !== 'price.xiaojj.pro') {
+  if (LEGACY_REDIRECTS[pathname] && !SUBDOMAINS.includes(host)) {
     return new Response(null, {
       status: 301,
       headers: { Location: LEGACY_REDIRECTS[pathname] },
     });
+  }
+
+  // tv.xiaojj.pro：独立产品页，根路径直接服务 tv.html
+  if (host === 'tv.xiaojj.pro') {
+    if (pathname === '/') {
+      url.pathname = '/tv.html';
+      return rewrite(url);
+    }
+    return next();
   }
 
   let prefix = '';
@@ -41,6 +53,8 @@ export default function middleware(request) {
     prefix = '/stock';
   } else if (host === 'price.xiaojj.pro') {
     prefix = '/price';
+  } else if (host === 'video.xiaojj.pro') {
+    prefix = '/video';
   } else {
     return next();
   }

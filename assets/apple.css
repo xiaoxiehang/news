@@ -128,6 +128,16 @@ img { max-width: 100%; }
   min-height: 0;
   padding: 88px var(--pad-x) 56px;
 }
+/* ============ 瘦页头（小页面用，不占空间） ============ */
+.page-head {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 108px var(--pad-x) 6px;
+}
+.page-head .hero-eyebrow { font-size: 13px; margin-bottom: 10px; }
+.page-head .hero-title { font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.01em; margin: 0 0 8px; }
+.page-head .hero-sub { font-size: 15px; margin: 0; }
+.page-head .hero-meta { margin-top: 10px; font-size: 13px; }
 .hero-eyebrow {
   font-size: 15px;
   font-weight: 700;
@@ -432,6 +442,7 @@ textarea.input { resize: vertical; min-height: 84px; }
   .section { padding: 52px 20px; }
   .hero { padding: 72px 20px 56px; min-height: 78vh; }
   .hero-compact { padding: 64px 20px 40px; }
+  .page-head { padding: 92px 20px 4px; }
   .card-grid { grid-template-columns: 1fr; }
   .news-grid { grid-template-columns: 1fr; }
   .feature-card { padding: 24px; }
