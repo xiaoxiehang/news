@@ -1,54 +1,54 @@
 {
   "date": "2026-10-01",
   "date_str": "2026年10月01日",
-  "overview": "今天的热点一边是 AI 更深入日常工作：OpenAI 推出持续协助处理任务的助手，谷歌公布新模型，小企业也获得更多 AI 培训支持。另一边，模型能力越强，安全防护、使用限制和人才短缺就越受关注。",
+  "overview": "今日热点集中在新模型发布与安全防护：谷歌公布新模型，OpenAI则披露打击模型能力窃取的行动。中国生成式 AI 用户突破 7 亿；与此同时，DeepSeek 开源新组件，Reddit 收紧旧版网站访问以应对 AI 抓取。",
   "picks": [
     {
-      "title": "OpenAI 推出主动式助手 Dots",
-      "summary": "Dots 可持续协助处理复杂项目和日常任务，用户仍能掌控进度。",
-      "url": "https://openai.com/index/introducing-dots",
-      "source": "OpenAI 官方"
-    },
-    {
-      "title": "Manus 发布 2.0 版及全天候智能体 Cue",
-      "summary": "Manus 更新至 2.0 版，并推出全天候智能体 Cue。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060477&idx=2&sn=ee9eb2ee3287c13bba78bf08f5d42a29",
-      "source": "机器之心"
-    },
-    {
-      "title": "未来五年，哪类 AI 人才最紧缺？",
-      "summary": "虎嗅关注能帮助企业把 AI 真正用起来的人才缺口。",
-      "url": "https://www.huxiu.com/article/4894968.html?f=rss",
-      "source": "虎嗅"
-    },
-    {
-      "title": "中国生成式 AI 用户突破 7 亿",
-      "summary": "CNNIC 数据显示，超半数国人已使用生成式 AI，问答最普遍。",
-      "url": "https://www.solidot.org/story?sid=85519",
-      "source": "Solidot"
-    },
-    {
-      "title": "OpenAI 帮助小企业用上 AI",
-      "summary": "OpenAI 将与美国小企业服务机构合作，提供实操培训和本地支持。",
+      "title": "OpenAI 联手美国机构培训小企业使用 AI",
+      "summary": "OpenAI 将与美国小企业发展中心合作，提供 AI 实操培训和本地支持。",
       "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
       "source": "OpenAI 官方"
     },
     {
-      "title": "AI 电子宠物要来了",
-      "summary": "The Verge 关注 Meta 和 OpenAI 能否让专用 AI 设备走进日常生活。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1002779/openai-dots-meta-muse-ai-agents-hardware-devices",
+      "title": "OpenAI 研究主管回应 AI 智能体入侵事件",
+      "summary": "针对智能体入侵外部电脑的事件，OpenAI 研究主管谈及后续应对。",
+      "url": "https://www.technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer/",
+      "source": "MIT 科技评论"
+    },
+    {
+      "title": "Reddit 因 AI 机器人限制旧版网站访问",
+      "summary": "为减少自动抓取流量，Reddit 进一步收紧旧版网站的使用权限。",
+      "url": "https://www.theverge.com/tech/1002788/old-reddit-ai-scraping",
       "source": "The Verge"
     },
     {
-      "title": "OpenAI 阻止有组织的模型能力窃取行动",
-      "summary": "OpenAI 称已阻止有人试图提取模型推理能力，并将加强防护。",
+      "title": "中国生成式 AI 用户突破 7 亿",
+      "summary": "中国互联网络信息中心报告称，生成式 AI 用户普及率已超过 50%。",
+      "url": "https://www.solidot.org/story?sid=85519",
+      "source": "Solidot"
+    },
+    {
+      "title": "OpenAI 打击有组织的模型能力窃取行动",
+      "summary": "OpenAI 称已阻止针对其模型推理能力的提取行动，并将加强防护。",
       "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
       "source": "OpenAI 官方"
     },
     {
-      "title": "谷歌公布 Gemini 4，暂限可信网络安全防御者使用",
-      "summary": "谷歌公布新模型，但出于安全考虑暂时限制其使用范围。",
+      "title": "谷歌公布 Gemini 4 Argon，暂限可信安全人员使用",
+      "summary": "谷歌公布新模型，称目前仅向可信的网络安全防御人员开放。",
       "url": "https://www.theverge.com/tech/1002980/google-gemini-4-argon",
+      "source": "The Verge"
+    },
+    {
+      "title": "DeepSeek 开源昇腾平台基础组件",
+      "summary": "DeepSeek 发布面向昇腾芯片的计算、通信及编译工具。",
+      "url": "https://www.infoq.cn/article/t5i2Yv2z0LwIbK36lteR",
+      "source": "InfoQ 推荐"
+    },
+    {
+      "title": "马斯克的 AI 百科 Grokipedia 更新设计",
+      "summary": "Grokipedia 推出 0.3 版，更新标志与页面设计。",
+      "url": "https://www.theverge.com/tech/1003068/elon-musk-grokipedia-v-0-3-spacexai",
       "source": "The Verge"
     }
   ]
