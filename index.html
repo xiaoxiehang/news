@@ -3,71 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>今日科技早报 - 每天 8 点的 AI 科技精选</title>
-<meta name="description" content="每天早上 8 点，一份中文科技早报：GitHub 热榜、Hacker News、权威科技媒体，AI 帮你挑出 8 条最值得读的新闻。">
-<link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
+<title>鸡仔 · 为自己打磨的小产品</title>
+<meta name="description" content="鸡仔的产品集合：AI 科技早报、小红书助手、电影发现、电视浏览器——每一个都是为了解决自己真实遇到的问题。">
 <link rel="stylesheet" href="assets/apple.css">
 <style>
 /* 首页特有 */
-.briefing-card {
-  background: var(--card);
-  border-radius: 24px;
-  border: 1px solid var(--hairline);
-  box-shadow: var(--shadow-md);
-  padding: clamp(24px, 4vw, 48px);
-  margin-bottom: 8px;
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.hub-card {
+  background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius);
+  padding: 28px; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.briefing-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
+.hub-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.hub-tag {
+  align-self: flex-start; font-size: 12px; font-weight: 600; color: var(--accent);
+  background: rgba(0,122,255,.1); padding: 4px 12px; border-radius: 999px;
 }
-.briefing-title { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; }
-.briefing-date { font-size: 14px; color: var(--faint); margin-left: auto; }
-.briefing-overview {
-  font-size: 17px;
-  line-height: 1.75;
-  padding: 18px 22px;
-  background: var(--accent-soft);
-  border-radius: var(--radius-sm);
-  margin-bottom: 8px;
+.hub-title { font-size: 21px; font-weight: 700; letter-spacing: -0.015em; margin: 0; }
+.hub-desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin: 0; flex: 1; }
+.hub-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.hub-links .btn { padding: 10px 20px; font-size: 14px; }
+/* 今日早报摘要条 */
+.brief-strip {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: 20px 24px; text-decoration: none; color: inherit;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.briefing-pick {
-  display: flex;
-  gap: 14px;
-  padding: 18px 4px;
-  border-bottom: 1px solid var(--hairline);
+.brief-strip:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.brief-strip-main { flex: 1; min-width: 0; }
+.brief-strip-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.brief-strip-tag {
+  font-size: 12px; font-weight: 700; color: #fff; background: var(--accent);
+  padding: 3px 10px; border-radius: 999px; white-space: nowrap;
 }
-.briefing-pick:last-child { border-bottom: none; }
-.briefing-num {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--accent);
-  min-width: 26px;
-  padding-top: 2px;
+.brief-strip-date { font-size: 13px; color: var(--faint); }
+.brief-strip-overview {
+  font-size: 15px; color: var(--muted); line-height: 1.7;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.briefing-pick-title {
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.55;
-  text-decoration: none;
-  letter-spacing: -0.005em;
+.brief-strip-more { font-size: 14px; color: var(--accent); font-weight: 600; white-space: nowrap; }
+/* 进入动画 */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+@media (max-width: 640px) {
+  .brief-strip { flex-direction: column; align-items: flex-start; }
+  .brief-strip-more { align-self: flex-end; }
 }
-a.briefing-pick-title:hover { color: var(--accent); }
-.briefing-pick-summary { font-size: 15px; color: var(--muted); margin-top: 6px; line-height: 1.7; }
-.briefing-pick-source { font-size: 13px; color: var(--faint); margin-top: 8px; }
-.quote-card {
-  background: var(--card);
-  border-radius: 24px;
-  border: 1px solid var(--hairline);
-  box-shadow: var(--shadow-sm);
-  padding: 44px 32px;
-  text-align: center;
-}
-.quote-text { font-size: 21px; line-height: 1.7; letter-spacing: -0.01em; }
-.quote-author { font-size: 14px; color: var(--muted); margin-top: 14px; }
 </style>
 </head>
 <body>
@@ -75,241 +59,127 @@ a.briefing-pick-title:hover { color: var(--accent); }
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <div class="header-title">🐤 鸡仔早报</div>
+      <div class="header-title"><span class="brand-mark">鸡</span>鸡仔</div>
       <div class="header-subtitle" id="header-subtitle">加载中...</div>
     </div>
     <nav class="header-nav">
-      <a href="index.html" class="nav-link active">早报</a>
-      <a href="github.html" class="nav-link">GitHub</a>
-      <a href="hackernews.html" class="nav-link">Hacker News</a>
-      <a href="archive.html" class="nav-link">归档</a>
-      <a href="quiz.html" class="nav-link">每日一题</a>
-      <a href="xhs.html" class="nav-link">小红书</a>
-      <a href="xhs-tool.html" class="nav-link">文案工具</a>
+      <a href="index.html" class="nav-link active">首页</a>
+      <a href="xhs-tool.html" class="nav-link">小红书助手</a>
+      <a href="zaobao.html" class="nav-link">AI早报</a>
+      <a href="github.html" class="nav-link">极客资讯</a>
+      <a href="video/" class="nav-link">电影发现</a>
       <a href="tv.html" class="nav-link">电视浏览器</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow">每天早上 8 点 · AI 精选</div>
-  <h1 class="hero-title">今日科技早报</h1>
-  <p class="hero-sub">GitHub 热榜、Hacker News、权威科技媒体——AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。</p>
-  <div class="hero-actions">
-    <button class="btn btn-primary btn-lg" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
-    <a class="btn btn-secondary btn-lg" href="xhs.html">看小红书卡片</a>
-  </div>
-  <div class="hero-meta" id="hero-date"></div>
+  <div class="hero-eyebrow">鸡仔出品 · 个人产品集合</div>
+  <h1 class="hero-title">为自己打磨的小产品</h1>
+  <p class="hero-sub">AI 早报、文案工具、电影发现、电视浏览器——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
 </section>
 
 <main>
-  <section class="section" id="briefing-section" style="display:none;">
-    <div class="briefing-card">
-      <div class="briefing-head">
-        <span class="badge blue">AI 早报</span>
-        <span class="briefing-title">今日必读</span>
-        <span class="briefing-date" id="briefing-date"></span>
+  <section class="section" id="brief-section" style="display:none;padding-top:0;">
+    <a class="brief-strip reveal" href="zaobao.html">
+      <div class="brief-strip-main">
+        <div class="brief-strip-top">
+          <span class="brief-strip-tag">今日早报</span>
+          <span class="brief-strip-date" id="brief-date"></span>
+        </div>
+        <div class="brief-strip-overview" id="brief-overview"></div>
       </div>
-      <div class="briefing-overview" id="briefing-overview"></div>
-      <div id="briefing-picks"></div>
+      <span class="brief-strip-more">看完整版 →</span>
+    </a>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="section-head reveal">
+      <h2 class="section-title">产品</h2>
+      <p class="section-desc">目前在维护的几件小东西</p>
     </div>
-  </section>
-
-  <section class="section section-tight">
-    <div class="card-grid">
-      <a href="xhs.html#video" class="feature-card">
-        <div class="feature-icon">🎬</div>
-        <div class="feature-title">短视频版早报</div>
-        <div class="feature-desc">竖屏带字幕，每天一条，下载就能发抖音、视频号。</div>
-        <span class="feature-link">去看看 →</span>
-      </a>
-      <a href="quiz.html" class="feature-card">
-        <div class="feature-icon">📝</div>
-        <div class="feature-title">开发者每日一题</div>
-        <div class="feature-desc">每天一道面试题，答对攒 streak，答错看解析。</div>
-        <span class="feature-link">开始答题 →</span>
-      </a>
-      <a href="xhs-tool.html" class="feature-card">
-        <div class="feature-icon">✨</div>
-        <div class="feature-title">小红书文案工具</div>
-        <div class="feature-desc">输入主题，一键生成标题、正文、标签和封面图。</div>
-        <span class="feature-link">免费试用 →</span>
-      </a>
-      <a href="tv.html" class="feature-card">
-        <div class="feature-icon">📺</div>
-        <div class="feature-title">鸡仔浏览器 · 电视版</div>
-        <div class="feature-desc">为 Android TV 而生的浏览器：虚拟光标、视频全屏、手机扫码当遥控器。</div>
-        <span class="feature-link">了解并下载 →</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="section section-tight" id="groups">
-    <div class="loading">加载中...</div>
-  </section>
-
-  <section class="section section-tight" id="quote-section" style="display:none;">
-    <div class="quote-card">
-      <div class="quote-text" id="quote-text"></div>
-      <div class="quote-author" id="quote-author"></div>
+    <div class="hub-grid">
+      <div class="hub-card reveal">
+        <span class="hub-tag">内容生产</span>
+        <h3 class="hub-title">小红书助手</h3>
+        <p class="hub-desc">输入主题一键生成小红书文案，自动配 3:4 封面图；每天早上的 AI 早报发布包和短视频也在这里审核下载。</p>
+        <div class="hub-links">
+          <a class="btn btn-primary" href="xhs-tool.html">写文案</a>
+          <a class="btn btn-secondary" href="xhs.html">每日发布包</a>
+        </div>
+      </div>
+      <div class="hub-card reveal">
+        <span class="hub-tag">每日资讯</span>
+        <h3 class="hub-title">AI 科技早报</h3>
+        <p class="hub-desc">每天早上 8 点，AI 从 GitHub、Hacker News 和中文科技媒体精选 8 条最值得读的新闻，一杯咖啡的时间读完。</p>
+        <div class="hub-links">
+          <a class="btn btn-primary" href="zaobao.html">看今日早报</a>
+        </div>
+      </div>
+      <div class="hub-card reveal">
+        <span class="hub-tag">极客</span>
+        <h3 class="hub-title">极客资讯</h3>
+        <p class="hub-desc">GitHub 每日趋势、Hacker News 热榜、历史归档，外加一道每日 AI 小测验，保持对技术圈的体感。</p>
+        <div class="hub-links">
+          <a class="btn btn-primary" href="github.html">进入</a>
+        </div>
+      </div>
+      <div class="hub-card reveal">
+        <span class="hub-tag">娱乐</span>
+        <h3 class="hub-title">电影发现</h3>
+        <p class="hub-desc">基于 TMDB 官方数据：热门、口碑、即将上映，点开看详情、预告片和正版观看渠道。</p>
+        <div class="hub-links">
+          <a class="btn btn-primary" href="video/">去找电影</a>
+        </div>
+      </div>
+      <div class="hub-card reveal">
+        <span class="hub-tag">工具</span>
+        <h3 class="hub-title">电视浏览器</h3>
+        <p class="hub-desc">给 Android TV 做的极简浏览器：遥控器方向键操作，手机扫码当遥控器，大屏上网不折腾。</p>
+        <div class="hub-links">
+          <a class="btn btn-primary" href="tv.html">产品页</a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer"></footer>
-<div class="toast" id="toast"></div>
 
-<script>
-let briefingData = null;
-
-function esc(s) {
-  return String(s == null ? '' : s)
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(function() { t.classList.remove('show'); }, 2000);
-}
-function copyBriefing() {
-  let text = '';
-  if (briefingData && briefingData.picks && briefingData.picks.length) {
-    text = '' + (briefingData.date_str || '') + '\n\n';
-    if (briefingData.overview) text += '今日速览：' + briefingData.overview + '\n\n';
-    briefingData.picks.forEach(function(p, i) {
-      text += (i + 1) + '. ' + p.title + '\n';
-      if (p.summary) text += '  ' + p.summary + '\n';
-      if (p.source) text += '  来源：' + p.source + '\n';
-      if (p.url) text += '  ' + p.url + '\n';
-    });
-  } else {
-    showToast('今日早报尚未生成');
-    return;
-  }
-  navigator.clipboard.writeText(text).then(function() {
-    const btn = document.getElementById('copy-btn');
-    btn.textContent = '已复制 ✓';
-    showToast('早报已复制到剪贴板');
-    setTimeout(function() { btn.textContent = '复制今日早报'; }, 2000);
-  });
-}
-
-function renderItem(n, i) {
-  const hasLink = n.link && n.link.indexOf('http') === 0;
-  const inner =
-    '<div class="news-num">' + (i + 1) + '</div>' +
-    '<div class="news-body">' +
-      '<div class="news-title">' + esc(n.title) + '</div>' +
-      (n.summary ? '<div class="news-summary">' + esc(n.summary.length > 140 ? n.summary.substring(0, 140) + '...' : n.summary) + '</div>' : '') +
-      (n.meta ? '<div class="news-meta">' + esc(n.meta) + '</div>' : '') +
-    '</div>';
-  return hasLink
-    ? '<a class="news-item" href="' + esc(n.link) + '" target="_blank" rel="noopener">' + inner + '</a>'
-    : '<div class="news-item">' + inner + '</div>';
-}
-
-function renderGroup(cfg) {
-  if (!cfg.items.length) return '';
-  let html = '<div class="group-section">' +
-    '<div class="group-head">' +
-      '<div class="group-title">' + esc(cfg.title) + '</div>' +
-      (cfg.desc ? '<div class="group-desc">' + esc(cfg.desc) + '</div>' : '') +
-      '<a class="group-more" href="' + cfg.moreLink + '">查看全部 →</a>' +
-    '</div>' +
-    (cfg.updated ? '<div class="group-updated">更新于 ' + esc(cfg.updated) + '</div>' : '') +
-    '<div class="news-grid">';
-  cfg.items.forEach(function(n, i) { html += renderItem(n, i); });
-  html += '</div></div>';
-  return html;
-}
-
-async function fetchJson(path) {
-  try {
-    const r = await fetch(path + '?t=' + Date.now());
-    if (!r.ok) return null;
-    return await r.json();
-  } catch (e) { return null; }
-}
-
-async function loadBriefing() {
-  try {
-    const data = await fetchJson('data/briefing.json');
-    if (!data || !data.picks || data.picks.length === 0) return;
-    briefingData = data;
-    document.getElementById('briefing-date').textContent = data.date_str || data.date || '';
-    document.getElementById('hero-date').textContent = data.date_str || data.date || '';
-    document.getElementById('briefing-overview').textContent = data.overview || '';
-    let html = '';
-    data.picks.forEach(function(pick, i) {
-      const hasLink = pick.url && pick.url.indexOf('http') === 0;
-      const titleHtml = hasLink
-        ? '<a class="briefing-pick-title" href="' + esc(pick.url) + '" target="_blank" rel="noopener">' + esc(pick.title) + '</a>'
-        : '<div class="briefing-pick-title">' + esc(pick.title) + '</div>';
-      html += '<div class="briefing-pick">' +
-        '<div class="briefing-num">' + (i + 1) + '</div>' +
-        '<div>' + titleHtml +
-        (pick.summary ? '<div class="briefing-pick-summary">' + esc(pick.summary) + '</div>' : '') +
-        (pick.source ? '<div class="briefing-pick-source">来源：' + esc(pick.source) + '</div>' : '') +
-        '</div></div>';
-    });
-    document.getElementById('briefing-picks').innerHTML = html;
-    document.getElementById('briefing-section').style.display = '';
-  } catch (error) {
-    console.error('加载早报失败:', error);
-  }
-}
-
-async function loadGroups() {
-  const container = document.getElementById('groups');
-  const [gh, hn, misc] = await Promise.all([
-    fetchJson('data/github.json'),
-    fetchJson('data/hackernews.json'),
-    fetchJson('data/misc.json')
-  ]);
-  let html = '';
-  if (gh && gh.categories && gh.categories.hot && gh.categories.hot.repos) {
-    const items = gh.categories.hot.repos.slice(0, 6).map(function(r) {
-      return {
-        title: r.full_name || r.name,
-        link: r.html_url,
-        summary: r.description,
-        meta: '⭐ ' + (r.stars || '-') + (r.language ? ' · ' + r.language : '')
-      };
-    });
-    html += renderGroup({ title: 'GitHub 热榜', desc: gh.categories.hot.desc || '', moreLink: 'github.html', updated: gh.updated_at, items: items });
-  }
-  if (hn && hn.stories && hn.stories.length) {
-    const items = hn.stories.slice(0, 6).map(function(s) {
-      return {
-        title: s.title,
-        link: s.url,
-        summary: '',
-        meta: '▲ ' + (s.score || 0) + ' · 💬 ' + (s.descendants || 0) + ' · ' + (s.by || '')
-      };
-    });
-    html += renderGroup({ title: 'Hacker News', desc: '全球黑客社区热议', moreLink: 'hackernews.html', updated: hn.updated_at, items: items });
-  }
-  if (!html) {
-    container.innerHTML = '<div class="empty-state">' +
-      '<div class="empty-icon">📰</div>' +
-      '<div class="empty-title">暂无新闻数据</div>' +
-      '<div class="empty-desc">今日新闻正在采集中，请稍后刷新</div></div>';
-    return;
-  }
-  container.innerHTML = html;
-  if (misc && misc.quote && misc.quote.text) {
-    document.getElementById('quote-text').textContent = '"' + misc.quote.text + '"';
-    document.getElementById('quote-author').textContent = '—— ' + (misc.quote.author || '佚名');
-    document.getElementById('quote-section').style.display = '';
-  }
-}
-
-loadBriefing();
-loadGroups();
-</script>
 <script src="scripts/header-info.js"></script>
 <script src="scripts/footer.js"></script>
+<script>
+// 今日早报摘要
+fetch('data/briefing.json')
+  .then(function(r) { if (!r.ok) throw 0; return r.json(); })
+  .then(function(d) {
+    if (!d || !d.picks || !d.picks.length) return;
+    document.getElementById('brief-date').textContent = d.date_str || '';
+    var ov = d.overview || d.picks.slice(0, 3).map(function(p) { return p.title; }).join('；');
+    document.getElementById('brief-overview').textContent = ov;
+    document.getElementById('brief-section').style.display = '';
+    observeReveals();
+  })
+  .catch(function() {});
+// 进入动画
+function observeReveals() {
+  var els = document.querySelectorAll('.reveal:not(.in)');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e, i) {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 70) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(el) { io.observe(el); });
+}
+observeReveals();
+</script>
 </body>
 </html>

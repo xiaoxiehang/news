@@ -436,3 +436,27 @@ textarea.input { resize: vertical; min-height: 84px; }
   .news-grid { grid-template-columns: 1fr; }
   .feature-card { padding: 24px; }
 }
+
+/* ============ 品牌标识 ============ */
+.header-title { display: inline-flex; align-items: center; }
+.brand-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 7px;
+  background: var(--accent); color: #fff;
+  font-size: 15px; font-weight: 700; margin-right: 9px;
+}
+
+/* ============ 二级分组导航 ============ */
+.subnav-wrap { border-bottom: 1px solid var(--hairline); background: var(--bg-secondary); }
+.subnav {
+  display: flex; gap: 4px; padding: 0 var(--pad-x);
+  max-width: 1200px; margin: 0 auto;
+  overflow-x: auto; scrollbar-width: none;
+}
+.subnav::-webkit-scrollbar { display: none; }
+.subnav-link {
+  padding: 13px 16px; font-size: 14px; color: var(--muted);
+  text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap;
+}
+.subnav-link:hover { color: var(--ink); }
+.subnav-link.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
