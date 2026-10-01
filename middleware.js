@@ -19,6 +19,23 @@ export default function middleware(request) {
     return next();
   }
 
+  // 旧页面 301 跳转（2026-10 网站结构重组：资讯/创作聚合页）
+  const LEGACY_REDIRECTS = {
+    '/zaobao.html': '/news.html',
+    '/github.html': '/news.html#github',
+    '/hackernews.html': '/news.html#hn',
+    '/archive.html': '/news.html#archive',
+    '/quiz.html': '/news.html#quiz',
+    '/xhs.html': '/studio.html',
+    '/xhs-tool.html': '/studio.html#tool',
+  };
+  if (LEGACY_REDIRECTS[pathname] && host !== 'stock.xiaojj.pro' && host !== 'price.xiaojj.pro') {
+    return new Response(null, {
+      status: 301,
+      headers: { Location: LEGACY_REDIRECTS[pathname] },
+    });
+  }
+
   let prefix = '';
   if (host === 'stock.xiaojj.pro') {
     prefix = '/stock';

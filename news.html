@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>资讯 - 鸡仔</title>
+<meta name="description" content="AI 科技早报、GitHub 趋势、Hacker News、历史归档、开发者每日一题——每天的新鲜事都在这里。">
+<link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
+<link rel="stylesheet" href="assets/apple.css">
+<style>
+.tabpane { display: none; }
+.tabpane.active { display: block; animation: fadeUp .35s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.tabs-wrap { display: flex; justify-content: center; margin-bottom: 32px; }
+.tabs-wrap .segmented { max-width: 100%; overflow-x: auto; }
+/* ---- 早报 ---- */
+.briefing-card { background: var(--card); border-radius: 24px; border: 1px solid var(--hairline); box-shadow: var(--shadow-md); padding: clamp(24px, 4vw, 48px); margin-bottom: 8px; }
+.briefing-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+.briefing-title { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; }
+.briefing-date { font-size: 14px; color: var(--faint); margin-left: auto; }
+.briefing-overview { font-size: 17px; line-height: 1.75; padding: 18px 22px; background: var(--accent-soft); border-radius: var(--radius-sm); margin-bottom: 8px; }
+.briefing-pick { display: flex; gap: 14px; padding: 18px 4px; border-bottom: 1px solid var(--hairline); }
+.briefing-pick:last-child { border-bottom: none; }
+.briefing-num { font-size: 15px; font-weight: 700; color: var(--accent); min-width: 26px; padding-top: 2px; }
+.briefing-pick-title { font-size: 17px; font-weight: 600; line-height: 1.55; text-decoration: none; letter-spacing: -0.005em; }
+a.briefing-pick-title:hover { color: var(--accent); }
+.briefing-pick-summary { font-size: 15px; color: var(--muted); margin-top: 6px; line-height: 1.7; }
+.briefing-pick-source { font-size: 13px; color: var(--faint); margin-top: 8px; }
+.quote-card { background: var(--card); border-radius: 24px; border: 1px solid var(--hairline); box-shadow: var(--shadow-sm); padding: 44px 32px; text-align: center; }
+.quote-text { font-size: 21px; line-height: 1.7; letter-spacing: -0.01em; }
+.quote-author { font-size: 14px; color: var(--muted); margin-top: 14px; }
+.pane-actions { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+/* ---- GitHub ---- */
+.filter-bar { position: sticky; top: var(--nav-h); z-index: 60; background: rgba(245,245,247,.85); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--hairline); padding: 14px var(--pad-x); margin: 0 calc(-1 * var(--pad-x)) 20px; }
+.categories { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.categories::-webkit-scrollbar { display: none; }
+.category-btn { font-family: var(--font); font-size: 14px; font-weight: 600; padding: 9px 20px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-pill); color: var(--muted); cursor: pointer; transition: all .2s; white-space: nowrap; flex-shrink: 0; }
+.category-btn:hover { color: var(--ink); border-color: var(--faint); }
+.category-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+.project-card { background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 24px; transition: transform .2s, box-shadow .2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+.project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.project-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.project-icon { width: 46px; height: 46px; border-radius: 14px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; color: var(--muted); }
+.project-info { flex: 1; min-width: 0; }
+.project-name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 3px; word-break: break-word; }
+.project-owner { font-size: 13px; color: var(--muted); }
+.project-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.project-meta { display: flex; gap: 18px; font-size: 13px; color: var(--muted); padding-top: 14px; border-top: 1px solid var(--hairline); }
+.meta-item { display: flex; align-items: center; gap: 6px; }
+.meta-value { font-weight: 600; color: var(--ink); }
+.language-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.project-insight { background: var(--accent-soft); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 14px; font-size: 13px; line-height: 1.65; }
+.insight-label { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.insight-what { color: var(--ink); margin-bottom: 4px; }
+.insight-meta { color: var(--muted); font-size: 12px; }
+/* ---- Hacker News ---- */
+.stories-list { display: flex; flex-direction: column; gap: 14px; }
+.story-card { background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 24px 28px; transition: transform .18s, box-shadow .18s; text-decoration: none; color: inherit; display: flex; gap: 20px; align-items: flex-start; }
+.story-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.story-rank { font-size: 15px; font-weight: 700; color: var(--accent); background: var(--accent-soft); min-width: 44px; height: 44px; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.story-content { flex: 1; min-width: 0; }
+.story-title { font-size: 18px; font-weight: 600; line-height: 1.5; letter-spacing: -0.01em; margin-bottom: 10px; word-break: break-word; }
+.story-meta { display: flex; gap: 18px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+.story-meta-item { display: flex; align-items: center; gap: 6px; }
+/* ---- 归档 ---- */
+.archive-list { display: flex; flex-direction: column; gap: 14px; }
+.archive-item { background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+.archive-head { padding: 22px 28px; cursor: pointer; display: flex; align-items: center; gap: 16px; transition: background .15s; }
+.archive-head:hover { background: rgba(0,0,0,.02); }
+.archive-date { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
+.archive-count { font-size: 12px; font-weight: 700; color: #fff; background: var(--accent); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap; }
+.archive-overview { flex: 1; font-size: 14px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.archive-toggle { font-size: 14px; color: var(--faint); flex-shrink: 0; transition: transform .2s; }
+.archive-body { display: none; border-top: 1px solid var(--hairline); padding: 8px 28px 24px; }
+.archive-item.open .archive-body { display: block; }
+.archive-item.open .archive-toggle { transform: rotate(180deg); }
+.archive-pick { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--hairline); }
+.archive-pick:last-child { border-bottom: none; }
+.archive-num { font-size: 14px; font-weight: 700; color: var(--accent); min-width: 24px; padding-top: 2px; }
+.archive-pick-title { font-size: 16px; font-weight: 600; line-height: 1.55; text-decoration: none; }
+a.archive-pick-title:hover { color: var(--accent); }
+.archive-pick-summary { font-size: 14px; color: var(--muted); margin-top: 6px; line-height: 1.65; }
+.archive-pick-source { font-size: 12px; color: var(--faint); margin-top: 6px; }
+.rss-link { color: var(--accent); font-weight: 600; text-decoration: none; }
+@media (max-width: 600px) {
+  .archive-head { flex-wrap: wrap; gap: 10px; padding: 18px 20px; }
+  .archive-overview { flex: 1 1 100%; }
+  .archive-body { padding: 8px 20px 20px; }
+}
+/* ---- 每日一题 ---- */
+.stats { display: flex; gap: 14px; margin-bottom: 28px; }
+.stat-card { flex: 1; background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 22px 16px; text-align: center; }
+.stat-num { font-size: 32px; font-weight: 700; color: var(--accent); letter-spacing: -0.02em; }
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.quiz-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 24px; box-shadow: var(--shadow-md); padding: clamp(24px, 4vw, 44px); margin-bottom: 40px; }
+.quiz-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.topic-tag { font-size: 12px; font-weight: 700; color: #fff; background: var(--accent); padding: 5px 14px; border-radius: var(--radius-pill); }
+.quiz-date { font-size: 13px; color: var(--faint); }
+.quiz-question { font-size: 20px; font-weight: 600; line-height: 1.65; letter-spacing: -0.01em; margin-bottom: 24px; }
+.quiz-options { display: flex; flex-direction: column; gap: 12px; }
+.option-btn { text-align: left; font-size: 16px; padding: 16px 20px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: var(--bg); cursor: pointer; transition: all .15s; font-family: var(--font); line-height: 1.55; color: var(--ink); }
+.option-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.option-btn:disabled { cursor: default; }
+.option-btn.correct { border-color: var(--green); background: var(--green-soft); color: #0d7a3a; font-weight: 600; }
+.option-btn.wrong { border-color: var(--red); background: #fff1f1; color: #c0392b; }
+.option-btn.dim { opacity: .55; }
+.quiz-result { margin-top: 22px; padding: 18px 22px; border-radius: var(--radius-sm); font-size: 15px; line-height: 1.75; display: none; }
+.quiz-result.show { display: block; }
+.quiz-result.good { background: var(--green-soft); border: 1px solid #bee5cd; }
+.quiz-result.bad { background: var(--amber-soft); border: 1px solid #ffe9b8; }
+.result-title { font-weight: 700; margin-bottom: 8px; font-size: 16px; }
+.quiz-result.good .result-title { color: #0d7a3a; }
+.quiz-result.bad .result-title { color: var(--amber); }
+.history-title { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 6px; }
+.history-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.history-item { background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+.history-head { padding: 18px 22px; cursor: pointer; display: flex; gap: 14px; align-items: center; }
+.history-head:hover { background: rgba(0,0,0,.02); }
+.history-q { flex: 1; font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.history-topic { font-size: 11px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+.history-date { font-size: 12px; color: var(--faint); white-space: nowrap; }
+.history-body { display: none; border-top: 1px solid var(--hairline); padding: 18px 22px; }
+.history-item.open .history-body { display: block; }
+.history-opt { font-size: 14px; padding: 7px 0; color: var(--muted); }
+.history-opt.is-answer { color: #0d7a3a; font-weight: 700; }
+.history-exp { font-size: 14px; color: var(--muted); background: var(--bg); border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 12px; line-height: 1.75; }
+@media (max-width: 600px) {
+  .stats { gap: 10px; }
+  .stat-num { font-size: 26px; }
+  .history-q { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-title"><span class="brand-mark">鸡</span>鸡仔</div>
+      <div class="header-subtitle" id="header-subtitle">加载中...</div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="news.html" class="nav-link active">资讯</a>
+      <a href="studio.html" class="nav-link">创作</a>
+      <a href="video/" class="nav-link">电影</a>
+      <a href="tools.html" class="nav-link">工具</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero hero-compact">
+  <div class="hero-eyebrow" id="tab-eyebrow">每天早上 8 点 · AI 精选</div>
+  <h1 class="hero-title" id="tab-title">今日科技早报</h1>
+  <p class="hero-sub" id="tab-sub">AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。</p>
+  <div class="hero-meta" id="hero-date"></div>
+</section>
+
+<main>
+  <section class="section section-tight">
+    <div class="tabs-wrap">
+      <div class="segmented" id="newsTabs">
+        <button class="active" data-tab="zaobao">AI早报</button>
+        <button data-tab="github">GitHub趋势</button>
+        <button data-tab="hn">Hacker News</button>
+        <button data-tab="archive">历史归档</button>
+        <button data-tab="quiz">每日一题</button>
+      </div>
+    </div>
+
+    <div class="tabpane active" id="pane-zaobao">
+      <div class="pane-actions">
+        <button class="btn btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
+        <a class="btn btn-secondary" href="studio.html">看小红书卡片</a>
+      </div>
+      <div id="briefing-section" style="display:none;">
+        <div class="briefing-card">
+          <div class="briefing-head">
+            <span class="badge blue">AI 早报</span>
+            <span class="briefing-title">今日必读</span>
+            <span class="briefing-date" id="briefing-date"></span>
+          </div>
+          <div class="briefing-overview" id="briefing-overview"></div>
+          <div id="briefing-picks"></div>
+        </div>
+      </div>
+      <div class="section section-tight">
+        <div class="card-grid">
+          <a href="studio.html#video" class="feature-card">
+            <div class="feature-icon">短视频</div>
+            <div class="feature-title">短视频版早报</div>
+            <div class="feature-desc">竖屏带字幕，每天一条，下载就能发抖音、视频号。</div>
+            <span class="feature-link">去看看 →</span>
+          </a>
+          <a href="news.html#quiz" class="feature-card">
+            <div class="feature-icon">一题</div>
+            <div class="feature-title">开发者每日一题</div>
+            <div class="feature-desc">每天一道面试题，答对攒 streak，答错看解析。</div>
+            <span class="feature-link">开始答题 →</span>
+          </a>
+          <a href="studio.html#tool" class="feature-card">
+            <div class="feature-icon">文案</div>
+            <div class="feature-title">小红书文案工具</div>
+            <div class="feature-desc">输入主题，一键生成标题、正文、标签和封面图。</div>
+            <span class="feature-link">免费试用 →</span>
+          </a>
+        </div>
+      </div>
+      <div class="section section-tight" id="groups"><div class="loading">加载中...</div></div>
+      <div class="section section-tight" id="quote-section" style="display:none;">
+        <div class="quote-card">
+          <div class="quote-text" id="quote-text"></div>
+          <div class="quote-author" id="quote-author"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabpane" id="pane-github">
+      <div class="filter-bar"><div class="categories" id="categories"></div></div>
+      <div id="projects-container"><div class="loading">加载中...</div></div>
+    </div>
+
+    <div class="tabpane" id="pane-hn">
+      <div id="stories-container"><div class="loading">加载中...</div></div>
+    </div>
+
+    <div class="tabpane" id="pane-archive">
+      <div class="archive-list" id="archive-list"><div class="loading">加载中...</div></div>
+    </div>
+
+    <div class="tabpane" id="pane-quiz">
+      <div class="stats">
+        <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">连续打卡（天）</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-total">0</div><div class="stat-label">累计答题</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-rate">-</div><div class="stat-label">答对率</div></div>
+      </div>
+      <div id="today-quiz"><div class="loading">出题中...</div></div>
+      <div class="history-title">往期题目</div>
+      <div class="history-list" id="history"><div class="loading">加载中...</div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ 通用 ============ */
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+async function fetchJson(path) {
+  try {
+    const r = await fetch(path + '?t=' + Date.now());
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (e) { return null; }
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2000);
+}
+
+const TAB_META = {
+  zaobao:  { eyebrow: '每天早上 8 点 · AI 精选', title: '今日科技早报', sub: 'AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。' },
+  github:  { eyebrow: '开源世界每日速览', title: 'GitHub 热门项目', sub: 'AI、前端、开发工具——每天最值得 star 的项目，附 AI 一句话点评。' },
+  hn:      { eyebrow: '全球黑客社区', title: 'Hacker News 热榜', sub: '极客们今天在讨论什么——技术、创业与那些值得深思的观点。' },
+  archive: { eyebrow: '每天一份 · 从不错过', title: '历史早报归档', sub: '点击任意一期展开查看完整内容，也可通过 RSS 订阅。' },
+  quiz:    { eyebrow: 'AI 出题 · 每天一道', title: '开发者每日一题', sub: '面试题天天练，答对攒 streak，答错看解析——悄悄变强。' }
+};
+const loaded = {};
+function switchTab(which) {
+  if (!TAB_META[which]) which = 'zaobao';
+  document.querySelectorAll('#newsTabs button').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tab === which);
+  });
+  document.querySelectorAll('.tabpane').forEach(function(p) {
+    p.classList.toggle('active', p.id === 'pane-' + which);
+  });
+  const meta = TAB_META[which];
+  document.getElementById('tab-eyebrow').textContent = meta.eyebrow;
+  document.getElementById('tab-title').textContent = meta.title;
+  document.getElementById('tab-sub').textContent = meta.sub;
+  if (which !== 'zaobao') document.getElementById('hero-date').textContent = '';
+  if (!loaded[which]) {
+    loaded[which] = true;
+    ({ zaobao: loadZaobao, github: loadGithub, hn: loadHn, archive: loadArchive, quiz: loadQuiz })[which]();
+  }
+  try { history.replaceState(null, '', which === 'zaobao' ? 'news.html' : 'news.html#' + which); } catch (e) {}
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('#newsTabs button').forEach(function(b) {
+  b.addEventListener('click', function() { switchTab(b.dataset.tab); });
+});
+
+/* ============ AI早报 ============ */
+let briefingData = null;
+function copyBriefing() {
+  let text = '';
+  if (briefingData && briefingData.picks && briefingData.picks.length) {
+    text = '' + (briefingData.date_str || '') + '\n\n';
+    if (briefingData.overview) text += '今日速览：' + briefingData.overview + '\n\n';
+    briefingData.picks.forEach(function(p, i) {
+      text += (i + 1) + '. ' + p.title + '\n';
+      if (p.summary) text += '  ' + p.summary + '\n';
+      if (p.source) text += '  来源：' + p.source + '\n';
+      if (p.url) text += '  ' + p.url + '\n';
+    });
+  } else { showToast('今日早报尚未生成'); return; }
+  navigator.clipboard.writeText(text).then(function() {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = '已复制 ✓';
+    showToast('早报已复制到剪贴板');
+    setTimeout(function() { btn.textContent = '复制今日早报'; }, 2000);
+  });
+}
+function renderItem(n, i) {
+  const hasLink = n.link && n.link.indexOf('http') === 0;
+  const inner =
+    '<div class="news-num">' + (i + 1) + '</div>' +
+    '<div class="news-body">' +
+      '<div class="news-title">' + esc(n.title) + '</div>' +
+      (n.summary ? '<div class="news-summary">' + esc(n.summary.length > 140 ? n.summary.substring(0, 140) + '...' : n.summary) + '</div>' : '') +
+      (n.meta ? '<div class="news-meta">' + esc(n.meta) + '</div>' : '') +
+    '</div>';
+  return hasLink
+    ? '<a class="news-item" href="' + esc(n.link) + '" target="_blank" rel="noopener">' + inner + '</a>'
+    : '<div class="news-item">' + inner + '</div>';
+}
+function renderGroup(cfg) {
+  if (!cfg.items.length) return '';
+  let html = '<div class="group-section">' +
+    '<div class="group-head">' +
+      '<div class="group-title">' + esc(cfg.title) + '</div>' +
+      (cfg.desc ? '<div class="group-desc">' + esc(cfg.desc) + '</div>' : '') +
+      '<a class="group-more" href="' + cfg.moreLink + '">查看全部 →</a>' +
+    '</div>' +
+    (cfg.updated ? '<div class="group-updated">更新于 ' + esc(cfg.updated) + '</div>' : '') +
+    '<div class="news-grid">';
+  cfg.items.forEach(function(n, i) { html += renderItem(n, i); });
+  html += '</div></div>';
+  return html;
+}
+async function loadZaobao() {
+  try {
+    const data = await fetchJson('data/briefing.json');
+    if (data && data.picks && data.picks.length) {
+      briefingData = data;
+      document.getElementById('briefing-date').textContent = data.date_str || data.date || '';
+      document.getElementById('hero-date').textContent = data.date_str || data.date || '';
+      document.getElementById('briefing-overview').textContent = data.overview || '';
+      let html = '';
+      data.picks.forEach(function(pick, i) {
+        const hasLink = pick.url && pick.url.indexOf('http') === 0;
+        const titleHtml = hasLink
+          ? '<a class="briefing-pick-title" href="' + esc(pick.url) + '" target="_blank" rel="noopener">' + esc(pick.title) + '</a>'
+          : '<div class="briefing-pick-title">' + esc(pick.title) + '</div>';
+        html += '<div class="briefing-pick">' +
+          '<div class="briefing-num">' + (i + 1) + '</div>' +
+          '<div>' + titleHtml +
+          (pick.summary ? '<div class="briefing-pick-summary">' + esc(pick.summary) + '</div>' : '') +
+          (pick.source ? '<div class="briefing-pick-source">来源：' + esc(pick.source) + '</div>' : '') +
+          '</div></div>';
+      });
+      document.getElementById('briefing-picks').innerHTML = html;
+      document.getElementById('briefing-section').style.display = '';
+    }
+  } catch (e) { console.error('加载早报失败:', e); }
+  const container = document.getElementById('groups');
+  const gh = await fetchJson('data/github.json');
+  const hn = await fetchJson('data/hackernews.json');
+  const misc = await fetchJson('data/misc.json');
+  let html = '';
+  if (gh && gh.categories) {
+    const hot = gh.categories.hot || gh.categories.trending;
+    if (hot && hot.repos) {
+      const items = hot.repos.slice(0, 6).map(function(r) {
+        return { title: r.full_name || r.name, link: r.html_url, summary: r.description,
+                 meta: '★ ' + (r.stars || '-') + (r.language ? ' · ' + r.language : '') };
+      });
+      html += renderGroup({ title: 'GitHub 热榜', desc: hot.desc || '', moreLink: 'news.html#github', updated: gh.updated_at, items: items });
+    }
+  }
+  if (hn && hn.stories && hn.stories.length) {
+    const items = hn.stories.slice(0, 6).map(function(s) {
+      return { title: s.title, link: s.url, summary: '',
+               meta: '▲ ' + (s.score || 0) + ' · 评论 ' + (s.descendants || 0) + ' · ' + (s.by || '') };
+    });
+    html += renderGroup({ title: 'Hacker News', desc: '全球黑客社区热议', moreLink: 'news.html#hn', updated: hn.updated_at, items: items });
+  }
+  if (!html) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无新闻数据</div><div class="empty-desc">今日新闻正在采集中，请稍后刷新</div></div>';
+  } else {
+    container.innerHTML = html;
+  }
+  if (misc && misc.quote && misc.quote.text) {
+    document.getElementById('quote-text').textContent = '"' + misc.quote.text + '"';
+    document.getElementById('quote-author').textContent = '—— ' + (misc.quote.author || '佚名');
+    document.getElementById('quote-section').style.display = '';
+  }
+}
+
+/* ============ GitHub趋势 ============ */
+const GH_CATEGORIES = [
+  { id: 'trending', name: 'Trending', desc: '今日最热门项目' },
+  { id: 'ai', name: 'AI & ML', desc: '人工智能、机器学习' },
+  { id: 'frontend', name: 'Frontend', desc: '前端框架、UI库' },
+  { id: 'devtools', name: 'Dev Tools', desc: '开发者工具、CLI' },
+  { id: 'productivity', name: 'Productivity', desc: '效率工具、自动化' },
+  { id: 'fullstack', name: 'Full Stack', desc: '全栈项目' },
+  { id: 'mobile', name: 'Mobile', desc: '移动端、Flutter、React Native' },
+  { id: 'backend', name: 'Backend', desc: '后端框架、数据库' }
+];
+let ghCurrentCategory = 'trending';
+let githubData = null;
+let ghInsights = {};
+function renderGhCategories() {
+  const container = document.getElementById('categories');
+  const cats = githubData ? Object.keys(githubData.categories).map(function(id) {
+    return Object.assign({ id: id }, githubData.categories[id]);
+  }) : GH_CATEGORIES;
+  container.innerHTML = cats.map(function(cat) {
+    return '<button class="category-btn' + (cat.id === ghCurrentCategory ? ' active' : '') + '" ' +
+      'onclick="switchGhCategory(\'' + cat.id + '\')">' + esc(cat.name) + '</button>';
+  }).join('');
+}
+function switchGhCategory(categoryId) {
+  ghCurrentCategory = categoryId;
+  renderGhCategories();
+  renderGhProjects();
+}
+function renderGhInsight(fullName) {
+  const ins = ghInsights[fullName];
+  if (!ins) return '';
+  return '<div class="project-insight">' +
+    '<div class="insight-label">AI 点评</div>' +
+    '<div class="insight-what">' + esc(ins.what) + '</div>' +
+    (ins.why_hot ? '<div class="insight-meta">热度：' + esc(ins.why_hot) + '</div>' : '') +
+    (ins.who ? '<div class="insight-meta">适合：' + esc(ins.who) + '</div>' : '') +
+  '</div>';
+}
+function formatNumber(num) {
+  if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+  return String(num);
+}
+function renderGhProjects() {
+  const container = document.getElementById('projects-container');
+  if (!githubData) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">加载失败</div><div class="empty-desc">请稍后刷新重试</div></div>';
+    return;
+  }
+  const cat = githubData.categories[ghCurrentCategory];
+  if (!cat) return;
+  const projects = cat.repos || [];
+  if (!projects.length) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该分类下暂无热门项目</div></div>';
+    return;
+  }
+  const langColors = { 'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5', 'Java': '#b07219', 'Go': '#00ADD8', 'Rust': '#dea584', 'C++': '#f34b7d', 'C': '#555555', 'Ruby': '#701516', 'PHP': '#4F5D95', 'Swift': '#ffac45', 'Kotlin': '#F18E33', 'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c' };
+  container.innerHTML = '<div class="projects-grid">' + projects.map(function(project) {
+    const langColor = langColors[project.language] || '#888';
+    return '<a href="https://github.com/' + esc(project.full_name) + '" target="_blank" rel="noopener" class="project-card">' +
+      '<div class="project-header"><div class="project-icon">✦</div>' +
+      '<div class="project-info"><div class="project-name">' + esc(project.name) + '</div>' +
+      '<div class="project-owner">' + esc(project.owner) + '</div></div></div>' +
+      '<div class="project-desc">' + esc(project.description || '暂无描述') + '</div>' +
+      renderGhInsight(project.full_name) +
+      '<div class="project-meta">' +
+      (project.language ? '<div class="meta-item"><span class="language-dot" style="background:' + langColor + '"></span><span class="meta-value">' + esc(project.language) + '</span></div>' : '') +
+      '<div class="meta-item"><span>★</span><span class="meta-value">' + formatNumber(project.stars) + '</span></div>' +
+      '<div class="meta-item"><span>⑂</span><span class="meta-value">' + formatNumber(project.forks) + '</span></div>' +
+      '</div></a>';
+  }).join('') + '</div>';
+}
+async function loadGithub() {
+  try {
+    const r = await fetch('data/github.json?t=' + Date.now());
+    githubData = await r.json();
+    try {
+      const r2 = await fetch('data/github_insights.json?t=' + Date.now());
+      const ins = await r2.json();
+      if (ins && ins.insights) ghInsights = ins.insights;
+    } catch (e) {}
+    renderGhCategories();
+    renderGhProjects();
+  } catch (e) {
+    console.error('加载失败:', e);
+    renderGhProjects();
+  }
+}
+
+/* ============ Hacker News ============ */
+let hnStories = [];
+function renderHnStories() {
+  const container = document.getElementById('stories-container');
+  if (!hnStories.length) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无数据</div><div class="empty-desc">请稍后刷新重试</div></div>';
+    return;
+  }
+  container.innerHTML = '<div class="stories-list">' + hnStories.map(function(story, idx) {
+    return '<a href="' + esc(story.url) + '" target="_blank" rel="noopener" class="story-card">' +
+      '<div class="story-rank">' + (idx + 1) + '</div>' +
+      '<div class="story-content"><div class="story-title">' + esc(story.title) + '</div>' +
+      '<div class="story-meta">' +
+      '<div class="story-meta-item"><span>▲</span><span class="meta-value">' + esc(story.score) + '</span></div>' +
+      '<div class="story-meta-item"><span>评</span><span class="meta-value">' + esc(story.descendants) + '</span></div>' +
+      '<div class="story-meta-item"><span class="meta-value">' + esc(story.by) + '</span></div>' +
+      '<div class="story-meta-item"><span>' + esc(story.time) + '</span></div>' +
+      '</div></div></a>';
+  }).join('') + '</div>';
+}
+async function loadHn() {
+  try {
+    const r = await fetch('data/hackernews.json?t=' + Date.now());
+    const data = await r.json();
+    hnStories = data.stories || [];
+  } catch (e) { console.error('加载失败:', e); }
+  renderHnStories();
+}
+
+/* ============ 历史归档 ============ */
+const archiveCache = {};
+async function toggleArchiveItem(date, el) {
+  const item = el.closest('.archive-item');
+  const body = item.querySelector('.archive-body');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.archive-item.open').forEach(function(o) { o.classList.remove('open'); });
+  if (isOpen) return;
+  item.classList.add('open');
+  if (!archiveCache[date]) {
+    body.innerHTML = '<div class="loading">加载中...</div>';
+    try {
+      const r = await fetch('data/archive/briefing-' + date + '.json?t=' + Date.now());
+      if (!r.ok) throw new Error('not found');
+      archiveCache[date] = await r.json();
+    } catch (e) {
+      body.innerHTML = '<div class="empty-desc" style="padding:16px 0;">该期内容加载失败</div>';
+      return;
+    }
+  }
+  const data = archiveCache[date];
+  let html = '';
+  (data.picks || []).forEach(function(p, i) {
+    const hasLink = p.url && p.url.indexOf('http') === 0;
+    const titleHtml = hasLink
+      ? '<a class="archive-pick-title" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>'
+      : '<div class="archive-pick-title">' + esc(p.title) + '</div>';
+    html += '<div class="archive-pick"><div class="archive-num">' + (i + 1) + '</div><div>' + titleHtml +
+      (p.summary ? '<div class="archive-pick-summary">' + esc(p.summary) + '</div>' : '') +
+      (p.source ? '<div class="archive-pick-source">来源：' + esc(p.source) + '</div>' : '') +
+      '</div></div>';
+  });
+  body.innerHTML = html || '<div class="empty-desc" style="padding:16px 0;">本期暂无内容</div>';
+}
+async function loadArchive() {
+  const container = document.getElementById('archive-list');
+  try {
+    const r = await fetch('data/archive/index.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    const index = await r.json();
+    if (!index.length) throw new Error('empty');
+    container.innerHTML = index.map(function(e) {
+      return '<div class="archive-item">' +
+        '<div class="archive-head" onclick="toggleArchiveItem(\'' + esc(e.date) + '\', this)">' +
+        '<div class="archive-date">' + esc(e.date_str || e.date) + '</div>' +
+        '<div class="archive-count">' + (e.count || 0) + ' 条</div>' +
+        '<div class="archive-overview">' + esc(e.overview || '') + '</div>' +
+        '<div class="archive-toggle">▼</div></div>' +
+        '<div class="archive-body"></div></div>';
+    }).join('');
+  } catch (e) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">归档尚未开始</div><div class="empty-desc">第一期 AI 早报生成后，这里会自动开始积累历史内容</div></div>';
+  }
+}
+
+/* ============ 每日一题 ============ */
+const LETTERS = ['A', 'B', 'C', 'D'];
+function getQuizStats() {
+  try { return JSON.parse(localStorage.getItem('quiz_stats') || '{}'); }
+  catch (e) { return {}; }
+}
+function saveQuizStats(s) { localStorage.setItem('quiz_stats', JSON.stringify(s)); }
+function renderQuizStats() {
+  const s = getQuizStats();
+  document.getElementById('stat-streak').textContent = s.streak || 0;
+  document.getElementById('stat-total').textContent = s.total || 0;
+  document.getElementById('stat-rate').textContent = s.total ? Math.round((s.correct || 0) / s.total * 100) + '%' : '-';
+}
+function recordQuizAnswer(date, isCorrect) {
+  const s = getQuizStats();
+  const answeredKey = 'quiz_answered_' + date;
+  if (localStorage.getItem(answeredKey)) return;
+  localStorage.setItem(answeredKey, isCorrect ? '1' : '0');
+  s.total = (s.total || 0) + 1;
+  if (isCorrect) s.correct = (s.correct || 0) + 1;
+  const y = new Date(date); y.setDate(y.getDate() - 1);
+  const yKey = 'quiz_answered_' + y.toISOString().slice(0, 10);
+  s.streak = localStorage.getItem(yKey) ? (s.streak || 0) + 1 : 1;
+  saveQuizStats(s);
+  renderQuizStats();
+}
+function renderTodayQuiz(quiz) {
+  const container = document.getElementById('today-quiz');
+  const answered = localStorage.getItem('quiz_answered_' + quiz.date);
+  const optsHtml = quiz.options.map(function(opt, i) {
+    let cls = '';
+    if (answered) {
+      if (i === quiz.answer) cls = 'correct';
+      else if (answered === '0') cls = 'dim';
+    }
+    const dis = answered ? 'disabled' : '';
+    return '<button class="option-btn ' + cls + '" ' + dis + ' onclick="answerQuiz(' + i + ')"><b>' + LETTERS[i] + '.</b> ' + esc(opt) + '</button>';
+  }).join('');
+  let resultHtml = '';
+  if (answered) {
+    const good = answered === '1';
+    resultHtml = '<div class="quiz-result show ' + (good ? 'good' : 'bad') + '">' +
+      '<div class="result-title">' + (good ? '答对了！' : '答错了，看看解析') + '</div>' +
+      '<div>' + esc(quiz.explanation || '暂无解析') + '</div></div>';
+  }
+  container.innerHTML = '<div class="quiz-card">' +
+    '<div class="quiz-meta"><span class="topic-tag">' + esc(quiz.topic) + '</span>' +
+    '<span class="quiz-date">' + esc(quiz.date_str || quiz.date) + '</span></div>' +
+    '<div class="quiz-question">' + esc(quiz.question) + '</div>' +
+    '<div class="quiz-options" id="quiz-options">' + optsHtml + '</div>' +
+    '<div id="quiz-result">' + resultHtml + '</div></div>';
+  window._quiz = quiz;
+}
+function answerQuiz(i) {
+  const quiz = window._quiz;
+  if (!quiz || localStorage.getItem('quiz_answered_' + quiz.date)) return;
+  const isCorrect = i === quiz.answer;
+  recordQuizAnswer(quiz.date, isCorrect);
+  document.querySelectorAll('#quiz-options .option-btn').forEach(function(b, j) {
+    b.disabled = true;
+    if (j === quiz.answer) b.classList.add('correct');
+    else if (j === i) b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+  document.getElementById('quiz-result').innerHTML =
+    '<div class="quiz-result show ' + (isCorrect ? 'good' : 'bad') + '">' +
+    '<div class="result-title">' + (isCorrect ? '答对了！' : '答错了，看看解析') + '</div>' +
+    '<div>' + esc(quiz.explanation || '暂无解析') + '</div></div>';
+}
+function toggleQuizHistory(el) {
+  el.closest('.history-item').classList.toggle('open');
+}
+async function loadQuiz() {
+  renderQuizStats();
+  try {
+    const r = await fetch('data/quiz.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    const quiz = await r.json();
+    if (!quiz.question) throw new Error('empty');
+    renderTodayQuiz(quiz);
+  } catch (e) {
+    document.getElementById('today-quiz').innerHTML = '<div class="empty-state"><div class="empty-title">今日题目尚未出炉</div><div class="empty-desc">每天早上 8 点更新，敬请期待</div></div>';
+  }
+  try {
+    const r = await fetch('data/quiz/index.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    const list = await r.json();
+    const today = (window._quiz && window._quiz.date) || '';
+    const past = list.filter(function(e) { return e.date !== today; }).slice(0, 30);
+    if (!past.length) {
+      document.getElementById('history').innerHTML = '<div class="empty-desc" style="padding:16px 0;">还没有往期题目</div>';
+      return;
+    }
+    document.getElementById('history').innerHTML = past.map(function(e) {
+      const opts = (e.options || []).map(function(opt, i) {
+        return '<div class="history-opt' + (i === e.answer ? ' is-answer' : '') + '">' +
+          LETTERS[i] + '. ' + esc(opt) + (i === e.answer ? ' ✓' : '') + '</div>';
+      }).join('');
+      return '<div class="history-item">' +
+        '<div class="history-head" onclick="toggleQuizHistory(this)">' +
+        '<span class="history-topic">' + esc(e.topic || '') + '</span>' +
+        '<span class="history-q">' + esc(e.question) + '</span>' +
+        '<span class="history-date">' + esc(e.date_str || e.date) + '</span></div>' +
+        '<div class="history-body">' + opts +
+        (e.explanation ? '<div class="history-exp">' + esc(e.explanation) + '</div>' : '') +
+        '</div></div>';
+    }).join('');
+  } catch (e) {
+    document.getElementById('history').innerHTML = '<div class="empty-desc" style="padding:16px 0;">暂无往期题目</div>';
+  }
+}
+
+/* ============ 初始化 ============ */
+(function initTab() {
+  const h = (location.hash || '').replace('#', '');
+  switchTab(TAB_META[h] ? h : 'zaobao');
+})();
+</script>
+<script src="scripts/header-info.js"></script>
+<script src="scripts/footer.js"></script>
+</body>
+</html>

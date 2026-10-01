@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>创作 - 鸡仔</title>
+<meta name="description" content="小红书创作中心：每天自动生成的图文发布包一键审核复制，短视频下载即发，AI 文案工具输入主题一键生成。">
+<link rel="stylesheet" href="assets/apple.css">
+<style>
+.tabpane { display: none; }
+.tabpane.active { display: block; animation: fadeUp .35s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.tabs-wrap { display: flex; justify-content: center; margin-bottom: 32px; }
+/* ---- 发布包审核 ---- */
+.date-row { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+.date-row label { font-size: 15px; font-weight: 600; }
+.card { background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 26px; margin-bottom: 20px; }
+.card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.card-head h2 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+.copy-btn { font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border: none; border-radius: var(--radius-pill); padding: 8px 18px; cursor: pointer; font-family: var(--font); transition: background .2s; }
+.copy-btn:hover { background: rgba(0,113,227,.18); }
+.copy-btn.ok { color: #0d7a3a; background: var(--green-soft); }
+.title-text { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.tags-text { font-size: 15px; color: var(--accent); line-height: 2; }
+.body-text { font-size: 16px; white-space: pre-wrap; word-break: break-word; line-height: 1.8; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.shot { border: 1px solid var(--hairline); border-radius: var(--radius-sm); overflow: hidden; background: var(--card); box-shadow: var(--shadow-sm); transition: transform .2s, box-shadow .2s; }
+.shot:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.shot img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; cursor: zoom-in; }
+.shot-label { font-size: 13px; color: var(--muted); padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
+.shot-label a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; margin: 36px 0 18px; }
+/* ---- 短视频 ---- */
+.featured { display: flex; gap: 32px; background: var(--card); border: 1px solid var(--hairline); border-radius: 24px; padding: clamp(20px,3vw,36px); box-shadow: var(--shadow-md); margin-bottom: 36px; flex-wrap: wrap; }
+.video-wrap { width: 270px; flex-shrink: 0; border-radius: var(--radius-sm); overflow: hidden; background: #000; aspect-ratio: 9/16; box-shadow: var(--shadow-md); }
+.video-wrap video { width: 100%; height: 100%; display: block; }
+.featured-info { flex: 1; min-width: 260px; }
+.featured-title { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 10px; }
+.featured-meta { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+.featured-desc { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; }
+.list-title { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; padding: 8px 0 4px; }
+.video-item { display: flex; gap: 18px; background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 18px; margin-top: 14px; align-items: center; }
+.video-thumb { width: 76px; height: 135px; flex-shrink: 0; border-radius: var(--radius-sm); overflow: hidden; background: #000; }
+.video-thumb video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-info { flex: 1; min-width: 0; }
+.video-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.video-meta { font-size: 13px; color: var(--faint); margin-bottom: 10px; }
+.video-actions { display: flex; gap: 10px; }
+.mini-btn { font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: var(--radius-pill); text-decoration: none; background: var(--bg); color: var(--ink); border: 1px solid var(--line); transition: all .2s; }
+.mini-btn:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 640px) {
+  .card { padding: 20px; }
+  .video-wrap { width: 100%; max-width: 300px; margin: 0 auto; }
+}
+/* ---- 写文案 ---- */
+.tool-wrap { max-width: 720px; margin: 0 auto; }
+.tool-wrap .card { border-radius: 24px; padding: clamp(22px,4vw,36px); box-shadow: var(--shadow-md); }
+.styles { display: flex; gap: 10px; }
+.styles label { flex: 1; margin: 0; font-weight: 500; text-align: center; cursor: pointer; border: 1.5px solid var(--line); border-radius: var(--radius-sm); padding: 12px 4px; font-size: 14px; background: var(--bg); transition: all .2s; display: block; }
+.styles input { display: none; }
+.styles input:checked + span { font-weight: 700; }
+.styles label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.result { display: none; }
+.result.show { display: block; animation: fadeUp .4s ease; }
+.result h2 { font-size: 18px; margin: 0 0 16px; letter-spacing: -0.01em; }
+.block { background: var(--bg); border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 18px; margin-bottom: 14px; }
+.block .cap { font-size: 13px; color: var(--muted); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+.block .txt { font-size: 16px; line-height: 1.8; white-space: pre-wrap; word-break: break-word; }
+.block .txt.title { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.copy { border: 1px solid var(--line); background: #fff; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; padding: 6px 16px; cursor: pointer; font-family: var(--font); color: var(--ink); transition: all .2s; }
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+.copy:active { background: var(--accent-soft); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { background: var(--accent-soft); color: var(--accent); font-size: 14px; font-weight: 600; padding: 7px 14px; border-radius: var(--radius-pill); }
+.cover-wrap { text-align: center; }
+#cover { width: 100%; max-width: 380px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); }
+.row2 { display: flex; gap: 12px; }
+.row2 .btn { flex: 1; margin-top: 16px; }
+.err { display: none; background: #fff1f1; color: #c0392b; border: 1px solid #fecaca; border-radius: var(--radius-sm); padding: 14px 18px; font-size: 14px; margin-bottom: 18px; }
+.err.show { display: block; }
+.loading-box { text-align: center; color: var(--muted); font-size: 15px; padding: 32px 0; display: none; }
+.loading-box.show { display: block; }
+.spin { display: inline-block; animation: spin 1s linear infinite; font-size: 26px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.tool-foot { text-align: center; color: var(--faint); font-size: 13px; margin-top: 28px; padding-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-title"><span class="brand-mark">鸡</span>鸡仔</div>
+      <div class="header-subtitle" id="header-subtitle">加载中...</div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="news.html" class="nav-link">资讯</a>
+      <a href="studio.html" class="nav-link active">创作</a>
+      <a href="video/" class="nav-link">电影</a>
+      <a href="tools.html" class="nav-link">工具</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero hero-compact">
+  <div class="hero-eyebrow">图文 · 视频 · AI 写作</div>
+  <h1 class="hero-title">创作中心</h1>
+  <p class="hero-sub">每天自动生成的图文发布包和短视频在这里审核下载；也可以让 AI 帮你写小红书文案。</p>
+</section>
+
+<main>
+  <section class="section section-tight">
+    <div class="tabs-wrap">
+      <div class="segmented" id="studioTabs">
+        <button class="active" data-tab="pkg">发布包</button>
+        <button data-tab="tool">写文案</button>
+        <button data-tab="video">短视频</button>
+      </div>
+    </div>
+
+    <div class="tabpane active" id="pane-pkg">
+      <div class="date-row">
+        <label for="dateSel">选择日期</label>
+        <select id="dateSel" class="input" style="width:auto;"></select>
+        <span id="modeBadge" class="badge" style="display:none"></span>
+      </div>
+      <div id="content"></div>
+    </div>
+
+    <div class="tabpane" id="pane-tool">
+      <div class="tool-wrap">
+        <div class="err" id="err"></div>
+        <div class="card">
+          <div class="field">
+            <label for="topic">主题 *</label>
+            <textarea id="topic" class="input" placeholder="比如：推荐 3 个免费 AI 修图 App，学生党必备"></textarea>
+          </div>
+          <div class="field">
+            <label for="points">补充卖点 / 要点（可选）</label>
+            <input type="text" id="points" class="input" placeholder="比如：无广告、支持中文、导出无水印">
+          </div>
+          <div class="field">
+            <label>笔记风格</label>
+            <div class="styles">
+              <label><input type="radio" name="style" value="zhongcao" checked><span>种草推荐</span></label>
+              <label><input type="radio" name="style" value="ganhuo"><span>干货教程</span></label>
+              <label><input type="radio" name="style" value="ceping"><span>真实测评</span></label>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" id="go" style="width:100%;">生成文案</button>
+        </div>
+        <div class="loading-box" id="loading"><span class="spin">·</span><br><br>鸡仔正在写稿…</div>
+        <div class="result" id="result">
+          <div class="card">
+            <h2>文案</h2>
+            <div class="block">
+              <div class="cap">标题 <button class="copy" data-copy="r-title">复制</button></div>
+              <div class="txt title" id="r-title"></div>
+            </div>
+            <div class="block">
+              <div class="cap">正文 <button class="copy" data-copy="r-body">复制</button></div>
+              <div class="txt" id="r-body"></div>
+            </div>
+            <div class="block">
+              <div class="cap">标签 <button class="copy" data-copy="r-tags">复制</button></div>
+              <div class="tags" id="r-tags"></div>
+            </div>
+          </div>
+          <div class="card">
+            <h2>封面图 <span style="font-weight:400;color:var(--faint);font-size:13px;">1080×1440</span></h2>
+            <div class="cover-wrap"><canvas id="cover" width="1080" height="1440"></canvas></div>
+            <div class="row2">
+              <button class="btn btn-ghost" id="redraw">换个排版</button>
+              <button class="btn btn-secondary" id="dl">下载封面</button>
+            </div>
+          </div>
+        </div>
+        <div class="tool-foot">AI 生成内容仅供参考，发布前请检查 · 每天免费 20 次</div>
+      </div>
+    </div>
+
+    <div class="tabpane" id="pane-video">
+      <div id="videoFeatured"><div class="loading">加载中…</div></div>
+      <div class="list-title">往期视频</div>
+      <div id="videoList"><div class="loading">加载中…</div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const pad2 = n => String(n).padStart(2, '0');
+const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/* ============ tab 切换 ============ */
+const loaded = {};
+function switchStudioTab(which) {
+  if (!['pkg', 'tool', 'video'].includes(which)) which = 'pkg';
+  document.querySelectorAll('#studioTabs button').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tab === which);
+  });
+  document.querySelectorAll('.tabpane').forEach(function(p) {
+    p.classList.toggle('active', p.id === 'pane-' + which);
+  });
+  if (which === 'video' && !loaded.video) { loaded.video = true; loadVideo(); }
+  try { history.replaceState(null, '', which === 'pkg' ? 'studio.html' : 'studio.html#' + which); } catch (e) {}
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('#studioTabs button').forEach(function(b) {
+  b.addEventListener('click', function() { switchStudioTab(b.dataset.tab); });
+});
+
+/* ============ 发布包审核 ============ */
+function copyText(btn, text) {
+  const done = () => {
+    btn.textContent = '已复制 ✓';
+    btn.classList.add('ok');
+    setTimeout(() => { btn.textContent = '复制'; btn.classList.remove('ok'); }, 1500);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else { fallbackCopy(text, done); }
+}
+function fallbackCopy(text, done) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); done(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+function cardEl(title, innerHTML, copyValue) {
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = '<div class="card-head"><h2>' + esc(title) + '</h2><button class="copy-btn">复制</button></div>' + innerHTML;
+  div.querySelector('.copy-btn').addEventListener('click', e => copyText(e.target, copyValue));
+  return div;
+}
+async function loadDate(date) {
+  const box = $('content');
+  box.innerHTML = '<div class="empty">加载中…</div>';
+  try {
+    const post = await (await fetch('data/xhs/' + date + '/post.json')).json();
+    box.innerHTML = '';
+    const badge = $('modeBadge');
+    badge.style.display = '';
+    badge.className = 'badge' + (post.fallback ? ' warn' : '');
+    badge.textContent = post.fallback ? '模板降级（LLM 未生成）' : 'AI 生成';
+    box.appendChild(cardEl('标题', '<div class="title-text">' + esc(post.title) + '</div>', post.title));
+    const tagsStr = post.tags.map(t => '#' + t).join(' ');
+    box.appendChild(cardEl('标签', '<div class="tags-text">' + esc(tagsStr) + '</div>', tagsStr));
+    box.appendChild(cardEl('正文', '<div class="body-text">' + esc(post.body) + '</div>', post.body));
+    const sec = document.createElement('h2');
+    sec.className = 'section-title';
+    sec.textContent = '卡片预览（' + (post.items.length + 2) + ' 张 · 3:4）';
+    box.appendChild(sec);
+    const gal = document.createElement('div');
+    gal.className = 'gallery';
+    const shots = [{ f: 'cover.png', l: '封面' }];
+    post.items.forEach((_, i) => shots.push({ f: 'card_' + pad2(i + 1) + '.png', l: '新闻 ' + (i + 1) }));
+    shots.push({ f: 'end.png', l: '末页' });
+    shots.forEach(s => {
+      const url = 'data/xhs/' + date + '/' + s.f;
+      const d = document.createElement('div');
+      d.className = 'shot';
+      d.innerHTML = '<a href="' + url + '" target="_blank" rel="noopener"><img src="' + url + '" alt="' + esc(s.l) + '" loading="lazy"></a>' +
+        '<div class="shot-label"><span>' + esc(s.l) + '</span><a href="' + url + '" download>下载</a></div>';
+      gal.appendChild(d);
+    });
+    box.appendChild(gal);
+  } catch (e) {
+    box.innerHTML = '<div class="empty">该日期的发布包不存在或加载失败。</div>';
+  }
+}
+async function initPkg() {
+  try {
+    const idx = await (await fetch('data/xhs/index.json')).json();
+    const sel = $('dateSel');
+    idx.forEach(e => {
+      const o = document.createElement('option');
+      o.value = e.date;
+      o.textContent = e.date + (e.title ? ' · ' + e.title : '');
+      sel.appendChild(o);
+    });
+    sel.addEventListener('change', () => loadDate(sel.value));
+    if (idx.length) loadDate(idx[0].date);
+    else $('content').innerHTML = '<div class="empty">暂无发布包，等待明日 workflow 生成。</div>';
+  } catch (e) {
+    $('content').innerHTML = '<div class="empty">暂无发布包，等待明日 workflow 生成。</div>';
+  }
+}
+
+/* ============ 短视频 ============ */
+async function loadVideo() {
+  const feat = $('videoFeatured'), listBox = $('videoList');
+  let list = [];
+  try {
+    const r = await fetch('data/video/index.json?t=' + Date.now());
+    if (!r.ok) throw new Error('not found');
+    list = await r.json();
+  } catch (e) { list = []; }
+  if (!list.length) {
+    feat.innerHTML = '<div class="empty-state"><div class="empty-title">视频尚未开播</div><div class="empty-desc">每天早上 8 点更新，敬请期待</div></div>';
+    listBox.innerHTML = '';
+    return;
+  }
+  const latest = list[0];
+  feat.innerHTML = '<div class="featured">' +
+    '<div class="video-wrap"><video src="' + esc(latest.file) + '" controls preload="metadata" playsinline></video></div>' +
+    '<div class="featured-info">' +
+    '<span class="badge blue" style="margin-bottom:12px;">最新一期</span>' +
+    '<div class="featured-title">' + esc(latest.title) + '</div>' +
+    '<div class="featured-meta">' + esc(latest.date_str || latest.date) +
+    (latest.count ? ' · ' + latest.count + ' 条新闻' : '') +
+    (latest.size_mb ? ' · ' + latest.size_mb + ' MB' : '') + '</div>' +
+    (latest.overview ? '<div class="featured-desc">' + esc(latest.overview) + '</div>' : '') +
+    '<a class="btn btn-primary" href="' + esc(latest.file) + '" download>下载视频</a>' +
+    '</div></div>';
+  const rest = list.slice(1);
+  listBox.innerHTML = rest.length ? rest.map(function(v) {
+    return '<div class="video-item">' +
+      '<div class="video-thumb"><video src="' + esc(v.file) + '" preload="metadata" playsinline muted></video></div>' +
+      '<div class="video-info">' +
+      '<div class="video-title">' + esc(v.title) + '</div>' +
+      '<div class="video-meta">' + esc(v.date_str || v.date) + (v.count ? ' · ' + v.count + ' 条新闻' : '') + '</div>' +
+      '<div class="video-actions"><a class="mini-btn" href="' + esc(v.file) + '" download>下载</a></div>' +
+      '</div></div>';
+  }).join('') : '<div class="empty-desc" style="padding:16px 0;">暂无更多视频</div>';
+}
+
+/* ============ 写文案 ============ */
+function showErr(msg) {
+  const el = $('err');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 5000);
+}
+document.querySelectorAll('#pane-tool .copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const id = btn.getAttribute('data-copy');
+    let text = '';
+    if (id === 'r-tags') {
+      text = [...document.querySelectorAll('#r-tags .tag')].map(t => '#' + t.textContent).join(' ');
+    } else {
+      text = $(id).textContent;
+    }
+    try { await navigator.clipboard.writeText(text); btn.textContent = '已复制 ✓'; }
+    catch (e) { showErr('复制失败，请手动长按复制'); }
+    setTimeout(() => btn.textContent = '复制', 1500);
+  });
+});
+const W = 1080, H = 1440;
+const C = { bgTop: '#0f172a', bgBot: '#1e2d50', yellow: '#ffd166', white: '#ffffff', gray: '#cbd5e1', dim: '#64748b', card: '#182442' };
+const NO_START = new Set('，。！？；：、」』）】”’%·…—'.split(''));
+let coverData = null;
+function wrapText(ctx, text, maxW) {
+  const lines = [];
+  let cur = '';
+  for (const ch of text) {
+    const t = cur + ch;
+    if (ctx.measureText(t).width <= maxW) cur = t;
+    else { if (cur) lines.push(cur); cur = ch; }
+  }
+  if (cur) lines.push(cur);
+  const fixed = [];
+  for (const ln of lines) {
+    let line = ln;
+    if (fixed.length && NO_START.has(line[0])) { fixed[fixed.length - 1] += line[0]; line = line.slice(1); }
+    if (line) fixed.push(line);
+  }
+  return fixed.length ? fixed : [''];
+}
+function centered(ctx, y, text, font, fill) {
+  ctx.font = font;
+  const tw = ctx.measureText(text).width;
+  ctx.fillStyle = fill;
+  ctx.fillText(text, (W - tw) / 2, y);
+}
+const FONT = (size, weight = 600) => weight + ' ' + size + 'px "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+function drawCover(variant) {
+  if (!coverData) return;
+  const { title, cover_points } = coverData;
+  const cv = $('cover');
+  const ctx = cv.getContext('2d');
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, C.bgTop); g.addColorStop(1, C.bgBot);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = C.yellow; ctx.fillRect(0, 0, W, 10);
+  ctx.textBaseline = 'top';
+  ctx.font = FONT(44); ctx.fillStyle = C.yellow;
+  ctx.fillText('鸡仔·小红书文案', 70, 60);
+  ctx.font = FONT(104);
+  const titleLines = wrapText(ctx, title.replace(/[^\u4e00-\u9fa5\w，。！？、：；「」『』…—·]/g, ''), W - 160).slice(0, 3);
+  let y = 320;
+  ctx.fillStyle = C.white;
+  if (variant === 0) {
+    for (const ln of titleLines) { centered(ctx, y, ln, FONT(104), C.white); y += 140; }
+  } else {
+    for (const ln of titleLines) { ctx.fillText(ln, 80, y); y += 140; }
+  }
+  const lw = 120;
+  ctx.fillStyle = C.yellow;
+  ctx.fillRect(variant === 0 ? (W - lw) / 2 : 80, y + 10, lw, 10);
+  y += 80;
+  ctx.font = FONT(52);
+  const pts = cover_points.filter(Boolean).slice(0, 3);
+  pts.forEach((p, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    ctx.fillStyle = C.yellow; ctx.font = FONT(56);
+    ctx.fillText(num, 90, y);
+    ctx.fillStyle = C.gray; ctx.font = FONT(46);
+    const plines = wrapText(ctx, p, W - 280).slice(0, 2);
+    plines.forEach((ln, j) => ctx.fillText(ln, 190, y + j * 68));
+    y += plines.length * 68 + 56;
+  });
+  const foot = '鸡仔 · 每天灵感不缺席';
+  ctx.font = FONT(32, 400);
+  const fw = ctx.measureText(foot).width;
+  ctx.fillStyle = C.dim;
+  ctx.fillText(foot, (W - fw) / 2, H - 110);
+}
+let coverVariant = 0;
+$('go').addEventListener('click', async () => {
+  const topic = $('topic').value.trim();
+  const points = $('points').value.trim();
+  const style = document.querySelector('input[name=style]:checked').value;
+  if (!topic) { showErr('请先填写主题'); return; }
+  const btn = $('go');
+  btn.disabled = true;
+  $('loading').classList.add('show');
+  $('result').classList.remove('show');
+  try {
+    const r = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic, points, style }),
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || '生成失败');
+    if (!data.title) throw new Error('生成结果为空，请重试');
+    $('r-title').textContent = data.title;
+    $('r-body').textContent = data.hook + '\n\n' + data.body + '\n\n喜欢就收藏，关注鸡仔不迷路';
+    $('r-tags').innerHTML = data.tags.map(t => '<span class="tag">' + esc(t) + '</span>').join('');
+    coverData = { title: data.title, cover_points: data.cover_points || [] };
+    coverVariant = 0;
+    drawCover(coverVariant);
+    $('result').classList.add('show');
+    $('result').scrollIntoView({ behavior: 'smooth' });
+  } catch (e) {
+    showErr(e.message || '网络开小差了，请重试');
+  } finally {
+    btn.disabled = false;
+    $('loading').classList.remove('show');
+  }
+});
+$('redraw').addEventListener('click', () => { coverVariant = (coverVariant + 1) % 2; drawCover(coverVariant); });
+$('dl').addEventListener('click', () => {
+  const cv = $('cover');
+  cv.toBlob(blob => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'xhs-cover.png';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  }, 'image/png');
+});
+
+/* ============ 初始化 ============ */
+initPkg();
+(function initTab() {
+  const h = (location.hash || '').replace('#', '');
+  switchStudioTab(['pkg', 'tool', 'video'].includes(h) ? h : 'pkg');
+})();
+</script>
+<script src="scripts/header-info.js"></script>
+<script src="scripts/footer.js"></script>
+</body>
+</html>
