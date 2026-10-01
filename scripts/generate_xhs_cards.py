@@ -107,11 +107,12 @@ def _centered(d, y, text, font, fill):
     return y
 
 
-def draw_cover(picks, path):
+def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
+             tip_text='每天 3 分钟，跟上 AI 圈动态'):
     img, d = _bg()
     _header(d, '')  # 封面不放日期：去日期化有利于搜索长尾流量
     f_title = _font(110)
-    _centered(d, 330, '今日AI早报', f_title, C_WHITE)
+    _centered(d, 330, big_title, f_title, C_WHITE)
     # 黄色分隔线
     d.rectangle([(W - 120) / 2, 500, (W + 120) / 2, 510], fill=C_YELLOW)
     # 3 条头条
@@ -124,8 +125,8 @@ def draw_cover(picks, path):
             y += 72
         y += 50
     f_tip = _font(38)
-    _centered(d, y + 40, '每天 3 分钟，跟上 AI 圈动态', f_tip, C_DIM)
-    _footer(d)
+    _centered(d, y + 40, tip_text, f_tip, C_DIM)
+    _footer(d, footer_text or '🐤 鸡仔 · 每天 8 点的AI早报')
     img.save(path)
 
 
@@ -189,7 +190,7 @@ def draw_card(pick, item, idx, total, path):
     img.save(path)
 
 
-def draw_end(jinju, question, path):
+def draw_end(jinju, question, path, fav_text='收藏这篇，明早接着看', footer_text=None):
     img, d = _bg()
     f1 = _font(64)
     _centered(d, 420, '今日金句', f1, C_YELLOW)
@@ -205,8 +206,8 @@ def draw_end(jinju, question, path):
         _centered(d, y, ln, f_q, C_GRAY)
         y += 76
     f_fav = _font(40)
-    _centered(d, y + 40, '收藏这篇，明早接着看', f_fav, C_DIM)
-    _footer(d)
+    _centered(d, y + 40, fav_text, f_fav, C_DIM)
+    _footer(d, footer_text or '🐤 鸡仔 · 每天 8 点的AI早报')
     img.save(path)
 
 

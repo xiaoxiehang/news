@@ -20,7 +20,6 @@ from pathlib import Path
 
 # 发布包根目录：仓库 data/xhs/<date>/（本脚本位于 scripts/，站点根在其上级）
 SITE_ROOT = Path(__file__).resolve().parent.parent
-XHS_ROOT = SITE_ROOT / "data" / "xhs"
 
 # 卡片标准尺寸
 CARD_SIZE = (1080, 1440)
@@ -30,9 +29,9 @@ def fail_lines():
     return []
 
 
-def check_package(date):
+def check_package(date, root="xhs"):
     """返回 (exit_code, lines)。"""
-    pkg = XHS_ROOT / date
+    pkg = (SITE_ROOT / "data" / root) / date
     post_path = pkg / "post.json"
 
     # 特殊情况：该日期没有 post.json -> SKIP
@@ -133,9 +132,14 @@ def main():
         default=datetime.now().strftime("%Y-%m-%d"),
         help="质检日期，格式 YYYY-MM-DD，默认当天",
     )
+    parser.add_argument(
+        "--root",
+        default="xhs",
+        help="发布包根目录名（data/ 下），默认 xhs；周盘点用 xhs_weekly",
+    )
     args = parser.parse_args()
 
-    code, lines = check_package(args.date)
+    code, lines = check_package(args.date, root=args.root)
     for line in lines:
         print(line)
     sys.exit(code)

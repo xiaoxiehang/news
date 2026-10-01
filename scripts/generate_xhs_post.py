@@ -128,13 +128,15 @@ def fallback_post(briefing):
     }
 
 
-def assemble_body(post, picks, include_point=True):
+def assemble_body(post, picks, include_point=True,
+                  list_title='📋 今日 8 条速览', fav_line='📌 收藏这篇，明早接着看'):
     """组装完整正文：hook + 清单 + 结尾引导 + AI 声明。picks 为重排后的新闻列表。
 
     include_point=False 时去掉每条的 point 长描述（小红书正文上限 1000 字时的
     精简模式：保留标题/用法/点评/来源）。
+    list_title / fav_line 供周盘点等其他栏目定制。
     """
-    parts = [post['hook'], '', '📋 今日 8 条速览', '']
+    parts = [post['hook'], '', list_title, '']
     numerals = '①②③④⑤⑥⑦⑧'
     for i, p in enumerate(picks):
         item = post['items'][i] if i < len(post['items']) else {}
@@ -148,7 +150,7 @@ def assemble_body(post, picks, include_point=True):
         if p.get('source'):
             parts.append(f"（来源：{p['source']}）")
         parts.append('')
-    parts.append('📌 收藏这篇，明早接着看')
+    parts.append(fav_line)
     parts.append(post.get('question') or DEFAULT_QUESTION)
     parts.append('')
     parts.append(AI_DISCLAIMER)
