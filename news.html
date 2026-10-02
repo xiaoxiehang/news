@@ -144,8 +144,7 @@ a.archive-pick-title:hover { color: var(--accent); }
       <a href="index.html" class="nav-link">首页</a>
       <a href="news.html" class="nav-link active">资讯</a>
       <a href="studio.html" class="nav-link">创作</a>
-      <a href="tools.html" class="nav-link">工具</a>
-    </nav>
+          </nav>
   </div>
 </header>
 
@@ -162,9 +161,6 @@ a.archive-pick-title:hover { color: var(--accent); }
       <div class="segmented" id="newsTabs">
         <button class="active" data-tab="zaobao">AI早报</button>
         <button data-tab="github">GitHub趋势</button>
-        <button data-tab="hn">Hacker News</button>
-        <button data-tab="archive">历史归档</button>
-        <button data-tab="quiz">每日一题</button>
       </div>
     </div>
 
@@ -192,12 +188,6 @@ a.archive-pick-title:hover { color: var(--accent); }
             <div class="feature-desc">竖屏带字幕，每天一条，下载就能发抖音、视频号。</div>
             <span class="feature-link">去看看 →</span>
           </a>
-          <a href="news.html#quiz" class="feature-card">
-            <div class="feature-icon">一题</div>
-            <div class="feature-title">开发者每日一题</div>
-            <div class="feature-desc">每天一道面试题，答对攒 streak，答错看解析。</div>
-            <span class="feature-link">开始答题 →</span>
-          </a>
           <a href="studio.html#tool" class="feature-card">
             <div class="feature-icon">文案</div>
             <div class="feature-title">小红书文案工具</div>
@@ -207,12 +197,6 @@ a.archive-pick-title:hover { color: var(--accent); }
         </div>
       </div>
       <div class="section section-tight" id="groups"><div class="loading">加载中...</div></div>
-      <div class="section section-tight" id="quote-section" style="display:none;">
-        <div class="quote-card">
-          <div class="quote-text" id="quote-text"></div>
-          <div class="quote-author" id="quote-author"></div>
-        </div>
-      </div>
     </div>
 
     <div class="tabpane" id="pane-github">
@@ -220,24 +204,8 @@ a.archive-pick-title:hover { color: var(--accent); }
       <div id="projects-container"><div class="loading">加载中...</div></div>
     </div>
 
-    <div class="tabpane" id="pane-hn">
-      <div id="stories-container"><div class="loading">加载中...</div></div>
-    </div>
 
-    <div class="tabpane" id="pane-archive">
-      <div class="archive-list" id="archive-list"><div class="loading">加载中...</div></div>
-    </div>
 
-    <div class="tabpane" id="pane-quiz">
-      <div class="stats">
-        <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">连续打卡（天）</div></div>
-        <div class="stat-card"><div class="stat-num" id="stat-total">0</div><div class="stat-label">累计答题</div></div>
-        <div class="stat-card"><div class="stat-num" id="stat-rate">-</div><div class="stat-label">答对率</div></div>
-      </div>
-      <div id="today-quiz"><div class="loading">出题中...</div></div>
-      <div class="history-title">往期题目</div>
-      <div class="history-list" id="history"><div class="loading">加载中...</div></div>
-    </div>
   </section>
 </main>
 
@@ -267,9 +235,6 @@ function showToast(msg) {
 const TAB_META = {
   zaobao:  { eyebrow: '每天早上 8 点 · AI 精选', title: '今日科技早报', sub: 'AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。' },
   github:  { eyebrow: '开源世界每日速览', title: 'GitHub 热门项目', sub: 'AI、前端、开发工具——每天最值得 star 的项目，附 AI 一句话点评。' },
-  hn:      { eyebrow: '全球黑客社区', title: 'Hacker News 热榜', sub: '极客们今天在讨论什么——技术、创业与那些值得深思的观点。' },
-  archive: { eyebrow: '每天一份 · 从不错过', title: '历史早报归档', sub: '点击任意一期展开查看完整内容，也可通过 RSS 订阅。' },
-  quiz:    { eyebrow: 'AI 出题 · 每天一道', title: '开发者每日一题', sub: '面试题天天练，答对攒 streak，答错看解析——悄悄变强。' }
 };
 const loaded = {};
 function switchTab(which) {
@@ -287,7 +252,7 @@ function switchTab(which) {
   if (which !== 'zaobao') document.getElementById('hero-date').textContent = '';
   if (!loaded[which]) {
     loaded[which] = true;
-    ({ zaobao: loadZaobao, github: loadGithub, hn: loadHn, archive: loadArchive, quiz: loadQuiz })[which]();
+    ({ zaobao: loadZaobao, github: loadGithub })[which]();
   }
   try { history.replaceState(null, '', which === 'zaobao' ? 'news.html' : 'news.html#' + which); } catch (e) {}
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -371,8 +336,6 @@ async function loadZaobao() {
   } catch (e) { console.error('加载早报失败:', e); }
   const container = document.getElementById('groups');
   const gh = await fetchJson('data/github.json');
-  const hn = await fetchJson('data/hackernews.json');
-  const misc = await fetchJson('data/misc.json');
   let html = '';
   if (gh && gh.categories) {
     const hot = gh.categories.hot || gh.categories.trending;
@@ -384,22 +347,10 @@ async function loadZaobao() {
       html += renderGroup({ title: 'GitHub 热榜', desc: hot.desc || '', moreLink: 'news.html#github', updated: gh.updated_at, items: items });
     }
   }
-  if (hn && hn.stories && hn.stories.length) {
-    const items = hn.stories.slice(0, 6).map(function(s) {
-      return { title: s.title, link: s.url, summary: '',
-               meta: '▲ ' + (s.score || 0) + ' · 评论 ' + (s.descendants || 0) + ' · ' + (s.by || '') };
-    });
-    html += renderGroup({ title: 'Hacker News', desc: '全球黑客社区热议', moreLink: 'news.html#hn', updated: hn.updated_at, items: items });
-  }
   if (!html) {
     container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无新闻数据</div><div class="empty-desc">今日新闻正在采集中，请稍后刷新</div></div>';
   } else {
     container.innerHTML = html;
-  }
-  if (misc && misc.quote && misc.quote.text) {
-    document.getElementById('quote-text').textContent = '"' + misc.quote.text + '"';
-    document.getElementById('quote-author').textContent = '—— ' + (misc.quote.author || '佚名');
-    document.getElementById('quote-section').style.display = '';
   }
 }
 
@@ -489,202 +440,6 @@ async function loadGithub() {
   } catch (e) {
     console.error('加载失败:', e);
     renderGhProjects();
-  }
-}
-
-/* ============ Hacker News ============ */
-let hnStories = [];
-function renderHnStories() {
-  const container = document.getElementById('stories-container');
-  if (!hnStories.length) {
-    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无数据</div><div class="empty-desc">请稍后刷新重试</div></div>';
-    return;
-  }
-  container.innerHTML = '<div class="stories-list">' + hnStories.map(function(story, idx) {
-    return '<a href="' + esc(story.url) + '" target="_blank" rel="noopener" class="story-card">' +
-      '<div class="story-rank">' + (idx + 1) + '</div>' +
-      '<div class="story-content"><div class="story-title">' + esc(story.title) + '</div>' +
-      '<div class="story-meta">' +
-      '<div class="story-meta-item"><span>▲</span><span class="meta-value">' + esc(story.score) + '</span></div>' +
-      '<div class="story-meta-item"><span>评</span><span class="meta-value">' + esc(story.descendants) + '</span></div>' +
-      '<div class="story-meta-item"><span class="meta-value">' + esc(story.by) + '</span></div>' +
-      '<div class="story-meta-item"><span>' + esc(story.time) + '</span></div>' +
-      '</div></div></a>';
-  }).join('') + '</div>';
-}
-async function loadHn() {
-  try {
-    const r = await fetch('data/hackernews.json?t=' + Date.now());
-    const data = await r.json();
-    hnStories = data.stories || [];
-  } catch (e) { console.error('加载失败:', e); }
-  renderHnStories();
-}
-
-/* ============ 历史归档 ============ */
-const archiveCache = {};
-async function toggleArchiveItem(date, el) {
-  const item = el.closest('.archive-item');
-  const body = item.querySelector('.archive-body');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.archive-item.open').forEach(function(o) { o.classList.remove('open'); });
-  if (isOpen) return;
-  item.classList.add('open');
-  if (!archiveCache[date]) {
-    body.innerHTML = '<div class="loading">加载中...</div>';
-    try {
-      const r = await fetch('data/archive/briefing-' + date + '.json?t=' + Date.now());
-      if (!r.ok) throw new Error('not found');
-      archiveCache[date] = await r.json();
-    } catch (e) {
-      body.innerHTML = '<div class="empty-desc" style="padding:16px 0;">该期内容加载失败</div>';
-      return;
-    }
-  }
-  const data = archiveCache[date];
-  let html = '';
-  (data.picks || []).forEach(function(p, i) {
-    const hasLink = p.url && p.url.indexOf('http') === 0;
-    const titleHtml = hasLink
-      ? '<a class="archive-pick-title" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>'
-      : '<div class="archive-pick-title">' + esc(p.title) + '</div>';
-    html += '<div class="archive-pick"><div class="archive-num">' + (i + 1) + '</div><div>' + titleHtml +
-      (p.summary ? '<div class="archive-pick-summary">' + esc(p.summary) + '</div>' : '') +
-      (p.source ? '<div class="archive-pick-source">来源：' + esc(p.source) + '</div>' : '') +
-      '</div></div>';
-  });
-  body.innerHTML = html || '<div class="empty-desc" style="padding:16px 0;">本期暂无内容</div>';
-}
-async function loadArchive() {
-  const container = document.getElementById('archive-list');
-  try {
-    const r = await fetch('data/archive/index.json?t=' + Date.now());
-    if (!r.ok) throw new Error('not found');
-    const index = await r.json();
-    if (!index.length) throw new Error('empty');
-    container.innerHTML = index.map(function(e) {
-      return '<div class="archive-item">' +
-        '<div class="archive-head" onclick="toggleArchiveItem(\'' + esc(e.date) + '\', this)">' +
-        '<div class="archive-date">' + esc(e.date_str || e.date) + '</div>' +
-        '<div class="archive-count">' + (e.count || 0) + ' 条</div>' +
-        '<div class="archive-overview">' + esc(e.overview || '') + '</div>' +
-        '<div class="archive-toggle">▼</div></div>' +
-        '<div class="archive-body"></div></div>';
-    }).join('');
-  } catch (e) {
-    container.innerHTML = '<div class="empty-state"><div class="empty-title">归档尚未开始</div><div class="empty-desc">第一期 AI 早报生成后，这里会自动开始积累历史内容</div></div>';
-  }
-}
-
-/* ============ 每日一题 ============ */
-const LETTERS = ['A', 'B', 'C', 'D'];
-function getQuizStats() {
-  try { return JSON.parse(localStorage.getItem('quiz_stats') || '{}'); }
-  catch (e) { return {}; }
-}
-function saveQuizStats(s) { localStorage.setItem('quiz_stats', JSON.stringify(s)); }
-function renderQuizStats() {
-  const s = getQuizStats();
-  document.getElementById('stat-streak').textContent = s.streak || 0;
-  document.getElementById('stat-total').textContent = s.total || 0;
-  document.getElementById('stat-rate').textContent = s.total ? Math.round((s.correct || 0) / s.total * 100) + '%' : '-';
-}
-function recordQuizAnswer(date, isCorrect) {
-  const s = getQuizStats();
-  const answeredKey = 'quiz_answered_' + date;
-  if (localStorage.getItem(answeredKey)) return;
-  localStorage.setItem(answeredKey, isCorrect ? '1' : '0');
-  s.total = (s.total || 0) + 1;
-  if (isCorrect) s.correct = (s.correct || 0) + 1;
-  const y = new Date(date); y.setDate(y.getDate() - 1);
-  const yKey = 'quiz_answered_' + y.toISOString().slice(0, 10);
-  s.streak = localStorage.getItem(yKey) ? (s.streak || 0) + 1 : 1;
-  saveQuizStats(s);
-  renderQuizStats();
-}
-function renderTodayQuiz(quiz) {
-  const container = document.getElementById('today-quiz');
-  const answered = localStorage.getItem('quiz_answered_' + quiz.date);
-  const optsHtml = quiz.options.map(function(opt, i) {
-    let cls = '';
-    if (answered) {
-      if (i === quiz.answer) cls = 'correct';
-      else if (answered === '0') cls = 'dim';
-    }
-    const dis = answered ? 'disabled' : '';
-    return '<button class="option-btn ' + cls + '" ' + dis + ' onclick="answerQuiz(' + i + ')"><b>' + LETTERS[i] + '.</b> ' + esc(opt) + '</button>';
-  }).join('');
-  let resultHtml = '';
-  if (answered) {
-    const good = answered === '1';
-    resultHtml = '<div class="quiz-result show ' + (good ? 'good' : 'bad') + '">' +
-      '<div class="result-title">' + (good ? '答对了！' : '答错了，看看解析') + '</div>' +
-      '<div>' + esc(quiz.explanation || '暂无解析') + '</div></div>';
-  }
-  container.innerHTML = '<div class="quiz-card">' +
-    '<div class="quiz-meta"><span class="topic-tag">' + esc(quiz.topic) + '</span>' +
-    '<span class="quiz-date">' + esc(quiz.date_str || quiz.date) + '</span></div>' +
-    '<div class="quiz-question">' + esc(quiz.question) + '</div>' +
-    '<div class="quiz-options" id="quiz-options">' + optsHtml + '</div>' +
-    '<div id="quiz-result">' + resultHtml + '</div></div>';
-  window._quiz = quiz;
-}
-function answerQuiz(i) {
-  const quiz = window._quiz;
-  if (!quiz || localStorage.getItem('quiz_answered_' + quiz.date)) return;
-  const isCorrect = i === quiz.answer;
-  recordQuizAnswer(quiz.date, isCorrect);
-  document.querySelectorAll('#quiz-options .option-btn').forEach(function(b, j) {
-    b.disabled = true;
-    if (j === quiz.answer) b.classList.add('correct');
-    else if (j === i) b.classList.add('wrong');
-    else b.classList.add('dim');
-  });
-  document.getElementById('quiz-result').innerHTML =
-    '<div class="quiz-result show ' + (isCorrect ? 'good' : 'bad') + '">' +
-    '<div class="result-title">' + (isCorrect ? '答对了！' : '答错了，看看解析') + '</div>' +
-    '<div>' + esc(quiz.explanation || '暂无解析') + '</div></div>';
-}
-function toggleQuizHistory(el) {
-  el.closest('.history-item').classList.toggle('open');
-}
-async function loadQuiz() {
-  renderQuizStats();
-  try {
-    const r = await fetch('data/quiz.json?t=' + Date.now());
-    if (!r.ok) throw new Error('not found');
-    const quiz = await r.json();
-    if (!quiz.question) throw new Error('empty');
-    renderTodayQuiz(quiz);
-  } catch (e) {
-    document.getElementById('today-quiz').innerHTML = '<div class="empty-state"><div class="empty-title">今日题目尚未出炉</div><div class="empty-desc">每天早上 8 点更新，敬请期待</div></div>';
-  }
-  try {
-    const r = await fetch('data/quiz/index.json?t=' + Date.now());
-    if (!r.ok) throw new Error('not found');
-    const list = await r.json();
-    const today = (window._quiz && window._quiz.date) || '';
-    const past = list.filter(function(e) { return e.date !== today; }).slice(0, 30);
-    if (!past.length) {
-      document.getElementById('history').innerHTML = '<div class="empty-desc" style="padding:16px 0;">还没有往期题目</div>';
-      return;
-    }
-    document.getElementById('history').innerHTML = past.map(function(e) {
-      const opts = (e.options || []).map(function(opt, i) {
-        return '<div class="history-opt' + (i === e.answer ? ' is-answer' : '') + '">' +
-          LETTERS[i] + '. ' + esc(opt) + (i === e.answer ? ' ✓' : '') + '</div>';
-      }).join('');
-      return '<div class="history-item">' +
-        '<div class="history-head" onclick="toggleQuizHistory(this)">' +
-        '<span class="history-topic">' + esc(e.topic || '') + '</span>' +
-        '<span class="history-q">' + esc(e.question) + '</span>' +
-        '<span class="history-date">' + esc(e.date_str || e.date) + '</span></div>' +
-        '<div class="history-body">' + opts +
-        (e.explanation ? '<div class="history-exp">' + esc(e.explanation) + '</div>' : '') +
-        '</div></div>';
-    }).join('');
-  } catch (e) {
-    document.getElementById('history').innerHTML = '<div class="empty-desc" style="padding:16px 0;">暂无往期题目</div>';
   }
 }
 

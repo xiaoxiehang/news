@@ -37,16 +37,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: python scripts/fetch_github.py
 
-    - name: Fetch Hacker News
-      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
-      continue-on-error: true
-      run: python scripts/fetch_hackernews.py
-
-    - name: Fetch misc (quotes & weather)
-      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
-      continue-on-error: true
-      run: python scripts/fetch_misc.py
-
     - name: Fetch RSS (official blogs & tech media)
       if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
@@ -70,17 +60,6 @@ jobs:
         LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
         LLM_MODEL: ${{ secrets.LLM_MODEL }}
       run: python scripts/generate_github_insights.py
-
-
-    - name: Generate daily quiz
-      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
-      continue-on-error: true
-      env:
-        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-        LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
-        LLM_MODEL: ${{ secrets.LLM_MODEL }}
-      run: python scripts/generate_quiz.py
-
 
 
     - name: Install ffmpeg

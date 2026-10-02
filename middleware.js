@@ -22,15 +22,16 @@ export default function middleware(request) {
 
   const SUBDOMAINS = ['stock.xiaojj.pro', 'price.xiaojj.pro', 'video.xiaojj.pro', 'tv.xiaojj.pro'];
 
-  // 旧页面 301 跳转（2026-10 网站结构重组：资讯/创作聚合页）
+  // 旧页面 301 跳转（2026-10 网站结构重组：资讯/创作聚合页；2026-10-02 精简：HN/归档/quiz tab 已下线）
   const LEGACY_REDIRECTS = {
     '/zaobao.html': '/news.html',
     '/github.html': '/news.html#github',
-    '/hackernews.html': '/news.html#hn',
-    '/archive.html': '/news.html#archive',
-    '/quiz.html': '/news.html#quiz',
+    '/hackernews.html': '/news.html#github',
+    '/archive.html': '/news.html',
+    '/quiz.html': '/news.html',
     '/xhs.html': '/studio.html',
     '/xhs-tool.html': '/studio.html#tool',
+    '/tools.html': '/',
   };
   if (LEGACY_REDIRECTS[pathname] && !SUBDOMAINS.includes(host)) {
     return new Response(null, {
