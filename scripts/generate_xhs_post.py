@@ -72,6 +72,12 @@ def build_prompt(briefing):
         lines.append(f"{i}. {p['title']}\n   摘要：{p['summary']}\n   来源：{p['source']}")
     items = '\n\n'.join(lines)
     date_str = briefing.get('date_str', '')
+    today = briefing.get('date', '')
+    try:
+        _dt = datetime.strptime(today, '%Y-%m-%d')
+        short_date = f'{_dt.month}月{_dt.day}日'
+    except Exception:
+        short_date = date_str
     return f"""你是小红书科技区博主"鸡仔"，每天发"鸡仔AI早报"图文笔记。
 你的读者不是程序员，而是对 AI 感兴趣的普通打工人、学生党、自媒体人。
 你的核心能力是"翻译"：把 AI 圈的黑话新闻，翻译成普通人能听懂、觉得有用的话。
@@ -81,8 +87,9 @@ def build_prompt(briefing):
 {items}
 
 请为今天的早报笔记写小红书文案。要求：
-1. 标题不超过 20 个字，固定栏目名前缀"{date_str}鸡仔AI早报｜"，后面接人群词+利益点，
-   比如"打工人必看8条""这3个工具先收藏"。前 18 字内含"AI"关键词，不用"最/第一"等极限词。
+1. 标题不超过 20 个字，固定格式"{short_date}鸡仔AI早报｜+利益点"，利益点必须是完整词组（4-8字），
+   比如"打工人提效8条""3个工具先收藏""学生党必看"，严禁输出"职效""你省"这类被截断的半截词。
+   前 18 字内含"AI"关键词，不用"最/第一"等极限词。
 2. 开头 hook：2 行口语化文案，先给结论、制造期待。
 3. 为每条新闻写：
    - point（1-2 句口语化介绍，第一人称像朋友聊天，把技术黑话翻译成人话，不说公文腔，不超过 60 字）；
@@ -197,8 +204,19 @@ def main():
             while len(items) < n:
                 items.append({'point': briefing['picks'][len(items)]['summary'],
                               'usage': '', 'comment': ''})
+            _raw_title = (result.get('title') or '').strip()
+            _tail = _raw_title.rsplit('｜', 1)[-1].strip() if '｜' in _raw_title else _raw_title
+            if len(_tail) < 4:
+                _tail = '今日必看'
+            _bt = briefing.get('date', '')
+            try:
+                _bdt = datetime.strptime(_bt, '%Y-%m-%d')
+                short_date = f'{_bdt.month}月{_bdt.day}日'
+            except Exception:
+                short_date = briefing.get('date_str', _bt)
+            _title = f'{short_date}鸡仔AI早报｜{_tail[:8]}'
             post = {
-                'title': (result.get('title') or '')[:20],
+                'title': _title[:20],
                 'hook': result.get('hook', ''),
                 'items': [{'point': it.get('point', ''), 'usage': it.get('usage', ''),
                            'comment': it.get('comment', '')}
