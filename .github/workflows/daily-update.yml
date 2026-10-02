@@ -31,29 +31,29 @@ jobs:
         pip install requests edge-tts feedparser pillow
 
     - name: Fetch GitHub trending
-      if: ${{ inputs.only == 'all' }}
+      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: python scripts/fetch_github.py
 
     - name: Fetch Hacker News
-      if: ${{ inputs.only == 'all' }}
+      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
       run: python scripts/fetch_hackernews.py
 
     - name: Fetch misc (quotes & weather)
-      if: ${{ inputs.only == 'all' }}
+      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
       run: python scripts/fetch_misc.py
 
     - name: Fetch RSS (official blogs & tech media)
-      if: ${{ inputs.only == 'all' }}
+      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
       run: python scripts/fetch_rss.py
 
     - name: Generate AI briefing
-      if: ${{ inputs.only == 'all' }}
+      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -63,7 +63,7 @@ jobs:
 
 
     - name: Generate GitHub insights
-      if: ${{ inputs.only == 'all' }}
+      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -73,7 +73,7 @@ jobs:
 
 
     - name: Generate daily quiz
-      if: ${{ inputs.only == 'all' }}
+      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -87,12 +87,12 @@ jobs:
       run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       
     - name: Generate short video briefing
-      if: ${{ inputs.only == 'all' || inputs.only == 'video' }}
+      if: ${{ inputs.only == 'all' || inputs.only == 'video' || github.event_name == 'schedule' }}
       continue-on-error: true
       run: python scripts/generate_video.py
 
     - name: Generate Xiaohongshu post (title/body/tags/comments)
-      if: ${{ inputs.only == 'all' || inputs.only == 'xhs' }}
+      if: ${{ inputs.only == 'all' || inputs.only == 'xhs' || github.event_name == 'schedule' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -101,18 +101,18 @@ jobs:
       run: python scripts/generate_xhs_post.py
 
     - name: Generate Xiaohongshu cards (3:4 images)
-      if: ${{ inputs.only == 'all' || inputs.only == 'xhs' }}
+      if: ${{ inputs.only == 'all' || inputs.only == 'xhs' || github.event_name == 'schedule' }}
       continue-on-error: true
       run: python scripts/generate_xhs_cards.py
 
     - name: QC Xiaohongshu package
-      if: ${{ inputs.only == 'all' || inputs.only == 'xhs' }}
+      if: ${{ inputs.only == 'all' || inputs.only == 'xhs' || github.event_name == 'schedule' }}
       id: qc1
       continue-on-error: true
       run: python scripts/qc_xhs_package.py
 
     - name: Regenerate Xiaohongshu package (retry once after QC failure)
-      if: ${{ (inputs.only == 'all' || inputs.only == 'xhs') && steps.qc1.outcome == 'failure' }}
+      if: ${{ (inputs.only == 'all' || inputs.only == 'xhs' || github.event_name == 'schedule') && steps.qc1.outcome == 'failure' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -123,7 +123,7 @@ jobs:
         python scripts/generate_xhs_cards.py
 
     - name: QC Xiaohongshu package (second check, fails the job on bad package)
-      if: ${{ (inputs.only == 'all' || inputs.only == 'xhs') && steps.qc1.outcome == 'failure' }}
+      if: ${{ (inputs.only == 'all' || inputs.only == 'xhs' || github.event_name == 'schedule') && steps.qc1.outcome == 'failure' }}
       run: python scripts/qc_xhs_package.py
 
     - name: Commit and push
