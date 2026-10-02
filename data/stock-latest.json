@@ -1,101 +1,101 @@
 {
-  "updated_at": "2026-10-01T22:54:22+00:00",
-  "updated_at_utc": "2026-10-01T22:54:22+00:00",
+  "updated_at": "2026-10-02T18:08:00+00:00",
+  "updated_at_utc": "2026-10-02T18:08:00+00:00",
   "source": "yahoo",
   "note": "由 stock-watch workflow 每 15 分钟更新；页面在行情接口不可用时降级读取本文件",
   "quotes": {
     "AAPL": {
-      "price": 330.32,
-      "prev_close": 335.92,
-      "change_pct": -1.67,
-      "volume": 35017775,
-      "vol_base": 37822475,
+      "price": 333.02,
+      "prev_close": 341.07,
+      "change_pct": -2.36,
+      "volume": 18156997,
+      "vol_base": 39382825,
       "source": "yahoo",
-      "vol_ratio": 0.93,
+      "vol_ratio": 0.46,
       "alerts": {
         "change": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         },
         "volume": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         }
       }
     },
     "NVDA": {
-      "price": 230.86,
-      "prev_close": 224.58,
-      "change_pct": 2.8,
-      "volume": 97538145,
-      "vol_base": 113879775,
+      "price": 234.66,
+      "prev_close": 225.07,
+      "change_pct": 4.26,
+      "volume": 97893069,
+      "vol_base": 115985300,
       "source": "yahoo",
-      "vol_ratio": 0.86,
+      "vol_ratio": 0.84,
       "alerts": {
         "change": {
-          "active": false,
-          "day": "2026-10-01"
+          "active": true,
+          "day": "2026-10-02"
         },
         "volume": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         }
       }
     },
     "TSLA": {
-      "price": 354.11,
-      "prev_close": 377.94,
-      "change_pct": -6.31,
-      "volume": 30302824,
-      "vol_base": 39295150,
+      "price": 371.72,
+      "prev_close": 372.11,
+      "change_pct": -0.1,
+      "volume": 37680404,
+      "vol_base": 35546375,
       "source": "yahoo",
-      "vol_ratio": 0.77,
+      "vol_ratio": 1.06,
       "alerts": {
         "change": {
-          "active": true,
-          "day": "2026-10-01"
+          "active": false,
+          "day": "2026-10-02"
         },
         "volume": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         }
       }
     },
     "MSFT": {
-      "price": 512.8,
-      "prev_close": 497.93,
-      "change_pct": 2.99,
-      "volume": 18901325,
-      "vol_base": 26596275,
+      "price": 515.17,
+      "prev_close": 516.17,
+      "change_pct": -0.19,
+      "volume": 8976602,
+      "vol_base": 21972150,
       "source": "yahoo",
-      "vol_ratio": 0.71,
+      "vol_ratio": 0.41,
       "alerts": {
         "change": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         },
         "volume": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         }
       }
     },
     "AMZN": {
-      "price": 248.23,
-      "prev_close": 249.38,
-      "change_pct": -0.46,
-      "volume": 32645635,
-      "vol_base": 35626025,
+      "price": 250.9,
+      "prev_close": 249.67,
+      "change_pct": 0.49,
+      "volume": 18968698,
+      "vol_base": 35353425,
       "source": "yahoo",
-      "vol_ratio": 0.92,
+      "vol_ratio": 0.54,
       "alerts": {
         "change": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         },
         "volume": {
           "active": false,
-          "day": "2026-10-01"
+          "day": "2026-10-02"
         }
       }
     }
