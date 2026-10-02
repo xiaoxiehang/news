@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-10-02T18:08:00+00:00",
-  "updated_at_utc": "2026-10-02T18:08:00+00:00",
+  "updated_at": "2026-10-02T22:10:22+00:00",
+  "updated_at_utc": "2026-10-02T22:10:22+00:00",
   "source": "yahoo",
   "note": "由 stock-watch workflow 每 15 分钟更新；页面在行情接口不可用时降级读取本文件",
   "quotes": {
     "AAPL": {
-      "price": 333.02,
+      "price": 333.69,
       "prev_close": 341.07,
-      "change_pct": -2.36,
-      "volume": 18156997,
-      "vol_base": 39382825,
+      "change_pct": -2.16,
+      "volume": 31878433,
+      "vol_base": 39398425,
       "source": "yahoo",
-      "vol_ratio": 0.46,
+      "vol_ratio": 0.81,
       "alerts": {
         "change": {
           "active": false,
@@ -24,13 +24,13 @@
       }
     },
     "NVDA": {
-      "price": 234.66,
+      "price": 233.95,
       "prev_close": 225.07,
-      "change_pct": 4.26,
-      "volume": 97893069,
-      "vol_base": 115985300,
+      "change_pct": 3.95,
+      "volume": 134470648,
+      "vol_base": 116040700,
       "source": "yahoo",
-      "vol_ratio": 0.84,
+      "vol_ratio": 1.16,
       "alerts": {
         "change": {
           "active": true,
@@ -43,13 +43,13 @@
       }
     },
     "TSLA": {
-      "price": 371.72,
+      "price": 370.59,
       "prev_close": 372.11,
-      "change_pct": -0.1,
-      "volume": 37680404,
-      "vol_base": 35546375,
+      "change_pct": -0.41,
+      "volume": 54147498,
+      "vol_base": 35565475,
       "source": "yahoo",
-      "vol_ratio": 1.06,
+      "vol_ratio": 1.52,
       "alerts": {
         "change": {
           "active": false,
@@ -62,13 +62,13 @@
       }
     },
     "MSFT": {
-      "price": 515.17,
+      "price": 517.53,
       "prev_close": 516.17,
-      "change_pct": -0.19,
-      "volume": 8976602,
-      "vol_base": 21972150,
+      "change_pct": 0.26,
+      "volume": 17179496,
+      "vol_base": 21980975,
       "source": "yahoo",
-      "vol_ratio": 0.41,
+      "vol_ratio": 0.78,
       "alerts": {
         "change": {
           "active": false,
@@ -81,13 +81,13 @@
       }
     },
     "AMZN": {
-      "price": 250.9,
+      "price": 251.52,
       "prev_close": 249.67,
-      "change_pct": 0.49,
-      "volume": 18968698,
-      "vol_base": 35353425,
+      "change_pct": 0.74,
+      "volume": 33047205,
+      "vol_base": 35371025,
       "source": "yahoo",
-      "vol_ratio": 0.54,
+      "vol_ratio": 0.93,
       "alerts": {
         "change": {
           "active": false,
