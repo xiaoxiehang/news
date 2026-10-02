@@ -1,10 +1,11 @@
 // 小红书文案生成 API（Vercel Serverless, Node.js）
-// POST /api/generate  { topic, points?, style? } -> { title, hook, body, tags, cover_points }
+// POST /api/generate  { topic, points?, style?, template_hint? }
+//   -> { titles[5], title, hook, body, tags, cover_points, comment[] }
 //
 // 环境变量（与 GitHub Actions 的 LLM Secrets 取同一套值）：
 //   LLM_API_KEY   必填
 //   LLM_BASE_URL  默认 https://api.deepseek.com
-//   LLM_MODEL     默认 gpt-6-sol
+//   LLM_MODEL     默认 deepseek-chat
 
 const STYLE_LABEL = {
   zhongcao: '种草推荐',
@@ -24,7 +25,7 @@ function checkQuota(ip) {
   return n <= 20;
 }
 
-function buildPrompt(topic, points, style) {
+function buildPrompt(topic, points, style, templateHint) {
   const styleName = STYLE_LABEL[style] || STYLE_LABEL.zhongcao;
   const structure =
     style === 'ganhuo'
@@ -32,23 +33,27 @@ function buildPrompt(topic, points, style) {
       : style === 'ceping'
         ? '正文逐个测评，每个给一句话结论+星级，最后一段总结"谁适合买/不适合谁"。'
         : '正文按"痛点→种草→怎么用→避坑"组织，像朋友聊天一样推荐。';
+  const tpl = templateHint
+    ? `\n写作模板（必须遵循它的结构、语气和标题公式）：\n${templateHint}\n`
+    : '';
   return `你是小红书博主"鸡仔"，擅长写高点击的图文笔记，读者是爱尝鲜的年轻人、打工人、学生党。
 你的核心能力是"说人话"：不说公文腔，不说黑话，像朋友一样分享。
 
 用户给的主题：${topic}
 用户补充的卖点/要点：${points || '无'}
-笔记风格：${styleName}
-
+笔记风格：${styleName}${tpl}
 请写一篇小红书图文笔记文案。要求：
-1. 标题不超过 20 个字，开头抓眼球，含 1-2 个搜索关键词，不用"最/第一"等极限词，可加 1 个 emoji。
+1. titles：5 个标题，每个不超过 20 个字，风格各不相同——悬念式、数字式、对比式、情绪共鸣式、干货式各 1 个；含 1-2 个搜索关键词，不用"最/第一"等极限词，可加 1 个 emoji。
 2. hook：开头 2 行口语化文案，先给结论、制造期待（两行之间用\\n分隔）。
-3. 正文：${structure}口语化、第一人称、分段清晰，适当用 emoji，300-600 字。
+3. body：${structure}口语化、第一人称、分段清晰，适当用 emoji，300-600 字。
 4. tags：5-8 个全中文话题标签，大词+人群词+精准词组合。
 5. cover_points：3 条封面亮点，每条不超过 14 个字，要具体、有钩子（用于封面图）。
+6. comment：3 条评论区预埋话术——1 条提问引导评论、1 条补充干货信息、1 条玩梗互动，每条不超过 30 字，口语化。
 
 只返回 JSON，不要有其他内容，格式：
-{"title": "标题", "hook": "第一行\\n第二行", "body": "正文段落1\\n\\n正文段落2",
- "tags": ["标签1", "标签2"], "cover_points": ["亮点1", "亮点2", "亮点3"]}`;
+{"titles": ["标题1", "标题2", "标题3", "标题4", "标题5"], "hook": "第一行\\n第二行", "body": "正文段落1\\n\\n正文段落2",
+ "tags": ["标签1", "标签2"], "cover_points": ["亮点1", "亮点2", "亮点3"],
+ "comment": ["话术1", "话术2", "话术3"]}`;
 }
 
 function chatUrls(base) {
@@ -60,7 +65,7 @@ function chatUrls(base) {
 async function callLlm(prompt) {
   const apiKey = process.env.LLM_API_KEY || '';
   const base = (process.env.LLM_BASE_URL || 'https://api.deepseek.com').replace(/\/$/, '');
-  const model = process.env.LLM_MODEL || 'gpt-6-sol';
+  const model = process.env.LLM_MODEL || 'deepseek-chat';
   let lastErr = null;
   for (const url of chatUrls(base)) {
     try {
@@ -107,24 +112,34 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: '服务端未配置 LLM_API_KEY' });
   }
 
-  const { topic, points, style } = req.body || {};
+  const { topic, points, style, template_hint } = req.body || {};
   if (!topic || !String(topic).trim()) {
     return res.status(400).json({ error: '请填写主题' });
   }
 
   try {
-    const raw = await callLlm(buildPrompt(String(topic).trim(), String(points || '').trim(), style));
+    const raw = await callLlm(
+      buildPrompt(String(topic).trim(), String(points || '').trim(), style, String(template_hint || '').trim())
+    );
+    const titles = Array.isArray(raw.titles)
+      ? raw.titles.map((t) => cleanStr(t, 24)).filter(Boolean).slice(0, 5)
+      : [];
     const tags = Array.isArray(raw.tags) ? raw.tags.map((t) => cleanStr(t)).filter(Boolean).slice(0, 8) : [];
     const coverPoints = Array.isArray(raw.cover_points)
       ? raw.cover_points.map((t) => cleanStr(t, 14)).filter(Boolean).slice(0, 3)
       : [];
     while (coverPoints.length < 3) coverPoints.push('');
+    const comment = Array.isArray(raw.comment)
+      ? raw.comment.map((t) => cleanStr(t, 40)).filter(Boolean).slice(0, 3)
+      : [];
     res.status(200).json({
-      title: cleanStr(raw.title, 20),
+      titles: titles.length ? titles : [cleanStr(raw.title, 24) || '笔记标题'],
+      title: titles[0] || cleanStr(raw.title, 24) || '',
       hook: cleanStr(raw.hook),
       body: cleanStr(raw.body),
       tags: tags.length ? tags : ['种草', '好物分享'],
       cover_points: coverPoints,
+      comment,
     });
   } catch (e) {
     console.error('generate failed:', e?.message || e);

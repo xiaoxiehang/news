@@ -83,6 +83,82 @@
 .spin { display: inline-block; animation: spin 1s linear infinite; font-size: 26px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .tool-foot { text-align: center; color: var(--faint); font-size: 13px; margin-top: 28px; padding-bottom: 8px; }
+/* ---- 写文案工作台 v2 ---- */
+.wb-steps { display: flex; list-style: none; padding: 0; margin: 0 0 22px; gap: 8px; }
+.wb-steps li { flex: 1; text-align: center; font-size: 13px; color: var(--faint); padding: 11px 4px; border-radius: 14px; background: var(--bg); border: 1px solid var(--hairline); cursor: pointer; transition: all .2s; }
+.wb-steps li span { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; background: #d7dae2; color: #fff; font-size: 12px; font-weight: 700; align-items: center; justify-content: center; margin-right: 6px; }
+.wb-steps li.active { background: var(--accent-soft); color: var(--accent); font-weight: 700; border-color: var(--accent); }
+.wb-steps li.active span { background: var(--accent); }
+.wb-steps li.done { color: var(--muted); }
+.wb-steps li.done span { background: #34a853; }
+.wb-step { display: none; }
+.wb-step.active { display: block; animation: fadeUp .35s ease; }
+.wb-hint { font-weight: 400; color: var(--faint); font-size: 13px; }
+.wb-skip { text-align: center; margin-top: 14px; font-size: 14px; }
+.wb-skip a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.wb-days { display: grid; gap: 10px; margin-top: 16px; }
+.wb-day { background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 16px 18px; }
+.wb-day-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.wb-day-date { font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: var(--radius-pill); padding: 4px 12px; }
+.wb-day-topic { font-size: 16px; font-weight: 700; margin: 8px 0 6px; letter-spacing: -0.01em; }
+.wb-day-angle { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 4px; }
+.wb-day-kws { font-size: 12px; color: var(--faint); margin-bottom: 10px; }
+.wb-day .mini-btn { cursor: pointer; font-family: var(--font); }
+.wb-tpl-row { display: flex; align-items: center; gap: 12px; }
+.wb-tpl-name { font-size: 14px; color: var(--muted); }
+.wb-tpl-name.on { color: var(--accent); font-weight: 600; }
+.wb-titles { display: grid; gap: 10px; }
+.wb-title-pick { display: flex; gap: 12px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: var(--radius-sm); padding: 13px 15px; cursor: pointer; font-size: 15px; line-height: 1.6; background: var(--bg); transition: all .2s; }
+.wb-title-pick input { margin-top: 4px; accent-color: var(--accent); }
+.wb-title-pick.sel { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.wb-title-tag { flex-shrink: 0; font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; margin-top: 2px; }
+.wb-title-pick.sel .wb-title-tag { background: var(--accent); color: #fff; }
+#wb-hook[contenteditable], #wb-body[contenteditable] { outline: none; }
+#wb-hook[contenteditable]:focus, #wb-body[contenteditable]:focus { box-shadow: 0 0 0 2px var(--accent-soft); border-radius: 8px; }
+.wb-cover-tpls { display: flex; gap: 10px; margin-bottom: 18px; }
+.wb-cover-tpls button { flex: 1; border: 1.5px solid var(--line); background: var(--bg); border-radius: var(--radius-sm); padding: 11px 4px; font-size: 14px; font-family: var(--font); cursor: pointer; transition: all .2s; color: var(--ink); }
+.wb-cover-tpls button.active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+#wb-cover { width: 100%; max-width: 380px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); }
+.wb-pubtime { font-size: 14px; color: var(--muted); background: var(--bg); border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 14px; line-height: 1.7; }
+.wb-pubtime b { color: var(--accent); }
+.wb-checks { list-style: none; padding: 0; margin: 0 0 6px; display: grid; gap: 10px; }
+.wb-checks li { display: flex; gap: 10px; align-items: center; font-size: 14px; background: var(--bg); border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 12px 15px; }
+.wb-checks li.ok { color: var(--ink); }
+.wb-checks li.bad { color: #c0392b; }
+.wb-checks .ck { width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.wb-checks li.ok .ck { background: #e6f6ec; color: #0d7a3a; }
+.wb-checks li.bad .ck { background: #fdecec; color: #c0392b; }
+.wb-hist h2 { font-size: 18px; margin: 0 0 14px; letter-spacing: -0.01em; }
+.wb-hist-item { border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; background: var(--bg); }
+.wb-hist-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+.wb-hist-title { font-size: 15px; font-weight: 700; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wb-hist-meta { font-size: 12px; color: var(--faint); margin-bottom: 8px; }
+.wb-hist-actions { display: flex; gap: 8px; }
+.wb-hist-actions button { font-size: 12px; font-weight: 600; border-radius: var(--radius-pill); padding: 6px 14px; cursor: pointer; font-family: var(--font); border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.wb-hist-actions button:hover { border-color: var(--accent); color: var(--accent); }
+.wb-hist-actions button.danger:hover { border-color: #c0392b; color: #c0392b; }
+.wb-badge { font-size: 11px; font-weight: 700; border-radius: var(--radius-pill); padding: 3px 10px; background: #e6f6ec; color: #0d7a3a; flex-shrink: 0; }
+.wb-empty { text-align: center; color: var(--faint); font-size: 14px; padding: 18px 0; }
+.wb-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 60; align-items: flex-end; justify-content: center; }
+.wb-modal.show { display: flex; }
+.wb-modal-box { background: var(--card); width: 100%; max-width: 640px; max-height: 82vh; border-radius: 22px 22px 0 0; display: flex; flex-direction: column; animation: fadeUp .3s ease; }
+.wb-modal-head { display: flex; justify-content: space-between; align-items: center; padding: 20px 22px 12px; }
+.wb-modal-head h3 { margin: 0; font-size: 17px; }
+.wb-modal-head button { border: none; background: var(--bg); border-radius: 50%; width: 32px; height: 32px; font-size: 15px; cursor: pointer; color: var(--muted); }
+.wb-modal-cats { display: flex; gap: 8px; overflow-x: auto; padding: 4px 22px 12px; }
+.wb-modal-cats button { flex-shrink: 0; border: 1.5px solid var(--line); background: var(--bg); border-radius: var(--radius-pill); padding: 8px 16px; font-size: 13px; font-family: var(--font); cursor: pointer; color: var(--ink); }
+.wb-modal-cats button.active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.wb-modal-list { overflow-y: auto; padding: 0 22px 26px; display: grid; gap: 10px; }
+.wb-tpl-item { border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 14px 16px; background: var(--bg); }
+.wb-tpl-item h4 { margin: 0 0 4px; font-size: 15px; }
+.wb-tpl-item h4 .wb-tpl-cat { font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 2px 8px; margin-right: 8px; }
+.wb-tpl-scene { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.wb-tpl-ex { font-size: 13px; color: var(--faint); font-style: italic; margin-bottom: 10px; line-height: 1.6; }
+.wb-tpl-item .mini-btn { cursor: pointer; font-family: var(--font); }
+@media (max-width: 640px) {
+  .wb-steps li { font-size: 12px; padding: 10px 2px; }
+  .wb-steps li span { margin-right: 2px; }
+}
 </style>
 </head>
 <body>
@@ -128,57 +204,138 @@
     </div>
 
     <div class="tabpane" id="pane-tool">
-      <div class="tool-wrap">
-        <div class="err" id="err"></div>
-        <div class="card">
-          <div class="field">
-            <label for="topic">主题 *</label>
-            <textarea id="topic" class="input" placeholder="比如：推荐 3 个免费 AI 修图 App，学生党必备"></textarea>
-          </div>
-          <div class="field">
-            <label for="points">补充卖点 / 要点（可选）</label>
-            <input type="text" id="points" class="input" placeholder="比如：无广告、支持中文、导出无水印">
-          </div>
-          <div class="field">
-            <label>笔记风格</label>
-            <div class="styles">
-              <label><input type="radio" name="style" value="zhongcao" checked><span>种草推荐</span></label>
-              <label><input type="radio" name="style" value="ganhuo"><span>干货教程</span></label>
-              <label><input type="radio" name="style" value="ceping"><span>真实测评</span></label>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-lg" id="go" style="width:100%;">生成文案</button>
-        </div>
-        <div class="loading-box" id="loading"><span class="spin">·</span><br><br>鸡仔正在写稿…</div>
-        <div class="result" id="result">
+      <div class="tool-wrap wb">
+        <div class="err" id="wb-err"></div>
+        <ol class="wb-steps" id="wb-steps">
+          <li data-s="1" class="active"><span>1</span>选题</li>
+          <li data-s="2"><span>2</span>写文案</li>
+          <li data-s="3"><span>3</span>封面</li>
+          <li data-s="4"><span>4</span>发布</li>
+        </ol>
+
+        <!-- 步骤 1：选题 -->
+        <section class="wb-step active" id="wstep1">
           <div class="card">
-            <h2>文案</h2>
-            <div class="block">
-              <div class="cap">标题 <button class="copy" data-copy="r-title">复制</button></div>
-              <div class="txt title" id="r-title"></div>
+            <div class="field">
+              <label for="wb-field">你的领域 *</label>
+              <input id="wb-field" class="input" placeholder="比如：美妆、数码、母婴、职场">
             </div>
-            <div class="block">
-              <div class="cap">正文 <button class="copy" data-copy="r-body">复制</button></div>
-              <div class="txt" id="r-body"></div>
+            <div class="field">
+              <label for="wb-product">产品 / 方向（可选）</label>
+              <input id="wb-product" class="input" placeholder="比如：主做平价国货口红测评">
             </div>
-            <div class="block">
-              <div class="cap">标签 <button class="copy" data-copy="r-tags">复制</button></div>
-              <div class="tags" id="r-tags"></div>
-            </div>
+            <button class="btn btn-primary btn-lg" id="wb-gen-topics" style="width:100%;">生成 7 天选题日历</button>
+            <div class="wb-skip"><a href="#" id="wb-skip-topics">跳过，直接写主题 →</a></div>
           </div>
+          <div class="loading-box" id="wb-loading-topics"><span class="spin">·</span><br><br>鸡仔正在排选题…</div>
+          <div class="wb-days" id="wb-days"></div>
+        </section>
+
+        <!-- 步骤 2：写文案 -->
+        <section class="wb-step" id="wstep2">
           <div class="card">
-            <h2>封面图 <span style="font-weight:400;color:var(--faint);font-size:13px;">1080×1440</span></h2>
-            <div class="cover-wrap"><canvas id="cover" width="1080" height="1440"></canvas></div>
+            <div class="field">
+              <label for="wb-topic">主题 *</label>
+              <textarea id="wb-topic" class="input" placeholder="比如：推荐 3 个免费 AI 修图 App，学生党必备"></textarea>
+            </div>
+            <div class="field">
+              <label for="wb-points">补充卖点 / 要点（可选）</label>
+              <input type="text" id="wb-points" class="input" placeholder="比如：无广告、支持中文、导出无水印">
+            </div>
+            <div class="field">
+              <label>笔记风格</label>
+              <div class="styles">
+                <label><input type="radio" name="wb-style" value="zhongcao" checked><span>种草推荐</span></label>
+                <label><input type="radio" name="wb-style" value="ganhuo"><span>干货教程</span></label>
+                <label><input type="radio" name="wb-style" value="ceping"><span>真实测评</span></label>
+              </div>
+            </div>
+            <div class="field">
+              <label>写作模板</label>
+              <div class="wb-tpl-row">
+                <button class="btn btn-ghost" id="wb-pick-tpl" type="button">选择模板</button>
+                <span class="wb-tpl-name" id="wb-tpl-name">未使用模板</span>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-lg" id="wb-go" style="width:100%;">生成文案</button>
+          </div>
+          <div class="loading-box" id="wb-loading"><span class="spin">·</span><br><br>鸡仔正在写稿…</div>
+          <div id="wb-result" style="display:none;">
+            <div class="card">
+              <h2>标题 <span class="wb-hint">5 种风格，选 1 个</span></h2>
+              <div class="wb-titles" id="wb-titles"></div>
+            </div>
+            <div class="card">
+              <div class="block">
+                <div class="cap">开头 <button class="copy" data-wcopy="hook">复制</button></div>
+                <div class="txt" id="wb-hook" contenteditable="true" spellcheck="false"></div>
+              </div>
+              <div class="block">
+                <div class="cap">正文 <span class="wb-hint">可直接修改</span> <button class="copy" data-wcopy="body">复制</button></div>
+                <div class="txt" id="wb-body" contenteditable="true" spellcheck="false"></div>
+              </div>
+              <div class="block">
+                <div class="cap">标签 <button class="copy" data-wcopy="tags">复制</button></div>
+                <div class="tags" id="wb-tags"></div>
+              </div>
+              <div class="block">
+                <div class="cap">评论区话术 <button class="copy" data-wcopy="comment">复制</button></div>
+                <div class="txt" id="wb-comment"></div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-lg" id="wb-to-cover" style="width:100%;">下一步：做封面 →</button>
+          </div>
+        </section>
+
+        <!-- 步骤 3：封面 -->
+        <section class="wb-step" id="wstep3">
+          <div class="card">
+            <h2>封面图 <span class="wb-hint">1080×1440</span></h2>
+            <div class="wb-cover-tpls" id="wb-cover-tpls">
+              <button type="button" data-v="0" class="active">深蓝大字报</button>
+              <button type="button" data-v="1">奶油浅色</button>
+              <button type="button" data-v="2">撞色拼贴</button>
+            </div>
+            <div class="cover-wrap"><canvas id="wb-cover" width="1080" height="1440"></canvas></div>
             <div class="row2">
-              <button class="btn btn-ghost" id="redraw">换个排版</button>
-              <button class="btn btn-secondary" id="dl">下载封面</button>
+              <button class="btn btn-secondary" id="wb-dl">下载封面</button>
+              <button class="btn btn-primary" id="wb-to-pub">下一步：发布清单 →</button>
             </div>
           </div>
+        </section>
+
+        <!-- 步骤 4：发布 -->
+        <section class="wb-step" id="wstep4">
+          <div class="card">
+            <h2>发布清单</h2>
+            <div class="wb-pubtime">建议发布时段：<b>12:00–13:00</b>、<b>20:00–22:00</b>（小红书流量高峰）</div>
+            <ul class="wb-checks" id="wb-checks"></ul>
+            <div class="row2">
+              <button class="btn btn-secondary" id="wb-copyall">一键复制全文</button>
+              <button class="btn btn-primary" id="wb-publish">标记已发布，存入历史</button>
+            </div>
+            <div class="wb-skip"><a href="#" id="wb-save-draft">只存历史，不标记发布</a></div>
+          </div>
+        </section>
+
+        <!-- 历史记录 -->
+        <div class="card wb-hist">
+          <h2>历史记录 <span class="wb-hint">只保存在本机浏览器</span></h2>
+          <div id="wb-hist-list"><div class="wb-empty">还没有记录，完成一篇笔记后会自动存入</div></div>
         </div>
+
         <div class="tool-foot">AI 生成内容仅供参考，发布前请检查 · 每天免费 20 次</div>
       </div>
     </div>
 
+    <!-- 模板选择弹窗 -->
+    <div class="wb-modal" id="wb-tpl-modal">
+      <div class="wb-modal-box">
+        <div class="wb-modal-head"><h3>选择写作模板</h3><button id="wb-tpl-close" type="button">✕</button></div>
+        <div class="wb-modal-cats" id="wb-tpl-cats"></div>
+        <div class="wb-modal-list" id="wb-tpl-list"></div>
+      </div>
+    </div>
     <div class="tabpane" id="pane-video">
       <div id="videoFeatured"><div class="loading">加载中…</div></div>
       <div class="list-title">往期视频</div>
@@ -330,32 +487,210 @@ async function loadVideo() {
   }).join('') : '<div class="empty-desc" style="padding:16px 0;">暂无更多视频</div>';
 }
 
-/* ============ 写文案 ============ */
-function showErr(msg) {
-  const el = $('err');
+/* ============ 写文案工作台 v2 ============ */
+const wb = {
+  step: 1, maxStep: 1,
+  field: '', product: '', days: [],
+  topic: '', points: '', style: 'zhongcao',
+  tpl: null, tplCache: null, tplCat: '全部',
+  titles: [], titleIdx: 0,
+  hook: '', body: '', tags: [], coverPoints: [], comment: [],
+  coverVariant: 0, coverDrawn: false,
+  manualChecked: false,
+};
+const WB_HIST_KEY = 'xhs-wb-history-v1';
+const TITLE_STYLES = ['悬念式', '数字式', '对比式', '情绪共鸣', '干货式'];
+
+function wbShowErr(msg) {
+  const el = $('wb-err');
   el.textContent = msg;
   el.classList.add('show');
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   setTimeout(() => el.classList.remove('show'), 5000);
 }
+function wbGoStep(n) {
+  wb.step = n;
+  wb.maxStep = Math.max(wb.maxStep, n);
+  document.querySelectorAll('.wb-step').forEach(s => s.classList.remove('active'));
+  $('wstep' + n).classList.add('active');
+  document.querySelectorAll('#wb-steps li').forEach(li => {
+    const s = +li.dataset.s;
+    li.classList.toggle('active', s === n);
+    li.classList.toggle('done', s < n);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('#wb-steps li').forEach(li => {
+  li.addEventListener('click', () => wbGoStep(+li.dataset.s));
+});
+
+/* ---------- 步骤 1：选题 ---------- */
+$('wb-gen-topics').addEventListener('click', async () => {
+  const field = $('wb-field').value.trim();
+  const product = $('wb-product').value.trim();
+  if (!field) { wbShowErr('请先填写你的领域'); return; }
+  const btn = $('wb-gen-topics');
+  btn.disabled = true;
+  $('wb-loading-topics').classList.add('show');
+  $('wb-days').innerHTML = '';
+  try {
+    const r = await fetch('/api/topics', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ field, product }),
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || '生成失败');
+    if (!data.days || !data.days.length) throw new Error('选题生成为空，请重试');
+    wb.field = field; wb.product = product; wb.days = data.days;
+    $('wb-days').innerHTML = data.days.map((d, i) =>
+      '<div class="wb-day">' +
+      '<div class="wb-day-top"><span class="wb-day-date">' + esc(d.date) + ' ' + esc(d.weekday) + '</span></div>' +
+      '<div class="wb-day-topic">' + esc(d.topic) + '</div>' +
+      '<div class="wb-day-angle">' + esc(d.angle) + '</div>' +
+      (d.keywords && d.keywords.length ? '<div class="wb-day-kws">关键词：' + esc(d.keywords.join(' / ')) + '</div>' : '') +
+      '<button class="mini-btn" data-day="' + i + '">用这个选题写 →</button>' +
+      '</div>'
+    ).join('');
+    $('wb-days').querySelectorAll('[data-day]').forEach(b => {
+      b.addEventListener('click', () => {
+        const d = wb.days[+b.dataset.day];
+        $('wb-topic').value = d.topic;
+        wbGoStep(2);
+      });
+    });
+  } catch (e) {
+    wbShowErr(e.message || '网络开小差了，请重试');
+  } finally {
+    btn.disabled = false;
+    $('wb-loading-topics').classList.remove('show');
+  }
+});
+$('wb-skip-topics').addEventListener('click', e => { e.preventDefault(); wbGoStep(2); });
+
+/* ---------- 模板库 ---------- */
+async function wbLoadTemplates() {
+  if (wb.tplCache) return wb.tplCache;
+  const r = await fetch('data/xhs-templates.json');
+  if (!r.ok) throw new Error('模板库加载失败');
+  wb.tplCache = await r.json();
+  return wb.tplCache;
+}
+function wbRenderTplModal() {
+  const data = wb.tplCache;
+  const cats = ['全部'].concat(data.categories);
+  $('wb-tpl-cats').innerHTML = cats.map(c =>
+    '<button type="button" data-cat="' + esc(c) + '"' + (c === wb.tplCat ? ' class="active"' : '') + '>' + esc(c) + '</button>'
+  ).join('');
+  $('wb-tpl-cats').querySelectorAll('[data-cat]').forEach(b => {
+    b.addEventListener('click', () => { wb.tplCat = b.dataset.cat; wbRenderTplModal(); });
+  });
+  const list = data.templates.filter(t => wb.tplCat === '全部' || t.cat === wb.tplCat);
+  $('wb-tpl-list').innerHTML = list.map(t =>
+    '<div class="wb-tpl-item">' +
+    '<h4><span class="wb-tpl-cat">' + esc(t.cat) + '</span>' + esc(t.name) + '</h4>' +
+    '<div class="wb-tpl-scene">' + esc(t.scene) + ' · 标题公式：' + esc(t.title_formula) + '</div>' +
+    '<div class="wb-tpl-ex">例：' + esc(t.example) + '</div>' +
+    '<button class="mini-btn" data-tpl="' + esc(t.id) + '">使用此模板</button>' +
+    '</div>'
+  ).join('') || '<div class="wb-empty">该分类暂无模板</div>';
+  $('wb-tpl-list').querySelectorAll('[data-tpl]').forEach(b => {
+    b.addEventListener('click', () => {
+      const t = wb.tplCache.templates.find(x => x.id === b.dataset.tpl);
+      wb.tpl = t;
+      $('wb-tpl-name').textContent = '已选：' + t.cat + ' · ' + t.name;
+      $('wb-tpl-name').classList.add('on');
+      wbCloseTplModal();
+    });
+  });
+}
+function wbOpenTplModal() {
+  $('wb-tpl-modal').classList.add('show');
+  wbLoadTemplates().then(wbRenderTplModal).catch(e => {
+    $('wb-tpl-list').innerHTML = '<div class="wb-empty">' + esc(e.message || '加载失败') + '</div>';
+  });
+}
+function wbCloseTplModal() { $('wb-tpl-modal').classList.remove('show'); }
+$('wb-pick-tpl').addEventListener('click', wbOpenTplModal);
+$('wb-tpl-close').addEventListener('click', wbCloseTplModal);
+$('wb-tpl-modal').addEventListener('click', e => { if (e.target === $('wb-tpl-modal')) wbCloseTplModal(); });
+
+/* ---------- 步骤 2：写文案 ---------- */
 document.querySelectorAll('#pane-tool .copy').forEach(btn => {
   btn.addEventListener('click', async () => {
-    const id = btn.getAttribute('data-copy');
+    const k = btn.getAttribute('data-wcopy');
     let text = '';
-    if (id === 'r-tags') {
-      text = [...document.querySelectorAll('#r-tags .tag')].map(t => '#' + t.textContent).join(' ');
-    } else {
-      text = $(id).textContent;
-    }
+    if (k === 'tags') text = wb.tags.map(t => '#' + t).join(' ');
+    else if (k === 'comment') text = wb.comment.join('\n');
+    else text = $(k === 'hook' ? 'wb-hook' : 'wb-body').innerText;
     try { await navigator.clipboard.writeText(text); btn.textContent = '已复制 ✓'; }
-    catch (e) { showErr('复制失败，请手动长按复制'); }
+    catch (e) { wbShowErr('复制失败，请手动长按复制'); }
     setTimeout(() => btn.textContent = '复制', 1500);
   });
 });
-const W = 1080, H = 1440;
-const C = { bgTop: '#0f172a', bgBot: '#1e2d50', yellow: '#ffd166', white: '#ffffff', gray: '#cbd5e1', dim: '#64748b', card: '#182442' };
+function wbRenderTitles() {
+  $('wb-titles').innerHTML = wb.titles.map((t, i) =>
+    '<label class="wb-title-pick' + (i === wb.titleIdx ? ' sel' : '') + '">' +
+    '<input type="radio" name="wb-title" value="' + i + '"' + (i === wb.titleIdx ? ' checked' : '') + '>' +
+    '<span class="wb-title-tag">' + esc(TITLE_STYLES[i] || ('风格' + (i + 1))) + '</span>' +
+    '<span>' + esc(t) + '</span></label>'
+  ).join('');
+  $('wb-titles').querySelectorAll('input[name=wb-title]').forEach(r => {
+    r.addEventListener('change', () => {
+      wb.titleIdx = +r.value;
+      wbRenderTitles();
+      wb.coverDrawn = false;
+    });
+  });
+}
+$('wb-go').addEventListener('click', async () => {
+  const topic = $('wb-topic').value.trim();
+  const points = $('wb-points').value.trim();
+  const style = document.querySelector('input[name=wb-style]:checked').value;
+  if (!topic) { wbShowErr('请先填写主题'); return; }
+  const btn = $('wb-go');
+  btn.disabled = true;
+  $('wb-loading').classList.add('show');
+  $('wb-result').style.display = 'none';
+  try {
+    const r = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic, points, style, template_hint: wb.tpl ? (wb.tpl.name + '：' + wb.tpl.prompt_hint) : '' }),
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || '生成失败');
+    if (!data.titles || !data.titles.length) throw new Error('生成结果为空，请重试');
+    wb.topic = topic; wb.points = points; wb.style = style;
+    wb.titles = data.titles; wb.titleIdx = 0;
+    wb.hook = data.hook || ''; wb.body = data.body || '';
+    wb.tags = data.tags || []; wb.coverPoints = data.cover_points || []; wb.comment = data.comment || [];
+    wb.coverDrawn = false; wb.manualChecked = false;
+    wbRenderTitles();
+    $('wb-hook').innerText = wb.hook;
+    $('wb-body').innerText = wb.body;
+    $('wb-tags').innerHTML = wb.tags.map(t => '<span class="tag">' + esc(t) + '</span>').join('');
+    $('wb-comment').innerText = wb.comment.length ? wb.comment.map((c, i) => (i + 1) + '. ' + c).join('\n') : '（本次未生成话术）';
+    $('wb-result').style.display = 'block';
+    $('wb-result').scrollIntoView({ behavior: 'smooth' });
+  } catch (e) {
+    wbShowErr(e.message || '网络开小差了，请重试');
+  } finally {
+    btn.disabled = false;
+    $('wb-loading').classList.remove('show');
+  }
+});
+$('wb-to-cover').addEventListener('click', () => {
+  wb.hook = $('wb-hook').innerText.trim();
+  wb.body = $('wb-body').innerText.trim();
+  wbDrawCover();
+  wbGoStep(3);
+});
+
+/* ---------- 步骤 3：封面 ---------- */
+const WBW = 1080, WBH = 1440;
 const NO_START = new Set('，。！？；：、」』）】”’%·…—'.split(''));
-let coverData = null;
-function wrapText(ctx, text, maxW) {
+function wbWrapText(ctx, text, maxW) {
   const lines = [];
   let cur = '';
   for (const ch of text) {
@@ -372,93 +707,120 @@ function wrapText(ctx, text, maxW) {
   }
   return fixed.length ? fixed : [''];
 }
-function centered(ctx, y, text, font, fill) {
-  ctx.font = font;
-  const tw = ctx.measureText(text).width;
-  ctx.fillStyle = fill;
-  ctx.fillText(text, (W - tw) / 2, y);
+const WBFONT = (size, weight = 600) => weight + ' ' + size + 'px "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+function wbRr(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
 }
-const FONT = (size, weight = 600) => weight + ' ' + size + 'px "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
-function drawCover(variant) {
-  if (!coverData) return;
-  const { title, cover_points } = coverData;
-  const cv = $('cover');
+function wbCleanTitle(s) {
+  return String(s || '').replace(/[^\u4e00-\u9fa5\w，。！？、：；「」『』…—·\d\s|｜]/g, '');
+}
+function wbDrawCover() {
+  const title = wbCleanTitle(wb.titles[wb.titleIdx] || '');
+  const pts = (wb.coverPoints || []).filter(Boolean).slice(0, 3);
+  if (!title) { wbShowErr('请先在第 2 步生成文案并选择标题'); return; }
+  const cv = $('wb-cover');
   const ctx = cv.getContext('2d');
-  const g = ctx.createLinearGradient(0, 0, 0, H);
-  g.addColorStop(0, C.bgTop); g.addColorStop(1, C.bgBot);
-  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  ctx.fillStyle = C.yellow; ctx.fillRect(0, 0, W, 10);
+  const v = wb.coverVariant;
   ctx.textBaseline = 'top';
-  ctx.font = FONT(44); ctx.fillStyle = C.yellow;
-  ctx.fillText('鸡仔·小红书文案', 70, 60);
-  ctx.font = FONT(104);
-  const titleLines = wrapText(ctx, title.replace(/[^\u4e00-\u9fa5\w，。！？、：；「」『』…—·]/g, ''), W - 160).slice(0, 3);
-  let y = 320;
-  ctx.fillStyle = C.white;
-  if (variant === 0) {
-    for (const ln of titleLines) { centered(ctx, y, ln, FONT(104), C.white); y += 140; }
-  } else {
-    for (const ln of titleLines) { ctx.fillText(ln, 80, y); y += 140; }
-  }
-  const lw = 120;
-  ctx.fillStyle = C.yellow;
-  ctx.fillRect(variant === 0 ? (W - lw) / 2 : 80, y + 10, lw, 10);
-  y += 80;
-  ctx.font = FONT(52);
-  const pts = cover_points.filter(Boolean).slice(0, 3);
-  pts.forEach((p, i) => {
-    const num = String(i + 1).padStart(2, '0');
-    ctx.fillStyle = C.yellow; ctx.font = FONT(56);
-    ctx.fillText(num, 90, y);
-    ctx.fillStyle = C.gray; ctx.font = FONT(46);
-    const plines = wrapText(ctx, p, W - 280).slice(0, 2);
-    plines.forEach((ln, j) => ctx.fillText(ln, 190, y + j * 68));
-    y += plines.length * 68 + 56;
-  });
-  const foot = '鸡仔 · 每天灵感不缺席';
-  ctx.font = FONT(32, 400);
-  const fw = ctx.measureText(foot).width;
-  ctx.fillStyle = C.dim;
-  ctx.fillText(foot, (W - fw) / 2, H - 110);
-}
-let coverVariant = 0;
-$('go').addEventListener('click', async () => {
-  const topic = $('topic').value.trim();
-  const points = $('points').value.trim();
-  const style = document.querySelector('input[name=style]:checked').value;
-  if (!topic) { showErr('请先填写主题'); return; }
-  const btn = $('go');
-  btn.disabled = true;
-  $('loading').classList.add('show');
-  $('result').classList.remove('show');
-  try {
-    const r = await fetch('/api/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ topic, points, style }),
+  if (v === 0) {
+    // 深蓝大字报
+    const g = ctx.createLinearGradient(0, 0, 0, WBH);
+    g.addColorStop(0, '#0f172a'); g.addColorStop(1, '#1e2d50');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, WBW, WBH);
+    ctx.fillStyle = '#ffd166'; ctx.fillRect(0, 0, WBW, 10);
+    ctx.font = WBFONT(44); ctx.fillStyle = '#ffd166';
+    ctx.fillText('鸡仔 · 小红书文案', 70, 60);
+    ctx.font = WBFONT(104);
+    const lines = wbWrapText(ctx, title, WBW - 160).slice(0, 3);
+    let y = 330;
+    ctx.fillStyle = '#ffffff';
+    for (const ln of lines) {
+      const tw = ctx.measureText(ln).width;
+      ctx.fillText(ln, (WBW - tw) / 2, y); y += 140;
+    }
+    ctx.fillStyle = '#ffd166'; ctx.fillRect((WBW - 120) / 2, y + 10, 120, 10);
+    y += 80;
+    pts.forEach((p, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      ctx.fillStyle = '#ffd166'; ctx.font = WBFONT(56);
+      ctx.fillText(num, 90, y);
+      ctx.fillStyle = '#cbd5e1'; ctx.font = WBFONT(46);
+      const pl = wbWrapText(ctx, p, WBW - 280).slice(0, 2);
+      pl.forEach((ln, j) => ctx.fillText(ln, 190, y + j * 68));
+      y += pl.length * 68 + 56;
     });
-    const data = await r.json();
-    if (!r.ok) throw new Error(data.error || '生成失败');
-    if (!data.title) throw new Error('生成结果为空，请重试');
-    $('r-title').textContent = data.title;
-    $('r-body').textContent = data.hook + '\n\n' + data.body + '\n\n喜欢就收藏，关注鸡仔不迷路';
-    $('r-tags').innerHTML = data.tags.map(t => '<span class="tag">' + esc(t) + '</span>').join('');
-    coverData = { title: data.title, cover_points: data.cover_points || [] };
-    coverVariant = 0;
-    drawCover(coverVariant);
-    $('result').classList.add('show');
-    $('result').scrollIntoView({ behavior: 'smooth' });
-  } catch (e) {
-    showErr(e.message || '网络开小差了，请重试');
-  } finally {
-    btn.disabled = false;
-    $('loading').classList.remove('show');
+    ctx.font = WBFONT(32, 400); ctx.fillStyle = '#64748b';
+    const foot = '鸡仔 · 每天灵感不缺席';
+    ctx.fillText(foot, (WBW - ctx.measureText(foot).width) / 2, WBH - 110);
+  } else if (v === 1) {
+    // 奶油浅色
+    ctx.fillStyle = '#faf6ee'; ctx.fillRect(0, 0, WBW, WBH);
+    ctx.fillStyle = '#e5484d';
+    wbRr(ctx, 70, 60, 300, 64, 32); ctx.fill();
+    ctx.font = WBFONT(36); ctx.fillStyle = '#ffffff';
+    ctx.fillText('小红书推荐', 108, 76);
+    ctx.fillStyle = '#1a1a1a'; ctx.font = WBFONT(100);
+    const lines = wbWrapText(ctx, title, WBW - 160).slice(0, 3);
+    let y = 300;
+    for (const ln of lines) { ctx.fillText(ln, 80, y); y += 136; }
+    ctx.fillStyle = '#e5484d'; ctx.fillRect(80, y + 8, 110, 10);
+    y += 76;
+    pts.forEach((p, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      ctx.fillStyle = '#e5484d'; ctx.font = WBFONT(56);
+      ctx.fillText(num, 90, y);
+      ctx.fillStyle = '#4a4a4a'; ctx.font = WBFONT(46);
+      const pl = wbWrapText(ctx, p, WBW - 280).slice(0, 2);
+      pl.forEach((ln, j) => ctx.fillText(ln, 190, y + j * 68));
+      y += pl.length * 68 + 56;
+    });
+    ctx.font = WBFONT(32, 400); ctx.fillStyle = '#b0a695';
+    const foot = '鸡仔 · 每天灵感不缺席';
+    ctx.fillText(foot, (WBW - ctx.measureText(foot).width) / 2, WBH - 110);
+  } else {
+    // 撞色拼贴
+    ctx.fillStyle = '#ffd166'; ctx.fillRect(0, 0, WBW, WBH);
+    ctx.fillStyle = '#1a1a1a'; ctx.fillRect(0, 0, WBW, 120);
+    ctx.font = WBFONT(44); ctx.fillStyle = '#ffd166';
+    ctx.fillText('鸡仔 · 小红书文案', 70, 38);
+    ctx.fillStyle = '#1a1a1a'; ctx.font = WBFONT(102);
+    const lines = wbWrapText(ctx, title, WBW - 160).slice(0, 3);
+    let y = 280;
+    for (const ln of lines) { ctx.fillText(ln, 80, y); y += 138; }
+    y += 30;
+    pts.forEach((p, i) => {
+      const pl = wbWrapText(ctx, p, WBW - 300).slice(0, 2);
+      const bh = pl.length * 68 + 64;
+      ctx.fillStyle = '#ffffff';
+      wbRr(ctx, 80, y, WBW - 160, bh, 28); ctx.fill();
+      ctx.fillStyle = '#1a1a1a'; ctx.font = WBFONT(56);
+      ctx.fillText(String(i + 1).padStart(2, '0'), 120, y + 30);
+      ctx.font = WBFONT(44);
+      pl.forEach((ln, j) => ctx.fillText(ln, 220, y + 32 + j * 68));
+      y += bh + 36;
+    });
+    ctx.font = WBFONT(32, 400); ctx.fillStyle = 'rgba(26,26,26,.55)';
+    const foot = '鸡仔 · 每天灵感不缺席';
+    ctx.fillText(foot, (WBW - ctx.measureText(foot).width) / 2, WBH - 110);
   }
+  wb.coverDrawn = true;
+}
+$('wb-cover-tpls').querySelectorAll('button').forEach(b => {
+  b.addEventListener('click', () => {
+    $('wb-cover-tpls').querySelectorAll('button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    wb.coverVariant = +b.dataset.v;
+    wbDrawCover();
+  });
 });
-$('redraw').addEventListener('click', () => { coverVariant = (coverVariant + 1) % 2; drawCover(coverVariant); });
-$('dl').addEventListener('click', () => {
-  const cv = $('cover');
-  cv.toBlob(blob => {
+$('wb-dl').addEventListener('click', () => {
+  $('wb-cover').toBlob(blob => {
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = 'xhs-cover.png';
@@ -466,6 +828,94 @@ $('dl').addEventListener('click', () => {
     setTimeout(() => URL.revokeObjectURL(a.href), 5000);
   }, 'image/png');
 });
+$('wb-to-pub').addEventListener('click', () => { wbRenderChecks(); wbGoStep(4); });
+
+/* ---------- 步骤 4：发布 ---------- */
+function wbRenderChecks() {
+  const title = wb.titles[wb.titleIdx] || '';
+  const bodyLen = (wb.body || '').replace(/\s/g, '').length;
+  const items = [
+    { ok: title.length > 0 && title.length <= 20, text: '标题 ' + title.length + ' 字' + (title.length <= 20 ? '（≤20 字 ✓）' : '（超 20 字，建议精简）') },
+    { ok: bodyLen >= 100, text: '正文 ' + bodyLen + ' 字' + (bodyLen >= 100 ? '' : '（偏短，建议 300 字以上）') },
+    { ok: wb.tags.length >= 5 && wb.tags.length <= 8, text: '标签 ' + wb.tags.length + ' 个' },
+    { ok: wb.coverDrawn, text: wb.coverDrawn ? '封面已生成' : '封面未生成，请回第 3 步' },
+    { ok: wb.manualChecked, text: '已通读全文，无极限词 / 违禁词（点击确认）', manual: true },
+  ];
+  $('wb-checks').innerHTML = items.map((it, i) =>
+    '<li class="' + (it.ok ? 'ok' : 'bad') + '"' + (it.manual ? ' data-manual="1" style="cursor:pointer;"' : '') + '>' +
+    '<span class="ck">' + (it.ok ? '✓' : '!') + '</span><span>' + esc(it.text) + '</span></li>'
+  ).join('');
+  const m = $('wb-checks').querySelector('[data-manual]');
+  if (m) m.addEventListener('click', () => { wb.manualChecked = !wb.manualChecked; wbRenderChecks(); });
+}
+function wbFullText() {
+  const title = wb.titles[wb.titleIdx] || '';
+  return title + '\n\n' + wb.hook + '\n\n' + wb.body + '\n\n' + wb.tags.map(t => '#' + t).join(' ');
+}
+$('wb-copyall').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(wbFullText()); $('wb-copyall').textContent = '已复制 ✓'; }
+  catch (e) { wbShowErr('复制失败，请手动长按复制'); }
+  setTimeout(() => $('wb-copyall').textContent = '一键复制全文', 1500);
+});
+function wbSaveHistory(published) {
+  let hist = [];
+  try { hist = JSON.parse(localStorage.getItem(WB_HIST_KEY) || '[]'); } catch (e) { hist = []; }
+  hist.unshift({
+    id: Date.now(), ts: new Date().toLocaleString('zh-CN', { hour12: false }),
+    title: wb.titles[wb.titleIdx] || '', topic: wb.topic, style: wb.style,
+    hook: wb.hook, body: wb.body, tags: wb.tags, comment: wb.comment,
+    coverPoints: wb.coverPoints, tplName: wb.tpl ? (wb.tpl.cat + ' · ' + wb.tpl.name) : '',
+    published: !!published,
+  });
+  try { localStorage.setItem(WB_HIST_KEY, JSON.stringify(hist.slice(0, 50))); } catch (e) { wbShowErr('本地存储已满，历史记录保存失败'); }
+  wbRenderHistory();
+}
+$('wb-publish').addEventListener('click', () => { wbSaveHistory(true); wbGoStep(1); });
+$('wb-save-draft').addEventListener('click', e => { e.preventDefault(); wbSaveHistory(false); });
+function wbRenderHistory() {
+  let hist = [];
+  try { hist = JSON.parse(localStorage.getItem(WB_HIST_KEY) || '[]'); } catch (e) { hist = []; }
+  if (!hist.length) {
+    $('wb-hist-list').innerHTML = '<div class="wb-empty">还没有记录，完成一篇笔记后会自动存入</div>';
+    return;
+  }
+  $('wb-hist-list').innerHTML = hist.map(h =>
+    '<div class="wb-hist-item">' +
+    '<div class="wb-hist-top"><div class="wb-hist-title">' + esc(h.title || '(无标题)') + '</div>' +
+    (h.published ? '<span class="wb-badge">已发布</span>' : '') + '</div>' +
+    '<div class="wb-hist-meta">' + esc(h.ts) + (h.tplName ? ' · ' + esc(h.tplName) : '') + '</div>' +
+    '<div class="wb-hist-actions"><button data-restore="' + h.id + '">载入继续写</button>' +
+    '<button class="danger" data-del="' + h.id + '">删除</button></div>' +
+    '</div>'
+  ).join('');
+  $('wb-hist-list').querySelectorAll('[data-restore]').forEach(b => {
+    b.addEventListener('click', () => {
+      const h = hist.find(x => x.id === +b.dataset.restore);
+      if (!h) return;
+      $('wb-topic').value = h.topic || '';
+      document.querySelector('input[name=wb-style][value=' + (h.style || 'zhongcao') + ']').checked = true;
+      wb.titles = [h.title]; wb.titleIdx = 0;
+      wb.hook = h.hook || ''; wb.body = h.body || '';
+      wb.tags = h.tags || []; wb.coverPoints = h.coverPoints || []; wb.comment = h.comment || [];
+      wb.coverDrawn = false;
+      wbRenderTitles();
+      $('wb-hook').innerText = wb.hook;
+      $('wb-body').innerText = wb.body;
+      $('wb-tags').innerHTML = wb.tags.map(t => '<span class="tag">' + esc(t) + '</span>').join('');
+      $('wb-comment').innerText = wb.comment.length ? wb.comment.map((c, i) => (i + 1) + '. ' + c).join('\n') : '（本次未生成话术）';
+      $('wb-result').style.display = 'block';
+      wbGoStep(2);
+    });
+  });
+  $('wb-hist-list').querySelectorAll('[data-del]').forEach(b => {
+    b.addEventListener('click', () => {
+      const nh = hist.filter(x => x.id !== +b.dataset.del);
+      localStorage.setItem(WB_HIST_KEY, JSON.stringify(nh));
+      wbRenderHistory();
+    });
+  });
+}
+wbRenderHistory();
 
 /* ============ 初始化 ============ */
 initPkg();
