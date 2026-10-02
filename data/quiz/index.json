@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-02",
+    "date_str": "2026年10月02日",
+    "topic": "CSS 与前端布局",
+    "question": "聊个布局问题：600px 宽的页面用 Grid 分两列，左侧固定 200px，右侧写的是 `1fr`。右侧有个最小宽度 900px 的表格，表格外层已经设了 `overflow-x: auto`。结果整个页面被撑宽，表格内部却没出现预期的横向滚动。只改一处，你会怎么改？",
+    "answer": 0,
+    "options": [
+      "把列定义改成 `200px minmax(0, 1fr)`",
+      "给右侧列加 `width: 100%`",
+      "把表格外层的 `overflow-x: auto` 改成 `overflow-x: scroll`",
+      "给 Grid 容器加 `justify-content: space-between`"
+    ],
+    "explanation": "`1fr` 的最小尺寸默认受内容影响，右列可能被表格撑到 900px。`minmax(0, 1fr)` 允许它缩到剩余的 400px，滚动才会发生在表格外层。`width: 100%` 不解决最小尺寸约束；`scroll` 只是改变滚动条行为；`justify-content` 不负责压缩列。"
+  },
+  {
     "date": "2026-10-01",
     "date_str": "2026年10月01日",
     "topic": "AI 与大模型应用",
