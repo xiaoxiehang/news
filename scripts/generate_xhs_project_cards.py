@@ -1,191 +1,221 @@
 #!/usr/bin/env python3
-"""小红书开源项目介绍卡片：浅色风 + 深色代码条。"""
+"""小红书开源项目介绍卡片 v3：苹果简约风 + 毛玻璃。
+
+- 背景：浅色渐变 + 柔光色块
+- 内容：毛玻璃面板（模糊背景 + 半透明白）
+- 字体：标题 SemiBold / 正文 Regular，宽松行距
+"""
 import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from generate_xhs_cards import _font, _wrap, _clean, W, H
-from PIL import Image, ImageDraw
+from generate_xhs_cards import _wrap, _clean, W, H
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-BG = (250, 247, 242)
-INK = (26, 26, 28)
-GRAY = (110, 108, 102)
-DIM = (165, 160, 150)
+FONT_SEMI = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                         'fonts', 'NotoSansSC-SemiBold.ttf')
+FONT_REG = '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'
+
+
+def _fs(size):
+    return ImageFont.truetype(FONT_SEMI, size)
+
+
+def _fr(size):
+    try:
+        return ImageFont.truetype(FONT_REG, size, index=2)
+    except Exception:
+        return ImageFont.truetype(FONT_REG, size)
+
+
+# 苹果系配色
+INK = (29, 29, 31)
+GRAY = (110, 110, 115)
+MUTED = (150, 150, 156)
 YELLOW = (245, 197, 24)
 YELLOW_D = (150, 110, 5)
-WHITE = (255, 255, 255)
 BROWN = (70, 50, 5)
-CODE_BG = (28, 28, 32)
-CODE_INK = (245, 197, 24)
-WARN_BG = (253, 236, 234)
-WARN_INK = (170, 44, 38)
+WHITE = (255, 255, 255)
 
 
-def _new():
-    img = Image.new('RGB', (W, H), BG)
-    return img, ImageDraw.Draw(img)
+def _bg():
+    """浅色渐变 + 柔光色块背景"""
+    img = Image.new('RGB', (W, H))
+    d = ImageDraw.Draw(img)
+    top, bot = (252, 251, 247), (240, 235, 226)
+    for y in range(H):
+        t = y / H
+        d.line([(0, y), (W, y)],
+               fill=tuple(int(top[i] + (bot[i] - top[i]) * t) for i in range(3)))
+    # 柔光色块
+    blob = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    bd = ImageDraw.Draw(blob)
+    bd.ellipse([-220, -160, 620, 560], fill=(255, 214, 140, 90))     # 右上暖黄
+    bd.ellipse([560, 900, 1300, 1600], fill=(255, 200, 190, 70))     # 左下柔粉
+    bd.ellipse([-260, 780, 420, 1380], fill=(200, 225, 255, 55))     # 左中淡蓝
+    blob = blob.filter(ImageFilter.GaussianBlur(130))
+    img = Image.alpha_composite(img.convert('RGBA'), blob).convert('RGB')
+    return img
 
-_dummy_img = Image.new('RGB', (W, H), BG)
-dummy_d = ImageDraw.Draw(_dummy_img)
+
+def _frosted(img, box, radius=36, blur=24, tint=(255, 255, 255, 110),
+             edge=True):
+    """在 img 的 box 区域做毛玻璃面板"""
+    x0, y0, x1, y1 = [int(v) for v in box]
+    crop = img.crop((x0, y0, x1, y1))
+    glass = crop.filter(ImageFilter.GaussianBlur(blur)).convert('RGBA')
+    glass = Image.alpha_composite(
+        glass, Image.new('RGBA', glass.size, tint))
+    mask = Image.new('L', glass.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        [0, 0, glass.size[0], glass.size[1]], radius=radius, fill=255)
+    img.paste(glass, (x0, y0), mask)
+    if edge:
+        ImageDraw.Draw(img, 'RGBA').rounded_rectangle(
+            [x0, y0, x1, y1], radius=radius,
+            outline=(255, 255, 255, 100), width=2)
+    return img
 
 
 def _pill(d, x, y, text):
-    f = _font(34)
+    f = _fs(32)
     tw = d.textlength(text, font=f)
-    d.rounded_rectangle([x, y, x + tw + 56, y + 58], radius=29, fill=YELLOW)
-    d.text((x + 28, y + 12), text, font=f, fill=BROWN)
+    d.rounded_rectangle([x, y, x + tw + 52, y + 54], radius=27, fill=YELLOW)
+    d.text((x + 26, y + 11), text, font=f, fill=BROWN)
 
 
-def _header(d, idx, total):
+def _header(img):
+    d = ImageDraw.Draw(img)
     _pill(d, 70, 56, '开源项目介绍')
-    f = _font(36)
-    t = f'{idx + 1:02d} / {total:02d}'
+    f = _fr(34)
+    t = 'GitHub 今日趋势'
     tw = d.textlength(t, font=f)
-    d.text((W - 70 - tw, 68), t, font=f, fill=DIM)
+    d.text((W - 70 - tw, 68), t, font=f, fill=MUTED)
+    return d
 
 
-GHOST = (235, 231, 221)
-
-def _ghost_num(d, idx, y_center):
-    """背景大数字水印"""
-    f = _font(430)
-    t = f'{idx + 1:02d}'
-    tw = d.textlength(t, font=f)
-    d.text((W - 70 - tw, y_center - 215), t, font=f, fill=GHOST)
-
-def _measure_card(title, bullets, code):
-    """预量内容卡高度，返回 (title_lines, bullet_lines_list, code_h, total_h)"""
-    f_title, f_b = _font(64), _font(38)
-    tl = _wrap(dummy_d, _clean(title), f_title, W - 140)[:2]
-    th = len(tl) * 90
-    bl = []
-    bh = 0
-    for b in bullets:
-        ln = _wrap(dummy_d, _clean(b), f_b, W - 140 - 56)[:3]
-        bl.append(ln)
-        bh += len(ln) * 58 + 22
-    ch = 0
-    if code:
-        f_c = _font(38)
-        cl = _wrap(dummy_d, _clean(code), f_c, W - 140 - 64)
-        ch = 16 + 36 + len(cl) * 58 + 28
-    total = th + 30 + bh + ch
-    return tl, bl, ch, total
-
-def draw_cover(kicker, title, subtitle, stats, points, path):
-    img, d = _new()
-    _pill(d, 70, 56, kicker)
-    f_title, f_sub, f_st = _font(96), _font(46), _font(38)
-    tl = _wrap(d, _clean(title), f_title, W - 140)[:2]
-    sl = _wrap(d, _clean(subtitle), f_sub, W - 140)[:2]
-    # 预量
-    th = len(tl) * 124 + 10 + len(sl) * 64 + 30 + 72 + 130 + 10
-    ph = 0
-    f_t = _font(40)
-    pl = []
-    for pt in points:
-        ln = _wrap(d, _clean(pt), f_t, W - 300)[:2]
-        pl.append(ln)
-        ph += len(ln) * 60 + 44
-    total_h = th + 60 + ph
-    top, bottom = 190, H - 120
-    y = top + max(0, (bottom - top - total_h) / 2)
+def draw_cover(title, subtitle, stats, points, path):
+    img = _bg()
+    d = _header(img)
+    # 中央毛玻璃面板
+    f_t, f_s, f_st = _fs(92), _fr(42), _fr(36)
+    tl = _wrap(d, _clean(title), f_t, W - 280)[:2]
+    sl = _wrap(d, _clean(subtitle), f_s, W - 280)[:2]
+    f_p = _fr(38)
+    pl = [_wrap(d, _clean(p), f_p, W - 280 - 90)[:2] for p in points]
+    ch = (len(tl) * 118 + 14 + len(sl) * 62 + 44
+          + 96 + sum(len(x) * 62 + 40 for x in pl) + 20)
+    px0, px1 = 70, W - 70
+    py = (H - ch) / 2
+    img = _frosted(img, (px0, py, px1, py + ch), radius=40)
+    d = ImageDraw.Draw(img)
+    y = py + 56
     for ln in tl:
-        d.text((70, y), ln, font=f_title, fill=INK)
-        y += 124
-    y += 10
+        d.text((140, y), ln, font=f_t, fill=INK)
+        y += 118
+    y += 14
     for ln in sl:
-        d.text((72, y), ln, font=f_sub, fill=YELLOW_D)
-        y += 64
-    y += 30
-    tw = d.textlength(stats, font=f_st)
-    d.rounded_rectangle([70, y, 70 + tw + 56, y + 72], radius=36, fill=INK)
-    d.text((98, y + 16), stats, font=f_st, fill=WHITE)
-    y += 130
-    d.rectangle([72, y, 200, y + 10], fill=YELLOW)
-    y += 60
-    f_n = _font(42)
-    for i, ln in enumerate(pl):
-        cy = y + 30
-        d.ellipse([78, cy - 30, 138, cy + 30], fill=YELLOW)
-        n = str(i + 1)
-        nw = d.textlength(n, font=f_n)
-        d.text((108 - nw / 2, cy - 31), n, font=f_n, fill=BROWN)
-        for l2 in ln:
-            d.text((168, y), l2, font=f_t, fill=INK)
-            y += 60
-        y += 44
+        d.text((142, y), ln, font=f_s, fill=YELLOW_D)
+        y += 62
+    y += 44
+    d.text((142, y), stats, font=f_st, fill=MUTED)
+    y += 96
+    f_n = _fs(40)
+    for i, lines in enumerate(pl):
+        for j, ln in enumerate(lines):
+            if j == 0:
+                cy = y + 28
+                d.ellipse([142, cy - 26, 194, cy + 26], fill=YELLOW)
+                n = str(i + 1)
+                nw = d.textlength(n, font=f_n)
+                d.text((168 - nw / 2, cy - 29), n, font=f_n, fill=BROWN)
+            d.text((222, y), ln, font=f_p, fill=INK)
+            y += 62
+        y += 40
     img.save(path)
 
 
 def draw_card(title, bullets, code, idx, total, path):
-    img, d = _new()
-    _header(d, idx, total)
-    tl, bl, ch, total_h = _measure_card(title, bullets, code)
-    # 内容在 header 下方区域垂直居中
-    top, bottom = 190, H - 120
-    y = top + max(0, (bottom - top - total_h) / 2)
-    _ghost_num(d, idx, top + (bottom - top) / 2)
-    f_title = _font(64)
+    img = _bg()
+    d = _header(img)
+    f = _fr(34)
+    t = f'{idx + 1:02d} / {total:02d}'
+    tw = d.textlength(t, font=f)
+    d.text((W - 70 - tw, 112), t, font=f, fill=MUTED)
+    f_title, f_b = _fs(60), _fr(37)
+    tl = _wrap(d, _clean(title), f_title, W - 280)[:2]
+    bl = [_wrap(d, _clean(b), f_b, W - 280 - 60)[:3] for b in bullets]
+    chh = 0
+    cl = []
+    if code:
+        f_c = _fr(36)
+        cl = _wrap(d, _clean(code), f_c, W - 280 - 80)
+        chh = 30 + 40 + len(cl) * 56 + 34
+    ch = (len(tl) * 88 + 44 + sum(len(x) * 66 + 26 for x in bl)
+          + (chh + 30 if code else 0) + 40)
+    px0, px1 = 70, W - 70
+    py = (H - ch) / 2 + 20
+    img = _frosted(img, (px0, py, px1, py + ch), radius=40)
+    d = ImageDraw.Draw(img)
+    y = py + 52
     for ln in tl:
-        d.text((70, y), ln, font=f_title, fill=INK)
-        y += 90
-    y += 30
-    f_b = _font(38)
+        d.text((140, y), ln, font=f_title, fill=INK)
+        y += 88
+    y += 44
     for lines in bl:
         for j, ln in enumerate(lines):
             if j == 0:
-                d.ellipse([72, y + 14, 96, y + 38], fill=YELLOW)
-            d.text((118, y), ln, font=f_b, fill=INK)
-            y += 58
-        y += 22
+                d.ellipse([142, y + 16, 164, y + 38], fill=YELLOW)
+            d.text((188, y), ln, font=f_b, fill=(58, 58, 62))
+            y += 66
+        y += 26
     if code:
-        y += 16
-        f_c = _font(38)
-        cl = _wrap(d, _clean(code), f_c, W - 140 - 64)
-        chh = 36 + len(cl) * 58 + 28
-        d.rounded_rectangle([70, y, W - 70, y + chh], radius=20, fill=CODE_BG)
+        y += 4
+        img = _frosted(img, (140, y, px1 - 70, y + chh), radius=24, blur=18,
+                       tint=(24, 24, 28, 165), edge=False)
+        d = ImageDraw.Draw(img)
         for k, c in enumerate([(255, 95, 86), (255, 189, 46), (39, 201, 63)]):
-            d.ellipse([100 + k * 34, y + 22, 122 + k * 34, y + 44], fill=c)
-        ty = y + 58
+            d.ellipse([170 + k * 32, y + 26, 190 + k * 32, y + 46], fill=c)
+        ty = y + 70
         for ln in cl:
-            d.text((104, ty), '$ ' + ln if not ln.startswith('/') else ln,
-                   font=f_c, fill=CODE_INK)
-            ty += 58
+            d.text((170, ty), '$ ' + ln, font=_fr(36), fill=(245, 197, 24))
+            ty += 56
     img.save(path)
 
 
 def draw_end(jinju, question, path):
-    img, d = _new()
-    _pill(d, 70, 56, '开源项目介绍')
-    f_j, f_q, f_fav = _font(56), _font(42), _font(40)
-    jl = _wrap(d, _clean(jinju), f_j, W - 140)[:3]
-    ql = _wrap(d, _clean(question), f_q, W - 140)[:3]
+    img = _bg()
+    d = _header(img)
+    f_j, f_q = _fs(52), _fr(40)
+    jl = _wrap(d, _clean(jinju), f_j, W - 280)[:3]
+    ql = _wrap(d, _clean(question), f_q, W - 280)[:3]
     t = '收藏这篇，下次让 AI 做页面时翻出来'
-    total_h = len(jl) * 84 + 60 + 10 + 70 + len(ql) * 66 + 40 + 84
-    top, bottom = 190, H - 120
-    y = top + max(0, (bottom - top - total_h) / 2)
+    f_btn = _fs(38)
+    ch = len(jl) * 80 + 70 + len(ql) * 62 + 48 + 88
+    px0, px1 = 70, W - 70
+    py = (H - ch) / 2 + 20
+    img = _frosted(img, (px0, py, px1, py + ch), radius=40)
+    d = ImageDraw.Draw(img)
+    y = py + 56
     for ln in jl:
-        d.text((70, y), ln, font=f_j, fill=INK)
-        y += 84
-    y += 60
-    d.rectangle([72, y, 200, y + 10], fill=YELLOW)
+        d.text((140, y), ln, font=f_j, fill=INK)
+        y += 80
     y += 70
     for ln in ql:
-        d.text((70, y), ln, font=f_q, fill=GRAY)
-        y += 66
-    y += 40
-    tw = d.textlength(t, font=f_fav)
-    d.rounded_rectangle([(W - tw) / 2 - 30, y, (W + tw) / 2 + 30, y + 84],
-                        radius=42, fill=YELLOW)
-    d.text(((W - tw) / 2, y + 20), t, font=f_fav, fill=BROWN)
+        d.text((140, y), ln, font=f_q, fill=GRAY)
+        y += 62
+    y += 48
+    tw = d.textlength(t, font=f_btn)
+    d.rounded_rectangle([(W - tw) / 2 - 34, y, (W + tw) / 2 + 34, y + 88],
+                        radius=44, fill=YELLOW)
+    d.text(((W - tw) / 2, y + 24), t, font=f_btn, fill=BROWN)
     img.save(path)
 
 
 if __name__ == '__main__':
     d = 'data/xhs-drafts/2026-10-04-impeccable'
     os.makedirs(d, exist_ok=True)
-    draw_cover('开源项目介绍 · GitHub 今日趋势', 'impeccable',
+    draw_cover('impeccable',
                '专治 AI 生成页面的"AI 味"',
                '今日涨星 623 · 总 Star 74k',
                ['作者 Paul Bakaus，前谷歌工程师',
@@ -206,10 +236,10 @@ if __name__ == '__main__':
               None, 1, 3, f'{d}/card_02.png')
     draw_card('三步上手，5 分钟装好',
               ['项目根目录运行安装命令',
-               '在 AI 编程工具里执行初始化，生成 PRODUCT.md',
-               '以后直接喊话：/impeccable polish，收工'],
+               '在 AI 编程工具里执行初始化',
+               '以后直接喊话 /impeccable polish 收工'],
               'npx impeccable install', 2, 3, f'{d}/card_03.png')
-    draw_end('AI 负责写代码，审美这件事有人替你盯着了。',
+    draw_end('AI 负责写代码，审美有人替你盯着了。',
              '你被 AI 的"AI 味"页面丑到过吗？评论区聊聊。',
              f'{d}/end.png')
-    print('项目介绍卡片已生成')
+    print('苹果风+毛玻璃卡片已生成')
