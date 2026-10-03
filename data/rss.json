@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-03 01:22:26",
+  "fetched_at": "2026-10-03 02:25:08",
   "feeds": [
     {
       "name": "OpenAI 官方",
@@ -93,9 +93,27 @@
       "name": "虎嗅",
       "items": [
         {
+          "title": "国庆出游用AI，第一批人已经被坑惨了",
+          "url": "https://www.huxiu.com/article/4895221.html?f=rss",
+          "desc": "",
+          "published": "Sat, 03 Oct 2026"
+        },
+        {
+          "title": "机器人“价格战”，快要打不动了",
+          "url": "https://www.huxiu.com/article/4895228.html?f=rss",
+          "desc": "",
+          "published": "Sat, 03 Oct 2026"
+        },
+        {
+          "title": "卖掉印钞机英伟达，借最贵的钱保OpenAI份额：软银孙正义这一次还能赢吗",
+          "url": "https://www.huxiu.com/article/4895224.html?f=rss",
+          "desc": "",
+          "published": "Sat, 03 Oct 2026"
+        },
+        {
           "title": "我们对AI之后发生的事还一无所知",
           "url": "https://www.huxiu.com/article/4895200.html?f=rss",
-          "desc": "",
+          "desc": "连爱好都有捷径，努力还通向哪里？",
           "published": "Sat, 03 Oct 2026"
         }
       ]
@@ -162,6 +180,12 @@
       "name": "InfoQ 推荐",
       "items": [
         {
+          "title": "企业级 Agent Infra 架构实践：从安全沙箱到网络管控与身份治理｜QCon上海",
+          "url": "https://www.infoq.cn/article/bLB8RQ6sd3ZGQts0D4tP",
+          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
+          "published": "Sat, 03 Oct 2026"
+        },
+        {
           "title": "Andrew Kelley 专访：他为何创建 Zig、禁止 AI 贡献以及将 Zig 从 GitHub 移出",
           "url": "https://www.infoq.cn/article/eRbEA3dMd58RNPqp5D8S",
           "desc": "在接受 JetBrains 采访时，Zig 项目创建者 Andrew Kelley 详细阐述 \"了该项目正式禁止 AI 贡献的决定，以及从 GitHub 迁移至 Codeberg 的动机。Kelley 指出，自动提交代码最终会降低代码库的质量，并且会削弱开源参与者之间的社交纽带。GitHub 持续出现的故障以及彼此之间的激励机制存在错位，导致该项目将代码库迁移至 Codeberg。 Kelley ",
@@ -190,12 +214,6 @@
           "url": "https://www.infoq.cn/article/TLjNcyBg9Z72HV5kJ2kp",
           "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
           "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "谷歌开源面向自主 AI 代理的 Kubernetes 风格编排器 AX",
-          "url": "https://www.infoq.cn/article/M6BRTrsyJvUg8y0M0kyh",
-          "desc": "谷歌推出 AX（托管于 agentexecutor.io \" 以及 GitHub 上的 google/ax \" 项目）。该项目是一个采用 Apache 2.0 许可证 \"的开源编排器及声明式运行时，旨在执行和扩展自主 AI 代理的工作负载。AX 基于 Agent Substrate 运行，将智能代理视为有状态的参与者，而非微服务或批处理任务。它不仅支持亚秒级的任务暂停和恢复，还提供了四种核心声明式",
-          "published": "Wed, 30 Sep 2026"
         }
       ]
     },
@@ -314,40 +332,16 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "Gauth Unlimited Digital Canvas",
-          "url": "https://www.producthunt.com/products/gauth-ai-course",
-          "desc": "An AI tutor on an infinite whiteboard, not a chat thread Discussion | Link",
-          "published": "2026-09-29T05:33"
-        },
-        {
-          "title": "Finbar",
-          "url": "https://www.producthunt.com/products/finbar-2",
-          "desc": "Agentic investment research Discussion | Link",
-          "published": "2026-10-01T09:40"
-        },
-        {
-          "title": "Moxie",
-          "url": "https://www.producthunt.com/products/moxie-2",
-          "desc": "Use any AI with Claude Code, switch accounts mid-task Discussion | Link",
-          "published": "2026-09-30T23:39"
-        },
-        {
           "title": "Teachoo",
           "url": "https://www.producthunt.com/products/teachoo-2",
           "desc": "AI that helps you learn anything and everything. Discussion | Link",
           "published": "2026-09-15T12:39"
         },
         {
-          "title": "Never Boring AI",
-          "url": "https://www.producthunt.com/products/never-boring-ai",
-          "desc": "The AI agent that writes your LinkedIn posts in your voice Discussion | Link",
-          "published": "2026-10-01T03:21"
-        },
-        {
-          "title": "Famulor",
-          "url": "https://www.producthunt.com/products/famulor-telephony-ai",
-          "desc": "Your agent to answer calls and follow ups on WhatsApp Discussion | Link",
-          "published": "2026-08-31T06:27"
+          "title": "Gauth Unlimited Digital Canvas",
+          "url": "https://www.producthunt.com/products/gauth-ai-course",
+          "desc": "An AI tutor on an infinite whiteboard, not a chat thread Discussion | Link",
+          "published": "2026-09-29T05:33"
         },
         {
           "title": "JarvisCore",
@@ -356,10 +350,34 @@
           "published": "2026-09-29T22:40"
         },
         {
+          "title": "Communicate",
+          "url": "https://www.producthunt.com/products/communicate",
+          "desc": "AI support agents grounded in your knowledge, with handoff Discussion | Link",
+          "published": "2026-10-01T00:51"
+        },
+        {
+          "title": "Cue by Manus",
+          "url": "https://www.producthunt.com/products/cue-by-manus",
+          "desc": "Personal agents with identity, handling life end to end Discussion | Link",
+          "published": "2026-09-28T14:53"
+        },
+        {
           "title": "Mintlify Desktop",
           "url": "https://www.producthunt.com/products/mintlify",
           "desc": "An AI-native app for writing documentation and knowledge Discussion | Link",
           "published": "2026-09-29T17:08"
+        },
+        {
+          "title": "Veltrix AI for E-commerce",
+          "url": "https://www.producthunt.com/products/veltrix-ai",
+          "desc": "Find how your e-commerce business could earn more Discussion | Link",
+          "published": "2026-09-17T08:49"
+        },
+        {
+          "title": "Finbar",
+          "url": "https://www.producthunt.com/products/finbar-2",
+          "desc": "Agentic investment research Discussion | Link",
+          "published": "2026-10-01T09:40"
         }
       ]
     }

@@ -1,56 +1,56 @@
 {
   "date": "2026-10-03",
   "date_str": "2026年10月03日",
-  "overview": "今天的热点集中在新模型、AI设备和安全治理：谷歌推出新一代模型，Meta开放AI设备代码，苹果则收紧Mac文件访问权限。与此同时，企业调整AI业务方向，开发者和创业公司也在尝试降低AI应用风险。",
+  "overview": "今天的热点集中在能替人办事的 AI 助手：Meta 开放设备代码，媒体体验了 OpenAI 的新智能体，苹果则因智能体风险收紧 Mac 文件权限。与此同时，AI 音乐业务调整、国庆出游使用 AI 的问题，以及两款新工具也值得关注。",
   "picks": [
     {
-      "title": "谷歌发布Gemini 4 Argon，瞄准复杂工作任务",
-      "summary": "新模型面向软件开发、法律、金融及网络安全等任务。",
-      "url": "https://www.infoq.cn/article/vVrSzjhEvkmpevS7wZzU",
-      "source": "InfoQ 推荐"
-    },
-    {
-      "title": "Meta开源代码，让用户自制Muse AI设备",
-      "summary": "用户可将Muse智能体装进自制设备，Meta建议尝试电子墨水屏。",
+      "title": "Meta 开源代码，让用户自制 Muse AI 设备",
+      "summary": "Meta 开放代码，用户可将 Muse 智能体装进自制设备。",
       "url": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
       "source": "The Verge"
     },
     {
-      "title": "苹果因AI智能体风险收紧Mac磁盘访问权限",
-      "summary": "苹果将加强权限控制，减少AI智能体接触文件和消息的风险。",
-      "url": "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/",
-      "source": "TechCrunch"
+      "title": "苹果因 AI 智能体风险收紧 Mac 磁盘权限",
+      "summary": "苹果将限制应用访问全部磁盘，以降低智能体读取私人资料的风险。",
+      "url": "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents",
+      "source": "The Verge"
     },
     {
-      "title": "肖恩·帕克推动Stability AI转向音乐业务",
-      "summary": "Stability AI调整业务重心，转向获得唱片公司支持的音乐领域。",
+      "title": "肖恩·帕克推动 Stability AI 转向音乐业务",
+      "summary": "Stability AI 正在调整业务重心，转向 AI 音乐。",
       "url": "https://techcrunch.com/2026/10/02/sean-parker-is-rebuilding-stability-ai-around-music/",
       "source": "TechCrunch"
     },
     {
-      "title": "Zig项目禁止AI贡献，并迁离GitHub",
-      "summary": "创始人担忧AI自动提交影响代码质量，项目已迁至Codeberg。",
+      "title": "国庆出游用 AI，第一批人已经踩坑",
+      "summary": "虎嗅关注游客使用 AI 规划行程时遇到的问题。",
+      "url": "https://www.huxiu.com/article/4895221.html?f=rss",
+      "source": "虎嗅"
+    },
+    {
+      "title": "Zig 项目禁止 AI 生成代码贡献，并迁离 GitHub",
+      "summary": "项目创建者称，自动提交代码可能降低质量，并削弱社区交流。",
       "url": "https://www.infoq.cn/article/eRbEA3dMd58RNPqp5D8S",
       "source": "InfoQ 推荐"
     },
     {
-      "title": "白宫召集科技企业负责人签署AI安全承诺",
-      "summary": "多家科技企业负责人参加白宫活动，并签署AI安全承诺。",
-      "url": "https://techcrunch.com/video/its-not-ai-anymore-its-super-intelligence-according-to-the-white-house/",
-      "source": "TechCrunch"
+      "title": "OpenAI 智能体 Dots：能处理工作，也能订晚餐",
+      "summary": "The Verge 上手体验 Dots，观察它如何执行办公和日常任务。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
+      "source": "The Verge"
     },
     {
-      "title": "Circuit Breaker Labs推出AI安全测试工具",
-      "summary": "这家创业公司用模拟测试，寻找AI可能造成的心理伤害风险。",
-      "url": "https://techcrunch.com/2026/10/02/circuit-breaker-labs-hopes-to-make-ai-safer-for-your-kids-and-you/",
-      "source": "TechCrunch"
-    },
-    {
-      "title": "论文写作指南更新，新增AI检查工具",
-      "summary": "新工具可辅助检查论文公式、图表、引用和匿名信息。",
+      "title": "论文写作指南新增 AI 检查工具",
+      "summary": "新工具可辅助检查论文的公式、图表、引用和英文表达。",
       "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557407&idx=1&sn=d70ff0ea7cda1fde716286d26675bcec",
       "source": "大模型智能"
+    },
+    {
+      "title": "LegoFlow 开源：让智能体自动完成训练与测评",
+      "summary": "项目已开放代码、数据和文档，尝试让智能体接手完整流程。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060898&idx=2&sn=7c342e5f7de860d0e928dab50043d6b5",
+      "source": "机器之心"
     }
   ],
-  "generated_at": "2026-10-03 01:22:55"
+  "generated_at": "2026-10-03 02:25:37"
 }
