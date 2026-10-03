@@ -50,10 +50,7 @@ def _header(d, idx, total):
 
 
 def _footer(d):
-    f = _font(32)
-    t = '鸡仔 · AI实战'
-    tw = d.textlength(t, font=f)
-    d.text(((W - tw) / 2, H - 96), t, font=f, fill=DIM)
+    pass  # 2026-10-03 用户要求去掉底部品牌行，顶部徽章已足够
 
 
 def _box(d, y, label, text, bg, ink, label_color, left_bar=None):
