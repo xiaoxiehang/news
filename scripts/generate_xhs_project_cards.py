@@ -168,7 +168,7 @@ def draw_cover(title, subtitle, stats, points, path):
                 d.ellipse([120, cy - 26, 172, cy + 26], fill=YELLOW)
                 n = str(i + 1)
                 nw = d.textlength(n, font=f_n)
-                d.text((146 - nw / 2, cy - 29), n, font=f_n, fill=BROWN)
+                d.text((146 - nw / 2, cy - 20), n, font=f_n, fill=BROWN)
             d.text((200, y), ln, font=f_p, fill=(214, 214, 218))
             y += 62
         y += 48
