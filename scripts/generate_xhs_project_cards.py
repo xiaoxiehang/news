@@ -25,6 +25,9 @@ def _new():
     img = Image.new('RGB', (W, H), BG)
     return img, ImageDraw.Draw(img)
 
+_dummy_img = Image.new('RGB', (W, H), BG)
+dummy_d = ImageDraw.Draw(_dummy_img)
+
 
 def _pill(d, x, y, text):
     f = _font(34)
@@ -41,37 +44,75 @@ def _header(d, idx, total):
     d.text((W - 70 - tw, 68), t, font=f, fill=DIM)
 
 
+GHOST = (235, 231, 221)
+
+def _ghost_num(d, idx, y_center):
+    """背景大数字水印"""
+    f = _font(430)
+    t = f'{idx + 1:02d}'
+    tw = d.textlength(t, font=f)
+    d.text((W - 70 - tw, y_center - 215), t, font=f, fill=GHOST)
+
+def _measure_card(title, bullets, code):
+    """预量内容卡高度，返回 (title_lines, bullet_lines_list, code_h, total_h)"""
+    f_title, f_b = _font(64), _font(38)
+    tl = _wrap(dummy_d, _clean(title), f_title, W - 140)[:2]
+    th = len(tl) * 90
+    bl = []
+    bh = 0
+    for b in bullets:
+        ln = _wrap(dummy_d, _clean(b), f_b, W - 140 - 56)[:3]
+        bl.append(ln)
+        bh += len(ln) * 58 + 22
+    ch = 0
+    if code:
+        f_c = _font(38)
+        cl = _wrap(dummy_d, _clean(code), f_c, W - 140 - 64)
+        ch = 16 + 36 + len(cl) * 58 + 28
+    total = th + 30 + bh + ch
+    return tl, bl, ch, total
+
 def draw_cover(kicker, title, subtitle, stats, points, path):
     img, d = _new()
     _pill(d, 70, 56, kicker)
-    y = 290
-    f_title = _font(96)
-    for ln in _wrap(d, _clean(title), f_title, W - 140)[:2]:
+    f_title, f_sub, f_st = _font(96), _font(46), _font(38)
+    tl = _wrap(d, _clean(title), f_title, W - 140)[:2]
+    sl = _wrap(d, _clean(subtitle), f_sub, W - 140)[:2]
+    # 预量
+    th = len(tl) * 124 + 10 + len(sl) * 64 + 30 + 72 + 130 + 10
+    ph = 0
+    f_t = _font(40)
+    pl = []
+    for pt in points:
+        ln = _wrap(d, _clean(pt), f_t, W - 300)[:2]
+        pl.append(ln)
+        ph += len(ln) * 60 + 44
+    total_h = th + 60 + ph
+    top, bottom = 190, H - 120
+    y = top + max(0, (bottom - top - total_h) / 2)
+    for ln in tl:
         d.text((70, y), ln, font=f_title, fill=INK)
         y += 124
     y += 10
-    f_sub = _font(46)
-    for ln in _wrap(d, _clean(subtitle), f_sub, W - 140)[:2]:
+    for ln in sl:
         d.text((72, y), ln, font=f_sub, fill=YELLOW_D)
         y += 64
     y += 30
-    # 数据条
-    f_st = _font(38)
     tw = d.textlength(stats, font=f_st)
     d.rounded_rectangle([70, y, 70 + tw + 56, y + 72], radius=36, fill=INK)
     d.text((98, y + 16), stats, font=f_st, fill=WHITE)
     y += 130
     d.rectangle([72, y, 200, y + 10], fill=YELLOW)
     y += 60
-    f_n, f_t = _font(42), _font(40)
-    for i, pt in enumerate(points):
+    f_n = _font(42)
+    for i, ln in enumerate(pl):
         cy = y + 30
         d.ellipse([78, cy - 30, 138, cy + 30], fill=YELLOW)
         n = str(i + 1)
         nw = d.textlength(n, font=f_n)
         d.text((108 - nw / 2, cy - 31), n, font=f_n, fill=BROWN)
-        for ln in _wrap(d, _clean(pt), f_t, W - 300)[:2]:
-            d.text((168, y), ln, font=f_t, fill=INK)
+        for l2 in ln:
+            d.text((168, y), l2, font=f_t, fill=INK)
             y += 60
         y += 44
     img.save(path)
@@ -80,28 +121,30 @@ def draw_cover(kicker, title, subtitle, stats, points, path):
 def draw_card(title, bullets, code, idx, total, path):
     img, d = _new()
     _header(d, idx, total)
-    y = 180
+    tl, bl, ch, total_h = _measure_card(title, bullets, code)
+    # 内容在 header 下方区域垂直居中
+    top, bottom = 190, H - 120
+    y = top + max(0, (bottom - top - total_h) / 2)
+    _ghost_num(d, idx, top + (bottom - top) / 2)
     f_title = _font(64)
-    for ln in _wrap(d, _clean(title), f_title, W - 140)[:2]:
+    for ln in tl:
         d.text((70, y), ln, font=f_title, fill=INK)
         y += 90
     y += 30
     f_b = _font(38)
-    for b in bullets:
-        for j, ln in enumerate(_wrap(d, _clean(b), f_b, W - 140 - 56)[:3]):
-            x = 70 if j > 0 else 70
+    for lines in bl:
+        for j, ln in enumerate(lines):
             if j == 0:
                 d.ellipse([72, y + 14, 96, y + 38], fill=YELLOW)
-            d.text((118 if j == 0 else 118, y), ln, font=f_b, fill=INK)
+            d.text((118, y), ln, font=f_b, fill=INK)
             y += 58
         y += 22
     if code:
         y += 16
         f_c = _font(38)
         cl = _wrap(d, _clean(code), f_c, W - 140 - 64)
-        ch = 36 + len(cl) * 58 + 28
-        d.rounded_rectangle([70, y, W - 70, y + ch], radius=20, fill=CODE_BG)
-        # 三个小圆点
+        chh = 36 + len(cl) * 58 + 28
+        d.rounded_rectangle([70, y, W - 70, y + chh], radius=20, fill=CODE_BG)
         for k, c in enumerate([(255, 95, 86), (255, 189, 46), (39, 201, 63)]):
             d.ellipse([100 + k * 34, y + 22, 122 + k * 34, y + 44], fill=c)
         ty = y + 58
@@ -115,21 +158,23 @@ def draw_card(title, bullets, code, idx, total, path):
 def draw_end(jinju, question, path):
     img, d = _new()
     _pill(d, 70, 56, '开源项目介绍')
-    y = 420
-    f_j = _font(56)
-    for ln in _wrap(d, _clean(jinju), f_j, W - 140)[:3]:
+    f_j, f_q, f_fav = _font(56), _font(42), _font(40)
+    jl = _wrap(d, _clean(jinju), f_j, W - 140)[:3]
+    ql = _wrap(d, _clean(question), f_q, W - 140)[:3]
+    t = '收藏这篇，下次让 AI 做页面时翻出来'
+    total_h = len(jl) * 84 + 60 + 10 + 70 + len(ql) * 66 + 40 + 84
+    top, bottom = 190, H - 120
+    y = top + max(0, (bottom - top - total_h) / 2)
+    for ln in jl:
         d.text((70, y), ln, font=f_j, fill=INK)
         y += 84
     y += 60
     d.rectangle([72, y, 200, y + 10], fill=YELLOW)
     y += 70
-    f_q = _font(42)
-    for ln in _wrap(d, _clean(question), f_q, W - 140)[:3]:
+    for ln in ql:
         d.text((70, y), ln, font=f_q, fill=GRAY)
         y += 66
     y += 40
-    f_fav = _font(40)
-    t = '收藏这篇，下次让 AI 做页面时翻出来'
     tw = d.textlength(t, font=f_fav)
     d.rounded_rectangle([(W - tw) / 2 - 30, y, (W + tw) / 2 + 30, y + 84],
                         radius=42, fill=YELLOW)
