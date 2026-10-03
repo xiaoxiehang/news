@@ -115,11 +115,18 @@ def _frosted(img, box, radius=36, blur=24, tint=(255, 255, 255, 22),
     return img
 
 
+def _ctext(d, cx, cy, text, font, fill):
+    """以文字墨迹中心为锚点绘制（真正的视觉居中）"""
+    b = d.textbbox((0, 0), text, font=font)
+    d.text((cx - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2),
+           text, font=font, fill=fill)
+
+
 def _pill(d, x, y, text):
     f = _fs(32)
     tw = d.textlength(text, font=f)
     d.rounded_rectangle([x, y, x + tw + 52, y + 54], radius=27, fill=YELLOW)
-    d.text((x + 26, y + 11), text, font=f, fill=BROWN)
+    _ctext(d, x + 26 + tw / 2, y + 27, text, f, BROWN)
 
 
 def _header(img):
@@ -166,9 +173,7 @@ def draw_cover(title, subtitle, stats, points, path):
             if j == 0:
                 cy = y + 28
                 d.ellipse([120, cy - 26, 172, cy + 26], fill=YELLOW)
-                n = str(i + 1)
-                nw = d.textlength(n, font=f_n)
-                d.text((146 - nw / 2, cy - 20), n, font=f_n, fill=BROWN)
+                _ctext(d, 146, cy, str(i + 1), f_n, BROWN)
             d.text((200, y), ln, font=f_p, fill=(214, 214, 218))
             y += 62
         y += 48
@@ -252,7 +257,7 @@ def draw_end(jinju, question, path):
     tw = d.textlength(t, font=f_btn)
     d.rounded_rectangle([(W - tw) / 2 - 34, y, (W + tw) / 2 + 34, y + 88],
                         radius=44, fill=YELLOW)
-    d.text(((W - tw) / 2, y + 24), t, font=f_btn, fill=BROWN)
+    _ctext(d, W / 2, y + 44, t, f_btn, BROWN)
     img.save(path)
 
 
