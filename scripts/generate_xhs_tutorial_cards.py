@@ -9,7 +9,86 @@ import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import re as _re
 from generate_xhs_cards import _font, _wrap, _clean, W, H
+
+_PRICE_TAIL = _re.compile(r'¥[0-9.,/]*$')
+_PUNCT = set('，。！？；：、）】”’')
+
+
+def _wrap2(d, text, font, max_w, min_last=4):
+    """换行：价格（¥开头）不拆散 + 防末行孤字。"""
+    text = _clean(text)
+    NO_START = set('，。！？；：、」』）】”’%·…—')
+    lines, cur = [], ''
+    for ch in text:
+        t = cur + ch
+        if d.textlength(t, font=font) <= max_w:
+            cur = t
+        else:
+            if cur:
+                m = _PRICE_TAIL.search(cur)
+                if m and (ch.isdigit() or ch in '.,/' or ch == '年'):
+                    head, price = cur[:m.start()], cur[m.start():]
+                    if head:
+                        lines.append(head)
+                    cur = price + ch
+                elif ch.isascii() and ch.isalnum():
+                    i = len(cur)
+                    while i > 0 and cur[i - 1].isascii() and cur[i - 1].isalnum():
+                        i -= 1
+                    if 0 < i < len(cur):
+                        lines.append(cur[:i])
+                        cur = cur[i:] + ch
+                    else:
+                        lines.append(cur)
+                        cur = ch
+                else:
+                    lines.append(cur)
+                    cur = ch
+            else:
+                cur = ch
+    if cur:
+        lines.append(cur)
+    fixed = []
+    for ln in lines:
+        if fixed and ln and ln[0] in NO_START:
+            fixed[-1] += ln[0]
+            ln = ln[1:]
+        if ln:
+            fixed.append(ln)
+    lines = fixed or ['']
+    guard = 0
+    while len(lines) >= 2 and len(lines[-1].strip()) < min_last and guard < 3:
+        guard += 1
+        last = lines.pop()
+        prev = lines.pop()
+        combo = prev + last
+        n = len(combo)
+        target = int(n * 0.55)
+        cut = -1
+        for i in range(target, n - 1):
+            if combo[i] in _PUNCT:
+                cut = i + 1
+                break
+        if cut < 0:
+            for i in range(target, 1, -1):
+                if combo[i] in _PUNCT:
+                    cut = i + 1
+                    break
+        if cut < 0:
+            cut = target
+        l1, l2 = combo[:cut], combo[cut:]
+        if (d.textlength(l1, font=font) <= max_w
+                and d.textlength(l2, font=font) <= max_w
+                and len(l2.strip()) >= min_last):
+            lines.append(l1)
+            lines.append(l2)
+        else:
+            lines.append(prev)
+            lines.append(last)
+            break
+    return lines
 from PIL import Image, ImageDraw
 
 BG = (250, 247, 242)
@@ -58,7 +137,7 @@ def _avatar(d, cx, cy, r, text, fill, ink):
 def _measure(d, max_w, text):
     """纯测量，不绘制。返回 (气泡宽, 气泡高, 行列表)。"""
     f = _font(36)
-    lines = _wrap(d, _clean(text), f, max_w - 52)
+    lines = _wrap2(d, _clean(text), f, max_w - 52)
     lw = max(d.textlength(ln, font=f) for ln in lines) if lines else 0
     bw = min(max_w, lw + 52)
     bh = 30 + len(lines) * 54 + 26
@@ -102,7 +181,7 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
         n = str(i + 1)
         nw = d.textlength(n, font=f_n)
         d.text((110 - nw / 2, cy - 32), n, font=f_n, fill=BROWN)
-        for ln in _wrap(d, _clean(tip), f_t, W - 300)[:2]:
+        for ln in _wrap2(d, _clean(tip), f_t, W - 300)[:2]:
             d.text((172, y), ln, font=f_t, fill=INK)
             y += 62
         y += 48
@@ -115,13 +194,13 @@ def draw_tip_card(tip, idx, total, path):
     _header(d, idx, total)
     y = 180
     f_title = _font(68)
-    for ln in _wrap(d, _clean(tip['title']), f_title, W - 140)[:2]:
+    for ln in _wrap2(d, _clean(tip['title']), f_title, W - 140)[:2]:
         d.text((70, y), ln, font=f_title, fill=INK)
         y += 92
     y += 10
     # 场景（小灰字）
     f_scene = _font(34)
-    for ln in _wrap(d, _clean(tip['scene']), f_scene, W - 140)[:2]:
+    for ln in _wrap2(d, _clean(tip['scene']), f_scene, W - 140)[:2]:
         d.text((70, y), ln, font=f_scene, fill=GRAY)
         y += 52
     y += 26
@@ -147,7 +226,7 @@ def draw_tip_card(tip, idx, total, path):
     # 避坑条
     f_w = _font(36)
     wt = '避坑：' + tip['warn']
-    wl = _wrap(d, _clean(wt), f_w, W - 140 - 52)
+    wl = _wrap2(d, _clean(wt), f_w, W - 140 - 52)
     wh = 28 + len(wl) * 54 + 24
     d.rounded_rectangle([70, y, W - 70, y + wh], radius=20, fill=WARN_BG)
     ty = y + 24
@@ -158,24 +237,24 @@ def draw_tip_card(tip, idx, total, path):
     img.save(path)
 
 
-def draw_end_tutorial(jinju, question, path):
+def draw_end_tutorial(jinju, question, path, fav_text=None):
     img, d = _new()
     _pill(d, 70, 56, '鸡仔AI实战')
     y = 420
     f_j = _font(56)
-    for ln in _wrap(d, _clean(jinju), f_j, W - 140)[:3]:
+    for ln in _wrap2(d, _clean(jinju), f_j, W - 140)[:3]:
         d.text((70, y), ln, font=f_j, fill=INK)
         y += 84
     y += 60
     d.rectangle([72, y, 200, y + 10], fill=YELLOW)
     y += 70
     f_q = _font(42)
-    for ln in _wrap(d, _clean(question), f_q, W - 140)[:3]:
+    for ln in _wrap2(d, _clean(question), f_q, W - 140)[:3]:
         d.text((70, y), ln, font=f_q, fill=GRAY)
         y += 66
     y += 40
     f_fav = _font(40)
-    t = '收藏这篇，下周做报表时翻出来对照着用'
+    t = fav_text or '收藏这篇，下周做报表时翻出来对照着用'
     tw = d.textlength(t, font=f_fav)
     d.rounded_rectangle([(W - tw) / 2 - 30, y, (W + tw) / 2 + 30, y + 84],
                         radius=42, fill=YELLOW)
@@ -202,13 +281,31 @@ TIPS = [
 ]
 
 
+def build_from_data(data, d):
+    """data: {kicker, title_lines, tips[{title,scene,user,ai,warn}], jinju, question} 到目录 d。"""
+    os.makedirs(d, exist_ok=True)
+    tips = data['tips']
+    draw_cover_tutorial(data.get('kicker', '打工人必看'), data['title_lines'],
+                        [t['title'] for t in tips], f'{d}/cover.png')
+    for i, t in enumerate(tips):
+        draw_tip_card(t, i, len(tips), f'{d}/card_{i + 1:02d}.png')
+    draw_end_tutorial(data['jinju'], data['question'], f'{d}/end.png', data.get('fav_text'))
+    return [f'{d}/cover.png'] + [f'{d}/card_{i + 1:02d}.png' for i in range(len(tips))] + [f'{d}/end.png']
+
+
 if __name__ == '__main__':
-    d = 'data/xhs-drafts/2026-10-04'
-    draw_cover_tutorial('打工人必看', ['3个AI技巧', '报表1小时变10分钟'],
-                        [t['title'] for t in TIPS], f'{d}/cover.png')
-    for i, t in enumerate(TIPS):
-        draw_tip_card(t, i, len(TIPS), f'{d}/card_{i + 1:02d}.png')
-    draw_end_tutorial('AI 搭架子，你填里子，这个分工最稳。',
-                      '这 3 招里，你最想先试哪一个？评论区扣 1，提示词原文发你。',
-                      f'{d}/end.png')
-    print('对话实录风卡片已生成')
+    import json
+    if len(sys.argv) > 1:
+        data = json.load(open(sys.argv[1], encoding='utf-8'))
+        out = sys.argv[2] if len(sys.argv) > 2 else 'data/xhs-drafts/' + data.get('slug', 'tutorial')
+        print(build_from_data(data, out))
+    else:
+        d = 'data/xhs-drafts/2026-10-04'
+        draw_cover_tutorial('打工人必看', ['3个AI技巧', '报表1小时变10分钟'],
+                            [t['title'] for t in TIPS], f'{d}/cover.png')
+        for i, t in enumerate(TIPS):
+            draw_tip_card(t, i, len(TIPS), f'{d}/card_{i + 1:02d}.png')
+        draw_end_tutorial('AI 搭架子，你填里子，这个分工最稳。',
+                          '这 3 招里，你最想先试哪一个？评论区扣 1，提示词原文发你。',
+                          f'{d}/end.png')
+        print('对话实录风卡片已生成')
