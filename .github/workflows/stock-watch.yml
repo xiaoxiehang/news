@@ -1,9 +1,10 @@
 name: Stock Watch
 
 on:
-  schedule:
-    # 美股交易时段巡检：UTC 13:00–21:45，每 15 分钟（周一到周五）
-    - cron: '*/15 13-21 * * 1-5'
+  # 2026-10-03 起停用定时巡检：已改用 Finnhub WebSocket 实时监听（site/scripts/stock_rt_listener.py + systemd 服务），
+  # 15 分钟轮询无意义。保留手动触发用于降级/调试。
+  # schedule:
+  #   - cron: '*/15 13-21 * * 1-5'
   workflow_dispatch:  # 手动触发
 
 jobs:
