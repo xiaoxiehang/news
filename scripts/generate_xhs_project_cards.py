@@ -28,6 +28,44 @@ def _fr(size):
         return ImageFont.truetype(FONT_REG, size)
 
 
+PUNCT = set('，。！？；：、）】”’')
+
+def _wrap2(d, text, font, max_w, min_last=4):
+    """换行 + 防末行孤字：末行不足 min_last 个字时，从上一行匀字下来。"""
+    lines = _wrap(d, _clean(text), font, max_w)
+    lines = list(lines)
+    guard = 0
+    while len(lines) >= 2 and len(lines[-1].strip()) < min_last and guard < 3:
+        guard += 1
+        last = lines.pop()
+        prev = lines.pop()
+        combo = prev + last
+        n = len(combo)
+        target = int(n * 0.55)
+        cut = -1
+        for i in range(target, n - 1):
+            if combo[i] in PUNCT:
+                cut = i + 1
+                break
+        if cut < 0:
+            for i in range(target, 1, -1):
+                if combo[i] in PUNCT:
+                    cut = i + 1
+                    break
+        if cut < 0:
+            cut = target
+        l1, l2 = combo[:cut], combo[cut:]
+        if (d.textlength(l1, font=font) <= max_w
+                and d.textlength(l2, font=font) <= max_w
+                and len(l2.strip()) >= min_last):
+            lines.append(l1)
+            lines.append(l2)
+        else:
+            lines.append(prev)
+            lines.append(last)
+            break
+    return lines
+
 # 深色苹果风配色
 INK = (245, 245, 247)
 GRAY = (161, 161, 166)
@@ -99,10 +137,10 @@ def draw_cover(title, subtitle, stats, points, path):
     d = _header(img)
     # 中央毛玻璃面板
     f_t, f_s, f_st = _fs(92), _fr(42), _fr(36)
-    tl = _wrap(d, _clean(title), f_t, W - 280)[:2]
-    sl = _wrap(d, _clean(subtitle), f_s, W - 280)[:2]
+    tl = _wrap2(d, _clean(title), f_t, W - 280)[:2]
+    sl = _wrap2(d, _clean(subtitle), f_s, W - 280)[:2]
     f_p = _fr(38)
-    pl = [_wrap(d, _clean(p), f_p, W - 280 - 90)[:2] for p in points]
+    pl = [_wrap2(d, _clean(p), f_p, W - 280 - 90)[:2] for p in points]
     _top_pad, _bot_pad = 72, 72
     ch = (_top_pad + len(tl) * 118 + 14 + len(sl) * 62 + 44
           + 96 + sum(len(x) * 62 + 40 for x in pl) + _bot_pad)
@@ -145,13 +183,13 @@ def draw_card(title, bullets, code, idx, total, path):
     tw = d.textlength(t, font=f)
     d.text((W - 70 - tw, 112), t, font=f, fill=MUTED)
     f_title, f_b = _fs(60), _fr(37)
-    tl = _wrap(d, _clean(title), f_title, W - 280)[:2]
-    bl = [_wrap(d, _clean(b), f_b, W - 280 - 60)[:3] for b in bullets]
+    tl = _wrap2(d, _clean(title), f_title, W - 280)[:2]
+    bl = [_wrap2(d, _clean(b), f_b, W - 280 - 60)[:3] for b in bullets]
     chh = 0
     cl = []
     if code:
         f_c = _fr(36)
-        cl = _wrap(d, _clean(code), f_c, W - 280 - 80)
+        cl = _wrap2(d, _clean(code), f_c, W - 280 - 80)
         chh = 30 + 40 + len(cl) * 56 + 34
     _top_pad, _bot_pad = 68, 68
     ch = (_top_pad + len(tl) * 88 + 44 + sum(len(x) * 66 + 26 for x in bl)
@@ -191,8 +229,8 @@ def draw_end(jinju, question, path):
     img = _bg()
     d = _header(img)
     f_j, f_q = _fs(52), _fr(40)
-    jl = _wrap(d, _clean(jinju), f_j, W - 280)[:3]
-    ql = _wrap(d, _clean(question), f_q, W - 280)[:3]
+    jl = _wrap2(d, _clean(jinju), f_j, W - 280)[:3]
+    ql = _wrap2(d, _clean(question), f_q, W - 280)[:3]
     t = '收藏这篇，下次让 AI 做页面时翻出来'
     f_btn = _fs(38)
     _top_pad, _bot_pad = 120, 72
