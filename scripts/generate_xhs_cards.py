@@ -204,7 +204,7 @@ def draw_card(pick, item, idx, total, path):
     img.save(path)
 
 
-def draw_end(jinju, question, path, fav_text='收藏这篇，明早接着看', footer_text=None):
+def draw_end(jinju, question, path, fav_text='收藏这篇，持续更新', footer_text=None):
     img, d = _bg()
     f1 = _font(64)
     _centered(d, 420, '今日金句', f1, C_YELLOW)

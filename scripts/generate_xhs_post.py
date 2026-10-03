@@ -136,7 +136,7 @@ def fallback_post(briefing):
 
 
 def assemble_body(post, picks, include_point=True,
-                  list_title='📋 今日 8 条速览', fav_line='📌 收藏这篇，明早接着看'):
+                  list_title='📋 今日 8 条速览', fav_line='📌 收藏这篇，持续更新'):
     """组装完整正文：hook + 清单 + 结尾引导 + AI 声明。picks 为重排后的新闻列表。
 
     include_point=False 时去掉每条的 point 长描述（小红书正文上限 1000 字时的

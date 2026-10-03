@@ -124,7 +124,7 @@ def build_parts(briefing):
                       'source': p.get('source') or '科技早报',
                       'date_str': date_str})
 
-    outro = f'以上就是今天的科技早报，我是{HOST_NAME}，我们明天早上八点再见。'
+    outro = f'以上就是今天的科技早报，我是{HOST_NAME}，我们明天再见。'
     parts.append({'key': 'outro', 'narr': outro, 'kind': 'outro'})
     return parts
 
@@ -382,7 +382,7 @@ def draw_outro(part, path):
     t1 = '以上就是今天的科技早报'
     tw = d.textlength(t1, font=f1)
     d.text(((W - tw) / 2, 700), t1, font=f1, fill=C_WHITE)
-    t2 = f'我是{HOST_NAME}，我们明天早上八点再见'
+    t2 = f'我是{HOST_NAME}，我们明天再见'
     tw2 = d.textlength(t2, font=f2)
     d.text(((W - tw2) / 2, 830), t2, font=f2, fill=C_GRAY)
     d.rectangle([(W - 120) / 2, 950, (W + 120) / 2, 962], fill=C_YELLOW)
