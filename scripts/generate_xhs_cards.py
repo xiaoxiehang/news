@@ -94,7 +94,7 @@ def _header(d, date_str):
     d.text((70, 125), date_str, font=f2, fill=C_DIM)
 
 
-def _footer(d, text='🐤 鸡仔 · 每天更新的AI早报'):
+def _footer(d, text='🐤 鸡仔 · AI早报'):
     # PIL 字体无 emoji，用文字替代
     f = _font(32)
     label = text.replace('🐤 ', '')
@@ -140,7 +140,7 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
         y += 50
     f_tip = _font(38)
     _centered(d, y + 40, tip_text, f_tip, C_DIM)
-    _footer(d, footer_text or '🐤 鸡仔 · 每天更新的AI早报')
+    _footer(d, footer_text or '🐤 鸡仔 · AI早报')
     img.save(path)
 
 
@@ -221,7 +221,7 @@ def draw_end(jinju, question, path, fav_text='收藏这篇，持续更新', foot
         y += 76
     f_fav = _font(40)
     _centered(d, y + 40, fav_text, f_fav, C_DIM)
-    _footer(d, footer_text or '🐤 鸡仔 · 每天更新的AI早报')
+    _footer(d, footer_text or '🐤 鸡仔 · AI早报')
     img.save(path)
 
 
