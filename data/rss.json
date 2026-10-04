@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-03 02:25:08",
+  "fetched_at": "2026-10-04 02:54:46",
   "feeds": [
     {
       "name": "OpenAI 官方",
@@ -40,6 +40,18 @@
       "name": "机器之心",
       "items": [
         {
+          "title": "Jev被请下王座，StartLux中国开源决策模型冲上第一",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060998&idx=1&sn=5e2496eb644e86fdf2d880a258074514",
+          "desc": "一口气推出 0.8B、2B、4B、9B 和 27B 五档版本，并提供支持本地部署的量化模型。",
+          "published": "Sat, 03 Oct 2026"
+        },
+        {
+          "title": "万分之一——大模型后训练中的极端稀疏监督",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060998&idx=2&sn=6e1b1eee268b769acca49b04819c6fd3",
+          "desc": "大模型后训练中密集的 token-level 信号真的是必要的吗？",
+          "published": "Sat, 03 Oct 2026"
+        },
+        {
           "title": "比李飞飞World Labs早两年押注原生4D，影身智能这次是真走在前面了？",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060898&idx=1&sn=dcd5a6cee64e86b4b40b03c9b9d3f675",
           "desc": "4D世界模型进入产业竞速期。",
@@ -74,18 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060792&idx=2&sn=e0f864c845649c83046d7628e5d799e1",
           "desc": "可复用的基础设施。",
           "published": "Wed, 30 Sep 2026"
-        },
-        {
-          "title": "提速10.7倍！这个端侧推理引擎一开源，机器人本体跑大模型终于不卡了",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060477&idx=1&sn=0159b4d84b80436e4be1be8f3e139155",
-          "desc": "从 RLinf 到 APXInf，无问芯穹补齐了具身落地的最后一环",
-          "published": "Tue, 29 Sep 2026"
-        },
-        {
-          "title": "Manus回来了！更新2.0并发布全天候智能体Cue",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060477&idx=2&sn=ee9eb2ee3287c13bba78bf08f5d42a29",
-          "desc": "「We’re back.」",
-          "published": "Tue, 29 Sep 2026"
         }
       ]
     },
@@ -93,51 +93,32 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "国庆出游用AI，第一批人已经被坑惨了",
-          "url": "https://www.huxiu.com/article/4895221.html?f=rss",
+          "title": "无人机已经是优等生 机器人为什么还要载人",
+          "url": "https://www.huxiu.com/article/4895323.html?f=rss",
           "desc": "",
-          "published": "Sat, 03 Oct 2026"
+          "published": "Sun, 04 Oct 2026"
         },
         {
-          "title": "机器人“价格战”，快要打不动了",
-          "url": "https://www.huxiu.com/article/4895228.html?f=rss",
+          "title": "存储芯片短缺，PC、手机厂商转向“少出货、卖更贵”",
+          "url": "https://www.huxiu.com/article/4895308.html?f=rss",
           "desc": "",
-          "published": "Sat, 03 Oct 2026"
-        },
-        {
-          "title": "卖掉印钞机英伟达，借最贵的钱保OpenAI份额：软银孙正义这一次还能赢吗",
-          "url": "https://www.huxiu.com/article/4895224.html?f=rss",
-          "desc": "",
-          "published": "Sat, 03 Oct 2026"
-        },
-        {
-          "title": "我们对AI之后发生的事还一无所知",
-          "url": "https://www.huxiu.com/article/4895200.html?f=rss",
-          "desc": "连爱好都有捷径，努力还通向哪里？",
-          "published": "Sat, 03 Oct 2026"
+          "published": "Sun, 04 Oct 2026"
         }
       ]
     },
     {
       "name": "Solidot",
-      "items": [
-        {
-          "title": "CNNIC 称中国生成式 AI 用户超 7 亿",
-          "url": "https://www.solidot.org/story?sid=85519",
-          "desc": "中国互联网络信息中心（CNNIC）发布了《生成式人工智能应用发展报告（2026）》，截至 2026 年上半年，我国生成式人工智能用户规模突破 7亿 人，普及率超 50%。76.0%的 用户表示自己会让生成式人工智能回答问题；使用生成式人工智能处理图片/视频、文本、工作总结/会议纪要/PPT的用户占比分别为 47.8%、37.6% 和 32.5%。数据显示，38.7%的网民近半年在网上购买过智能硬件",
-          "published": "Wed, 30 Sep 2026"
-        },
-        {
-          "title": "中国 AI 智能体也会撒谎和欺骗",
-          "url": "https://www.solidot.org/story?sid=85508",
-          "desc": "和美国 AI 模型一样，中国公司的 AI 智能体也会撒谎和欺骗。在今年 3 月进行的一次商业招标实验中， 北航、北大、宁波诺丁汉和 360 AI 安全实验室的研究人员让多个智能体参与模拟客户合同的竞标，每个智能体都被告知其产品的功能及客户的需求，随后被要求进行报价。阿里巴巴 Qwen3-Max-Preview 模型 88% 的会话至少出现一次虚假陈述，DeepSeek-V3.2-Exp 模型的比例",
-          "published": "Wed, 30 Sep 2026"
-        }
-      ]
+      "items": []
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "把Depth Anything砍到6M，深度估计终于能跑进Jetson",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557414&idx=1&sn=b6a05b919e2d8802cb5e785287735072",
+          "desc": "该工作已被ACMMultimedia2026接收。",
+          "published": "Sun, 04 Oct 2026"
+        },
         {
           "title": "Paper-Writing-Tips | 4.6k Star 的论文写作避坑指南更新，新增论文写作检查 Skill！",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557407&idx=1&sn=d70ff0ea7cda1fde716286d26675bcec",
@@ -167,18 +148,18 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557380&idx=1&sn=a62d1dd0af53c0b9cb2d3d752527a428",
           "desc": "中秋假期稳居OpenRouter调用日榜榜首",
           "published": "Tue, 29 Sep 2026"
-        },
-        {
-          "title": "到底什么是 Context？万字长文谈 Pi Agent context 管理",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557373&idx=1&sn=c88be18fdc607045f0181fe58aabd475",
-          "desc": "Prompt和Context到底应该怎么区分？我的理解是，Prompt更偏向相对静态的指令设计，而Context更偏向Agent在运行过程中动态形成的信息环境。 Prompt往往提前定义了模型“应该怎么做”，而Context会随着任务推进不断变化，决定模型“此刻基于哪些信息来做”",
-          "published": "Mon, 28 Sep 2026"
         }
       ]
     },
     {
       "name": "InfoQ 推荐",
       "items": [
+        {
+          "title": "Agent 的记忆不在对话里：把企业数仓沉淀为可治理的共享语义记忆｜QCon上海",
+          "url": "https://www.infoq.cn/article/M4mgbKf4RDv5AKTwQvFH",
+          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
+          "published": "Sun, 04 Oct 2026"
+        },
         {
           "title": "企业级 Agent Infra 架构实践：从安全沙箱到网络管控与身份治理｜QCon上海",
           "url": "https://www.infoq.cn/article/bLB8RQ6sd3ZGQts0D4tP",
@@ -208,18 +189,30 @@
           "url": "https://www.infoq.cn/article/vVrSzjhEvkmpevS7wZzU",
           "desc": "刚刚，谷歌宣布推出新一代模型 Gemini 4 Argon，重点面向长流程软件工程、法律与金融等企业知识工作，以及网络安全防御。 谷歌 CEO Sundar Pichai 在 x 上宣布该消息时写道：“外界最近对我们的下一款模型有很多讨论，所以我想尽早让大家先睹为快。现在，向大家介绍 Gemini 4 Argon！它在复杂工作流、网络安全防御和软件工程方面展现出前沿水平的性能。谷歌内部团队已经在广",
           "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "生成即合规：Agentic AIGC 驱动的广告素材修复实践｜QCon上海",
-          "url": "https://www.infoq.cn/article/TLjNcyBg9Z72HV5kJ2kp",
-          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
-          "published": "Thu, 01 Oct 2026"
         }
       ]
     },
     {
       "name": "The Verge",
       "items": [
+        {
+          "title": "Capcom is preparing for a ‘future where we create games together with AI’",
+          "url": "https://www.theverge.com/games/1004418/capcom-ai-game-development",
+          "desc": "Capcom's Pragmata might be all about the horrors of AI, but in practice the studio doesn't seem so down on the tech. During the Capcom Open Conference RE: 2026 programmer Satoshi Ishida gave a present",
+          "published": "2026-10-03T12:49"
+        },
+        {
+          "title": "Splice CEO Kakul Srivastava thinks AI emails are killing conversations",
+          "url": "https://www.theverge.com/entertainment/1004162/splice-ceo-kakul-srivastava-ai-interview",
+          "desc": "Kakul Srivastava is the CEO of Splice, the sample platform countless producers rely on for one-shots and melodic loops. Samples pulled from the service have found their way into massive hits like Lisa",
+          "published": "2026-10-03T11:00"
+        },
+        {
+          "title": "An OpenAI safety employee has quit and is sounding the alarm",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004408/openai-safety-quits-sounding-the-alarm",
+          "desc": "David Robinson used to write the safety reports that accompanied every major model release at OpenAI. This week, he resigned from his position and is now speaking out in an editorial in The Atlantic. ",
+          "published": "2026-10-03T10:31"
+        },
         {
           "title": "Meta open sources code to let you make Muse AI gadgets",
           "url": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
@@ -237,18 +230,24 @@
           "url": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
           "desc": "It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like us",
           "published": "2026-10-02T14:00"
-        },
-        {
-          "title": "Dots get up in Muse’s business",
-          "url": "https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast",
-          "desc": "OpenAI's answer to Muse arrived this week, and it looks a whole lot like Muse dressed up in a suit and tie. Dots is a business-first product - for now, at least - costing a minimum of $100 per month. ",
-          "published": "2026-10-02T11:47"
         }
       ]
     },
     {
       "name": "TechCrunch",
       "items": [
+        {
+          "title": "OpenAI safety employee resigns, claiming the company’s ‘culture is broken’",
+          "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/",
+          "desc": "By his own admission, David Robinson is “something of a cliché”: an employee at a leading AI company who issues a dire warning while resigning from their job.",
+          "published": "Sat, 03 Oct 2026"
+        },
+        {
+          "title": "All the AI agents that can live in your text messages",
+          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+          "desc": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
+          "published": "Sat, 03 Oct 2026"
+        },
         {
           "title": "Sean Parker is rebuilding Stability AI around music",
           "url": "https://techcrunch.com/2026/10/02/sean-parker-is-rebuilding-stability-ai-around-music/",
@@ -271,18 +270,6 @@
           "title": "TechCrunch Disrupt 2026: Blackstone’s Jas Khaira on building the next generation of AI giants",
           "url": "https://techcrunch.com/2026/10/02/techcrunch-disrupt-2026-blackstones-jas-khaira-on-building-the-next-generation-of-ai-giants/",
           "desc": "Blackstone's Jas Khaira will take the Builders Stage at TechCrunch Disrupt 2026 on building next-gen AI. Register for your pass and get 50% off a second.",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "Circuit Breaker Labs hopes to make AI safer for your kids (and you)",
-          "url": "https://techcrunch.com/2026/10/02/circuit-breaker-labs-hopes-to-make-ai-safer-for-your-kids-and-you/",
-          "desc": "With all the talk about how AI might one day kill us all, it's easy to forget that AI has already harmed some people psychologically. Circuit Breaker Labs has created \"crash-test dummies\" to solve tha",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "Pope Leo XIV is not a fan of AI-generated art",
-          "url": "https://techcrunch.com/2026/10/02/pope-leo-xiv-is-not-a-fan-of-ai-generated-art/",
-          "desc": "\"There is an ontological difference, even before an aesthetic one, between art and what a machine can generate through statistical calculation based on millions of images created by others,\" the pope ",
           "published": "Fri, 02 Oct 2026"
         }
       ]
@@ -332,52 +319,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "Teachoo",
-          "url": "https://www.producthunt.com/products/teachoo-2",
-          "desc": "AI that helps you learn anything and everything. Discussion | Link",
-          "published": "2026-09-15T12:39"
+          "title": "ZooWork",
+          "url": "https://www.producthunt.com/products/zoowork",
+          "desc": "The AI agent delivery platform for FDEs and domain experts Discussion | Link",
+          "published": "2026-09-23T21:22"
         },
         {
-          "title": "Gauth Unlimited Digital Canvas",
-          "url": "https://www.producthunt.com/products/gauth-ai-course",
-          "desc": "An AI tutor on an infinite whiteboard, not a chat thread Discussion | Link",
-          "published": "2026-09-29T05:33"
+          "title": "Muse Gadgets",
+          "url": "https://www.producthunt.com/products/muse-22",
+          "desc": "Meta's open-source kit for building your own AI gadgets Discussion | Link",
+          "published": "2026-10-02T19:07"
         },
         {
-          "title": "JarvisCore",
-          "url": "https://www.producthunt.com/products/jarviscore",
-          "desc": "Build agents as peers in a mesh network with zero-trust Discussion | Link",
-          "published": "2026-09-29T22:40"
+          "title": "Thanor AI",
+          "url": "https://www.producthunt.com/products/thanor-ai",
+          "desc": "Make your AI-built sites look expensive and not like slop Discussion | Link",
+          "published": "2026-09-30T15:07"
         },
         {
-          "title": "Communicate",
-          "url": "https://www.producthunt.com/products/communicate",
-          "desc": "AI support agents grounded in your knowledge, with handoff Discussion | Link",
-          "published": "2026-10-01T00:51"
+          "title": "Agent Activity",
+          "url": "https://www.producthunt.com/products/agent-activity",
+          "desc": "See what your AI agents do behind Discussion | Link",
+          "published": "2026-09-30T09:56"
         },
         {
-          "title": "Cue by Manus",
-          "url": "https://www.producthunt.com/products/cue-by-manus",
-          "desc": "Personal agents with identity, handling life end to end Discussion | Link",
-          "published": "2026-09-28T14:53"
+          "title": "SCMD",
+          "url": "https://www.producthunt.com/products/scmd",
+          "desc": "Manage what Claude Remembers and Keeps as Memory. Discussion | Link",
+          "published": "2026-09-21T14:15"
         },
         {
-          "title": "Mintlify Desktop",
-          "url": "https://www.producthunt.com/products/mintlify",
-          "desc": "An AI-native app for writing documentation and knowledge Discussion | Link",
-          "published": "2026-09-29T17:08"
+          "title": "Notchware",
+          "url": "https://www.producthunt.com/products/notchware",
+          "desc": "Music and AI agent alerts in your MacBook notch Discussion | Link",
+          "published": "2026-09-26T13:51"
         },
         {
-          "title": "Veltrix AI for E-commerce",
-          "url": "https://www.producthunt.com/products/veltrix-ai",
-          "desc": "Find how your e-commerce business could earn more Discussion | Link",
-          "published": "2026-09-17T08:49"
+          "title": "Cubicle",
+          "url": "https://www.producthunt.com/products/cubicle-2",
+          "desc": "A live office for your AI agents, read-only by design Discussion | Link",
+          "published": "2026-09-29T12:41"
         },
         {
-          "title": "Finbar",
-          "url": "https://www.producthunt.com/products/finbar-2",
-          "desc": "Agentic investment research Discussion | Link",
-          "published": "2026-10-01T09:40"
+          "title": "Sapien",
+          "url": "https://www.producthunt.com/products/sapien-4",
+          "desc": "AI market research with synthetic populations Discussion | Link",
+          "published": "2026-10-02T19:30"
         }
       ]
     }
