@@ -119,15 +119,41 @@ def main():
         items.append({'point': it.get('point', ''), 'usage': it.get('usage', ''),
                       'comment': it.get('comment', '')})
 
-    body = assemble_body(dict(post, items=items), picks,
+    def _pub_len(b):
+        # 与质检脚本完全一致的发布全文长度：正文 + 换行 + #标签行
+        return len(published_text(dict(post, body=b)))
+
+    slim_items = [dict(it) for it in items]
+    body = assemble_body(dict(post, items=slim_items), picks,
                          list_title='本周 8 大看点',
                          fav_line='收藏这篇，下周接着看')
-    if len(published_text(dict(post, body=body))) > 1000:
+    if _pub_len(body) > 1000:
         print('正文超 1000 字，自动精简 point 描述')
-        body = assemble_body(dict(post, items=items), picks, include_point=False,
+        body = assemble_body(dict(post, items=slim_items), picks, include_point=False,
                              list_title='本周 8 大看点',
                              fav_line='收藏这篇，下周接着看')
-    post = dict(post, body=body, items=items,
+    # 兜底压缩：去掉 point 仍超限时，逐轮截短最长的 usage/comment，
+    # 直到全文 <=1000，保证质检长度项必过（卡片与正文用同一套 slim_items）
+    while _pub_len(body) > 1000:
+        target = None
+        for it in slim_items:
+            for k in ('usage', 'comment'):
+                v = it.get(k) or ''
+                if len(v) > 20 and (target is None or len(v) > len(target[2])):
+                    target = (it, k, v)
+        if target is None:
+            break
+        it, k, v = target
+        it[k] = v[:max(20, int(len(v) * 0.7))]
+        body = assemble_body(dict(post, items=slim_items), picks, include_point=False,
+                             list_title='本周 8 大看点',
+                             fav_line='收藏这篇，下周接着看')
+    if _pub_len(body) > 1000:
+        # 最后一道防线：硬截断正文（保留标签行），绝不让超长包流到质检
+        tags_line = ' '.join('#' + t for t in (post.get('tags') or []))
+        body = body[:1000 - 1 - len(tags_line)].rstrip()
+    print('正文定稿：全文 %d 字' % _pub_len(body))
+    post = dict(post, body=body, items=slim_items,
                 fallback=False, generated_at=datetime.now().isoformat())
 
     out_dir = os.path.join(SITE_ROOT, 'data', 'xhs_weekly', date_str)
@@ -142,7 +168,7 @@ def main():
                big_title='本周AI盘点', footer_text=footer,
                tip_text='一次看懂本周 AI 大事')
     for i, p in enumerate(picks):
-        draw_card(p, items[i], i, N_TOTAL,
+        draw_card(p, slim_items[i], i, N_TOTAL,
                   os.path.join(out_dir, 'card_%02d.png' % (i + 1)))
     draw_end(post.get('jinju', ''), post.get('question', ''),
              os.path.join(out_dir, 'end.png'),

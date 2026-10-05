@@ -2,7 +2,9 @@ name: Weekly XHS Roundup
 
 on:
   schedule:
-    - cron: '0 1 * * 0'  # 每周日 UTC 01:00（北京时间 09:00）
+    # 每周六 UTC 12:00（北京时间周六 20:00）：包按周六日期生成，覆盖上周日到本周六 7 天；
+    # 提前到周六晚是给 GitHub 定时任务的延迟（日常约 2.5 小时）留余量，确保周日 10:19 发布前包已就绪
+    - cron: '0 12 * * 6'
   workflow_dispatch:  # 手动触发
 
 jobs:
@@ -25,21 +27,44 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests pillow
 
+    - name: Resolve package date
+      id: pkgdate
+      run: |
+        # 正常周六触发用当天；若 GitHub 延迟到周日才跑，回退到昨天（周六），
+        # 与周日 10:19 发布任务读取的目录保持一致
+        if [ "$(date -u +%u)" = "7" ]; then D=$(date -u -d yesterday +%F); else D=$(date -u +%F); fi
+        echo "date=$D" >> $GITHUB_OUTPUT
+        echo "package date: $D"
+
     - name: Generate weekly roundup package
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
         LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
         LLM_MODEL: ${{ secrets.LLM_MODEL }}
-      run: python scripts/generate_weekly_xhs.py --date $(date -u +%Y-%m-%d)
+      run: python scripts/generate_weekly_xhs.py --date ${{ steps.pkgdate.outputs.date }}
 
     - name: QC weekly package
-      id: qc
-      run: python scripts/qc_xhs_package.py --root xhs_weekly --date $(date -u +%Y-%m-%d)
+      id: qc1
+      continue-on-error: true
+      run: python scripts/qc_xhs_package.py --root xhs_weekly --date ${{ steps.pkgdate.outputs.date }}
+
+    - name: Regenerate weekly package (retry once after QC failure)
+      if: steps.qc1.outcome == 'failure'
+      continue-on-error: true
+      env:
+        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+        LLM_MODEL: ${{ secrets.LLM_MODEL }}
+      run: python scripts/generate_weekly_xhs.py --date ${{ steps.pkgdate.outputs.date }}
+
+    - name: QC weekly package (second check, fails the job on bad package)
+      if: steps.qc1.outcome == 'failure'
+      run: python scripts/qc_xhs_package.py --root xhs_weekly --date ${{ steps.pkgdate.outputs.date }}
 
     - name: Commit and push
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add data/xhs_weekly/
-        git diff --staged --quiet || git commit -m "chore: weekly xhs roundup $(date -u +%Y-%m-%d)"
+        git diff --staged --quiet || git commit -m "chore: weekly xhs roundup ${{ steps.pkgdate.outputs.date }}"
         git push
