@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-04 02:54:46",
+  "fetched_at": "2026-10-05 02:27:40",
   "feeds": [
     {
       "name": "OpenAI 官方",
@@ -40,6 +40,18 @@
       "name": "机器之心",
       "items": [
         {
+          "title": "终于有人管管屎山代码了！Tibo预告，Astra 6.1要来了？",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061081&idx=1&sn=85bbbe66a12a0ff58c3188c154546137",
+          "desc": "codex 下一步，网友说了算？",
+          "published": "Sun, 04 Oct 2026"
+        },
+        {
+          "title": "Agent Harness到底怎么选？南洋理工大学安波团队最新研究给出答案",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061081&idx=2&sn=cb11670b3a6aae956f8e44f4cdfa08e9",
+          "desc": "Harness 的好坏并不是固定属性，而是取决于它与模型、任务之间的具体组合",
+          "published": "Sun, 04 Oct 2026"
+        },
+        {
           "title": "Jev被请下王座，StartLux中国开源决策模型冲上第一",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060998&idx=1&sn=5e2496eb644e86fdf2d880a258074514",
           "desc": "一口气推出 0.8B、2B、4B、9B 和 27B 五档版本，并提供支持本地部署的量化模型。",
@@ -74,18 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060871&idx=2&sn=f8bdc8bd6f0ed7280678d85a54beb567",
           "desc": "用户可以展示眼前画面、随时插话，也可以把需要进一步处理的工作交给 后台Core Agent。",
           "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "GPT-6 Astra也会「看错」流程图? Einsia AI发布PPTBench，视觉编程还有多远？",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060792&idx=1&sn=d30e6a62a6b452c81c2470b4932d3230",
-          "desc": "Coding Agent 正在从屏幕里的终端世界走向屏幕外的物理世界。",
-          "published": "Wed, 30 Sep 2026"
-        },
-        {
-          "title": "DeepSeek开源昇腾基础组件：计算、通信与编译工具同步发布",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060792&idx=2&sn=e0f864c845649c83046d7628e5d799e1",
-          "desc": "可复用的基础设施。",
-          "published": "Wed, 30 Sep 2026"
         }
       ]
     },
@@ -93,16 +93,22 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "无人机已经是优等生 机器人为什么还要载人",
-          "url": "https://www.huxiu.com/article/4895323.html?f=rss",
+          "title": "OpenAI的安全危机，给所有企业提了个醒：AI越能干，组织越要管得住",
+          "url": "https://www.huxiu.com/article/4895399.html?f=rss",
           "desc": "",
-          "published": "Sun, 04 Oct 2026"
+          "published": "Mon, 05 Oct 2026"
         },
         {
-          "title": "存储芯片短缺，PC、手机厂商转向“少出货、卖更贵”",
-          "url": "https://www.huxiu.com/article/4895308.html?f=rss",
+          "title": "我们盘点了半年数据，发现22万部AI短剧，播放量破亿的不到千分之五",
+          "url": "https://www.huxiu.com/article/4895398.html?f=rss",
           "desc": "",
-          "published": "Sun, 04 Oct 2026"
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "AI 创造了更多价值，谁有资格把它变成收入？",
+          "url": "https://www.huxiu.com/article/4895393.html?f=rss",
+          "desc": "",
+          "published": "Mon, 05 Oct 2026"
         }
       ]
     },
@@ -113,6 +119,12 @@
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "刚刚，Muse迎来了一次大更新！",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557421&idx=1&sn=d1d25e314f8bc5f7f80aee1f1ed85087",
+          "desc": "",
+          "published": "Mon, 05 Oct 2026"
+        },
         {
           "title": "把Depth Anything砍到6M，深度估计终于能跑进Jetson",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557414&idx=1&sn=b6a05b919e2d8802cb5e785287735072",
@@ -142,12 +154,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557387&idx=1&sn=ba74e92748f809c47ed80e60363f6cc3",
           "desc": "ACL2026杰出论文奖|PALU：在关键前缀上最大化局部熵，让大模型精准“失忆”导读大语言模型在海量",
           "published": "Wed, 30 Sep 2026"
-        },
-        {
-          "title": "又快又能打！匿名模型玉兔模型杀上双榜第一，Coding实测全记录",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557380&idx=1&sn=a62d1dd0af53c0b9cb2d3d752527a428",
-          "desc": "中秋假期稳居OpenRouter调用日榜榜首",
-          "published": "Tue, 29 Sep 2026"
         }
       ]
     },
@@ -196,46 +202,52 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "Capcom is preparing for a ‘future where we create games together with AI’",
-          "url": "https://www.theverge.com/games/1004418/capcom-ai-game-development",
-          "desc": "Capcom's Pragmata might be all about the horrors of AI, but in practice the studio doesn't seem so down on the tech. During the Capcom Open Conference RE: 2026 programmer Satoshi Ishida gave a present",
-          "published": "2026-10-03T12:49"
+          "title": "NJ’s former Lt Gov is using AI to say he’s innocent of sexual harassment",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004549/well-if-ai-said-it-it-must-be-true",
+          "desc": "New Jersey's lieutenant governor Dale Caldwell was forced to resign on September 25th after an investigation found he had sexually harassed a staffer and repeatedly violated ethics rules. The now-form",
+          "published": "2026-10-04T12:16"
         },
         {
-          "title": "Splice CEO Kakul Srivastava thinks AI emails are killing conversations",
-          "url": "https://www.theverge.com/entertainment/1004162/splice-ceo-kakul-srivastava-ai-interview",
-          "desc": "Kakul Srivastava is the CEO of Splice, the sample platform countless producers rely on for one-shots and melodic loops. Samples pulled from the service have found their way into massive hits like Lisa",
-          "published": "2026-10-03T11:00"
+          "title": "An AI couldn’t beat humans at StarCraft, so it decided to cheat",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft",
+          "desc": "StarSkirmish pits AI-made StarCraft-playing bots against one another, as well as against human-made bots. OpenAI's GPT-6 Astra and Claude Opus 5.5 were essentially tied as the best-performing AI-made ",
+          "published": "2026-10-04T11:21"
         },
         {
-          "title": "An OpenAI safety employee has quit and is sounding the alarm",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1004408/openai-safety-quits-sounding-the-alarm",
-          "desc": "David Robinson used to write the safety reports that accompanied every major model release at OpenAI. This week, he resigned from his position and is now speaking out in an editorial in The Atlantic. ",
-          "published": "2026-10-03T10:31"
-        },
-        {
-          "title": "Meta open sources code to let you make Muse AI gadgets",
-          "url": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
-          "desc": "Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced. The company suggests projects like loading Muse on a color E Ink display t",
-          "published": "2026-10-02T17:08"
-        },
-        {
-          "title": "Apple will limit Mac disk access as AI agents ‘substantially’ increase risk",
-          "url": "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents",
-          "desc": "Apple will add new limits for \"full disk access\" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch. In an update on Friday, Apple says it's rolling out new controls to ",
-          "published": "2026-10-02T16:08"
-        },
-        {
-          "title": "OpenAI’s Dot agent is enterprise software that can also order your dinner",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
-          "desc": "It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like us",
-          "published": "2026-10-02T14:00"
+          "title": "The MacBook Air M5 is $200 off for the first time in months",
+          "url": "https://www.theverge.com/gadgets/1000832/macbook-air-m5-amazon-prime-big-deal-sale",
+          "desc": "Amazon’s October Prime Day has effectively chopped off Apple’s June price increases. Usually $1,299, the 13-inch MacBook Air with the M5 chip and 512GB of storage is on sale for $1,099 at Amazon. That",
+          "published": "2026-10-04T08:34"
         }
       ]
     },
     {
       "name": "TechCrunch",
       "items": [
+        {
+          "title": "Google froze its open source bug bounty program due to a ‘significant rise’ in AI submissions",
+          "url": "https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/",
+          "desc": "AI slop seems to be overwhelming bug bounty programs.",
+          "published": "Sun, 04 Oct 2026"
+        },
+        {
+          "title": "Can ‘super intelligence’ and a non-binding safety pact solve AI’s image problem?",
+          "url": "https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/",
+          "desc": "On Equity, we discussed the Trump administration's attempts to rebrand AI.",
+          "published": "Sun, 04 Oct 2026"
+        },
+        {
+          "title": "TechCrunch Mobility: Reining in robotaxis",
+          "url": "https://techcrunch.com/2026/10/04/techcrunch-mobility-reining-in-robotaxis/",
+          "desc": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, the role AI is playing in it.",
+          "published": "Sun, 04 Oct 2026"
+        },
+        {
+          "title": "Trump unveils his new Super Intelligence Force",
+          "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
+          "desc": "This new task force is Trump's latest response to the debate over AI safety.",
+          "published": "Sun, 04 Oct 2026"
+        },
         {
           "title": "OpenAI safety employee resigns, claiming the company’s ‘culture is broken’",
           "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/",
@@ -247,30 +259,6 @@
           "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
           "desc": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
           "published": "Sat, 03 Oct 2026"
-        },
-        {
-          "title": "Sean Parker is rebuilding Stability AI around music",
-          "url": "https://techcrunch.com/2026/10/02/sean-parker-is-rebuilding-stability-ai-around-music/",
-          "desc": "Sean Parker, who once taught the music industry what asking for forgiveness looks like, is now back with the labels' blessing and money.",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "Apple says it’s tightening macOS ‘Full Disk Access’ controls due to new risks from AI agents",
-          "url": "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/",
-          "desc": "Apple says it will add new controls around macOS’s Full Disk Access permission, warning that increasingly capable AI agents make broad access to users’ files, messages, mail, and browsing history risk",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "It’s not AI anymore, it’s ‘super intelligence’ (according to the White House)",
-          "url": "https://techcrunch.com/video/its-not-ai-anymore-its-super-intelligence-according-to-the-white-house/",
-          "desc": "This week, the White House got&#160;nearly every&#160;major tech CEO in one room — Zuckerberg, Bezos, Musk, and Anthropic’s Dario Amodei among them —&#160;to sign an AI safety pledge&#160;that Preside",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "TechCrunch Disrupt 2026: Blackstone’s Jas Khaira on building the next generation of AI giants",
-          "url": "https://techcrunch.com/2026/10/02/techcrunch-disrupt-2026-blackstones-jas-khaira-on-building-the-next-generation-of-ai-giants/",
-          "desc": "Blackstone's Jas Khaira will take the Builders Stage at TechCrunch Disrupt 2026 on building next-gen AI. Register for your pass and get 50% off a second.",
-          "published": "Fri, 02 Oct 2026"
         }
       ]
     },
@@ -319,52 +307,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "ZooWork",
-          "url": "https://www.producthunt.com/products/zoowork",
-          "desc": "The AI agent delivery platform for FDEs and domain experts Discussion | Link",
-          "published": "2026-09-23T21:22"
+          "title": "CoreSpeed",
+          "url": "https://www.producthunt.com/products/corespeed",
+          "desc": "One MCP for everything your agents need: apps, memory, tools Discussion | Link",
+          "published": "2026-09-24T01:34"
         },
         {
-          "title": "Muse Gadgets",
-          "url": "https://www.producthunt.com/products/muse-22",
-          "desc": "Meta's open-source kit for building your own AI gadgets Discussion | Link",
-          "published": "2026-10-02T19:07"
+          "title": "DocsAlot MCP Connector",
+          "url": "https://www.producthunt.com/products/docsalot-2",
+          "desc": "Maintain your help-center by asking Claude, Cursor or Codex Discussion | Link",
+          "published": "2026-09-29T07:43"
         },
         {
-          "title": "Thanor AI",
-          "url": "https://www.producthunt.com/products/thanor-ai",
-          "desc": "Make your AI-built sites look expensive and not like slop Discussion | Link",
-          "published": "2026-09-30T15:07"
+          "title": "Gemini 4 Argon",
+          "url": "https://www.producthunt.com/products/gemini-4-argon",
+          "desc": "Google's frontier model for careful reasoning & complex work Discussion | Link",
+          "published": "2026-09-30T13:08"
         },
         {
-          "title": "Agent Activity",
-          "url": "https://www.producthunt.com/products/agent-activity",
-          "desc": "See what your AI agents do behind Discussion | Link",
-          "published": "2026-09-30T09:56"
+          "title": "ChatGPT Space",
+          "url": "https://www.producthunt.com/products/chatgpt-space",
+          "desc": "Create, collaborate, and build together with AI in Space Discussion | Link",
+          "published": "2026-09-29T11:04"
         },
         {
-          "title": "SCMD",
-          "url": "https://www.producthunt.com/products/scmd",
-          "desc": "Manage what Claude Remembers and Keeps as Memory. Discussion | Link",
-          "published": "2026-09-21T14:15"
+          "title": "Sorcrr",
+          "url": "https://www.producthunt.com/products/sorcrr",
+          "desc": "Ai enabled bounty driven referral platform for hiring & gtm Discussion | Link",
+          "published": "2026-09-12T10:05"
         },
         {
-          "title": "Notchware",
-          "url": "https://www.producthunt.com/products/notchware",
-          "desc": "Music and AI agent alerts in your MacBook notch Discussion | Link",
-          "published": "2026-09-26T13:51"
+          "title": "Clair",
+          "url": "https://www.producthunt.com/products/clair-3",
+          "desc": "Answer Claude Code from your wrist Discussion | Link",
+          "published": "2026-09-30T14:29"
         },
         {
-          "title": "Cubicle",
-          "url": "https://www.producthunt.com/products/cubicle-2",
-          "desc": "A live office for your AI agents, read-only by design Discussion | Link",
-          "published": "2026-09-29T12:41"
+          "title": "Aperture",
+          "url": "https://www.producthunt.com/products/aperture-7",
+          "desc": "An AI code editor that checks its own work Discussion | Link",
+          "published": "2026-10-03T12:44"
         },
         {
-          "title": "Sapien",
-          "url": "https://www.producthunt.com/products/sapien-4",
-          "desc": "AI market research with synthetic populations Discussion | Link",
-          "published": "2026-10-02T19:30"
+          "title": "Rival Workshop",
+          "url": "https://www.producthunt.com/products/rival-workshop",
+          "desc": "A bookshelf app to manage every skill your agents read Discussion | Link",
+          "published": "2026-09-26T17:15"
         }
       ]
     }
