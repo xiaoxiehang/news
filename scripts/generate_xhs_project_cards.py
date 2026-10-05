@@ -261,34 +261,51 @@ def draw_end(jinju, question, path):
     img.save(path)
 
 
-if __name__ == '__main__':
-    d = 'data/xhs-drafts/2026-10-04-impeccable'
+def build_from_data(data, d):
+    """data: {kicker, title, subtitle, stats, points[], cards[{title,bullets[],code}], jinju, question} 到目录 d。"""
     os.makedirs(d, exist_ok=True)
-    draw_cover('impeccable',
-               '专治 AI 生成页面的"AI 味"',
-               '今日涨星 623 · 总 Star 74k',
-               ['作者 Paul Bakaus，前谷歌工程师',
-                '1 个 skill + 24 条设计命令 + 61 条检测规则',
-                '开源免费，Apache 2.0 协议'],
-               f'{d}/cover.png')
-    draw_card('为什么 AI 做的页面一眼假',
-              ['Inter 字体包打天下，紫蓝渐变走天下',
-               '卡片套卡片，每个标题上顶个圆角图标',
-               '灰字印在彩色底上，根本看不清',
-               '所有模型都学同一套 SaaS 模板，审美趋同'],
-              None, 0, 3, f'{d}/card_01.png')
-    draw_card('它给 AI 立了 61 条设计军规',
-              ['别用 Inter 和系统默认字体，别玩紫蓝渐变',
-               '禁止卡片套卡片，禁止灰字压彩底',
-               '24 条命令：polish 润色、critique 评审、bolder 加料、quieter 收敛',
-               '检测规则不用 LLM 也能跑，浏览器插件直接扫'],
-              None, 1, 3, f'{d}/card_02.png')
-    draw_card('三步上手，5 分钟装好',
-              ['项目根目录运行安装命令',
-               '在 AI 编程工具里执行初始化',
-               '以后直接喊话 /impeccable polish 收工'],
-              'npx impeccable install', 2, 3, f'{d}/card_03.png')
-    draw_end('AI 负责写代码，审美有人替你盯着了。',
-             '你被 AI 的"AI 味"页面丑到过吗？评论区聊聊。',
-             f'{d}/end.png')
-    print('苹果风+毛玻璃卡片已生成')
+    cards = data['cards']
+    draw_cover(data['title'], data['subtitle'], data['stats'], data['points'], f'{d}/cover.png')
+    for idx, c in enumerate(cards):
+        draw_card(c['title'], c['bullets'], c.get('code'), idx, len(cards), f'{d}/card_{idx + 1:02d}.png')
+    draw_end(data['jinju'], data['question'], f'{d}/end.png')
+    return [f'{d}/cover.png'] + [f'{d}/card_{idx + 1:02d}.png' for idx in range(len(cards))] + [f'{d}/end.png']
+
+
+if __name__ == '__main__':
+    import json
+    if len(sys.argv) > 1:
+        data = json.load(open(sys.argv[1], encoding='utf-8'))
+        out = sys.argv[2] if len(sys.argv) > 2 else 'data/xhs-drafts/' + data.get('slug', 'project')
+        print(build_from_data(data, out))
+    else:
+        d = 'data/xhs-drafts/2026-10-04-impeccable'
+        os.makedirs(d, exist_ok=True)
+        draw_cover('impeccable',
+                   '专治 AI 生成页面的"AI 味"',
+                   '今日涨星 623 · 总 Star 74k',
+                   ['作者 Paul Bakaus，前谷歌工程师',
+                    '1 个 skill + 24 条设计命令 + 61 条检测规则',
+                    '开源免费，Apache 2.0 协议'],
+                   f'{d}/cover.png')
+        draw_card('为什么 AI 做的页面一眼假',
+                  ['Inter 字体包打天下，紫蓝渐变走天下',
+                   '卡片套卡片，每个标题上顶个圆角图标',
+                   '灰字印在彩色底上，根本看不清',
+                   '所有模型都学同一套 SaaS 模板，审美趋同'],
+                  None, 0, 3, f'{d}/card_01.png')
+        draw_card('它给 AI 立了 61 条设计军规',
+                  ['别用 Inter 和系统默认字体，别玩紫蓝渐变',
+                   '禁止卡片套卡片，禁止灰字压彩底',
+                   '24 条命令：polish 润色、critique 评审、bolder 加料、quieter 收敛',
+                   '检测规则不用 LLM 也能跑，浏览器插件直接扫'],
+                  None, 1, 3, f'{d}/card_02.png')
+        draw_card('三步上手，5 分钟装好',
+                  ['项目根目录运行安装命令',
+                   '在 AI 编程工具里执行初始化',
+                   '以后直接喊话 /impeccable polish 收工'],
+                  'npx impeccable install', 2, 3, f'{d}/card_03.png')
+        draw_end('AI 负责写代码，审美有人替你盯着了。',
+                 '你被 AI 的"AI 味"页面丑到过吗？评论区聊聊。',
+                 f'{d}/end.png')
+        print('苹果风+毛玻璃卡片已生成')
