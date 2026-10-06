@@ -19,7 +19,7 @@
 .card-head h2 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
 .copy-btn { font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border: none; border-radius: var(--radius-pill); padding: 8px 18px; cursor: pointer; font-family: var(--font); transition: background .2s; }
 .copy-btn:hover { background: rgba(255,56,92,.12); }
-.copy-btn.ok { color: #0d7a3a; background: var(--green-soft); }
+.copy-btn.ok { color: var(--green); background: var(--green-soft); }
 .title-text { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
 .tags-text { font-size: 15px; color: var(--accent); line-height: 2; }
 .body-text { font-size: 16px; white-space: pre-wrap; word-break: break-word; line-height: 1.8; }
@@ -76,7 +76,7 @@
 #cover { width: 100%; max-width: 380px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); }
 .row2 { display: flex; gap: 12px; }
 .row2 .btn { flex: 1; margin-top: 16px; }
-.err { display: none; background: var(--red-soft); color: var(--red); border: 1px solid rgba(255, 92, 108, 0.35); border-radius: var(--radius-sm); padding: 14px 18px; font-size: 14px; margin-bottom: 18px; }
+.err { display: none; background: var(--red-soft); color: var(--red); border: 1px solid rgba(193, 53, 21, 0.3); border-radius: var(--radius-sm); padding: 14px 18px; font-size: 14px; margin-bottom: 18px; }
 .err.show { display: block; }
 .loading-box { text-align: center; color: var(--muted); font-size: 15px; padding: 32px 0; display: none; }
 .loading-box.show { display: block; }
@@ -90,7 +90,7 @@
 .wb-steps li.active { background: var(--accent-soft); color: var(--accent); font-weight: 700; border-color: var(--accent); }
 .wb-steps li.active span { background: var(--accent); }
 .wb-steps li.done { color: var(--muted); }
-.wb-steps li.done span { background: #34a853; }
+.wb-steps li.done span { background: var(--green); }
 .wb-step { display: none; }
 .wb-step.active { display: block; animation: fadeUp .35s ease; }
 .wb-hint { font-weight: 400; color: var(--faint); font-size: 13px; }
@@ -124,10 +124,10 @@
 .wb-checks { list-style: none; padding: 0; margin: 0 0 6px; display: grid; gap: 10px; }
 .wb-checks li { display: flex; gap: 10px; align-items: center; font-size: 14px; background: var(--bg); border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 12px 15px; }
 .wb-checks li.ok { color: var(--ink); }
-.wb-checks li.bad { color: #c0392b; }
+.wb-checks li.bad { color: var(--red); }
 .wb-checks .ck { width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
-.wb-checks li.ok .ck { background: #e6f6ec; color: #0d7a3a; }
-.wb-checks li.bad .ck { background: #fdecec; color: #c0392b; }
+.wb-checks li.ok .ck { background: var(--green-soft); color: var(--green); }
+.wb-checks li.bad .ck { background: var(--red-soft); color: var(--red); }
 .wb-hist h2 { font-size: 18px; margin: 0 0 14px; letter-spacing: -0.01em; }
 .wb-hist-item { border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; background: var(--bg); }
 .wb-hist-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
@@ -137,7 +137,7 @@
 .wb-hist-actions button { font-size: 12px; font-weight: 600; border-radius: var(--radius-pill); padding: 6px 14px; cursor: pointer; font-family: var(--font); border: 1px solid var(--line); background: var(--card); color: var(--ink); }
 .wb-hist-actions button:hover { border-color: var(--accent); color: var(--accent); }
 .wb-hist-actions button.danger:hover { border-color: var(--red); color: var(--red); }
-.wb-badge { font-size: 11px; font-weight: 700; border-radius: var(--radius-pill); padding: 3px 10px; background: #e6f6ec; color: #0d7a3a; flex-shrink: 0; }
+.wb-badge { font-size: 11px; font-weight: 700; border-radius: var(--radius-pill); padding: 3px 10px; background: var(--green-soft); color: var(--green); flex-shrink: 0; }
 .wb-empty { text-align: center; color: var(--faint); font-size: 14px; padding: 18px 0; }
 .wb-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 60; align-items: flex-end; justify-content: center; }
 .wb-modal.show { display: flex; }

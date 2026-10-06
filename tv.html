@@ -8,12 +8,12 @@
 <link rel="stylesheet" href="assets/minimal.css">
 <style>
 .tv-hero {
-  min-height: 82vh;
+  min-height: 62vh;
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 120px var(--pad-x) 72px;
-  background: radial-gradient(1200px 600px at 50% -10%, #d6e4ff 0%, transparent 60%), var(--bg);
+  padding: 64px var(--pad-x);
+  background: var(--canvas);
 }
 .tv-hero-inner { width: 100%; max-width: 960px; margin: 0 auto; }
 .tv-badge {
@@ -23,8 +23,8 @@
   padding: 7px 16px; border-radius: var(--radius-pill); margin-bottom: 22px;
 }
 .tv-hero h1 {
-  font-size: clamp(44px, 7vw, 88px);
-  font-weight: 700; letter-spacing: -0.035em; line-height: 1.05;
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 600; letter-spacing: -0.035em; line-height: 1.05;
   margin-bottom: 20px;
 }
 .tv-hero p.sub {
@@ -102,9 +102,9 @@
 .remote-card li { margin-bottom: 6px; }
 .remote-card li::marker { color: var(--accent); }
 .qr-note {
-  background: var(--amber-soft); border: 1px solid #ffe9b0;
+  background: var(--amber-soft); border: 1px solid rgba(178, 106, 0, 0.3);
   border-radius: var(--radius); padding: 20px 24px;
-  font-size: 14px; color: #6b4e00; line-height: 1.75; margin-top: 18px;
+  font-size: 14px; color: var(--amber); line-height: 1.75; margin-top: 18px;
 }
 
 .dl-card {
@@ -142,8 +142,6 @@
 @keyframes heroIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .tv-hero-inner > * { animation: none; } }
 
-/* 区块标题与内容宽度约束 */
-.section > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
 .section-head { text-align: center; margin-bottom: 44px; }
 .section-head .section-title { margin-bottom: 12px; }
 .section-desc { font-size: 17px; color: var(--muted); margin: 0; }

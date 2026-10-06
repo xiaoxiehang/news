@@ -153,7 +153,7 @@ img { max-width: 100%; }
 
 /* ============ 通栏产品横幅（字重克制，Airbnb 式） ============ */
 .band {
-  padding: 64px var(--pad-x);
+  padding: 96px var(--pad-x);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -267,7 +267,7 @@ a.ruled-row:hover .ruled-arrow { transform: translateX(5px); color: var(--primar
 .section-desc { font-size: 14px; color: var(--body); margin: 0; line-height: 1.43; }
 
 /* 瘦页头 */
-.page-head { padding: 64px var(--pad-x) 40px; text-align: center; }
+.page-head { padding: 80px var(--pad-x) 48px; text-align: center; }
 .page-head.left { text-align: left; }
 .page-head .hero-eyebrow {
   font-size: 13px; font-weight: 600; color: var(--primary);
@@ -542,7 +542,7 @@ textarea.input { resize: vertical; min-height: 84px; }
   .band { padding: 48px 24px; }
   .band-hero { min-height: 60vh; }
   .section { padding: 48px 24px; }
-  .page-head { padding: 48px 24px 32px; }
+  .page-head { padding: 56px 24px 36px; }
   .ruled-row { padding: 20px 24px; gap: 14px; }
   .ruled-meta { display: none; }
   .news-item { padding: 20px 24px; }
