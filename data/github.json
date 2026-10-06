@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06 16:44:44",
+  "updated_at": "2026-10-06 18:30:53",
   "leaderboard": [
     {
       "name": "freeCodeCamp",
@@ -1385,20 +1385,6 @@
           "stars_gain": null
         },
         {
-          "name": "packer",
-          "full_name": "hashicorp/packer",
-          "owner": "hashicorp",
-          "description": "Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.",
-          "html_url": "https://github.com/hashicorp/packer",
-          "language": "Go",
-          "stars": 15808,
-          "forks": 3341,
-          "topics": [],
-          "created_at": "2013-03-23",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "ggml",
           "full_name": "ggml-org/ggml",
           "owner": "ggml-org",
@@ -1626,26 +1612,6 @@
           ],
           "created_at": "2021-01-19",
           "updated_at": "2026-10-03",
-          "stars_gain": null
-        },
-        {
-          "name": "node_exporter",
-          "full_name": "prometheus/node_exporter",
-          "owner": "prometheus",
-          "description": "Exporter for machine metrics",
-          "html_url": "https://github.com/prometheus/node_exporter",
-          "language": "Go",
-          "stars": 13827,
-          "forks": 2715,
-          "topics": [
-            "host-metrics",
-            "machine-metrics",
-            "metrics",
-            "node-metrics",
-            "procfs"
-          ],
-          "created_at": "2013-04-18",
-          "updated_at": "2026-10-06",
           "stars_gain": null
         },
         {
@@ -3828,66 +3794,6 @@
           "stars_gain": null
         },
         {
-          "name": "spotube",
-          "full_name": "team-spotube/spotube",
-          "owner": "team-spotube",
-          "description": "🎧 Open source music streaming app! Available for both desktop & mobile!",
-          "html_url": "https://github.com/team-spotube/spotube",
-          "language": "Dart",
-          "stars": 49653,
-          "forks": 2325,
-          "topics": [
-            "android",
-            "android-client",
-            "android-music-player",
-            "desktop-client",
-            "fdroid"
-          ],
-          "created_at": "2021-02-14",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "slidev",
-          "full_name": "slidevjs/slidev",
-          "owner": "slidevjs",
-          "description": "Presentation Slides for Developers",
-          "html_url": "https://github.com/slidevjs/slidev",
-          "language": "TypeScript",
-          "stars": 48944,
-          "forks": 2213,
-          "topics": [
-            "markdown",
-            "presentation",
-            "slides",
-            "vite",
-            "vue"
-          ],
-          "created_at": "2021-04-24",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "cal.diy",
-          "full_name": "calcom/cal.diy",
-          "owner": "calcom",
-          "description": "Scheduling infrastructure for absolutely everyone.",
-          "html_url": "https://github.com/calcom/cal.diy",
-          "language": "TypeScript",
-          "stars": 48891,
-          "forks": 15292,
-          "topics": [
-            "next-auth",
-            "nextjs",
-            "open-source",
-            "postgresql",
-            "prisma"
-          ],
-          "created_at": "2021-03-22",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "react-bits",
           "full_name": "DavidHDev/react-bits",
           "owner": "DavidHDev",
@@ -4067,46 +3973,6 @@
           "stars_gain": null
         },
         {
-          "name": "hyper",
-          "full_name": "vercel/hyper",
-          "owner": "vercel",
-          "description": "A terminal built on web technologies",
-          "html_url": "https://github.com/vercel/hyper",
-          "language": "TypeScript",
-          "stars": 44741,
-          "forks": 3579,
-          "topics": [
-            "css",
-            "html",
-            "hyper",
-            "javascript",
-            "linux"
-          ],
-          "created_at": "2016-07-01",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "jsoncrack.com",
-          "full_name": "AykutSarac/jsoncrack.com",
-          "owner": "AykutSarac",
-          "description": "✨ Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML and CSV into interactive graphs.",
-          "html_url": "https://github.com/AykutSarac/jsoncrack.com",
-          "language": "TypeScript",
-          "stars": 44482,
-          "forks": 3569,
-          "topics": [
-            "csv",
-            "diagrams",
-            "graph",
-            "json",
-            "nextjs"
-          ],
-          "created_at": "2022-01-30",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "react-use",
           "full_name": "streamich/react-use",
           "owner": "streamich",
@@ -4117,26 +3983,6 @@
           "forks": 3261,
           "topics": [],
           "created_at": "2018-10-27",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "reactive-resume",
-          "full_name": "reactive-resume/reactive-resume",
-          "owner": "reactive-resume",
-          "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
-          "html_url": "https://github.com/reactive-resume/reactive-resume",
-          "language": "TypeScript",
-          "stars": 43901,
-          "forks": 4826,
-          "topics": [
-            "agent-skills",
-            "ai",
-            "dsh-plugin",
-            "hacktoberfest",
-            "javascript"
-          ],
-          "created_at": "2020-03-25",
           "updated_at": "2026-10-06",
           "stars_gain": null
         },
@@ -4885,66 +4731,6 @@
           "stars_gain": null
         },
         {
-          "name": "chatwoot",
-          "full_name": "chatwoot/chatwoot",
-          "owner": "chatwoot",
-          "description": "Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬",
-          "html_url": "https://github.com/chatwoot/chatwoot",
-          "language": "Ruby",
-          "stars": 37585,
-          "forks": 9148,
-          "topics": [
-            "actioncable",
-            "chat-widget",
-            "conversation",
-            "customer-support",
-            "dashboard"
-          ],
-          "created_at": "2019-08-14",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "PDFMathTranslate",
-          "full_name": "PDFMathTranslate/PDFMathTranslate",
-          "owner": "PDFMathTranslate",
-          "description": "[EMNLP 2025 Demo] PDF scientific paper translation with preserved formats - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero",
-          "html_url": "https://github.com/PDFMathTranslate/PDFMathTranslate",
-          "language": "Python",
-          "stars": 37362,
-          "forks": 3341,
-          "topics": [
-            "chinese",
-            "document",
-            "edit",
-            "english",
-            "japanese"
-          ],
-          "created_at": "2024-09-06",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "glance",
-          "full_name": "glanceapp/glance",
-          "owner": "glanceapp",
-          "description": "A self-hosted dashboard that puts all your feeds in one place",
-          "html_url": "https://github.com/glanceapp/glance",
-          "language": "Go",
-          "stars": 37357,
-          "forks": 1477,
-          "topics": [
-            "aggregator",
-            "dashboard",
-            "docker",
-            "feed-reader",
-            "go"
-          ],
-          "created_at": "2024-04-27",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "CasaOS",
           "full_name": "IceWhaleTech/CasaOS",
           "owner": "IceWhaleTech",
@@ -5061,26 +4847,6 @@
             "docker-api"
           ],
           "created_at": "2014-09-21",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "postiz-app",
-          "full_name": "gitroomhq/postiz-app",
-          "owner": "gitroomhq",
-          "description": "📨 The ultimate agentic social media scheduling tool 🤖",
-          "html_url": "https://github.com/gitroomhq/postiz-app",
-          "language": "TypeScript",
-          "stars": 36763,
-          "forks": 7104,
-          "topics": [
-            "nextjs",
-            "open-source",
-            "open-source-social-media-scheduling-tool",
-            "oss",
-            "postiz-cloud"
-          ],
-          "created_at": "2023-07-08",
           "updated_at": "2026-10-06",
           "stars_gain": null
         },
@@ -5923,26 +5689,6 @@
           "stars_gain": null
         },
         {
-          "name": "Mole",
-          "full_name": "tw93/Mole",
-          "owner": "tw93",
-          "description": "🐹 Clean, uninstall, analyze, optimize, and monitor your Mac. Free open-source CLI, plus a native Mac app.",
-          "html_url": "https://github.com/tw93/Mole",
-          "language": "Shell",
-          "stars": 69430,
-          "forks": 2463,
-          "topics": [
-            "analyzer",
-            "appcleaner",
-            "clean",
-            "cleaner",
-            "cleanmymac"
-          ],
-          "created_at": "2025-09-23",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "ripgrep",
           "full_name": "BurntSushi/ripgrep",
           "owner": "BurntSushi",
@@ -6012,25 +5758,6 @@
             "hacktoberfest"
           ],
           "created_at": "2018-09-04",
-          "updated_at": "2026-10-06"
-        },
-        {
-          "name": "OpenMontage",
-          "full_name": "calesthio/OpenMontage",
-          "owner": "calesthio",
-          "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video produc",
-          "html_url": "https://github.com/calesthio/OpenMontage",
-          "language": "Python",
-          "stars": 64563,
-          "forks": 8182,
-          "topics": [
-            "agent",
-            "agentic-ai",
-            "ai",
-            "claude",
-            "copilot"
-          ],
-          "created_at": "2026-03-29",
           "updated_at": "2026-10-06"
         },
         {
@@ -6147,26 +5874,6 @@
             "ios"
           ],
           "created_at": "2018-06-25",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "Win11Debloat",
-          "full_name": "Raphire/Win11Debloat",
-          "owner": "Raphire",
-          "description": "A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Wi",
-          "html_url": "https://github.com/Raphire/Win11Debloat",
-          "language": "PowerShell",
-          "stars": 58045,
-          "forks": 2483,
-          "topics": [
-            "automated",
-            "bloatware",
-            "bloatware-removal",
-            "cleanup",
-            "cli"
-          ],
-          "created_at": "2020-10-27",
           "updated_at": "2026-10-06",
           "stars_gain": null
         },
@@ -11533,26 +11240,6 @@
           "stars_gain": null
         },
         {
-          "name": "rathena",
-          "full_name": "rathena/rathena",
-          "owner": "rathena",
-          "description": "rAthena is an open-source cross-platform MMORPG server.",
-          "html_url": "https://github.com/rathena/rathena",
-          "language": "C++",
-          "stars": 3596,
-          "forks": 2781,
-          "topics": [
-            "c-plus-plus",
-            "education",
-            "game-development",
-            "game-server",
-            "hacktoberfest"
-          ],
-          "created_at": "2013-07-17",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "awesome-learn-gamedev",
           "full_name": "dawdle-deer/awesome-learn-gamedev",
           "owner": "dawdle-deer",
@@ -11667,26 +11354,6 @@
           ],
           "created_at": "2021-02-15",
           "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "infect",
-          "full_name": "noob-hackers/infect",
-          "owner": "noob-hackers",
-          "description": "Infect Any Android Device With Virus From Link In Termux",
-          "html_url": "https://github.com/noob-hackers/infect",
-          "language": "Shell",
-          "stars": 3013,
-          "forks": 383,
-          "topics": [
-            "2020",
-            "bash-script",
-            "education",
-            "free",
-            "kali-linux"
-          ],
-          "created_at": "2019-12-15",
-          "updated_at": "2026-10-05",
           "stars_gain": null
         },
         {
@@ -12805,26 +12472,6 @@
           "stars_gain": null
         },
         {
-          "name": "code-dot-org",
-          "full_name": "code-dot-org/code-dot-org",
-          "owner": "code-dot-org",
-          "description": "The code powering code.org and studio.code.org",
-          "html_url": "https://github.com/code-dot-org/code-dot-org",
-          "language": "JavaScript",
-          "stars": 900,
-          "forks": 532,
-          "topics": [
-            "blockly",
-            "code",
-            "coding",
-            "computer",
-            "educational"
-          ],
-          "created_at": "2014-09-20",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "pygfx",
           "full_name": "pygfx/pygfx",
           "owner": "pygfx",
@@ -12862,26 +12509,6 @@
           ],
           "created_at": "2014-03-14",
           "updated_at": "2026-10-03",
-          "stars_gain": null
-        },
-        {
-          "name": "awesome-tech-rss",
-          "full_name": "tuan3w/awesome-tech-rss",
-          "owner": "tuan3w",
-          "description": "List of awesome RSS channels related to startup, science and technology.",
-          "html_url": "https://github.com/tuan3w/awesome-tech-rss",
-          "language": "Python",
-          "stars": 803,
-          "forks": 49,
-          "topics": [
-            "awesome",
-            "awesome-lists",
-            "engineering",
-            "management",
-            "neuroscience"
-          ],
-          "created_at": "2022-02-12",
-          "updated_at": "2026-10-06",
           "stars_gain": null
         },
         {
@@ -12999,26 +12626,6 @@
             "hedp"
           ],
           "created_at": "2015-11-24",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "sklearn-classification",
-          "full_name": "dformoso/sklearn-classification",
-          "owner": "dformoso",
-          "description": "Data Science Notebook on a Classification Task, using sklearn and Tensorflow.",
-          "html_url": "https://github.com/dformoso/sklearn-classification",
-          "language": "Jupyter Notebook",
-          "stars": 689,
-          "forks": 226,
-          "topics": [
-            "classification-task",
-            "data",
-            "docker",
-            "jupyter",
-            "learning"
-          ],
-          "created_at": "2017-08-12",
           "updated_at": "2026-10-06",
           "stars_gain": null
         },
@@ -13688,46 +13295,6 @@
           "stars_gain": null
         },
         {
-          "name": "iggy",
-          "full_name": "apache/iggy",
-          "owner": "apache",
-          "description": "Apache Iggy: Hyper-Efficient Message Streaming at Laser Speed",
-          "html_url": "https://github.com/apache/iggy",
-          "language": "Rust",
-          "stars": 5035,
-          "forks": 466,
-          "topics": [
-            "apache",
-            "http",
-            "iggy",
-            "messaging",
-            "quic"
-          ],
-          "created_at": "2023-03-18",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "jocko",
-          "full_name": "travisjeffery/jocko",
-          "owner": "travisjeffery",
-          "description": "Kafka implemented in Golang with built-in coordination (No ZK dep, single binary install, Cloud Native)",
-          "html_url": "https://github.com/travisjeffery/jocko",
-          "language": "Go",
-          "stars": 5008,
-          "forks": 371,
-          "topics": [
-            "distributed-systems",
-            "go",
-            "kafka",
-            "messaging",
-            "queue"
-          ],
-          "created_at": "2016-10-11",
-          "updated_at": "2026-10-05",
-          "stars_gain": null
-        },
-        {
           "name": "desktop",
           "full_name": "streamlabs/desktop",
           "owner": "streamlabs",
@@ -13768,105 +13335,6 @@
           "stars_gain": null
         },
         {
-          "name": "flink-training-course",
-          "full_name": "flink-china/flink-training-course",
-          "owner": "flink-china",
-          "description": "Flink 中文视频课程（持续更新...）",
-          "html_url": "https://github.com/flink-china/flink-training-course",
-          "language": null,
-          "stars": 4620,
-          "forks": 1142,
-          "topics": [
-            "course",
-            "flink",
-            "streaming",
-            "training"
-          ],
-          "created_at": "2019-03-04",
-          "updated_at": "2026-10-04",
-          "stars_gain": null
-        },
-        {
-          "name": "memgraph",
-          "full_name": "memgraph/memgraph",
-          "owner": "memgraph",
-          "description": "High-performance open-source in-memory graph database for GraphRAG, AI memory, agentic AI, and real-time graph analytics. Cypher-compatible, built in C++.",
-          "html_url": "https://github.com/memgraph/memgraph",
-          "language": "C++",
-          "stars": 4598,
-          "forks": 286,
-          "topics": [
-            "ai",
-            "ai-agents",
-            "ai-memory",
-            "context-graph",
-            "cypher"
-          ],
-          "created_at": "2020-09-21",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "MagicOnion",
-          "full_name": "Cysharp/MagicOnion",
-          "owner": "Cysharp",
-          "description": "Unified Realtime/API framework for .NET platform and Unity.",
-          "html_url": "https://github.com/Cysharp/MagicOnion",
-          "language": "C#",
-          "stars": 4454,
-          "forks": 462,
-          "topics": [
-            "c-sharp",
-            "grpc",
-            "rpc",
-            "streaming",
-            "swagger"
-          ],
-          "created_at": "2016-12-10",
-          "updated_at": "2026-10-02",
-          "stars_gain": null
-        },
-        {
-          "name": "archiver",
-          "full_name": "mholt/archiver",
-          "owner": "mholt",
-          "description": "DEPRECATED. Please use mholt/archives instead.",
-          "html_url": "https://github.com/mholt/archiver",
-          "language": "Go",
-          "stars": 4376,
-          "forks": 393,
-          "topics": [
-            "7zip",
-            "archives",
-            "brotli",
-            "bzip2",
-            "compression"
-          ],
-          "created_at": "2016-04-08",
-          "updated_at": "2026-09-28",
-          "stars_gain": null
-        },
-        {
-          "name": "streampark",
-          "full_name": "apache/streampark",
-          "owner": "apache",
-          "description": "The Open Control Plane for Real-Time Data",
-          "html_url": "https://github.com/apache/streampark",
-          "language": "Java",
-          "stars": 4339,
-          "forks": 1088,
-          "topics": [
-            "cloud-native",
-            "control-plane",
-            "data-computing",
-            "flink",
-            "kubernetes"
-          ],
-          "created_at": "2019-05-27",
-          "updated_at": "2026-10-01",
-          "stars_gain": null
-        },
-        {
           "name": "Musify",
           "full_name": "gokadzev/Musify",
           "owner": "gokadzev",
@@ -13883,25 +13351,6 @@
             "flutter"
           ],
           "created_at": "2021-12-05",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "node-csv",
-          "full_name": "adaltas/node-csv",
-          "owner": "adaltas",
-          "description": "Full featured CSV parser with simple api and tested against large datasets.",
-          "html_url": "https://github.com/adaltas/node-csv",
-          "language": "JavaScript",
-          "stars": 4284,
-          "forks": 307,
-          "topics": [
-            "csv",
-            "nodejs",
-            "parser",
-            "streaming"
-          ],
-          "created_at": "2010-09-25",
           "updated_at": "2026-10-06",
           "stars_gain": null
         },
@@ -13982,26 +13431,6 @@
           "stars_gain": null
         },
         {
-          "name": "pushpin",
-          "full_name": "fastly/pushpin",
-          "owner": "fastly",
-          "description": "A proxy server for adding push to your API, used at the core of Fastly's Fanout service",
-          "html_url": "https://github.com/fastly/pushpin",
-          "language": "Rust",
-          "stars": 3862,
-          "forks": 156,
-          "topics": [
-            "api",
-            "fastly-featured",
-            "fastly-oss-tier1",
-            "http-streaming",
-            "long-polling"
-          ],
-          "created_at": "2012-08-29",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
           "name": "vidgear",
           "full_name": "abhiTronix/vidgear",
           "owner": "abhiTronix",
@@ -14019,84 +13448,6 @@
           ],
           "created_at": "2019-03-17",
           "updated_at": "2026-09-30",
-          "stars_gain": null
-        },
-        {
-          "name": "incubator-heron",
-          "full_name": "apache/incubator-heron",
-          "owner": "apache",
-          "description": "Apache Heron (Incubating) is a realtime, distributed, fault-tolerant stream processing engine from Twitter",
-          "html_url": "https://github.com/apache/incubator-heron",
-          "language": "Java",
-          "stars": 3624,
-          "forks": 579,
-          "topics": [
-            "heron",
-            "messaging",
-            "streaming"
-          ],
-          "created_at": "2015-09-25",
-          "updated_at": "2026-10-02",
-          "stars_gain": null
-        },
-        {
-          "name": "instant.io",
-          "full_name": "webtorrent/instant.io",
-          "owner": "webtorrent",
-          "description": "🚀 Streaming file transfer over WebTorrent (torrents on the web)",
-          "html_url": "https://github.com/webtorrent/instant.io",
-          "language": "JavaScript",
-          "stars": 3595,
-          "forks": 440,
-          "topics": [
-            "bittorrent",
-            "javascript",
-            "nodejs",
-            "p2p",
-            "streaming"
-          ],
-          "created_at": "2014-08-02",
-          "updated_at": "2026-09-25",
-          "stars_gain": null
-        },
-        {
-          "name": "smart_open",
-          "full_name": "piskvorky/smart_open",
-          "owner": "piskvorky",
-          "description": "Utils for streaming large files (S3, HDFS, gzip, bz2...)",
-          "html_url": "https://github.com/piskvorky/smart_open",
-          "language": "Python",
-          "stars": 3461,
-          "forks": 392,
-          "topics": [
-            "boto",
-            "bz2",
-            "file",
-            "gzip-stream",
-            "hacktoberfest"
-          ],
-          "created_at": "2015-01-02",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "hands-on-llms",
-          "full_name": "iusztinpaul/hands-on-llms",
-          "owner": "iusztinpaul",
-          "description": "🦖 𝗟𝗲𝗮𝗿𝗻 about 𝗟𝗟𝗠𝘀, 𝗟𝗟𝗠𝗢𝗽𝘀, and 𝘃𝗲𝗰𝘁𝗼𝗿 𝗗𝗕𝘀 for free by designing, training, and deploying a real-time financial advisor LLM system ~ 𝘴𝘰𝘶𝘳𝘤𝘦 𝘤𝘰𝘥𝘦 + 𝘷𝘪𝘥𝘦𝘰 & 𝘳𝘦𝘢𝘥𝘪𝘯𝘨 𝘮𝘢𝘵𝘦𝘳𝘪𝘢𝘭𝘴",
-          "html_url": "https://github.com/iusztinpaul/hands-on-llms",
-          "language": "Jupyter Notebook",
-          "stars": 3424,
-          "forks": 551,
-          "topics": [
-            "3-pipeline-design",
-            "aws",
-            "beam",
-            "bytewax",
-            "cicd"
-          ],
-          "created_at": "2023-06-28",
-          "updated_at": "2026-10-06",
           "stars_gain": null
         },
         {
@@ -14156,46 +13507,6 @@
             "live-streaming-server"
           ],
           "created_at": "2018-06-29",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "LakeSoul",
-          "full_name": "lakesoul-io/LakeSoul",
-          "owner": "lakesoul-io",
-          "description": "LakeSoul is an end-to-end, realtime cloud-native Lakehouse framework for fast data ingestion, concurrent updates, incremental analytics, multimodal data processing and vector search — powering next-ge",
-          "html_url": "https://github.com/lakesoul-io/LakeSoul",
-          "language": "Rust",
-          "stars": 3256,
-          "forks": 429,
-          "topics": [
-            "arrow",
-            "daft",
-            "datafusion",
-            "flink",
-            "gluten"
-          ],
-          "created_at": "2021-12-28",
-          "updated_at": "2026-10-06",
-          "stars_gain": null
-        },
-        {
-          "name": "ai",
-          "full_name": "TanStack/ai",
-          "owner": "TanStack",
-          "description": "🤖 Type-safe, provider-agnostic TypeScript AI SDK for streaming chat, tool calling, agents, and multimodal apps across OpenAI, Anthropic, Gemini, React, Vue, Svelte, and Solid.",
-          "html_url": "https://github.com/TanStack/ai",
-          "language": "TypeScript",
-          "stars": 3168,
-          "forks": 354,
-          "topics": [
-            "ai",
-            "ai-agents",
-            "ai-sdk",
-            "anthropic",
-            "chatbot"
-          ],
-          "created_at": "2025-10-08",
           "updated_at": "2026-10-06",
           "stars_gain": null
         },
