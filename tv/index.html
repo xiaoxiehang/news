@@ -22,6 +22,7 @@
 </nav>
 
 <header class="tv-hero">
+  <div class="tv-hero-inner">
   <div class="tv-eyebrow"><span class="dot"></span>免费 · 开源 · 无广告</div>
   <h1>电视大屏的<br><span class="hl">轻量浏览器</span></h1>
   <p class="tv-sub">鸡仔浏览器为 Android TV 而生：遥控器原生导航，多标签页、语音搜索、去广告、投屏推送、视频源全都有。打开就是浏览器，不打扰。</p>
@@ -30,6 +31,7 @@
     <a class="btn btn-soft" href="#install">安装指南</a>
   </div>
   <div class="tv-meta"><b>免费 · 开源</b> · 适用于 Android TV / Google TV · 当前版本 v0.5.0</div>
+  </div>
 </header>
 
 <main>
@@ -213,6 +215,34 @@
     });
   }, { threshold: 0.1 });
   els.forEach(function(el) { io.observe(el); });
+})();
+
+// 视差滚动：Hero 光晕/内容 + 示意图
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hero = document.querySelector('.tv-hero');
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.shot img'));
+  if (!hero && !shots.length) return;
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight;
+    if (hero) {
+      var r = hero.getBoundingClientRect();
+      if (r.bottom > 0) hero.style.setProperty('--py', Math.max(0, -r.top) * 0.25 + 'px');
+    }
+    shots.forEach(function(img) {
+      var r = img.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) {
+        var p = (r.top + r.height / 2 - vh / 2) / vh; // -0.5 ~ 0.5
+        img.style.setProperty('--sy', (p * -36).toFixed(1) + 'px');
+      }
+    });
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
 })();
 </script>
 </body>

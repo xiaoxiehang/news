@@ -135,6 +135,23 @@ img { max-width: 100%; }
   background:
     radial-gradient(560px 340px at 50% 0%, rgba(255, 107, 53, .14), transparent 70%);
   pointer-events: none;
+  transform: translateY(var(--py, 0px));
+  will-change: transform;
+}
+.tv-hero > * { position: relative; }
+.tv-hero-inner {
+  transform: translateY(calc(var(--py, 0px) * -0.35));
+  will-change: transform;
+}
+/* 示意图视差 */
+.shot { overflow: hidden; }
+.shot img {
+  transform: translateY(var(--sy, 0px)) scale(1.06);
+  will-change: transform;
+  transition: transform .12s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tv-hero::before, .tv-hero-inner, .shot img { transform: none !important; }
 }
 
 .tv-eyebrow {
