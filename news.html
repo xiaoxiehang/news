@@ -8,18 +8,25 @@
 <link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
 <link rel="stylesheet" href="assets/minimal.css">
 <style>
-/* 早报：杂志卡片流 */
-.briefing-feed { max-width: 720px; margin: 0 auto; padding: 8px var(--pad-x) 0; }
+/* 早报：杂志卡片流（通栏，遵循主站规范） */
+.briefing-feed { padding: 8px var(--pad-x) 0; }
 .briefing-eyebrow {
   font-size: 13px; font-weight: 600; color: var(--primary);
   letter-spacing: 0.1em; margin-bottom: 14px;
 }
 .lede {
-  max-width: none; margin: 0; padding: 0 0 30px;
+  max-width: 860px; margin: 0; padding: 0 0 32px;
   font-size: 19px; line-height: 1.85; color: var(--ink);
   letter-spacing: -0.01em;
 }
-.mag-list { display: flex; flex-direction: column; gap: 18px; }
+.mag-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 720px) {
+  .mag-list { grid-template-columns: 1fr; }
+}
 .mag-card {
   display: block; background: #fff; border-radius: 14px;
   box-shadow: var(--shadow-card); padding: 26px 28px;
