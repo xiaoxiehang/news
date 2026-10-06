@@ -10,10 +10,6 @@
 <style>
 /* 早报：栏目模板风 */
 .briefing-feed { padding: 8px var(--pad-x) 0;}
-.briefing-eyebrow {
-font-size: 13px; font-weight: 600; color: var(--primary);
-letter-spacing: 0.1em; margin-bottom: 14px;
-}
 /* 双栏：内容 + 右侧边栏 */
 .briefing-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; }
 .briefing-side { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 16px; }
@@ -96,7 +92,6 @@ background: var(--blue-soft); border-radius: 999px; padding: 4px 12px;
 <main>
 <div id="briefing-section" style="display:none;">
 <div class="briefing-feed">
-<div class="briefing-eyebrow" id="briefing-eyebrow"></div>
 <div class="briefing-layout">
 <div id="briefing-cols"></div>
 <aside class="briefing-side" id="briefing-side" style="display:none;">
@@ -200,8 +195,6 @@ try {
 const data = await fetchJson('data/briefing.json');
 if (data && data.picks && data.picks.length) {
 briefingData = data;
-document.getElementById('briefing-eyebrow').textContent =
-(data.date_str || '') + ' · AI 科技早报';
 
 // 按栏目分组（保持 COLUMNS 顺序，无数据的栏目隐藏）
 const groups = COLUMNS.map(function(col) {
