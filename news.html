@@ -98,11 +98,6 @@ a.project-card:hover .project-name { color: var(--primary); }
 </header>
 
 <main>
-  <div class="page-bar">
-    <h1>今日科技早报</h1>
-    <span class="meta" id="hero-date"></span>
-  </div>
-
   <div id="briefing-section" style="display:none;">
     <p class="lede" id="briefing-overview"></p>
     <div class="news-list" id="briefing-picks" style="margin-top:32px;"></div>
@@ -189,7 +184,6 @@ async function loadZaobao() {
     const data = await fetchJson('data/briefing.json');
     if (data && data.picks && data.picks.length) {
       briefingData = data;
-      document.getElementById('hero-date').textContent = data.date_str || data.date || '';
       document.getElementById('briefing-overview').textContent = data.overview || '';
       let html = '';
       data.picks.forEach(function(pick, i) {
