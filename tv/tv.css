@@ -155,7 +155,7 @@ img { max-width: 100%; }
   will-change: transform;
 }
 .tv-hero-copy { text-align: left; }
-.tv-hero-visual {
+.tv-hero-visual.reveal.in {
   transform: perspective(1400px) rotateY(-7deg) rotateX(2deg);
 }
 /* 电视框 */
