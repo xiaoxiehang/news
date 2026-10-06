@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GitHub 热门项目 - 鸡仔</title>
+<meta name="description" content="GitHub 热门项目每日速览，附 AI 一句话点评。">
+<link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
+<link rel="stylesheet" href="assets/minimal.css">
+<style>
+/* 早报导语 */
+.lede {
+  max-width: 760px; margin: 0 auto; padding: 0 var(--pad-x) 8px;
+  font-size: 20px; line-height: 1.8; color: var(--ink);
+  letter-spacing: -0.01em;
+}
+/* GitHub 卡片（原版样式） */
+.projects-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 24px; padding: 8px var(--pad-x) 64px;
+}
+.project-card {
+  background: #fff; border-radius: 14px; box-shadow: var(--shadow-card);
+  padding: 24px; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  transition: transform 0.2s;
+}
+a.project-card:hover { transform: translateY(-3px); }
+a.project-card:hover .project-name { color: var(--primary); }
+.project-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.project-icon {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(255, 56, 92, 0.08); color: var(--primary);
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.project-info { flex: 1; min-width: 0; }
+.project-name { font-size: 17px; font-weight: 600; margin-bottom: 2px; word-break: break-word; transition: color 0.2s; }
+.project-owner { font-size: 13px; color: var(--muted); }
+.project-desc {
+  font-size: 14px; color: var(--body); line-height: 1.43; margin-bottom: 14px; flex: 1;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.project-insight {
+  background: rgba(255, 56, 92, 0.06); border-radius: 8px;
+  padding: 12px 14px; margin-bottom: 14px; font-size: 13px; line-height: 1.43;
+}
+.insight-label { font-size: 12px; font-weight: 600; color: var(--primary); margin-bottom: 4px; }
+.insight-what { color: var(--ink); margin-bottom: 4px; }
+.insight-meta { color: var(--muted); font-size: 12px; }
+.project-meta {
+  display: flex; gap: 18px; font-size: 13px; color: var(--muted);
+  padding-top: 14px; border-top: 1px solid var(--hairline-soft);
+}
+.meta-item { display: flex; align-items: center; gap: 6px; }
+.meta-value { font-weight: 600; color: var(--ink); }
+.language-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+/* 分类条 */
+.filter-bar {
+  position: sticky; top: var(--nav-h); z-index: 60;
+  background: rgba(255,255,255,.88);
+  -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
+  padding: 14px var(--pad-x); margin-bottom: 8px;
+}
+.categories { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.categories::-webkit-scrollbar { display: none; }
+.category-btn {
+  font-size: 14px; font-weight: 500; padding: 9px 20px;
+  background: var(--paper); border: none; border-radius: var(--radius-pill);
+  color: var(--secondary); cursor: pointer; transition: all .2s;
+  white-space: nowrap; flex-shrink: 0; font-family: var(--sans);
+}
+.category-btn:hover { color: var(--ink); }
+.category-btn.active { background: var(--ink); color: #fff; }
+.pane-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+@media (max-width: 720px) {
+  .projects-grid { grid-template-columns: 1fr; padding: 8px 20px 48px; }
+  .filter-bar { padding: 12px 20px; }
+  .lede { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a class="header-title" href="index.html"><span class="brand-mark">鸡</span>鸡仔</a>
+      <div class="header-subtitle" id="header-subtitle">加载中...</div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">首页</a>
+      <a href="news.html" class="nav-link">早报</a>
+      <a href="github.html" class="nav-link active">趋势</a>
+      <a href="studio.html" class="nav-link">创作</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-bar">
+    <h1>GitHub 热门项目</h1>
+    <span class="meta">每日更新</span>
+  </div>
+
+  <div class="filter-bar"><div class="categories" id="categories"></div></div>
+  <div id="projects-container"><div class="loading">加载中...</div></div>
+</main>
+
+<footer class="footer"></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ 通用 ============ */
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+async function fetchJson(path) {
+  try {
+    const r = await fetch(path + '?t=' + Date.now());
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (e) { return null; }
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2000);
+}
+
+/* ============ GitHub趋势 ============ */
+const GH_CATEGORIES = [
+  { id: 'trending', name: 'Trending', desc: '今日最热门项目' },
+  { id: 'ai', name: 'AI & ML', desc: '人工智能、机器学习' },
+  { id: 'frontend', name: 'Frontend', desc: '前端框架、UI库' },
+  { id: 'devtools', name: 'Dev Tools', desc: '开发者工具、CLI' },
+  { id: 'productivity', name: 'Productivity', desc: '效率工具、自动化' },
+  { id: 'fullstack', name: 'Full Stack', desc: '全栈项目' },
+  { id: 'mobile', name: 'Mobile', desc: '移动端、Flutter、React Native' },
+  { id: 'backend', name: 'Backend', desc: '后端框架、数据库' }
+];
+let ghCurrentCategory = 'trending';
+let githubData = null;
+let ghInsights = {};
+function renderGhCategories() {
+  const container = document.getElementById('categories');
+  const cats = githubData ? Object.keys(githubData.categories).map(function(id) {
+    return Object.assign({ id: id }, githubData.categories[id]);
+  }) : GH_CATEGORIES;
+  container.innerHTML = cats.map(function(cat) {
+    return '<button class="category-btn' + (cat.id === ghCurrentCategory ? ' active' : '') + '" ' +
+      'onclick="switchGhCategory(\'' + cat.id + '\')">' + esc(cat.name) + '</button>';
+  }).join('');
+}
+function switchGhCategory(categoryId) {
+  ghCurrentCategory = categoryId;
+  renderGhCategories();
+  renderGhProjects();
+}
+function formatNumber(num) {
+  if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+  return String(num);
+}
+function renderGhProjects() {
+  const container = document.getElementById('projects-container');
+  if (!githubData) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">加载失败</div><div class="empty-desc">请稍后刷新重试</div></div>';
+    return;
+  }
+  const cat = githubData.categories[ghCurrentCategory];
+  if (!cat) return;
+  const projects = cat.repos || [];
+  if (!projects.length) {
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该分类下暂无热门项目</div></div>';
+    return;
+  }
+  const langColors = { 'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5', 'Java': '#b07219', 'Go': '#00ADD8', 'Rust': '#dea584', 'C++': '#f34b7d', 'C': '#555555', 'Ruby': '#701516', 'PHP': '#4F5D95', 'Swift': '#ffac45', 'Kotlin': '#F18E33', 'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c' };
+  container.innerHTML = '<div class="projects-grid">' + projects.map(function(p) {
+    const ins = ghInsights[p.full_name];
+    const insight = ins ? '<div class="project-insight">' +
+      '<div class="insight-label">AI 点评</div>' +
+      '<div class="insight-what">' + esc(ins.what) + '</div>' +
+      (ins.why_hot ? '<div class="insight-meta">热度：' + esc(ins.why_hot) + '</div>' : '') +
+      (ins.who ? '<div class="insight-meta">适合：' + esc(ins.who) + '</div>' : '') +
+    '</div>' : '';
+    const langColor = langColors[p.language] || '#888';
+    return '<a class="project-card" href="https://github.com/' + esc(p.full_name) + '" target="_blank" rel="noopener">' +
+      '<div class="project-header"><div class="project-icon">✦</div>' +
+      '<div class="project-info"><div class="project-name">' + esc(p.name) + '</div>' +
+      '<div class="project-owner">' + esc(p.owner || '') + '</div></div></div>' +
+      '<div class="project-desc">' + esc(p.description || '暂无描述') + '</div>' +
+      insight +
+      '<div class="project-meta">' +
+        (p.language ? '<div class="meta-item"><span class="language-dot" style="background:' + langColor + '"></span><span class="meta-value">' + esc(p.language) + '</span></div>' : '') +
+        '<div class="meta-item"><span>★</span><span class="meta-value">' + formatNumber(p.stars || 0) + '</span></div>' +
+        '<div class="meta-item"><span>⑂</span><span class="meta-value">' + formatNumber(p.forks || 0) + '</span></div>' +
+      '</div></a>';
+  }).join('') + '</div>';
+}
+async function loadGithub() {
+  try {
+    const r = await fetch('data/github.json?t=' + Date.now());
+    githubData = await r.json();
+    try {
+      const r2 = await fetch('data/github_insights.json?t=' + Date.now());
+      const ins = await r2.json();
+      if (ins && ins.insights) ghInsights = ins.insights;
+    } catch (e) {}
+    renderGhCategories();
+    renderGhProjects();
+  } catch (e) {
+    console.error('加载失败:', e);
+    renderGhProjects();
+  }
+}
+
+/* ============ 初始化 ============ */
+loadGithub();
+</script>
+<script src="scripts/header-info.js"></script>
+<script src="scripts/footer.js"></script>
+</body>
+</html>
