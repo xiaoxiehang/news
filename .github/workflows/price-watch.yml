@@ -28,11 +28,14 @@ jobs:
       - name: 抓取 Steam 每日好价榜
         run: python scripts/fetch_deals.py
 
+      - name: 抓取苹果降价榜
+        run: python scripts/fetch_app_drops.py
+
       - name: 提交价格更新
         run: |
           git config user.name "price-watch-bot"
           git config user.email "bot@xiaojj.pro"
-          git add data/prices.json data/deals.json
+          git add data/prices.json data/deals.json data/app-drops.json data/app-price-history.json
           if git diff --cached --quiet; then
             echo "无价格变化，跳过提交"
           else

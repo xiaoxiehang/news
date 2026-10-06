@@ -38,20 +38,59 @@
 .alert-banner li { font-size: 14px; color: var(--muted); padding: 6px 0; border-top: 1px dashed rgba(255, 176, 0, 0.3); }
 .alert-banner li:first-child { border-top: none; }
 .alert-banner a { color: var(--amber); text-decoration: none; font-weight: 600; }
-/* 每日推送 */
-.pick-group { margin-bottom: 20px; }
-.pick-gname { font-size: 14px; font-weight: 700; color: var(--muted); margin: 0 0 10px; padding-left: 4px; }
-.pick-row {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  background: var(--card); border: 1px solid var(--hairline); border-radius: 16px;
-  padding: 14px 16px; margin-bottom: 8px; text-decoration: none; color: inherit;
-  box-shadow: var(--shadow-sm);
+/* ---------- 榜单风 ---------- */
+.rank-list { display: flex; flex-direction: column; }
+.rank-row {
+  display: flex; align-items: center; gap: 20px;
+  padding: 20px 8px; text-decoration: none; color: inherit;
+  border-bottom: 1px solid var(--hairline-soft);
+  transition: background .15s ease;
 }
-.pick-name { font-size: 15px; font-weight: 700; margin: 0 0 4px; color: var(--ink); }
-.pick-note { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.5; }
-.pick-right { text-align: right; white-space: nowrap; flex-shrink: 0; }
-.pick-price { display: block; font-size: 17px; font-weight: 800; color: var(--accent); }
-.pick-origin { display: block; font-size: 11px; color: var(--faint); margin-top: 2px; }
+.rank-row:hover { background: var(--surface-soft); }
+.rank-row:first-child { border-top: 1px solid var(--hairline-soft); }
+.rank-num {
+  font-size: 30px; font-weight: 800; font-style: italic;
+  color: var(--faint); min-width: 52px; text-align: center;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+}
+.rank-row.top1 .rank-num { color: #FF9F0A; }
+.rank-row.top2 .rank-num { color: #8E8E93; }
+.rank-row.top3 .rank-num { color: #C47B2B; }
+.rank-main { flex: 1; min-width: 0; }
+.rank-name { font-size: 17px; font-weight: 700; margin: 0 0 6px; color: var(--ink); }
+.rank-row:hover .rank-name { color: var(--accent); }
+.rank-reason { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.6; }
+.rank-reason b { color: var(--accent); font-weight: 600; }
+.rank-right { text-align: right; flex-shrink: 0; }
+.rank-price { display: block; font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
+.rank-origin { display: block; font-size: 12px; color: var(--faint); margin-top: 3px; }
+.rank-origin s { margin-right: 4px; }
+/* Steam 榜单行 */
+.rank-thumb {
+  width: 120px; height: 56px; border-radius: 10px; object-fit: cover;
+  flex-shrink: 0; background: var(--bg-secondary);
+}
+.rank-thumb-app { width: 56px; height: 56px; border-radius: 14px; }
+.rank-thumb-ph {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800;
+}
+.pf-tag {
+  display: inline-block; font-size: 11px; font-weight: 600; color: var(--muted);
+  background: var(--bg-secondary); border: 1px solid var(--hairline-soft);
+  padding: 3px 10px; border-radius: 999px;
+}
+.rank-disc {
+  display: inline-block; font-size: 12px; font-weight: 800; color: #fff;
+  background: var(--accent); border-radius: 8px; padding: 3px 8px; margin-left: 10px;
+  vertical-align: 2px;
+}
+.rank-meta { font-size: 12px; color: var(--faint); margin-top: 4px; }
+@media (max-width: 640px) {
+  .rank-num { font-size: 24px; min-width: 40px; }
+  .rank-thumb { width: 88px; height: 42px; }
+  .rank-row { gap: 12px; padding: 16px 4px; }
+}
 /* 商品卡 */
 .item {
   background: var(--card); border: 1px solid var(--hairline); border-radius: 20px;
@@ -135,7 +174,10 @@
     <nav class="header-nav">
       <a href="https://xiaojj.pro/" class="nav-link">首页</a>
       <a href="https://xiaojj.pro/news.html" class="nav-link">早报</a>
-      <a href="https://xiaojj.pro/github.html" class="nav-link">趋势</a>
+      <a href="https://xiaojj.pro/github.html" class="nav-link">GitHub</a>
+      <a href="https://tv.xiaojj.pro" class="nav-link">电视浏览器</a>
+      <a href="https://video.xiaojj.pro" class="nav-link">电影发现</a>
+      <a href="https://price.xiaojj.pro" class="nav-link active">降价提醒</a>
     </nav>
   </div>
 </header>
@@ -145,18 +187,26 @@
 
   <section id="picks-section" style="display:none;">
     <div class="section-head">
-      <h2 class="section-title">每日低价推送</h2>
+      <h2 class="section-title">今日最值得买</h2>
       <p class="section-desc" id="picks-date"></p>
     </div>
     <div id="picks-list"></div>
   </section>
 
+  <section id="app-section" style="display:none;">
+    <div class="section-head">
+      <h2 class="section-title">苹果降价榜</h2>
+      <p class="section-desc" id="app-date"></p>
+    </div>
+    <div class="rank-list" id="app-list"></div>
+  </section>
+
   <section id="deals-section" style="display:none;">
     <div class="section-head">
-      <h2 class="section-title">今日好价</h2>
+      <h2 class="section-title">Steam 好价榜</h2>
       <p class="section-desc" id="deals-date"></p>
     </div>
-    <div class="deal-grid" id="deal-grid"></div>
+    <div class="rank-list" id="deal-grid"></div>
   </section>
 
 </div>
@@ -175,32 +225,86 @@ function esc(s) {
 
 renderDeals();
 renderPicks();
+renderAppDrops();
+
+/* ---------- 苹果降价榜 ---------- */
+function renderAppDrops() {
+  fetch('/data/app-drops.json')
+    .then(function(r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function(d) {
+      var drops = d.drops || [], tracked = d.tracked || [];
+      var list = drops.length ? drops : tracked;
+      if (!list.length) return;
+      document.getElementById('app-section').style.display = '';
+      document.getElementById('app-date').textContent = (d.date || '') +
+        (drops.length ? ' · ' + drops.length + ' 款降价中' : ' · 今日暂无降价，共跟踪 ' + tracked.length + ' 款');
+      document.getElementById('app-list').innerHTML = list.map(function(it, i) {
+        var isDrop = !!it.discount;
+        var top = (isDrop && i < 3) ? ' top' + (i + 1) : '';
+        return '<a class="rank-row' + top + '" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
+          '<div class="rank-num">' + (i + 1) + '</div>' +
+          '<img class="rank-thumb rank-thumb-app" loading="lazy" src="' + esc(it.icon) + '" alt="">' +
+          '<div class="rank-main"><p class="rank-name">' + esc(it.name) +
+          (isDrop ? '<span class="rank-disc">-' + it.discount + '%</span>' : '') + '</p>' +
+          '<div style="margin-top:8px;">' + platformTag('App Store 国区') + '</div></div>' +
+          '<div class="rank-right"><span class="rank-price">¥' + it.price + '</span>' +
+          (isDrop ? '<span class="rank-origin"><s>¥' + it.original_price + '</s></span>' : '') +
+          '</div></a>';
+      }).join('');
+    })
+    .catch(function() { /* 无数据时整个区块保持隐藏 */ });
+}
 
 /* ---------- 每日低价推送 ---------- */
+var PLATFORM_STYLE = {
+  'Steam':      { bg: '#1b2838', fg: '#fff', tag: 'Steam' },
+  'App Store 国区': { bg: '#000000', fg: '#fff', tag: 'App Store' },
+  '优酷官方':    { bg: '#1c9eff', fg: '#fff', tag: '优酷' },
+  '携程':        { bg: '#287dfa', fg: '#fff', tag: '携程' }
+};
+function steamAppId(url) {
+  var m = String(url || '').match(/\/app\/(\d+)/);
+  return m ? m[1] : null;
+}
+function thumbHtml(it) {
+  var appid = steamAppId(it.url);
+  if (appid) {
+    return '<img class="rank-thumb" loading="lazy" src="https://cdn.cloudflare.steamstatic.com/steam/apps/' + appid + '/header.jpg" alt="">';
+  }
+  var st = PLATFORM_STYLE[it.source] || { bg: '#e8e8ec', fg: '#8e8e93', tag: (it.source || '?').charAt(0) };
+  return '<div class="rank-thumb rank-thumb-ph" style="background:' + st.bg + ';color:' + st.fg + '">' + esc(st.tag.charAt(0)) + '</div>';
+}
+function platformTag(source) {
+  if (!source) return '';
+  return '<span class="pf-tag">' + esc(source) + '</span>';
+}
 function renderPicks() {
   fetch('/data/daily-picks.json')
     .then(function(r) { if (!r.ok) throw 0; return r.json(); })
     .then(function(d) {
       var groups = (d && d.groups) || [];
-      if (!groups.length) return;
+      var items = [];
+      groups.forEach(function(g) { (g.items || []).forEach(function(it) { items.push(it); }); });
+      if (!items.length) return;
       document.getElementById('picks-section').style.display = '';
-      document.getElementById('picks-date').textContent = d.date || '';
-      document.getElementById('picks-list').innerHTML = groups.map(function(g) {
-        return '<div class="pick-group"><h3 class="pick-gname">' + esc(g.name) + '</h3>' +
-          (g.items || []).map(function(it) {
-            return '<a class="pick-row" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
-              '<div class="pick-main"><p class="pick-name">' + esc(it.name) + '</p>' +
-              (it.note ? '<p class="pick-note">' + esc(it.note) + '</p>' : '') + '</div>' +
-              '<div class="pick-right"><span class="pick-price">' + esc(it.price) + '</span>' +
-              (it.origin ? '<span class="pick-origin">' + esc(it.origin) + '</span>' : '') +
-              '</div></a>';
-          }).join('') + '</div>';
-      }).join('');
+      document.getElementById('picks-date').textContent = (d.date || '') + ' · 今日最值得买 Top ' + items.length;
+      document.getElementById('picks-list').innerHTML = '<div class="rank-list">' + items.map(function(it, i) {
+        var top = i < 3 ? ' top' + (i + 1) : '';
+        return '<a class="rank-row' + top + '" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
+          '<div class="rank-num">' + (i + 1) + '</div>' +
+          thumbHtml(it) +
+          '<div class="rank-main"><p class="rank-name">' + esc(it.name) + '</p>' +
+          (it.note ? '<p class="rank-reason"><b>上榜理由</b> ' + esc(it.note) + '</p>' : '') +
+          '<div style="margin-top:8px;">' + platformTag(it.source) + '</div></div>' +
+          '<div class="rank-right"><span class="rank-price">' + esc(it.price) + '</span>' +
+          (it.origin ? '<span class="rank-origin"><s>' + esc(it.origin.replace(/^原价\s*/, '')) + '</s></span>' : '') +
+          '</div></a>';
+      }).join('') + '</div>';
     })
     .catch(function() { /* 无推送数据时整个区块保持隐藏 */ });
 }
 
-/* ---------- 今日好价 ---------- */
+/* ---------- Steam 好价榜 ---------- */
 function renderDeals() {
   fetch('/data/deals.json')
     .then(function(r) { if (!r.ok) throw 0; return r.json(); })
@@ -209,17 +313,17 @@ function renderDeals() {
       if (!items.length) return;
       document.getElementById('deals-section').style.display = '';
       document.getElementById('deals-date').textContent = (d.date || '') + ' · 共 ' + items.length + ' 款';
-      document.getElementById('deal-grid').innerHTML = items.map(function(it) {
-        var imgHtml = it.header_image
-          ? '<div class="deal-img"><img loading="lazy" src="' + esc(it.header_image) + '" alt="">'
-          : '<div class="deal-img deal-img-empty">' + esc((it.name || '?').charAt(0));
-        return '<a class="deal-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
-          imgHtml + '<span class="deal-badge">-' + it.discount_percent + '%</span></div>' +
-          '<div class="deal-body"><p class="deal-name">' + esc(it.name) + '</p>' +
-          '<div class="deal-price"><span class="deal-final">¥' + it.final_price + '</span>' +
-          '<span class="deal-orig">¥' + it.original_price + '</span></div>' +
-          '<div class="deal-rate">好评 ' + it.positive_rate + '% · ' + it.total_reviews + ' 条评价</div>' +
-          '</div></a>';
+      document.getElementById('deal-grid').innerHTML = items.map(function(it, i) {
+        var top = i < 3 ? ' top' + (i + 1) : '';
+        return '<a class="rank-row' + top + '" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
+          '<div class="rank-num">' + (i + 1) + '</div>' +
+          (it.header_image ? '<img class="rank-thumb" loading="lazy" src="' + esc(it.header_image) + '" alt="">' : '') +
+          '<div class="rank-main"><p class="rank-name">' + esc(it.name) +
+          '<span class="rank-disc">-' + it.discount_percent + '%</span></p>' +
+          '<p class="rank-meta">好评 ' + it.positive_rate + '% · ' + it.total_reviews + ' 条评价</p>' +
+          '<div style="margin-top:8px;">' + platformTag('Steam') + '</div></div>' +
+          '<div class="rank-right"><span class="rank-price">¥' + it.final_price + '</span>' +
+          '<span class="rank-origin"><s>¥' + it.original_price + '</s></span></div></a>';
       }).join('');
     })
     .catch(function() { /* 无榜单数据时整个区块保持隐藏 */ });
