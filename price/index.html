@@ -93,28 +93,12 @@ a.price-card:hover .price-name { color: var(--accent); }
 <main>
 <div class="price-wrap">
 
-  <section id="picks-section" style="display:none;">
+  <section id="all-section" style="display:none;">
     <div class="section-head">
-      <h2 class="section-title">今日最值得买</h2>
-      <p class="section-desc" id="picks-date"></p>
+      <h2 class="section-title">今日好价</h2>
+      <p class="section-desc" id="all-date"></p>
     </div>
-    <div id="picks-list"></div>
-  </section>
-
-  <section id="app-section" style="display:none;">
-    <div class="section-head">
-      <h2 class="section-title">苹果降价榜</h2>
-      <p class="section-desc" id="app-date"></p>
-    </div>
-    <div class="price-grid" id="app-list"></div>
-  </section>
-
-  <section id="deals-section" style="display:none;">
-    <div class="section-head">
-      <h2 class="section-title">Steam 好价榜</h2>
-      <p class="section-desc" id="deals-date"></p>
-    </div>
-    <div class="price-grid" id="deal-grid"></div>
+    <div class="price-grid" id="all-grid"></div>
   </section>
 
 </div>
@@ -131,46 +115,13 @@ function esc(s) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-renderDeals();
-renderPicks();
-renderAppDrops();
+renderAll();
 
-/* ---------- 苹果降价榜 ---------- */
-function renderAppDrops() {
-  fetch('/data/app-drops.json')
-    .then(function(r) { if (!r.ok) throw 0; return r.json(); })
-    .then(function(d) {
-      var drops = d.drops || [], tracked = d.tracked || [];
-      var list = drops.length ? drops : tracked;
-      if (!list.length) return;
-      document.getElementById('app-section').style.display = '';
-      document.getElementById('app-date').textContent = (d.date || '') +
-        (drops.length ? ' · ' + drops.length + ' 款降价中' : ' · 今日暂无降价，共跟踪 ' + tracked.length + ' 款');
-      document.getElementById('app-list').innerHTML = list.map(function(it, i) {
-        var isDrop = !!it.discount;
-        var rankCls = (isDrop && i < 3) ? ' top3' : '';
-        var cn = (it.prices || {}).CN, us = (it.prices || {}).US;
-        var priceHtml = '';
-        if (cn) priceHtml += '<span class="price-now">¥' + cn.price + '<em>国区</em></span>';
-        if (us) priceHtml += '<span class="price-now price-now-us">$' + us.price + '<em>美区</em></span>';
-        var wasHtml = '';
-        if (isDrop) {
-          var op = it.prices[it.region];
-          wasHtml = '<span class="price-was"><s>' + op.symbol + op.original_price + '</s> -' + it.discount + '%</span>';
-        }
-        return '<a class="price-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
-          '<div class="price-rank' + rankCls + '">#' + (i + 1) + '</div>' +
-          '<img class="price-icon" loading="lazy" src="' + esc(it.icon) + '" alt="">' +
-          '<p class="price-name">' + esc(it.name) + '</p>' +
-          '<div class="price-tags">' + platformTag('App Store') +
-          (isDrop ? '<span class="price-disc">-' + it.discount + '%</span>' : '') + '</div>' +
-          '<div class="price-bottom"><div>' + priceHtml + '</div>' + wasHtml + '</div></a>';
-      }).join('');
-    })
-    .catch(function() { /* 无数据时整个区块保持隐藏 */ });
+function fetchJson(path) {
+  return fetch(path).then(function(r) { if (!r.ok) throw 0; return r.json(); }).catch(function() { return null; });
 }
 
-/* ---------- 每日低价推送 ---------- */
+/* ---------- 辅助 ---------- */
 var PLATFORM_STYLE = {
   'Steam':      { bg: '#1b2838', fg: '#fff', tag: 'Steam' },
   'App Store 国区': { bg: '#000000', fg: '#fff', tag: 'App Store' },
@@ -179,7 +130,7 @@ var PLATFORM_STYLE = {
 };
 function steamAppId(url) {
   url = String(url || '');
-  if (url.indexOf('/bundle/') !== -1) return null;  // bundle 图不可预测，走平台占位
+  if (url.indexOf('/bundle/') !== -1) return null;
   var m = url.match(/\/app\/(\d+)/);
   return m ? m[1] : null;
 }
@@ -195,55 +146,83 @@ function platformTag(source) {
   if (!source) return '';
   return '<span class="pf-tag">' + esc(source) + '</span>';
 }
-function renderPicks() {
-  fetch('/data/daily-picks.json')
-    .then(function(r) { if (!r.ok) throw 0; return r.json(); })
-    .then(function(d) {
-      var groups = (d && d.groups) || [];
-      var items = [];
-      groups.forEach(function(g) { (g.items || []).forEach(function(it) { items.push(it); }); });
-      if (!items.length) return;
-      document.getElementById('picks-section').style.display = '';
-      document.getElementById('picks-date').textContent = (d.date || '') + ' · 今日最值得买 Top ' + items.length;
-      document.getElementById('picks-list').innerHTML = '<div class="price-grid">' + items.map(function(it, i) {
-        var rankCls = i < 3 ? ' top3' : '';
-        return '<a class="price-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
-          '<div class="price-rank' + rankCls + '">#' + (i + 1) + '</div>' +
-          thumbCardHtml(it) +
-          '<p class="price-name">' + esc(it.name) + '</p>' +
-          (it.note ? '<p class="price-note"><b>上榜理由</b> ' + esc(it.note) + '</p>' : '') +
-          '<div class="price-tags">' + platformTag(it.source) + '</div>' +
-          '<div class="price-bottom"><span class="price-now">' + esc(it.price) + '</span>' +
-          (it.origin ? '<span class="price-was"><s>' + esc(it.origin.replace(/^原价\s*/, '')) + '</s></span>' : '') +
-          '</div></a>';
-      }).join('') + '</div>';
-    })
-    .catch(function() { /* 无推送数据时整个区块保持隐藏 */ });
+
+/* ---------- 统一好价流：三源合并，按折扣排序 ---------- */
+function renderAll() {
+  Promise.all([
+    fetchJson('/data/daily-picks.json'),
+    fetchJson('/data/app-drops.json'),
+    fetchJson('/data/deals.json')
+  ]).then(function(res) {
+    var items = [];
+    // 1. 今日最值得买
+    var picks = res[0], groups = (picks && picks.groups) || [];
+    groups.forEach(function(g) { (g.items || []).forEach(function(it) {
+      items.push(normalizePick(it));
+    }); });
+    // 2. 苹果降价
+    var apps = res[1], drops = (apps && apps.drops) || [], tracked = (apps && apps.tracked) || [];
+    (drops.length ? drops : tracked).forEach(function(it) { items.push(normalizeApp(it)); });
+    // 3. Steam 好价
+    var deals = res[2];
+    ((deals && deals.items) || []).forEach(function(it) { items.push(normalizeDeal(it)); });
+    if (!items.length) return;
+    // 按折扣从大到小，无折扣的保持原相对顺序沉底
+    items.sort(function(a, b) { return (b.disc || 0) - (a.disc || 0); });
+    document.getElementById('all-section').style.display = '';
+    document.getElementById('all-date').textContent = '共 ' + items.length + ' 条好价';
+    document.getElementById('all-grid').innerHTML = items.map(cardHtml).join('');
+  });
 }
 
-/* ---------- Steam 好价榜 ---------- */
-function renderDeals() {
-  fetch('/data/deals.json')
-    .then(function(r) { if (!r.ok) throw 0; return r.json(); })
-    .then(function(d) {
-      var items = (d && d.items) || [];
-      if (!items.length) return;
-      document.getElementById('deals-section').style.display = '';
-      document.getElementById('deals-date').textContent = (d.date || '') + ' · 共 ' + items.length + ' 款';
-      document.getElementById('deal-grid').innerHTML = items.map(function(it, i) {
-        var rankCls = i < 3 ? ' top3' : '';
-        return '<a class="price-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
-          '<div class="price-rank' + rankCls + '">#' + (i + 1) + '</div>' +
-          (it.header_image ? '<img class="price-img" loading="lazy" src="' + esc(it.header_image) + '" alt="">' : '') +
-          '<p class="price-name">' + esc(it.name) + '</p>' +
-          '<p class="price-note">好评 ' + it.positive_rate + '% · ' + it.total_reviews + ' 条评价</p>' +
-          '<div class="price-tags">' + platformTag('Steam') +
-          '<span class="price-disc">-' + it.discount_percent + '%</span></div>' +
-          '<div class="price-bottom"><span class="price-now">¥' + it.final_price + '</span>' +
-          '<span class="price-was"><s>¥' + it.original_price + '</s></span></div></a>';
-      }).join('');
-    })
-    .catch(function() { /* 无榜单数据时整个区块保持隐藏 */ });
+function normalizePick(it) {
+  var disc = 0;
+  var m1 = /[¥￥$]\s*([\d.]+)/.exec(it.price || ''), m2 = /[¥￥$]\s*([\d.]+)/.exec(it.origin || '');
+  if (m1 && m2 && parseFloat(m2[1]) > 0) disc = Math.round((1 - parseFloat(m1[1]) / parseFloat(m2[1])) * 100);
+  return {
+    url: it.url, name: it.name, note: it.note ? '<b>上榜理由</b> ' + it.note : '',
+    tag: it.source, disc: disc,
+    img: thumbCardHtml(it), price: esc(it.price || ''),
+    was: it.origin ? esc(it.origin.replace(/^原价\s*/, '')) : ''
+  };
+}
+function normalizeApp(it) {
+  var cn = (it.prices || {}).CN, us = (it.prices || {}).US;
+  var price = '';
+  if (cn) price += '<span class="price-now">¥' + cn.price + '<em>国区</em></span>';
+  if (us) price += '<span class="price-now price-now-us">$' + us.price + '<em>美区</em></span>';
+  var was = '';
+  if (it.discount && it.prices[it.region]) {
+    var op = it.prices[it.region];
+    was = op.symbol + op.original_price;
+  }
+  return {
+    url: it.url, name: it.name, note: '', tag: 'App Store', disc: it.discount || 0,
+    img: '<img class="price-icon" loading="lazy" src="' + esc(it.icon) + '" alt="">',
+    price: price, was: was
+  };
+}
+function normalizeDeal(it) {
+  return {
+    url: it.url, name: it.name,
+    note: '好评 ' + it.positive_rate + '% · ' + it.total_reviews + ' 条评价',
+    tag: 'Steam', disc: it.discount_percent || 0,
+    img: it.header_image ? '<img class="price-img" loading="lazy" src="' + esc(it.header_image) + '" alt="">' : '',
+    price: '<span class="price-now">¥' + it.final_price + '</span>',
+    was: '¥' + it.original_price
+  };
+}
+function cardHtml(it, i) {
+  var rankCls = i < 3 ? ' top3' : '';
+  return '<a class="price-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
+    '<div class="price-rank' + rankCls + '">#' + (i + 1) + '</div>' +
+    it.img +
+    '<p class="price-name">' + esc(it.name) + '</p>' +
+    (it.note ? '<p class="price-note">' + it.note + '</p>' : '') +
+    '<div class="price-tags">' + platformTag(it.tag) +
+    (it.disc ? '<span class="price-disc">-' + it.disc + '%</span>' : '') + '</div>' +
+    '<div class="price-bottom"><div>' + it.price + '</div>' +
+    (it.was ? '<span class="price-was"><s>' + it.was + '</s></span>' : '') + '</div></a>';
 }
 </script>
 </body>
