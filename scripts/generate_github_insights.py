@@ -19,7 +19,7 @@ LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.openai.com/v1').strip().rstrip('/')
 LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'gpt-6-sol'
 
-MAX_REPOS = 12
+MAX_REPOS = 12  # 每个 tab 取前 12 个生成点评
 
 
 def _chat_urls():
@@ -103,9 +103,18 @@ def main():
 
     with open(src, encoding='utf-8') as f:
         data = json.load(f)
-    repos = (data.get('categories', {}).get('hot', {}).get('repos') or [])[:MAX_REPOS]
+    # 覆盖：今日热榜 12 + 每个领域前 12（去重）
+    seen = set()
+    repos = []
+    for r in (data.get('leaderboard') or [])[:MAX_REPOS]:
+        if r['full_name'] not in seen:
+            seen.add(r['full_name']); repos.append(r)
+    for cat in (data.get('categories') or {}).values():
+        for r in (cat.get('repos') or [])[:MAX_REPOS]:
+            if r['full_name'] not in seen:
+                seen.add(r['full_name']); repos.append(r)
     if not repos:
-        print('⏭️ 热榜为空，跳过')
+        print('⏭️ 项目为空，跳过')
         return
 
     print(f'🤖 正在生成 {len(repos)} 个项目的中文点评...')
