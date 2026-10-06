@@ -202,9 +202,9 @@ img { max-width: 100%; }
 .band-link.ghost:hover { background: var(--surface-soft); border-color: var(--ink); }
 .band-meta { margin-top: 24px; font-size: 13px; color: var(--muted-soft); }
 
-/* 英雄横幅（首屏） */
+/* 英雄横幅（首屏）：内容决定高度，不靠 vh 硬撑，避免空洞 */
 .band-hero {
-  min-height: 78vh;
+  min-height: 62vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -540,7 +540,7 @@ textarea.input { resize: vertical; min-height: 84px; }
   .header-title { font-size: 18px; }
   .header-subtitle { display: none; }
   .band { padding: 48px 24px; }
-  .band-hero { min-height: 70vh; }
+  .band-hero { min-height: 60vh; }
   .section { padding: 48px 24px; }
   .page-head { padding: 48px 24px 32px; }
   .ruled-row { padding: 20px 24px; gap: 14px; }
