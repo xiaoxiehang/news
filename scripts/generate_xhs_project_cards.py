@@ -236,7 +236,7 @@ def draw_end(jinju, question, path):
     f_j, f_q = _fs(52), _fr(40)
     jl = _wrap2(d, _clean(jinju), f_j, W - 280)[:3]
     ql = _wrap2(d, _clean(question), f_q, W - 280)[:3]
-    t = '收藏这篇，下次让 AI 做页面时翻出来'
+    t = '收藏这篇，用得上时翻出来'
     f_btn = _fs(38)
     _top_pad, _bot_pad = 120, 72
     ch = (_top_pad + len(jl) * 80 + 70 + len(ql) * 62 + 48 + 88 + _bot_pad)

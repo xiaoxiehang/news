@@ -4,16 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>AI 科技早报 - 鸡仔</title>
-<meta name="description" content="每天早上 8 点，AI 精选 8 条最值得读的科技新闻。">
+<meta name="description" content="每天早上 8 点，AI 精选最值得读的科技新闻。">
 <link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
 <link rel="stylesheet" href="assets/minimal.css">
 <style>
-/* 早报导语 */
+/* 早报：杂志卡片流 */
+.briefing-feed { max-width: 720px; margin: 0 auto; padding: 8px var(--pad-x) 0; }
+.briefing-eyebrow {
+  font-size: 13px; font-weight: 600; color: var(--primary);
+  letter-spacing: 0.1em; margin-bottom: 14px;
+}
 .lede {
-  max-width: 760px; margin: 0 auto; padding: 0 var(--pad-x) 8px;
-  font-size: 20px; line-height: 1.8; color: var(--ink);
+  max-width: none; margin: 0; padding: 0 0 30px;
+  font-size: 19px; line-height: 1.85; color: var(--ink);
   letter-spacing: -0.01em;
 }
+.mag-list { display: flex; flex-direction: column; gap: 18px; }
+.mag-card {
+  display: block; background: #fff; border-radius: 14px;
+  box-shadow: var(--shadow-card); padding: 26px 28px;
+  text-decoration: none; color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+a.mag-card:hover { transform: translateY(-3px); }
+a.mag-card:hover .mag-title { color: var(--primary); }
+.mag-title {
+  font-size: 21px; font-weight: 600; line-height: 1.45;
+  letter-spacing: -0.01em; color: var(--ink); transition: color 0.2s;
+}
+.mag-summary { font-size: 15px; line-height: 1.8; color: var(--body); margin-top: 12px; }
+.mag-tags { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.mag-tag {
+  font-size: 12px; font-weight: 500; color: var(--muted);
+  background: var(--surface-soft); border-radius: 999px; padding: 5px 12px;
+}
+/* groups 分区跟随同一语言 */
+.briefing-feed .group-head { padding: 0; margin-bottom: 6px; }
+.briefing-feed .group-updated { padding: 0; margin-bottom: 20px; }
+.briefing-feed .group-section { margin-bottom: 0; }
 /* GitHub 卡片（原版样式） */
 .projects-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -102,10 +130,13 @@ a.project-card:hover .project-name { color: var(--primary); }
 
 <main>
   <div id="briefing-section" style="display:none;">
-    <p class="lede" id="briefing-overview"></p>
-    <div class="news-list" id="briefing-picks" style="margin-top:32px;"></div>
-    <div class="pane-actions" style="margin-top:40px;">
-      <button class="btn btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
+    <div class="briefing-feed">
+      <div class="briefing-eyebrow" id="briefing-eyebrow"></div>
+      <p class="lede" id="briefing-overview"></p>
+      <div class="mag-list" id="briefing-picks"></div>
+      <div class="pane-actions" style="margin-top:36px;">
+        <button class="btn btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
+      </div>
     </div>
   </div>
   <div id="groups" style="margin-top:56px;"><div class="loading">加载中...</div></div>
@@ -168,31 +199,28 @@ function copyBriefing() {
     setTimeout(function() { btn.textContent = '复制今日早报'; }, 2000);
   });
 }
-function renderItem(n, i) {
+function renderItem(n) {
   const hasLink = n.link && n.link.indexOf('http') === 0;
   const inner =
-    '<div class="news-num">' + String(i + 1).padStart(2, '0') + '</div>' +
-    '<div class="news-body">' +
-      '<div class="news-title">' + esc(n.title) + '</div>' +
-      (n.summary ? '<div class="news-summary">' + esc(emojify(n.summary.length > 160 ? n.summary.substring(0, 160) + '...' : n.summary)) + '</div>' : '') +
-      (n.meta ? '<div class="news-meta">' + esc(n.meta) + '</div>' : '') +
-    '</div>';
+    '<div class="mag-title">' + esc(n.title) + '</div>' +
+    (n.summary ? '<div class="mag-summary">' + esc(emojify(n.summary)) + '</div>' : '') +
+    (n.tag ? '<div class="mag-tags"><span class="mag-tag">' + esc(n.tag) + '</span></div>' : '');
   return hasLink
-    ? '<a class="news-item" href="' + esc(n.link) + '" target="_blank" rel="noopener">' + inner + '</a>'
-    : '<div class="news-item">' + inner + '</div>';
+    ? '<a class="mag-card" href="' + esc(n.link) + '" target="_blank" rel="noopener">' + inner + '</a>'
+    : '<div class="mag-card">' + inner + '</div>';
 }
 function renderGroup(cfg) {
   if (!cfg.items.length) return '';
-  let html = '<div class="group-section">' +
+  let html = '<div class="group-section"><div class="briefing-feed">' +
     '<div class="group-head">' +
       '<div class="group-title">' + esc(cfg.title) + '</div>' +
       (cfg.desc ? '<div class="group-desc">' + esc(cfg.desc) + '</div>' : '') +
       '<a class="group-more" href="' + cfg.moreLink + '">查看全部</a>' +
     '</div>' +
     (cfg.updated ? '<div class="group-updated">更新于 ' + esc(cfg.updated) + '</div>' : '') +
-    '<div class="news-list">';
-  cfg.items.forEach(function(n, i) { html += renderItem(n, i); });
-  html += '</div></div>';
+    '<div class="mag-list">';
+  cfg.items.forEach(function(n) { html += renderItem(n); });
+  html += '</div></div></div>';
   return html;
 }
 async function loadZaobao() {
@@ -200,15 +228,17 @@ async function loadZaobao() {
     const data = await fetchJson('data/briefing.json');
     if (data && data.picks && data.picks.length) {
       briefingData = data;
+      document.getElementById('briefing-eyebrow').textContent =
+        (data.date_str || '') + ' · AI 科技早报';
       document.getElementById('briefing-overview').textContent = data.overview || '';
       let html = '';
-      data.picks.forEach(function(pick, i) {
+      data.picks.forEach(function(pick) {
         html += renderItem({
           title: pick.title,
           link: pick.url,
           summary: pick.summary,
-          meta: pick.source ? '来源：' + pick.source : ''
-        }, i);
+          tag: pick.source || ''
+        });
       });
       document.getElementById('briefing-picks').innerHTML = html;
       document.getElementById('briefing-section').style.display = '';
@@ -222,7 +252,7 @@ async function loadZaobao() {
     if (hot && hot.repos) {
       const items = hot.repos.slice(0, 5).map(function(r) {
         return { title: r.full_name || r.name, link: r.html_url, summary: r.description,
-                 meta: '★ ' + (r.stars || '-') + (r.language ? ' · ' + r.language : '') };
+                 tag: '★ ' + (r.stars || '-') + (r.language ? ' · ' + r.language : '') };
       });
       html += renderGroup({ title: 'GitHub 热榜', desc: hot.desc || '', moreLink: 'github.html', updated: gh.updated_at, items: items });
     }
