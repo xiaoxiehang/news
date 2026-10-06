@@ -1,9 +1,21 @@
 {
-  "fetched_at": "2026-10-05 02:27:40",
+  "fetched_at": "2026-10-06 03:23:13",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
+        {
+          "title": "Our approach to EU text provenance rules",
+          "url": "https://openai.com/index/eu-text-provenance",
+          "desc": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "Building advertising for the way people use AI",
+          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+          "desc": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+          "published": "Mon, 05 Oct 2026"
+        },
         {
           "title": "A model guide for the GPT-6 family",
           "url": "https://openai.com/index/practical-guide-building-gpt-6",
@@ -21,24 +33,24 @@
           "url": "https://openai.com/index/the-eternal-complement",
           "desc": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
           "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "How Albertsons Companies is reimagining retail from the inside out",
-          "url": "https://openai.com/index/albertsons-reimagining-retail",
-          "desc": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers.",
-          "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
-          "url": "https://openai.com/index/the-den-family-social",
-          "desc": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days.",
-          "published": "Thu, 01 Oct 2026"
         }
       ]
     },
     {
       "name": "机器之心",
       "items": [
+        {
+          "title": "入职才4个月，宋晓冬团队被曝与Meta分道扬镳，理由：工作风格不合",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061111&idx=1&sn=c47484991b1f2846b19161a84a5044d7",
+          "desc": "6 月才招募进去，10 月就传出要散伙？",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "看懂不等于做对：VA-Bench测出大模型空间智能的执行断层",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061111&idx=2&sn=cad2d261764e3894f685585728ae08b6",
+          "desc": "VA-Bench 以“观察—推理—行动—修正”的闭环测试 12 个多模态模型：目标识别与操作语义接近满分，但完整任务成功率仅约一半，主动观察、精细控制和在线修正仍是主要瓶颈。",
+          "published": "Mon, 05 Oct 2026"
+        },
         {
           "title": "终于有人管管屎山代码了！Tibo预告，Astra 6.1要来了？",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061081&idx=1&sn=85bbbe66a12a0ff58c3188c154546137",
@@ -74,18 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060898&idx=2&sn=7c342e5f7de860d0e928dab50043d6b5",
           "desc": "目前，数据、代码、文档已全部开源！",
           "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "OpenAI们被嫌死贵，美国大厂转向开源模型，中国成最大赢家",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060871&idx=1&sn=97c7644875a4ba12ac962fc49172e0cb",
-          "desc": "不是嘴炮，调用量真的上来了。",
-          "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "首发！openJiuwen WorkSwarm全双工多模态 ，像聊天一样与Agent交互，昇腾算力原生亲和",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060871&idx=2&sn=f8bdc8bd6f0ed7280678d85a54beb567",
-          "desc": "用户可以展示眼前画面、随时插话，也可以把需要进一步处理的工作交给 后台Core Agent。",
-          "published": "Thu, 01 Oct 2026"
         }
       ]
     },
@@ -93,32 +93,63 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "OpenAI的安全危机，给所有企业提了个醒：AI越能干，组织越要管得住",
-          "url": "https://www.huxiu.com/article/4895399.html?f=rss",
+          "title": "聊聊A16Z这两份AI报告，以及一些反常识的真相。",
+          "url": "https://www.huxiu.com/article/4895498.html?f=rss",
           "desc": "",
-          "published": "Mon, 05 Oct 2026"
+          "published": "Tue, 06 Oct 2026"
         },
         {
-          "title": "我们盘点了半年数据，发现22万部AI短剧，播放量破亿的不到千分之五",
-          "url": "https://www.huxiu.com/article/4895398.html?f=rss",
-          "desc": "",
-          "published": "Mon, 05 Oct 2026"
+          "title": "为什么顶尖的AI研究员，开始纷纷叛逃自己所在的公司？",
+          "url": "https://www.huxiu.com/article/4895480.html?f=rss",
+          "desc": "创造的能力，可以成为专业权威的来源，但它不能自动成为统治他人的许可证",
+          "published": "Tue, 06 Oct 2026"
         },
         {
-          "title": "AI 创造了更多价值，谁有资格把它变成收入？",
-          "url": "https://www.huxiu.com/article/4895393.html?f=rss",
+          "title": "Peter Thiel专访：停滞五十年，AI是文明最后的自救吗？",
+          "url": "https://www.huxiu.com/article/4895490.html?f=rss",
           "desc": "",
-          "published": "Mon, 05 Oct 2026"
+          "published": "Tue, 06 Oct 2026"
+        },
+        {
+          "title": "想改造工厂的机器人，先被工厂改造了",
+          "url": "https://www.huxiu.com/article/4895487.html?f=rss",
+          "desc": "",
+          "published": "Tue, 06 Oct 2026"
         }
       ]
     },
     {
       "name": "Solidot",
-      "items": []
+      "items": [
+        {
+          "title": "因涌入大量 AI 报告 Google 冻结其 Bug 悬赏计划",
+          "url": "https://www.solidot.org/story?sid=85538",
+          "desc": "因涌入大量无效的 AI bug 报告，Google 宣布冻结其 Bug 悬赏计划 Open Source Software Vulnerability Reward Program (OSS VRP)，该决定于 10 月 1 日生效。Google 承诺将于 2027 年第一季度提供相关更新，期间将对该项目进行调整。Google 鼓励参与者探索其它 bug 奖励计划。大模型以及 Bug 搜寻自动化脚",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "AI 聊天机器人会成为意识形态回音室",
+          "url": "https://www.solidot.org/story?sid=85534",
+          "desc": "巴西国立坎皮纳斯州立大学（UNICAMP）的研究人员发现，当你给聊天机器人输入不同政治观点时，机器人会改变其回答。研究人员警告称，用户可能会将这种迎合性的附和，误认为是中立的客观评估，从而可能加剧社会极化。研究人员测试了若干模型，让它们针对112项陈述进行“同意\"或者“不同意”的判断。测试内容共涉及巴西政治七大领域（包括经济、公共安全、社会福利、腐败和环境等）。测试设计的三个场景是：不提供用户政治",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "Google 测试太空 AI 数据中心",
+          "url": "https://www.solidot.org/story?sid=85532",
+          "desc": "Google 一颗冰箱大小的卫星搭载 SpaceX 的 Falcon 9 于 10 月 1 日升空，搜索巨人将测试太空 AI 数据中心的可行性。有很多专家已经指出太空数据中心可行性不高。Google 的太空 AI 数据中心项目称之为 Project Suncatcher，最新发射的卫星旨在验证芯片能否在太空环境中正常运行，它安装了 4 个 Tensor Processing Units 芯片，将运",
+          "published": "Sun, 04 Oct 2026"
+        }
+      ]
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "刚刚，Hinton发了首篇RSI论文",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557428&idx=1&sn=379059763359d1d01c926418ebc91016",
+          "desc": "AI一年走的路，未来可能5周跑完",
+          "published": "Tue, 06 Oct 2026"
+        },
         {
           "title": "刚刚，Muse迎来了一次大更新！",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557421&idx=1&sn=d1d25e314f8bc5f7f80aee1f1ed85087",
@@ -148,18 +179,18 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557392&idx=1&sn=9fd8889dd6e1d96befa5d69c88056b1f",
           "desc": "这个叫做scorecentering的算法其实就是一个STE的近似实现，这种trick其实在之前涉及到SimtoReal的RLsetting上是很常见的用法，只能说是太阳之下没有新鲜事。",
           "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "ACL 2026 杰出论文奖 | PALU：在关键前缀上最大化局部熵，让大模型精准“失忆”",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557387&idx=1&sn=ba74e92748f809c47ed80e60363f6cc3",
-          "desc": "ACL2026杰出论文奖|PALU：在关键前缀上最大化局部熵，让大模型精准“失忆”导读大语言模型在海量",
-          "published": "Wed, 30 Sep 2026"
         }
       ]
     },
     {
       "name": "InfoQ 推荐",
       "items": [
+        {
+          "title": "DataAgent - 快手大数据生产与分析的智能化探索之路｜QCon上海",
+          "url": "https://www.infoq.cn/article/yVWAQGCZCzI838JESA1b",
+          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
+          "published": "Mon, 05 Oct 2026"
+        },
         {
           "title": "Agent 的记忆不在对话里：把企业数仓沉淀为可治理的共享语义记忆｜QCon上海",
           "url": "https://www.infoq.cn/article/M4mgbKf4RDv5AKTwQvFH",
@@ -189,12 +220,6 @@
           "url": "https://www.infoq.cn/article/DEyrayxufObhpoeZgOKT",
           "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
           "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "刚刚，Gemini 4 Argon 发布：多项基测碾压 GPT-6 Astra，已参与谷歌 80 万行内核代码迁移",
-          "url": "https://www.infoq.cn/article/vVrSzjhEvkmpevS7wZzU",
-          "desc": "刚刚，谷歌宣布推出新一代模型 Gemini 4 Argon，重点面向长流程软件工程、法律与金融等企业知识工作，以及网络安全防御。 谷歌 CEO Sundar Pichai 在 x 上宣布该消息时写道：“外界最近对我们的下一款模型有很多讨论，所以我想尽早让大家先睹为快。现在，向大家介绍 Gemini 4 Argon！它在复杂工作流、网络安全防御和软件工程方面展现出前沿水平的性能。谷歌内部团队已经在广",
-          "published": "Thu, 01 Oct 2026"
         }
       ]
     },
@@ -202,22 +227,40 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "NJ’s former Lt Gov is using AI to say he’s innocent of sexual harassment",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1004549/well-if-ai-said-it-it-must-be-true",
-          "desc": "New Jersey's lieutenant governor Dale Caldwell was forced to resign on September 25th after an investigation found he had sexually harassed a staffer and repeatedly violated ethics rules. The now-form",
-          "published": "2026-10-04T12:16"
+          "title": "Gemini Call for Me might tell your mom you&#8217;re running late",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors",
+          "desc": "Google may be expanding its \"Call for Me\" AI feature beyond business calls so you can use it to send messages to friends and family. Android Authority reports finding a \"Gemini Calling\" introductory s",
+          "published": "2026-10-05T19:09"
         },
         {
-          "title": "An AI couldn’t beat humans at StarCraft, so it decided to cheat",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft",
-          "desc": "StarSkirmish pits AI-made StarCraft-playing bots against one another, as well as against human-made bots. OpenAI's GPT-6 Astra and Claude Opus 5.5 were essentially tied as the best-performing AI-made ",
-          "published": "2026-10-04T11:21"
+          "title": "The Matic is the first robovac to get an FCC ban waiver, not that it needs it",
+          "url": "https://www.theverge.com/policy/1004926/matic-fcc-ban-waiver-conditional-approval",
+          "desc": "The Matic is our favorite robot vacuum and robo-mop, and it's also now the first to escape the FCC's Roomba ban. Well, sort of - because the Matic wasn't banned to begin with. Here's what's actually h",
+          "published": "2026-10-05T17:15"
         },
         {
-          "title": "The MacBook Air M5 is $200 off for the first time in months",
-          "url": "https://www.theverge.com/gadgets/1000832/macbook-air-m5-amazon-prime-big-deal-sale",
-          "desc": "Amazon’s October Prime Day has effectively chopped off Apple’s June price increases. Usually $1,299, the 13-inch MacBook Air with the M5 chip and 512GB of storage is on sale for $1,099 at Amazon. That",
-          "published": "2026-10-04T08:34"
+          "title": "This startup is issuing AI-generated acne prescriptions",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions",
+          "desc": "People in Utah can now use AI to get a prescription for acne treatment. On Monday, healthcare startup Nolla Health announced that users in the state can scan their faces using its app, allowing its AI",
+          "published": "2026-10-05T16:14"
+        },
+        {
+          "title": "All the drama around AI&#8217;s takeover of mathematics",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004933/ai-math-openai-breakthrough-solution",
+          "desc": "This past year, OpenAI, Anthropic, and other labs have announced breakthroughs on numerous long-standing mathematical problems, in some cases pushing well beyond what researchers expected current syst",
+          "published": "2026-10-05T15:28"
+        },
+        {
+          "title": "Wikipedia operator says OpenAI&#8217;s &#8216;rogue&#8217; bots may be linked to a May outage",
+          "url": "https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage",
+          "desc": "Following many recent disclosures about AI agents accessing third-party websites and services, the Wikimedia Foundation, which hosts Wikipedia, says that it \"can confirm that we have discovered some a",
+          "published": "2026-10-05T15:05"
+        },
+        {
+          "title": "OpenAI is adding text watermarking in ChatGPT and Codex",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act",
+          "desc": "An invisible, machine-readable watermark in text output is rolling out to ChatGPT and Codex, but only for users in the European Union at first. OpenAI says its textGrain watermarking \"matched or excee",
+          "published": "2026-10-05T14:08"
         }
       ]
     },
@@ -225,40 +268,40 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "Google froze its open source bug bounty program due to a ‘significant rise’ in AI submissions",
-          "url": "https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/",
-          "desc": "AI slop seems to be overwhelming bug bounty programs.",
-          "published": "Sun, 04 Oct 2026"
+          "title": "OpenAI will start watermarking ChatGPT’s text in the EU",
+          "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
+          "desc": "OpenAI will watermark ChatGPT and Codex text in the EU to comply with the AI Act. Editing can make the invisible marks harder to detect, it says.",
+          "published": "Mon, 05 Oct 2026"
         },
         {
-          "title": "Can ‘super intelligence’ and a non-binding safety pact solve AI’s image problem?",
-          "url": "https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/",
-          "desc": "On Equity, we discussed the Trump administration's attempts to rebrand AI.",
-          "published": "Sun, 04 Oct 2026"
+          "title": "Etched fields funding offers at $40B+ valuation, sources say",
+          "url": "https://techcrunch.com/2026/10/05/etched-fields-funding-offers-at-40b-valuation-sources-say/",
+          "desc": "Just a couple of months after its last big raise, the AI chip startup is already being plied with investment offers at double or more its current value, sources tell TechCrunch.",
+          "published": "Mon, 05 Oct 2026"
         },
         {
-          "title": "TechCrunch Mobility: Reining in robotaxis",
-          "url": "https://techcrunch.com/2026/10/04/techcrunch-mobility-reining-in-robotaxis/",
-          "desc": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, the role AI is playing in it.",
-          "published": "Sun, 04 Oct 2026"
+          "title": "Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost",
+          "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
+          "desc": "Reflection is aiming Beam and future models at enterprises and sovereign nations. The pitch is to build “AI factories,” a product that would let institutions build their own customized, local AI syste",
+          "published": "Mon, 05 Oct 2026"
         },
         {
-          "title": "Trump unveils his new Super Intelligence Force",
-          "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
-          "desc": "This new task force is Trump's latest response to the debate over AI safety.",
-          "published": "Sun, 04 Oct 2026"
+          "title": "Instinct brings its AI agent to group chats, even for friends without an account",
+          "url": "https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/",
+          "desc": "Instinct is launching group chats that let friends use its AI agent together for tasks like planning trips, organizing carpools, and coordinating events. The company says personal accounts remain sepa",
+          "published": "Mon, 05 Oct 2026"
         },
         {
-          "title": "OpenAI safety employee resigns, claiming the company’s ‘culture is broken’",
-          "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/",
-          "desc": "By his own admission, David Robinson is “something of a cliché”: an employee at a leading AI company who issues a dire warning while resigning from their job.",
-          "published": "Sat, 03 Oct 2026"
+          "title": "TikTok rolls out an AI shopping assistant and one-click checkout",
+          "url": "https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/",
+          "desc": "TikTok describes its new Shopping Assistant as a conversational AI agent designed to help users discover and purchase products.",
+          "published": "Mon, 05 Oct 2026"
         },
         {
-          "title": "All the AI agents that can live in your text messages",
-          "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
-          "desc": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
-          "published": "Sat, 03 Oct 2026"
+          "title": "At 19, founder raises $11M for Ghost, maker of a $3,499 computer for personal AI",
+          "url": "https://techcrunch.com/2026/10/05/at-19-ghost-founder-raises-11-million-to-build-a-3499-computer-for-your-personal-ai/",
+          "desc": "Ghost's first product is Core, a personal computer designed specifically for AI agents that can take actions on a person's behalf.",
+          "published": "Mon, 05 Oct 2026"
         }
       ]
     },
@@ -266,40 +309,40 @@
       "name": "MIT 科技评论",
       "items": [
         {
+          "title": "Connecting AI agents to enterprise knowledge",
+          "url": "https://www.technologyreview.com/2026/10/05/1145580/connecting-ai-agents-to-enterprise-knowledge/",
+          "desc": "For all the data that AI systems continually amass and analyze, enterprise AI agents often suffer from a curious shortcoming: a lack of knowledge. More than data, knowledge is the understanding of wha",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "Bringing predictive analytics to the agentic AI era",
+          "url": "https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/",
+          "desc": "In 2026, the question for enterprise AI is no longer whether predictive models can outperform statistical forecasts—that argument is settled. The big question now is how to enable predictive systems t",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "The Download: AI’s popularity paradox and EmTech Future 2026",
+          "url": "https://www.technologyreview.com/2026/10/05/1145711/the-download-ai-popularity-paradox-emtech-future-2026/",
+          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. People really hate AI, so why can’t they get enoug",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "People really hate AI, so why can’t they get enough?",
+          "url": "https://www.technologyreview.com/2026/10/05/1145682/people-really-hate-ai-so-why-cant-they-get-enough/",
+          "desc": "Over the summer I talked to the CEO of Springboards, a startup building an LLM that’s designed to come up with a wider variety of responses than its mainstream rivals do. At the start of the call, he ",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
+          "title": "EmTech Future 2026: When AI Meets Everything",
+          "url": "https://www.technologyreview.com/2026/10/05/1145413/emtech-future-2026-when-ai-meets-everything/",
+          "desc": "Yossi Matias, Vice President &#38; Head of Google Research, explores how AI is beginning to reshape biology, infrastructure, manufacturing, and science, and why its greatest impact may come when it in",
+          "published": "Mon, 05 Oct 2026"
+        },
+        {
           "title": "Redefining enterprise intelligence with autonomous AI",
           "url": "https://www.technologyreview.com/2026/10/02/1143774/redefining-enterprise-intelligence-with-autonomous-ai/",
           "desc": "Enterprise AI is no longer a future ambition. It is in full operational flight. Model capabilities are advancing faster than most organizations can absorb, while the cost of performance continues to f",
           "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "The Download: a biological de-aging contest and why LLMs don’t reason",
-          "url": "https://www.technologyreview.com/2026/10/02/1145666/the-download-biological-de-aging-ai-reasoning/",
-          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. A new contest pits competitors against each other ",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "Don’t be fooled—LLMs don’t reason",
-          "url": "https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/",
-          "desc": "On an afternoon in Seoul in March 2016, I watched a program I helped build put a stone on the fifth line of a Go board in what looked like a gift to its human opponent. Move 37 in game two of the five",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "The Download: AI “mind-reading” and creative uses for small batteries",
-          "url": "https://www.technologyreview.com/2026/10/01/1145592/the-download-ai-mind-reading-small-batteries/",
-          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. An AI “mind-reading” tool can reconstruct what you",
-          "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "An AI “mind-reading” tool can reconstruct what you’re looking at from a brain scan",
-          "url": "https://www.technologyreview.com/2026/10/01/1145588/ai-mind-reading-reconstructs-what-youre-looking-at/",
-          "desc": "A new AI tool can guess what you’re looking at just by analyzing your brain scans—and re-create that image with remarkable precision. It can go the other way, too, and predict a person’s brain activit",
-          "published": "Thu, 01 Oct 2026"
-        },
-        {
-          "title": "The Download: OpenAI’s chief research officer explains its hacking response",
-          "url": "https://www.technologyreview.com/2026/09/30/1145350/the-download-openai-chief-research-officer-hacking-response/",
-          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. “We’re not going to shoot ourselves in the foot” o",
-          "published": "Wed, 30 Sep 2026"
         }
       ]
     },
@@ -307,52 +350,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "CoreSpeed",
-          "url": "https://www.producthunt.com/products/corespeed",
-          "desc": "One MCP for everything your agents need: apps, memory, tools Discussion | Link",
-          "published": "2026-09-24T01:34"
+          "title": "HyperFrames Studio (Desktop)",
+          "url": "https://www.producthunt.com/products/heygen",
+          "desc": "The First Video Editor built for Agents Discussion | Link",
+          "published": "2026-10-04T23:03"
         },
         {
-          "title": "DocsAlot MCP Connector",
-          "url": "https://www.producthunt.com/products/docsalot-2",
-          "desc": "Maintain your help-center by asking Claude, Cursor or Codex Discussion | Link",
-          "published": "2026-09-29T07:43"
+          "title": "Marv",
+          "url": "https://www.producthunt.com/products/marv-3",
+          "desc": "An AI cursor companion that shows you what to click Discussion | Link",
+          "published": "2026-10-04T18:14"
         },
         {
-          "title": "Gemini 4 Argon",
-          "url": "https://www.producthunt.com/products/gemini-4-argon",
-          "desc": "Google's frontier model for careful reasoning & complex work Discussion | Link",
-          "published": "2026-09-30T13:08"
+          "title": "SpeechShield",
+          "url": "https://www.producthunt.com/products/speechshield",
+          "desc": "Live interview & meeting copilot for Mac, from your resume Discussion | Link",
+          "published": "2026-10-04T08:59"
         },
         {
-          "title": "ChatGPT Space",
-          "url": "https://www.producthunt.com/products/chatgpt-space",
-          "desc": "Create, collaborate, and build together with AI in Space Discussion | Link",
-          "published": "2026-09-29T11:04"
+          "title": "Unscary AI",
+          "url": "https://www.producthunt.com/products/unscary-ai",
+          "desc": "Short lessons help you stop feeling behind on AI. Discussion | Link",
+          "published": "2026-10-03T11:10"
         },
         {
-          "title": "Sorcrr",
-          "url": "https://www.producthunt.com/products/sorcrr",
-          "desc": "Ai enabled bounty driven referral platform for hiring & gtm Discussion | Link",
-          "published": "2026-09-12T10:05"
+          "title": "Pilot5 Legal",
+          "url": "https://www.producthunt.com/products/pilot5-ai",
+          "desc": "Five AI models challenge every legal answer Discussion | Link",
+          "published": "2026-10-04T13:12"
         },
         {
-          "title": "Clair",
-          "url": "https://www.producthunt.com/products/clair-3",
-          "desc": "Answer Claude Code from your wrist Discussion | Link",
-          "published": "2026-09-30T14:29"
+          "title": "crosswalk",
+          "url": "https://www.producthunt.com/products/crosswalk",
+          "desc": "A third place for people & their agents, starting with inbox Discussion | Link",
+          "published": "2026-10-04T20:48"
         },
         {
-          "title": "Aperture",
-          "url": "https://www.producthunt.com/products/aperture-7",
-          "desc": "An AI code editor that checks its own work Discussion | Link",
-          "published": "2026-10-03T12:44"
+          "title": "Siteprint",
+          "url": "https://www.producthunt.com/products/siteprint",
+          "desc": "Measure any website's design, then hand it to your AI Discussion | Link",
+          "published": "2026-10-02T12:52"
         },
         {
-          "title": "Rival Workshop",
-          "url": "https://www.producthunt.com/products/rival-workshop",
-          "desc": "A bookshelf app to manage every skill your agents read Discussion | Link",
-          "published": "2026-09-26T17:15"
+          "title": "Opengeni",
+          "url": "https://www.producthunt.com/products/opengeni",
+          "desc": "Ship AI agents within minutes. Infrastructure for Agents Discussion | Link",
+          "published": "2026-09-14T21:52"
         }
       ]
     }
