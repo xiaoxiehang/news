@@ -103,51 +103,67 @@ def main():
 
     with open(src, encoding='utf-8') as f:
         data = json.load(f)
-    # 覆盖：今日热榜 12 + 升星新秀 8 + 每个领域前 12（去重）
+
+    # 全量覆盖：所有榜单 + 所有分类的全部项目（去重）
     seen = set()
-    repos = []
-    for r in (data.get('leaderboard') or [])[:MAX_REPOS]:
+    all_repos = []
+    for r in (data.get('leaderboard') or []):
         if r['full_name'] not in seen:
-            seen.add(r['full_name']); repos.append(r)
-    for r in (data.get('rising') or [])[:8]:
+            seen.add(r['full_name']); all_repos.append(r)
+    for r in (data.get('rising') or []):
         if r['full_name'] not in seen:
-            seen.add(r['full_name']); repos.append(r)
+            seen.add(r['full_name']); all_repos.append(r)
     for cat in (data.get('categories') or {}).values():
-        for r in (cat.get('repos') or [])[:MAX_REPOS]:
+        for r in (cat.get('repos') or []):
             if r['full_name'] not in seen:
-                seen.add(r['full_name']); repos.append(r)
-    if not repos:
+                seen.add(r['full_name']); all_repos.append(r)
+    if not all_repos:
         print('⏭️ 项目为空，跳过')
         return
 
-    print(f'🤖 正在生成 {len(repos)} 个项目的中文点评...')
-    try:
-        result = call_llm(build_prompt(repos))
-    except Exception as e:
-        print(f'❌ 点评生成失败: {e}')
-        return
+    # 增量：跳过已有旧点评的（旧点评保留）
+    out_path = os.path.join(DATA_DIR, 'github_insights.json')
+    existing = {}
+    if os.path.exists(out_path):
+        try:
+            existing = json.load(open(out_path, encoding='utf-8')).get('insights', {})
+        except Exception:
+            existing = {}
+    todo = [r for r in all_repos if r['full_name'] not in existing]
+    print(f'🤖 共 {len(all_repos)} 个项目，已有 {len(existing)} 条，还需生成 {len(todo)} 条')
 
-    insights = {}
-    for item in result.get('insights', []):
-        fn = item.get('full_name')
-        if fn and item.get('what'):
-            insights[fn] = {
-                'what': item.get('what', ''),
-                'why_hot': item.get('why_hot', ''),
-                'who': item.get('who', ''),
-            }
-    if not insights:
-        print('❌ 点评结果为空，跳过保存')
-        return
+    # 分批调用，每批 40 个
+    BATCH = 40
+    new_insights = {}
+    for i in range(0, len(todo), BATCH):
+        batch = todo[i:i+BATCH]
+        print(f'   [{i+1}-{min(i+BATCH, len(todo))}/{len(todo)}] 生成中...')
+        try:
+            result = call_llm(build_prompt(batch))
+        except Exception as e:
+            print(f'   ❌ 本批失败，跳过: {e}')
+            continue
+        for item in result.get('insights', []):
+            fn = item.get('full_name')
+            if fn and item.get('what'):
+                new_insights[fn] = {
+                    'what': item.get('what', ''),
+                    'why_hot': item.get('why_hot', ''),
+                    'who': item.get('who', ''),
+                }
+
+    merged = dict(existing)
+    merged.update(new_insights)
+    # 清理：不在当前数据里的旧点评删掉
+    merged = {k: v for k, v in merged.items() if k in seen}
 
     out = {
         'updated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'insights': insights,
+        'insights': merged,
     }
-    out_path = os.path.join(DATA_DIR, 'github_insights.json')
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f'✅ 点评已生成: {len(insights)} 个项目 -> {out_path}')
+    print(f'✅ 点评已更新: 新增 {len(new_insights)}，共 {len(merged)} 个项目 -> {out_path}')
 
 
 if __name__ == '__main__':
