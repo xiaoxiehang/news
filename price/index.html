@@ -63,6 +63,8 @@
 .rank-reason b { color: var(--accent); font-weight: 600; }
 .rank-right { text-align: right; flex-shrink: 0; }
 .rank-price { display: block; font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
+.rank-price em { font-style: normal; font-size: 11px; font-weight: 600; color: var(--faint); margin-left: 6px; }
+.rank-price-us { color: var(--ink); font-size: 17px; margin-top: 2px; }
 .rank-origin { display: block; font-size: 12px; color: var(--faint); margin-top: 3px; }
 .rank-origin s { margin-right: 4px; }
 /* Steam 榜单行 */
@@ -241,15 +243,21 @@ function renderAppDrops() {
       document.getElementById('app-list').innerHTML = list.map(function(it, i) {
         var isDrop = !!it.discount;
         var top = (isDrop && i < 3) ? ' top' + (i + 1) : '';
+        var cn = (it.prices || {}).CN, us = (it.prices || {}).US;
+        var priceHtml = '';
+        if (cn) priceHtml += '<span class="rank-price">¥' + cn.price + '<em>国区</em></span>';
+        if (us) priceHtml += '<span class="rank-price rank-price-us">$' + us.price + '<em>美区</em></span>';
+        var origHtml = '';
+        if (isDrop) {
+          var op = it.prices[it.region];
+          origHtml = '<span class="rank-origin"><s>' + op.symbol + op.original_price + ' ' + op.label + '</s> · -' + it.discount + '%</span>';
+        }
         return '<a class="rank-row' + top + '" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
           '<div class="rank-num">' + (i + 1) + '</div>' +
           '<img class="rank-thumb rank-thumb-app" loading="lazy" src="' + esc(it.icon) + '" alt="">' +
-          '<div class="rank-main"><p class="rank-name">' + esc(it.name) +
-          (isDrop ? '<span class="rank-disc">-' + it.discount + '%</span>' : '') + '</p>' +
-          '<div style="margin-top:8px;">' + platformTag('App Store 国区') + '</div></div>' +
-          '<div class="rank-right"><span class="rank-price">¥' + it.price + '</span>' +
-          (isDrop ? '<span class="rank-origin"><s>¥' + it.original_price + '</s></span>' : '') +
-          '</div></a>';
+          '<div class="rank-main"><p class="rank-name">' + esc(it.name) + '</p>' +
+          '<div style="margin-top:8px;">' + platformTag('App Store') + '</div></div>' +
+          '<div class="rank-right">' + priceHtml + origHtml + '</div></a>';
       }).join('');
     })
     .catch(function() { /* 无数据时整个区块保持隐藏 */ });
