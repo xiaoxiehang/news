@@ -115,7 +115,6 @@ briefingData.picks.forEach(function(p, i) {
 text += (i + 1) + '. ' + p.title + '\n';
 if (p.summary) text += ' ' + p.summary + '\n';
 });
-}
 } else { showToast('今日早报尚未生成'); return;}
 navigator.clipboard.writeText(text).then(function() {
 const btn = document.getElementById('copy-btn');
