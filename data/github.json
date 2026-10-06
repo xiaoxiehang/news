@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07 00:05:40",
+  "updated_at": "2026-10-07 00:14:21",
   "leaderboard": [
     {
       "name": "public-apis",
@@ -4250,5 +4250,148 @@
         }
       ]
     }
-  }
+  },
+  "rising": [
+    {
+      "name": "deepseek-harness",
+      "full_name": "deepseek-ai/deepseek-harness",
+      "owner": "deepseek-ai",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "html_url": "https://github.com/deepseek-ai/deepseek-harness",
+      "language": "TypeScript",
+      "stars": 244475,
+      "forks": 29296,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    },
+    {
+      "name": "ponytail",
+      "full_name": "DietrichGebert/ponytail",
+      "owner": "DietrichGebert",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "html_url": "https://github.com/DietrichGebert/ponytail",
+      "language": "JavaScript",
+      "stars": 156571,
+      "forks": 8407,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-plugin"
+      ],
+      "created_at": "2026-06-12",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    },
+    {
+      "name": "gods-eye-view",
+      "full_name": "bilawalsidhu/gods-eye-view",
+      "owner": "bilawalsidhu",
+      "description": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+      "html_url": "https://github.com/bilawalsidhu/gods-eye-view",
+      "language": "JavaScript",
+      "stars": 48255,
+      "forks": 9813,
+      "topics": [
+        "3d-globe",
+        "cesium",
+        "flight-tracking",
+        "geospatial",
+        "geospatial-intelligence"
+      ],
+      "created_at": "2026-06-22",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    },
+    {
+      "name": "HowToLiveBetter",
+      "full_name": "eternity4719/HowToLiveBetter",
+      "owner": "eternity4719",
+      "description": "高性价比人生指南: 长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
+      "html_url": "https://github.com/eternity4719/HowToLiveBetter",
+      "language": "HTML",
+      "stars": 46243,
+      "forks": 3677,
+      "topics": [],
+      "created_at": "2026-09-07",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    },
+    {
+      "name": "colibri",
+      "full_name": "JustVugg/colibri",
+      "owner": "JustVugg",
+      "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+      "html_url": "https://github.com/JustVugg/colibri",
+      "language": "C",
+      "stars": 39939,
+      "forks": 4397,
+      "topics": [],
+      "created_at": "2026-07-01",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    },
+    {
+      "name": "laya",
+      "full_name": "NandhaKishorM/laya",
+      "owner": "NandhaKishorM",
+      "description": "Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per reque",
+      "html_url": "https://github.com/NandhaKishorM/laya",
+      "language": "Python",
+      "stars": 31148,
+      "forks": 2745,
+      "topics": [
+        "calibration",
+        "classification",
+        "decision-model",
+        "huggingface",
+        "jev"
+      ],
+      "created_at": "2026-09-18",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    },
+    {
+      "name": "dsh-desktop",
+      "full_name": "anywhere-labs/dsh-desktop",
+      "owner": "anywhere-labs",
+      "description": "为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。",
+      "html_url": "https://github.com/anywhere-labs/dsh-desktop",
+      "language": "TypeScript",
+      "stars": 30025,
+      "forks": 1427,
+      "topics": [
+        "cordis",
+        "cordis-plugin",
+        "deepseek",
+        "deepseek-harness",
+        "desktop"
+      ],
+      "created_at": "2026-08-13",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    },
+    {
+      "name": "grok-build",
+      "full_name": "xai-org/grok-build",
+      "owner": "xai-org",
+      "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
+      "html_url": "https://github.com/xai-org/grok-build",
+      "language": "Rust",
+      "stars": 27235,
+      "forks": 5124,
+      "topics": [],
+      "created_at": "2026-07-14",
+      "updated_at": "2026-10-06",
+      "stars_gain": null
+    }
+  ]
 }

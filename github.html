@@ -32,6 +32,16 @@ a.project-card:hover .project-name { color: var(--primary); }
   font-size: 12px; font-weight: 800; color: var(--faint); font-variant-numeric: tabular-nums;
 }
 .rank-badge.top3 { color: var(--primary); font-size: 14px; }
+.section-head {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
+  padding: 28px 4px 4px; display: flex; align-items: baseline; gap: 10px;
+}
+.section-head .sub { font-size: 13px; color: var(--muted); font-weight: 400; }
+.new-dot {
+  display: inline-block; font-size: 11px; font-weight: 700; color: #fff;
+  background: var(--primary); border-radius: 4px; padding: 2px 6px; margin-left: 8px;
+  vertical-align: 2px;
+}
 .project-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
 .gain { color: var(--primary); font-weight: 700; font-size: 12px; margin-left: 6px; }
 .project-icon {
@@ -186,7 +196,7 @@ function renderGhProjects() {
     return;
   }
   const langColors = { 'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5', 'Java': '#b07219', 'Go': '#00ADD8', 'Rust': '#dea584', 'C++': '#f34b7d', 'C': '#555555', 'Ruby': '#701516', 'PHP': '#4F5D95', 'Swift': '#ffac45', 'Kotlin': '#F18E33', 'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c' };
-  container.innerHTML = '<div class="projects-grid">' + projects.map(function(p, i) {
+  function card(p, i, showRank) {
     const ins = ghInsights[p.full_name];
     const insight = ins ? '<div class="project-insight">' +
       '<div class="insight-label">AI 点评</div>' +
@@ -195,22 +205,35 @@ function renderGhProjects() {
       (ins.who ? '<div class="insight-meta">适合：' + esc(ins.who) + '</div>' : '') +
     '</div>' : '';
     const langColor = langColors[p.language] || '#888';
-    const badge = isBoard
+    const badge = showRank
       ? '<div class="rank-badge' + (i < 3 ? ' top3' : '') + '">#' + (i + 1) + '</div>' : '';
+    const newTag = p._isNew ? '<span class="new-dot">NEW</span>' : '';
     return '<a class="project-card" href="https://github.com/' + esc(p.full_name) + '" target="_blank" rel="noopener">' + badge +
-      '<div class="project-header"><div class="project-icon">✦</div>' +
-      '<div class="project-info"><div class="project-name">' + esc(p.name) + '</div>' +
+      '<div class="project-header"><div class="project-icon">\u2726</div>' +
+      '<div class="project-info"><div class="project-name">' + esc(p.name) + newTag + '</div>' +
       '<div class="project-owner">' + esc(p.owner || '') + '</div></div></div>' +
       '<div class="project-desc">' + esc(emojify(p.description || '暂无描述')) + '</div>' +
       insight +
       '<div class="project-meta">' +
         (p.language ? '<div class="meta-item"><span class="language-dot" style="background:' + langColor + '"></span><span class="meta-value">' + esc(p.language) + '</span></div>' : '') +
-        '<div class="meta-item"><span>★</span><span class="meta-value">' + formatNumber(p.stars || 0) +
+        '<div class="meta-item"><span>\u2605</span><span class="meta-value">' + formatNumber(p.stars || 0) +
         (p.stars_gain != null && p.stars_gain > 0 ? '<span class="gain">+' + formatNumber(p.stars_gain) + '</span>' : '') +
         '</span></div>' +
-        '<div class="meta-item"><span>⑂</span><span class="meta-value">' + formatNumber(p.forks || 0) + '</span></div>' +
+        '<div class="meta-item"><span>\u2682</span><span class="meta-value">' + formatNumber(p.forks || 0) + '</span></div>' +
       '</div></a>';
-  }).join('') + '</div>';
+  }
+  function grid(list, showRank) {
+    return '<div class="projects-grid">' + list.map(function(p, i) { return card(p, i, showRank); }).join('') + '</div>';
+  }
+  if (isBoard) {
+    const rising = (githubData.rising || []).map(function(p) {
+      const q = Object.assign({}, p); q._isNew = true; return q;
+    });
+    container.innerHTML = grid(projects, true) +
+      (rising.length ? '<div class="section-head">升星新秀<span class="sub">120 天内的新项目，涨星最快</span></div>' + grid(rising, false) : '');
+  } else {
+    container.innerHTML = grid(projects, false);
+  }
 }
 async function loadGithub() {
   try {

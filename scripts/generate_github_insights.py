@@ -103,10 +103,13 @@ def main():
 
     with open(src, encoding='utf-8') as f:
         data = json.load(f)
-    # 覆盖：今日热榜 12 + 每个领域前 12（去重）
+    # 覆盖：今日热榜 12 + 升星新秀 8 + 每个领域前 12（去重）
     seen = set()
     repos = []
     for r in (data.get('leaderboard') or [])[:MAX_REPOS]:
+        if r['full_name'] not in seen:
+            seen.add(r['full_name']); repos.append(r)
+    for r in (data.get('rising') or [])[:8]:
         if r['full_name'] not in seen:
             seen.add(r['full_name']); repos.append(r)
     for cat in (data.get('categories') or {}).values():

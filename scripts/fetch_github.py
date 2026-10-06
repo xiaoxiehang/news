@@ -72,6 +72,12 @@ HOT_SOURCE = {
     'sort': 'stars'
 }
 
+# 新项目数据源：120 天内创建的新项目（供"升星新秀"用）
+RISING_SOURCE = {
+    'query': 'created:>' + get_recent_date(120) + ' stars:>100',
+    'sort': 'stars'
+}
+
 def fetch_repos(query, sort, per_page=30):
     url = 'https://api.github.com/search/repositories'
     params = {'q': query, 'sort': sort, 'order': 'desc', 'per_page': per_page}
@@ -131,6 +137,13 @@ def main():
     for r in hot_repos:
         all_repos.setdefault(r['full_name'], r)
 
+    print("Fetching rising source...")
+    rising_repos = fetch_repos(RISING_SOURCE['query'], RISING_SOURCE['sort'], per_page=20)
+    print(f"  ✅ rising source: {len(rising_repos)} repos")
+    for r in rising_repos:
+        all_repos.setdefault(r['full_name'], r)
+    time.sleep(2)
+
     # 每日涨星：先算 stars_gain，再写文件（修写入顺序 bug）
     hist_file = os.path.join(repo_dir, 'github-stars-history.json')
     history = {}
@@ -166,9 +179,17 @@ def main():
         reverse=True
     )[:12]
 
+    # 升星新秀：按日增星排，取前 8
+    rising = sorted(
+        rising_repos,
+        key=lambda r: (r['stars_gain'] if r['stars_gain'] is not None else -1, r['stars']),
+        reverse=True
+    )[:8]
+
     all_data = {
         'updated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'leaderboard': leaderboard,
+        'rising': rising,
         'categories': categories
     }
     output_file = os.path.join(repo_dir, 'github.json')
@@ -177,7 +198,7 @@ def main():
 
     print(f"\n✅ Saved to {output_file}")
     print(f"   Updated: {all_data['updated_at']}")
-    print(f"   榜单: {len(leaderboard)} | 分类: {len(categories)}")
+    print(f"   榜单: {len(leaderboard)} | 新秀: {len(rising)} | 分类: {len(categories)}")
 
 if __name__ == '__main__':
     main()
