@@ -36,25 +36,34 @@ body {
 a { color: inherit; }
 img { max-width: 100%; }
 
-/* ---------- 悬浮胶囊导航 ---------- */
+/* ---------- 产品页顶栏 ---------- */
 .tv-nav {
   position: fixed;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 60;
+  background: rgba(255, 253, 248, .88);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.tv-nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.tv-nav-links {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 10px 8px 22px;
-  background: rgba(255, 255, 255, .92);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-card);
-  max-width: calc(100vw - 32px);
+  margin-left: 12px;
 }
+.tv-nav-spacer { flex: 1; }
 
 .tv-brand {
   display: flex;
@@ -85,27 +94,29 @@ img { max-width: 100%; }
 .tv-nav a.nav-link {
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--muted);
-  padding: 9px 16px;
-  border-radius: var(--radius-pill);
+  padding: 8px 14px;
   white-space: nowrap;
-  transition: background .18s ease, color .18s ease;
+  transition: color .18s ease;
 }
 
 .tv-nav a.nav-link:hover {
-  background: var(--accent-soft);
-  color: var(--accent-deep);
+  color: var(--ink);
 }
 
 .tv-nav .nav-cta {
   background: var(--accent);
   color: #fff !important;
-  box-shadow: 0 6px 18px rgba(255, 107, 53, .4);
+  border-radius: 999px;
+  padding: 10px 22px !important;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(255, 107, 53, .35);
 }
 
 .tv-nav .nav-cta:hover {
   background: var(--accent-deep);
+  color: #fff !important;
 }
 
 /* ---------- Hero ---------- */
@@ -627,10 +638,12 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 640px) {
-  .tv-nav { padding: 7px 8px 7px 14px; gap: 2px; top: 12px; }
-  .tv-brand { font-size: 14px; margin-right: 4px; }
+  .tv-nav-inner { padding: 0 20px; gap: 16px; height: 60px; }
+  .tv-nav-links { margin-left: 0; }
+  .tv-brand { font-size: 14px; }
   .tv-brand-mark { width: 30px; height: 30px; font-size: 15px; border-radius: 10px; }
-  .tv-nav a.nav-link { font-size: 13px; padding: 8px 12px; }
+  .tv-nav a.nav-link { font-size: 13px; padding: 8px 10px; }
+  .tv-nav .nav-cta { padding: 8px 16px !important; }
   .tv-hero { padding: 140px 24px 72px; }
   .wrap { padding: 0 24px; }
   .tv-section { padding: 56px 0; }
