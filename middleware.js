@@ -31,21 +31,13 @@ export default function middleware(request) {
     '/xhs.html': '/studio.html',
     '/xhs-tool.html': '/studio.html#tool',
     '/tools.html': '/',
+    '/tv.html': 'https://tv.xiaojj.pro/',
   };
   if (LEGACY_REDIRECTS[pathname] && !SUBDOMAINS.includes(host)) {
     return new Response(null, {
       status: 301,
       headers: { Location: LEGACY_REDIRECTS[pathname] },
     });
-  }
-
-  // tv.xiaojj.pro：独立产品页，根路径直接服务 tv.html
-  if (host === 'tv.xiaojj.pro') {
-    if (pathname === '/') {
-      url.pathname = '/tv.html';
-      return rewrite(url);
-    }
-    return next();
   }
 
   let prefix = '';
@@ -55,6 +47,8 @@ export default function middleware(request) {
     prefix = '/price';
   } else if (host === 'video.xiaojj.pro') {
     prefix = '/video';
+  } else if (host === 'tv.xiaojj.pro') {
+    prefix = '/tv';
   } else {
     return next();
   }
