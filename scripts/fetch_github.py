@@ -61,31 +61,31 @@ CATEGORIES = {
     'healthcare': {
         'name': '医疗健康',
         'desc': '医疗、健康信息化',
-        'query': 'healthcare OR medical imaging OR EHR stars:>100',
+        'query': 'topic:healthcare stars:>50',
         'sort': 'stars'
     },
     'fintech': {
         'name': '金融科技',
         'desc': '交易、量化、金融工具',
-        'query': 'fintech OR algorithmic trading OR quantitative finance stars:>200',
+        'query': 'topic:fintech stars:>50',
         'sort': 'stars'
     },
     'education': {
         'name': '教育学习',
         'desc': '在线教育、课程、教程',
-        'query': 'education stars:>300',
+        'query': 'topic:education stars:>100',
         'sort': 'stars'
     },
     'research': {
         'name': '科学研究',
         'desc': '科研工具、数据集',
-        'query': 'scientific computing OR research tool OR dataset stars:>300',
+        'query': 'topic:science stars:>50',
         'sort': 'stars'
     },
     'media': {
         'name': '影音娱乐',
         'desc': '视频、流媒体、媒体中心',
-        'query': 'video editing OR streaming OR media server stars:>500',
+        'query': 'topic:streaming stars:>100',
         'sort': 'stars'
     },
 }
