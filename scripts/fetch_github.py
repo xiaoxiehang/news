@@ -64,6 +64,24 @@ CATEGORIES = {
         'query': 'productivity OR automation OR workflow tool stars:>1000',
         'sort': 'stars'
     },
+    'cloudnative': {
+        'name': '云原生',
+        'desc': 'K8s、Docker、云原生',
+        'query': 'kubernetes OR docker OR helm stars:>2000',
+        'sort': 'stars'
+    },
+    'database': {
+        'name': '数据库',
+        'desc': '数据库、向量库',
+        'query': 'database OR postgres OR redis OR mongodb stars:>2000',
+        'sort': 'stars'
+    },
+    'game': {
+        'name': '游戏',
+        'desc': '游戏引擎、游戏开发',
+        'query': 'game engine OR godot OR gamedev stars:>1000',
+        'sort': 'stars'
+    },
 }
 
 # 热榜数据源：昨日有推送的高星项目（只供榜单用，不单独成分类）
@@ -120,7 +138,7 @@ def main():
 
     for cat_id, config in CATEGORIES.items():
         print(f"Fetching {cat_id}...")
-        repos = fetch_repos(config['query'], config['sort'])
+        repos = fetch_repos(config['query'], config['sort'], per_page=50)
         print(f"  ✅ {cat_id}: {len(repos)} repos")
         categories[cat_id] = {
             'name': config['name'],
@@ -179,12 +197,12 @@ def main():
         reverse=True
     )[:12]
 
-    # 升星新秀：按日增星排，取前 8
+    # 新星榜：按日增星排，取前 12（从 all_repos 取对象，保证有 stars_gain）
     rising = sorted(
-        rising_repos,
+        [all_repos[r['full_name']] for r in rising_repos],
         key=lambda r: (r['stars_gain'] if r['stars_gain'] is not None else -1, r['stars']),
         reverse=True
-    )[:8]
+    )[:12]
 
     all_data = {
         'updated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

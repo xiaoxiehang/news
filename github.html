@@ -157,10 +157,10 @@ function showToast(msg) {
 }
 
 /* ============ GitHub趋势 ============ */
-let ghCurrentCategory = 'leaderboard';
+let ghCurrentCategory = 'rising';
 let githubData = null;
 let ghInsights = {};
-var TABS = [{ id: 'leaderboard', name: '今日热榜' }];
+var TABS = [{ id: 'leaderboard', name: '今日热榜' }, { id: 'rising', name: '新星榜' }];
 function renderGhCategories() {
   const container = document.getElementById('categories');
   if (!githubData) return;
@@ -188,8 +188,11 @@ function renderGhProjects() {
     return;
   }
   const isBoard = ghCurrentCategory === 'leaderboard';
+  const isRising = ghCurrentCategory === 'rising';
   const projects = isBoard
     ? (githubData.leaderboard || [])
+    : isRising
+    ? (githubData.rising || [])
     : ((githubData.categories[ghCurrentCategory] || {}).repos || []);
   if (!projects.length) {
     container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该分类下暂无热门项目</div></div>';
@@ -225,12 +228,12 @@ function renderGhProjects() {
   function grid(list, showRank) {
     return '<div class="projects-grid">' + list.map(function(p, i) { return card(p, i, showRank); }).join('') + '</div>';
   }
-  if (isBoard) {
-    const rising = (githubData.rising || []).map(function(p) {
+  if (isRising) {
+    container.innerHTML = grid(projects.map(function(p) {
       const q = Object.assign({}, p); q._isNew = true; return q;
-    });
-    container.innerHTML = grid(projects, true) +
-      (rising.length ? '<div class="section-head">升星新秀<span class="sub">120 天内的新项目，涨星最快</span></div>' + grid(rising, false) : '');
+    }), false);
+  } else if (isBoard) {
+    container.innerHTML = grid(projects, true);
   } else {
     container.innerHTML = grid(projects, false);
   }
