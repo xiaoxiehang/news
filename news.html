@@ -6,98 +6,67 @@
 <title>资讯 - 鸡仔</title>
 <meta name="description" content="AI 科技早报、GitHub 趋势——每天的新鲜事都在这里。">
 <link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
-<link rel="stylesheet" href="assets/editorial.css">
+<link rel="stylesheet" href="assets/minimal.css">
 <style>
 .tabpane { display: none; }
 .tabpane.active { display: block; animation: fadeUp .35s ease; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-/* 报纸式版头 */
-.nameplate {
-  border-bottom: 3px double var(--ink);
-  padding: 56px var(--pad-x) 28px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
+.tabs-wrap { display: flex; justify-content: center; padding: 8px 0 40px; }
+/* 早报导语 */
+.lede {
+  max-width: 760px; margin: 0 auto; padding: 0 var(--pad-x) 8px;
+  font-size: 20px; line-height: 1.8; color: var(--ink);
+  letter-spacing: -0.01em;
 }
-.nameplate-main { min-width: 0; }
-.nameplate-edition {
-  font-family: var(--mono); font-size: 12px; font-weight: 700;
-  letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent);
-  margin-bottom: 12px;
-}
-.nameplate-title {
-  font-family: var(--serif); font-size: clamp(44px, 7vw, 88px); font-weight: 900;
-  letter-spacing: 0.02em; line-height: 1.05;
-}
-.nameplate-sub { font-size: 15px; color: var(--ink-soft); margin-top: 12px; max-width: 560px; line-height: 1.7; }
-.nameplate-meta { text-align: right; flex-shrink: 0; }
-.nameplate-date { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 6px; }
-.nameplate-week { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.1em; }
-.nameplate-actions { display: flex; gap: 10px; margin-top: 16px; justify-content: flex-end; }
-/* 版面切换 */
-.tabs-bar {
-  display: flex; align-items: center; gap: 16px;
-  padding: 0 var(--pad-x);
-  border-bottom: 1px solid var(--line);
-  background: var(--paper);
-  position: sticky; top: var(--nav-h); z-index: 60;
-}
-.tabs-bar .segmented { margin: 12px 0; }
-/* GitHub 密集行 */
-.gh-list { border-top: 2px solid var(--ink); }
+/* GitHub 行 */
 .gh-row {
-  display: grid; grid-template-columns: 1fr auto;
-  gap: 24px; align-items: baseline;
-  padding: 24px var(--pad-x);
+  display: flex; align-items: baseline; gap: 24px;
+  padding: 30px var(--pad-x);
   border-bottom: 1px solid var(--line);
   text-decoration: none; color: inherit;
   transition: background 0.18s;
 }
-a.gh-row:hover { background: var(--card); }
-a.gh-row:hover .gh-name { color: var(--accent); }
-.gh-name { font-family: var(--serif); font-size: 22px; font-weight: 900; margin-bottom: 8px; transition: color 0.18s; }
-.gh-name .gh-owner { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--muted); margin-left: 10px; }
-.gh-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.7; max-width: 720px; margin-bottom: 10px; }
+a.gh-row:hover { background: var(--paper); }
+.gh-main { flex: 1; min-width: 0; max-width: 900px; }
+.gh-name { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+a.gh-row:hover .gh-name { color: var(--blue); }
+.gh-owner { font-size: 14px; color: var(--secondary); font-weight: 400; margin-left: 10px; letter-spacing: 0; }
+.gh-desc { font-size: 15px; color: var(--secondary); line-height: 1.65; margin-bottom: 10px; }
 .gh-insight {
-  font-size: 13px; color: var(--ink-soft); line-height: 1.7;
-  border-left: 3px solid var(--accent); padding-left: 14px; margin: 12px 0; max-width: 720px;
+  font-size: 14px; color: var(--ink); line-height: 1.7;
+  background: var(--blue-soft); border-radius: var(--radius-sm);
+  padding: 12px 16px; margin: 12px 0; max-width: 760px;
 }
-.gh-insight b { color: var(--accent); font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; display: block; margin-bottom: 4px; }
-.gh-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; display: flex; gap: 18px; flex-wrap: wrap; }
-.gh-meta b { color: var(--ink); }
-.gh-stars { text-align: right; font-family: var(--mono); }
-.gh-stars-num { font-size: 28px; font-weight: 700; color: var(--accent); }
-.gh-stars-label { font-size: 11px; color: var(--muted); letter-spacing: 0.14em; }
+.gh-insight b { color: var(--blue); font-size: 12px; letter-spacing: 0.06em; display: block; margin-bottom: 4px; }
+.gh-meta { font-size: 13px; color: var(--tertiary); display: flex; gap: 20px; flex-wrap: wrap; }
+.gh-meta b { color: var(--ink); font-weight: 600; }
+.gh-stars { text-align: right; flex-shrink: 0; }
+.gh-stars-num { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: var(--blue); }
+.gh-stars-label { font-size: 11px; color: var(--tertiary); letter-spacing: 0.1em; }
 /* 分类条 */
 .filter-bar {
-  position: sticky; top: calc(var(--nav-h) + 57px); z-index: 59;
-  background: rgba(246,244,238,.94);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  position: sticky; top: var(--nav-h); z-index: 60;
+  background: rgba(255,255,255,.88);
+  -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--line);
-  padding: 12px var(--pad-x);
+  padding: 14px var(--pad-x); margin-bottom: 8px;
 }
 .categories { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .categories::-webkit-scrollbar { display: none; }
 .category-btn {
-  font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
-  padding: 8px 18px; background: transparent; border: 1px solid var(--line);
-  border-radius: var(--radius-sm); color: var(--muted); cursor: pointer;
-  transition: all .2s; white-space: nowrap; flex-shrink: 0;
+  font-size: 14px; font-weight: 500; padding: 9px 20px;
+  background: var(--paper); border: none; border-radius: var(--radius-pill);
+  color: var(--secondary); cursor: pointer; transition: all .2s;
+  white-space: nowrap; flex-shrink: 0; font-family: var(--sans);
 }
-.category-btn:hover { color: var(--ink); border-color: var(--ink); }
-.category-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-/* 更多新闻组 */
-.groups-wrap { padding: 8px 0 40px; }
+.category-btn:hover { color: var(--ink); }
+.category-btn.active { background: var(--ink); color: #fff; }
+.pane-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
 @media (max-width: 720px) {
-  .nameplate { padding: 40px 20px 22px; }
-  .nameplate-meta { text-align: left; }
-  .nameplate-actions { justify-content: flex-start; }
-  .gh-row { grid-template-columns: 1fr; padding: 20px; }
+  .gh-row { padding: 24px 20px; flex-direction: column; gap: 8px; }
   .gh-stars { text-align: left; display: flex; align-items: baseline; gap: 8px; }
-  .filter-bar { padding: 10px 20px; }
-  .tabs-bar { padding: 0 20px; }
+  .filter-bar { padding: 12px 20px; }
+  .lede { font-size: 18px; }
 }
 </style>
 </head>
@@ -118,24 +87,14 @@ a.gh-row:hover .gh-name { color: var(--accent); }
 </header>
 
 <main>
-  <!-- 报纸版头 -->
-  <div class="nameplate">
-    <div class="nameplate-main">
-      <div class="nameplate-edition" id="tab-eyebrow">每日八点 · AI 精选</div>
-      <h1 class="nameplate-title" id="tab-title">今日科技早报</h1>
-      <p class="nameplate-sub" id="tab-sub">AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。</p>
-    </div>
-    <div class="nameplate-meta">
-      <div class="nameplate-date" id="hero-date">--</div>
-      <div class="nameplate-week" id="hero-week"></div>
-      <div class="nameplate-actions" id="pane-actions-zaobao">
-        <button class="btn btn-sm btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
-        <a class="btn btn-sm btn-secondary" href="studio.html">小红书卡片</a>
-      </div>
-    </div>
-  </div>
+  <section class="page-head">
+    <div class="hero-eyebrow" id="tab-eyebrow">每天早上 8 点 · AI 精选</div>
+    <h1 class="hero-title" id="tab-title">今日科技早报</h1>
+    <p class="hero-sub" id="tab-sub">AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。</p>
+    <div class="hero-meta" id="hero-date"></div>
+  </section>
 
-  <div class="tabs-bar">
+  <div class="tabs-wrap">
     <div class="segmented" id="newsTabs">
       <button class="active" data-tab="zaobao">AI早报</button>
       <button data-tab="github">GitHub趋势</button>
@@ -143,24 +102,15 @@ a.gh-row:hover .gh-name { color: var(--accent); }
   </div>
 
   <div class="tabpane active" id="pane-zaobao">
+    <div class="pane-actions">
+      <button class="btn btn-dark" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
+      <a class="btn btn-secondary" href="studio.html">看小红书卡片</a>
+    </div>
     <div id="briefing-section" style="display:none;">
-      <a class="lead-story" id="lead-link" href="#" target="_blank" rel="noopener">
-        <div>
-          <div class="lead-kicker">头条 · 今日必读</div>
-          <h2 class="lead-title" id="lead-title"></h2>
-          <p class="lead-summary" id="lead-summary"></p>
-          <div class="lead-meta" id="lead-meta"></div>
-        </div>
-        <div class="lead-side">
-          <div class="lead-side-title">其他要闻</div>
-          <div id="lead-side-items"></div>
-        </div>
-      </a>
-      <div class="news-list" id="briefing-rest"></div>
+      <p class="lede" id="briefing-overview"></p>
+      <div class="news-list" id="briefing-picks" style="margin-top:32px;"></div>
     </div>
-    <div class="groups-wrap">
-      <div id="groups" style="padding: 0 var(--pad-x);"><div class="loading">加载中...</div></div>
-    </div>
+    <div id="groups" style="margin-top:56px;"><div class="loading">加载中...</div></div>
   </div>
 
   <div class="tabpane" id="pane-github">
@@ -193,7 +143,7 @@ function showToast(msg) {
 }
 
 const TAB_META = {
-  zaobao:  { eyebrow: '每日八点 · AI 精选', title: '今日科技早报', sub: 'AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。' },
+  zaobao:  { eyebrow: '每天早上 8 点 · AI 精选', title: '今日科技早报', sub: 'AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。' },
   github:  { eyebrow: '开源世界每日速览', title: 'GitHub 热门项目', sub: 'AI、前端、开发工具——每天最值得 star 的项目，附 AI 一句话点评。' },
 };
 const loaded = {};
@@ -209,7 +159,7 @@ function switchTab(which) {
   document.getElementById('tab-eyebrow').textContent = meta.eyebrow;
   document.getElementById('tab-title').textContent = meta.title;
   document.getElementById('tab-sub').textContent = meta.sub;
-  document.getElementById('pane-actions-zaobao').style.display = which === 'zaobao' ? '' : 'none';
+  if (which !== 'zaobao') document.getElementById('hero-date').textContent = '';
   if (!loaded[which]) {
     loaded[which] = true;
     ({ zaobao: loadZaobao, github: loadGithub })[which]();
@@ -261,7 +211,7 @@ function renderGroup(cfg) {
     '<div class="group-head">' +
       '<div class="group-title">' + esc(cfg.title) + '</div>' +
       (cfg.desc ? '<div class="group-desc">' + esc(cfg.desc) + '</div>' : '') +
-      '<a class="group-more" href="' + cfg.moreLink + '">查看全部 →</a>' +
+      '<a class="group-more" href="' + cfg.moreLink + '">查看全部</a>' +
     '</div>' +
     (cfg.updated ? '<div class="group-updated">更新于 ' + esc(cfg.updated) + '</div>' : '') +
     '<div class="news-list">';
@@ -274,34 +224,18 @@ async function loadZaobao() {
     const data = await fetchJson('data/briefing.json');
     if (data && data.picks && data.picks.length) {
       briefingData = data;
-      const dateStr = data.date_str || data.date || '';
-      document.getElementById('hero-date').textContent = dateStr;
-      try {
-        const d = new Date(data.date || Date.now());
-        document.getElementById('hero-week').textContent = '星期' + '日一二三四五六'.charAt(d.getDay());
-      } catch (e) {}
-      const picks = data.picks;
-      // 头条 = 第一条
-      const lead = picks[0];
-      const leadLink = document.getElementById('lead-link');
-      if (lead.url && lead.url.indexOf('http') === 0) { leadLink.href = lead.url; }
-      else { leadLink.removeAttribute('href'); }
-      document.getElementById('lead-title').textContent = lead.title;
-      document.getElementById('lead-summary').textContent = lead.summary || '';
-      document.getElementById('lead-meta').textContent = (lead.source ? '来源：' + lead.source : '') + (dateStr ? ' · ' + dateStr : '');
-      // 侧栏 = 第 2-4 条
-      document.getElementById('lead-side-items').innerHTML = picks.slice(1, 4).map(function(p) {
-        const t = esc(p.title);
-        return '<div class="lead-side-item">' +
-          (p.url && p.url.indexOf('http') === 0
-            ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + t + '</a>'
-            : t) + '</div>';
-      }).join('');
-      // 其余 = 列表
-      const rest = picks.slice(4).map(function(p) {
-        return { title: p.title, link: p.url, summary: p.summary, meta: p.source ? '来源：' + p.source : '' };
+      document.getElementById('hero-date').textContent = data.date_str || data.date || '';
+      document.getElementById('briefing-overview').textContent = data.overview || '';
+      let html = '';
+      data.picks.forEach(function(pick, i) {
+        html += renderItem({
+          title: pick.title,
+          link: pick.url,
+          summary: pick.summary,
+          meta: pick.source ? '来源：' + pick.source : ''
+        }, i);
       });
-      document.getElementById('briefing-rest').innerHTML = rest.map(function(n, i) { return renderItem(n, i + 4); }).join('');
+      document.getElementById('briefing-picks').innerHTML = html;
       document.getElementById('briefing-section').style.display = '';
     }
   } catch (e) { console.error('加载早报失败:', e); }
@@ -371,18 +305,18 @@ function renderGhProjects() {
     container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该分类下暂无热门项目</div></div>';
     return;
   }
-  container.innerHTML = '<div class="gh-list">' + projects.map(function(p) {
+  container.innerHTML = '<div class="news-list">' + projects.map(function(p) {
     const ins = ghInsights[p.full_name];
     const insight = ins ? '<div class="gh-insight"><b>AI 点评</b>' + esc(ins.what) +
       (ins.why_hot ? ' 热度：' + esc(ins.why_hot) : '') +
       (ins.who ? ' 适合：' + esc(ins.who) : '') + '</div>' : '';
     return '<a class="gh-row" href="https://github.com/' + esc(p.full_name) + '" target="_blank" rel="noopener">' +
-      '<div><div class="gh-name">' + esc(p.name) + '<span class="gh-owner">' + esc(p.owner || '') + '</span></div>' +
+      '<div class="gh-main"><div class="gh-name">' + esc(p.name) + '<span class="gh-owner">' + esc(p.owner || '') + '</span></div>' +
       '<div class="gh-desc">' + esc(p.description || '暂无描述') + '</div>' +
       insight +
       '<div class="gh-meta">' +
-        (p.language ? '<span>LANG <b>' + esc(p.language) + '</b></span>' : '') +
-        '<span>FORKS <b>' + formatNumber(p.forks || 0) + '</b></span>' +
+        (p.language ? '<span><b>' + esc(p.language) + '</b></span>' : '') +
+        '<span>Forks <b>' + formatNumber(p.forks || 0) + '</b></span>' +
       '</div></div>' +
       '<div class="gh-stars"><div class="gh-stars-num">' + formatNumber(p.stars || 0) + '</div><div class="gh-stars-label">STARS</div></div>' +
     '</a>';

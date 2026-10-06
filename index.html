@@ -5,95 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>鸡仔 · 为自己打磨的小产品</title>
 <meta name="description" content="鸡仔的产品集合：AI 科技早报、极客资讯、小红书助手——每一个都是为了解决自己真实遇到的问题。">
-<link rel="stylesheet" href="assets/editorial.css">
+<link rel="stylesheet" href="assets/minimal.css">
 <style>
-/* 首页：通栏编辑部版式 */
-/* 头条区：左大标题 + 右早报摘录 */
-.front {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 0;
-  border-bottom: 1px solid var(--ink);
-}
-.front-main { padding: 96px var(--pad-x) 72px; padding-right: calc(var(--pad-x) / 2); }
-.front-side {
-  border-left: 1px solid var(--line);
-  padding: 96px calc(var(--pad-x) / 2) 72px;
-  padding-left: calc(var(--pad-x) / 2);
-  background: var(--card);
-}
-.front-side-label {
-  font-family: var(--mono); font-size: 11px; font-weight: 700;
-  letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent);
-  margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
-}
-.front-side-label::after { content: ""; height: 1px; flex: 1; background: var(--accent); opacity: 0.5; }
-.front-side-headline {
-  font-family: var(--serif); font-size: clamp(24px, 2.6vw, 34px); font-weight: 900;
-  line-height: 1.35; margin-bottom: 14px;
-}
-.front-side-headline a { text-decoration: none; }
-.front-side-headline a:hover { color: var(--accent); }
-.front-side-summary { font-size: 14px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 18px; }
-.front-side-date { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.08em; }
-/* 目录区 */
-.catalog-head {
-  display: flex; align-items: baseline; gap: 20px;
-  padding: 48px var(--pad-x) 0;
-  margin-bottom: 8px;
-}
-.catalog-title { font-family: var(--serif); font-size: clamp(26px, 3vw, 38px); font-weight: 900; }
-.catalog-count { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.1em; }
-/* 编号索引行 */
-.index-list { border-top: 2px solid var(--ink); margin-top: 20px; }
-.index-row {
-  display: grid;
-  grid-template-columns: 90px 1fr 220px 60px;
-  gap: 32px;
-  align-items: center;
-  padding: 34px var(--pad-x);
-  border-bottom: 1px solid var(--line);
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.18s;
-}
-.index-row:hover { background: var(--card); }
-.index-num {
-  font-family: var(--mono); font-size: 14px; font-weight: 700;
-  color: var(--accent); letter-spacing: 0.1em;
-}
-.index-name {
-  font-family: var(--serif); font-size: clamp(26px, 3.2vw, 40px); font-weight: 900;
-  letter-spacing: 0.01em; margin-bottom: 10px; transition: color 0.18s;
-}
-.index-row:hover .index-name { color: var(--accent); }
-.index-desc { font-size: 15px; color: var(--ink-soft); line-height: 1.75; max-width: 560px; }
-.index-meta { display: flex; flex-direction: column; gap: 10px; }
-.index-arrow {
-  font-family: var(--mono); font-size: 30px; color: var(--faint);
-  transition: transform 0.18s, color 0.18s; text-align: right;
-}
-.index-row:hover .index-arrow { transform: translateX(8px); color: var(--accent); }
-.index-cta {
-  font-size: 13px; font-weight: 700; color: var(--ink);
-  border: 1px solid var(--ink); border-radius: var(--radius-sm);
-  padding: 9px 20px; text-decoration: none; white-space: nowrap;
-  transition: background 0.18s, color 0.18s;
-  display: inline-block; text-align: center;
-}
-.index-row:hover .index-cta { background: var(--ink); color: var(--paper); }
+/* 首页：通栏产品横幅叠层 */
+.band .band-visual { margin-top: 44px; }
 /* 进入动画 */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-@media (max-width: 900px) {
-  .front { grid-template-columns: 1fr; }
-  .front-main { padding: 64px 20px 40px; }
-  .front-side { border-left: none; border-top: 1px solid var(--line); padding: 40px 20px; }
-  .index-row { grid-template-columns: 52px 1fr 40px; gap: 16px; padding: 26px 20px; }
-  .index-meta { display: none; }
-  .catalog-head { padding: 36px 20px 0; }
-}
 </style>
 </head>
 <body>
@@ -113,93 +32,78 @@
 </header>
 
 <main>
-  <!-- 头条区 -->
-  <div class="front">
-    <div class="front-main">
-      <div class="hero-eyebrow">独立产品集 · Built by 鸡仔</div>
-      <h1 class="hero-title">为自己打磨的<br>小产品</h1>
-      <p class="hero-sub">AI 早报、极客资讯、小红书助手——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#catalog">浏览目录</a>
-        <a class="btn btn-secondary" href="news.html">今日早报</a>
-      </div>
+  <!-- Hero -->
+  <section class="band band-hero">
+    <div class="band-eyebrow reveal">鸡仔出品 · 个人产品集合</div>
+    <h1 class="band-title reveal">为自己打磨的小产品</h1>
+    <p class="band-sub reveal">AI 早报、极客资讯、小红书助手——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
+    <div class="band-links reveal">
+      <a class="band-link" href="news.html">看今日早报</a>
+      <a class="band-link" href="studio.html">去创作中心</a>
     </div>
-    <aside class="front-side" id="brief-side" style="display:none;">
-      <div class="front-side-label">今日头条</div>
-      <h2 class="front-side-headline"><a href="news.html" id="brief-title">今日科技早报</a></h2>
-      <p class="front-side-summary" id="brief-overview"></p>
-      <div class="front-side-date" id="brief-date"></div>
-    </aside>
-  </div>
+  </section>
 
-  <!-- 产品目录 -->
-  <div class="catalog-head reveal" id="catalog">
-    <h2 class="catalog-title">产品目录</h2>
-    <span class="catalog-count">05 ITEMS · 持续维护中</span>
-  </div>
-  <nav class="index-list">
-    <a class="index-row reveal" href="studio.html">
-      <span class="index-num">01</span>
-      <span class="index-main">
-        <span class="index-name">小红书助手</span>
-        <span class="index-desc">输入主题一键生成小红书文案，自动配 3:4 封面图；每天的图文发布包和短视频在这里审核下载。</span>
-        <span class="index-tags"><span class="tag">内容生产</span></span>
-      </span>
-      <span class="index-meta">
-        <span class="index-cta">写文案</span>
-        <span class="index-cta">每日发布包</span>
-      </span>
-      <span class="index-arrow">→</span>
-    </a>
-    <a class="index-row reveal" href="news.html">
-      <span class="index-num">02</span>
-      <span class="index-main">
-        <span class="index-name">AI 科技早报</span>
-        <span class="index-desc">每天早上 8 点，AI 从权威科技媒体精选 8 条最值得读的新闻，一杯咖啡的时间读完。</span>
-        <span class="index-tags"><span class="tag">每日资讯</span></span>
-      </span>
-      <span class="index-meta">
-        <span class="index-cta">看今日早报</span>
-      </span>
-      <span class="index-arrow">→</span>
-    </a>
-    <a class="index-row reveal" href="news.html#github">
-      <span class="index-num">03</span>
-      <span class="index-main">
-        <span class="index-name">极客资讯</span>
-        <span class="index-desc">GitHub 热门项目每日速览，附 AI 一句话点评。</span>
-        <span class="index-tags"><span class="tag">极客</span></span>
-      </span>
-      <span class="index-meta">
-        <span class="index-cta">进入</span>
-      </span>
-      <span class="index-arrow">→</span>
-    </a>
-    <a class="index-row reveal" href="https://stock.xiaojj.pro">
-      <span class="index-num">04</span>
-      <span class="index-main">
-        <span class="index-name">美股异动推送</span>
-        <span class="index-desc">自选股涨跌幅、放量异动实时监控，交易时段每 15 分钟巡检一次，触发阈值直接推送到手机。</span>
-        <span class="index-tags"><span class="tag">投资</span></span>
-      </span>
-      <span class="index-meta">
-        <span class="index-cta">进入</span>
-      </span>
-      <span class="index-arrow">→</span>
-    </a>
-    <a class="index-row reveal" href="https://price.xiaojj.pro">
-      <span class="index-num">05</span>
-      <span class="index-main">
-        <span class="index-name">降价提醒助手</span>
-        <span class="index-desc">Steam 游戏、App Store 应用自动盯价，设好目标价，跌破就提醒你下手。</span>
-        <span class="index-tags"><span class="tag">省钱</span></span>
-      </span>
-      <span class="index-meta">
-        <span class="index-cta">进入</span>
-      </span>
-      <span class="index-arrow">→</span>
-    </a>
-  </nav>
+  <!-- 今日早报横幅 -->
+  <section class="band alt" id="brief-band" style="display:none;">
+    <div class="band-eyebrow reveal">今日早报</div>
+    <h2 class="band-title reveal" style="font-size:clamp(32px,4.5vw,54px);">一杯咖啡的时间，读完今天的科技大事</h2>
+    <p class="band-sub reveal" id="brief-overview"></p>
+    <div class="band-links reveal">
+      <a class="band-link" href="news.html">阅读完整版</a>
+    </div>
+    <div class="band-meta reveal" id="brief-date"></div>
+  </section>
+
+  <!-- 小红书助手 -->
+  <section class="band">
+    <div class="band-eyebrow reveal">内容生产</div>
+    <h2 class="band-title reveal">小红书助手</h2>
+    <p class="band-sub reveal">输入主题，一键生成小红书文案，自动配 3:4 封面图。每天的图文发布包和短视频，也在这里审核下载。</p>
+    <div class="band-links reveal">
+      <a class="band-link" href="studio.html#tool">写文案</a>
+      <a class="band-link" href="studio.html">每日发布包</a>
+    </div>
+  </section>
+
+  <!-- AI 科技早报 -->
+  <section class="band alt">
+    <div class="band-eyebrow reveal">每日资讯</div>
+    <h2 class="band-title reveal">AI 科技早报</h2>
+    <p class="band-sub reveal">每天早上 8 点，AI 从权威科技媒体精选 8 条最值得读的新闻。</p>
+    <div class="band-links reveal">
+      <a class="band-link" href="news.html">看今日早报</a>
+    </div>
+  </section>
+
+  <!-- 极客资讯 -->
+  <section class="band">
+    <div class="band-eyebrow reveal">极客</div>
+    <h2 class="band-title reveal">极客资讯</h2>
+    <p class="band-sub reveal">GitHub 热门项目每日速览，附 AI 一句话点评。</p>
+    <div class="band-links reveal">
+      <a class="band-link" href="news.html#github">进入</a>
+    </div>
+  </section>
+
+  <!-- 美股异动 -->
+  <section class="band alt">
+    <div class="band-eyebrow reveal">投资</div>
+    <h2 class="band-title reveal">美股异动推送</h2>
+    <p class="band-sub reveal">自选股涨跌幅、放量异动实时监控，交易时段每 15 分钟巡检一次，触发阈值直接推送到手机。</p>
+    <div class="band-links reveal">
+      <a class="band-link" href="https://stock.xiaojj.pro">进入</a>
+    </div>
+  </section>
+
+  <!-- 降价助手 -->
+  <section class="band">
+    <div class="band-eyebrow reveal">省钱</div>
+    <h2 class="band-title reveal">降价提醒助手</h2>
+    <p class="band-sub reveal">Steam 游戏、App Store 应用自动盯价，设好目标价，跌破就提醒你下手。</p>
+    <div class="band-links reveal">
+      <a class="band-link" href="https://price.xiaojj.pro">进入</a>
+    </div>
+  </section>
 </main>
 
 <footer class="footer"></footer>
@@ -207,7 +111,7 @@
 <script src="scripts/header-info.js"></script>
 <script src="scripts/footer.js"></script>
 <script>
-// 今日早报摘要 → 头条侧栏
+// 今日早报横幅
 fetch('data/briefing.json')
   .then(function(r) { if (!r.ok) throw 0; return r.json(); })
   .then(function(d) {
@@ -215,27 +119,28 @@ fetch('data/briefing.json')
     document.getElementById('brief-date').textContent = d.date_str || '';
     var ov = d.overview || d.picks.slice(0, 3).map(function(p) { return p.title; }).join('；');
     document.getElementById('brief-overview').textContent = ov;
-    document.getElementById('brief-side').style.display = '';
+    document.getElementById('brief-band').style.display = '';
+    observeReveals();
   })
   .catch(function() {});
 // 进入动画
-(function() {
-  var els = document.querySelectorAll('.reveal');
+function observeReveals() {
+  var els = document.querySelectorAll('.reveal:not(.in)');
   if (!('IntersectionObserver' in window)) {
     els.forEach(function(el) { el.classList.add('in'); });
     return;
   }
   var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e, i) {
+    entries.forEach(function(e) {
       if (e.isIntersecting) {
-        e.target.style.transitionDelay = (i * 60) + 'ms';
         e.target.classList.add('in');
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.15 });
   els.forEach(function(el) { io.observe(el); });
-})();
+}
+observeReveals();
 </script>
 </body>
 </html>
