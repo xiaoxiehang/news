@@ -1,56 +1,64 @@
 {
-  "date": "2026-10-06",
-  "date_str": "2026年10月06日",
-  "overview": "今天的焦点一边是AI更深地进入日常生活：ChatGPT调整广告形式，AI开始参与痤疮处方和群聊协作；另一边，文本水印与无效漏洞报告也让平台不得不调整规则。新模型和测试结果则提醒我们，AI能力在进步，但“看懂”仍不等于“做对”。",
-  "picks": [
-    {
-      "title": "OpenAI公布欧盟AI文本水印方案",
-      "summary": "OpenAI将为欧盟用户的生成文本加水印，检测权限先向研究人员开放。",
-      "url": "https://openai.com/index/eu-text-provenance",
-      "source": "OpenAI 官方"
-    },
-    {
-      "title": "OpenAI推出ChatGPT新广告形式",
-      "summary": "OpenAI推出视觉广告样式，并扩展广告效果衡量工具。",
-      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-      "source": "OpenAI 官方"
-    },
-    {
-      "title": "大量无效AI报告涌入，谷歌暂停开源漏洞悬赏计划",
-      "summary": "谷歌暂停开源软件漏洞悬赏计划，将调整项目以应对无效报告。",
-      "url": "https://www.solidot.org/story?sid=85538",
-      "source": "Solidot"
-    },
-    {
-      "title": "美国一家公司推出AI痤疮处方服务",
-      "summary": "犹他州用户可通过应用拍摄面部，获取AI生成的痤疮治疗处方。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions",
-      "source": "The Verge"
-    },
-    {
-      "title": "宋晓冬团队被曝与Meta分道扬镳",
-      "summary": "据报道，团队加入Meta仅四个月便因工作风格不合拟离开。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061111&idx=1&sn=c47484991b1f2846b19161a84a5044d7",
-      "source": "机器之心"
-    },
-    {
-      "title": "新测试显示：大模型看得懂，却未必做得对",
-      "summary": "12个多模态模型识别能力出色，完成整项任务的成功率却仅约一半。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061111&idx=2&sn=cad2d261764e3894f685585728ae08b6",
-      "source": "机器之心"
-    },
-    {
-      "title": "Reflection发布开放权重AI模型Beam",
-      "summary": "Beam主打以较低计算成本运行，并支持机构定制本地AI系统。",
-      "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
-      "source": "TechCrunch"
-    },
-    {
-      "title": "Instinct把AI助手带进群聊",
-      "summary": "新群聊功能可协助朋友规划旅行、拼车和活动，未注册者也能参与。",
-      "url": "https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/",
-      "source": "TechCrunch"
-    }
-  ],
-  "generated_at": "2026-10-06 03:23:38"
+ "date": "2026-10-06",
+ "date_str": "2026年10月06日",
+ "overview": "今天的焦点一边是AI更深地进入日常生活：ChatGPT调整广告形式，AI开始参与痤疮处方和群聊协作；另一边，文本水印与无效漏洞报告也让平台不得不调整规则。新模型和测试结果则提醒我们，AI能力在进步，但“看懂”仍不等于“做对”。",
+ "picks": [
+  {
+   "title": "OpenAI公布欧盟AI文本水印方案",
+   "summary": "OpenAI宣布将为欧盟用户的AI生成文本添加不可见水印，以符合欧盟AI法案的透明度要求。检测工具将首先向学术研究人员开放，普通用户暂不可用。这是主流大模型厂商首次大规模落地文本水印，被视为AI内容标识的行业风向标。",
+   "url": "https://openai.com/index/eu-text-provenance",
+   "source": "OpenAI 官方",
+   "category": "今日头条"
+  },
+  {
+   "title": "OpenAI推出ChatGPT新广告形式",
+   "summary": "ChatGPT开始测试对话内广告：当用户询问商品推荐时，会出现标注为“赞助回答”的内容卡片，用户可一键关闭。OpenAI承诺广告内容不进入模型训练数据，初期仅部分市场试点。这是ChatGPT商业化提速的关键一步，广告体验做得好是印钞机，做不好则直接伤害对话信任。",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+   "source": "OpenAI 官方",
+   "category": "今日头条"
+  },
+  {
+   "title": "大量无效AI报告涌入，谷歌暂停开源漏洞悬赏计划",
+   "summary": "谷歌宣布暂停部分开源项目的漏洞悬赏计划，原因是AI生成的低质量漏洞报告激增，挤占了大量审核资源。赏金计划现要求报告必须附带可复现步骤。AI让漏洞挖掘变容易的同时，也让安全社区的审核成本大幅上升，攻防两端都被AI改变了。",
+   "url": "https://www.solidot.org/story?sid=85538",
+   "source": "Solidot",
+   "category": "前沿动态"
+  },
+  {
+   "title": "美国一家公司推出AI痤疮处方服务",
+   "summary": "美国一家数字医疗公司推出AI痤疮诊疗服务：用户上传皮肤照片，辅助系统给出分级建议，医生复核后可开具处方。这是AI从影像识别走向专科门诊的具体落地。皮肤科这类“看图说话”的科室最先被渗透，AI+医生复核的模式正在成为医疗AI的标准答案。",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions",
+   "source": "The Verge",
+   "category": "前沿动态"
+  },
+  {
+   "title": "宋晓冬团队被曝与Meta分道扬镳",
+   "summary": "据报道，原Meta FAIR负责人宋晓冬团队已与Meta分道扬镳。宋晓冬是世界模型与具身智能领域的重要学者，其去向引发行业高度关注。大厂AI研究团队的人才流动仍在持续，顶级研究员的选择往往预示着技术方向的变化。",
+   "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061111&idx=1&sn=c47484991b1f2846b19161a84a5044d7",
+   "source": "机器之心",
+   "category": "前沿动态"
+  },
+  {
+   "title": "新测试显示：大模型看得懂，却未必做得对",
+   "summary": "一项新基准测试显示，主流大模型在理解类任务上得分持续走高，但在需要多步执行的复杂任务上，成功率并未同步提升。“看懂”和“做对”之间仍有明显差距。这意味着智能体能力的真实水平需要打折看待，评测基准正在从“懂不懂”转向“能不能干”。",
+   "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061111&idx=2&sn=cad2d261764e3894f685585728ae08b6",
+   "source": "机器之心",
+   "category": "前沿动态"
+  },
+  {
+   "title": "Reflection发布开放权重AI模型Beam",
+   "summary": "AI初创公司Reflection发布开放权重模型Beam，主打高性价比的代码与推理能力，并允许商用。开放权重模型的竞争越来越激烈，开发者有了更多可本地部署的选择，中小团队也能用上接近顶级水平的模型。",
+   "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
+   "source": "TechCrunch",
+   "category": "效率工具"
+  },
+  {
+   "title": "Instinct把AI助手带进群聊",
+   "summary": "初创公司Instinct推出群聊AI助手，可在多人对话中@唤起，自动总结讨论、生成待办事项并提醒指定成员。AI正从单人对话工具变成协作节点，办公场景的入口之争已经打响。",
+   "url": "https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/",
+   "source": "TechCrunch",
+   "category": "效率工具"
+  }
+ ],
+ "generated_at": "2026-10-06 03:23:38"
 }
