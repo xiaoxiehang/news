@@ -25,7 +25,6 @@ export default function middleware(request) {
   // 旧页面 301 跳转（2026-10 网站结构重组：资讯/创作聚合页；2026-10-02 精简：HN/归档/quiz tab 已下线）
   const LEGACY_REDIRECTS = {
     '/zaobao.html': '/news.html',
-    '/github.html': '/news.html#github',
     '/hackernews.html': '/news.html#github',
     '/archive.html': '/news.html',
     '/quiz.html': '/news.html',
