@@ -14,11 +14,6 @@
 font-size: 13px; font-weight: 600; color: var(--primary);
 letter-spacing: 0.1em; margin-bottom: 14px;
 }
-.lede {
-max-width: 900px; margin: 0; padding: 0 0 24px;
-font-size: 19px; line-height: 1.85; color: var(--ink);
-letter-spacing: -0.01em;
-}
 /* 双栏：内容 + 右侧边栏 */
 .briefing-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; }
 .briefing-side { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 16px; }
@@ -35,7 +30,7 @@ display: flex; justify-content: space-between; align-items: center;
 transition: all .15s ease;
 }
 .side-toc button:hover { background: var(--surface-soft); color: var(--primary); }
-.side-toc button.active { background: var(--primary-soft); color: var(--primary); }
+.side-toc button.active { background: var(--blue-soft); color: var(--primary); }
 .side-toc .cnt { font-size: 12px; color: var(--faint); font-weight: 500; }
 .side-stats { display: flex; gap: 20px; }
 .side-stat b { display: block; font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
@@ -45,23 +40,13 @@ transition: all .15s ease;
 .briefing-layout { grid-template-columns: 1fr; }
 .briefing-side { position: static; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 }
-/* 栏目导航 */
-.col-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;}
-.col-pill {
-font-size: 14px; font-weight: 600; padding: 8px 18px; border-radius: 999px;
-border: 1px solid var(--hairline); background: #fff; color: var(--muted);
-cursor: pointer; transition: all.15s ease;
-}
-.col-pill:hover { border-color: var(--primary); color: var(--primary);}
-.col-pill.active { background: var(--primary); border-color: var(--primary); color: #fff;}
-.col-pill.cnt { opacity:.65; font-weight: 500; margin-left: 4px; font-size: 12px;}
 /* 栏目分组 */
 .col-group { padding: 28px 0 8px;}
 .col-eyebrow {
 font-size: 12px; font-weight: 700; letter-spacing:.14em;
 color: var(--primary); margin-bottom: 4px;
 }
-.col-eyebrow.cn { letter-spacing:.3em; margin-left: 8px; color: var(--muted); font-weight: 600;}
+.col-eyebrow .cn { letter-spacing:.3em; margin-left: 8px; color: var(--muted); font-weight: 600;}
 /* 新闻条目：标题 → 详细摘要 → 来源 */
 .news-item {
 display: block; padding: 22px 0; text-decoration: none; color: inherit;
@@ -71,9 +56,9 @@ border-bottom: 1px solid var(--hairline-soft);
 .news-title {
 font-size: 20px; font-weight: 700; line-height: 1.5;
 letter-spacing: -0.01em; color: var(--ink); margin: 0 0 10px;
-transition: color.15s ease;
+transition: color .15s ease;
 }
-a.news-item:hover.news-title { color: var(--primary);}
+a.news-item:hover .news-title { color: var(--primary);}
 .news-summary {
 font-size: 15px; line-height: 1.9; color: var(--body); margin: 0 0 12px;
 max-width: 960px;
@@ -81,11 +66,10 @@ max-width: 960px;
 .news-meta { display: flex; align-items: center; gap: 10px;}
 .news-source {
 font-size: 12px; font-weight: 600; color: var(--primary);
-background: var(--primary-soft); border-radius: 999px; padding: 4px 12px;
+background: var(--blue-soft); border-radius: 999px; padding: 4px 12px;
 }
 .pane-actions { display: flex; gap: 12px; justify-content: center; margin: 36px 0 40px; flex-wrap: wrap;}
 @media (max-width: 720px) {
-.lede { font-size: 17px;}
 .news-title { font-size: 18px;}
 }
 </style>
@@ -113,8 +97,6 @@ background: var(--primary-soft); border-radius: 999px; padding: 4px 12px;
 <div id="briefing-section" style="display:none;">
 <div class="briefing-feed">
 <div class="briefing-eyebrow" id="briefing-eyebrow"></div>
-<p class="lede" id="briefing-overview"></p>
-<div class="col-nav" id="col-nav"></div>
 <div class="briefing-layout">
 <div id="briefing-cols"></div>
 <aside class="briefing-side" id="briefing-side" style="display:none;">
@@ -220,7 +202,6 @@ if (data && data.picks && data.picks.length) {
 briefingData = data;
 document.getElementById('briefing-eyebrow').textContent =
 (data.date_str || '') + ' · AI 科技早报';
-document.getElementById('briefing-overview').textContent = data.overview || '';
 
 // 按栏目分组（保持 COLUMNS 顺序，无数据的栏目隐藏）
 const groups = COLUMNS.map(function(col) {
@@ -229,12 +210,6 @@ name: col[0], en: col[1],
 items: data.picks.filter(function(p) { return (p.category || '前沿动态') === col[0];})
 };
 }).filter(function(g) { return g.items.length > 0;});
-
-// 栏目导航
-document.getElementById('col-nav').innerHTML = groups.map(function(g, i) {
-return '<button class="col-pill' + (i === 0? ' active': '') + '" data-col="' + esc(g.name) + '">' +
-esc(g.name) + '<span class="cnt">' + g.items.length + '</span></button>';
-}).join('');
 
 // 栏目内容
 document.getElementById('briefing-cols').innerHTML = groups.map(function(g) {
@@ -248,14 +223,6 @@ function scrollToCol(name) {
 const el = document.getElementById('col-' + name);
 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-document.querySelectorAll('.col-pill').forEach(function(btn) {
-btn.addEventListener('click', function() {
-document.querySelectorAll('.col-pill').forEach(function(b) { b.classList.remove('active');});
-btn.classList.add('active');
-scrollToCol(btn.getAttribute('data-col'));
-});
-});
-
 // 右侧边栏：数据 + 目录
 var totalWords = data.picks.reduce(function(s, p) { return s + (p.summary || '').length; }, 0);
 var readMin = Math.max(1, Math.round(totalWords / 400));

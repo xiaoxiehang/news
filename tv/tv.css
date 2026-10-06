@@ -691,8 +691,8 @@ img { max-width: 100%; }
 }
 .tv-hero .btn-primary { animation: pulse-cta 2.4s ease-in-out infinite; }
 /* 功能卡片悬停上浮 */
-.f-card { transition: transform .25s ease, box-shadow .25s ease; }
-.f-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0, 0, 0, .1); }
+.feat { transition: transform .25s ease, box-shadow .25s ease; }
+.feat:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0, 0, 0, .1); }
 @media (prefers-reduced-motion: reduce) {
   .tv-hero-copy > *, .tv-hero-visual, .tv-hero .btn-primary { animation: none !important; opacity: 1; }
 }
