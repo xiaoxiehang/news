@@ -114,13 +114,12 @@ a.project-card:hover .project-name { color: var(--primary); }
   </div>
 
   <div class="tabpane active" id="pane-zaobao">
-    <div class="pane-actions">
-      <button class="btn btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
-      <a class="btn btn-secondary" href="studio.html">看小红书卡片</a>
-    </div>
     <div id="briefing-section" style="display:none;">
       <p class="lede" id="briefing-overview"></p>
       <div class="news-list" id="briefing-picks" style="margin-top:32px;"></div>
+      <div class="pane-actions" style="margin-top:40px;">
+        <button class="btn btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
+      </div>
     </div>
     <div id="groups" style="margin-top:56px;"><div class="loading">加载中...</div></div>
   </div>
