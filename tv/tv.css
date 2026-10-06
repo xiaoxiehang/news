@@ -584,22 +584,14 @@ img { max-width: 100%; }
 
 /* ---------- 下载面板 ---------- */
 .dl-panel {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+  background: #FFF4EA;
+  border: 1px solid #F5E0CC;
   border-radius: 32px;
   padding: 72px 48px;
   text-align: center;
-  color: #fff;
-  box-shadow: 0 24px 60px rgba(225, 78, 27, .3);
+  color: var(--ink);
   position: relative;
   overflow: hidden;
-}
-
-.dl-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(600px 300px at 50% -20%, rgba(255, 255, 255, .18), transparent 70%);
-  pointer-events: none;
 }
 
 .dl-panel h2 {
@@ -613,14 +605,14 @@ img { max-width: 100%; }
 .dl-panel p {
   position: relative;
   font-size: 16px;
-  opacity: .88;
+  color: var(--muted);
   margin-bottom: 34px;
 }
 
 .btn-white {
   position: relative;
-  background: #fff;
-  color: var(--accent-deep);
+  background: var(--accent);
+  color: #fff;
   font-size: 17px;
   padding: 17px 52px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
