@@ -52,6 +52,15 @@ jobs:
       run: python scripts/generate_briefing.py
 
 
+    - name: Verify GitHub categories
+      if: ${{ inputs.only == 'all' || inputs.only == 'insights' || github.event_name == 'schedule' }}
+      continue-on-error: true
+      env:
+        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+        LLM_MODEL: ${{ secrets.LLM_MODEL }}
+      run: python scripts/verify_github_categories.py
+
     - name: Generate GitHub insights
       if: ${{ inputs.only == 'all' || inputs.only == 'insights' || github.event_name == 'schedule' }}
       continue-on-error: true
