@@ -39,6 +39,25 @@ background: var(--blue-soft); border-radius: 999px; padding: 4px 12px;
 @media (max-width: 720px) {
 .news-title { font-size: 18px;}
 }
+/* 早报布局：左内容 + 右往期边栏 */
+.briefing-layout { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
+.briefing-side { position: sticky; top: calc(var(--nav-h) + 24px); }
+.side-card { background: var(--surface-soft); border-radius: 14px; padding: 20px; }
+.side-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.archive-list { display: flex; flex-direction: column; }
+.archive-list button {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 10px 4px; background: none; border: none; border-bottom: 1px solid var(--hairline-soft);
+  font-size: 14px; color: var(--secondary); cursor: pointer; text-align: left; font-family: var(--sans);
+}
+.archive-list button:last-child { border-bottom: none; }
+.archive-list button:hover { color: var(--primary); }
+.archive-list button.active { color: var(--primary); font-weight: 700; }
+.archive-list .cnt { font-size: 12px; color: var(--faint); }
+@media (max-width: 1024px) {
+  .briefing-layout { grid-template-columns: 1fr; }
+  .briefing-side { position: static; }
+}
 </style>
 </head>
 <body>
@@ -63,7 +82,15 @@ background: var(--blue-soft); border-radius: 999px; padding: 4px 12px;
 <main>
 <div id="briefing-section" style="display:none;">
 <div class="briefing-feed">
+<div class="briefing-layout">
 <div id="briefing-cols"></div>
+<aside class="briefing-side" id="briefing-side" style="display:none;">
+<div class="side-card">
+<h4>往期早报</h4>
+<div class="archive-list" id="archive-list"></div>
+</div>
+</aside>
+</div>
 <div class="pane-actions">
 <button class="btn btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
 </div>
@@ -135,19 +162,53 @@ return hasLink
 : '<div class="news-item">' + inner + '</div>';
 }
 
-async function loadZaobao() {
+function renderBriefing(data) {
+briefingData = data;
+document.getElementById('briefing-cols').innerHTML =
+data.picks.map(renderItem).join('');
+document.getElementById('briefing-section').style.display = '';
+}
+async function loadArchiveItem(date, btn) {
+const data = await fetchJson('data/archive/briefing-' + date + '.json');
+if (data && data.picks && data.picks.length) {
+renderBriefing(data);
+document.querySelectorAll('#archive-list button').forEach(function(b) { b.classList.remove('active'); });
+if (btn) btn.classList.add('active');
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+}
+async function loadArchiveList(currentDate) {
+const idx = await fetchJson('data/archive/index.json');
+if (!idx || !idx.length) return;
+const list = document.getElementById('archive-list');
+// 当天在最前
+let html = '<button class="active" onclick="loadZaobao(true)"><span>' +
+esc(briefingData.date_str || '今日') + '</span><span class="cnt">' + briefingData.picks.length + ' 条</span></button>';
+html += idx.filter(function(a) { return a.date !== currentDate; }).map(function(a) {
+return '<button data-date="' + a.date + '"><span>' + esc(a.date_str) + '</span>' +
+'<span class="cnt">' + a.count + ' 条</span></button>';
+}).join('');
+list.innerHTML = html;
+list.querySelectorAll('button[data-date]').forEach(function(btn) {
+btn.addEventListener('click', function() { loadArchiveItem(btn.getAttribute('data-date'), btn); });
+});
+document.getElementById('briefing-side').style.display = '';
+}
+var zaobaoLoading = false;
+async function loadZaobao(fromArchive) {
+if (zaobaoLoading) return; zaobaoLoading = true;
 try {
 const data = await fetchJson('data/briefing.json');
 if (data && data.picks && data.picks.length) {
-briefingData = data;
-
-// 平铺渲染：不分组，每条带分类标签
-document.getElementById('briefing-cols').innerHTML =
-data.picks.map(renderItem).join('');
-
-document.getElementById('briefing-section').style.display = '';
+renderBriefing(data);
+document.querySelectorAll('#archive-list button').forEach(function(b, i) {
+b.classList.toggle('active', i === 0);
+});
+if (!fromArchive) loadArchiveList(data.date);
+if (fromArchive) window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 } catch (e) { console.error('加载早报失败:', e);}
+zaobaoLoading = false;
 }
 
 loadZaobao();
