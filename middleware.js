@@ -20,7 +20,7 @@ export default function middleware(request) {
     return next();
   }
 
-  const SUBDOMAINS = ['stock.xiaojj.pro', 'price.xiaojj.pro', 'video.xiaojj.pro', 'tv.xiaojj.pro'];
+  const SUBDOMAINS = ['price.xiaojj.pro', 'video.xiaojj.pro', 'tv.xiaojj.pro'];
 
   // 旧页面 301 跳转（2026-10 网站结构重组：资讯/创作聚合页；2026-10-02 精简：HN/归档/quiz tab 已下线）
   const LEGACY_REDIRECTS = {
@@ -41,9 +41,7 @@ export default function middleware(request) {
   }
 
   let prefix = '';
-  if (host === 'stock.xiaojj.pro') {
-    prefix = '/stock';
-  } else if (host === 'price.xiaojj.pro') {
+  if (host === 'price.xiaojj.pro') {
     prefix = '/price';
   } else if (host === 'video.xiaojj.pro') {
     prefix = '/video';
