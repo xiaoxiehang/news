@@ -263,7 +263,9 @@ var PLATFORM_STYLE = {
   '携程':        { bg: '#287dfa', fg: '#fff', tag: '携程' }
 };
 function steamAppId(url) {
-  var m = String(url || '').match(/\/app\/(\d+)/);
+  url = String(url || '');
+  if (url.indexOf('/bundle/') !== -1) return null;  // bundle 图不可预测，走平台占位
+  var m = url.match(/\/app\/(\d+)/);
   return m ? m[1] : null;
 }
 function thumbHtml(it) {

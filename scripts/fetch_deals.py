@@ -54,26 +54,50 @@ def fetch_review(appid):
         return None, None
 
 
-def resolve_image(appid):
-    """返回可用的封面图 URL；都不可用返回空字符串（前端用占位样式）"""
+def page_title(html):
+    m = re.search(r"<title>([^<]*)</title>", html or "")
+    return (m.group(1) if m else "").strip()
+
+
+def resolve_store(appid, expect_name=""):
+    """返回 (store_url, header_image)。bundle ID 会落在错的 app 页上，用标题校验。"""
+    app_url = f"https://store.steampowered.com/app/{appid}/"
+    bundle_url = f"https://store.steampowered.com/bundle/{appid}/"
+    try:
+        r = requests.get(app_url, headers=UA, timeout=15, allow_redirects=True)
+        title = page_title(r.text)
+        # 标题里没有期望的游戏名 → 很可能是 bundle ID 撞了 app ID，切到 bundle 页
+        key = (expect_name or "").split(":")[0].split("：")[0].strip().lower()
+        if key and key not in title.lower():
+            rb = requests.get(bundle_url, headers=UA, timeout=15)
+            if rb.status_code == 200 and "ultimate edition" in rb.text.lower() or key in page_title(rb.text).lower():
+                m = re.search(r'<meta property="og:image" content="([^"]+)"', rb.text)
+                img = m.group(1).split("?")[0] if m else ""
+                return bundle_url, img
+    except Exception:
+        pass
+    # 普通 app：固定地址优先
     base = f"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appid}"
     for name in ("header.jpg", "capsule_616x353.jpg"):
         url = f"{base}/{name}"
         try:
-            r = requests.head(url, headers=UA, timeout=10)
-            if r.status_code == 200:
-                return url
+            if requests.head(url, headers=UA, timeout=10).status_code == 200:
+                return app_url, url
         except Exception:
             pass
-    # 新版 Steam 资源带 hash 目录，固定地址拿不到时去商店页抓 og:image
     try:
-        r = requests.get(f"https://store.steampowered.com/app/{appid}/", headers=UA, timeout=15)
+        r = requests.get(app_url, headers=UA, timeout=15)
         m = re.search(r'<meta property="og:image" content="([^"]+)"', r.text)
         if m:
-            return m.group(1).split("?")[0]
+            return app_url, m.group(1).split("?")[0]
     except Exception:
         pass
-    return ""
+    return app_url, ""
+
+
+def resolve_image(appid, expect_name=""):
+    """返回可用的封面图 URL；都不可用返回空字符串（前端用占位样式）"""
+    return resolve_store(appid, expect_name)[1]
 
 
 def main():
@@ -99,6 +123,7 @@ def main():
         final = (it.get("final_price") or 0) / 100.0
         orig = (it.get("original_price") or 0) / 100.0
         score = (disc / 100.0) * rate * math.log10(total)
+        store_url, header_image = resolve_store(appid, it.get("name") or "")
         deals.append({
             "appid": appid,
             "name": it.get("name") or str(appid),
@@ -108,8 +133,8 @@ def main():
             "currency": it.get("currency") or "CNY",
             "positive_rate": round(rate * 100, 1),
             "total_reviews": total,
-            "header_image": resolve_image(appid),
-            "url": f"https://store.steampowered.com/app/{appid}/",
+            "header_image": header_image,
+            "url": store_url,
             "score": round(score, 3),
         })
 
