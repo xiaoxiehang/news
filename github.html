@@ -107,6 +107,19 @@ a.project-card:hover .project-name { color: var(--primary); }
 
 <script>
 /* ============ 通用 ============ */
+/* GitHub emoji 短代码 → emoji */
+var EMOJI_MAP = { books: '\uD83D\uDCDA', tada: '\uD83C\uDF89', octocat: '\uD83D\uDC19',
+  iphone: '\uD83D\uDCF1', electron: '\u269B\uFE0F', rocket: '\uD83D\uDE80', star: '\u2B50',
+  fire: '\uD83D\uDD25', zap: '\u26A1', bulb: '\uD83D\uDCA1', wrench: '\uD83D\uDD27',
+  package: '\uD83D\uDCE6', computer: '\uD83D\uDCBB', robot: '\uD83E\uDD16',
+  chart: '\uD83D\uDCC8', globe: '\uD83C\uDF10', lock: '\uD83D\uDD12',
+  check: '\u2705', x: '\u274C', warning: '\u26A0\uFE0F', info: '\u2139\uFE0F' };
+function emojify(s) {
+  return String(s == null ? '' : s).replace(/:([a-z0-9_+-]+):/g, function(m, name) {
+    return EMOJI_MAP[name] || m;
+  });
+}
+
 function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -185,7 +198,7 @@ function renderGhProjects() {
       '<div class="project-header"><div class="project-icon">✦</div>' +
       '<div class="project-info"><div class="project-name">' + esc(p.name) + '</div>' +
       '<div class="project-owner">' + esc(p.owner || '') + '</div></div></div>' +
-      '<div class="project-desc">' + esc(p.description || '暂无描述') + '</div>' +
+      '<div class="project-desc">' + esc(emojify(p.description || '暂无描述')) + '</div>' +
       insight +
       '<div class="project-meta">' +
         (p.language ? '<div class="meta-item"><span class="language-dot" style="background:' + langColor + '"></span><span class="meta-value">' + esc(p.language) + '</span></div>' : '') +

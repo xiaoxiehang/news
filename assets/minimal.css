@@ -282,7 +282,8 @@ a.ruled-row:hover .ruled-arrow { transform: translateX(5px); color: var(--primar
   line-height: 1.2; margin-bottom: 12px;
   text-wrap: balance;
 }
-.page-head .hero-sub { font-size: 16px; color: var(--body); max-width: 640px; margin: 0 auto; line-height: 1.5; }
+.page-head .hero-sub {
+  text-wrap: balance; font-size: 16px; color: var(--body); max-width: 640px; margin: 0 auto; line-height: 1.5; }
 .page-head.left .hero-sub { margin-left: 0; }
 .page-head .hero-meta { margin-top: 16px; font-size: 13px; color: var(--muted-soft); }
 
