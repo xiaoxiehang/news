@@ -65,6 +65,14 @@ def resolve_image(appid):
                 return url
         except Exception:
             pass
+    # 新版 Steam 资源带 hash 目录，固定地址拿不到时去商店页抓 og:image
+    try:
+        r = requests.get(f"https://store.steampowered.com/app/{appid}/", headers=UA, timeout=15)
+        m = re.search(r'<meta property="og:image" content="([^"]+)"', r.text)
+        if m:
+            return m.group(1).split("?")[0]
+    except Exception:
+        pass
     return ""
 
 
