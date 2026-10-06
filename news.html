@@ -19,6 +19,32 @@ max-width: 900px; margin: 0; padding: 0 0 24px;
 font-size: 19px; line-height: 1.85; color: var(--ink);
 letter-spacing: -0.01em;
 }
+/* 双栏：内容 + 右侧边栏 */
+.briefing-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; }
+.briefing-side { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 16px; }
+.side-card {
+background: #fff; border: 1px solid var(--hairline-soft); border-radius: 16px;
+padding: 20px; box-shadow: var(--shadow-sm);
+}
+.side-card h4 { font-size: 13px; font-weight: 700; color: var(--muted); margin: 0 0 12px; letter-spacing: .08em; }
+.side-toc { display: flex; flex-direction: column; gap: 4px; }
+.side-toc button {
+text-align: left; font-size: 14px; font-weight: 600; color: var(--body);
+background: none; border: none; padding: 9px 12px; border-radius: 10px; cursor: pointer;
+display: flex; justify-content: space-between; align-items: center;
+transition: all .15s ease;
+}
+.side-toc button:hover { background: var(--surface-soft); color: var(--primary); }
+.side-toc button.active { background: var(--primary-soft); color: var(--primary); }
+.side-toc .cnt { font-size: 12px; color: var(--faint); font-weight: 500; }
+.side-stats { display: flex; gap: 20px; }
+.side-stat b { display: block; font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
+.side-stat span { font-size: 12px; color: var(--muted); }
+.side-overview { font-size: 13.5px; line-height: 1.8; color: var(--body); margin: 0; }
+@media (max-width: 1024px) {
+.briefing-layout { grid-template-columns: 1fr; }
+.briefing-side { position: static; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+}
 /* 栏目导航 */
 .col-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px;}
 .col-pill {
@@ -89,7 +115,19 @@ background: var(--primary-soft); border-radius: 999px; padding: 4px 12px;
 <div class="briefing-eyebrow" id="briefing-eyebrow"></div>
 <p class="lede" id="briefing-overview"></p>
 <div class="col-nav" id="col-nav"></div>
+<div class="briefing-layout">
 <div id="briefing-cols"></div>
+<aside class="briefing-side" id="briefing-side" style="display:none;">
+<div class="side-card">
+<h4>今日数据</h4>
+<div class="side-stats" id="side-stats"></div>
+</div>
+<div class="side-card">
+<h4>栏目目录</h4>
+<div class="side-toc" id="side-toc"></div>
+</div>
+</aside>
+</div>
 <div class="pane-actions">
 <button class="btn btn-primary" id="copy-btn" onclick="copyBriefing()">复制今日早报</button>
 </div>
@@ -206,14 +244,37 @@ g.items.map(renderItem).join('') + '</section>';
 }).join('');
 
 // 栏目 pill 点击滚动
+function scrollToCol(name) {
+const el = document.getElementById('col-' + name);
+if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 document.querySelectorAll('.col-pill').forEach(function(btn) {
 btn.addEventListener('click', function() {
 document.querySelectorAll('.col-pill').forEach(function(b) { b.classList.remove('active');});
 btn.classList.add('active');
-const el = document.getElementById('col-' + btn.getAttribute('data-col'));
-if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start'});
+scrollToCol(btn.getAttribute('data-col'));
 });
 });
+
+// 右侧边栏：数据 + 目录
+var totalWords = data.picks.reduce(function(s, p) { return s + (p.summary || '').length; }, 0);
+var readMin = Math.max(1, Math.round(totalWords / 400));
+document.getElementById('side-stats').innerHTML =
+'<div class="side-stat"><b>' + data.picks.length + '</b><span>条新闻</span></div>' +
+'<div class="side-stat"><b>' + groups.length + '</b><span>个栏目</span></div>' +
+'<div class="side-stat"><b>' + readMin + '</b><span>分钟读完</span></div>';
+document.getElementById('side-toc').innerHTML = groups.map(function(g, i) {
+return '<button class="' + (i === 0 ? 'active' : '') + '" data-col="' + esc(g.name) + '">' +
+'<span>' + esc(g.name) + '</span><span class="cnt">' + g.items.length + ' 条</span></button>';
+}).join('');
+document.querySelectorAll('#side-toc button').forEach(function(btn) {
+btn.addEventListener('click', function() {
+document.querySelectorAll('#side-toc button').forEach(function(b) { b.classList.remove('active');});
+btn.classList.add('active');
+scrollToCol(btn.getAttribute('data-col'));
+});
+});
+document.getElementById('briefing-side').style.display = '';
 
 document.getElementById('briefing-section').style.display = '';
 }
