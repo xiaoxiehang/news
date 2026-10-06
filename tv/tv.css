@@ -682,6 +682,7 @@ img { max-width: 100%; }
   50% { transform: perspective(1400px) rotateY(-7deg) rotateX(2deg) translateY(-16px); }
 }
 .tv-hero-visual.floated {
+  opacity: 1;
   animation: float-y 6s ease-in-out infinite;
 }
 @keyframes pulse-cta {
