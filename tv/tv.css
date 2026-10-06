@@ -155,9 +155,7 @@ img { max-width: 100%; }
   will-change: transform;
 }
 .tv-hero-copy { text-align: left; }
-.tv-hero-visual.reveal.in {
-  transform: perspective(1400px) rotateY(-7deg) rotateX(2deg);
-}
+.tv-hero-visual { will-change: transform; }
 /* 电视框 */
 .tv-frame {
   background: #101014;
@@ -655,6 +653,36 @@ img { max-width: 100%; }
 .tv-footer a:hover { color: var(--accent-deep); }
 
 .tv-footer .ver { font-size: 13px; color: var(--faint); }
+
+/* ---------- 入场 + 持续动画 ---------- */
+@keyframes hero-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+.tv-hero-copy > * {
+  opacity: 0;
+  animation: hero-up .8s cubic-bezier(.22, .61, .36, 1) forwards;
+}
+.tv-hero-copy > *:nth-child(1) { animation-delay: .05s; }
+.tv-hero-copy > *:nth-child(2) { animation-delay: .15s; }
+.tv-hero-copy > *:nth-child(3) { animation-delay: .28s; }
+.tv-hero-copy > *:nth-child(4) { animation-delay: .4s; }
+.tv-hero-copy > *:nth-child(5) { animation-delay: .5s; }
+@keyframes float-y {
+  0%, 100% { transform: perspective(1400px) rotateY(-7deg) rotateX(2deg) translateY(0); }
+  50% { transform: perspective(1400px) rotateY(-7deg) rotateX(2deg) translateY(-14px); }
+}
+.tv-hero-visual.reveal.in {
+  animation: float-y 7s ease-in-out infinite;
+}
+@keyframes pulse-cta {
+  0%, 100% { box-shadow: 0 8px 24px rgba(255, 107, 53, .35); }
+  50% { box-shadow: 0 8px 34px rgba(255, 107, 53, .55); }
+}
+.tv-hero .btn-primary { animation: pulse-cta 2.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .tv-hero-copy > *, .tv-hero-visual.reveal.in, .tv-hero .btn-primary { animation: none !important; opacity: 1; }
+}
 
 /* ---------- 进入动画 ---------- */
 .reveal {
