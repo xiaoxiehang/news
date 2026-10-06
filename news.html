@@ -18,16 +18,6 @@ background: #fff; border: 1px solid var(--hairline-soft); border-radius: 16px;
 padding: 20px; box-shadow: var(--shadow-sm);
 }
 .side-card h4 { font-size: 13px; font-weight: 700; color: var(--muted); margin: 0 0 12px; letter-spacing: .08em; }
-.side-toc { display: flex; flex-direction: column; gap: 4px; }
-.side-toc button {
-text-align: left; font-size: 14px; font-weight: 600; color: var(--body);
-background: none; border: none; padding: 9px 12px; border-radius: 10px; cursor: pointer;
-display: flex; justify-content: space-between; align-items: center;
-transition: all .15s ease;
-}
-.side-toc button:hover { background: var(--surface-soft); color: var(--primary); }
-.side-toc button.active { background: var(--blue-soft); color: var(--primary); }
-.side-toc .cnt { font-size: 12px; color: var(--faint); font-weight: 500; }
 .side-stats { display: flex; gap: 20px; }
 .side-stat b { display: block; font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
 .side-stat span { font-size: 12px; color: var(--muted); }
@@ -37,12 +27,6 @@ transition: all .15s ease;
 .briefing-side { position: static; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 }
 /* 栏目分组 */
-.col-group { padding: 28px 0 8px;}
-.col-eyebrow {
-font-size: 12px; font-weight: 700; letter-spacing:.14em;
-color: var(--primary); margin-bottom: 4px;
-}
-.col-eyebrow .cn { letter-spacing:.3em; margin-left: 8px; color: var(--muted); font-weight: 600;}
 /* 新闻条目：标题 → 详细摘要 → 来源 */
 .news-item {
 display: block; padding: 22px 0; text-decoration: none; color: inherit;
@@ -60,7 +44,7 @@ font-size: 15px; line-height: 1.9; color: var(--body); margin: 0 0 12px;
 max-width: 960px;
 }
 .news-meta { display: flex; align-items: center; gap: 10px;}
-.news-source {
+.news-tag {
 font-size: 12px; font-weight: 600; color: var(--primary);
 background: var(--blue-soft); border-radius: 999px; padding: 4px 12px;
 }
@@ -98,10 +82,6 @@ background: var(--blue-soft); border-radius: 999px; padding: 4px 12px;
 <div class="side-card">
 <h4>今日数据</h4>
 <div class="side-stats" id="side-stats"></div>
-</div>
-<div class="side-card">
-<h4>栏目目录</h4>
-<div class="side-toc" id="side-toc"></div>
 </div>
 </aside>
 </div>
@@ -146,30 +126,17 @@ setTimeout(function() { t.classList.remove('show');}, 2000);
 }
 
 /* 栏目定义：中文名 → 英文 eyebrow */
-var COLUMNS = [
-['今日头条', "TODAY'S TOP"],
-['前沿动态', 'FRONTIER'],
-['效率工具', 'TOOLS'],
-['一句话', 'QUICK HITS']
-];
-
 let briefingData = null;
 function copyBriefing() {
 let text = '';
 if (briefingData && briefingData.picks && briefingData.picks.length) {
 text = '' + (briefingData.date_str || '') + ' AI 科技早报\n\n';
 if (briefingData.overview) text += '今日速览：' + briefingData.overview + '\n\n';
-COLUMNS.forEach(function(col) {
-var items = briefingData.picks.filter(function(p) { return (p.category || '前沿动态') === col[0];});
-if (!items.length) return;
-text += '\n';
-items.forEach(function(p, i) {
+briefingData.picks.forEach(function(p, i) {
 text += (i + 1) + '. ' + p.title + '\n';
 if (p.summary) text += ' ' + p.summary + '\n';
-if (p.source) text += ' 来源：' + p.source + '\n';
 });
-text += '\n';
-});
+}
 } else { showToast('今日早报尚未生成'); return;}
 navigator.clipboard.writeText(text).then(function() {
 const btn = document.getElementById('copy-btn');
@@ -184,7 +151,7 @@ const hasLink = p.url && p.url.indexOf('http') === 0;
 const inner =
 '<h3 class="news-title">' + esc(p.title) + '</h3>' +
 (p.summary? '<p class="news-summary">' + esc(emojify(p.summary)) + '</p>': '') +
-'<div class="news-meta"><span class="news-source">' + esc(p.source || '') + '</span></div>';
+(p.category ? '<div class="news-meta"><span class="news-tag">' + esc(p.category) + '</span></div>' : '');
 return hasLink
 ? '<a class="news-item" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + inner + '</a>'
 : '<div class="news-item">' + inner + '</div>';
@@ -196,44 +163,16 @@ const data = await fetchJson('data/briefing.json');
 if (data && data.picks && data.picks.length) {
 briefingData = data;
 
-// 按栏目分组（保持 COLUMNS 顺序，无数据的栏目隐藏）
-const groups = COLUMNS.map(function(col) {
-return {
-name: col[0], en: col[1],
-items: data.picks.filter(function(p) { return (p.category || '前沿动态') === col[0];})
-};
-}).filter(function(g) { return g.items.length > 0;});
+// 平铺渲染：不分组，每条带分类标签
+document.getElementById('briefing-cols').innerHTML =
+data.picks.map(renderItem).join('');
 
-// 栏目内容
-document.getElementById('briefing-cols').innerHTML = groups.map(function(g) {
-return '<section class="col-group" id="col-' + esc(g.name) + '">' +
-'<div class="col-eyebrow">' + esc(g.en) + '<span class="cn">' + esc(g.name) + '</span></div>' +
-g.items.map(renderItem).join('') + '</section>';
-}).join('');
-
-// 栏目 pill 点击滚动
-function scrollToCol(name) {
-const el = document.getElementById('col-' + name);
-if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-// 右侧边栏：数据 + 目录
+// 右侧边栏：数据
 var totalWords = data.picks.reduce(function(s, p) { return s + (p.summary || '').length; }, 0);
 var readMin = Math.max(1, Math.round(totalWords / 400));
 document.getElementById('side-stats').innerHTML =
 '<div class="side-stat"><b>' + data.picks.length + '</b><span>条新闻</span></div>' +
-'<div class="side-stat"><b>' + groups.length + '</b><span>个栏目</span></div>' +
 '<div class="side-stat"><b>' + readMin + '</b><span>分钟读完</span></div>';
-document.getElementById('side-toc').innerHTML = groups.map(function(g, i) {
-return '<button class="' + (i === 0 ? 'active' : '') + '" data-col="' + esc(g.name) + '">' +
-'<span>' + esc(g.name) + '</span><span class="cnt">' + g.items.length + ' 条</span></button>';
-}).join('');
-document.querySelectorAll('#side-toc button').forEach(function(btn) {
-btn.addEventListener('click', function() {
-document.querySelectorAll('#side-toc button').forEach(function(b) { b.classList.remove('active');});
-btn.classList.add('active');
-scrollToCol(btn.getAttribute('data-col'));
-});
-});
 document.getElementById('briefing-side').style.display = '';
 
 document.getElementById('briefing-section').style.display = '';
