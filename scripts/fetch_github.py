@@ -58,28 +58,34 @@ CATEGORIES = {
         'query': 'game engine OR godot OR gamedev stars:>1000',
         'sort': 'stars'
     },
-    'design': {
-        'name': '设计资源',
-        'desc': '图标、字体、设计素材',
-        'query': 'icons OR fonts OR design resources stars:>500',
+    'healthcare': {
+        'name': '医疗健康',
+        'desc': '医疗、健康信息化',
+        'query': 'healthcare OR medical imaging OR EHR stars:>100',
         'sort': 'stars'
     },
-    'learn': {
-        'name': '学习教程',
-        'desc': '教程、课程、路线图',
-        'query': 'tutorial OR course OR roadmap stars:>1000',
+    'fintech': {
+        'name': '金融科技',
+        'desc': '交易、量化、金融工具',
+        'query': 'fintech OR algorithmic trading OR quantitative finance stars:>200',
         'sort': 'stars'
     },
-    'selfhosted': {
-        'name': '自托管',
-        'desc': 'NAS、家庭服务器应用',
-        'query': 'self-hosted OR homelab stars:>500',
+    'education': {
+        'name': '教育学习',
+        'desc': '在线教育、课程、教程',
+        'query': 'education stars:>300',
         'sort': 'stars'
     },
-    'awesome': {
-        'name': '开源精选',
-        'desc': '精选资源合集',
-        'query': 'awesome list stars:>1000',
+    'research': {
+        'name': '科学研究',
+        'desc': '科研工具、数据集',
+        'query': 'scientific computing OR research tool OR dataset stars:>300',
+        'sort': 'stars'
+    },
+    'media': {
+        'name': '影音娱乐',
+        'desc': '视频、流媒体、媒体中心',
+        'query': 'video editing OR streaming OR media server stars:>500',
         'sort': 'stars'
     },
 }
