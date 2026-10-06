@@ -1,48 +1,21 @@
-// 统一 footer 组件
+// 统一 footer 组件：简洁三段式
 (function() {
   const footerHTML = `
-    <div id="footer-widget" style="margin:0 auto 20px;padding:18px 20px;background:var(--bg-secondary);border:1px solid var(--hairline);border-radius:var(--radius);max-width:640px;text-align:left;">
-      <div id="quote-text" style="font-size:14px;color:var(--muted);font-style:italic;line-height:1.7;margin-bottom:8px;">加载中...</div>
-      <div id="quote-author" style="font-size:13px;color:var(--faint);text-align:right;"></div>
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="brand-mark">鸡</span>鸡仔</div>
+      <p class="footer-tagline">为自己打磨的小产品，顺手分享出来。</p>
+      <div class="footer-links">
+        <a href="https://xiaojj.pro">首页</a>
+        <span class="footer-dot">·</span>
+        <a href="https://github.com/xiaoxiehang/news" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="footer-copy">© 2026 鸡仔</p>
     </div>
-    <div class="footer-text">每日更新 · 值得关注</div>
-    <a href="https://github.com/xiaoxiehang/news" target="_blank" class="footer-link">GitHub 仓库</a>
   `;
-
-  function fetchQuote() {
-    fetch('https://api.quotable.io/random?tags=technology|programming')
-      .then(r => r.json())
-      .then(data => {
-        const qEl = document.getElementById('quote-text');
-        const aEl = document.getElementById('quote-author');
-        if (qEl) qEl.textContent = '"' + (data.content || data.text) + '"';
-        if (aEl) aEl.textContent = '— ' + (data.author || 'Unknown');
-      })
-      .catch(() => {
-        const quotes = [
-          {text:"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",author:"Martin Fowler"},
-          {text:"First, solve the problem. Then, write the code.",author:"John Johnson"},
-          {text:"The best error message is the one that never shows up.",author:"Thomas Fuchs"},
-          {text:"Code is like humor. When you have to explain it, it's bad.",author:"Cory House"},
-          {text:"Make it work, make it right, make it fast.",author:"Kent Beck"},
-          {text:"Simplicity is the soul of efficiency.",author:"Austin Freeman"}
-        ];
-        const q = quotes[Math.floor(Math.random() * quotes.length)];
-        const qEl = document.getElementById('quote-text');
-        const aEl = document.getElementById('quote-author');
-        if (qEl) qEl.textContent = '"' + q.text + '"';
-        if (aEl) aEl.textContent = '— ' + q.author;
-      });
-  }
-
   function init() {
     const footer = document.querySelector('.footer');
-    if (footer) {
-      footer.innerHTML = footerHTML;
-      fetchQuote();
-    }
+    if (footer) footer.innerHTML = footerHTML;
   }
-
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

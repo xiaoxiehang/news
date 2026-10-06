@@ -35,6 +35,7 @@
 
   --nav-h: 64px;
   --pad-x: max(24px, 5vw);
+  --maxw: 1200px;
 
   /* 兼容旧组件的别名 */
   --text-primary: #1d1d1f;
@@ -46,6 +47,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+
+/* 锚点跳转时避开粘性顶栏 */
+[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
 
 body {
   font-family: var(--font);
@@ -71,6 +75,9 @@ img { max-width: 100%; }
 }
 .header-inner {
   min-height: var(--nav-h);
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px var(--pad-x);
   display: flex;
   align-items: center;
@@ -197,6 +204,9 @@ img { max-width: 100%; }
 /* ============ 全屏区块 ============ */
 .section {
   padding: 72px var(--pad-x);
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
 }
 .section-tight { padding: 40px var(--pad-x); }
 .section-title {
@@ -317,20 +327,23 @@ a.news-title { text-decoration: none; }
 
 /* ============ 页脚 ============ */
 .footer {
-  padding: 48px var(--pad-x) 56px;
-  text-align: center;
+  padding: 56px var(--pad-x) 64px;
   border-top: 1px solid var(--hairline);
   margin-top: 40px;
   background: var(--bg);
 }
-.footer-text { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
-.footer-link {
-  font-size: 14px;
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 600;
+.footer-inner { max-width: var(--maxw); margin: 0 auto; text-align: center; }
+.footer-brand {
+  display: inline-flex; align-items: center;
+  font-size: 17px; font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: 10px;
 }
-.footer-link:hover { color: var(--accent); }
+.footer-tagline { font-size: 14px; color: var(--muted); margin: 0 0 18px; }
+.footer-links { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 18px; }
+.footer-links a { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
+.footer-dot { color: var(--faint); font-size: 14px; }
+.footer-copy { font-size: 12px; color: var(--faint); margin: 0; }
 
 /* ============ Toast / 加载 / 空态 ============ */
 .toast {
