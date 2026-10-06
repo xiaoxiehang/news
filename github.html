@@ -28,6 +28,7 @@
 a.project-card:hover { transform: translateY(-3px); }
 a.project-card:hover .project-name { color: var(--primary); }
 .project-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.gain { color: var(--primary); font-weight: 700; font-size: 12px; margin-left: 6px; }
 .project-icon {
   width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
   background: rgba(255, 56, 92, 0.08); color: var(--primary);
@@ -204,7 +205,9 @@ function renderGhProjects() {
       insight +
       '<div class="project-meta">' +
         (p.language ? '<div class="meta-item"><span class="language-dot" style="background:' + langColor + '"></span><span class="meta-value">' + esc(p.language) + '</span></div>' : '') +
-        '<div class="meta-item"><span>★</span><span class="meta-value">' + formatNumber(p.stars || 0) + '</span></div>' +
+        '<div class="meta-item"><span>★</span><span class="meta-value">' + formatNumber(p.stars || 0) +
+        (p.stars_gain != null && p.stars_gain > 0 ? '<span class="gain">+' + formatNumber(p.stars_gain) + '</span>' : '') +
+        '</span></div>' +
         '<div class="meta-item"><span>⑂</span><span class="meta-value">' + formatNumber(p.forks || 0) + '</span></div>' +
       '</div></a>';
   }).join('') + '</div>';

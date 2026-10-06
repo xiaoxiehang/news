@@ -138,6 +138,37 @@ def main():
     output_file = os.path.join(repo_dir, 'github.json')
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(all_data, f, ensure_ascii=False, indent=2)
+
+    # 每日涨星：对比历史 star 数，算出每个 repo 的日增量
+    hist_file = os.path.join(repo_dir, 'github-stars-history.json')
+    history = {}
+    if os.path.exists(hist_file):
+        try:
+            history = json.load(open(hist_file, encoding='utf-8'))
+        except Exception:
+            history = {}
+    today = datetime.now().strftime('%Y-%m-%d')
+    for cat_id, cat in all_data['categories'].items():
+        for repo in cat['repos']:
+            fn = repo['full_name']
+            h = history.setdefault(fn, {})
+            # 找最近一次非今天的记录
+            prev = None
+            for d in sorted(h.keys(), reverse=True):
+                if d != today:
+                    prev = h[d]
+                    break
+            repo['stars_gain'] = repo['stars'] - prev if prev is not None else None
+            h[today] = repo['stars']
+    # 只保留 30 天历史
+    cutoff = (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d')
+    for fn in list(history.keys()):
+        history[fn] = {d: s for d, s in history[fn].items() if d >= cutoff}
+        if not history[fn]:
+            del history[fn]
+    with open(hist_file, 'w', encoding='utf-8') as f:
+        json.dump(history, f, ensure_ascii=False, indent=1)
+    print(f"✅ star 历史已更新")
     
     print(f"\n✅ Saved to {output_file}")
     print(f"   Updated: {all_data['updated_at']}")
