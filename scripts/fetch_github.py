@@ -24,62 +24,62 @@ def get_recent_date(days=30):
 CATEGORIES = {
     'ai': {
         'name': 'AI 机器学习',
-        'desc': '人工智能、机器学习',
+        'desc': '大模型、机器学习框架',
         'query': 'machine learning OR deep learning OR LLM stars:>1000',
         'sort': 'stars'
     },
-    'frontend': {
-        'name': '前端',
-        'desc': '前端框架、UI库',
-        'query': 'react OR vue OR nextjs OR svelte stars:>3000',
+    'ai-apps': {
+        'name': 'AI 应用',
+        'desc': 'AI 智能体、AI 工具',
+        'query': 'ai agent OR llm app OR chatbot stars:>500',
         'sort': 'stars'
     },
-    'backend': {
-        'name': '后端',
-        'desc': '后端框架、数据库',
-        'query': 'api OR database OR server OR microservice stars:>3000',
+    'frontend-mobile': {
+        'name': '前端移动',
+        'desc': '前端、移动端、全栈',
+        'query': 'react OR vue OR flutter OR react-native OR nextjs stars:>2000',
         'sort': 'stars'
     },
-    'fullstack': {
-        'name': '全栈',
-        'desc': '全栈框架',
-        'query': 'nextjs OR nuxt OR fullstack OR trpc stars:>3000',
-        'sort': 'stars'
-    },
-    'mobile': {
-        'name': '移动端',
-        'desc': '移动端开发',
-        'query': 'flutter OR react-native OR swift OR kotlin stars:>3000',
+    'backend-infra': {
+        'name': '后端基建',
+        'desc': '后端、数据库、云原生',
+        'query': 'kubernetes OR docker OR postgres OR redis OR microservice stars:>2000',
         'sort': 'stars'
     },
     'devtools': {
         'name': '开发者工具',
-        'desc': '开发者工具、CLI',
-        'query': 'cli OR terminal OR vscode extension stars:>2000',
-        'sort': 'stars'
-    },
-    'productivity': {
-        'name': '效率工具',
-        'desc': '效率工具、自动化',
-        'query': 'productivity OR automation OR workflow tool stars:>1000',
-        'sort': 'stars'
-    },
-    'cloudnative': {
-        'name': '云原生',
-        'desc': 'K8s、Docker、云原生',
-        'query': 'kubernetes OR docker OR helm stars:>2000',
-        'sort': 'stars'
-    },
-    'database': {
-        'name': '数据库',
-        'desc': '数据库、向量库',
-        'query': 'database OR postgres OR redis OR mongodb stars:>2000',
+        'desc': '开发工具、效率自动化',
+        'query': 'cli OR developer tool OR productivity OR automation stars:>1000',
         'sort': 'stars'
     },
     'game': {
         'name': '游戏',
         'desc': '游戏引擎、游戏开发',
         'query': 'game engine OR godot OR gamedev stars:>1000',
+        'sort': 'stars'
+    },
+    'design': {
+        'name': '设计资源',
+        'desc': '图标、字体、设计素材',
+        'query': 'icons OR fonts OR design resources stars:>500',
+        'sort': 'stars'
+    },
+    'learn': {
+        'name': '学习教程',
+        'desc': '教程、课程、路线图',
+        'query': 'tutorial OR course OR roadmap stars:>1000',
+        'sort': 'stars'
+    },
+    'selfhosted': {
+        'name': '自托管',
+        'desc': 'NAS、家庭服务器应用',
+        'query': 'self-hosted OR homelab stars:>500',
+        'sort': 'stars'
+    },
+    'awesome': {
+        'name': '开源精选',
+        'desc': '精选资源合集',
+        'query': 'awesome list stars:>1000',
         'sort': 'stars'
     },
 }
@@ -138,7 +138,7 @@ def main():
 
     for cat_id, config in CATEGORIES.items():
         print(f"Fetching {cat_id}...")
-        repos = fetch_repos(config['query'], config['sort'], per_page=50)
+        repos = fetch_repos(config['query'], config['sort'], per_page=80)
         print(f"  ✅ {cat_id}: {len(repos)} repos")
         categories[cat_id] = {
             'name': config['name'],
@@ -156,7 +156,7 @@ def main():
         all_repos.setdefault(r['full_name'], r)
 
     print("Fetching rising source...")
-    rising_repos = fetch_repos(RISING_SOURCE['query'], RISING_SOURCE['sort'], per_page=20)
+    rising_repos = fetch_repos(RISING_SOURCE['query'], RISING_SOURCE['sort'], per_page=50)
     print(f"  ✅ rising source: {len(rising_repos)} repos")
     for r in rising_repos:
         all_repos.setdefault(r['full_name'], r)
@@ -202,7 +202,7 @@ def main():
         [all_repos[r['full_name']] for r in rising_repos],
         key=lambda r: (r['stars_gain'] if r['stars_gain'] is not None else -1, r['stars']),
         reverse=True
-    )[:12]
+    )[:30]
 
     all_data = {
         'updated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
