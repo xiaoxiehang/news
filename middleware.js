@@ -28,8 +28,8 @@ export default function middleware(request) {
     '/hackernews.html': '/news.html#github',
     '/archive.html': '/news.html',
     '/quiz.html': '/news.html',
-    '/xhs.html': '/studio.html',
-    '/xhs-tool.html': '/studio.html#tool',
+    '/xhs.html': '/',
+    '/xhs-tool.html': '/',
     '/tools.html': '/',
     '/tv.html': 'https://tv.xiaojj.pro/',
   };

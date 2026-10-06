@@ -398,25 +398,19 @@ a.news-title { text-decoration: none; }
 
 /* ============ 页脚（Airbnb footer-light：白底，无反差） ============ */
 .footer {
-  padding: 48px var(--pad-x);
+  padding: 28px var(--pad-x);
   border-top: 1px solid var(--hairline-soft);
   margin-top: 0;
   background: var(--canvas);
-  font-size: 14px;
-  color: var(--body);
+  font-size: 13px;
+  color: var(--muted-soft);
 }
-.footer-brand {
-  display: inline-flex; align-items: center;
-  font-size: 16px; font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 8px;
+.footer-simple {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
 }
-.footer-tagline { font-size: 14px; color: var(--body); margin: 0 0 16px; }
-.footer-links { display: flex; align-items: center; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
-.footer-links a { font-size: 14px; color: var(--body); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-sm); }
-.footer-links a:hover { background: var(--surface-soft); color: var(--ink); }
-.footer-dot { color: var(--muted-soft); font-size: 14px; }
-.footer-copy { font-size: 13px; color: var(--muted-soft); margin: 0; }
+.footer-simple a { color: var(--muted-soft); text-decoration: none; }
+.footer-simple a:hover { color: var(--ink); }
+.footer-dot { color: var(--muted-soft); }
 
 /* ============ Toast / 加载 / 空态 ============ */
 .toast {
