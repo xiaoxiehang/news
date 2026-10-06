@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>创作 - 鸡仔</title>
 <meta name="description" content="小红书创作中心：每天自动生成的图文发布包一键审核复制，短视频下载即发，AI 文案工具输入主题一键生成。">
-<link rel="stylesheet" href="assets/apple.css">
+<link rel="stylesheet" href="assets/hacker.css">
 <style>
 .tabpane { display: none; }
 .tabpane.active { display: block; animation: fadeUp .35s ease; }
@@ -18,7 +18,7 @@
 .card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 .card-head h2 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
 .copy-btn { font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border: none; border-radius: var(--radius-pill); padding: 8px 18px; cursor: pointer; font-family: var(--font); transition: background .2s; }
-.copy-btn:hover { background: rgba(0,113,227,.18); }
+.copy-btn:hover { background: rgba(0,255,136,.18); }
 .copy-btn.ok { color: #0d7a3a; background: var(--green-soft); }
 .title-text { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
 .tags-text { font-size: 15px; color: var(--accent); line-height: 2; }
@@ -67,7 +67,7 @@
 .block .cap { font-size: 13px; color: var(--muted); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
 .block .txt { font-size: 16px; line-height: 1.8; white-space: pre-wrap; word-break: break-word; }
 .block .txt.title { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
-.copy { border: 1px solid var(--line); background: #fff; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; padding: 6px 16px; cursor: pointer; font-family: var(--font); color: var(--ink); transition: all .2s; }
+.copy { border: 1px solid var(--line); background: var(--card); border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; padding: 6px 16px; cursor: pointer; font-family: var(--font); color: var(--ink); transition: all .2s; }
 .copy:hover { border-color: var(--accent); color: var(--accent); }
 .copy:active { background: var(--accent-soft); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -76,7 +76,7 @@
 #cover { width: 100%; max-width: 380px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); }
 .row2 { display: flex; gap: 12px; }
 .row2 .btn { flex: 1; margin-top: 16px; }
-.err { display: none; background: #fff1f1; color: #c0392b; border: 1px solid #fecaca; border-radius: var(--radius-sm); padding: 14px 18px; font-size: 14px; margin-bottom: 18px; }
+.err { display: none; background: var(--red-soft); color: var(--red); border: 1px solid rgba(255, 92, 108, 0.35); border-radius: var(--radius-sm); padding: 14px 18px; font-size: 14px; margin-bottom: 18px; }
 .err.show { display: block; }
 .loading-box { text-align: center; color: var(--muted); font-size: 15px; padding: 32px 0; display: none; }
 .loading-box.show { display: block; }
@@ -86,7 +86,7 @@
 /* ---- 写文案工作台 v2 ---- */
 .wb-steps { display: flex; list-style: none; padding: 0; margin: 0 0 22px; gap: 8px; }
 .wb-steps li { flex: 1; text-align: center; font-size: 13px; color: var(--faint); padding: 11px 4px; border-radius: 14px; background: var(--bg); border: 1px solid var(--hairline); cursor: pointer; transition: all .2s; }
-.wb-steps li span { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; background: #d7dae2; color: #fff; font-size: 12px; font-weight: 700; align-items: center; justify-content: center; margin-right: 6px; }
+.wb-steps li span { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; background: var(--faint); color: var(--bg); font-size: 12px; font-weight: 700; align-items: center; justify-content: center; margin-right: 6px; }
 .wb-steps li.active { background: var(--accent-soft); color: var(--accent); font-weight: 700; border-color: var(--accent); }
 .wb-steps li.active span { background: var(--accent); }
 .wb-steps li.done { color: var(--muted); }
@@ -112,7 +112,7 @@
 .wb-title-pick input { margin-top: 4px; accent-color: var(--accent); }
 .wb-title-pick.sel { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
 .wb-title-tag { flex-shrink: 0; font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; margin-top: 2px; }
-.wb-title-pick.sel .wb-title-tag { background: var(--accent); color: #fff; }
+.wb-title-pick.sel .wb-title-tag { background: var(--accent); color: var(--accent-ink); }
 #wb-hook[contenteditable], #wb-body[contenteditable] { outline: none; }
 #wb-hook[contenteditable]:focus, #wb-body[contenteditable]:focus { box-shadow: 0 0 0 2px var(--accent-soft); border-radius: 8px; }
 .wb-cover-tpls { display: flex; gap: 10px; margin-bottom: 18px; }
@@ -134,9 +134,9 @@
 .wb-hist-title { font-size: 15px; font-weight: 700; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .wb-hist-meta { font-size: 12px; color: var(--faint); margin-bottom: 8px; }
 .wb-hist-actions { display: flex; gap: 8px; }
-.wb-hist-actions button { font-size: 12px; font-weight: 600; border-radius: var(--radius-pill); padding: 6px 14px; cursor: pointer; font-family: var(--font); border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.wb-hist-actions button { font-size: 12px; font-weight: 600; border-radius: var(--radius-pill); padding: 6px 14px; cursor: pointer; font-family: var(--font); border: 1px solid var(--line); background: var(--card); color: var(--ink); }
 .wb-hist-actions button:hover { border-color: var(--accent); color: var(--accent); }
-.wb-hist-actions button.danger:hover { border-color: #c0392b; color: #c0392b; }
+.wb-hist-actions button.danger:hover { border-color: var(--red); color: var(--red); }
 .wb-badge { font-size: 11px; font-weight: 700; border-radius: var(--radius-pill); padding: 3px 10px; background: #e6f6ec; color: #0d7a3a; flex-shrink: 0; }
 .wb-empty { text-align: center; color: var(--faint); font-size: 14px; padding: 18px 0; }
 .wb-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 60; align-items: flex-end; justify-content: center; }

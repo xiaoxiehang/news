@@ -6,7 +6,7 @@
 <title>资讯 - 鸡仔</title>
 <meta name="description" content="AI 科技早报、GitHub 趋势、Hacker News、历史归档、开发者每日一题——每天的新鲜事都在这里。">
 <link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
-<link rel="stylesheet" href="assets/apple.css">
+<link rel="stylesheet" href="assets/hacker.css">
 <style>
 .tabpane { display: none; }
 .tabpane.active { display: block; animation: fadeUp .35s ease; }
@@ -31,12 +31,12 @@ a.briefing-pick-title:hover { color: var(--accent); }
 .quote-author { font-size: 14px; color: var(--muted); margin-top: 14px; }
 .pane-actions { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
 /* ---- GitHub ---- */
-.filter-bar { position: sticky; top: var(--nav-h); z-index: 60; background: rgba(245,245,247,.85); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--hairline); padding: 14px var(--pad-x); margin: 0 calc(-1 * var(--pad-x)) 20px; }
+.filter-bar { position: sticky; top: var(--nav-h); z-index: 60; background: rgba(10,10,15,.85); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--hairline); padding: 14px var(--pad-x); margin: 0 calc(-1 * var(--pad-x)) 20px; }
 .categories { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .categories::-webkit-scrollbar { display: none; }
 .category-btn { font-family: var(--font); font-size: 14px; font-weight: 600; padding: 9px 20px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-pill); color: var(--muted); cursor: pointer; transition: all .2s; white-space: nowrap; flex-shrink: 0; }
 .category-btn:hover { color: var(--ink); border-color: var(--faint); }
-.category-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.category-btn.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); box-shadow: 0 0 16px var(--accent-glow); }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
 .project-card { background: var(--card); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 24px; transition: transform .2s, box-shadow .2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
 .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
@@ -69,7 +69,7 @@ a.briefing-pick-title:hover { color: var(--accent); }
 .archive-head { padding: 22px 28px; cursor: pointer; display: flex; align-items: center; gap: 16px; transition: background .15s; }
 .archive-head:hover { background: rgba(0,0,0,.02); }
 .archive-date { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
-.archive-count { font-size: 12px; font-weight: 700; color: #fff; background: var(--accent); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap; }
+.archive-count { font-size: 12px; font-weight: 700; color: var(--accent-ink); background: var(--accent); padding: 4px 12px; border-radius: var(--radius-pill); white-space: nowrap; }
 .archive-overview { flex: 1; font-size: 14px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .archive-toggle { font-size: 14px; color: var(--faint); flex-shrink: 0; transition: transform .2s; }
 .archive-body { display: none; border-top: 1px solid var(--hairline); padding: 8px 28px 24px; }
@@ -95,7 +95,7 @@ a.archive-pick-title:hover { color: var(--accent); }
 .stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .quiz-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 24px; box-shadow: var(--shadow-md); padding: clamp(24px, 4vw, 44px); margin-bottom: 40px; }
 .quiz-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-.topic-tag { font-size: 12px; font-weight: 700; color: #fff; background: var(--accent); padding: 5px 14px; border-radius: var(--radius-pill); }
+.topic-tag { font-size: 12px; font-weight: 700; color: var(--accent-ink); background: var(--accent); padding: 5px 14px; border-radius: var(--radius-pill); }
 .quiz-date { font-size: 13px; color: var(--faint); }
 .quiz-question { font-size: 20px; font-weight: 600; line-height: 1.65; letter-spacing: -0.01em; margin-bottom: 24px; }
 .quiz-options { display: flex; flex-direction: column; gap: 12px; }
@@ -103,7 +103,7 @@ a.archive-pick-title:hover { color: var(--accent); }
 .option-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
 .option-btn:disabled { cursor: default; }
 .option-btn.correct { border-color: var(--green); background: var(--green-soft); color: #0d7a3a; font-weight: 600; }
-.option-btn.wrong { border-color: var(--red); background: #fff1f1; color: #c0392b; }
+.option-btn.wrong { border-color: var(--red); background: var(--red-soft); color: var(--red); }
 .option-btn.dim { opacity: .55; }
 .quiz-result { margin-top: 22px; padding: 18px 22px; border-radius: var(--radius-sm); font-size: 15px; line-height: 1.75; display: none; }
 .quiz-result.show { display: block; }
