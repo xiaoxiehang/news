@@ -5,201 +5,190 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>鸡仔浏览器 · Android TV 大屏浏览器</title>
 <meta name="description" content="鸡仔浏览器：Android TV 上的轻量开源浏览器。遥控器原生导航、多标签页、语音搜索、去广告、投屏推送、视频源，免费开源。">
-<link rel="stylesheet" href="/assets/minimal.css">
-<style>
-/* tv.xiaojj.pro 独立产品站：复用 minimal.css 设计语言 */
-.tv-hero { padding: 96px var(--pad-x) 64px; text-align: center; }
-.tv-hero .hero-eyebrow { font-size: 13px; font-weight: 600; color: var(--primary); letter-spacing: .08em; margin-bottom: 16px; }
-.tv-hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 16px; }
-.tv-hero .hero-sub { font-size: 17px; color: var(--body); max-width: 640px; margin: 0 auto 32px; line-height: 1.6; }
-.tv-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-.tv-meta { font-size: 13px; color: var(--muted-soft); }
-.tv-meta b { color: var(--primary); font-weight: 600; }
-
-.tv-section { padding: 64px 0; }
-.tv-section-head { padding: 0 var(--pad-x); margin-bottom: 32px; }
-.tv-section-head h2 { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
-.tv-section-head p { font-size: 15px; color: var(--muted); }
-
-.shot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 var(--pad-x); }
-.shot { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.06); overflow: hidden; }
-.shot img { display: block; width: 100%; height: auto; }
-.shot .cap { padding: 16px 20px; font-size: 14px; color: var(--body); }
-.shot .cap b { font-weight: 600; color: var(--ink); }
-
-.tv-feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 0 var(--pad-x); }
-
-.step-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 0 var(--pad-x); }
-.step-card { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.06); padding: 24px; }
-.step-card .step-no { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 14px; }
-.step-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
-.step-card p { font-size: 14px; color: var(--body); line-height: 1.6; }
-.step-card code { font-size: 12px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; }
-
-.tv-dl { text-align: center; padding: 80px var(--pad-x); }
-.tv-dl h2 { font-size: 28px; font-weight: 600; margin-bottom: 12px; }
-.tv-dl p { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
-
-.tv-footer { border-top: 1px solid var(--line); padding: 32px var(--pad-x); display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; font-size: 14px; color: var(--muted); }
-.tv-footer a { color: var(--ink); text-decoration: none; }
-.tv-footer a:hover { color: var(--primary); }
-.tv-footer .ver { font-size: 13px; color: var(--muted-soft); }
-
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
-.reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-@media (max-width: 744px) {
-  .shot-grid { grid-template-columns: 1fr; padding: 0 24px; }
-  .tv-feat-grid, .step-list, .tv-section-head { padding-left: 24px; padding-right: 24px; }
-  .tv-hero { padding: 64px 24px 48px; }
-}
-</style>
+<link rel="stylesheet" href="/tv.css">
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a class="header-title" href="/"><span class="brand-mark">鸡</span>鸡仔浏览器</a>
-      <div class="header-subtitle">Android TV · v0.5.0</div>
-    </div>
-    <nav class="header-nav">
-      <a href="#features" class="nav-link">功能</a>
-      <a href="#install" class="nav-link">安装</a>
-      <a href="#download" class="nav-link">下载</a>
-      <a href="https://xiaojj.pro" class="nav-link">回主站 xiaojj.pro</a>
-    </nav>
-  </div>
-</header>
+<nav class="tv-nav">
+  <a class="tv-brand" href="/"><span class="tv-brand-mark">鸡</span>鸡仔浏览器</a>
+  <a class="nav-link" href="#features">功能</a>
+  <a class="nav-link" href="#install">安装</a>
+  <a class="nav-link nav-cta" href="#download">下载</a>
+</nav>
 
-<section class="tv-hero">
-  <div class="hero-eyebrow">免费 · 开源 · 无广告</div>
-  <h1>鸡仔浏览器</h1>
-  <p class="hero-sub">为电视大屏而生的 Android 浏览器：遥控器原生导航，多标签页、语音搜索、去广告、投屏推送、视频源全都有。包体轻量，打开就是浏览器。</p>
-  <div class="tv-cta">
-    <a class="btn btn-primary btn-lg" href="https://github.com/xiaoxiehang/tv-browser/releases/download/latest/jizai-tv-browser.apk">下载 APK</a>
-    <a class="btn btn-ghost btn-lg" href="#install">安装指南</a>
+<header class="tv-hero">
+  <div class="tv-eyebrow"><span class="dot"></span>免费 · 开源 · 无广告</div>
+  <h1>电视大屏的<br><span class="hl">轻量浏览器</span></h1>
+  <p class="tv-sub">鸡仔浏览器为 Android TV 而生：遥控器原生导航，多标签页、语音搜索、去广告、投屏推送、视频源全都有。打开就是浏览器，不打扰。</p>
+  <div class="tv-actions">
+    <a class="btn btn-primary" href="https://github.com/xiaoxiehang/tv-browser/releases/download/latest/jizai-tv-browser.apk">下载 APK</a>
+    <a class="btn btn-soft" href="#install">安装指南</a>
   </div>
-  <div class="tv-meta"><b>免费 · 开源</b> · 适用于 Android TV / Google TV</div>
-</section>
+  <div class="tv-meta"><b>免费 · 开源</b> · 适用于 Android TV / Google TV · 当前版本 v0.5.0</div>
+</header>
 
 <main>
   <section class="tv-section">
-    <div class="tv-section-head reveal">
-      <h2>界面预览</h2>
-      <p>示意图，实际以电视端运行效果为准</p>
-    </div>
-    <div class="shot-grid">
-      <div class="shot reveal">
-        <img src="/assets/img/tv-home.png" alt="鸡仔浏览器首页示意图" loading="lazy">
-        <div class="cap"><b>首页</b> · 搜索框、书签、历史记录，遥控器方向键轻松聚焦</div>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">Preview</div>
+        <h2>长这样</h2>
+        <p>示意图，实际以电视端运行效果为准</p>
       </div>
-      <div class="shot reveal">
-        <img src="/assets/img/tv-browser.png" alt="鸡仔浏览器浏览页示意图" loading="lazy">
-        <div class="cap"><b>浏览页</b> · 标签栏 + 虚拟光标，视频自动全屏</div>
+      <div class="shot-grid">
+        <div class="shot reveal">
+          <img src="/assets/img/tv-home.png" alt="鸡仔浏览器首页示意图" loading="lazy">
+          <div class="cap"><b>首页</b> · 搜索框、书签、历史记录，遥控器方向键轻松聚焦</div>
+        </div>
+        <div class="shot reveal">
+          <img src="/assets/img/tv-browser.png" alt="鸡仔浏览器浏览页示意图" loading="lazy">
+          <div class="cap"><b>浏览页</b> · 标签栏 + 虚拟光标，视频自动全屏</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="tv-section" id="features">
-    <div class="tv-section-head reveal">
-      <h2>功能</h2>
-      <p>v0.5.0 全部功能，专为电视遥控器和沙发场景打磨</p>
-    </div>
-    <div class="tv-feat-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon">遥控器</div>
-        <div class="feature-title">遥控器原生导航</div>
-        <div class="feature-desc">D-pad 方向键移动焦点，OK 键模拟点击，虚拟光标浏览任意网页——再也不用接鼠标。</div>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">Features</div>
+        <h2>为沙发场景打磨</h2>
+        <p>v0.5.0 全部功能，一个不少</p>
       </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">浏览</div>
-        <div class="feature-title">多标签页</div>
-        <div class="feature-desc">顶部标签栏，多页面同时开，随手切换、随手关闭。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">输入</div>
-        <div class="feature-title">语音搜索</div>
-        <div class="feature-desc">遥控器麦克风说话即搜，中文识别，省去一个个选字母的痛苦。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">清爽</div>
-        <div class="feature-title">去广告</div>
-        <div class="feature-desc">内置广告域名拦截，浏览时自动过滤弹窗和横幅广告。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">文件</div>
-        <div class="feature-title">下载管理</div>
-        <div class="feature-desc">网页里的视频、文件一键下载，走系统下载器，通知栏看进度。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">大屏</div>
-        <div class="feature-title">投屏推送</div>
-        <div class="feature-desc">手机上看到一半的视频，一键推到电视上自动全屏播放。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">音频</div>
-        <div class="feature-title">后台音频</div>
-        <div class="feature-desc">切出页面声音继续播，通知栏可暂停、关闭，听播客、听小说都行。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">内容</div>
-        <div class="feature-title">视频源</div>
-        <div class="feature-desc">开放的视频源框架：贴 JSON 配置即可加源，内置 TMDB 热门（需自填 Key），只收合法源。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">手机</div>
-        <div class="feature-title">手机伴侣</div>
-        <div class="feature-desc">同一 Wi-Fi 下扫码配对，手机秒变遥控器：方向键、文字输入、网址一键推送。</div>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">收藏</div>
-        <div class="feature-title">书签收藏</div>
-        <div class="feature-desc">常用网站一键收藏，浏览历史随时找回，首页直达。</div>
+      <div class="feat-grid">
+        <div class="feat reveal">
+          <div class="feat-ico">控</div>
+          <h3>遥控器原生导航</h3>
+          <p>D-pad 方向键移动焦点，OK 键模拟点击，虚拟光标浏览任意网页——再也不用接鼠标。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">签</div>
+          <h3>多标签页</h3>
+          <p>顶部标签栏，多页面同时开，随手切换、随手关闭。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">音</div>
+          <h3>语音搜索</h3>
+          <p>遥控器麦克风说话即搜，中文识别，省去一个个选字母的痛苦。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">净</div>
+          <h3>去广告</h3>
+          <p>内置广告域名拦截，浏览时自动过滤弹窗和横幅广告。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">载</div>
+          <h3>下载管理</h3>
+          <p>网页里的视频、文件一键下载，走系统下载器，通知栏看进度。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">投</div>
+          <h3>投屏推送</h3>
+          <p>手机上看到一半的视频，一键推到电视上自动全屏播放。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">播</div>
+          <h3>后台音频</h3>
+          <p>切出页面声音继续播，通知栏可暂停、关闭，听播客、听小说都行。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">源</div>
+          <h3>视频源</h3>
+          <p>开放的视频源框架：贴 JSON 配置即可加源，内置 TMDB 热门（需自填 Key），只收合法源。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">机</div>
+          <h3>手机伴侣</h3>
+          <p>同一 Wi-Fi 下扫码配对，手机秒变遥控器：方向键、文字输入、网址一键推送。</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">藏</div>
+          <h3>书签收藏</h3>
+          <p>常用网站一键收藏，浏览历史随时找回，首页直达。</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="tv-section" id="install">
-    <div class="tv-section-head reveal">
-      <h2>安装</h2>
-      <p>适用于 Android TV / Google TV（海信 VIDAA 系统暂不支持）</p>
-    </div>
-    <div class="step-list">
-      <div class="step-card reveal">
-        <div class="step-no">1</div>
-        <h3>下载 APK</h3>
-        <p>在本页点击下载按钮获取 <code>jizai-tv-browser.apk</code>。</p>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">Install</div>
+        <h2>四步装好</h2>
+        <p>适用于 Android TV / Google TV（海信 VIDAA 系统暂不支持）</p>
       </div>
-      <div class="step-card reveal">
-        <div class="step-no">2</div>
-        <h3>传到电视</h3>
-        <p>用 U 盘拷贝，或通过局域网把 APK 传到电视上。</p>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-no">3</div>
-        <h3>允许安装未知应用</h3>
-        <p>电视进入「设置 → 应用 → 特殊应用权限 → 安装未知应用」，给文件管理器开启权限。</p>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-no">4</div>
-        <h3>打开</h3>
-        <p>用文件管理器找到 APK 点击安装，完成后在应用列表打开「鸡仔浏览器」。</p>
+      <div class="step-grid">
+        <div class="step reveal">
+          <div class="ghost">1</div>
+          <h3>下载 APK</h3>
+          <p>在本页点击下载按钮，获取 <code>jizai-tv-browser.apk</code>。</p>
+        </div>
+        <div class="step reveal">
+          <div class="ghost">2</div>
+          <h3>传到电视</h3>
+          <p>用 U 盘拷贝，或通过局域网把 APK 传到电视上。</p>
+        </div>
+        <div class="step reveal">
+          <div class="ghost">3</div>
+          <h3>允许安装未知应用</h3>
+          <p>电视进入「设置 → 应用 → 特殊应用权限 → 安装未知应用」，给文件管理器开启权限。</p>
+        </div>
+        <div class="step reveal">
+          <div class="ghost">4</div>
+          <h3>打开</h3>
+          <p>用文件管理器找到 APK 点击安装，完成后在应用列表打开「鸡仔浏览器」。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="tv-dl" id="download">
-    <h2 class="reveal">免费下载 · 开源无广告</h2>
-    <p class="reveal">当前版本 v0.5.0，源码公开在 GitHub，欢迎试用和反馈。</p>
-    <a class="btn btn-primary btn-lg reveal" href="https://github.com/xiaoxiehang/tv-browser/releases/download/latest/jizai-tv-browser.apk">下载 APK</a>
+  <section class="tv-section">
+    <div class="wrap">
+      <div class="buddy reveal">
+        <div>
+          <div class="sec-kicker">Companion</div>
+          <h2>手机秒变遥控器</h2>
+          <p>电视浏览器打开「手机遥控」，同一 Wi-Fi 下用手机扫码配对，不用装 App，浏览器里直接用。</p>
+          <ul>
+            <li><span class="tick">✓</span>方向键 + OK，沙发上盲操</li>
+            <li><span class="tick">✓</span>手机键盘打字，告别电视输入法</li>
+            <li><span class="tick">✓</span>网址、视频链接一键推送到电视</li>
+          </ul>
+        </div>
+        <div class="buddy-visual">
+          <div class="phone-bar"><span>鸡仔遥控器</span><span>已连接</span></div>
+          <div class="dpad">
+            <span></span><span>▲</span><span></span>
+            <span>◀</span><span class="ok">OK</span><span>▶</span>
+            <span></span><span>▼</span><span></span>
+          </div>
+          <div class="push-row">
+            <div class="fake-input">粘贴网址推送到电视…</div>
+            <div class="fake-btn">推送</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tv-section" id="download">
+    <div class="wrap">
+      <div class="dl-panel reveal">
+        <h2>免费下载 · 开源无广告</h2>
+        <p>当前版本 v0.5.0，源码公开在 GitHub，欢迎试用和反馈。</p>
+        <a class="btn btn-white" href="https://github.com/xiaoxiehang/tv-browser/releases/download/latest/jizai-tv-browser.apk">下载 APK</a>
+        <div class="dl-note">约 10 MB · Android 7.0 及以上 · 电视 / 盒子通用</div>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer class="tv-footer">
-  <span>© 2026 鸡仔</span>
-  <a href="https://github.com/xiaoxiehang/tv-browser" target="_blank" rel="noopener">GitHub 仓库</a>
-  <span class="ver">v0.5.0</span>
+  <div class="row">
+    <span>© 2026 鸡仔</span>
+    <a href="https://github.com/xiaoxiehang/tv-browser" target="_blank" rel="noopener">GitHub 仓库</a>
+    <span class="ver">v0.5.0</span>
+  </div>
 </footer>
 
 <script>
@@ -217,7 +206,7 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   els.forEach(function(el) { io.observe(el); });
 })();
 </script>
