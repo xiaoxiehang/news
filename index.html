@@ -7,23 +7,28 @@
 <meta name="description" content="鸡仔的产品集合：AI 科技早报、极客资讯、小红书助手——每一个都是为了解决自己真实遇到的问题。">
 <link rel="stylesheet" href="assets/minimal.css">
 <style>
-/* 首页：Hero + 早报横幅 + 编号产品目录 */
-/* 产品目录 */
-.catalog { padding: 80px 0 96px; }
-.catalog-head {
+/* 首页：瘦题头 + 产品卡片陈列（与 GitHub 卡片同语言） */
+.products-section { padding: 8px 0 96px; }
+.products-head {
   display: flex; align-items: baseline; gap: 16px;
-  padding: 0 var(--pad-x); margin-bottom: 20px;
+  padding: 0 var(--pad-x); margin-bottom: 24px;
 }
-.catalog-head h2 { font-size: 30px; font-weight: 600; letter-spacing: -0.01em; }
-.catalog-head span { font-size: 13px; color: var(--muted); }
-.ruled-title, .ruled-desc { display: block; }
+.products-head h2 { font-size: 22px; font-weight: 600; }
+.products-head span { font-size: 13px; color: var(--muted); }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 24px;
+  padding: 0 var(--pad-x);
+}
 /* 进入动画 */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 @media (max-width: 744px) {
-  .catalog { padding: 56px 0 72px; }
-  .catalog-head h2 { font-size: 24px; }
+  .product-grid { grid-template-columns: 1fr; padding: 0 24px; }
+  .products-section { padding-bottom: 72px; }
+  .products-head { padding: 0 24px; }
 }
 </style>
 </head>
@@ -44,81 +49,49 @@
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="band band-hero">
-    <div class="band-eyebrow reveal">鸡仔出品 · 个人产品集合</div>
-    <h1 class="band-title reveal">为自己打磨的小产品</h1>
-    <p class="band-sub reveal">AI 早报、极客资讯、小红书助手——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
-    <div class="band-links reveal">
-      <a class="band-link" href="news.html">看今日早报</a>
-      <a class="band-link ghost" href="studio.html">去创作中心</a>
-    </div>
+  <section class="page-head">
+    <div class="hero-eyebrow">鸡仔出品 · 个人产品集合</div>
+    <h1 class="hero-title">为自己打磨的小产品</h1>
+    <p class="hero-sub">AI 早报、极客资讯、小红书助手——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
   </section>
 
-  <!-- 今日早报 -->
-  <section class="band alt" id="brief-band" style="display:none;">
-    <div class="band-eyebrow reveal">今日早报</div>
-    <h2 class="band-title reveal">一杯咖啡的时间，读完今天的科技大事</h2>
-    <p class="band-sub reveal" id="brief-overview"></p>
-    <div class="band-links reveal">
-      <a class="band-link" href="news.html">阅读完整版</a>
-    </div>
-    <div class="band-meta reveal" id="brief-date"></div>
-  </section>
-
-  <!-- 产品目录 -->
-  <section class="catalog">
-    <div class="catalog-head reveal">
-      <h2>产品目录</h2>
+  <section class="products-section">
+    <div class="products-head reveal">
+      <h2>产品</h2>
       <span>05 · 持续维护中</span>
     </div>
-    <nav class="ruled-list">
-      <a class="ruled-row reveal" href="studio.html">
-        <span class="ruled-num">01</span>
-        <span class="ruled-main">
-          <span class="ruled-title">小红书助手</span>
-          <span class="ruled-desc">输入主题一键生成小红书文案，自动配 3:4 封面图；每天的图文发布包和短视频在这里审核下载。</span>
-        </span>
-        <span class="ruled-meta">内容生产</span>
-        <span class="ruled-arrow">→</span>
+    <div class="product-grid">
+      <a class="feature-card reveal" href="studio.html">
+        <div class="feature-icon">内容生产</div>
+        <div class="feature-title">小红书助手</div>
+        <div class="feature-desc">输入主题一键生成小红书文案，自动配 3:4 封面图；每天的图文发布包和短视频在这里审核下载。</div>
+        <span class="feature-link">进入</span>
       </a>
-      <a class="ruled-row reveal" href="news.html">
-        <span class="ruled-num">02</span>
-        <span class="ruled-main">
-          <span class="ruled-title">AI 科技早报</span>
-          <span class="ruled-desc">每天早上 8 点，AI 从权威科技媒体精选 8 条最值得读的新闻。</span>
-        </span>
-        <span class="ruled-meta">每日资讯</span>
-        <span class="ruled-arrow">→</span>
+      <a class="feature-card reveal" href="news.html">
+        <div class="feature-icon">每日资讯</div>
+        <div class="feature-title">AI 科技早报</div>
+        <div class="feature-desc">每天早上 8 点，AI 从权威科技媒体精选 8 条最值得读的新闻，一杯咖啡的时间读完。</div>
+        <span class="feature-link">看今日早报</span>
       </a>
-      <a class="ruled-row reveal" href="news.html#github">
-        <span class="ruled-num">03</span>
-        <span class="ruled-main">
-          <span class="ruled-title">极客资讯</span>
-          <span class="ruled-desc">GitHub 热门项目每日速览，附 AI 一句话点评。</span>
-        </span>
-        <span class="ruled-meta">极客</span>
-        <span class="ruled-arrow">→</span>
+      <a class="feature-card reveal" href="news.html#github">
+        <div class="feature-icon">极客</div>
+        <div class="feature-title">极客资讯</div>
+        <div class="feature-desc">GitHub 热门项目每日速览，附 AI 一句话点评。</div>
+        <span class="feature-link">进入</span>
       </a>
-      <a class="ruled-row reveal" href="https://stock.xiaojj.pro">
-        <span class="ruled-num">04</span>
-        <span class="ruled-main">
-          <span class="ruled-title">美股异动推送</span>
-          <span class="ruled-desc">自选股涨跌幅、放量异动实时监控，触发阈值直接推送到手机。</span>
-        </span>
-        <span class="ruled-meta">投资</span>
-        <span class="ruled-arrow">→</span>
+      <a class="feature-card reveal" href="https://stock.xiaojj.pro">
+        <div class="feature-icon">投资</div>
+        <div class="feature-title">美股异动推送</div>
+        <div class="feature-desc">自选股涨跌幅、放量异动实时监控，触发阈值直接推送到手机。</div>
+        <span class="feature-link">进入</span>
       </a>
-      <a class="ruled-row reveal" href="https://price.xiaojj.pro">
-        <span class="ruled-num">05</span>
-        <span class="ruled-main">
-          <span class="ruled-title">降价提醒助手</span>
-          <span class="ruled-desc">Steam 游戏、App Store 应用自动盯价，设好目标价，跌破就提醒你下手。</span>
-        </span>
-        <span class="ruled-meta">省钱</span>
-        <span class="ruled-arrow">→</span>
+      <a class="feature-card reveal" href="https://price.xiaojj.pro">
+        <div class="feature-icon">省钱</div>
+        <div class="feature-title">降价提醒助手</div>
+        <div class="feature-desc">Steam 游戏、App Store 应用自动盯价，设好目标价，跌破就提醒你下手。</div>
+        <span class="feature-link">进入</span>
       </a>
-    </nav>
+    </div>
   </section>
 </main>
 
@@ -127,21 +100,9 @@
 <script src="scripts/header-info.js"></script>
 <script src="scripts/footer.js"></script>
 <script>
-// 今日早报横幅
-fetch('data/briefing.json')
-  .then(function(r) { if (!r.ok) throw 0; return r.json(); })
-  .then(function(d) {
-    if (!d || !d.picks || !d.picks.length) return;
-    document.getElementById('brief-date').textContent = d.date_str || '';
-    var ov = d.overview || d.picks.slice(0, 3).map(function(p) { return p.title; }).join('；');
-    document.getElementById('brief-overview').textContent = ov;
-    document.getElementById('brief-band').style.display = '';
-    observeReveals();
-  })
-  .catch(function() {});
 // 进入动画
-function observeReveals() {
-  var els = document.querySelectorAll('.reveal:not(.in)');
+(function() {
+  var els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
     els.forEach(function(el) { el.classList.add('in'); });
     return;
@@ -155,8 +116,7 @@ function observeReveals() {
     });
   }, { threshold: 0.12 });
   els.forEach(function(el) { io.observe(el); });
-}
-observeReveals();
+})();
 </script>
 </body>
 </html>
