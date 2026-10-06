@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # 手动触发
     inputs:
       only:
-        description: '只运行指定环节（all=全部，video=仅重制今日短视频，xhs=仅重制今日小红书图文）'
+        description: '只运行指定环节（all=全部，video=仅重制今日短视频，xhs=仅重制今日小红书图文，insights=仅生成GitHub点评）'
         required: false
         default: 'all'
 
@@ -53,7 +53,7 @@ jobs:
 
 
     - name: Generate GitHub insights
-      if: ${{ inputs.only == 'all' || github.event_name == 'schedule' }}
+      if: ${{ inputs.only == 'all' || inputs.only == 'insights' || github.event_name == 'schedule' }}
       continue-on-error: true
       env:
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
