@@ -101,12 +101,10 @@ a.project-card:hover .project-name { color: var(--primary); }
 </header>
 
 <main>
-  <section class="page-head">
-    <div class="hero-eyebrow" id="tab-eyebrow">每天早上 8 点 · AI 精选</div>
-    <h1 class="hero-title" id="tab-title">今日科技早报</h1>
-    <p class="hero-sub" id="tab-sub">AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。</p>
-    <div class="hero-meta" id="hero-date"></div>
-  </section>
+  <div class="page-bar">
+    <h1 id="tab-title">今日科技早报</h1>
+    <span class="meta" id="hero-date"></span>
+  </div>
 
   <div class="tabs-wrap">
     <div class="segmented" id="newsTabs">
@@ -157,8 +155,8 @@ function showToast(msg) {
 }
 
 const TAB_META = {
-  zaobao:  { eyebrow: '每天早上 8 点 · AI 精选', title: '今日科技早报', sub: 'AI 每天帮你挑出 8 条最值得读的新闻，一杯咖啡的时间读完。' },
-  github:  { eyebrow: '开源世界每日速览', title: 'GitHub 热门项目', sub: 'AI、前端、开发工具——每天最值得 star 的项目，附 AI 一句话点评。' },
+  zaobao:  { title: '今日科技早报' },
+  github:  { title: 'GitHub 热门项目' },
 };
 const loaded = {};
 function switchTab(which) {
@@ -170,9 +168,7 @@ function switchTab(which) {
     p.classList.toggle('active', p.id === 'pane-' + which);
   });
   const meta = TAB_META[which];
-  document.getElementById('tab-eyebrow').textContent = meta.eyebrow;
   document.getElementById('tab-title').textContent = meta.title;
-  document.getElementById('tab-sub').textContent = meta.sub;
   if (which !== 'zaobao') document.getElementById('hero-date').textContent = '';
   if (!loaded[which]) {
     loaded[which] = true;
