@@ -33,7 +33,7 @@
       </div>
       <div class="tv-meta"><b>免费 · 开源</b> · 适用于 Android TV / Google TV · 当前版本 v0.5.0</div>
     </div>
-    <div class="tv-hero-visual reveal in">
+    <div class="tv-hero-visual">
       <div class="tv-frame">
         <img src="/assets/img/tv-home.png" alt="鸡仔浏览器电视端界面">
       </div>
@@ -206,6 +206,15 @@
 </footer>
 
 <script>
+// 入场：电视框滑入后接悬浮
+(function() {
+  var v = document.querySelector('.tv-hero-visual');
+  if (!v) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.style.opacity = 1; return; }
+  v.addEventListener('animationend', function h(e) {
+    if (e.animationName === 'hero-in-right') { v.classList.add('floated'); v.removeEventListener('animationend', h); }
+  });
+})();
 // 进入动画
 (function() {
   var els = document.querySelectorAll('.reveal');
