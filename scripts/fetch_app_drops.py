@@ -17,6 +17,7 @@ from datetime import datetime, timezone, timedelta
 UA = {"User-Agent": "xiaojj-price-watch/1.0 (+https://xiaojj.pro)"}
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WATCHLIST = os.path.join(BASE, "data", "app-watchlist.json")
+MAC_WATCHLIST = os.path.join(BASE, "data", "mac-watchlist.json")
 HISTORY = os.path.join(BASE, "data", "app-price-history.json")
 OUT = os.path.join(BASE, "data", "app-drops.json")
 HISTORY_KEEP_DAYS = 30
@@ -84,6 +85,12 @@ def main():
     manual_ids = {int(w["id"]) for w in watch}
     manual_names = {int(w["id"]): w.get("name", "") for w in watch}
 
+    mac_watch = []
+    if os.path.exists(MAC_WATCHLIST):
+        mac_watch = json.load(open(MAC_WATCHLIST, encoding="utf-8"))
+    mac_ids = {int(w["id"]) for w in mac_watch}
+    mac_names = {int(w["id"]): w.get("name", "") for w in mac_watch}
+
     history = {}
     if os.path.exists(HISTORY):
         history = json.load(open(HISTORY, encoding="utf-8"))
@@ -96,7 +103,8 @@ def main():
     all_ids = set(manual_ids)
     for code, _, _ in REGIONS:
         all_ids |= chart_ids(code)
-    print("apps to check:", len(all_ids))
+    print("ios apps to check:", len(all_ids))
+    print("mac apps to check:", len(mac_ids))
 
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
     cutoff = (datetime.now() - timedelta(days=HISTORY_KEEP_DAYS)).strftime("%Y-%m-%d")
@@ -107,13 +115,14 @@ def main():
         region_data[code] = lookup_many(all_ids, code)
 
     tracked, drops = [], []
-    for appid in sorted(all_ids):
-        key = str(appid)
+
+    def process(appid, rdata, platform, name_hint):
+        key = ("mac:" if platform == "mac" else "") + str(appid)
         h = history.setdefault(key, {})
-        info = {"id": appid, "name": manual_names.get(appid, ""), "prices": {}}
+        info = {"id": appid, "name": name_hint, "prices": {}, "platform": platform}
         base_info = None
         for code, label, symbol in REGIONS:
-            r = region_data[code].get(appid)
+            r = rdata[code].get(appid)
             if not r:
                 continue
             if base_info is None:
@@ -128,7 +137,7 @@ def main():
                 "currency": r["currency"],
             }
         if not info["prices"] or base_info is None:
-            continue
+            return
         info["name"] = base_info["name"] or info["name"] or key
         info["icon"] = base_info["icon"]
         info["url"] = base_info["url"]
@@ -144,6 +153,16 @@ def main():
                             "is_free": p["price"] == 0}
         if best:
             drops.append({**info, **best})
+
+    for appid in sorted(all_ids):
+        process(appid, region_data, "ios", manual_names.get(appid, ""))
+
+    # Mac 应用：与 iOS 同一套 lookup，按区查价
+    mac_region_data = {}
+    for code, _, _ in REGIONS:
+        mac_region_data[code] = lookup_many(mac_ids, code)
+    for appid in sorted(mac_ids):
+        process(appid, mac_region_data, "mac", mac_names.get(appid, ""))
 
     drops.sort(key=lambda x: -x["discount"])
     json.dump(history, open(HISTORY, "w", encoding="utf-8"),
