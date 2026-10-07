@@ -106,6 +106,7 @@ a.price-card:hover .price-name { color: var(--accent); }
       <button class="price-tab active" data-cat="all">全部</button>
       <button class="price-tab" data-cat="apple">Apple</button>
       <button class="price-tab" data-cat="steam">Steam</button>
+      <button class="price-tab" data-cat="epic">Epic</button>
       <button class="price-tab" data-cat="other">其他</button>
     </div>
     <div class="price-grid" id="all-grid"></div>
@@ -250,7 +251,7 @@ function normalizeEpic(g) {
   return {
     url: g.url, name: g.name,
     note: '免费领至 ' + g.end,
-    tag: 'Epic 免费', disc: 100, cat: 'steam',
+    tag: 'Epic 免费', disc: 100, cat: 'epic',
     img: g.icon ? '<img class="price-img" loading="lazy" src="' + esc(g.icon) + '" alt="">' : '',
     price: '<span class="price-now">免费</span>',
     was: g.original_price || ''
