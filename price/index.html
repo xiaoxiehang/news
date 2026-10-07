@@ -68,7 +68,7 @@ a.price-card:hover .price-name { color: var(--accent); }
 }
 /* 今日好价 */
 /* 分类 tab（与 GitHub 页 category-btn 同款 pill 样式） */
-.price-tabs { display: flex; gap: 10px; margin: 0 0 20px; flex-wrap: wrap; }
+.price-tabs { display: flex; gap: 10px; margin: 28px 0 20px; flex-wrap: wrap; }
 .price-tab {
   border: none; cursor: pointer; font-size: 14px; font-weight: 600;
   padding: 8px 20px; border-radius: var(--radius-pill);
@@ -102,10 +102,6 @@ a.price-card:hover .price-name { color: var(--accent); }
 <div class="price-wrap">
 
   <section id="all-section" style="display:none;">
-    <div class="section-head">
-      <h2 class="section-title">今日好价</h2>
-      <p class="section-desc" id="all-date"></p>
-    </div>
     <div class="price-tabs" id="price-tabs">
       <button class="price-tab active" data-cat="all">全部</button>
       <button class="price-tab" data-cat="apple">Apple</button>
@@ -200,7 +196,6 @@ function renderAll() {
 function renderPriceTab(cat) {
   var items = window.__priceItems || [];
   var list = cat === 'all' ? items : items.filter(function(it) { return it.cat === cat; });
-  document.getElementById('all-date').textContent = '共 ' + list.length + ' 条好价';
   document.getElementById('all-grid').innerHTML = list.length
     ? list.map(cardHtml).join('')
     : '<p style="grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0;">今日暂无降价，明天再来看看</p>';

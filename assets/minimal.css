@@ -90,7 +90,11 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+/* 粘性页脚：内容不足一屏时 footer 固定在页面底部 */
+body > main { flex: 1; }
 
 a { color: inherit; }
 img { max-width: 100%; }
