@@ -187,17 +187,19 @@ function normalizePick(it) {
   };
 }
 function normalizeApp(it) {
-  var cn = (it.prices || {}).CN, us = (it.prices || {}).US;
+  var cn = (it.prices || {}).CN, us = (it.prices || {}).US, hk = (it.prices || {}).HK;
   var price = '';
   if (cn) price += '<span class="price-now">¥' + cn.price + '<em>国区</em></span>';
   if (us) price += '<span class="price-now price-now-us">$' + us.price + '<em>美区</em></span>';
+  if (hk) price += '<span class="price-now price-now-hk">HK$' + hk.price + '<em>港区</em></span>';
   var was = '';
   if (it.discount && it.prices[it.region]) {
     var op = it.prices[it.region];
     was = op.symbol + op.original_price;
   }
+  var tag = it.is_free ? '限免' : 'App Store';
   return {
-    url: it.url, name: it.name, note: '', tag: 'App Store', disc: it.discount || 0,
+    url: it.url, name: it.name, note: '', tag: tag, disc: it.discount || 0,
     img: '<img class="price-icon" loading="lazy" src="' + esc(it.icon) + '" alt="">',
     price: price, was: was
   };

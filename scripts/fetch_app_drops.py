@@ -17,7 +17,7 @@ WATCHLIST = os.path.join(BASE, "data", "app-watchlist.json")
 HISTORY = os.path.join(BASE, "data", "app-price-history.json")
 OUT = os.path.join(BASE, "data", "app-drops.json")
 HISTORY_KEEP_DAYS = 30
-REGIONS = [("CN", "国区", "¥"), ("US", "美区", "$")]
+REGIONS = [("CN", "国区", "¥"), ("US", "美区", "$"), ("HK", "港区", "HK$")]
 FX_USD_CNY = 7.2  # 美区价格换算参考
 
 
@@ -64,8 +64,9 @@ def main():
             except Exception as e:
                 print("lookup fail", w["id"], code, e)
                 continue
-            if not r or r["price"] <= 0:
+            if not r:
                 continue
+            # price == 0 表示限免，不跳过（后面按 100% 折扣处理）
             if base_info is None:
                 base_info = r
             hist = [x for x in h.get(code, []) if x["date"] >= cutoff and x["date"] != today]
@@ -83,14 +84,15 @@ def main():
         info["icon"] = base_info["icon"]
         info["url"] = base_info["url"]
         tracked.append(info)
-        # 任一区降价即上榜（取降幅最大的区）
+        # 任一区降价即上榜（取降幅最大的区）；价格为 0 且历史有价 = 限免，按 100% 计
         best = None
         for code, p in info["prices"].items():
             if p["price"] < p["hist_max"]:
-                disc = round((1 - p["price"] / p["hist_max"]) * 100)
+                disc = 100 if p["price"] == 0 else round((1 - p["price"] / p["hist_max"]) * 100)
                 if best is None or disc > best["discount"]:
                     best = {"region": code, "discount": disc,
-                            "original_price": p["hist_max"]}
+                            "original_price": p["hist_max"],
+                            "is_free": p["price"] == 0}
         if best:
             drops.append({**info, **best})
 
