@@ -174,9 +174,9 @@ function renderAll() {
     groups.forEach(function(g) { (g.items || []).forEach(function(it) {
       items.push(normalizePick(it));
     }); });
-    // 2. 苹果降价
-    var apps = res[1], drops = (apps && apps.drops) || [], tracked = (apps && apps.tracked) || [];
-    (drops.length ? drops : tracked).forEach(function(it) { items.push(normalizeApp(it)); });
+    // 2. 苹果降价：只上榜单（有降价/限免的），没降价的不展示
+    var apps = res[1], drops = (apps && apps.drops) || [];
+    drops.forEach(function(it) { items.push(normalizeApp(it)); });
     // 3. Steam 好价
     var deals = res[2];
     ((deals && deals.items) || []).forEach(function(it) { items.push(normalizeDeal(it)); });
@@ -201,7 +201,9 @@ function renderPriceTab(cat) {
   var items = window.__priceItems || [];
   var list = cat === 'all' ? items : items.filter(function(it) { return it.cat === cat; });
   document.getElementById('all-date').textContent = '共 ' + list.length + ' 条好价';
-  document.getElementById('all-grid').innerHTML = list.map(cardHtml).join('');
+  document.getElementById('all-grid').innerHTML = list.length
+    ? list.map(cardHtml).join('')
+    : '<p style="grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0;">今日暂无降价，明天再来看看</p>';
 }
 
 function normalizePick(it) {
