@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""苹果降价榜 · 每天查 iTunes 官方 API（国区+美区），对比 30 天最高价，输出降价 App。
+"""苹果降价/限免榜 · 每天查 iTunes 官方 API（国区+美区+港区），对比 30 天最高价，输出降价 App。
 
-输入: data/app-watchlist.json  [{id, name}]
+数据源：
+  1. 三国付费榜 Top100（RSS）：自动发现热门付费 App
+  2. data/app-watchlist.json：手动关注的 App（榜单可能漏掉的小众好 App）
+
 输出: data/app-drops.json       {date, drops:[...], tracked:[...]}
-历史: data/app-price-history.json {appid: {CN: [{date, price}], US: [{date, price}]}}
+历史: data/app-price-history.json {appid: {CN: [{date, price}], US: [...], HK: [...]}}
 """
 import json
 import os
@@ -17,31 +20,70 @@ WATCHLIST = os.path.join(BASE, "data", "app-watchlist.json")
 HISTORY = os.path.join(BASE, "data", "app-price-history.json")
 OUT = os.path.join(BASE, "data", "app-drops.json")
 HISTORY_KEEP_DAYS = 30
+CHART_LIMIT = 100
 REGIONS = [("CN", "国区", "¥"), ("US", "美区", "$"), ("HK", "港区", "HK$")]
 FX_USD_CNY = 7.2  # 美区价格换算参考
 
 
-def lookup(appid, country):
-    url = "https://itunes.apple.com/lookup?id=%d&country=%s" % (appid, country)
+def get_json(url):
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=20) as r:
-        d = json.load(r)
-    results = d.get("results") or []
-    if not results:
-        return None
-    it = results[0]
-    price = float(it.get("price") or 0)
-    return {
-        "price": price,
-        "currency": it.get("currency") or ("CNY" if country == "CN" else "USD"),
-        "name": it.get("trackName", ""),
-        "icon": (it.get("artworkUrl100") or "").replace("100x100", "256x256"),
-        "url": it.get("trackViewUrl", ""),
-    }
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.load(r)
+
+
+def chart_ids(country, limit=CHART_LIMIT):
+    """取某区付费榜 TopN 的 app id 集合。"""
+    url = "https://itunes.apple.com/%s/rss/toppaidapplications/limit=%d/json" % (
+        country.lower(), limit)
+    try:
+        d = get_json(url)
+    except Exception as e:
+        print("chart fail", country, e)
+        return set()
+    ids = set()
+    for e in (d.get("feed", {}).get("entry") or []):
+        try:
+            ids.add(int(e["id"]["attributes"]["im:id"]))
+        except Exception:
+            continue
+    return ids
+
+
+def lookup_many(appids, country):
+    """批量查价（lookup 支持逗号分隔多个 id）。返回 {id: info}。"""
+    out = {}
+    ids = sorted(set(appids))
+    for i in range(0, len(ids), 100):
+        chunk = ids[i:i + 100]
+        url = "https://itunes.apple.com/lookup?id=%s&country=%s" % (
+            ",".join(map(str, chunk)), country)
+        try:
+            d = get_json(url)
+        except Exception as e:
+            print("lookup fail", country, e)
+            continue
+        for it in d.get("results") or []:
+            try:
+                aid = int(it.get("trackId"))
+            except Exception:
+                continue
+            out[aid] = {
+                "price": float(it.get("price") or 0),
+                "currency": it.get("currency") or "USD",
+                "name": it.get("trackName", ""),
+                "icon": (it.get("artworkUrl100") or "").replace("100x100", "256x256"),
+                "url": it.get("trackViewUrl", ""),
+            }
+    return out
 
 
 def main():
-    watch = json.load(open(WATCHLIST, encoding="utf-8"))
+    watch = []
+    if os.path.exists(WATCHLIST):
+        watch = json.load(open(WATCHLIST, encoding="utf-8"))
+    manual_ids = {int(w["id"]) for w in watch}
+    manual_names = {int(w["id"]): w.get("name", "") for w in watch}
+
     history = {}
     if os.path.exists(HISTORY):
         history = json.load(open(HISTORY, encoding="utf-8"))
@@ -49,24 +91,31 @@ def main():
     for k, v in list(history.items()):
         if isinstance(v, list):
             history[k] = {"CN": v}
+
+    # 三区榜单 id 并集 + 手动 watchlist
+    all_ids = set(manual_ids)
+    for code, _, _ in REGIONS:
+        all_ids |= chart_ids(code)
+    print("apps to check:", len(all_ids))
+
     today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
     cutoff = (datetime.now() - timedelta(days=HISTORY_KEEP_DAYS)).strftime("%Y-%m-%d")
 
+    # 分区批量查价
+    region_data = {}
+    for code, _, _ in REGIONS:
+        region_data[code] = lookup_many(all_ids, code)
+
     tracked, drops = [], []
-    for w in watch:
-        appid = str(w["id"])
-        h = history.setdefault(appid, {})
-        info = {"id": w["id"], "name": w["name"], "prices": {}}
+    for appid in sorted(all_ids):
+        key = str(appid)
+        h = history.setdefault(key, {})
+        info = {"id": appid, "name": manual_names.get(appid, ""), "prices": {}}
         base_info = None
         for code, label, symbol in REGIONS:
-            try:
-                r = lookup(w["id"], code)
-            except Exception as e:
-                print("lookup fail", w["id"], code, e)
-                continue
+            r = region_data[code].get(appid)
             if not r:
                 continue
-            # price == 0 表示限免，不跳过（后面按 100% 折扣处理）
             if base_info is None:
                 base_info = r
             hist = [x for x in h.get(code, []) if x["date"] >= cutoff and x["date"] != today]
@@ -80,7 +129,7 @@ def main():
             }
         if not info["prices"] or base_info is None:
             continue
-        info["name"] = base_info["name"] or w["name"]
+        info["name"] = base_info["name"] or info["name"] or key
         info["icon"] = base_info["icon"]
         info["url"] = base_info["url"]
         tracked.append(info)
