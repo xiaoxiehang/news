@@ -1,44 +1,56 @@
 {
-  "fetched_at": "2026-10-06 03:23:13",
+  "fetched_at": "2026-10-07 02:46:33",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
         {
+          "title": "How Jump Trading is scaling quant research with ChatGPT",
+          "url": "https://openai.com/index/jump-trading",
+          "desc": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review.",
+          "published": "Tue, 06 Oct 2026"
+        },
+        {
+          "title": "Sharing AI progress in mathematics",
+          "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+          "desc": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+          "published": "Tue, 06 Oct 2026"
+        },
+        {
+          "title": "Advancing computer use with Ironclad",
+          "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+          "desc": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+          "published": "Tue, 06 Oct 2026"
+        },
+        {
+          "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+          "url": "https://openai.com/index/atlassian-partnership",
+          "desc": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
+          "published": "Tue, 06 Oct 2026"
+        },
+        {
           "title": "Our approach to EU text provenance rules",
           "url": "https://openai.com/index/eu-text-provenance",
           "desc": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
           "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "Building advertising for the way people use AI",
-          "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-          "desc": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-          "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "A model guide for the GPT-6 family",
-          "url": "https://openai.com/index/practical-guide-building-gpt-6",
-          "desc": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "Chatham scales its capital markets expertise with OpenAI",
-          "url": "https://openai.com/index/chatham-financial",
-          "desc": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "The eternal complement",
-          "url": "https://openai.com/index/the-eternal-complement",
-          "desc": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
-          "published": "Thu, 01 Oct 2026"
         }
       ]
     },
     {
       "name": "机器之心",
       "items": [
+        {
+          "title": "一家影视公司为什么能做出全球第二的视频模型？答案藏在「生产系统」里",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061195&idx=1&sn=fd895d3e2b61a55684270981b166bf2b",
+          "desc": "全球文生视频盲审第二背后，这家影视公司为何在「长叙事」上跑赢 AI 大厂？",
+          "published": "Tue, 06 Oct 2026"
+        },
+        {
+          "title": "Token账单扛不住了，Meta、微软开始猛砍Claude使用",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061195&idx=2&sn=f2860f3e1727c676240e35c732f0706e",
+          "desc": "力推自家模型",
+          "published": "Tue, 06 Oct 2026"
+        },
         {
           "title": "入职才4个月，宋晓冬团队被曝与Meta分道扬镳，理由：工作风格不合",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061111&idx=1&sn=c47484991b1f2846b19161a84a5044d7",
@@ -74,18 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060998&idx=2&sn=6e1b1eee268b769acca49b04819c6fd3",
           "desc": "大模型后训练中密集的 token-level 信号真的是必要的吗？",
           "published": "Sat, 03 Oct 2026"
-        },
-        {
-          "title": "比李飞飞World Labs早两年押注原生4D，影身智能这次是真走在前面了？",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060898&idx=1&sn=dcd5a6cee64e86b4b40b03c9b9d3f675",
-          "desc": "4D世界模型进入产业竞速期。",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "LegoFlow：让智能体自主跑完代码数据构建+训练测评全流程",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060898&idx=2&sn=7c342e5f7de860d0e928dab50043d6b5",
-          "desc": "目前，数据、代码、文档已全部开源！",
-          "published": "Fri, 02 Oct 2026"
         }
       ]
     },
@@ -93,28 +93,10 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "聊聊A16Z这两份AI报告，以及一些反常识的真相。",
-          "url": "https://www.huxiu.com/article/4895498.html?f=rss",
+          "title": "【硝烟又起】从 ChatGPT 到 Personal AI：下一代 AI （主动智能）的入口之争",
+          "url": "https://www.huxiu.com/article/4895578.html?f=rss",
           "desc": "",
-          "published": "Tue, 06 Oct 2026"
-        },
-        {
-          "title": "为什么顶尖的AI研究员，开始纷纷叛逃自己所在的公司？",
-          "url": "https://www.huxiu.com/article/4895480.html?f=rss",
-          "desc": "创造的能力，可以成为专业权威的来源，但它不能自动成为统治他人的许可证",
-          "published": "Tue, 06 Oct 2026"
-        },
-        {
-          "title": "Peter Thiel专访：停滞五十年，AI是文明最后的自救吗？",
-          "url": "https://www.huxiu.com/article/4895490.html?f=rss",
-          "desc": "",
-          "published": "Tue, 06 Oct 2026"
-        },
-        {
-          "title": "想改造工厂的机器人，先被工厂改造了",
-          "url": "https://www.huxiu.com/article/4895487.html?f=rss",
-          "desc": "",
-          "published": "Tue, 06 Oct 2026"
+          "published": "Wed, 07 Oct 2026"
         }
       ]
     },
@@ -145,6 +127,12 @@
       "name": "大模型智能",
       "items": [
         {
+          "title": "刚刚！Jev中文教程项目发布了",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557435&idx=1&sn=07617ad33c7d46d78b572b5d57f898d7",
+          "desc": "",
+          "published": "Wed, 07 Oct 2026"
+        },
+        {
           "title": "刚刚，Hinton发了首篇RSI论文",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557428&idx=1&sn=379059763359d1d01c926418ebc91016",
           "desc": "AI一年走的路，未来可能5周跑完",
@@ -173,18 +161,24 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557399&idx=1&sn=933a70d8842566827b9a360441fcc7e8",
           "desc": "系统梳理机器人世界—动作模型的概念、架构、训练与评测，讨论动作对齐、空间一致性、长时序记忆和闭环学习。",
           "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "OpenAI 的神秘 RL 算法只是个 STE 的近似吗？解密 OAI 的 RL 后训练算法",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557392&idx=1&sn=9fd8889dd6e1d96befa5d69c88056b1f",
-          "desc": "这个叫做scorecentering的算法其实就是一个STE的近似实现，这种trick其实在之前涉及到SimtoReal的RLsetting上是很常见的用法，只能说是太阳之下没有新鲜事。",
-          "published": "Thu, 01 Oct 2026"
         }
       ]
     },
     {
       "name": "InfoQ 推荐",
       "items": [
+        {
+          "title": "用 Harness 工程打造 SRE 可控的生产环境｜QCon上海",
+          "url": "https://www.infoq.cn/article/WvTYmUCLl28HKFvWHpZ2",
+          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
+          "published": "Wed, 07 Oct 2026"
+        },
+        {
+          "title": "AI + SRE ≠ AISRE：AI 如何真正进入生产运维闭环｜QCon上海",
+          "url": "https://www.infoq.cn/article/u70P77XPmsXmRBciu6fL",
+          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
+          "published": "Tue, 06 Oct 2026"
+        },
         {
           "title": "DataAgent - 快手大数据生产与分析的智能化探索之路｜QCon上海",
           "url": "https://www.infoq.cn/article/yVWAQGCZCzI838JESA1b",
@@ -208,18 +202,6 @@
           "url": "https://www.infoq.cn/article/eRbEA3dMd58RNPqp5D8S",
           "desc": "在接受 JetBrains 采访时，Zig 项目创建者 Andrew Kelley 详细阐述 \"了该项目正式禁止 AI 贡献的决定，以及从 GitHub 迁移至 Codeberg 的动机。Kelley 指出，自动提交代码最终会降低代码库的质量，并且会削弱开源参与者之间的社交纽带。GitHub 持续出现的故障以及彼此之间的激励机制存在错位，导致该项目将代码库迁移至 Codeberg。 Kelley ",
           "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "Graphify：整合代码库上下文，优化基于代理的软件工程",
-          "url": "https://www.infoq.cn/article/8XuP4iZKKr3ex2VTDxpl",
-          "desc": "Graphify \" 是一款开源工具，可以将代码库、文档和非结构化数据转换为可查询的多模态知识图谱，从而优化 AI 编码工作流。该工具于 2026 年 4 月发布，遵循快速发布节奏，每周都会进行更新。最新改进带来了先进的解析器功能，例如 Terraform 块属性保留和跨文件方法解析。Reddit 和开发者博客上的社区反馈表明，该工具在架构映射方面具有很强的概念吸引力，但日常工作流程中采用这个新工",
-          "published": "Fri, 02 Oct 2026"
-        },
-        {
-          "title": "别再给 Agent 一个“毛坯房”了：构建 Agent 拎包入住的开发环境实践｜QCon上海",
-          "url": "https://www.infoq.cn/article/DEyrayxufObhpoeZgOKT",
-          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
-          "published": "Fri, 02 Oct 2026"
         }
       ]
     },
@@ -227,40 +209,16 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "Gemini Call for Me might tell your mom you&#8217;re running late",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors",
-          "desc": "Google may be expanding its \"Call for Me\" AI feature beyond business calls so you can use it to send messages to friends and family. Android Authority reports finding a \"Gemini Calling\" introductory s",
-          "published": "2026-10-05T19:09"
+          "title": "OpenAI drops another batch of mathematical breakthroughs",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github",
+          "desc": "OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related ",
+          "published": "2026-10-06T19:26"
         },
         {
-          "title": "The Matic is the first robovac to get an FCC ban waiver, not that it needs it",
-          "url": "https://www.theverge.com/policy/1004926/matic-fcc-ban-waiver-conditional-approval",
-          "desc": "The Matic is our favorite robot vacuum and robo-mop, and it's also now the first to escape the FCC's Roomba ban. Well, sort of - because the Matic wasn't banned to begin with. Here's what's actually h",
-          "published": "2026-10-05T17:15"
-        },
-        {
-          "title": "This startup is issuing AI-generated acne prescriptions",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions",
-          "desc": "People in Utah can now use AI to get a prescription for acne treatment. On Monday, healthcare startup Nolla Health announced that users in the state can scan their faces using its app, allowing its AI",
-          "published": "2026-10-05T16:14"
-        },
-        {
-          "title": "All the drama around AI&#8217;s takeover of mathematics",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1004933/ai-math-openai-breakthrough-solution",
-          "desc": "This past year, OpenAI, Anthropic, and other labs have announced breakthroughs on numerous long-standing mathematical problems, in some cases pushing well beyond what researchers expected current syst",
-          "published": "2026-10-05T15:28"
-        },
-        {
-          "title": "Wikipedia operator says OpenAI&#8217;s &#8216;rogue&#8217; bots may be linked to a May outage",
-          "url": "https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage",
-          "desc": "Following many recent disclosures about AI agents accessing third-party websites and services, the Wikimedia Foundation, which hosts Wikipedia, says that it \"can confirm that we have discovered some a",
-          "published": "2026-10-05T15:05"
-        },
-        {
-          "title": "OpenAI is adding text watermarking in ChatGPT and Codex",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act",
-          "desc": "An invisible, machine-readable watermark in text output is rolling out to ChatGPT and Codex, but only for users in the European Union at first. OpenAI says its textGrain watermarking \"matched or excee",
-          "published": "2026-10-05T14:08"
+          "title": "The best robot vacuum and mop deals during October Prime Day",
+          "url": "https://www.theverge.com/gadgets/1006059/robot-vacuum-mop-roborock-qrevo-prime-day-deal-sale",
+          "desc": "Spending too much time constantly sweeping and mopping? If you have the money to delegate those chores to a robot cleaner, you could save a lot of personal time. Thankfully, it’s cheaper than usual to",
+          "published": "2026-10-06T18:00"
         }
       ]
     },
@@ -268,134 +226,97 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "OpenAI will start watermarking ChatGPT’s text in the EU",
-          "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
-          "desc": "OpenAI will watermark ChatGPT and Codex text in the EU to comply with the AI Act. Editing can make the invisible marks harder to detect, it says.",
-          "published": "Mon, 05 Oct 2026"
+          "title": "Silicon Valley’s AI wunderkind launches Underdog, the most private Instinct/Muse competitor yet",
+          "url": "https://techcrunch.com/2026/10/06/silicon-valleys-ai-wunderkind-launches-underdog-the-most-private-instinct-muse-competitor-yet/",
+          "desc": "Sigil Wen, backed by a Silicon Valley who's who, has built an on-device AI assistant that promises to be free, fully private, and capable for everyday tasks.",
+          "published": "Tue, 06 Oct 2026"
         },
         {
-          "title": "Etched fields funding offers at $40B+ valuation, sources say",
-          "url": "https://techcrunch.com/2026/10/05/etched-fields-funding-offers-at-40b-valuation-sources-say/",
-          "desc": "Just a couple of months after its last big raise, the AI chip startup is already being plied with investment offers at double or more its current value, sources tell TechCrunch.",
-          "published": "Mon, 05 Oct 2026"
+          "title": "How AI decision models could change content moderation",
+          "url": "https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation/",
+          "desc": "On Tuesday, Musubi announced a lightweight decision model made for real-time moderation called PolicyLM-1.7B, released with open weights.",
+          "published": "Tue, 06 Oct 2026"
         },
         {
-          "title": "Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost",
-          "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
-          "desc": "Reflection is aiming Beam and future models at enterprises and sovereign nations. The pitch is to build “AI factories,” a product that would let institutions build their own customized, local AI syste",
-          "published": "Mon, 05 Oct 2026"
+          "title": "AI computing startup Lambda to raise $4B ahead of planned IPO",
+          "url": "https://techcrunch.com/2026/10/06/ai-computing-startup-lambda-to-raise-4b-ahead-of-planned-ipo/",
+          "desc": "Nvidia-backed Lambda is raising up to $4 billion at a $14.5 billion pre-money valuation ahead of a planned 2027 IPO, led by Coatue and Blackstone.",
+          "published": "Tue, 06 Oct 2026"
         },
         {
-          "title": "Instinct brings its AI agent to group chats, even for friends without an account",
-          "url": "https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/",
-          "desc": "Instinct is launching group chats that let friends use its AI agent together for tasks like planning trips, organizing carpools, and coordinating events. The company says personal accounts remain sepa",
-          "published": "Mon, 05 Oct 2026"
+          "title": "The next hurdle for AI agents: getting websites to let them in",
+          "url": "https://techcrunch.com/2026/10/06/the-next-hurdle-for-ai-agents-getting-websites-to-let-them-in/",
+          "desc": "Personal AI agents promise to shop, book flights, and make reservations for you. But deliberate blocks and anti-bot defenses are getting in the way, leaving consumers caught in the middle. A new stand",
+          "published": "Tue, 06 Oct 2026"
         },
         {
-          "title": "TikTok rolls out an AI shopping assistant and one-click checkout",
-          "url": "https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/",
-          "desc": "TikTok describes its new Shopping Assistant as a conversational AI agent designed to help users discover and purchase products.",
-          "published": "Mon, 05 Oct 2026"
+          "title": "Hark releases an AI personal assistant with a focus on privacy",
+          "url": "https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy/",
+          "desc": "The AI lab's personal assistant is an operating system from the future designed to compete with Muse, Dots, and Instinct.",
+          "published": "Tue, 06 Oct 2026"
         },
         {
-          "title": "At 19, founder raises $11M for Ghost, maker of a $3,499 computer for personal AI",
-          "url": "https://techcrunch.com/2026/10/05/at-19-ghost-founder-raises-11-million-to-build-a-3499-computer-for-your-personal-ai/",
-          "desc": "Ghost's first product is Core, a personal computer designed specifically for AI agents that can take actions on a person's behalf.",
-          "published": "Mon, 05 Oct 2026"
+          "title": "Mirror Particle is building a ‘world model’ of human behavior",
+          "url": "https://techcrunch.com/2026/10/06/mirror-particle-is-building-a-world-model-of-human-behavior/",
+          "desc": "Mirror Particle will launch at TechCrunch Disrupt's Startup Battlefield 200 with a world model built from scratch to predict human behavior, arguing that LLM role-play falls short for market research ",
+          "published": "Tue, 06 Oct 2026"
         }
       ]
     },
     {
       "name": "MIT 科技评论",
-      "items": [
-        {
-          "title": "Connecting AI agents to enterprise knowledge",
-          "url": "https://www.technologyreview.com/2026/10/05/1145580/connecting-ai-agents-to-enterprise-knowledge/",
-          "desc": "For all the data that AI systems continually amass and analyze, enterprise AI agents often suffer from a curious shortcoming: a lack of knowledge. More than data, knowledge is the understanding of wha",
-          "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "Bringing predictive analytics to the agentic AI era",
-          "url": "https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/",
-          "desc": "In 2026, the question for enterprise AI is no longer whether predictive models can outperform statistical forecasts—that argument is settled. The big question now is how to enable predictive systems t",
-          "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "The Download: AI’s popularity paradox and EmTech Future 2026",
-          "url": "https://www.technologyreview.com/2026/10/05/1145711/the-download-ai-popularity-paradox-emtech-future-2026/",
-          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. People really hate AI, so why can’t they get enoug",
-          "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "People really hate AI, so why can’t they get enough?",
-          "url": "https://www.technologyreview.com/2026/10/05/1145682/people-really-hate-ai-so-why-cant-they-get-enough/",
-          "desc": "Over the summer I talked to the CEO of Springboards, a startup building an LLM that’s designed to come up with a wider variety of responses than its mainstream rivals do. At the start of the call, he ",
-          "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "EmTech Future 2026: When AI Meets Everything",
-          "url": "https://www.technologyreview.com/2026/10/05/1145413/emtech-future-2026-when-ai-meets-everything/",
-          "desc": "Yossi Matias, Vice President &#38; Head of Google Research, explores how AI is beginning to reshape biology, infrastructure, manufacturing, and science, and why its greatest impact may come when it in",
-          "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "Redefining enterprise intelligence with autonomous AI",
-          "url": "https://www.technologyreview.com/2026/10/02/1143774/redefining-enterprise-intelligence-with-autonomous-ai/",
-          "desc": "Enterprise AI is no longer a future ambition. It is in full operational flight. Model capabilities are advancing faster than most organizations can absorb, while the cost of performance continues to f",
-          "published": "Fri, 02 Oct 2026"
-        }
-      ]
+      "items": []
     },
     {
       "name": "Product Hunt",
       "items": [
         {
-          "title": "HyperFrames Studio (Desktop)",
-          "url": "https://www.producthunt.com/products/heygen",
-          "desc": "The First Video Editor built for Agents Discussion | Link",
-          "published": "2026-10-04T23:03"
+          "title": "Review",
+          "url": "https://www.producthunt.com/products/review-2",
+          "desc": "Code review on your own machine, with your own AI Discussion | Link",
+          "published": "2026-10-05T14:01"
         },
         {
-          "title": "Marv",
-          "url": "https://www.producthunt.com/products/marv-3",
-          "desc": "An AI cursor companion that shows you what to click Discussion | Link",
-          "published": "2026-10-04T18:14"
+          "title": "Floani",
+          "url": "https://www.producthunt.com/products/floani",
+          "desc": "Create, animate, and share AI-powered diagrams Discussion | Link",
+          "published": "2026-10-04T18:59"
         },
         {
-          "title": "SpeechShield",
-          "url": "https://www.producthunt.com/products/speechshield",
-          "desc": "Live interview & meeting copilot for Mac, from your resume Discussion | Link",
-          "published": "2026-10-04T08:59"
+          "title": "Banger",
+          "url": "https://www.producthunt.com/products/banger-mail",
+          "desc": "Win and keep customers with email automation your AI runs Discussion | Link",
+          "published": "2026-10-02T10:59"
         },
         {
-          "title": "Unscary AI",
-          "url": "https://www.producthunt.com/products/unscary-ai",
-          "desc": "Short lessons help you stop feeling behind on AI. Discussion | Link",
-          "published": "2026-10-03T11:10"
+          "title": "Appto",
+          "url": "https://www.producthunt.com/products/appto",
+          "desc": "An iOS app factory that runs on your own AI subscription Discussion | Link",
+          "published": "2026-10-05T13:24"
         },
         {
-          "title": "Pilot5 Legal",
-          "url": "https://www.producthunt.com/products/pilot5-ai",
-          "desc": "Five AI models challenge every legal answer Discussion | Link",
-          "published": "2026-10-04T13:12"
+          "title": "EasyCut",
+          "url": "https://www.producthunt.com/products/easycut-2",
+          "desc": "Edit your Claude motion videos Discussion | Link",
+          "published": "2026-10-05T10:11"
         },
         {
-          "title": "crosswalk",
-          "url": "https://www.producthunt.com/products/crosswalk",
-          "desc": "A third place for people & their agents, starting with inbox Discussion | Link",
-          "published": "2026-10-04T20:48"
+          "title": "Cosmic AI Support Agent",
+          "url": "https://www.producthunt.com/products/cosmic",
+          "desc": "An AI support agent that stays in sync with your site Discussion | Link",
+          "published": "2026-10-05T08:33"
         },
         {
-          "title": "Siteprint",
-          "url": "https://www.producthunt.com/products/siteprint",
-          "desc": "Measure any website's design, then hand it to your AI Discussion | Link",
-          "published": "2026-10-02T12:52"
+          "title": "Fuse AI",
+          "url": "https://www.producthunt.com/products/fuseai",
+          "desc": "Build a Custom GTM Stack. One SDK. One MCP. Discussion | Link",
+          "published": "2026-10-01T12:31"
         },
         {
-          "title": "Opengeni",
-          "url": "https://www.producthunt.com/products/opengeni",
-          "desc": "Ship AI agents within minutes. Infrastructure for Agents Discussion | Link",
-          "published": "2026-09-14T21:52"
+          "title": "Awakado",
+          "url": "https://www.producthunt.com/products/awakado",
+          "desc": "Keep your Mac awake while your AI agents work Discussion | Link",
+          "published": "2026-10-03T00:11"
         }
       ]
     }

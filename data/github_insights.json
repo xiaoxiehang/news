@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06 18:41:06",
+  "updated_at": "2026-10-07 02:51:14",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -50,11 +50,6 @@
       "what": "提供可随用户需求扩展的 AI 代理。",
       "why_hot": "可成长的个人代理，比固定功能的助手更吸睛。",
       "who": "关注个人 AI 代理的人。"
-    },
-    "torvalds/linux": {
-      "what": "Linux 内核的源代码仓库。",
-      "why_hot": "内核是大量系统的底座，始终有人关注。",
-      "who": "系统开发者和内核爱好者。"
     },
     "react/react": {
       "what": "构建网页和原生应用界面的组件库。",
@@ -3380,6 +3375,536 @@
       "what": "下载多个网站的媒体内容，也可作为库调用。",
       "why_hot": "多站点下载工具实用，开发者也能直接集成。",
       "who": "适合需要管理在线视频素材的人。"
+    },
+    "MadsLorentzen/ai-job-search": {
+      "what": "在本机用 AI 筛岗位、改简历、写求职信。",
+      "why_hot": "求职流程繁琐，本地运行又方便自己掌控资料。",
+      "who": "适合正在找工作、想少做重复劳动的人。"
+    },
+    "agentscope-ai/QwenPaw": {
+      "what": "可自部署、接入多个聊天应用的个人 AI 助手。",
+      "why_hot": "大家想要能自己部署、还能按需扩展的助手。",
+      "who": "适合想搭个人 AI 助手的开发者。"
+    },
+    "TheAlgorithms/C-Plus-Plus": {
+      "what": "用 C++ 实现各类算法，方便学习和对照。",
+      "why_hot": "算法学习和面试准备一直需要现成代码参考。",
+      "who": "适合学 C++、刷算法题的人。"
+    },
+    "k4yt3x/video2x": {
+      "what": "用机器学习给视频超分辨率、补帧。",
+      "why_hot": "老视频修复和画质提升需求很直观。",
+      "who": "适合视频创作者和画质折腾党。"
+    },
+    "LibreTranslate/LibreTranslate": {
+      "what": "可自部署、支持离线使用的开源翻译 API。",
+      "why_hot": "不想把文本交给第三方时，自建翻译很有吸引力。",
+      "who": "适合需要私有化翻译服务的团队。"
+    },
+    "hashicorp/packer": {
+      "what": "用一份配置构建多个平台的机器镜像。",
+      "why_hot": "多平台部署容易乱，统一镜像构建能省事。",
+      "who": "适合运维和平台工程师。"
+    },
+    "prometheus/node_exporter": {
+      "what": "采集服务器指标，供 Prometheus 监控。",
+      "why_hot": "机器监控是刚需，它简单直接、容易接入。",
+      "who": "适合管服务器和监控系统的人。"
+    },
+    "n8n-io/n8n": {
+      "what": "用可视化流程和代码串起应用与 AI 自动化。",
+      "why_hot": "AI 工作流需求旺，自部署和大量集成很加分。",
+      "who": "适合想自动化日常流程的团队。"
+    },
+    "x1xhlol/system-prompts-and-models-of-ai-tools": {
+      "what": "汇集多款 AI 工具的系统提示词等资料。",
+      "why_hot": "大家好奇热门 AI 工具背后的提示词设计。",
+      "who": "适合研究 AI 产品和提示词的人。"
+    },
+    "Shubhamsaboo/awesome-llm-apps": {
+      "what": "收集 AI Agent、技能和 RAG 应用案例。",
+      "why_hot": "想做 AI 应用的人，常需要能上手的例子。",
+      "who": "适合找 AI 应用灵感的开发者。"
+    },
+    "microsoft/generative-ai-for-beginners": {
+      "what": "用 21 节课带新手入门生成式 AI 开发。",
+      "why_hot": "入门 AI 的人多，成体系的免费课程很受用。",
+      "who": "适合刚开始学生成式 AI 的人。"
+    },
+    "rasbt/LLMs-from-scratch": {
+      "what": "手把手用 PyTorch 从零实现类 ChatGPT 模型。",
+      "why_hot": "只会调 API 不够，很多人想弄懂模型原理。",
+      "who": "适合想深入理解大模型的开发者。"
+    },
+    "punkpeye/awesome-mcp-servers": {
+      "what": "汇总各类 MCP 服务器项目。",
+      "why_hot": "AI 工具接外部能力时，大家都在找可用的 MCP。",
+      "who": "适合搭 Agent、找工具接口的人。"
+    },
+    "D4Vinci/Scrapling": {
+      "what": "从单次请求到批量抓取都能用的爬虫框架。",
+      "why_hot": "网页数据需求多，能适应不同抓取规模很实用。",
+      "who": "适合做数据采集的开发者。"
+    },
+    "dair-ai/Prompt-Engineering-Guide": {
+      "what": "整理提示词、上下文工程和 RAG 学习资料。",
+      "why_hot": "AI 应用越做越深，大家需要系统补基础。",
+      "who": "适合写提示词或搭 AI 应用的人。"
+    },
+    "justjavac/free-programming-books-zh_CN": {
+      "what": "汇集免费的中文编程书籍。",
+      "why_hot": "免费中文学习资源好找、好分享，需求一直在。",
+      "who": "适合自学编程、找教材的人。"
+    },
+    "remotion-dev/remotion": {
+      "what": "用 React 组件和代码生成视频。",
+      "why_hot": "批量做视频内容时，写代码比手工剪更灵活。",
+      "who": "适合会 React 的视频创作者。"
+    },
+    "go-gitea/gitea": {
+      "what": "自建 Git 托管、代码评审和团队协作平台。",
+      "why_hot": "想自己掌控代码和开发流程的团队越来越多。",
+      "who": "适合需要私有代码平台的团队。"
+    },
+    "team-spotube/spotube": {
+      "what": "支持桌面和手机的开源音乐播放应用。",
+      "why_hot": "跨设备听歌方便，开源客户端也容易引起关注。",
+      "who": "适合喜欢折腾音乐播放器的人。"
+    },
+    "slidevjs/slidev": {
+      "what": "用面向开发者的方式编写和展示幻灯片。",
+      "why_hot": "技术分享常要放代码，写幻灯片也想沿用开发习惯。",
+      "who": "适合经常做技术分享的开发者。"
+    },
+    "calcom/cal.diy": {
+      "what": "提供可自行部署的预约排期系统。",
+      "why_hot": "预约是常见需求，自建方案更好控制数据和流程。",
+      "who": "适合需要开放预约入口的团队。"
+    },
+    "vercel/hyper": {
+      "what": "用 Web 技术构建的终端应用。",
+      "why_hot": "终端也能按前端思路定制，容易吸引折腾党。",
+      "who": "适合爱定制终端的开发者。"
+    },
+    "AykutSarac/jsoncrack.com": {
+      "what": "把 JSON、YAML 等数据画成交互式关系图。",
+      "why_hot": "复杂数据靠眼睛读太累，图形化一看就清楚。",
+      "who": "适合常看接口数据和配置文件的人。"
+    },
+    "reactive-resume/reactive-resume": {
+      "what": "注重隐私、可定制的开源简历制作工具。",
+      "why_hot": "求职者既想快速做简历，也想掌控个人信息。",
+      "who": "适合准备投递简历的人。"
+    },
+    "pathwaycom/llm-app": {
+      "what": "提供连接实时数据的 RAG 和 AI 应用模板。",
+      "why_hot": "企业知识常变化，能持续同步数据的模板省工夫。",
+      "who": "适合做企业搜索和 RAG 的团队。"
+    },
+    "sickcodes/Docker-OSX": {
+      "what": "在 Docker 中运行 macOS 虚拟机。",
+      "why_hot": "macOS 测试环境难搭，容器化方案很吸睛。",
+      "who": "适合做 macOS 测试和安全研究的人。"
+    },
+    "gogs/gogs": {
+      "what": "搭建自己的 Git 代码托管服务。",
+      "why_hot": "小团队想自托管代码，往往先找省心的方案。",
+      "who": "适合想自建 Git 服务的小团队。"
+    },
+    "DataTalksClub/data-engineering-zoomcamp": {
+      "what": "用九周免费课程教你搭生产级数据管道。",
+      "why_hot": "数据工程要靠实战，完整免费课程比较难得。",
+      "who": "适合想入门数据工程的人。"
+    },
+    "The-Vibe-Company/quivr": {
+      "what": "把持续流入的内容变成可搜索、可告警的数据。",
+      "why_hot": "信息更新太快，实时检索和监控更有用。",
+      "who": "适合处理持续更新数据的团队。"
+    },
+    "YunaiV/ruoyi-vue-pro": {
+      "what": "覆盖权限、工作流和业务模块的后台系统。",
+      "why_hot": "企业后台功能杂，现成模块能少写不少重复代码。",
+      "who": "适合做 Java 企业管理系统的团队。"
+    },
+    "chatwoot/chatwoot": {
+      "what": "整合在线聊天、邮件等渠道的开源客服平台。",
+      "why_hot": "客服渠道分散，自建统一工作台很有吸引力。",
+      "who": "适合想自建客服系统的团队。"
+    },
+    "glanceapp/glance": {
+      "what": "把各种信息源放到一个自托管仪表盘。",
+      "why_hot": "信息太分散，一个页面看全很省心。",
+      "who": "适合喜欢自建个人首页的人。"
+    },
+    "PDFMathTranslate/PDFMathTranslate": {
+      "what": "保留论文排版，生成 PDF 双语译文。",
+      "why_hot": "读外文论文怕排版乱，这工具正好解决痛点。",
+      "who": "适合常读外文论文的学生和研究者。"
+    },
+    "gitroomhq/postiz-app": {
+      "what": "用 AI 辅助安排和发布社交媒体内容。",
+      "why_hot": "多平台发内容很费时间，自动排期需求明显。",
+      "who": "适合运营多个社媒账号的人。"
+    },
+    "ohmyzsh/ohmyzsh": {
+      "what": "用插件和主题管理 zsh 配置。",
+      "why_hot": "终端天天用，少折腾配置又能个性化很讨喜。",
+      "who": "适合经常用命令行的人。"
+    },
+    "microsoft/markitdown": {
+      "what": "把文件和 Office 文档转换成 Markdown。",
+      "why_hot": "整理文档给 AI 使用时，Markdown 格式很方便。",
+      "who": "适合处理文档和 AI 知识库的人。"
+    },
+    "excalidraw/excalidraw": {
+      "what": "像手绘一样快速画图的在线白板。",
+      "why_hot": "讲想法、画架构都快，手绘风格也不拘束。",
+      "who": "适合需要随手画图沟通的人。"
+    },
+    "nexu-io/open-design": {
+      "what": "让编程 Agent 辅助做原型、页面和设计。",
+      "why_hot": "写代码和做设计的边界变近，本地优先也加分。",
+      "who": "适合想用 AI 快速做界面的开发者。"
+    },
+    "strapi/strapi": {
+      "what": "可定制的开源无头内容管理系统。",
+      "why_hot": "多端都要用同一份内容，灵活的内容接口很吃香。",
+      "who": "适合开发内容驱动产品的团队。"
+    },
+    "tw93/Mole": {
+      "what": "清理、卸载并查看 Mac 状态的开源工具。",
+      "why_hot": "Mac 用久了想清理，免费开源工具容易被关注。",
+      "who": "适合想给 Mac 做维护的人。"
+    },
+    "Raphire/Win11Debloat": {
+      "what": "用脚本清理 Windows 预装应用并调整隐私设置。",
+      "why_hot": "装机后想快速精简系统的人多，一键操作很省事。",
+      "who": "适合想自己掌控 Windows 设置的人。"
+    },
+    "Whisky-App/Whisky": {
+      "what": "用 SwiftUI 做的 macOS Wine 图形界面。",
+      "why_hot": "想在 Mac 上运行 Windows 软件，图形界面更容易上手。",
+      "who": "适合有跨平台软件需求的 Mac 用户。"
+    },
+    "pliang279/awesome-multimodal-ml": {
+      "what": "汇总多模态机器学习的研究阅读材料。",
+      "why_hot": "图文音视频模型受关注，整理好的文献能省检索时间。",
+      "who": "适合多模态方向的学生和研究者。"
+    },
+    "YyzHarry/imbalanced-regression": {
+      "what": "提供深度不平衡回归的论文与相关代码。",
+      "why_hot": "稀有数值样本难预测，这类方法有实际参考价值。",
+      "who": "适合处理长尾回归问题的人。"
+    },
+    "pliang279/MultiBench": {
+      "what": "提供多模态表示学习的基准与评测资源。",
+      "why_hot": "多模态模型越来越多，统一评测更方便横向比较。",
+      "who": "适合做多模态实验的研究者。"
+    },
+    "NativeSensors/EyeGestures": {
+      "what": "提供基于视线追踪的交互软件。",
+      "why_hot": "免手操作很有想象空间，做交互原型也方便。",
+      "who": "适合关注无障碍交互和视觉追踪的人。"
+    },
+    "novoic/surfboard": {
+      "what": "从音频中提取可用于分析的特征。",
+      "why_hot": "语音和声音任务常要做特征工程，现成工具能省时间。",
+      "who": "适合做音频分析和语音研究的人。"
+    },
+    "CogStack/OpenGPT": {
+      "what": "构建有依据的指令数据并训练领域对话模型。",
+      "why_hot": "垂直领域需要更可靠的回答，数据构建正是难点。",
+      "who": "适合做领域大模型的团队。"
+    },
+    "getlago/lago": {
+      "what": "提供用量计费、订阅和收入分析能力。",
+      "why_hot": "AI 和 API 产品常按量收费，开源方案便于自建。",
+      "who": "适合设计 SaaS 收费体系的团队。"
+    },
+    "yeasy/blockchain_guide": {
+      "what": "从原理到实践介绍区块链和分布式账本。",
+      "why_hot": "内容覆盖主流技术路线，适合系统补基础。",
+      "who": "适合想入门区块链的开发者。"
+    },
+    "FISCO-BCOS/FISCO-BCOS": {
+      "what": "面向行业应用的许可区块链平台。",
+      "why_hot": "有较多产业落地案例，企业选型时值得参考。",
+      "who": "适合做企业级区块链应用的团队。"
+    },
+    "openmeterio/openmeter": {
+      "what": "实时统计产品用量，支持按量计费。",
+      "why_hot": "AI 与 API 的调用量计费需求增长，实时统计很关键。",
+      "who": "适合做 AI、API 或 DevOps 产品的团队。"
+    },
+    "DigitalPlatDev/FreeDomain": {
+      "what": "提供免费域名注册和 DNS 学习资源。",
+      "why_hot": "免费域名门槛低，想练手部署的人自然会关注。",
+      "who": "适合想学习 DNS 或搭建个人站点的人。"
+    },
+    "processing/p5.js": {
+      "what": "让人在网页里用 JavaScript 做创意编程。",
+      "why_hot": "写几行代码就能做视觉作品，教学和创作都直观。",
+      "who": "适合创作者、设计师和编程初学者。"
+    },
+    "Chalarangelo/30-seconds-of-css": {
+      "what": "收集短小实用的 CSS 代码片段。",
+      "why_hot": "常见样式能直接查着用，省去反复搜索。",
+      "who": "适合经常写页面样式的开发者。"
+    },
+    "noodle-run/noodle": {
+      "what": "探索面向学生的学习与任务管理工具。",
+      "why_hot": "学生想把学习安排集中管理，产品定位很贴需求。",
+      "who": "适合想优化学习流程的学生。"
+    },
+    "Chalarangelo/30-seconds-of-python": {
+      "what": "收集能快速上手的 Python 代码片段。",
+      "why_hot": "小技巧容易查、容易试，日常写脚本很实用。",
+      "who": "适合学 Python 或常写脚本的人。"
+    },
+    "logisim-evolution/logisim-evolution": {
+      "what": "设计并模拟数字逻辑电路。",
+      "why_hot": "画电路、跑模拟都方便，学计算机组成很实用。",
+      "who": "适合电子和计算机专业学生。"
+    },
+    "ivmm/Student-resources": {
+      "what": "整理学生和教职工可用的教育优惠。",
+      "why_hot": "优惠信息分散，集中查找能省钱也省时间。",
+      "who": "适合有资格申请教育优惠的人。"
+    },
+    "hneemann/Digital": {
+      "what": "设计数字逻辑电路并模拟运行。",
+      "why_hot": "电路设计能边搭边验证，课堂练习更直观。",
+      "who": "适合学习数字电路的学生和教师。"
+    },
+    "PetoiCamp/OpenCat-Quadruped-Robot": {
+      "what": "提供开源四足机器人宠物开发框架。",
+      "why_hot": "机器人能动手组装又能写代码，展示效果也直观。",
+      "who": "适合机器人爱好者和 STEM 教学者。"
+    },
+    "JuliaPluto/Pluto.jl": {
+      "what": "提供会随代码变化自动更新的 Julia 笔记本。",
+      "why_hot": "交互结果即时更新，做教学和数据探索很顺手。",
+      "who": "适合用 Julia 做计算和教学的人。"
+    },
+    "Chalarangelo/30-seconds-of-react": {
+      "what": "收集简短实用的 React 代码片段。",
+      "why_hot": "常用写法能快速翻到，写组件时少走弯路。",
+      "who": "适合 React 初学者和前端开发者。"
+    },
+    "brycewang-stanford/Auto-Empirical-Research-Skills": {
+      "what": "汇集面向社会科学实证研究的 AI Agent 技能。",
+      "why_hot": "技能条目多，研究者想找可复用的分析流程。",
+      "who": "适合做实证研究和研究自动化的人。"
+    },
+    "anu0012/awesome-computer-science-opportunities": {
+      "what": "整理计算机学生可申请的活动和奖助机会。",
+      "why_hot": "机会信息零散，集中列表方便查找和规划。",
+      "who": "适合寻找项目机会的计算机学生。"
+    },
+    "berwin/Blog": {
+      "what": "记录作者的技术学习和成长。",
+      "why_hot": "真实的实践笔记，适合碰到同类问题时参考。",
+      "who": "适合喜欢读开发经验分享的人。"
+    },
+    "rathena/rathena": {
+      "what": "提供跨平台开源 MMORPG 游戏服务器。",
+      "why_hot": "游戏服务端可自行搭建和改造，社区需求一直在。",
+      "who": "适合研究网游服务端的开发者。"
+    },
+    "noob-hackers/infect": {
+      "what": "声称可通过链接向 Android 设备传播恶意程序。",
+      "why_hot": "安全风险话题容易引发关注，但别拿它攻击别人。",
+      "who": "仅适合在授权环境下研究安全风险的人。"
+    },
+    "academic/awesome-datascience": {
+      "what": "整理数据科学学习资料与实践资源。",
+      "why_hot": "入门资料太分散，按主题汇总更方便找方向。",
+      "who": "适合学习或应用数据科学的人。"
+    },
+    "modelscope/modelscope": {
+      "what": "提供模型服务与 AI 模型使用工具。",
+      "why_hot": "想快速试用和部署模型的人多，平台化工具省事。",
+      "who": "适合开发和落地 AI 应用的团队。"
+    },
+    "dformoso/machine-learning-mindmap": {
+      "what": "用思维导图梳理机器学习知识点。",
+      "why_hot": "知识跨度大，一张图有助于建立整体框架。",
+      "who": "适合刚学机器学习或准备复习的人。"
+    },
+    "stdlib-js/stdlib": {
+      "what": "为 JavaScript 和 TypeScript 提供数值计算基础库。",
+      "why_hot": "前端和 Node.js 也需要可靠的计算组件。",
+      "who": "适合用 JS 做数据或科学计算的人。"
+    },
+    "ruc-datalab/DeepAnalyze": {
+      "what": "用 AI Agent 自动分析数据并生成报告。",
+      "why_hot": "一键出分析报告很吸引人，能减少重复的数据工作。",
+      "who": "适合经常做数据分析和汇报的人。"
+    },
+    "plotters-rs/plotters": {
+      "what": "在 Rust 原生和 WASM 环境中绘制数据图表。",
+      "why_hot": "既能做网页图表也能做本地图，使用场景广。",
+      "who": "适合需要用 Rust 画图的开发者。"
+    },
+    "Developer-Y/math-science-video-lectures": {
+      "what": "汇总数学和科学课程的视频讲座。",
+      "why_hot": "免费课程集中在一起，按兴趣自学更方便。",
+      "who": "适合想系统补数理基础的人。"
+    },
+    "amilajack/reading": {
+      "what": "整理作者推荐的计算机科学读物。",
+      "why_hot": "面对海量资料，现成书单能帮人缩小范围。",
+      "who": "适合想拓展计算机知识的读者。"
+    },
+    "sbrugman/deep-learning-papers": {
+      "what": "按任务和时间整理深度学习论文。",
+      "why_hot": "论文更新快，分类索引能省下不少检索时间。",
+      "who": "适合跟进深度学习研究的人。"
+    },
+    "apptainer/singularity": {
+      "what": "保存 Singularity 更名为 Apptainer 前的代码快照。",
+      "why_hot": "查旧版代码和迁移背景时，这份快照有用。",
+      "who": "适合维护旧 Singularity 环境的人。"
+    },
+    "apptainer/apptainer": {
+      "what": "提供面向 Linux 的应用容器工具。",
+      "why_hot": "科研和共享计算环境需要便于运行的容器方案。",
+      "who": "适合管理 Linux 计算环境的人。"
+    },
+    "bobeff/programming-math-science": {
+      "what": "汇总编程、数学和科学的免费学习资源。",
+      "why_hot": "免费资源覆盖面广，适合按需补课。",
+      "who": "适合想跨领域自学的人。"
+    },
+    "dformoso/deeplearning-mindmap": {
+      "what": "用思维导图梳理深度学习概念。",
+      "why_hot": "知识点一图串起来，复习和入门都方便。",
+      "who": "适合深度学习初学者和备课的人。"
+    },
+    "MartinThoma/LaTeX-examples": {
+      "what": "收集常见 LaTeX 写法和示例。",
+      "why_hot": "写论文时能直接查例子，比翻手册省事。",
+      "who": "适合学生、研究者和技术写作者。"
+    },
+    "stared/science-based-games-list": {
+      "what": "协作整理有科学依据的游戏清单。",
+      "why_hot": "科学知识和游戏结合，找教学素材很方便。",
+      "who": "适合老师、家长和科普游戏爱好者。"
+    },
+    "code-dot-org/code-dot-org": {
+      "what": "提供 Code.org 编程教育平台的源码。",
+      "why_hot": "编程教育需求一直在，平台实现值得参考。",
+      "who": "适合编程教育开发者和课程设计者。"
+    },
+    "tuan3w/awesome-tech-rss": {
+      "what": "整理创业、科学和技术领域的 RSS 订阅源。",
+      "why_hot": "想摆脱算法推荐的人，需要靠谱的信息源。",
+      "who": "适合喜欢用 RSS 跟进科技动态的人。"
+    },
+    "dformoso/sklearn-classification": {
+      "what": "用 Notebook 演示分类任务的建模流程。",
+      "why_hot": "案例能边跑边学，适合快速上手分类模型。",
+      "who": "适合数据科学入门者。"
+    },
+    "asciinema/asciinema": {
+      "what": "录制、播放和分享终端操作过程。",
+      "why_hot": "终端演示比截图直观，做教程和排错都好用。",
+      "who": "适合常写命令行教程的开发者。"
+    },
+    "QuentinFuxa/WhisperLiveKit": {
+      "what": "在本地实时转写语音，支持分角色和翻译。",
+      "why_hot": "实时字幕加本地运行，正好契合隐私和低延迟需求。",
+      "who": "适合做会议字幕或语音应用的人。"
+    },
+    "XiaoYouChR/Ghost-Downloader-3": {
+      "what": "提供整合多种下载需求的下载工具。",
+      "why_hot": "大家想用一个工具搞定下载，少折腾配置。",
+      "who": "适合经常下载文件的用户。"
+    },
+    "anacrolix/torrent": {
+      "what": "提供 Go 语言 BitTorrent 客户端库和工具。",
+      "why_hot": "功能覆盖全，方便开发者搭建 P2P 应用。",
+      "who": "适合开发 Go 下载器和 P2P 工具的人。"
+    },
+    "Tribler/tribler": {
+      "what": "提供注重隐私和内容发现的 BT 客户端。",
+      "why_hot": "隐私保护和去中心化发现都挺有吸引力。",
+      "who": "适合关注 P2P 隐私的用户。"
+    },
+    "apache/iggy": {
+      "what": "用 Rust 构建高性能消息流平台。",
+      "why_hot": "实时数据量越来越大，低延迟消息系统受关注。",
+      "who": "适合做实时数据基础设施的团队。"
+    },
+    "travisjeffery/jocko": {
+      "what": "用 Go 实现无需 ZooKeeper 的 Kafka 风格服务。",
+      "why_hot": "单文件部署、少一个协调依赖，运维更省心。",
+      "who": "适合研究消息系统和简化部署的人。"
+    },
+    "flink-china/flink-training-course": {
+      "what": "整理持续更新的 Flink 中文视频课程。",
+      "why_hot": "中文视频降低门槛，学实时计算更容易入手。",
+      "who": "适合刚接触 Flink 的开发者。"
+    },
+    "memgraph/memgraph": {
+      "what": "提供支持 Cypher 的内存图数据库。",
+      "why_hot": "GraphRAG 和 AI 记忆带动了图数据需求。",
+      "who": "适合做知识图谱和实时图分析的人。"
+    },
+    "Cysharp/MagicOnion": {
+      "what": "为 .NET 和 Unity 提供实时通信与 API 框架。",
+      "why_hot": "一套框架兼顾服务端和游戏客户端，开发更顺手。",
+      "who": "适合 Unity 和 .NET 开发者。"
+    },
+    "mholt/archiver": {
+      "what": "提供 Go 文件归档工具，但项目已弃用。",
+      "why_hot": "老项目仍有人查找，迁移到 archives 的提示很关键。",
+      "who": "适合维护旧版 Go 归档代码的人。"
+    },
+    "apache/streampark": {
+      "what": "提供实时数据任务的管理和控制平台。",
+      "why_hot": "实时任务多了，统一部署和管理就成了痛点。",
+      "who": "适合维护流处理平台的团队。"
+    },
+    "adaltas/node-csv": {
+      "what": "提供适合大数据集的 Node.js CSV 解析工具。",
+      "why_hot": "CSV 到处都在用，稳定处理大文件很实在。",
+      "who": "适合处理 CSV 数据的 Node.js 开发者。"
+    },
+    "fastly/pushpin": {
+      "what": "通过代理为现有 API 加上实时推送能力。",
+      "why_hot": "不用重写后端就能做推送，改造成本低。",
+      "who": "适合要给 API 加实时功能的团队。"
+    },
+    "apache/incubator-heron": {
+      "what": "提供分布式、容错的实时流处理引擎。",
+      "why_hot": "大规模实时计算的架构设计仍值得研究。",
+      "who": "适合研究流处理架构的工程师。"
+    },
+    "webtorrent/instant.io": {
+      "what": "通过 WebTorrent 在浏览器里流式传文件。",
+      "why_hot": "打开网页就能点对点传文件，体验够直接。",
+      "who": "适合关注浏览器 P2P 传输的人。"
+    },
+    "piskvorky/smart_open": {
+      "what": "让 Python 流式读取云端和压缩大文件。",
+      "why_hot": "大文件不必先完整下载，省内存也省步骤。",
+      "who": "适合处理云存储数据的 Python 开发者。"
+    },
+    "iusztinpaul/hands-on-llms": {
+      "what": "通过金融顾问案例教你构建和部署 LLM 系统。",
+      "why_hot": "代码、视频和阅读材料齐全，适合跟着实战。",
+      "who": "适合想系统学习 LLMOps 的人。"
+    },
+    "lakesoul-io/LakeSoul": {
+      "what": "提供支持实时写入和增量分析的湖仓框架。",
+      "why_hot": "湖仓还要兼顾向量搜索，需求正变得更复杂。",
+      "who": "适合做实时湖仓和数据平台的人。"
+    },
+    "TanStack/ai": {
+      "what": "提供跨模型厂商的类型安全 TypeScript AI SDK。",
+      "why_hot": "流式聊天和工具调用常用，统一接口能少写适配代码。",
+      "who": "适合开发 TypeScript AI 应用的人。"
     }
   }
 }
