@@ -67,6 +67,14 @@ a.price-card:hover .price-name { color: var(--accent); }
   .price-img, .price-img-ph { height: 90px; }
 }
 /* 今日好价 */
+/* 分类 tab（与 GitHub 页 category-btn 同款 pill 样式） */
+.price-tabs { display: flex; gap: 10px; margin: 0 0 20px; flex-wrap: wrap; }
+.price-tab {
+  border: none; cursor: pointer; font-size: 14px; font-weight: 600;
+  padding: 8px 20px; border-radius: var(--radius-pill);
+  background: var(--paper); color: var(--muted);
+}
+.price-tab.active { background: var(--primary); color: #fff; }
 
 @media (max-width: 720px) {  }
 </style>
@@ -97,6 +105,12 @@ a.price-card:hover .price-name { color: var(--accent); }
     <div class="section-head">
       <h2 class="section-title">今日好价</h2>
       <p class="section-desc" id="all-date"></p>
+    </div>
+    <div class="price-tabs" id="price-tabs">
+      <button class="price-tab active" data-cat="all">全部</button>
+      <button class="price-tab" data-cat="apple">Apple</button>
+      <button class="price-tab" data-cat="steam">Steam</button>
+      <button class="price-tab" data-cat="other">其他</button>
     </div>
     <div class="price-grid" id="all-grid"></div>
   </section>
@@ -169,19 +183,36 @@ function renderAll() {
     if (!items.length) return;
     // 按折扣从大到小，无折扣的保持原相对顺序沉底
     items.sort(function(a, b) { return (b.disc || 0) - (a.disc || 0); });
+    window.__priceItems = items;
     document.getElementById('all-section').style.display = '';
-    document.getElementById('all-date').textContent = '共 ' + items.length + ' 条好价';
-    document.getElementById('all-grid').innerHTML = items.map(cardHtml).join('');
+    renderPriceTab('all');
+    // tab 切换
+    document.getElementById('price-tabs').addEventListener('click', function(e) {
+      var btn = e.target.closest('.price-tab');
+      if (!btn) return;
+      var tabs = this.querySelectorAll('.price-tab');
+      for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+      btn.classList.add('active');
+      renderPriceTab(btn.getAttribute('data-cat'));
+    });
   });
+}
+function renderPriceTab(cat) {
+  var items = window.__priceItems || [];
+  var list = cat === 'all' ? items : items.filter(function(it) { return it.cat === cat; });
+  document.getElementById('all-date').textContent = '共 ' + list.length + ' 条好价';
+  document.getElementById('all-grid').innerHTML = list.map(cardHtml).join('');
 }
 
 function normalizePick(it) {
   var disc = 0;
   var m1 = /[¥￥$]\s*([\d.]+)/.exec(it.price || ''), m2 = /[¥￥$]\s*([\d.]+)/.exec(it.origin || '');
   if (m1 && m2 && parseFloat(m2[1]) > 0) disc = Math.round((1 - parseFloat(m1[1]) / parseFloat(m2[1])) * 100);
+  var src = it.source || '';
+  var cat = src.indexOf('App Store') !== -1 ? 'apple' : (src === 'Steam' ? 'steam' : 'other');
   return {
     url: it.url, name: it.name, note: it.note ? '<b>上榜理由</b> ' + it.note : '',
-    tag: it.source, disc: disc,
+    tag: it.source, disc: disc, cat: cat,
     img: thumbCardHtml(it), price: esc(it.price || ''),
     was: it.origin ? esc(it.origin.replace(/^原价\s*/, '')) : ''
   };
@@ -199,7 +230,7 @@ function normalizeApp(it) {
   }
   var tag = it.is_free ? '限免' : 'App Store';
   return {
-    url: it.url, name: it.name, note: '', tag: tag, disc: it.discount || 0,
+    url: it.url, name: it.name, note: '', tag: tag, disc: it.discount || 0, cat: 'apple',
     img: '<img class="price-icon" loading="lazy" src="' + esc(it.icon) + '" alt="">',
     price: price, was: was
   };
@@ -208,7 +239,7 @@ function normalizeDeal(it) {
   return {
     url: it.url, name: it.name,
     note: '好评 ' + it.positive_rate + '% · ' + it.total_reviews + ' 条评价',
-    tag: 'Steam', disc: it.discount_percent || 0,
+    tag: 'Steam', disc: it.discount_percent || 0, cat: 'steam',
     img: it.header_image ? '<img class="price-img" loading="lazy" src="' + esc(it.header_image) + '" alt="">' : '',
     price: '<span class="price-now">¥' + it.final_price + '</span>',
     was: '¥' + it.original_price
