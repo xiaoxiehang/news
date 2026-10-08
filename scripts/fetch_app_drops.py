@@ -12,6 +12,7 @@
 import json
 import os
 import urllib.request
+from collections import Counter
 from datetime import datetime, timezone, timedelta
 
 UA = {"User-Agent": "xiaojj-price-watch/1.0 (+https://xiaojj.pro)"}
@@ -130,7 +131,14 @@ def main():
             hist = [x for x in h.get(code, []) if x["date"] >= cutoff and x["date"] != today]
             hist.append({"date": today, "price": r["price"]})
             h[code] = hist
-            hist_max = max(x["price"] for x in hist)
+            # 原价取“可信最高价”：出现过≥2天的价格，或窗口内最早一天的价格
+            # （最早一天是开始监控时的真实价格，应信任；中间某天单独冒出的高价多为 API 毛刺，忽略）。
+            # 历史不足（各价都只出现1天）时回退为普通最高价
+            cnt = Counter(x["price"] for x in hist)
+            first_date = min(x["date"] for x in hist)
+            first_prices = {x["price"] for x in hist if x["date"] == first_date}
+            cands = [p for p, c in cnt.items() if c >= 2 or p in first_prices]
+            hist_max = max(cands) if cands else max(cnt)
             info["prices"][code] = {
                 "label": label, "symbol": symbol,
                 "price": r["price"], "hist_max": hist_max,
