@@ -1499,20 +1499,6 @@
           "stars_gain": 7
         },
         {
-          "name": "packer",
-          "full_name": "hashicorp/packer",
-          "owner": "hashicorp",
-          "description": "Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.",
-          "html_url": "https://github.com/hashicorp/packer",
-          "language": "Go",
-          "stars": 15808,
-          "forks": 3341,
-          "topics": [],
-          "created_at": "2013-03-23",
-          "updated_at": "2026-10-07",
-          "stars_gain": 0
-        },
-        {
           "name": "ggml",
           "full_name": "ggml-org/ggml",
           "owner": "ggml-org",
@@ -1741,26 +1727,6 @@
           "created_at": "2021-01-19",
           "updated_at": "2026-10-07",
           "stars_gain": -1
-        },
-        {
-          "name": "node_exporter",
-          "full_name": "prometheus/node_exporter",
-          "owner": "prometheus",
-          "description": "Exporter for machine metrics",
-          "html_url": "https://github.com/prometheus/node_exporter",
-          "language": "Go",
-          "stars": 13828,
-          "forks": 2718,
-          "topics": [
-            "host-metrics",
-            "machine-metrics",
-            "metrics",
-            "node-metrics",
-            "procfs"
-          ],
-          "created_at": "2013-04-18",
-          "updated_at": "2026-10-07",
-          "stars_gain": 0
         },
         {
           "name": "tvm",
@@ -2017,6 +1983,26 @@
           "created_at": "2024-05-18",
           "updated_at": "2026-10-07",
           "stars_gain": 2
+        },
+        {
+          "name": "hands-on-llms",
+          "full_name": "iusztinpaul/hands-on-llms",
+          "owner": "iusztinpaul",
+          "description": "🦖 𝗟𝗲𝗮𝗿𝗻 about 𝗟𝗟𝗠𝘀, 𝗟𝗟𝗠𝗢𝗽𝘀, and 𝘃𝗲𝗰𝘁𝗼𝗿 𝗗𝗕𝘀 for free by designing, training, and deploying a real-time financial advisor LLM system ~ 𝘴𝘰𝘶𝘳𝘤𝘦 𝘤𝘰𝘥𝘦 + 𝘷𝘪𝘥𝘦𝘰 & 𝘳𝘦𝘢𝘥𝘪𝘯𝘨 𝘮𝘢𝘵𝘦𝘳𝘪𝘢𝘭𝘴",
+          "html_url": "https://github.com/iusztinpaul/hands-on-llms",
+          "language": "Jupyter Notebook",
+          "stars": 3424,
+          "forks": 551,
+          "topics": [
+            "3-pipeline-design",
+            "aws",
+            "beam",
+            "bytewax",
+            "cicd"
+          ],
+          "created_at": "2023-06-28",
+          "updated_at": "2026-10-06",
+          "stars_gain": 0
         }
       ]
     },
@@ -3513,6 +3499,26 @@
             "enterprise-search"
           ],
           "created_at": "2018-04-23",
+          "updated_at": "2026-10-08",
+          "stars_gain": 4
+        },
+        {
+          "name": "ai",
+          "full_name": "TanStack/ai",
+          "owner": "TanStack",
+          "description": "🤖 Type-safe, provider-agnostic TypeScript AI SDK for streaming chat, tool calling, agents, and multimodal apps across OpenAI, Anthropic, Gemini, React, Vue, Svelte, and Solid.",
+          "html_url": "https://github.com/TanStack/ai",
+          "language": "TypeScript",
+          "stars": 3172,
+          "forks": 359,
+          "topics": [
+            "ai",
+            "ai-agents",
+            "ai-sdk",
+            "anthropic",
+            "chatbot"
+          ],
+          "created_at": "2025-10-08",
           "updated_at": "2026-10-08",
           "stars_gain": 4
         }
@@ -5953,6 +5959,237 @@
           "created_at": "2014-07-04",
           "updated_at": "2026-10-08",
           "stars_gain": 1
+        },
+        {
+          "name": "memgraph",
+          "full_name": "memgraph/memgraph",
+          "owner": "memgraph",
+          "description": "High-performance open-source in-memory graph database for GraphRAG, AI memory, agentic AI, and real-time graph analytics. Cypher-compatible, built in C++.",
+          "html_url": "https://github.com/memgraph/memgraph",
+          "language": "C++",
+          "stars": 4601,
+          "forks": 286,
+          "topics": [
+            "ai",
+            "ai-agents",
+            "ai-memory",
+            "context-graph",
+            "cypher"
+          ],
+          "created_at": "2020-09-21",
+          "updated_at": "2026-10-07",
+          "stars_gain": 3
+        },
+        {
+          "name": "node-csv",
+          "full_name": "adaltas/node-csv",
+          "owner": "adaltas",
+          "description": "Full featured CSV parser with simple api and tested against large datasets.",
+          "html_url": "https://github.com/adaltas/node-csv",
+          "language": "JavaScript",
+          "stars": 4282,
+          "forks": 307,
+          "topics": [
+            "csv",
+            "nodejs",
+            "parser",
+            "streaming"
+          ],
+          "created_at": "2010-09-25",
+          "updated_at": "2026-10-07",
+          "stars_gain": -2
+        },
+        {
+          "name": "pushpin",
+          "full_name": "fastly/pushpin",
+          "owner": "fastly",
+          "description": "A proxy server for adding push to your API, used at the core of Fastly's Fanout service",
+          "html_url": "https://github.com/fastly/pushpin",
+          "language": "Rust",
+          "stars": 3862,
+          "forks": 156,
+          "topics": [
+            "api",
+            "fastly-featured",
+            "fastly-oss-tier1",
+            "http-streaming",
+            "long-polling"
+          ],
+          "created_at": "2012-08-29",
+          "updated_at": "2026-10-06",
+          "stars_gain": 0
+        },
+        {
+          "name": "smart_open",
+          "full_name": "piskvorky/smart_open",
+          "owner": "piskvorky",
+          "description": "Utils for streaming large files (S3, HDFS, gzip, bz2...)",
+          "html_url": "https://github.com/piskvorky/smart_open",
+          "language": "Python",
+          "stars": 3461,
+          "forks": 392,
+          "topics": [
+            "boto",
+            "bz2",
+            "file",
+            "gzip-stream",
+            "hacktoberfest"
+          ],
+          "created_at": "2015-01-02",
+          "updated_at": "2026-10-06",
+          "stars_gain": 0
+        },
+        {
+          "name": "streampark",
+          "full_name": "apache/streampark",
+          "owner": "apache",
+          "description": "The Open Control Plane for Real-Time Data",
+          "html_url": "https://github.com/apache/streampark",
+          "language": "Java",
+          "stars": 4339,
+          "forks": 1088,
+          "topics": [
+            "cloud-native",
+            "control-plane",
+            "data-computing",
+            "flink",
+            "kubernetes"
+          ],
+          "created_at": "2019-05-27",
+          "updated_at": "2026-10-01",
+          "stars_gain": 0
+        },
+        {
+          "name": "LakeSoul",
+          "full_name": "lakesoul-io/LakeSoul",
+          "owner": "lakesoul-io",
+          "description": "LakeSoul is an end-to-end, realtime cloud-native Lakehouse framework for fast data ingestion, concurrent updates, incremental analytics, multimodal data processing and vector search — powering next-ge",
+          "html_url": "https://github.com/lakesoul-io/LakeSoul",
+          "language": "Rust",
+          "stars": 3257,
+          "forks": 429,
+          "topics": [
+            "arrow",
+            "daft",
+            "datafusion",
+            "flink",
+            "gluten"
+          ],
+          "created_at": "2021-12-28",
+          "updated_at": "2026-10-08",
+          "stars_gain": 1
+        },
+        {
+          "name": "incubator-heron",
+          "full_name": "apache/incubator-heron",
+          "owner": "apache",
+          "description": "Apache Heron (Incubating) is a realtime, distributed, fault-tolerant stream processing engine from Twitter",
+          "html_url": "https://github.com/apache/incubator-heron",
+          "language": "Java",
+          "stars": 3624,
+          "forks": 579,
+          "topics": [
+            "heron",
+            "messaging",
+            "streaming"
+          ],
+          "created_at": "2015-09-25",
+          "updated_at": "2026-10-02",
+          "stars_gain": 0
+        },
+        {
+          "name": "jocko",
+          "full_name": "travisjeffery/jocko",
+          "owner": "travisjeffery",
+          "description": "Kafka implemented in Golang with built-in coordination (No ZK dep, single binary install, Cloud Native)",
+          "html_url": "https://github.com/travisjeffery/jocko",
+          "language": "Go",
+          "stars": 5007,
+          "forks": 371,
+          "topics": [
+            "distributed-systems",
+            "go",
+            "kafka",
+            "messaging",
+            "queue"
+          ],
+          "created_at": "2016-10-11",
+          "updated_at": "2026-10-07",
+          "stars_gain": -1
+        },
+        {
+          "name": "iggy",
+          "full_name": "apache/iggy",
+          "owner": "apache",
+          "description": "Apache Iggy: Hyper-Efficient Message Streaming at Laser Speed",
+          "html_url": "https://github.com/apache/iggy",
+          "language": "Rust",
+          "stars": 5039,
+          "forks": 466,
+          "topics": [
+            "apache",
+            "http",
+            "iggy",
+            "messaging",
+            "quic"
+          ],
+          "created_at": "2023-03-18",
+          "updated_at": "2026-10-07",
+          "stars_gain": 4
+        },
+        {
+          "name": "MagicOnion",
+          "full_name": "Cysharp/MagicOnion",
+          "owner": "Cysharp",
+          "description": "Unified Realtime/API framework for .NET platform and Unity.",
+          "html_url": "https://github.com/Cysharp/MagicOnion",
+          "language": "C#",
+          "stars": 4454,
+          "forks": 462,
+          "topics": [
+            "c-sharp",
+            "grpc",
+            "rpc",
+            "streaming",
+            "swagger"
+          ],
+          "created_at": "2016-12-10",
+          "updated_at": "2026-10-07",
+          "stars_gain": 0
+        },
+        {
+          "name": "packer",
+          "full_name": "hashicorp/packer",
+          "owner": "hashicorp",
+          "description": "Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.",
+          "html_url": "https://github.com/hashicorp/packer",
+          "language": "Go",
+          "stars": 15808,
+          "forks": 3341,
+          "topics": [],
+          "created_at": "2013-03-23",
+          "updated_at": "2026-10-07",
+          "stars_gain": 0
+        },
+        {
+          "name": "node_exporter",
+          "full_name": "prometheus/node_exporter",
+          "owner": "prometheus",
+          "description": "Exporter for machine metrics",
+          "html_url": "https://github.com/prometheus/node_exporter",
+          "language": "Go",
+          "stars": 13828,
+          "forks": 2718,
+          "topics": [
+            "host-metrics",
+            "machine-metrics",
+            "metrics",
+            "node-metrics",
+            "procfs"
+          ],
+          "created_at": "2013-04-18",
+          "updated_at": "2026-10-07",
+          "stars_gain": 0
         }
       ]
     },
@@ -7350,6 +7587,26 @@
           "created_at": "2023-05-09",
           "updated_at": "2026-10-08",
           "stars_gain": 15
+        },
+        {
+          "name": "infect",
+          "full_name": "noob-hackers/infect",
+          "owner": "noob-hackers",
+          "description": "Infect Any Android Device With Virus From Link In Termux",
+          "html_url": "https://github.com/noob-hackers/infect",
+          "language": "Shell",
+          "stars": 3014,
+          "forks": 383,
+          "topics": [
+            "2020",
+            "bash-script",
+            "education",
+            "free",
+            "kali-linux"
+          ],
+          "created_at": "2019-12-15",
+          "updated_at": "2026-10-07",
+          "stars_gain": 1
         }
       ]
     },
@@ -13020,26 +13277,6 @@
           "stars_gain": 4
         },
         {
-          "name": "infect",
-          "full_name": "noob-hackers/infect",
-          "owner": "noob-hackers",
-          "description": "Infect Any Android Device With Virus From Link In Termux",
-          "html_url": "https://github.com/noob-hackers/infect",
-          "language": "Shell",
-          "stars": 3014,
-          "forks": 383,
-          "topics": [
-            "2020",
-            "bash-script",
-            "education",
-            "free",
-            "kali-linux"
-          ],
-          "created_at": "2019-12-15",
-          "updated_at": "2026-10-07",
-          "stars_gain": 1
-        },
-        {
           "name": "digital-forensics-lab",
           "full_name": "frankwxu/digital-forensics-lab",
           "owner": "frankwxu",
@@ -15395,46 +15632,6 @@
           "stars_gain": 1
         },
         {
-          "name": "iggy",
-          "full_name": "apache/iggy",
-          "owner": "apache",
-          "description": "Apache Iggy: Hyper-Efficient Message Streaming at Laser Speed",
-          "html_url": "https://github.com/apache/iggy",
-          "language": "Rust",
-          "stars": 5039,
-          "forks": 466,
-          "topics": [
-            "apache",
-            "http",
-            "iggy",
-            "messaging",
-            "quic"
-          ],
-          "created_at": "2023-03-18",
-          "updated_at": "2026-10-07",
-          "stars_gain": 4
-        },
-        {
-          "name": "jocko",
-          "full_name": "travisjeffery/jocko",
-          "owner": "travisjeffery",
-          "description": "Kafka implemented in Golang with built-in coordination (No ZK dep, single binary install, Cloud Native)",
-          "html_url": "https://github.com/travisjeffery/jocko",
-          "language": "Go",
-          "stars": 5007,
-          "forks": 371,
-          "topics": [
-            "distributed-systems",
-            "go",
-            "kafka",
-            "messaging",
-            "queue"
-          ],
-          "created_at": "2016-10-11",
-          "updated_at": "2026-10-07",
-          "stars_gain": -1
-        },
-        {
           "name": "desktop",
           "full_name": "streamlabs/desktop",
           "owner": "streamlabs",
@@ -15494,46 +15691,6 @@
           "stars_gain": 0
         },
         {
-          "name": "memgraph",
-          "full_name": "memgraph/memgraph",
-          "owner": "memgraph",
-          "description": "High-performance open-source in-memory graph database for GraphRAG, AI memory, agentic AI, and real-time graph analytics. Cypher-compatible, built in C++.",
-          "html_url": "https://github.com/memgraph/memgraph",
-          "language": "C++",
-          "stars": 4601,
-          "forks": 286,
-          "topics": [
-            "ai",
-            "ai-agents",
-            "ai-memory",
-            "context-graph",
-            "cypher"
-          ],
-          "created_at": "2020-09-21",
-          "updated_at": "2026-10-07",
-          "stars_gain": 3
-        },
-        {
-          "name": "MagicOnion",
-          "full_name": "Cysharp/MagicOnion",
-          "owner": "Cysharp",
-          "description": "Unified Realtime/API framework for .NET platform and Unity.",
-          "html_url": "https://github.com/Cysharp/MagicOnion",
-          "language": "C#",
-          "stars": 4454,
-          "forks": 462,
-          "topics": [
-            "c-sharp",
-            "grpc",
-            "rpc",
-            "streaming",
-            "swagger"
-          ],
-          "created_at": "2016-12-10",
-          "updated_at": "2026-10-07",
-          "stars_gain": 0
-        },
-        {
           "name": "archiver",
           "full_name": "mholt/archiver",
           "owner": "mholt",
@@ -15554,26 +15711,6 @@
           "stars_gain": -1
         },
         {
-          "name": "streampark",
-          "full_name": "apache/streampark",
-          "owner": "apache",
-          "description": "The Open Control Plane for Real-Time Data",
-          "html_url": "https://github.com/apache/streampark",
-          "language": "Java",
-          "stars": 4339,
-          "forks": 1088,
-          "topics": [
-            "cloud-native",
-            "control-plane",
-            "data-computing",
-            "flink",
-            "kubernetes"
-          ],
-          "created_at": "2019-05-27",
-          "updated_at": "2026-10-01",
-          "stars_gain": 0
-        },
-        {
           "name": "Musify",
           "full_name": "gokadzev/Musify",
           "owner": "gokadzev",
@@ -15592,25 +15729,6 @@
           "created_at": "2021-12-05",
           "updated_at": "2026-10-07",
           "stars_gain": 4
-        },
-        {
-          "name": "node-csv",
-          "full_name": "adaltas/node-csv",
-          "owner": "adaltas",
-          "description": "Full featured CSV parser with simple api and tested against large datasets.",
-          "html_url": "https://github.com/adaltas/node-csv",
-          "language": "JavaScript",
-          "stars": 4282,
-          "forks": 307,
-          "topics": [
-            "csv",
-            "nodejs",
-            "parser",
-            "streaming"
-          ],
-          "created_at": "2010-09-25",
-          "updated_at": "2026-10-07",
-          "stars_gain": -2
         },
         {
           "name": "butter-desktop",
@@ -15689,26 +15807,6 @@
           "stars_gain": 12
         },
         {
-          "name": "pushpin",
-          "full_name": "fastly/pushpin",
-          "owner": "fastly",
-          "description": "A proxy server for adding push to your API, used at the core of Fastly's Fanout service",
-          "html_url": "https://github.com/fastly/pushpin",
-          "language": "Rust",
-          "stars": 3862,
-          "forks": 156,
-          "topics": [
-            "api",
-            "fastly-featured",
-            "fastly-oss-tier1",
-            "http-streaming",
-            "long-polling"
-          ],
-          "created_at": "2012-08-29",
-          "updated_at": "2026-10-06",
-          "stars_gain": 0
-        },
-        {
           "name": "vidgear",
           "full_name": "abhiTronix/vidgear",
           "owner": "abhiTronix",
@@ -15729,24 +15827,6 @@
           "stars_gain": 0
         },
         {
-          "name": "incubator-heron",
-          "full_name": "apache/incubator-heron",
-          "owner": "apache",
-          "description": "Apache Heron (Incubating) is a realtime, distributed, fault-tolerant stream processing engine from Twitter",
-          "html_url": "https://github.com/apache/incubator-heron",
-          "language": "Java",
-          "stars": 3624,
-          "forks": 579,
-          "topics": [
-            "heron",
-            "messaging",
-            "streaming"
-          ],
-          "created_at": "2015-09-25",
-          "updated_at": "2026-10-02",
-          "stars_gain": 0
-        },
-        {
           "name": "instant.io",
           "full_name": "webtorrent/instant.io",
           "owner": "webtorrent",
@@ -15764,46 +15844,6 @@
           ],
           "created_at": "2014-08-02",
           "updated_at": "2026-09-25",
-          "stars_gain": 0
-        },
-        {
-          "name": "smart_open",
-          "full_name": "piskvorky/smart_open",
-          "owner": "piskvorky",
-          "description": "Utils for streaming large files (S3, HDFS, gzip, bz2...)",
-          "html_url": "https://github.com/piskvorky/smart_open",
-          "language": "Python",
-          "stars": 3461,
-          "forks": 392,
-          "topics": [
-            "boto",
-            "bz2",
-            "file",
-            "gzip-stream",
-            "hacktoberfest"
-          ],
-          "created_at": "2015-01-02",
-          "updated_at": "2026-10-06",
-          "stars_gain": 0
-        },
-        {
-          "name": "hands-on-llms",
-          "full_name": "iusztinpaul/hands-on-llms",
-          "owner": "iusztinpaul",
-          "description": "🦖 𝗟𝗲𝗮𝗿𝗻 about 𝗟𝗟𝗠𝘀, 𝗟𝗟𝗠𝗢𝗽𝘀, and 𝘃𝗲𝗰𝘁𝗼𝗿 𝗗𝗕𝘀 for free by designing, training, and deploying a real-time financial advisor LLM system ~ 𝘴𝘰𝘶𝘳𝘤𝘦 𝘤𝘰𝘥𝘦 + 𝘷𝘪𝘥𝘦𝘰 & 𝘳𝘦𝘢𝘥𝘪𝘯𝘨 𝘮𝘢𝘵𝘦𝘳𝘪𝘢𝘭𝘴",
-          "html_url": "https://github.com/iusztinpaul/hands-on-llms",
-          "language": "Jupyter Notebook",
-          "stars": 3424,
-          "forks": 551,
-          "topics": [
-            "3-pipeline-design",
-            "aws",
-            "beam",
-            "bytewax",
-            "cicd"
-          ],
-          "created_at": "2023-06-28",
-          "updated_at": "2026-10-06",
           "stars_gain": 0
         },
         {
@@ -15865,46 +15905,6 @@
           "created_at": "2018-06-29",
           "updated_at": "2026-10-07",
           "stars_gain": 1
-        },
-        {
-          "name": "LakeSoul",
-          "full_name": "lakesoul-io/LakeSoul",
-          "owner": "lakesoul-io",
-          "description": "LakeSoul is an end-to-end, realtime cloud-native Lakehouse framework for fast data ingestion, concurrent updates, incremental analytics, multimodal data processing and vector search — powering next-ge",
-          "html_url": "https://github.com/lakesoul-io/LakeSoul",
-          "language": "Rust",
-          "stars": 3257,
-          "forks": 429,
-          "topics": [
-            "arrow",
-            "daft",
-            "datafusion",
-            "flink",
-            "gluten"
-          ],
-          "created_at": "2021-12-28",
-          "updated_at": "2026-10-08",
-          "stars_gain": 1
-        },
-        {
-          "name": "ai",
-          "full_name": "TanStack/ai",
-          "owner": "TanStack",
-          "description": "🤖 Type-safe, provider-agnostic TypeScript AI SDK for streaming chat, tool calling, agents, and multimodal apps across OpenAI, Anthropic, Gemini, React, Vue, Svelte, and Solid.",
-          "html_url": "https://github.com/TanStack/ai",
-          "language": "TypeScript",
-          "stars": 3172,
-          "forks": 359,
-          "topics": [
-            "ai",
-            "ai-agents",
-            "ai-sdk",
-            "anthropic",
-            "chatbot"
-          ],
-          "created_at": "2025-10-08",
-          "updated_at": "2026-10-08",
-          "stars_gain": 4
         },
         {
           "name": "Harmony-Music",
