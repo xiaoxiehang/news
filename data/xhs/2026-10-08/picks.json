@@ -28,18 +28,6 @@
       "source": "TechCrunch"
     },
     {
-      "title": "Perplexity 自建数据存储系统，降低搜索服务延迟与成本",
-      "summary": "Perplexity 将核心搜索服务从亚马逊 DynamoDB 迁移到自研的 CobbleDB，以应对向 AI 模型提供大量文档时的速度和成本压力。据报道，迁移后批量读取的延迟降至原来的五分之一，整体存储费用至少下降两成。",
-      "url": "https://www.infoq.cn/article/4AMw7Bt3UHqw48qmQTpS",
-      "source": "InfoQ 推荐"
-    },
-    {
-      "title": "机器人数据公司 Mecka AI 获红杉资本 6000 万美元投资",
-      "summary": "Mecka AI 获得红杉资本 6000 万美元投资。该公司付费请人录制日常任务中的动作，再收集和分析这些数据，用于训练人形机器人等设备；这笔融资显示，教机器人理解并完成现实世界的动作，正成为值得投入的基础环节。",
-      "url": "https://techcrunch.com/2026/10/07/robot-data-startup-mecka-ai-nabs-60m-from-sequoia/",
-      "source": "TechCrunch"
-    },
-    {
       "title": "Meta 的 AI 助手 Muse 登陆 iPad",
       "summary": "Meta 宣布旗下 AI 助手 Muse 推出 iPad 版本，距离其手机端上线仅约一个月。新版本让平板用户也能使用这款助手，是 Meta 扩大 Muse 使用场景的一步；报道还指出，该公司正在加快扩展其覆盖平台和整合能力。",
       "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
@@ -50,7 +38,18 @@
       "summary": "Hermes Agent 开发商 Nous Research 推出了面向企业用户的 AI 智能体，并确认公司估值达到 15 亿美元。该公司还完成了 9000 万美元 B 轮融资；新品发布与融资同步，反映出企业任务正成为 AI 助手竞争的重要场景。",
       "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/",
       "source": "TechCrunch"
+    },
+    {
+      "title": "机器人数据公司 Mecka AI 获红杉资本 6000 万美元投资",
+      "summary": "Mecka AI 获得红杉资本 6000 万美元投资。该公司付费请人录制日常任务中的动作，再收集和分析这些数据，用于训练人形机器人等设备；这笔融资显示，教机器人理解并完成现实世界的动作，正成为值得投入的基础环节。",
+      "url": "https://techcrunch.com/2026/10/07/robot-data-startup-mecka-ai-nabs-60m-from-sequoia/",
+      "source": "TechCrunch"
+    },
+    {
+      "title": "Perplexity 自建数据存储系统，降低搜索服务延迟与成本",
+      "summary": "Perplexity 将核心搜索服务从亚马逊 DynamoDB 迁移到自研的 CobbleDB，以应对向 AI 模型提供大量文档时的速度和成本压力。据报道，迁移后批量读取的延迟降至原来的五分之一，整体存储费用至少下降两成。",
+      "url": "https://www.infoq.cn/article/4AMw7Bt3UHqw48qmQTpS",
+      "source": "InfoQ 推荐"
     }
-  ],
-  "generated_at": "2026-10-08 03:05:17"
+  ]
 }

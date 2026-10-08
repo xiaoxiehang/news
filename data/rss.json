@@ -1,9 +1,27 @@
 {
-  "fetched_at": "2026-10-07 02:46:33",
+  "fetched_at": "2026-10-08 03:04:47",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
+        {
+          "title": "Helping teens learn, plan, and shape the future of AI",
+          "url": "https://openai.com/index/teens-learn-and-plan",
+          "desc": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+          "published": "Wed, 07 Oct 2026"
+        },
+        {
+          "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+          "url": "https://openai.com/index/radisson",
+          "desc": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
+          "published": "Wed, 07 Oct 2026"
+        },
+        {
+          "title": "GPT-6 and Intelligent UI for everyone",
+          "url": "https://openai.com/index/gpt-6-for-everyone",
+          "desc": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
+          "published": "Wed, 07 Oct 2026"
+        },
         {
           "title": "How Jump Trading is scaling quant research with ChatGPT",
           "url": "https://openai.com/index/jump-trading",
@@ -15,30 +33,24 @@
           "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
           "desc": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
           "published": "Tue, 06 Oct 2026"
-        },
-        {
-          "title": "Advancing computer use with Ironclad",
-          "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
-          "desc": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
-          "published": "Tue, 06 Oct 2026"
-        },
-        {
-          "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
-          "url": "https://openai.com/index/atlassian-partnership",
-          "desc": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
-          "published": "Tue, 06 Oct 2026"
-        },
-        {
-          "title": "Our approach to EU text provenance rules",
-          "url": "https://openai.com/index/eu-text-provenance",
-          "desc": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-          "published": "Mon, 05 Oct 2026"
         }
       ]
     },
     {
       "name": "机器之心",
       "items": [
+        {
+          "title": "突发！OpenAI一次放出722篇数学成果，准黎曼猜想、4D挂谷都在列",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061320&idx=1&sn=9ccf3204921b2620923ef26380fb3bb6",
+          "desc": "Star量疯狂上涨中。",
+          "published": "Wed, 07 Oct 2026"
+        },
+        {
+          "title": "量化后画面闪烁？时序稳定的视频世界模型2-bit KV Cache压缩方案诞生",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061320&idx=2&sn=da665a8e02881b7e48eea58bf8431ec1",
+          "desc": "评测分数不代表一切。",
+          "published": "Wed, 07 Oct 2026"
+        },
         {
           "title": "一家影视公司为什么能做出全球第二的视频模型？答案藏在「生产系统」里",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061195&idx=1&sn=fd895d3e2b61a55684270981b166bf2b",
@@ -74,18 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061081&idx=2&sn=cb11670b3a6aae956f8e44f4cdfa08e9",
           "desc": "Harness 的好坏并不是固定属性，而是取决于它与模型、任务之间的具体组合",
           "published": "Sun, 04 Oct 2026"
-        },
-        {
-          "title": "Jev被请下王座，StartLux中国开源决策模型冲上第一",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060998&idx=1&sn=5e2496eb644e86fdf2d880a258074514",
-          "desc": "一口气推出 0.8B、2B、4B、9B 和 27B 五档版本，并提供支持本地部署的量化模型。",
-          "published": "Sat, 03 Oct 2026"
-        },
-        {
-          "title": "万分之一——大模型后训练中的极端稀疏监督",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651060998&idx=2&sn=6e1b1eee268b769acca49b04819c6fd3",
-          "desc": "大模型后训练中密集的 token-level 信号真的是必要的吗？",
-          "published": "Sat, 03 Oct 2026"
         }
       ]
     },
@@ -93,16 +93,64 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "【硝烟又起】从 ChatGPT 到 Personal AI：下一代 AI （主动智能）的入口之争",
-          "url": "https://www.huxiu.com/article/4895578.html?f=rss",
+          "title": "一群日本AV 女优和歌手，正在偷家大厂AI 产品经理",
+          "url": "https://www.huxiu.com/article/4895763.html?f=rss",
           "desc": "",
-          "published": "Wed, 07 Oct 2026"
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "AI究竟是通胀解药，还是新一轮通胀的制造者？",
+          "url": "https://www.huxiu.com/article/4895751.html?f=rss",
+          "desc": "",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "Personal Agent 大战：Dots、Muse、Instinct 各自走到了哪一步",
+          "url": "https://www.huxiu.com/article/4895761.html?f=rss",
+          "desc": "",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "南大教授说“没有Token就退学”：我更关心的是，大学生为什么要带10个智能体毕业？",
+          "url": "https://www.huxiu.com/article/4895749.html?f=rss",
+          "desc": "",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "大厂AI开始搞科幻PR了",
+          "url": "https://www.huxiu.com/article/4895737.html?f=rss",
+          "desc": "",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "纽约时报律师漂白证据露馅儿，会影响诉OpenAI案的结果吗？",
+          "url": "https://www.huxiu.com/article/4895721.html?f=rss",
+          "desc": "纽约时报律师漂白专家意见漏馅儿",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "AI让数学再也回不去那个旧世界了。",
+          "url": "https://www.huxiu.com/article/4895723.html?f=rss",
+          "desc": "",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "AI需要一张脸，数据科学需要一条曲线",
+          "url": "https://www.huxiu.com/article/4895706.html?f=rss",
+          "desc": "",
+          "published": "Thu, 08 Oct 2026"
         }
       ]
     },
     {
       "name": "Solidot",
       "items": [
+        {
+          "title": "Anthropic 举报了与 Claude 聊天中发出威胁的佛罗里达女子",
+          "url": "https://www.solidot.org/story?sid=85542",
+          "desc": "Anthropic 举报了一名佛罗里达女子，原因是这名女子在与 Claude 聊天中威胁要枪击 Lee 县警长办公室，并在后续聊天中提及自己正在搞一把新枪。该女子在家中被捕，法庭记录显示她于 9 月 30 日受到了一项重罪指控。逮捕报告显示，Anthropic 会监控聊天内容，查找可能被视为有威胁性的关键词句，根据威胁程度相关内容可能会被提交给人工进行审核。在本案中，审核团队决定将发现的情况报告给",
+          "published": "Tue, 06 Oct 2026"
+        },
         {
           "title": "因涌入大量 AI 报告 Google 冻结其 Bug 悬赏计划",
           "url": "https://www.solidot.org/story?sid=85538",
@@ -114,18 +162,18 @@
           "url": "https://www.solidot.org/story?sid=85534",
           "desc": "巴西国立坎皮纳斯州立大学（UNICAMP）的研究人员发现，当你给聊天机器人输入不同政治观点时，机器人会改变其回答。研究人员警告称，用户可能会将这种迎合性的附和，误认为是中立的客观评估，从而可能加剧社会极化。研究人员测试了若干模型，让它们针对112项陈述进行“同意\"或者“不同意”的判断。测试内容共涉及巴西政治七大领域（包括经济、公共安全、社会福利、腐败和环境等）。测试设计的三个场景是：不提供用户政治",
           "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "Google 测试太空 AI 数据中心",
-          "url": "https://www.solidot.org/story?sid=85532",
-          "desc": "Google 一颗冰箱大小的卫星搭载 SpaceX 的 Falcon 9 于 10 月 1 日升空，搜索巨人将测试太空 AI 数据中心的可行性。有很多专家已经指出太空数据中心可行性不高。Google 的太空 AI 数据中心项目称之为 Project Suncatcher，最新发射的卫星旨在验证芯片能否在太空环境中正常运行，它安装了 4 个 Tensor Processing Units 芯片，将运",
-          "published": "Sun, 04 Oct 2026"
         }
       ]
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "从 TIS 到 score centering，重新理解 LLM RL 中的训推不一致",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557442&idx=1&sn=7fb1ec0ea08d8293ccd68c3b94e48801",
+          "desc": "过去一段时间，SC算法比较火热。借这个机会，正好学习了下SC论文中的公式推导，并复习了下之前一些TIS的相关论文，借这篇文章系统梳理一下LLMRL中的TIM（TrainingInferenceMismatch）问题的根源以及解决方法。为什么关注on-policyLLMRL",
+          "published": "Thu, 08 Oct 2026"
+        },
         {
           "title": "刚刚！Jev中文教程项目发布了",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557435&idx=1&sn=07617ad33c7d46d78b572b5d57f898d7",
@@ -155,18 +203,30 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557407&idx=1&sn=d70ff0ea7cda1fde716286d26675bcec",
           "desc": "4.6kStar的Paper-Writing-Tips迎来新更新：论文写作经验现已整理为ClaudeCode可调用的paper-writingskill，可辅助检查LaTeX、公式、图表、引用、英文表达和匿名信息。",
           "published": "Sat, 03 Oct 2026"
-        },
-        {
-          "title": "综述 | 世界—动作模型：从预测未来到机器人闭环控制",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557399&idx=1&sn=933a70d8842566827b9a360441fcc7e8",
-          "desc": "系统梳理机器人世界—动作模型的概念、架构、训练与评测，讨论动作对齐、空间一致性、长时序记忆和闭环学习。",
-          "published": "Fri, 02 Oct 2026"
         }
       ]
     },
     {
       "name": "InfoQ 推荐",
       "items": [
+        {
+          "title": "从 Rollout 到权重同步：Mooncake 如何支撑高性能强化学习系统｜QCon上海",
+          "url": "https://www.infoq.cn/article/akexM07HzNrRJzmjYNml",
+          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "两名工程师、两个月、4 万行 Rust：DynamoDB 太贵又慢，Perplexity 决定自己造",
+          "url": "https://www.infoq.cn/article/4AMw7Bt3UHqw48qmQTpS",
+          "desc": "Perplexity 已将其核心搜索服务层从 Amazon DynamoDB 迁移到 CobbleDB，这是一款 使用 Rust 编写的内部自研分布式键值存储 \"。此次迁移旨在解决高查询量下向大语言模型提供数千字节文档批次所产生的严重延迟和成本瓶颈。通过将持久化文档存储与热数据层检索解耦，工程团队将批量读取延迟降低了五倍，同时使整体存储费用至少下降了 20%。 人工智能答案引擎的读取模式与传统文档",
+          "published": "Thu, 08 Oct 2026"
+        },
+        {
+          "title": "代码交给AI，心流却回来了：Codex负责人不再怀念手写时代",
+          "url": "https://www.infoq.cn/article/rLaX4DEMuRxqW135ZSSC",
+          "desc": "OpenAI 的 ChatGPT 和 Codex 负责人 Tibo Sottiaux，近日在 X 上给团队立下了一份可以逐日检查的承诺：未来 28 天，每天要么推出一项对大多数 Codex 和 Work 用户明显有用的改进，要么进行一次完整的额度重置。 这份承诺把判断权交到了用户手里。产品有没有变好，不能只看发布了多少功能，还要看用户在日常工作中是否真正受益。至于额度重置，Tibo 在最近的一场访",
+          "published": "Thu, 08 Oct 2026"
+        },
         {
           "title": "用 Harness 工程打造 SRE 可控的生产环境｜QCon上海",
           "url": "https://www.infoq.cn/article/WvTYmUCLl28HKFvWHpZ2",
@@ -184,24 +244,6 @@
           "url": "https://www.infoq.cn/article/yVWAQGCZCzI838JESA1b",
           "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
           "published": "Mon, 05 Oct 2026"
-        },
-        {
-          "title": "Agent 的记忆不在对话里：把企业数仓沉淀为可治理的共享语义记忆｜QCon上海",
-          "url": "https://www.infoq.cn/article/M4mgbKf4RDv5AKTwQvFH",
-          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
-          "published": "Sun, 04 Oct 2026"
-        },
-        {
-          "title": "企业级 Agent Infra 架构实践：从安全沙箱到网络管控与身份治理｜QCon上海",
-          "url": "https://www.infoq.cn/article/bLB8RQ6sd3ZGQts0D4tP",
-          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \" 将于 10 月 22 日—24 日举办，聚焦 Harness AI 时代的工程实践，围绕 AI Native 架构、Agent Runtime、AI Infra、Data Systems、Agent 安全与可观测、Loop Engineer",
-          "published": "Sat, 03 Oct 2026"
-        },
-        {
-          "title": "Andrew Kelley 专访：他为何创建 Zig、禁止 AI 贡献以及将 Zig 从 GitHub 移出",
-          "url": "https://www.infoq.cn/article/eRbEA3dMd58RNPqp5D8S",
-          "desc": "在接受 JetBrains 采访时，Zig 项目创建者 Andrew Kelley 详细阐述 \"了该项目正式禁止 AI 贡献的决定，以及从 GitHub 迁移至 Codeberg 的动机。Kelley 指出，自动提交代码最终会降低代码库的质量，并且会削弱开源参与者之间的社交纽带。GitHub 持续出现的故障以及彼此之间的激励机制存在错位，导致该项目将代码库迁移至 Codeberg。 Kelley ",
-          "published": "Fri, 02 Oct 2026"
         }
       ]
     },
@@ -209,16 +251,28 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "OpenAI drops another batch of mathematical breakthroughs",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github",
-          "desc": "OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related ",
-          "published": "2026-10-06T19:26"
+          "title": "ChatGPT&#8217;s &#8216;Intelligent UI&#8217; update fills its responses with pictures, charts, and buttons",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6",
+          "desc": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gi",
+          "published": "2026-10-07T15:10"
         },
         {
-          "title": "The best robot vacuum and mop deals during October Prime Day",
-          "url": "https://www.theverge.com/gadgets/1006059/robot-vacuum-mop-roborock-qrevo-prime-day-deal-sale",
-          "desc": "Spending too much time constantly sweeping and mopping? If you have the money to delegate those chores to a robot cleaner, you could save a lot of personal time. Thankfully, it’s cheaper than usual to",
-          "published": "2026-10-06T18:00"
+          "title": "The first Nvidia RTX Spark laptops cost up to $7,000",
+          "url": "https://www.theverge.com/gadgets/1007040/nvidias-powerful-rtx-spark-laptops-can-cost-up-to-7000",
+          "desc": "The first array of laptops powered by Nvidia's new RTX Spark chip are designed to compete with high-end MacBook Pros - and they've got some high-end prices to match. The flagship Surface Laptop Ultra ",
+          "published": "2026-10-07T15:05"
+        },
+        {
+          "title": "It appears .agent and .agi are about to be the hot new domains",
+          "url": "https://www.theverge.com/tech/1007132/icann-domains-2026-ai-agi",
+          "desc": "For the first time in years, the Internet Corporation for Assigned Names and Numbers - better known as ICANN - is accepting applications for new top-level domains. These are the suffixes at the end of",
+          "published": "2026-10-07T14:46"
+        },
+        {
+          "title": "Microsoft is giving Copilot more control over Windows and your files",
+          "url": "https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence",
+          "desc": "At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's pa",
+          "published": "2026-10-07T14:01"
         }
       ]
     },
@@ -226,40 +280,40 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "Silicon Valley’s AI wunderkind launches Underdog, the most private Instinct/Muse competitor yet",
-          "url": "https://techcrunch.com/2026/10/06/silicon-valleys-ai-wunderkind-launches-underdog-the-most-private-instinct-muse-competitor-yet/",
-          "desc": "Sigil Wen, backed by a Silicon Valley who's who, has built an on-device AI assistant that promises to be free, fully private, and capable for everyday tasks.",
-          "published": "Tue, 06 Oct 2026"
+          "title": "Robot data startup Mecka AI nabs $60M from Sequoia",
+          "url": "https://techcrunch.com/2026/10/07/robot-data-startup-mecka-ai-nabs-60m-from-sequoia/",
+          "desc": "Mecka AI collects and analyzes human motion data to train humanoid robots and other kinds of robots. The startup pays people to record everyday tasks.",
+          "published": "Wed, 07 Oct 2026"
         },
         {
-          "title": "How AI decision models could change content moderation",
-          "url": "https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation/",
-          "desc": "On Tuesday, Musubi announced a lightweight decision model made for real-time moderation called PolicyLM-1.7B, released with open weights.",
-          "published": "Tue, 06 Oct 2026"
+          "title": "Nous Research confirms it hit $1.5B valuation, launches AI agents for business users",
+          "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/",
+          "desc": "The developer of Hermes Agent raised a $90 million Series B.",
+          "published": "Wed, 07 Oct 2026"
         },
         {
-          "title": "AI computing startup Lambda to raise $4B ahead of planned IPO",
-          "url": "https://techcrunch.com/2026/10/06/ai-computing-startup-lambda-to-raise-4b-ahead-of-planned-ipo/",
-          "desc": "Nvidia-backed Lambda is raising up to $4 billion at a $14.5 billion pre-money valuation ahead of a planned 2027 IPO, led by Coatue and Blackstone.",
-          "published": "Tue, 06 Oct 2026"
+          "title": "Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11",
+          "url": "https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/",
+          "desc": "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.",
+          "published": "Wed, 07 Oct 2026"
         },
         {
-          "title": "The next hurdle for AI agents: getting websites to let them in",
-          "url": "https://techcrunch.com/2026/10/06/the-next-hurdle-for-ai-agents-getting-websites-to-let-them-in/",
-          "desc": "Personal AI agents promise to shop, book flights, and make reservations for you. But deliberate blocks and anti-bot defenses are getting in the way, leaving consumers caught in the middle. A new stand",
-          "published": "Tue, 06 Oct 2026"
+          "title": "Meta’s Muse launches on iPad just a month after its mobile debut",
+          "url": "https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/",
+          "desc": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
+          "published": "Wed, 07 Oct 2026"
         },
         {
-          "title": "Hark releases an AI personal assistant with a focus on privacy",
-          "url": "https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy/",
-          "desc": "The AI lab's personal assistant is an operating system from the future designed to compete with Muse, Dots, and Instinct.",
-          "published": "Tue, 06 Oct 2026"
+          "title": "ChatGPT for Teens keeps teens talking, even during mental health crises",
+          "url": "https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/",
+          "desc": "ChatGPT’s teen safeguards are meant to protect vulnerable users, but new testing found the chatbot continues encouraging engagement during crises and potentially encourages unhealthy relationships wit",
+          "published": "Wed, 07 Oct 2026"
         },
         {
-          "title": "Mirror Particle is building a ‘world model’ of human behavior",
-          "url": "https://techcrunch.com/2026/10/06/mirror-particle-is-building-a-world-model-of-human-behavior/",
-          "desc": "Mirror Particle will launch at TechCrunch Disrupt's Startup Battlefield 200 with a world model built from scratch to predict human behavior, arguing that LLM role-play falls short for market research ",
-          "published": "Tue, 06 Oct 2026"
+          "title": "ChatGPT is getting a lot more visual, with the launch of a new interface",
+          "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
+          "desc": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
+          "published": "Wed, 07 Oct 2026"
         }
       ]
     },
@@ -271,52 +325,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "Review",
-          "url": "https://www.producthunt.com/products/review-2",
-          "desc": "Code review on your own machine, with your own AI Discussion | Link",
-          "published": "2026-10-05T14:01"
+          "title": "GenPage 3.0",
+          "url": "https://www.producthunt.com/products/genpage",
+          "desc": "Build, personalize, and optimize landing pages with AI Discussion | Link",
+          "published": "2026-09-30T11:17"
         },
         {
-          "title": "Floani",
-          "url": "https://www.producthunt.com/products/floani",
-          "desc": "Create, animate, and share AI-powered diagrams Discussion | Link",
-          "published": "2026-10-04T18:59"
+          "title": "IrisGo for Solopreneurs",
+          "url": "https://www.producthunt.com/products/irisgo-public-beta",
+          "desc": "AI workflow automation: show it once, let it run Discussion | Link",
+          "published": "2026-10-05T15:45"
         },
         {
-          "title": "Banger",
-          "url": "https://www.producthunt.com/products/banger-mail",
-          "desc": "Win and keep customers with email automation your AI runs Discussion | Link",
-          "published": "2026-10-02T10:59"
+          "title": "Velozity",
+          "url": "https://www.producthunt.com/products/velozity-2",
+          "desc": "The Multiplayer AI Office where your team and agents work. Discussion | Link",
+          "published": "2026-09-18T07:18"
         },
         {
-          "title": "Appto",
-          "url": "https://www.producthunt.com/products/appto",
-          "desc": "An iOS app factory that runs on your own AI subscription Discussion | Link",
-          "published": "2026-10-05T13:24"
+          "title": "Proofsource",
+          "url": "https://www.producthunt.com/products/proofsource",
+          "desc": "AI search visibility, with agents that fix the gaps Discussion | Link",
+          "published": "2026-10-05T22:51"
         },
         {
-          "title": "EasyCut",
-          "url": "https://www.producthunt.com/products/easycut-2",
-          "desc": "Edit your Claude motion videos Discussion | Link",
-          "published": "2026-10-05T10:11"
+          "title": "Rhem Labs",
+          "url": "https://www.producthunt.com/products/rhem-labs",
+          "desc": "Health assistant robots for your parents’ Discussion | Link",
+          "published": "2026-10-06T10:34"
         },
         {
-          "title": "Cosmic AI Support Agent",
-          "url": "https://www.producthunt.com/products/cosmic",
-          "desc": "An AI support agent that stays in sync with your site Discussion | Link",
-          "published": "2026-10-05T08:33"
+          "title": "Rool",
+          "url": "https://www.producthunt.com/products/rool",
+          "desc": "Your private AI machine. Files, ideas, AI in one workspace. Discussion | Link",
+          "published": "2026-09-26T18:59"
         },
         {
-          "title": "Fuse AI",
-          "url": "https://www.producthunt.com/products/fuseai",
-          "desc": "Build a Custom GTM Stack. One SDK. One MCP. Discussion | Link",
-          "published": "2026-10-01T12:31"
+          "title": "Supademo AI Demo Agent",
+          "url": "https://www.producthunt.com/products/supademo",
+          "desc": "Agentic demos like your best salesperson, without the salary Discussion | Link",
+          "published": "2025-09-03T18:12"
         },
         {
-          "title": "Awakado",
-          "url": "https://www.producthunt.com/products/awakado",
-          "desc": "Keep your Mac awake while your AI agents work Discussion | Link",
-          "published": "2026-10-03T00:11"
+          "title": "Pegasus 1.6 by TwelveLabs",
+          "url": "https://www.producthunt.com/products/twelvelabs",
+          "desc": "Transforms egocentric video into robot training data Discussion | Link",
+          "published": "2026-09-29T05:44"
         }
       ]
     }
