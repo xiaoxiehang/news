@@ -107,6 +107,7 @@ a.price-card:hover .price-name { color: var(--accent); }
       <button class="price-tab" data-cat="apple">Apple</button>
       <button class="price-tab" data-cat="steam">Steam</button>
       <button class="price-tab" data-cat="epic">Epic</button>
+      <button class="price-tab" data-cat="play">Google Play</button>
       <button class="price-tab" data-cat="other">其他</button>
     </div>
     <div class="price-grid" id="all-grid"></div>
@@ -164,7 +165,8 @@ function renderAll() {
     fetchJson('/data/daily-picks.json'),
     fetchJson('/data/app-drops.json'),
     fetchJson('/data/deals.json'),
-    fetchJson('/data/epic-free.json')
+    fetchJson('/data/epic-free.json'),
+    fetchJson('/data/play-drops.json')
   ]).then(function(res) {
     var items = [];
     // 1. 今日最值得买
@@ -181,6 +183,9 @@ function renderAll() {
     // 4. Epic 每周免费
     var epic = res[3];
     ((epic && epic.games) || []).forEach(function(g) { items.push(normalizeEpic(g)); });
+    // 5. Google Play 降价：只上榜单（有降价/限免的），没降价的不展示
+    var play = res[4], playDrops = (play && play.drops) || [];
+    playDrops.forEach(function(it) { items.push(normalizePlay(it)); });
     if (!items.length) return;
     // 按折扣从大到小，无折扣的保持原相对顺序沉底
     items.sort(function(a, b) { return (b.disc || 0) - (a.disc || 0); });
@@ -255,6 +260,21 @@ function normalizeEpic(g) {
     img: g.icon ? '<img class="price-img" loading="lazy" src="' + esc(g.icon) + '" alt="">' : '',
     price: '<span class="price-now">免费</span>',
     was: g.original_price || ''
+  };
+}
+function normalizePlay(it) {
+  var us = (it.prices || {}).US;
+  var price = us ? '<span class="price-now">$' + us.price + '<em>美区</em></span>' : '';
+  var was = '';
+  if (it.discount && it.prices[it.region]) {
+    var op = it.prices[it.region];
+    was = op.symbol + op.hist_max;
+  }
+  var tag = it.is_free ? '限免' : 'Google Play';
+  return {
+    url: it.url, name: it.name, note: '', tag: tag, disc: it.discount || 0, cat: 'play',
+    img: it.icon ? '<img class="price-icon" loading="lazy" src="' + esc(it.icon) + '" alt="">' : '',
+    price: price, was: was
   };
 }
 function cardHtml(it, i) {
