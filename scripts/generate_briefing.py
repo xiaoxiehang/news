@@ -256,6 +256,7 @@ def main():
                     'summary': p.get('summary', ''),
                     'url': p.get('url', ''),
                     'source': p.get('source', ''),
+                    'category': p.get('category', ''),
                 }
                 for p in picks if p.get('title') and p.get('url')
             ],
