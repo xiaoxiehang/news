@@ -89,6 +89,17 @@ a.project-card:hover .project-name { color: var(--primary); }
 }
 .category-btn:hover { color: var(--ink); }
 .category-btn.active { background: var(--primary); color: #fff; }
+/* GitHub 工具条：创建时间筛选 + 计数 */
+.gh-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 2px var(--pad-x) 14px; flex-wrap: wrap; }
+.gh-created-filter { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+.cf-btn { font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: var(--radius-pill); border: 1px solid var(--line); background: var(--paper); color: var(--secondary); cursor: pointer; font-family: var(--sans); white-space: nowrap; }
+.cf-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.gh-count { font-size: 13px; color: var(--muted); white-space: nowrap; }
+/* 分页 */
+.gh-pager { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 4px 0 48px; flex-wrap: wrap; }
+.pg-btn { min-width: 38px; height: 38px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 14px; cursor: pointer; font-family: var(--sans); }
+.pg-btn:disabled { opacity: .35; cursor: default; }
+.pg-btn.cur { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 700; }
 .pane-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
 @media (max-width: 720px) {
   .projects-grid { grid-template-columns: 1fr; padding: 8px 20px 48px; }
@@ -118,6 +129,7 @@ a.project-card:hover .project-name { color: var(--primary); }
 
 <main>
   <div class="filter-bar"><div class="categories" id="categories"></div></div>
+  <div class="gh-toolbar" id="gh-toolbar" style="display:none;"></div>
   <div id="projects-container"><div class="loading">加载中...</div></div>
 </main>
 
@@ -161,7 +173,10 @@ function showToast(msg) {
 let ghCurrentCategory = 'rising';
 let githubData = null;
 let ghInsights = {};
-var TABS = [{ id: 'leaderboard', name: '今日热榜' }, { id: 'rising', name: '新星榜' }];
+let ghPage = 1;
+let ghCreated = 'all';
+const GH_PAGE_SIZE = 12;
+var TABS = [{ id: 'rising', name: '新星榜' }, { id: 'leaderboard', name: '今日热榜' }];
 function renderGhCategories() {
   const container = document.getElementById('categories');
   if (!githubData) return;
@@ -175,8 +190,52 @@ function renderGhCategories() {
 }
 function switchGhCategory(categoryId) {
   ghCurrentCategory = categoryId;
+  ghPage = 1;
   renderGhCategories();
   renderGhProjects();
+}
+function setGhCreated(id) {
+  ghCreated = id;
+  ghPage = 1;
+  renderGhProjects();
+}
+function ghGoPage(n) {
+  ghPage = n;
+  renderGhProjects();
+  var c = document.getElementById('projects-container');
+  if (c) {
+    var y = c.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }
+}
+function passCreated(p) {
+  if (ghCreated === 'all' || !p.created_at) return true;
+  var d = new Date(p.created_at + 'T00:00:00+08:00').getTime();
+  return Date.now() - d <= parseInt(ghCreated, 10) * 86400000;
+}
+function renderGhToolbar(total) {
+  var el = document.getElementById('gh-toolbar');
+  el.style.display = '';
+  var opts = [['all', '全部'], ['7', '近7天'], ['30', '近30天'], ['90', '近90天']];
+  el.innerHTML = '<div class="gh-created-filter"><span>创建时间</span>' +
+    opts.map(function(o) {
+      return '<button class="cf-btn' + (ghCreated === o[0] ? ' active' : '') +
+        '" onclick="setGhCreated(\'' + o[0] + '\')">' + o[1] + '</button>';
+    }).join('') + '</div><div class="gh-count">共 ' + total + ' 个项目</div>';
+}
+function pagerHtml(totalPages) {
+  if (totalPages <= 1) return '';
+  var h = '<div class="gh-pager">';
+  h += '<button class="pg-btn" ' + (ghPage <= 1 ? 'disabled' : '') + ' onclick="ghGoPage(' + (ghPage - 1) + ')">‹</button>';
+  var end = Math.min(totalPages, Math.max(5, ghPage + 2));
+  var start = Math.max(1, end - 4);
+  end = Math.min(totalPages, start + 4);
+  for (var n = start; n <= end; n++) {
+    h += '<button class="pg-btn' + (n === ghPage ? ' cur' : '') + '" onclick="ghGoPage(' + n + ')">' + n + '</button>';
+  }
+  h += '<button class="pg-btn" ' + (ghPage >= totalPages ? 'disabled' : '') + ' onclick="ghGoPage(' + (ghPage + 1) + ')">›</button>';
+  h += '</div>';
+  return h;
 }
 function formatNumber(num) {
   if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
@@ -190,15 +249,21 @@ function renderGhProjects() {
   }
   const isBoard = ghCurrentCategory === 'leaderboard';
   const isRising = ghCurrentCategory === 'rising';
-  const projects = isBoard
+  let projects = isBoard
     ? (githubData.leaderboard || [])
     : isRising
     ? (githubData.rising || [])
     : ((githubData.categories[ghCurrentCategory] || {}).repos || []);
+  projects = projects.filter(passCreated);
+  renderGhToolbar(projects.length);
   if (!projects.length) {
-    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该分类下暂无热门项目</div></div>';
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该筛选下暂无项目，换个时间范围试试</div></div>';
     return;
   }
+  const totalPages = Math.max(1, Math.ceil(projects.length / GH_PAGE_SIZE));
+  if (ghPage > totalPages) ghPage = 1;
+  const rankBase = (ghPage - 1) * GH_PAGE_SIZE;
+  projects = projects.slice(rankBase, rankBase + GH_PAGE_SIZE);
   const langColors = { 'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5', 'Java': '#b07219', 'Go': '#00ADD8', 'Rust': '#dea584', 'C++': '#f34b7d', 'C': '#555555', 'Ruby': '#701516', 'PHP': '#4F5D95', 'Swift': '#ffac45', 'Kotlin': '#F18E33', 'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c' };
   function card(p, i, showRank) {
     const ins = ghInsights[p.full_name];
@@ -210,7 +275,7 @@ function renderGhProjects() {
     '</div>' : '';
     const langColor = langColors[p.language] || '#888';
     const badge = showRank
-      ? '<div class="rank-badge' + (i < 3 ? ' top3' : '') + '">#' + (i + 1) + '</div>' : '';
+      ? '<div class="rank-badge' + ((rankBase + i) < 3 ? ' top3' : '') + '">#' + (rankBase + i + 1) + '</div>' : '';
     const newTag = p._isNew ? '<span class="new-dot">NEW</span>' : '';
     return '<a class="project-card" href="https://github.com/' + esc(p.full_name) + '" target="_blank" rel="noopener">' + badge +
       '<div class="project-header"><div class="project-icon">\u2726</div>' +
@@ -234,11 +299,11 @@ function renderGhProjects() {
   if (isRising) {
     container.innerHTML = grid(projects.map(function(p) {
       const q = Object.assign({}, p); q._isNew = true; return q;
-    }), false);
+    }), false) + pagerHtml(totalPages);
   } else if (isBoard) {
-    container.innerHTML = grid(projects, true);
+    container.innerHTML = grid(projects, true) + pagerHtml(totalPages);
   } else {
-    container.innerHTML = grid(projects, false);
+    container.innerHTML = grid(projects, false) + pagerHtml(totalPages);
   }
 }
 async function loadGithub() {
