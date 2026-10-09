@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-09",
+  "date_str": "2026年10月09日",
+  "overview": "今天的 AI 新闻，一边是新工具和资本继续涌入，一边是安全、治理与商业化问题受到关注。Anthropic 推出开源项目安全扫描服务，OpenAI 通报打击冒充媒体和智库的影响行动；Manus 与 AI 模型评测平台 Arena 则公布了新融资。",
+  "picks": [
+    {
+      "title": "OpenAI 通报打击两起利用 AI 伪装身份的影响行动",
+      "summary": "OpenAI 表示，已打击两起借助 AI 传播地缘政治信息的影响行动。相关操作者冒充记者和智库，试图让宣传内容显得更可信。这份官方通报提醒读者：判断网上信息时，除了留意内容本身，也要核查发布者的真实身份。",
+      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "AI 模型评测平台 Arena 融资 2 亿美元",
+      "summary": "运营热门 AI 模型排行榜 LMArena 的公司获得 2 亿美元融资，估值升至 31 亿美元，约十个月内接近翻倍。TechCrunch 报道称，平台也开始评估模型是否会说谎等问题，显示模型比较正从能力高低延伸到行为是否可靠。",
+      "url": "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "美国男子利用 AI 音乐和机器人账号刷播放量，被判入狱 18 个月",
+      "summary": "一名美国男子因利用 AI 生成音乐，并通过大量机器人账号操纵流媒体播放量，被判入狱 18 个月。案件涉及多个主流音乐平台，显示 AI 降低内容制作成本的同时，也可能被用于扩大原有的刷量欺诈行为。",
+      "url": "https://www.solidot.org/story?sid=85551",
+      "source": "Solidot",
+      "category": "一句话"
+    },
+    {
+      "title": "OpenAI 收入据报比先前预测低 200 亿美元",
+      "summary": "TechCrunch 援引新报道指出，OpenAI 的收入数据可能比此前流传的预测低约 200 亿美元。此前的约 700 亿美元数字属于年化收入说法，而非已经实现的全年营收；比较这些数字时，仍须留意统计口径与预测时间是否一致。",
+      "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Anthropic 推出面向开源项目的免费 AI 安全扫描",
+      "summary": "Anthropic 推出名为 OSS Scanner 的服务，为自愿加入的开源项目免费、定期检查安全漏洞。许多日常软件都依赖开源代码，这项服务有望帮助项目维护者更早发现风险；实际效果仍需看扫描结果如何得到验证和修复。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "谷歌借助 AI 将图像处理代码改写为更安全的 Rust",
+      "summary": "谷歌安全团队利用 Gemini 辅助改写一个约 3000 行的图像处理代码库，并通过测试核对新版与旧版的运行结果。团队称，新版本可直接替换原有程序，延迟也保持不变。这项实践展示了 AI 帮助维护旧软件、减少内存安全隐患的一种方法。",
+      "url": "https://www.infoq.cn/article/LVsjSV4pIlh3Liz0KZZE",
+      "source": "InfoQ 推荐",
+      "category": "效率工具"
+    },
+    {
+      "title": "三名遭解雇的 OpenAI 安全研究员公开反驳不当行为指控",
+      "summary": "三名遭 OpenAI 解雇的安全研究员发表公开信，否认有关其不当处理敏感信息的指控，并称解雇决定可能使员工不敢提出安全疑虑。目前这是双方存在争议的说法，不能据此认定指控成立；事件也让公司的内部安全讨论机制受到关注。",
+      "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Manus 完成逾 5 亿美元融资",
+      "summary": "AI 企业 Manus 的母公司宣布完成超过 5 亿美元融资，由博裕资本和 IDG 领投，腾讯、红杉中国等老股东参与。这是近期中国 AI 应用领域一笔规模较大的融资，也为这家经历收购风波的公司提供了继续发展产品的资金。",
+      "url": "https://www.solidot.org/story?sid=85554",
+      "source": "Solidot",
+      "category": "前沿动态"
+    }
+  ]
+}

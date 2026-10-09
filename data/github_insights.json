@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08 03:08:45",
+  "updated_at": "2026-10-09 03:14:15",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -401,11 +401,6 @@
       "why_hot": "移动端直播接入复杂，现成编码库能省开发时间。",
       "who": "开发 Android 直播应用的人。"
     },
-    "baidu/Unlimited-OCR": {
-      "what": "一次性解析长文档的 OCR 工具。",
-      "why_hot": "长文档识别省去分段拼接，很戳实际需求。",
-      "who": "做文档数字化和信息抽取的人。"
-    },
     "cloudflare/security-audit-skill": {
       "what": "帮编程智能体分阶段做安全审计。",
       "why_hot": "审计结果可机器读取，还能独立验证。",
@@ -420,11 +415,6 @@
       "what": "移除自有内容中 AI 水印的隐私优先应用。",
       "why_hot": "本地隐私和内容自主权容易引发讨论。",
       "who": "需要处理自有 AI 内容的创作者。"
-    },
-    "firecrawl/anydoc": {
-      "what": "把多种办公文档转换成干净的 Markdown。",
-      "why_hot": "格式支持广，还能接入 Python 和 Node.js。",
-      "who": "搭知识库和文档处理流程的人。"
     },
     "browser-use/jev-ultrafast": {
       "what": "主打低成本、高速度的网页智能体。",
@@ -470,11 +460,6 @@
       "what": "DeepSeek Harness 的桌面版。",
       "why_hot": "桌面界面比命令行更容易上手。",
       "who": "想用桌面方式操作 DSH 的人。"
-    },
-    "petergyang/no-ai-slop": {
-      "what": "清理文章里常见的 AI 腔和套路表达。",
-      "why_hot": "大家看腻了 AI 味文字，改稿需求很真实。",
-      "who": "常用 AI 辅助写作的人。"
     },
     "lutzroeder/netron": {
       "what": "可视化查看机器学习模型结构。",
@@ -2616,11 +2601,6 @@
       "why_hot": "找银行接口不容易，集中目录方便检索。",
       "who": "适合做开放银行产品的人。"
     },
-    "cdinnison/ray-finance": {
-      "what": "做一个会随对话了解你的 AI 财务顾问。",
-      "why_hot": "个性化理财加对话交互，概念很抓眼球。",
-      "who": "适合关注 AI 理财应用的人。"
-    },
     "FreeCodeCampChina/freecodecamp.cn": {
       "what": "提供中文版编程课程和开源学习平台。",
       "why_hot": "免费中文编程资源需求一直很大。",
@@ -3866,15 +3846,65 @@
       "why_hot": "能跑端到端任务、留日志，还能接入 AI 编程助手。",
       "who": "做安卓测试和自动化的开发者。"
     },
-    "MiniMax-AI/MiniMax-H3": {
-      "what": "MiniMax-H3 的模型相关项目仓库。",
-      "why_hot": "新模型项目容易吸引人关注能力和开放方式。",
-      "who": "关注大模型进展的开发者。"
-    },
     "montanaflynn/stats": {
       "what": "一个零依赖、测试充分的 Go 统计计算库。",
       "why_hot": "功能全又不用引入额外依赖，做数据处理很省心。",
       "who": "需要在 Go 项目里做统计计算的人。"
+    },
+    "storytold/photocraft": {
+      "what": "用纯 Rust 重新实现 Photoshop 的开源项目。",
+      "why_hot": "挑战专业图像软件，技术难度和想象空间都很大。",
+      "who": "适合图像软件开发者和 Rust 爱好者关注。"
+    },
+    "boykopovar/AnyPS5": {
+      "what": "尝试将 PS5 可执行文件自动移植到电脑平台。",
+      "why_hot": "让主机游戏跑在电脑上的目标很吸睛。",
+      "who": "适合游戏移植和逆向工程爱好者关注。"
+    },
+    "openai/math": {
+      "what": "OpenAI 的 Lean 数学相关项目。",
+      "why_hot": "AI 数学推理正受关注，Lean 项目容易引发好奇。",
+      "who": "适合关注形式化数学和 AI 推理的人。"
+    },
+    "cdyforever/how-to-live-better": {
+      "what": "把《高性价比人生指南》做成可离线阅读的网页。",
+      "why_hot": "内容实用，手机能看还能搜索，分享起来方便。",
+      "who": "适合想找生活建议、喜欢轻量阅读的人。"
+    },
+    "go-gitea/gitea": {
+      "what": "可自托管的 Git 协作平台，集成代码托管和 CI/CD。",
+      "why_hot": "想把代码和开发流程握在自己手里的团队不少。",
+      "who": "适合需要自建开发平台的团队。"
+    },
+    "dockur/windows": {
+      "what": "用 Docker 封装 Windows 虚拟机的部署项目。",
+      "why_hot": "一条熟悉的容器化路径就能部署 Windows，很直观。",
+      "who": "适合需要临时 Windows 环境的开发者。"
+    },
+    "sickcodes/Docker-OSX": {
+      "what": "通过 Docker 管理和运行 macOS 虚拟机。",
+      "why_hot": "跨平台测试和安全研究都需要可复现的 macOS 环境。",
+      "who": "适合做 macOS 测试和安全研究的人。"
+    },
+    "LeCoupa/awesome-cheatsheets": {
+      "what": "汇集编程语言、框架和开发工具的速查表。",
+      "why_hot": "常用知识集中在单文件里，查起来省事。",
+      "who": "适合经常切换技术栈的开发者。"
+    },
+    "LosaLosSantos/aurelio-finance": {
+      "what": "可自托管的个人资产分析工具，带 AI 洞察。",
+      "why_hot": "资产数据自己保管，还能看 AI 分析，挺对胃口。",
+      "who": "适合想自己管理投资和净资产的人。"
+    },
+    "MariaLetta/free-gophers-pack": {
+      "what": "提供百余款 Go 吉祥物图片和设计素材。",
+      "why_hot": "做 Go 内容时有现成素材可用，省去找图时间。",
+      "who": "适合做 Go 分享、课程或社区内容的人。"
+    },
+    "asciinema/asciinema": {
+      "what": "录制、直播和播放终端操作的工具。",
+      "why_hot": "终端演示比截图更清楚，也方便复现操作。",
+      "who": "适合写教程、做演示和分享命令行技巧的人。"
     }
   }
 }
