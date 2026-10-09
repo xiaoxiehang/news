@@ -69,6 +69,7 @@ a.project-card:hover .project-name { color: var(--primary); }
 }
 .meta-item { display: flex; align-items: center; gap: 6px; }
 .meta-value { font-weight: 600; color: var(--ink); }
+.meta-label { color: var(--muted); font-weight: 400; }
 .language-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 /* 分类条 */
 .filter-bar {
@@ -223,6 +224,8 @@ function renderGhProjects() {
         (p.stars_gain != null && p.stars_gain > 0 ? '<span class="gain">+' + formatNumber(p.stars_gain) + '</span>' : '') +
         '</span></div>' +
         '<div class="meta-item"><span>\u2682</span><span class="meta-value">' + formatNumber(p.forks || 0) + '</span></div>' +
+        (p.created_at ? '<div class="meta-item"><span class="meta-label">创建</span><span class="meta-value">' + esc(p.created_at) + '</span></div>' : '') +
+        (p.updated_at ? '<div class="meta-item"><span class="meta-label">更新</span><span class="meta-value">' + esc(p.updated_at) + '</span></div>' : '') +
       '</div></a>';
   }
   function grid(list, showRank) {
