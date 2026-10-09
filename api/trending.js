@@ -1,7 +1,8 @@
 // GET /api/trending — GitHub 趋势实时代理（Vercel Serverless）
 //
 // 服务端持有 GITHUB_TOKEN（Vercel 环境变量），浏览器只调本接口，token 不暴露。
-// 边缘缓存 30 分钟：GitHub 侧约每小时只打十几下，远低于 30 次/分钟的限流。
+// 边缘缓存 5 分钟：每次打开要打 13 个搜索查询，GitHub 上限 30 次/分钟；
+// 零缓存的话连刷两下就触发限流、反而掉回静态快照。5 分钟体感与实时无异。
 // 返回结构与 data/github.json 一致，只是不带 stars_gain——
 // 涨星数由前端用"实时 star − data/github-stars-history.json 最新快照"算出。
 // 无 token 或被限流时返回 503，前端自动回退到静态 github.json。
@@ -108,7 +109,7 @@ let memCache = null;
 export default async function handler(req, res) {
   try {
     if (memCache && Date.now() - memCache.at < 5 * 60 * 1000) {
-      res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=300');
+      res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
       res.setHeader('X-Trending-Cache', 'memory');
       return res.status(200).json(memCache.body);
     }
@@ -148,7 +149,7 @@ export default async function handler(req, res) {
     applyCategoryOverrides(body.categories);
 
     memCache = { at: Date.now(), body };
-    res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=300');
+    res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
     res.setHeader('X-Trending-Cache', 'miss');
     return res.status(200).json(body);
   } catch (e) {
