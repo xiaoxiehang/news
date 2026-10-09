@@ -233,7 +233,7 @@ function normalizeApp(it) {
   var was = '';
   if (it.discount && it.prices[it.region]) {
     var op = it.prices[it.region];
-    was = op.symbol + op.original_price;
+    was = op.symbol + op.hist_max;
   }
   var tag = it.is_free ? '限免' : (it.platform === 'mac' ? 'Mac App Store' : 'App Store');
   return {
