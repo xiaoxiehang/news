@@ -191,6 +191,8 @@ function renderGhCategories() {
 function switchGhCategory(categoryId) {
   ghCurrentCategory = categoryId;
   ghPage = 1;
+  // 创建时间筛选只对新星榜有意义：切 tab 时重置，避免分类 tab 被误筛空
+  ghCreated = 'all';
   renderGhCategories();
   renderGhProjects();
 }
@@ -216,6 +218,8 @@ function passCreated(p) {
 function renderGhToolbar(total) {
   var el = document.getElementById('gh-toolbar');
   el.style.display = '';
+  // 创建时间筛选只在新星榜 tab 显示：分类/热榜的项目多为多年前创建，筛了必空
+  var showCreatedFilter = ghCurrentCategory === 'rising';
   var opts = [['all', '全部'], ['7', '近7天'], ['30', '近30天'], ['90', '近90天']];
   var upd = '';
   if (githubData) {
@@ -225,11 +229,13 @@ function renderGhToolbar(total) {
       upd = '每日快照 · ' + String(githubData.updated_at || '').slice(0, 16);
     }
   }
-  el.innerHTML = '<div class="gh-created-filter"><span>创建时间</span>' +
-    opts.map(function(o) {
-      return '<button class="cf-btn' + (ghCreated === o[0] ? ' active' : '') +
-        '" onclick="setGhCreated(\'' + o[0] + '\')">' + o[1] + '</button>';
-    }).join('') + '</div><div class="gh-count">共 ' + total + ' 个项目' + (upd ? ' · ' + esc(upd) : '') + '</div>';
+  el.innerHTML = (showCreatedFilter
+    ? '<div class="gh-created-filter"><span>创建时间</span>' +
+      opts.map(function(o) {
+        return '<button class="cf-btn' + (ghCreated === o[0] ? ' active' : '') +
+          '" onclick="setGhCreated(\'' + o[0] + '\')">' + o[1] + '</button>';
+      }).join('') + '</div>'
+    : '') + '<div class="gh-count">共 ' + total + ' 个项目' + (upd ? ' · ' + esc(upd) : '') + '</div>';
 }
 function pagerHtml(totalPages) {
   if (totalPages <= 1) return '';
@@ -262,7 +268,7 @@ function renderGhProjects() {
     : isRising
     ? (githubData.rising || [])
     : ((githubData.categories[ghCurrentCategory] || {}).repos || []);
-  projects = projects.filter(passCreated);
+  projects = (ghCurrentCategory === 'rising') ? projects.filter(passCreated) : projects;
   renderGhToolbar(projects.length);
   if (!projects.length) {
     container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该筛选下暂无项目，换个时间范围试试</div></div>';
