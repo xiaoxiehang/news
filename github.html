@@ -96,10 +96,9 @@ a.project-card:hover .project-name { color: var(--primary); }
 .cf-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
 .gh-count { font-size: 13px; color: var(--muted); white-space: nowrap; }
 /* 分页 */
-.gh-pager { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 4px 0 48px; flex-wrap: wrap; }
-.pg-btn { min-width: 38px; height: 38px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 14px; cursor: pointer; font-family: var(--sans); }
-.pg-btn:disabled { opacity: .35; cursor: default; }
-.pg-btn.cur { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 700; }
+.gh-loadmore { display: flex; justify-content: center; padding: 8px 0 48px; }
+.lm-btn { height: 42px; padding: 0 28px; border-radius: 21px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 14px; cursor: pointer; font-family: var(--sans); }
+.lm-btn:hover { border-color: var(--primary); color: var(--primary); }
 .pane-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
 @media (max-width: 720px) {
   .projects-grid { grid-template-columns: 1fr; padding: 8px 20px 48px; }
@@ -173,9 +172,9 @@ function showToast(msg) {
 let ghCurrentCategory = 'rising';
 let githubData = null;
 let ghInsights = {};
-let ghPage = 1;
+let ghShown = 12;
 let ghCreated = 'all';
-const GH_PAGE_SIZE = 12;
+const GH_BATCH = 12;
 var TABS = [{ id: 'rising', name: '新星榜' }, { id: 'leaderboard', name: '今日热榜' }];
 function renderGhCategories() {
   const container = document.getElementById('categories');
@@ -190,7 +189,7 @@ function renderGhCategories() {
 }
 function switchGhCategory(categoryId) {
   ghCurrentCategory = categoryId;
-  ghPage = 1;
+  ghShown = GH_BATCH;
   // 创建时间筛选只对新星榜有意义：切 tab 时重置，避免分类 tab 被误筛空
   ghCreated = 'all';
   renderGhCategories();
@@ -198,17 +197,12 @@ function switchGhCategory(categoryId) {
 }
 function setGhCreated(id) {
   ghCreated = id;
-  ghPage = 1;
+  ghShown = GH_BATCH;
   renderGhProjects();
 }
-function ghGoPage(n) {
-  ghPage = n;
+function ghLoadMore() {
+  ghShown += GH_BATCH;
   renderGhProjects();
-  var c = document.getElementById('projects-container');
-  if (c) {
-    var y = c.getBoundingClientRect().top + window.scrollY - 140;
-    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-  }
 }
 function passCreated(p) {
   if (ghCreated === 'all' || !p.created_at) return true;
@@ -237,19 +231,9 @@ function renderGhToolbar(total) {
       }).join('') + '</div>'
     : '') + '<div class="gh-count">共 ' + total + ' 个项目' + (upd ? ' · ' + esc(upd) : '') + '</div>';
 }
-function pagerHtml(totalPages) {
-  if (totalPages <= 1) return '';
-  var h = '<div class="gh-pager">';
-  h += '<button class="pg-btn" ' + (ghPage <= 1 ? 'disabled' : '') + ' onclick="ghGoPage(' + (ghPage - 1) + ')">‹</button>';
-  var end = Math.min(totalPages, Math.max(5, ghPage + 2));
-  var start = Math.max(1, end - 4);
-  end = Math.min(totalPages, start + 4);
-  for (var n = start; n <= end; n++) {
-    h += '<button class="pg-btn' + (n === ghPage ? ' cur' : '') + '" onclick="ghGoPage(' + n + ')">' + n + '</button>';
-  }
-  h += '<button class="pg-btn" ' + (ghPage >= totalPages ? 'disabled' : '') + ' onclick="ghGoPage(' + (ghPage + 1) + ')">›</button>';
-  h += '</div>';
-  return h;
+function loadMoreHtml(remaining) {
+  if (remaining <= 0) return '';
+  return '<div class="gh-loadmore"><button class="lm-btn" onclick="ghLoadMore()">加载更多（还剩 ' + remaining + ' 个）</button></div>';
 }
 function formatNumber(num) {
   if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
@@ -274,10 +258,8 @@ function renderGhProjects() {
     container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该筛选下暂无项目，换个时间范围试试</div></div>';
     return;
   }
-  const totalPages = Math.max(1, Math.ceil(projects.length / GH_PAGE_SIZE));
-  if (ghPage > totalPages) ghPage = 1;
-  const rankBase = (ghPage - 1) * GH_PAGE_SIZE;
-  projects = projects.slice(rankBase, rankBase + GH_PAGE_SIZE);
+  const shown = projects.slice(0, ghShown);
+  const remaining = projects.length - shown.length;
   const langColors = { 'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5', 'Java': '#b07219', 'Go': '#00ADD8', 'Rust': '#dea584', 'C++': '#f34b7d', 'C': '#555555', 'Ruby': '#701516', 'PHP': '#4F5D95', 'Swift': '#ffac45', 'Kotlin': '#F18E33', 'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c' };
   function card(p, i, showRank) {
     const ins = ghInsights[p.full_name];
@@ -289,7 +271,7 @@ function renderGhProjects() {
     '</div>' : '';
     const langColor = langColors[p.language] || '#888';
     const badge = showRank
-      ? '<div class="rank-badge' + ((rankBase + i) < 3 ? ' top3' : '') + '">#' + (rankBase + i + 1) + '</div>' : '';
+      ? '<div class="rank-badge' + (i < 3 ? ' top3' : '') + '">#' + (i + 1) + '</div>' : '';
     const newTag = p._isNew ? '<span class="new-dot">NEW</span>' : '';
     return '<a class="project-card" href="https://github.com/' + esc(p.full_name) + '" target="_blank" rel="noopener">' + badge +
       '<div class="project-header"><div class="project-icon">\u2726</div>' +
@@ -311,13 +293,13 @@ function renderGhProjects() {
     return '<div class="projects-grid">' + list.map(function(p, i) { return card(p, i, showRank); }).join('') + '</div>';
   }
   if (isRising) {
-    container.innerHTML = grid(projects.map(function(p) {
+    container.innerHTML = grid(shown.map(function(p) {
       const q = Object.assign({}, p); q._isNew = true; return q;
-    }), false) + pagerHtml(totalPages);
+    }), false) + loadMoreHtml(remaining);
   } else if (isBoard) {
-    container.innerHTML = grid(projects, true) + pagerHtml(totalPages);
+    container.innerHTML = grid(shown, true) + loadMoreHtml(remaining);
   } else {
-    container.innerHTML = grid(projects, false) + pagerHtml(totalPages);
+    container.innerHTML = grid(shown, false) + loadMoreHtml(remaining);
   }
 }
 /* 涨星数 = 实时 star − 历史快照最新一天（纯实时查不到"昨天"，靠静态 history 补） */
