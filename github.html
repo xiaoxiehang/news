@@ -64,10 +64,10 @@ a.project-card:hover .project-name { color: var(--primary); }
 .insight-what { color: var(--ink); margin-bottom: 4px; }
 .insight-meta { color: var(--muted); font-size: 12px; }
 .project-meta {
-  display: flex; gap: 18px; font-size: 13px; color: var(--muted);
+  display: flex; gap: 18px; row-gap: 8px; flex-wrap: wrap; font-size: 13px; color: var(--muted);
   padding-top: 14px; border-top: 1px solid var(--hairline-soft);
 }
-.meta-item { display: flex; align-items: center; gap: 6px; }
+.meta-item { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
 .meta-value { font-weight: 600; color: var(--ink); }
 .meta-label { color: var(--muted); font-weight: 400; }
 .language-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
