@@ -217,11 +217,19 @@ function renderGhToolbar(total) {
   var el = document.getElementById('gh-toolbar');
   el.style.display = '';
   var opts = [['all', '全部'], ['7', '近7天'], ['30', '近30天'], ['90', '近90天']];
+  var upd = '';
+  if (githubData) {
+    if (githubData._live) {
+      upd = '实时 · 更新于 ' + String(githubData.updated_at || '').slice(5, 16);
+    } else {
+      upd = '每日快照 · ' + String(githubData.updated_at || '').slice(0, 16);
+    }
+  }
   el.innerHTML = '<div class="gh-created-filter"><span>创建时间</span>' +
     opts.map(function(o) {
       return '<button class="cf-btn' + (ghCreated === o[0] ? ' active' : '') +
         '" onclick="setGhCreated(\'' + o[0] + '\')">' + o[1] + '</button>';
-    }).join('') + '</div><div class="gh-count">共 ' + total + ' 个项目</div>';
+    }).join('') + '</div><div class="gh-count">共 ' + total + ' 个项目' + (upd ? ' · ' + esc(upd) : '') + '</div>';
 }
 function pagerHtml(totalPages) {
   if (totalPages <= 1) return '';
@@ -306,10 +314,48 @@ function renderGhProjects() {
     container.innerHTML = grid(projects, false) + pagerHtml(totalPages);
   }
 }
+/* 涨星数 = 实时 star − 历史快照最新一天（纯实时查不到"昨天"，靠静态 history 补） */
+function latestHistStars(fullName, history) {
+  const h = history && history[fullName];
+  if (!h) return null;
+  const days = Object.keys(h).sort();
+  return days.length ? h[days[days.length - 1]] : null;
+}
+function applyLiveGain(data, history) {
+  const withGain = function(list) {
+    return (list || []).map(function(p) {
+      const prev = latestHistStars(p.full_name, history);
+      const q = Object.assign({}, p);
+      q.stars_gain = prev != null ? p.stars - prev : null;
+      return q;
+    });
+  };
+  const byGain = function(a, b) {
+    const ga = a.stars_gain != null ? a.stars_gain : -1;
+    const gb = b.stars_gain != null ? b.stars_gain : -1;
+    return (gb - ga) || (b.stars - a.stars);
+  };
+  return {
+    updated_at: data.updated_at,
+    _live: true,
+    leaderboard: withGain(data.leaderboard).sort(byGain).slice(0, 12),
+    rising: withGain(data.rising).sort(byGain).slice(0, 30),
+    categories: data.categories || {},
+  };
+}
 async function loadGithub() {
   try {
-    const r = await fetch('data/github.json?t=' + Date.now());
-    githubData = await r.json();
+    const [tr, hr] = await Promise.all([
+      fetch('/api/trending').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+      fetch('data/github-stars-history.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+    ]);
+    if (tr && tr.ok) {
+      githubData = applyLiveGain(tr, hr);
+    } else {
+      // API 不可用（无 token / 被限流）时回退到每日静态快照
+      const r = await fetch('data/github.json?t=' + Date.now());
+      githubData = await r.json();
+    }
     try {
       const r2 = await fetch('data/github_insights.json?t=' + Date.now());
       const ins = await r2.json();
