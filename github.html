@@ -96,9 +96,7 @@ a.project-card:hover .project-name { color: var(--primary); }
 .cf-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
 .gh-count { font-size: 13px; color: var(--muted); white-space: nowrap; }
 /* 分页 */
-.gh-loadmore { display: flex; justify-content: center; padding: 8px 0 48px; }
-.lm-btn { height: 42px; padding: 0 28px; border-radius: 21px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 14px; cursor: pointer; font-family: var(--sans); }
-.lm-btn:hover { border-color: var(--primary); color: var(--primary); }
+.gh-end { text-align: center; color: var(--muted); font-size: 13px; padding: 8px 0 48px; }
 .pane-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
 @media (max-width: 720px) {
   .projects-grid { grid-template-columns: 1fr; padding: 8px 20px 48px; }
@@ -172,9 +170,13 @@ function showToast(msg) {
 let ghCurrentCategory = 'rising';
 let githubData = null;
 let ghInsights = {};
-let ghShown = 12;
+let ghShown = 20;
+let ghTotal = 0;
+let ghLastScrollY = 0;
+let ghLastLoadAt = 0;
 let ghCreated = 'all';
-const GH_BATCH = 12;
+const GH_BATCH = 20;
+const GH_MAX = 200;
 var TABS = [{ id: 'rising', name: '新星榜' }, { id: 'leaderboard', name: '今日热榜' }];
 function renderGhCategories() {
   const container = document.getElementById('categories');
@@ -200,10 +202,21 @@ function setGhCreated(id) {
   ghShown = GH_BATCH;
   renderGhProjects();
 }
-function ghLoadMore() {
-  ghShown += GH_BATCH;
-  renderGhProjects();
-}
+/* 无限滚动：滚到底部附近自动追加一批，无按钮，200 条封顶 */
+window.addEventListener('scroll', function() {
+  var y = window.scrollY || 0;
+  var down = y > ghLastScrollY;
+  ghLastScrollY = y;
+  if (!down) return;
+  var now = Date.now();
+  if (now - ghLastLoadAt < 400) return;
+  if (ghShown >= Math.min(ghTotal, GH_MAX)) return;
+  if (window.innerHeight + y >= document.documentElement.scrollHeight - 800) {
+    ghLastLoadAt = now;
+    ghShown += GH_BATCH;
+    renderGhProjects();
+  }
+}, { passive: true });
 function passCreated(p) {
   if (ghCreated === 'all' || !p.created_at) return true;
   var d = new Date(p.created_at + 'T00:00:00+08:00').getTime();
@@ -231,9 +244,9 @@ function renderGhToolbar(total) {
       }).join('') + '</div>'
     : '') + '<div class="gh-count">共 ' + total + ' 个项目' + (upd ? ' · ' + esc(upd) : '') + '</div>';
 }
-function loadMoreHtml(remaining) {
-  if (remaining <= 0) return '';
-  return '<div class="gh-loadmore"><button class="lm-btn" onclick="ghLoadMore()">加载更多（还剩 ' + remaining + ' 个）</button></div>';
+function endMarkHtml(allShown, cap) {
+  if (!allShown || cap <= GH_BATCH) return '';
+  return '<div class="gh-end">已加载全部</div>';
 }
 function formatNumber(num) {
   if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
@@ -258,8 +271,10 @@ function renderGhProjects() {
     container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该筛选下暂无项目，换个时间范围试试</div></div>';
     return;
   }
-  const shown = projects.slice(0, ghShown);
-  const remaining = projects.length - shown.length;
+  ghTotal = projects.length;
+  const cap = Math.min(ghTotal, GH_MAX);
+  const shown = projects.slice(0, Math.min(ghShown, cap));
+  const allShown = shown.length >= cap;
   const langColors = { 'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5', 'Java': '#b07219', 'Go': '#00ADD8', 'Rust': '#dea584', 'C++': '#f34b7d', 'C': '#555555', 'Ruby': '#701516', 'PHP': '#4F5D95', 'Swift': '#ffac45', 'Kotlin': '#F18E33', 'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c' };
   function card(p, i, showRank) {
     const ins = ghInsights[p.full_name];
@@ -295,11 +310,11 @@ function renderGhProjects() {
   if (isRising) {
     container.innerHTML = grid(shown.map(function(p) {
       const q = Object.assign({}, p); q._isNew = true; return q;
-    }), false) + loadMoreHtml(remaining);
+    }), false) + endMarkHtml(allShown, cap);
   } else if (isBoard) {
-    container.innerHTML = grid(shown, true) + loadMoreHtml(remaining);
+    container.innerHTML = grid(shown, true) + endMarkHtml(allShown, cap);
   } else {
-    container.innerHTML = grid(shown, false) + loadMoreHtml(remaining);
+    container.innerHTML = grid(shown, false) + endMarkHtml(allShown, cap);
   }
 }
 /* 涨星数 = 实时 star − 历史快照最新一天（纯实时查不到"昨天"，靠静态 history 补） */
