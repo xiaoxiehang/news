@@ -110,6 +110,7 @@ export default async function handler(req, res) {
   try {
     if (memCache && Date.now() - memCache.at < 5 * 60 * 1000) {
       res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
+      res.setHeader('CDN-Cache-Control', 'max-age=300');
       res.setHeader('X-Trending-Cache', 'memory');
       return res.status(200).json(memCache.body);
     }
@@ -150,6 +151,7 @@ export default async function handler(req, res) {
 
     memCache = { at: Date.now(), body };
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
+      res.setHeader('CDN-Cache-Control', 'max-age=300');
     res.setHeader('X-Trending-Cache', 'miss');
     return res.status(200).json(body);
   } catch (e) {
