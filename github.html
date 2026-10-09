@@ -327,6 +327,23 @@ function latestHistStars(fullName, history) {
   const days = Object.keys(h).sort();
   return days.length ? h[days[days.length - 1]] : null;
 }
+/* 分类也按日增星排：和热榜/新星榜一致，点开每个 tab 都是正在涨的项目，
+   而不是永远不变的总 star 榜（否则"实时"形同虚设） */
+function sortCatsByGain(cats) {
+  const out = {};
+  for (const cid of Object.keys(cats || {})) {
+    const c = cats[cid];
+    out[cid] = {
+      name: c.name, desc: c.desc,
+      repos: (c.repos || []).slice().sort(function(a, b) {
+        const ga = a.stars_gain != null ? a.stars_gain : -1;
+        const gb = b.stars_gain != null ? b.stars_gain : -1;
+        return (gb - ga) || ((b.stars || 0) - (a.stars || 0));
+      })
+    };
+  }
+  return out;
+}
 function applyLiveGain(data, history) {
   const withGain = function(list) {
     return (list || []).map(function(p) {
@@ -341,12 +358,17 @@ function applyLiveGain(data, history) {
     const gb = b.stars_gain != null ? b.stars_gain : -1;
     return (gb - ga) || (b.stars - a.stars);
   };
+  const liveCats = {};
+  for (const cid of Object.keys(data.categories || {})) {
+    const c = data.categories[cid];
+    liveCats[cid] = { name: c.name, desc: c.desc, repos: withGain(c.repos) };
+  }
   return {
     updated_at: data.updated_at,
     _live: true,
     leaderboard: withGain(data.leaderboard).sort(byGain).slice(0, 12),
     rising: withGain(data.rising).sort(byGain).slice(0, 30),
-    categories: data.categories || {},
+    categories: sortCatsByGain(liveCats),
   };
 }
 async function loadGithub() {
@@ -361,6 +383,10 @@ async function loadGithub() {
       // API 不可用（无 token / 被限流）时回退到每日静态快照
       const r = await fetch('data/github.json?t=' + Date.now());
       githubData = await r.json();
+      // 快照里的分类也按增星排，和实时路径一致
+      if (githubData && githubData.categories) {
+        githubData.categories = sortCatsByGain(githubData.categories);
+      }
     }
     try {
       const r2 = await fetch('data/github_insights.json?t=' + Date.now());
