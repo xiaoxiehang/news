@@ -21,11 +21,15 @@ def get_recent_date(days=30):
     return (datetime.now() - timedelta(days=days)).strftime('%Y-%m-%d')
 
 # 7 个技术领域（中文名）
+# 注意：GitHub 搜索里不加引号的多词会被当 AND 处理（如 machine learning 会误中
+# "machine image" + README 里的 learning），所以短语必须加引号；
+# media 不再用 topic:streaming（数据流引擎/消息队列全带 streaming 标签，
+# 和影音娱乐完全不是一回事，连续两夜 14 个误配都栽在这）。
 CATEGORIES = {
     'ai': {
         'name': 'AI 机器学习',
         'desc': '大模型、机器学习框架',
-        'query': 'machine learning OR deep learning OR LLM stars:>1000',
+        'query': '"machine learning" OR "deep learning" OR LLM stars:>1000',
         'sort': 'stars'
     },
     'ai-apps': {
@@ -85,10 +89,57 @@ CATEGORIES = {
     'media': {
         'name': '影音娱乐',
         'desc': '视频、流媒体、媒体中心',
-        'query': 'topic:streaming stars:>100',
+        'query': 'topic:video OR topic:audio OR topic:music OR topic:podcast OR topic:video-player OR topic:iptv stars:>100',
         'sort': 'stars'
     },
 }
+
+# 分类修正表：full_name -> 正确分类。
+# 查询再精确也拦不住语义误判（如带 education 标签的恶意工具、带 streaming
+# 描述的 AI 项目）；这些顽固个案每天都会被管线重生成放错位置，在此强制归位。
+# 来源：2026-10-08 / 10-09 夜间质检的人工修正结论。
+CATEGORY_OVERRIDES = {
+    # topic:streaming 误吸入 media 的数据流/消息队列引擎 -> backend-infra
+    'apache/iggy': 'backend-infra',
+    'travisjeffery/jocko': 'backend-infra',
+    'memgraph/memgraph': 'backend-infra',
+    'Cysharp/MagicOnion': 'backend-infra',
+    'apache/streampark': 'backend-infra',
+    'lakesoul-io/LakeSoul': 'backend-infra',
+    'apache/incubator-heron': 'backend-infra',
+    'fastly/pushpin': 'backend-infra',
+    'piskvorky/smart_open': 'backend-infra',
+    'adaltas/node-csv': 'backend-infra',
+    # 带 streaming 描述/标签被吸入 media 的 AI 项目
+    'iusztinpaul/hands-on-llms': 'ai',
+    'TanStack/ai': 'ai-apps',
+    'OpenMOSS/MOSS-TTS': 'ai',
+    # "machine" 裸词误配进 ai 的基础设施项目
+    'hashicorp/packer': 'backend-infra',
+    'prometheus/node_exporter': 'backend-infra',
+    # education 标签误配
+    'rathena/rathena': 'game',
+    'noob-hackers/infect': 'devtools',
+    # Flink 视频课程：既不是影音娱乐也不是纯流媒体 -> education
+    'flink-china/flink-training-course': 'education',
+}
+
+
+def apply_category_overrides(categories):
+    """按 CATEGORY_OVERRIDES 把顽固误分类项目搬到正确分类（去重）。"""
+    for full_name, target_id in CATEGORY_OVERRIDES.items():
+        if target_id not in categories:
+            continue
+        moved = None
+        for cat_id, cat in categories.items():
+            for r in list(cat.get('repos') or []):
+                if r['full_name'] == full_name:
+                    cat['repos'].remove(r)
+                    if moved is None:
+                        moved = r
+        target = categories[target_id]
+        if moved is not None and all(r['full_name'] != full_name for r in target['repos']):
+            target['repos'].append(moved)
 
 # 热榜数据源：昨日有推送的高星项目（只供榜单用，不单独成分类）
 HOT_SOURCE = {
@@ -154,6 +205,10 @@ def main():
         for r in repos:
             all_repos.setdefault(r['full_name'], r)
         time.sleep(2)
+
+    # 分类修正：顽固误配项目强制归位（每天重生成都会被放错，不修查询只能靠这张表）
+    apply_category_overrides(categories)
+    print(f"  ✅ 分类修正表已应用（{len(CATEGORY_OVERRIDES)} 个规则）")
 
     print("Fetching hot source...")
     hot_repos = fetch_repos(HOT_SOURCE['query'], HOT_SOURCE['sort'])

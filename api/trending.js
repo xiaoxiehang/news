@@ -7,7 +7,11 @@
 // 无 token 或被限流时返回 503，前端自动回退到静态 github.json。
 
 const CATEGORIES = [
-  { id: 'ai', name: 'AI 机器学习', desc: '大模型、机器学习框架', query: 'machine learning OR deep learning OR LLM stars:>1000', sort: 'stars' },
+  // 注意：不加引号的多词会被 GitHub 当 AND 处理（machine learning 会误中
+  // "machine image" + README 里的 learning），短语必须加引号；
+  // media 不再用 topic:streaming（数据流引擎/消息队列全带 streaming 标签，
+  // 和影音娱乐完全不是一回事，连续两夜 14 个误配都栽在这）。
+  { id: 'ai', name: 'AI 机器学习', desc: '大模型、机器学习框架', query: '"machine learning" OR "deep learning" OR LLM stars:>1000', sort: 'stars' },
   { id: 'ai-apps', name: 'AI 应用', desc: 'AI 智能体、AI 工具', query: 'ai agent OR llm app OR chatbot stars:>500', sort: 'stars' },
   { id: 'frontend-mobile', name: '前端移动', desc: '前端、移动端、全栈', query: 'react OR vue OR flutter OR react-native OR nextjs stars:>2000', sort: 'stars' },
   { id: 'backend-infra', name: '后端基建', desc: '后端、数据库、云原生', query: 'kubernetes OR docker OR postgres OR redis OR microservice stars:>2000', sort: 'stars' },
@@ -17,8 +21,51 @@ const CATEGORIES = [
   { id: 'fintech', name: '金融科技', desc: '交易、量化、金融工具', query: 'topic:fintech stars:>50', sort: 'stars' },
   { id: 'education', name: '教育学习', desc: '在线教育、课程、教程', query: 'topic:education stars:>100', sort: 'stars' },
   { id: 'research', name: '科学研究', desc: '科研工具、数据集', query: 'topic:science stars:>50', sort: 'stars' },
-  { id: 'media', name: '影音娱乐', desc: '视频、流媒体、媒体中心', query: 'topic:streaming stars:>100', sort: 'stars' },
+  { id: 'media', name: '影音娱乐', desc: '视频、流媒体、媒体中心', query: 'topic:video OR topic:audio OR topic:music OR topic:podcast OR topic:video-player OR topic:iptv stars:>100', sort: 'stars' },
 ];
+
+// 分类修正表：full_name -> 正确分类。
+// 查询再精确也拦不住语义误判；这些顽固个案每天都会被放错位置，在此强制归位。
+// 来源：2026-10-08 / 10-09 夜间质检的人工修正结论。与 scripts/fetch_github.py 的
+// CATEGORY_OVERRIDES 保持一致（实时接口和每日管线走同一套规则）。
+const CATEGORY_OVERRIDES = {
+  'apache/iggy': 'backend-infra',
+  'travisjeffery/jocko': 'backend-infra',
+  'memgraph/memgraph': 'backend-infra',
+  'Cysharp/MagicOnion': 'backend-infra',
+  'apache/streampark': 'backend-infra',
+  'lakesoul-io/LakeSoul': 'backend-infra',
+  'apache/incubator-heron': 'backend-infra',
+  'fastly/pushpin': 'backend-infra',
+  'piskvorky/smart_open': 'backend-infra',
+  'adaltas/node-csv': 'backend-infra',
+  'iusztinpaul/hands-on-llms': 'ai',
+  'TanStack/ai': 'ai-apps',
+  'OpenMOSS/MOSS-TTS': 'ai',
+  'hashicorp/packer': 'backend-infra',
+  'prometheus/node_exporter': 'backend-infra',
+  'rathena/rathena': 'game',
+  'noob-hackers/infect': 'devtools',
+  'flink-china/flink-training-course': 'education',
+};
+
+function applyCategoryOverrides(categories) {
+  for (const [fullName, targetId] of Object.entries(CATEGORY_OVERRIDES)) {
+    const target = categories[targetId];
+    if (!target) continue;
+    let moved = null;
+    for (const cat of Object.values(categories)) {
+      const idx = (cat.repos || []).findIndex(r => r.full_name === fullName);
+      if (idx >= 0) {
+        const [r] = cat.repos.splice(idx, 1);
+        if (!moved) moved = r;
+      }
+    }
+    if (moved && !(target.repos || []).some(r => r.full_name === fullName)) {
+      target.repos.push(moved);
+    }
+  }
+}
 
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);
@@ -96,6 +143,9 @@ export default async function handler(req, res) {
         body.categories[r.meta.id] = { name: r.meta.name, desc: r.meta.desc, repos: r.repos };
       }
     }
+
+    // 顽固误分类项目强制归位（与每日管线的 apply_category_overrides 同规则）
+    applyCategoryOverrides(body.categories);
 
     memCache = { at: Date.now(), body };
     res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=300');
