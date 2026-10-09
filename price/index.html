@@ -39,6 +39,20 @@ a.price-card:hover .price-name { color: var(--accent); }
   display: flex; align-items: center; justify-content: center;
   font-size: 28px; font-weight: 800; background: var(--bg-secondary);
 }
+/* App 卡大图：图标高斯模糊铺底 + 居中图标，与游戏横幅同高 */
+.price-banner {
+  position: relative; width: 100%; height: 120px; border-radius: 10px;
+  overflow: hidden; margin-bottom: 14px; background: var(--bg-secondary);
+  display: flex; align-items: center; justify-content: center;
+}
+.price-banner-bg {
+  position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px);
+  object-fit: cover; filter: blur(28px) saturate(1.5); opacity: .6;
+}
+.price-banner-fg {
+  position: relative; width: 64px; height: 64px; border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.28);
+}
 .price-name { font-size: 16px; font-weight: 700; margin: 0 0 6px; color: var(--ink); padding-right: 28px; }
 .price-note { font-size: 13px; color: var(--muted); margin: 0 0 10px; line-height: 1.6; flex: 1; }
 .price-note b { color: var(--accent); font-weight: 600; }
@@ -64,7 +78,7 @@ a.price-card:hover .price-name { color: var(--accent); }
 @media (max-width: 640px) {
   .price-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .price-card { padding: 14px; }
-  .price-img, .price-img-ph { height: 90px; }
+  .price-img, .price-img-ph, .price-banner { height: 90px; }
 }
 /* 今日好价 */
 /* 分类 tab（与 GitHub 页 category-btn 同款 pill 样式） */
@@ -158,6 +172,13 @@ function platformTag(source) {
   if (!source) return '';
   return '<span class="pf-tag">' + esc(source) + '</span>';
 }
+/* App 大图：图标模糊铺底 + 居中图标 */
+function appBannerHtml(icon) {
+  var s = esc(icon || '');
+  if (!s) return '';
+  return '<div class="price-banner"><img class="price-banner-bg" loading="lazy" src="' + s + '" alt="">' +
+    '<img class="price-banner-fg" loading="lazy" src="' + s + '" alt=""></div>';
+}
 
 /* ---------- 统一好价流：三源合并，按折扣排序 ---------- */
 function renderAll() {
@@ -238,7 +259,7 @@ function normalizeApp(it) {
   var tag = it.is_free ? '限免' : (it.platform === 'mac' ? 'Mac App Store' : 'App Store');
   return {
     url: it.url, name: it.name, note: '', tag: tag, disc: it.discount || 0, cat: 'apple',
-    img: '<img class="price-icon" loading="lazy" src="' + esc(it.icon) + '" alt="">',
+    img: appBannerHtml(it.icon),
     price: price, was: was
   };
 }
@@ -273,7 +294,7 @@ function normalizePlay(it) {
   var tag = it.is_free ? '限免' : 'Google Play';
   return {
     url: it.url, name: it.name, note: '', tag: tag, disc: it.discount || 0, cat: 'play',
-    img: it.icon ? '<img class="price-icon" loading="lazy" src="' + esc(it.icon) + '" alt="">' : '',
+    img: appBannerHtml(it.icon),
     price: price, was: was
   };
 }
