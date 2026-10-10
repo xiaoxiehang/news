@@ -4,6 +4,13 @@
   "overview": "今天的 AI 新闻，一边是微软推动 Windows 在本地与云端之间调配模型、Manus 宣布大额融资，另一边是 Anthropic 因智能体失控风险收紧测试环境。AI 视频和机器人研究继续推进，但虚假线索、研究中的性别偏见以及流媒体欺诈案件也提醒人们：能力提升之外，可靠性与使用边界同样重要。",
   "picks": [
     {
+      "title": "AI 视频工具 Vidu Q4 Preview 亮相",
+      "summary": "机器之心介绍了视频生成工具 Vidu Q4 Preview，并给出每秒 0.09 元的首销价格及初步实测。对想用 AI 制作短片、广告素材的用户来说，价格是一个直观参考；不过首销价不等于长期成本，生成质量和实际可用性也需结合自己的任务判断。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061834&idx=1&sn=06f5e347c34942b91a375bfdfb98eb2c",
+      "source": "机器之心",
+      "category": "效率工具"
+    },
+    {
       "title": "微软为 Windows 引入本地与云端协同的 AI 能力",
       "summary": "据 InfoQ 报道，微软在 Windows 发布会上提出“混合智能”：系统可依据任务难度、成本和隐私要求，在设备本地模型与云端模型之间切换。这意味着未来的 AI 功能不必一律依赖联网，但实际体验仍取决于电脑性能和具体产品如何接入。",
       "url": "https://www.infoq.cn/article/dQy1xkMRuPVj1Xh7Pohu",
@@ -11,11 +18,18 @@
       "category": "今日头条"
     },
     {
-      "title": "Manus 宣布完成逾 5 亿美元融资",
-      "summary": "据 Solidot 报道，AI 企业 Manus 的母公司宣布完成超过 5 亿美元融资，由博裕资本和 IDG 领投，腾讯等老股东参与。对普通用户而言，这笔融资未必立即改变产品功能，但显示资本仍愿意向 AI 应用公司投入大额资金，后续产品进展值得关注。",
-      "url": "https://www.solidot.org/story?sid=85554",
+      "title": "尼康显微视频大赛冠军因使用生成式 AI 被取消资格",
+      "summary": "据 The Verge 报道，尼康称一段原获显微视频比赛第一名的作品不符合赛事关于生成式 AI 的规则，因此取消其获奖资格。这起事件涉及的是作品是否遵守比赛规定，也提醒公众：当真实影像与生成内容越来越难区分，创作者需要留意披露要求和使用边界。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1008930/nikon-small-world-in-motion-winner-ai",
+      "source": "The Verge",
+      "category": "一句话"
+    },
+    {
+      "title": "美国男子利用 AI 音乐和机器人账号刷播放量，获刑 18 个月",
+      "summary": "据 Solidot 报道，一名美国男子因利用 AI 生成音乐、创建大量虚假账号并操纵播放量牟利，被判入狱 18 个月。案件针对的是以机器人播放量实施欺诈，并非单纯使用 AI 创作音乐；它也让流媒体平台上的虚假流量问题受到关注。",
+      "url": "https://www.solidot.org/story?sid=85551",
       "source": "Solidot",
-      "category": "今日头条"
+      "category": "一句话"
     },
     {
       "title": "Anthropic 暂停内部评测连接实时互联网",
@@ -39,26 +53,11 @@
       "category": "前沿动态"
     },
     {
-      "title": "AI 视频工具 Vidu Q4 Preview 亮相",
-      "summary": "机器之心介绍了视频生成工具 Vidu Q4 Preview，并给出每秒 0.09 元的首销价格及初步实测。对想用 AI 制作短片、广告素材的用户来说，价格是一个直观参考；不过首销价不等于长期成本，生成质量和实际可用性也需结合自己的任务判断。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061834&idx=1&sn=06f5e347c34942b91a375bfdfb98eb2c",
-      "source": "机器之心",
-      "category": "效率工具"
-    },
-    {
-      "title": "尼康显微视频大赛冠军因使用生成式 AI 被取消资格",
-      "summary": "据 The Verge 报道，尼康称一段原获显微视频比赛第一名的作品不符合赛事关于生成式 AI 的规则，因此取消其获奖资格。这起事件涉及的是作品是否遵守比赛规定，也提醒公众：当真实影像与生成内容越来越难区分，创作者需要留意披露要求和使用边界。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1008930/nikon-small-world-in-motion-winner-ai",
-      "source": "The Verge",
-      "category": "一句话"
-    },
-    {
-      "title": "美国男子利用 AI 音乐和机器人账号刷播放量，获刑 18 个月",
-      "summary": "据 Solidot 报道，一名美国男子因利用 AI 生成音乐、创建大量虚假账号并操纵播放量牟利，被判入狱 18 个月。案件针对的是以机器人播放量实施欺诈，并非单纯使用 AI 创作音乐；它也让流媒体平台上的虚假流量问题受到关注。",
-      "url": "https://www.solidot.org/story?sid=85551",
+      "title": "Manus 宣布完成逾 5 亿美元融资",
+      "summary": "据 Solidot 报道，AI 企业 Manus 的母公司宣布完成超过 5 亿美元融资，由博裕资本和 IDG 领投，腾讯等老股东参与。对普通用户而言，这笔融资未必立即改变产品功能，但显示资本仍愿意向 AI 应用公司投入大额资金，后续产品进展值得关注。",
+      "url": "https://www.solidot.org/story?sid=85554",
       "source": "Solidot",
-      "category": "一句话"
+      "category": "今日头条"
     }
-  ],
-  "generated_at": "2026-10-10 02:50:51"
+  ]
 }
