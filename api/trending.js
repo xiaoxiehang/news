@@ -1,10 +1,9 @@
 // GET /api/trending?tab=rising|leaderboard|<categoryId> — GitHub 趋势实时代理（Vercel Serverless）
 //
-// 点哪个 tab 查哪个 tab：每次只打 1 个 GitHub 搜索（之前是 13 个全量）。
+// 点哪个 tab 查哪个 tab：每次请求都实时打 1 个 GitHub Search API。
+// 无任何缓存：无边缘缓存、无进程内缓存、无静态回退。
 // 服务端持有 GITHUB_TOKEN（Vercel 环境变量），浏览器只调本接口，token 不暴露。
-// 缓存：边缘 5 分钟 + 进程内 5 分钟（按 tab 分开）。
-// 查不到/被限流时返回 503，前端显示错误重试，不再回退静态快照——
-// 假装实时比诚实报错更糟。
+// 查不到/被限流时返回 503，前端显示错误重试——假装实时比诚实报错更糟。
 
 const CATEGORIES = [
   // 注意：不加引号的多词会被 GitHub 当 AND 处理（machine learning 会误中
@@ -23,8 +22,7 @@ const CATEGORIES = [
 ];
 
 // 分类修正表：full_name -> 正确分类。只做"过滤"（把放错 tab 的拿掉），
-// 不做跨分类"搬运"——实测那 16 个历史误配项在实时查询里根本不出现，
-// 为极小概率多打十几个 /repos 查询不划算。
+// 不做跨分类"搬运"。
 const CATEGORY_OVERRIDES = {
   'apache/iggy': 'backend-infra',
   'travisjeffery/jocko': 'backend-infra',
@@ -49,6 +47,11 @@ const CATEGORY_OVERRIDES = {
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);
   return d.toISOString().slice(0, 10);
+}
+
+// 北京时间 "YYYY-MM-DD HH:mm:ss"
+function beijingNow() {
+  return new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 19).replace('T', ' ');
 }
 
 function pick(it) {
@@ -81,24 +84,13 @@ async function search(query, sort, perPage, headers) {
   return (data.items || []).map(pick);
 }
 
-function setCacheHeaders(res) {
-  res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
-  res.setHeader('CDN-Cache-Control', 'max-age=300');
+function noStore(res) {
+  res.setHeader('Cache-Control', 'no-store');
 }
-
-// 进程内缓存，按 tab 分开（防同一实例连续打）
-let memCache = {};
 
 export default async function handler(req, res) {
   try {
     const tab = String((req.query && req.query.tab) || 'rising');
-
-    const hit = memCache[tab];
-    if (hit && Date.now() - hit.at < 5 * 60 * 1000) {
-      setCacheHeaders(res);
-      res.setHeader('X-Trending-Cache', 'memory');
-      return res.status(200).json(hit.body);
-    }
 
     const token = process.env.GITHUB_TOKEN || '';
     const headers = {
@@ -117,7 +109,7 @@ export default async function handler(req, res) {
     } else {
       const c = CATEGORIES.find(x => x.id === tab);
       if (!c) {
-        res.setHeader('Cache-Control', 'no-store');
+        noStore(res);
         return res.status(400).json({ ok: false, error: 'unknown tab' });
       }
       repos = await search(c.query, c.sort, 80, headers).catch(() => []);
@@ -130,16 +122,15 @@ export default async function handler(req, res) {
 
     const body = {
       ok: true,
-      updated_at: new Date().toISOString().slice(0, 19).replace('T', ' '),
+      realtime: true,
+      updated_at: beijingNow(),
       repos,
     };
-    memCache[tab] = { at: Date.now(), body };
-    setCacheHeaders(res);
-    res.setHeader('X-Trending-Cache', 'miss');
+    noStore(res);
     return res.status(200).json(body);
   } catch (e) {
     const code = e && e.rateLimited ? 503 : 500;
-    res.setHeader('Cache-Control', 'no-store');
+    noStore(res);
     return res.status(code).json({ ok: false, error: (e && e.message) || 'trending failed' });
   }
 }

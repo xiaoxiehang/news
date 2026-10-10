@@ -170,8 +170,9 @@ function showToast(msg) {
 
 /* ============ GitHub趋势 ============ */
 let ghCurrentCategory = 'rising';
-let ghTabData = {};   // tabId -> { updated_at, raw: [...] }（点哪个 tab 才查哪个）
-let ghTabState = {};  // tabId -> 'loading' | 'ready' | 'error'
+let ghData = null;      // { updated_at, raw } — 当前 tab 的实时数据，每次点 tab 都重新查，不缓存
+let ghLoading = false;  // 是否正在查接口
+let ghError = false;
 let ghHistory = null; // 涨星 history：只给 +N 徽章和按增星排序用，主数据全部来自实时接口
 let ghInsights = {};
 let ghShown = 20;
@@ -204,39 +205,37 @@ function renderGhCategories() {
   }).join('');
 }
 function switchGhCategory(categoryId) {
-  if (categoryId === ghCurrentCategory && ghTabData[categoryId]) return;
+  var same = categoryId === ghCurrentCategory;
+  if (same && ghLoading) return; // 正在查就别重复点
   ghCurrentCategory = categoryId;
   ghShown = GH_BATCH;
   ghTotal = 0;
   // 创建时间筛选只对新星榜有意义：切 tab 时重置，避免分类 tab 被误筛空
   ghCreated = 'all';
+  if (!same) ghData = null; // 切到别的 tab 就清空，不看旧 tab 的数据
   renderGhCategories();
   loadGhTab(categoryId);
 }
-/* 点 tab 才查接口：没缓存就去查，查过就直接渲染 */
-async function loadGhTab(id, force) {
-  if (ghTabData[id] && !force) {
-    if (id === ghCurrentCategory) renderGhProjects();
-    return;
-  }
-  if (ghTabState[id] === 'loading') return;
-  ghTabState[id] = 'loading';
-  if (id === ghCurrentCategory) renderGhProjects();
+/* 每次点 tab 都实时查 GitHub 接口，不缓存、不复用旧数据。
+   同 tab 重复点：保留旧卡片 + 显示刷新中，不闪空。 */
+async function loadGhTab(id) {
+  if (ghLoading) return;
+  ghLoading = true;
+  ghError = false;
+  renderGhProjects();
   try {
-    const r = await fetch('/api/trending?tab=' + encodeURIComponent(id));
+    const r = await fetch('/api/trending?tab=' + encodeURIComponent(id), { cache: 'no-store' });
     const data = await r.json();
     if (!data || !data.ok || !Array.isArray(data.repos)) throw new Error('bad api');
-    ghTabData[id] = { updated_at: data.updated_at, raw: data.repos };
-    ghTabState[id] = 'ready';
+    if (id === ghCurrentCategory) ghData = { updated_at: data.updated_at, raw: data.repos };
   } catch (e) {
-    ghTabState[id] = 'error';
-    delete ghTabData[id];
+    if (id === ghCurrentCategory) ghError = true;
   }
+  ghLoading = false;
   if (id === ghCurrentCategory) renderGhProjects();
 }
 function retryGhTab() {
-  ghTabState[ghCurrentCategory] = 'loading';
-  loadGhTab(ghCurrentCategory, true);
+  loadGhTab(ghCurrentCategory);
 }
 function setGhCreated(id) {
   ghCreated = id;
@@ -263,13 +262,13 @@ function passCreated(p) {
   var d = new Date(p.created_at + 'T00:00:00+08:00').getTime();
   return Date.now() - d <= parseInt(ghCreated, 10) * 86400000;
 }
-function renderGhToolbar(total, updated_at) {
+function renderGhToolbar(total, updated_at, refreshing) {
   var el = document.getElementById('gh-toolbar');
   el.style.display = '';
   // 创建时间筛选只在新星榜 tab 显示：分类/热榜的项目多为多年前创建，筛了必空
   var showCreatedFilter = ghCurrentCategory === 'rising';
   var opts = [['all', '全部'], ['7', '近7天'], ['30', '近30天'], ['90', '近90天']];
-  var upd = '实时 · 更新于 ' + String(updated_at || '').slice(5, 16);
+  var upd = '实时 · 更新于 ' + String(updated_at || '').slice(5, 16) + (refreshing ? ' · 刷新中…' : '');
   el.innerHTML = (showCreatedFilter
     ? '<div class="gh-created-filter"><span>创建时间</span>' +
       opts.map(function(o) {
@@ -316,10 +315,10 @@ function renderGhProjects() {
   const container = document.getElementById('projects-container');
   const toolbar = document.getElementById('gh-toolbar');
   const id = ghCurrentCategory;
-  const tab = ghTabData[id];
+  const tab = ghData;
   if (!tab) {
     toolbar.style.display = 'none';
-    if (ghTabState[id] === 'error') {
+    if (ghError && !ghLoading) {
       container.innerHTML = '<div class="empty-state"><div class="empty-title">加载失败</div>' +
         '<div class="empty-desc">GitHub 接口暂时不可用，稍后重试</div>' +
         '<div style="margin-top:18px"><button class="retry-btn" onclick="retryGhTab()">重新加载</button></div></div>';
@@ -332,7 +331,7 @@ function renderGhProjects() {
   const isRising = id === 'rising';
   let projects = processTabRepos(id, tab.raw);
   projects = isRising ? projects.filter(passCreated) : projects;
-  renderGhToolbar(projects.length, tab.updated_at);
+  renderGhToolbar(projects.length, tab.updated_at, ghLoading);
   if (!projects.length) {
     container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无项目</div><div class="empty-desc">该筛选下暂无项目，换个时间范围试试</div></div>';
     return;
