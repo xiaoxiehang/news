@@ -17,6 +17,7 @@ import requests
 UA = {"User-Agent": "xiaojj-price-watch/1.0 (+https://xiaojj.pro)"}
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_PATH = os.path.join(BASE, "data", "deals.json")
+STATUS_PATH = os.path.join(BASE, "data", "deals-status.json")
 
 MIN_DISCOUNT = 30      # 折扣至少 3 折以下（即 discount_percent >= 30）
 MIN_POSITIVE = 0.85    # 好评率至少 85%
@@ -142,12 +143,27 @@ def main():
     deals = deals[:TOP_N]
     print(f"达标 {len(deals)} 款", flush=True)
 
+    # 状态文件每天都写：让推送任务一眼看到今日 deals 是否新鲜，
+    # 不再靠人眼发现"防空榜保护"拦截导致的静默过期
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    status = {
+        "date": today,
+        "candidates": len(seen),
+        "qualified": len(deals),
+        "min_items": MIN_ITEMS,
+        "deals_updated": len(deals) >= MIN_ITEMS,
+    }
+    os.makedirs(os.path.dirname(STATUS_PATH), exist_ok=True)
+    with open(STATUS_PATH, "w", encoding="utf-8") as f:
+        json.dump(status, f, ensure_ascii=False, indent=2)
+    print(f"状态已写入 {STATUS_PATH}: {status}", flush=True)
+
     if len(deals) < MIN_ITEMS:
         print(f"有效条目不足 {MIN_ITEMS}，不覆盖旧文件", flush=True)
         return 0
 
     doc = {
-        "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "date": today,
         "source": "Steam 国区特惠/热销",
         "items": deals,
     }
