@@ -38,7 +38,7 @@ jobs:
         run: |
           git config user.name "price-watch-bot"
           git config user.email "bot@xiaojj.pro"
-          git add data/prices.json data/deals.json data/app-drops.json data/app-price-history.json data/play-drops.json data/play-price-history.json
+          git add data/prices.json data/deals.json data/deals-status.json data/app-drops.json data/app-price-history.json data/play-drops.json data/play-price-history.json
           if git diff --cached --quiet; then
             echo "无价格变化，跳过提交"
           else
