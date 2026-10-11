@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""小红书卡片共享浅色视觉：轻盈玻璃拟态（2026-10-11 用户定稿，全类型统一）。
+"""小红书卡片共享浅色视觉：参考风轻盈玻璃拟态（2026-10-11 用户定稿，全类型统一）。
 
-浅色透光底 + 柔光色块 + 悬浮玻璃面板（重模糊+白透+白描边+柔阴影）
-+ 黄色品牌点缀。参考 Figma 玻璃质感卡片教程的"轻盈"感。
+平涂浅灰底 #F0F0F0（无彩色光斑）+ 卡片自带极淡冷色渐变 tint
++ 克制阴影 + 白描边 + 黄色品牌点缀。
+参考：Grey黎《原创-Figma玻璃质感人物卡片教程》（笔记ID 6ac64e6d000000001203bac2）。
 各内容类型（开源项目 / AI 实战教程 / 每周盘点）共用这套视觉语言，
 只换 kicker 文案与内容结构。
 """
@@ -95,39 +96,30 @@ def wrap2(d, text, font, max_w, min_last=4):
 
 
 def bg():
-    """浅色透光底 + 柔光色块"""
-    img = Image.new('RGB', (W, H))
-    d = ImageDraw.Draw(img)
-    top, bot = (233, 241, 255), (247, 240, 255)
-    for y in range(H):
-        t = y / H
-        d.line([(0, y), (W, y)],
-               fill=tuple(int(top[i] + (bot[i] - top[i]) * t) for i in range(3)))
-    blob = Image.new('RGBA', (W, H), (0, 0, 0, 0))
-    bd = ImageDraw.Draw(blob)
-    bd.ellipse([-220, -160, 620, 600], fill=(186, 206, 248, 55))    # 雾蓝
-    bd.ellipse([580, 900, 1300, 1620], fill=(200, 190, 244, 55))    # 雾紫
-    bd.ellipse([-280, 780, 420, 1420], fill=(190, 228, 214, 50))    # 雾绿
-    bd.ellipse([640, 60, 1180, 680], fill=(248, 214, 190, 42))      # 一缕暖
-    blob = blob.filter(ImageFilter.GaussianBlur(170))
-    img = Image.alpha_composite(img.convert('RGBA'), blob).convert('RGB')
-    return img
+    """参考风：平涂浅灰 #F0F0F0，无彩色光斑（Grey黎教程原做法）"""
+    return Image.new('RGB', (W, H), (240, 240, 240))
 
 
 def glass(img, box, radius=36, shadow=True):
-    """悬浮玻璃面板：柔阴影 + 重模糊 + 白透 + 白描边 + 顶部高光"""
+    """悬浮玻璃面板：克制阴影 + 卡片自带极淡冷色渐变 tint + 白描边 + 顶部高光
+    （参考 Grey黎教程：阴影 X0/Y20/模糊40/透明度~5%，卡片 #E6E6E6→#A7E9F0 的轻量版）"""
     x0, y0, x1, y1 = [int(v) for v in box]
     w, h = x1 - x0, y1 - y0
     if shadow:
         sh = Image.new('RGBA', (W, H), (0, 0, 0, 0))
         ImageDraw.Draw(sh).rounded_rectangle(
-            [x0, y0 + 26, x1, y1 + 26], radius=radius, fill=(105, 115, 165, 55))
+            [x0, y0 + 20, x1, y1 + 20], radius=radius, fill=(31, 104, 126, 28))
         sh = sh.filter(ImageFilter.GaussianBlur(42))
         img = Image.alpha_composite(img.convert('RGBA'), sh).convert('RGB')
     crop = img.crop((x0, y0, x1, y1))
     pane = crop.filter(ImageFilter.GaussianBlur(26)).convert('RGBA')
-    pane = Image.alpha_composite(
-        pane, Image.new('RGBA', pane.size, (255, 255, 255, 72)))
+    tint = Image.new('RGBA', pane.size)
+    td = ImageDraw.Draw(tint)
+    for yy in range(h):
+        t = yy / max(1, h - 1)
+        td.line([(0, yy), (w, yy)],
+                fill=(int(238 - 6 * t), int(241 - 5 * t), int(252 - 3 * t), 120))
+    pane = Image.alpha_composite(pane, tint)
     mask = Image.new('L', (w, h), 0)
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, w, h], radius=radius, fill=255)
     img.paste(pane, (x0, y0), mask)

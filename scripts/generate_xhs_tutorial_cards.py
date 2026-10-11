@@ -185,8 +185,6 @@ def draw_tip_card(tip, idx, total, path):
     by = y + 32
     bw = min(max_w, max(d.textlength(ln, font=f_bub) for ln in ul) + 52) if ul else 0
     bx = px1 - 96 - bw
-    d.rounded_rectangle([bx, by, bx + bw, by + uh], radius=24,
-                        fill=xl.USER_BUBBLE, outline=xl.USER_EDGE, width=2)
     ty = by + 26
     for ln in ul:
         d.text((bx + 26, ty), ln, font=f_bub, fill=xl.INK)
@@ -195,8 +193,6 @@ def draw_tip_card(tip, idx, total, path):
     by2 = by + uh + 24
     bw2 = min(max_w, max(d.textlength(ln, font=f_bub) for ln in al) + 52) if al else 0
     bx2 = px0 + 96
-    d.rounded_rectangle([bx2, by2, bx2 + bw2, by2 + ah], radius=24,
-                        fill=xl.AI_BUBBLE, outline=xl.AI_EDGE, width=2)
     ty = by2 + 26
     for ln in al:
         d.text((bx2 + 26, ty), ln, font=f_bub, fill=xl.INK)
