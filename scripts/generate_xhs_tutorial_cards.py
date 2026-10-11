@@ -135,35 +135,53 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
 
 
 def draw_tip_card(tip, idx, total, path):
-    """tip: {title, scene, user, ai, warn}"""
+    """tip: {title, scene, user, ai, warn}。
+    字号联动自适应：(气泡, 标题, 场景) 从 (40,76,38) 逐级降到 (34,66,32)，
+    保证 16 行以内的内容避坑条不溢出。"""
+    from PIL import ImageDraw
     img = xl.bg()
     d = xl.header(img, '鸡仔AI实战', '%02d / %02d' % (idx + 1, total))
-    f_title = xl.fs(68)
-    tl = _wrap2(d, tip['title'], f_title, W - 280)[:2]
-    f_scene = xl.fr(34)
-    sl = _wrap2(d, tip['scene'], f_scene, W - 280)[:2]
-    y = 190
-    for ln in tl:
-        d.text((70, y), ln, font=f_title, fill=xl.INK)
-        y += 92
-    y += 12
-    for ln in sl:
-        d.text((70, y), ln, font=f_scene, fill=xl.GRAY)
-        y += 52
-    y += 30
-    # 聊天玻璃面板
-    f_bub = xl.fr(36)
+    f_w = xl.fr(34)
+    wl = _wrap2(d, '避坑：' + tip['warn'], f_w, W - 140 - 52)
+    warn_h = 28 + len(wl) * 50 + 24
     px0, px1 = 70, W - 70
     max_w = px1 - px0 - 200
-    ul = _wrap2(d, tip['user'], f_bub, max_w - 52)
-    al = _wrap2(d, tip['ai'], f_bub, max_w - 52)
-    uh = 30 + len(ul) * 54 + 26
-    ah = 30 + len(al) * 54 + 26
-    panel_h = 44 + uh + 30 + ah + 44
+
+    def _layout(bsize, tsize, ssize):
+        f_bub, f_title, f_scene = xl.fr(bsize), xl.fs(tsize), xl.fr(ssize)
+        tl = _wrap2(d, tip['title'], f_title, W - 280)[:2]
+        sl = _wrap2(d, tip['scene'], f_scene, W - 280)[:2]
+        ul = _wrap2(d, tip['user'], f_bub, max_w - 52)
+        al = _wrap2(d, tip['ai'], f_bub, max_w - 52)
+        bstep, tstep, sstep = bsize + 16, tsize + 24, ssize + 20
+        uh = 30 + len(ul) * bstep + 26
+        ah = 30 + len(al) * bstep + 26
+        panel_h = 32 + uh + 24 + ah + 32
+        total_h = (150 + len(tl) * tstep + 12 + len(sl) * sstep + 24
+                   + panel_h + 24 + warn_h + 30)
+        return (f_bub, f_title, f_scene, tl, sl, ul, al, bstep,
+                uh, ah, panel_h, total_h)
+
+    for combo in [(40, 76, 38), (38, 72, 36), (36, 70, 34), (34, 66, 32)]:
+        (f_bub, f_title, f_scene, tl, sl, ul, al, bstep,
+         uh, ah, panel_h, total_h) = _layout(*combo)
+        if total_h <= H:
+            break
+
+    y = 150
+    tstep = f_title.size + 24
+    for ln in tl:
+        d.text((70, y), ln, font=f_title, fill=xl.INK)
+        y += tstep
+    y += 12
+    sstep = f_scene.size + 20
+    for ln in sl:
+        d.text((70, y), ln, font=f_scene, fill=xl.GRAY)
+        y += sstep
+    y += 24
     img = xl.glass(img, (px0, y, px1, y + panel_h), radius=30)
     d = ImageDraw.Draw(img)
-    # 你：右对齐，浅金气泡
-    by = y + 44
+    by = y + 32
     bw = min(max_w, max(d.textlength(ln, font=f_bub) for ln in ul) + 52) if ul else 0
     bx = px1 - 96 - bw
     d.rounded_rectangle([bx, by, bx + bw, by + uh], radius=24,
@@ -171,10 +189,9 @@ def draw_tip_card(tip, idx, total, path):
     ty = by + 26
     for ln in ul:
         d.text((bx + 26, ty), ln, font=f_bub, fill=xl.INK)
-        ty += 54
+        ty += bstep
     xl.avatar(d, px1 - 44, by + 44, '你', xl.YELLOW, xl.BROWN)
-    # AI：左对齐，白色气泡
-    by2 = by + uh + 30
+    by2 = by + uh + 24
     bw2 = min(max_w, max(d.textlength(ln, font=f_bub) for ln in al) + 52) if al else 0
     bx2 = px0 + 96
     d.rounded_rectangle([bx2, by2, bx2 + bw2, by2 + ah], radius=24,
@@ -182,29 +199,24 @@ def draw_tip_card(tip, idx, total, path):
     ty = by2 + 26
     for ln in al:
         d.text((bx2 + 26, ty), ln, font=f_bub, fill=xl.INK)
-        ty += 54
+        ty += bstep
     xl.avatar(d, px0 + 44, by2 + 44, 'AI', (28, 28, 36), xl.WHITE)
-    y = y + panel_h + 30
-    # 避坑条：淡红玻璃
-    f_w = xl.fr(36)
-    wt = '避坑：' + tip['warn']
-    wl = _wrap2(d, wt, f_w, W - 140 - 52)
-    wh = 28 + len(wl) * 54 + 24
-    crop = img.crop((70, y, W - 70, y + wh))
+    y = y + panel_h + 24
+    crop = img.crop((70, y, W - 70, y + warn_h))
     tinted = Image.alpha_composite(
         crop.filter(ImageFilter.GaussianBlur(18)).convert('RGBA'),
-        Image.new('RGBA', (W - 140, wh), (255, 235, 232, 150)))
-    mask = Image.new('L', (W - 140, wh), 0)
-    ImageDraw.Draw(mask).rounded_rectangle([0, 0, W - 140, wh], radius=20, fill=255)
+        Image.new('RGBA', (W - 140, warn_h), (255, 235, 232, 150)))
+    mask = Image.new('L', (W - 140, warn_h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, W - 140, warn_h], radius=20, fill=255)
     img.paste(tinted, (70, y), mask)
     d = ImageDraw.Draw(img)
-    d.rounded_rectangle([70, y, W - 70, y + wh], radius=20,
+    d.rounded_rectangle([70, y, W - 70, y + warn_h], radius=20,
                         outline=xl.WARN_EDGE, width=2)
     ty = y + 24
     for i, ln in enumerate(wl):
         d.text((104, ty), ln, font=f_w,
                fill=xl.WARN_TITLE if i == 0 else xl.INK)
-        ty += 54
+        ty += 50
     img.save(path)
 
 

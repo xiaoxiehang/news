@@ -153,7 +153,7 @@ def assemble_body(post, picks, include_point=True,
         if item.get('usage'):
             parts.append(f"💡 你能怎么用：{item['usage']}")
         if item.get('comment'):
-            parts.append(f"💬 鸡仔说：{item['comment']}")
+            parts.append(f"💬 {item['comment']}")
         if p.get('source'):
             parts.append(f"（来源：{p['source']}）")
         parts.append('')

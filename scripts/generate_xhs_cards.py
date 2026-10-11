@@ -163,27 +163,29 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
 
 
 def draw_card(pick, item, idx, total, path, footer_text=None):
-    """周报内容卡：浅色轻盈玻璃拟态（2026-10-11 全类型统一）。"""
+    """周报内容卡：浅色轻盈玻璃拟态 v2（2026-10-11 重设计）。
+    拉开字号梯度（72/44/40/32），卡内说明改轻量注解（去色块）。"""
     from PIL import ImageDraw
     import xhs_light as xl
     img = xl.bg()
     d = xl.header(img, '鸡仔AI早报', '%02d / %02d' % (idx + 1, total))
-    f_num, f_num2 = xl.fs(72), xl.fr(40)
-    f_title, f_sum, f_use = xl.fs(60), xl.fr(40), xl.fr(38)
+    f_num, f_num2 = xl.fs(64), xl.fr(38)
+    f_title, f_sum = xl.fs(72), xl.fr(44)
+    f_lab, f_ann = xl.fs(32), xl.fr(40)
     tl = xl.wrap2(d, pick['title'], f_title, W - 280)[:3]
     point = (item or {}).get('point', '').strip() or pick.get('summary', '')
     pl = xl.wrap2(d, point, f_sum, W - 280)[:4]
     usage = (item or {}).get('usage', '').strip()
-    ul = xl.wrap2(d, '你能怎么用：' + usage, f_use, W - 280 - 60)[:2] if usage else []
+    ul = xl.wrap2(d, usage, f_ann, W - 280 - 60)[:2] if usage else []
     comment = (item or {}).get('comment', '').strip()
-    cl = xl.wrap2(d, comment, f_use, W - 280 - 100)[:3] if comment else []
+    cl = xl.wrap2(d, comment, f_ann, W - 280 - 40)[:3] if comment else []
 
     def _ch():
-        uh = (36 + len(ul) * 58 + 32) if ul else 0
-        chh = (36 + 52 + len(cl) * 60 + 32) if cl else 0
-        return (64 + 100 + 24 + len(tl) * 88 + 30 + 8 + 30
-                + len(pl) * 62 + 28
-                + (uh + 22 if ul else 0) + (chh + 22 if cl else 0) + 64)
+        uh = (52 + len(ul) * 60 + 28) if ul else 0
+        chh = (52 + len(cl) * 60 + 28) if cl else 0
+        return (64 + 108 + 32 + len(tl) * 96 + 40
+                + len(pl) * 64 + 36
+                + (uh + 30 if ul else 0) + (chh + 30 if cl else 0) + 64)
 
     while cl and _ch() > H - 320:
         cl = cl[:-1]
@@ -200,40 +202,33 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
     num = '%02d' % (idx + 1)
     d.text((118, y), num, font=f_num, fill=xl.AMBER_D)
     nw = d.textlength(num, font=f_num)
-    d.text((118 + nw + 16, y + 34), '/ %02d' % total, font=f_num2, fill=xl.MUTED)
-    y += 124
+    d.text((118 + nw + 16, y + 30), '/ %02d' % total, font=f_num2, fill=xl.MUTED)
+    y += 108
     for ln in tl:
         d.text((118, y), ln, font=f_title, fill=xl.INK)
-        y += 88
-    y += 30
-    d.rectangle([118, y, px1 - 70, y + 8], fill=(214, 216, 228))
-    y += 38
+        y += 96
+    y += 40
     for ln in pl:
         d.text((118, y), ln, font=f_sum, fill=xl.BODY)
-        y += 62
-    y += 28
+        y += 64
+    y += 36
     if ul:
-        uh = 36 + len(ul) * 58 + 32
-        d.rounded_rectangle([118, y, px1 - 70, y + uh], radius=18,
-                            fill=xl.USER_BUBBLE, outline=xl.USER_EDGE, width=2)
-        d.rectangle([118, y + 16, 128, y + uh - 16], fill=xl.YELLOW)
-        uy = y + 36
+        # “你能怎么用”：黄竖线 + 小标签 + 正文，无底色块
+        d.rectangle([118, y + 8, 128, y + 52 + len(ul) * 60 + 20], fill=xl.YELLOW)
+        d.text((156, y), '你能怎么用', font=f_lab, fill=xl.AMBER_D)
+        uy = y + 52
         for ln in ul:
-            d.text((152, uy), ln, font=f_use, fill=(120, 85, 0))
-            uy += 58
-        y += uh + 22
+            d.text((156, uy), ln, font=f_ann, fill=xl.BODY)
+            uy += 60
+        y = uy + 30
     if cl:
-        chh = 36 + 52 + len(cl) * 60 + 32
-        d.rounded_rectangle([118, y, px1 - 70, y + chh], radius=18,
-                            fill=xl.AI_BUBBLE, outline=xl.AI_EDGE, width=2)
-        d.rectangle([118, y + 16, 128, y + chh - 16], fill=xl.YELLOW)
-        cy = y + 36
-        d.text((152, cy), '鸡仔点评', font=xl.fs(34), fill=xl.AMBER_D)
-        cy += 52
+        # “鸡仔点评”：小标签 + 正文，比用法更轻
+        d.text((118, y), '鸡仔点评', font=f_lab, fill=xl.AMBER_D)
+        cy = y + 52
         for ln in cl:
-            d.text((152, cy), ln, font=f_use, fill=xl.INK)
+            d.text((118, cy), ln, font=f_ann, fill=xl.INK)
             cy += 60
-        y += chh + 22
+        y = cy + 30
     xl.footer(ImageDraw.Draw(img), footer_text or '鸡仔 · AI早报')
     img.save(path)
 
