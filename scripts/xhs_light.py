@@ -102,34 +102,32 @@ def bg():
 
 
 def glass(img, box, radius=36, shadow=True):
-    """悬浮玻璃面板：克制阴影 + 卡片自带极淡冷色渐变 tint + 白描边 + 顶部高光
-    （参考 Grey黎教程：阴影 X0/Y20/模糊40/透明度~5%，卡片 #E6E6E6→#A7E9F0 的轻量版）"""
+    """参考风面板：平灰底上不再做真磨砂（无物可 blur），直接画极淡冷色渐变
+    面板 + 白描边 + 顶部高光 + 克制阴影（对标教程：2px 白描边、X0/Y20/模糊40）"""
     x0, y0, x1, y1 = [int(v) for v in box]
     w, h = x1 - x0, y1 - y0
+    img = img.convert('RGBA')
     if shadow:
-        sh = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+        sh = Image.new('RGBA', img.size, (0, 0, 0, 0))
         ImageDraw.Draw(sh).rounded_rectangle(
             [x0, y0 + 20, x1, y1 + 20], radius=radius, fill=(31, 104, 126, 28))
         sh = sh.filter(ImageFilter.GaussianBlur(42))
-        img = Image.alpha_composite(img.convert('RGBA'), sh).convert('RGB')
-    crop = img.crop((x0, y0, x1, y1))
-    pane = crop.filter(ImageFilter.GaussianBlur(26)).convert('RGBA')
-    tint = Image.new('RGBA', pane.size)
-    td = ImageDraw.Draw(tint)
+        img = Image.alpha_composite(img, sh)
+    pane = Image.new('RGBA', (w, h))
+    td = ImageDraw.Draw(pane)
     for yy in range(h):
         t = yy / max(1, h - 1)
         td.line([(0, yy), (w, yy)],
-                fill=(int(238 - 6 * t), int(241 - 5 * t), int(252 - 3 * t), 120))
-    pane = Image.alpha_composite(pane, tint)
+                fill=(int(236 - 5 * t), int(239 - 4 * t), int(250 - 3 * t), 255))
     mask = Image.new('L', (w, h), 0)
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, w, h], radius=radius, fill=255)
     img.paste(pane, (x0, y0), mask)
-    ImageDraw.Draw(img, 'RGBA').rounded_rectangle(
-        [x0, y0, x1, y1], radius=radius, outline=(255, 255, 255, 130), width=2)
-    ImageDraw.Draw(img, 'RGBA').line(
-        [(x0 + 60, y0 + 2), (x1 - 60, y0 + 2)],
-        fill=(255, 255, 255, 90), width=3)
-    return img
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle([x0, y0, x1, y1], radius=radius,
+                        outline=(255, 255, 255), width=2)
+    d.line([(x0 + 60, y0 + 2), (x1 - 60, y0 + 2)],
+           fill=(255, 255, 255), width=3)
+    return img.convert('RGB')
 
 
 def ctext(d, cx, cy, text, font, fill):
