@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10 02:54:05",
+  "updated_at": "2026-10-11 02:21:04",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -25,11 +25,6 @@
       "what": "给 AI 代理使用的开发技能与工作方法框架。",
       "why_hot": "大家想让编程代理做事更有章法。",
       "who": "用 AI 辅助开发的工程师。"
-    },
-    "mattpocock/skills": {
-      "what": "分享面向实际工程开发的 AI 技能配置。",
-      "why_hot": "现成技能容易借鉴，能省去自己摸索的时间。",
-      "who": "想改进编程代理配置的人。"
     },
     "affaan-m/ECC": {
       "what": "优化编程代理的技能、记忆和安全工作流。",
@@ -400,11 +395,6 @@
       "what": "把参考图重建成可动画的 Three.js 模型。",
       "why_hot": "图片转程序化 3D 模型，演示效果直观。",
       "who": "做网页 3D 和互动展示的人。"
-    },
-    "lidge-jun/opencodex": {
-      "what": "让 Codex 和 Claude Code 接入多种模型。",
-      "why_hot": "想换模型又不想换工具，这类代理很实用。",
-      "who": "常用 AI 编程工具的开发者。"
     },
     "Niko1221/Strata": {
       "what": "在消费级设备上本地运行指定 Qwen 模型。",
@@ -1285,11 +1275,6 @@
       "what": "给 HTML 加上轻量的交互能力。",
       "why_hot": "前端工具链太重，简单方案更吸引人。",
       "who": "想少写 JavaScript 的 Web 开发者。"
-    },
-    "Aider-AI/aider": {
-      "what": "在终端里用 AI 辅助修改代码。",
-      "why_hot": "AI 编程热度高，它又能融入命令行工作流。",
-      "who": "常用终端写代码的开发者。"
     },
     "leereilly/games": {
       "what": "汇总托管在 GitHub 上的游戏和相关资源。",
@@ -3001,21 +2986,6 @@
       "why_hot": "想在 Mac 上运行 Windows 软件，图形界面更容易上手。",
       "who": "适合有跨平台软件需求的 Mac 用户。"
     },
-    "pliang279/awesome-multimodal-ml": {
-      "what": "汇总多模态机器学习的研究阅读材料。",
-      "why_hot": "图文音视频模型受关注，整理好的文献能省检索时间。",
-      "who": "适合多模态方向的学生和研究者。"
-    },
-    "YyzHarry/imbalanced-regression": {
-      "what": "提供深度不平衡回归的论文与相关代码。",
-      "why_hot": "稀有数值样本难预测，这类方法有实际参考价值。",
-      "who": "适合处理长尾回归问题的人。"
-    },
-    "pliang279/MultiBench": {
-      "what": "提供多模态表示学习的基准与评测资源。",
-      "why_hot": "多模态模型越来越多，统一评测更方便横向比较。",
-      "who": "适合做多模态实验的研究者。"
-    },
     "NativeSensors/EyeGestures": {
       "what": "提供基于视线追踪的交互软件。",
       "why_hot": "免手操作很有想象空间，做交互原型也方便。",
@@ -3105,11 +3075,6 @@
       "what": "收集简短实用的 React 代码片段。",
       "why_hot": "常用写法能快速翻到，写组件时少走弯路。",
       "who": "适合 React 初学者和前端开发者。"
-    },
-    "brycewang-stanford/Auto-Empirical-Research-Skills": {
-      "what": "汇集面向社会科学实证研究的 AI Agent 技能。",
-      "why_hot": "技能条目多，研究者想找可复用的分析流程。",
-      "who": "适合做实证研究和研究自动化的人。"
     },
     "anu0012/awesome-computer-science-opportunities": {
       "what": "整理计算机学生可申请的活动和奖助机会。",
@@ -3276,11 +3241,6 @@
       "why_hot": "跨平台测试和安全研究都需要可复现的 macOS 环境。",
       "who": "适合做 macOS 测试和安全研究的人。"
     },
-    "LeCoupa/awesome-cheatsheets": {
-      "what": "汇集编程语言、框架和开发工具的速查表。",
-      "why_hot": "常用知识集中在单文件里，查起来省事。",
-      "who": "适合经常切换技术栈的开发者。"
-    },
     "LosaLosSantos/aurelio-finance": {
       "what": "可自托管的个人资产分析工具，带 AI 洞察。",
       "why_hot": "资产数据自己保管，还能看 AI 分析，挺对胃口。",
@@ -3305,11 +3265,6 @@
       "what": "在浏览器里画界面，并转成生成代码的提示词。",
       "why_hot": "把设计草图直接接到 AI 编程，省去描述界面。",
       "who": "适合做原型的设计师和独立开发者。"
-    },
-    "MiniMax-AI/MiniMax-H3": {
-      "what": "MiniMax 发布的 AI 模型相关项目。",
-      "why_hot": "模型项目本就受关注，具体亮点还得看仓库内容。",
-      "who": "适合关注新模型的开发者。"
     },
     "multica-ai/andrej-karpathy-skills": {
       "what": "用一份 CLAUDE.md 改善 Claude Code 的编程习惯。",
@@ -3506,40 +3461,35 @@
       "why_hot": "写代码就能做视频，很适合接入 AI 智能体。",
       "who": "想自动生成视频的开发者。"
     },
-    "rustdesk/rustdesk": {
-      "what": "支持自建服务的开源远程桌面工具。",
-      "why_hot": "远程控制需求稳定，自建服务也让人更有掌控感。",
-      "who": "想自己管理远程连接的个人和团队。"
-    },
-    "immich-app/immich": {
-      "what": "自己搭建的照片和视频管理工具。",
-      "why_hot": "大家想管好手机照片，又不想全交给云平台。",
-      "who": "爱拍照、愿意自建相册的人。"
-    },
-    "localsend/localsend": {
-      "what": "让不同设备像用 AirDrop 一样传文件。",
-      "why_hot": "跨平台传文件太常见，不用注册就能用很讨喜。",
-      "who": "经常在手机和电脑间传文件的人。"
-    },
-    "laurent22/joplin": {
-      "what": "注重隐私、支持多端同步的笔记应用。",
-      "why_hot": "既想跨设备记笔记，又想掌控数据的人不少。",
-      "who": "在意隐私的笔记重度用户。"
-    },
-    "chen08209/FlClash": {
-      "what": "基于 ClashMeta 的跨平台代理客户端。",
-      "why_hot": "界面简单、跨平台还没广告，省心是它的卖点。",
-      "who": "需要管理代理配置的用户。"
-    },
     "rakanki911/DLSS5-Swapper": {
       "what": "帮玩家安装、调整和还原游戏画质增强方案。",
       "why_hot": "一键折腾多种游戏画质方案，容易吸引玩家尝鲜。",
       "who": "爱调画质和帧率的 PC 玩家。"
     },
-    "stared/science-based-games-list": {
-      "what": "大家一起整理有科学依据的游戏清单。",
-      "why_hot": "科学和游戏的组合有趣，协作清单也方便收藏。",
-      "who": "想找科学主题游戏的玩家和老师。"
+    "farion1231/cc-switch": {
+      "what": "把 Claude Code、Codex 等 AI 编程工具集中到一个桌面应用。",
+      "why_hot": "AI 编程工具越用越多，能集中管理的工具容易受关注。",
+      "who": "同时用多个 AI 编程工具的开发者。"
+    },
+    "public-apis/public-apis": {
+      "what": "整理各类免费 API 的开源清单。",
+      "why_hot": "找免费接口做原型很方便，也适合顺手收藏。",
+      "who": "找接口做项目或练手的开发者。"
+    },
+    "DuarteSantos8/openGym": {
+      "what": "自己部署的健身记录工具，能排计划、记训练。",
+      "why_hot": "功能覆盖训练和恢复，还能导入常见应用的数据。",
+      "who": "想自己管健身数据的训练爱好者。"
+    },
+    "trailhq/Graft": {
+      "what": "帮 AI 编程工具理解代码库，减少耗时和成本。",
+      "why_hot": "大家都在用编程助手，速度和费用自然成了痛点。",
+      "who": "常用 AI 编程助手的大型项目团队。"
+    },
+    "go-gitea/gitea": {
+      "what": "可自行部署的 Git 协作平台，带代码评审和 CI/CD。",
+      "why_hot": "想自己掌控代码和开发流程的团队一直有需求。",
+      "who": "想自建代码托管平台的团队。"
     }
   }
 }

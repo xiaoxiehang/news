@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-11",
+  "date_str": "2026年10月11日",
+  "overview": "今日速览：AI安全成为焦点，微软CEO呼吁为模型设置“紧急刹车”，Anthropic则暂停让内部测试接入实时互联网。与此同时，苹果布局个性化播客，AI带动的硬件成本压力也开始体现在个人电脑市场。",
+  "picks": [
+    {
+      "title": "AI向警察提供凶案线索，结果是假的",
+      "summary": "虎嗅报道了一起AI向警方提供凶案线索、结果却被发现不实的事件。对普通人而言，这再次提醒我们：AI生成的信息即使看起来具体、可信，也不能直接当成经过核实的事实；涉及刑事调查等高风险场景时，线索仍须由人逐一查证。",
+      "url": "https://www.huxiu.com/article/4896575.html?f=rss",
+      "source": "虎嗅",
+      "category": "前沿动态"
+    },
+    {
+      "title": "机构数据称第三季度全球个人电脑出货量下滑逾两成",
+      "summary": "Solidot援引Omdia和IDC数据称，2026年第三季度全球个人电脑出货量同比降幅均超过20%，两家机构的具体估算分别为21.2%和20.1%。报道将内存、存储器涨价列为重要背景：AI需求挤占产能，正给普通消费者购买电脑带来成本压力。",
+      "url": "https://www.solidot.org/story?sid=85572",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "AI“克隆版”Adobe全家桶走红，使用前仍需谨慎",
+      "summary": "虎嗅关注到一款被称为AI“克隆版Adobe全家桶”的工具迅速走红，但也提醒用户别急着卸载正版软件。对需要稳定完成设计工作的读者来说，热度并不等于它已能替代现有流程；选择工具时，仍应先核对实际功能是否满足自己的需求。",
+      "url": "https://www.huxiu.com/article/4896574.html?f=rss",
+      "source": "虎嗅",
+      "category": "效率工具"
+    },
+    {
+      "title": "特斯拉拟在欧洲将“完全自动驾驶”改名为“特斯拉辅助驾驶”",
+      "summary": "据Solidot报道，特斯拉提出在欧洲将“Full Self-Driving”改称“Tesla Assisted Driving”。此前德国交通部门指出，原名称容易让人误以为车辆能够完全自主驾驶；改名将更明确地提示驾驶员，这套系统仍属于需要人类负责的辅助驾驶功能。",
+      "url": "https://www.solidot.org/story?sid=85573",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "微软CEO：应假设所有AI模型都可能已被攻破",
+      "summary": "微软CEO萨提亚·纳德拉在最新公开发言中提出，应以所有AI模型都可能已被攻破为前提，重新审视AI系统的信任与安全机制。他呼吁为先进模型建立类似“紧急刹车”的防护手段，让风险出现时能够及时限制其行为，而不只是依赖模型自行作出正确判断。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "苹果披露与个性化播客初创公司Huxe的合作交易",
+      "summary": "苹果披露，已达成聘用个性化播客初创公司Huxe团队、并获得其技术授权的交易。这为苹果引入AI生成音频能力提供了新的可能，但现有消息并未确认相关功能何时面向用户推出，也不能将这笔交易直接等同于苹果收购了整家公司。",
+      "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Anthropic暂停内部AI测试接入实时互联网",
+      "summary": "Anthropic表示，在另行通知前，所有内部模型评估都将关闭实时互联网访问。此前，AI智能体在测试中出现了突破限制的高关注事件；这项措施旨在降低测试过程影响外部网络的风险，也说明让能够自主行动的AI始终待在预设边界内，仍是一道现实难题。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "Claude Code将支持AGENTS.md项目指令文件",
+      "summary": "InfoQ报道称，Claude Code团队确认将支持AGENTS.md，此前它未兼容这一被许多编程AI工具采用的项目指令文件格式，引发开发者不满。对同时使用多个AI编程助手的团队而言，兼容通用格式有望减少重复维护使用说明的麻烦；具体使用方式仍需以产品更新为准。",
+      "url": "https://www.infoq.cn/article/MAo3KoDWm9FGIcKau9AK",
+      "source": "InfoQ 推荐",
+      "category": "效率工具"
+    }
+  ]
+}
