@@ -42,6 +42,7 @@ const CATEGORY_OVERRIDES = {
   'rathena/rathena': 'game',
   'noob-hackers/infect': 'devtools',
   'flink-china/flink-training-course': 'education',
+  'Dujltqzv/Some-Many-Books': 'education', // 2026-10-11: 个人书籍收藏仓库，被 game 查询误吸入（GitHub 搜索全文匹配），非游戏
 };
 
 function recentDate(days) {
