@@ -29,6 +29,14 @@ def fr(size):
 
 PUNCT = set('，。！？；：、）】”’')
 
+# 统一字阶（全类型共用，一卡内不超过 4 档）
+T_DISPLAY = 96   # 封面主标题
+T_TITLE = 72     # 内容卡标题 / 大数字
+T_LEAD = 48      # 封面副标题 / 引言
+T_BODY = 40      # 正文 / 气泡 / 注解正文
+T_SMALL = 32     # 标签 / 场景 / 次要说明
+T_META = 28      # 页眉页脚 / 计数
+
 # 浅色玻璃拟态配色
 INK = (28, 28, 34)
 BODY = (62, 62, 72)
@@ -42,9 +50,9 @@ USER_BUBBLE = (255, 243, 196)
 USER_EDGE = (235, 220, 170)
 AI_BUBBLE = (255, 255, 255)
 AI_EDGE = (226, 230, 242)
-WARN_BG = (255, 235, 232)
-WARN_EDGE = (244, 200, 194)
-WARN_TITLE = (170, 44, 38)
+WARN_BG = (255, 244, 232)
+WARN_EDGE = (238, 214, 178)
+WARN_TITLE = (170, 60, 30)
 CODE_BG = (30, 30, 40)
 CODE_INK = (255, 214, 120)
 
@@ -97,11 +105,11 @@ def bg():
                fill=tuple(int(top[i] + (bot[i] - top[i]) * t) for i in range(3)))
     blob = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     bd = ImageDraw.Draw(blob)
-    bd.ellipse([-200, -140, 640, 620], fill=(255, 178, 150, 95))    # 蜜桃
-    bd.ellipse([560, 880, 1300, 1620], fill=(150, 200, 255, 95))    # 天空蓝
-    bd.ellipse([-260, 760, 430, 1400], fill=(198, 168, 255, 85))   # 淡紫
-    bd.ellipse([620, 80, 1200, 700], fill=(168, 238, 208, 75))     # 薄荷
-    blob = blob.filter(ImageFilter.GaussianBlur(140))
+    bd.ellipse([-220, -160, 620, 600], fill=(186, 206, 248, 55))    # 雾蓝
+    bd.ellipse([580, 900, 1300, 1620], fill=(200, 190, 244, 55))    # 雾紫
+    bd.ellipse([-280, 780, 420, 1420], fill=(190, 228, 214, 50))    # 雾绿
+    bd.ellipse([640, 60, 1180, 680], fill=(248, 214, 190, 42))      # 一缕暖
+    blob = blob.filter(ImageFilter.GaussianBlur(170))
     img = Image.alpha_composite(img.convert('RGBA'), blob).convert('RGB')
     return img
 

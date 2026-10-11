@@ -96,17 +96,17 @@ def _wrap2(d, text, font, max_w, min_last=4):
 def draw_cover_tutorial(kicker, title_lines, tips, path):
     img = xl.bg()
     d = xl.header(img, '鸡仔AI实战', '')
-    f_kick, f_big = xl.fs(46), xl.fs(100)
+    f_kick, f_big = xl.fs(48), xl.fs(96)
     kl = _wrap2(d, kicker, f_kick, W - 280)[:1]
     tl = []
     for t in title_lines:
         tl.extend(_wrap2(d, t, f_big, W - 280))
     tl = tl[:3]
-    f_n, f_t = xl.fs(44), xl.fr(42)
+    f_n, f_t = xl.fs(40), xl.fr(40)
     tip_ls = [_wrap2(d, tp, f_t, W - 280 - 90)[:2] for tp in tips]
     top_pad, bot_pad = 72, 72
-    ch = (top_pad + len(kl) * 70 + 20 + len(tl) * 128 + 44
-          + 10 + 60 + sum(len(x) * 62 + 40 for x in tip_ls) + bot_pad)
+    ch = (top_pad + len(kl) * 64 + 20 + len(tl) * 128 + 44
+          + 10 + 60 + sum(len(x) * 56 + 40 for x in tip_ls) + bot_pad)
     px0, px1 = 48, W - 48
     py = 150 + max(0, (H - 250 - ch) / 2)
     img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
@@ -114,7 +114,7 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
     y = py + top_pad
     for ln in kl:
         d.text((118, y), ln, font=f_kick, fill=xl.AMBER_D)
-        y += 70
+        y += 64
     y += 20
     for ln in tl:
         d.text((118, y), ln, font=f_big, fill=xl.INK)
@@ -129,7 +129,7 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
                 d.ellipse([118, cy - 26, 170, cy + 26], fill=xl.YELLOW)
                 xl.ctext(d, 144, cy, str(i + 1), f_n, xl.BROWN)
             d.text((198, y), ln, font=f_t, fill=xl.BODY)
-            y += 62
+            y += 56
         y += 40
     img.save(path)
 
@@ -141,29 +141,31 @@ def draw_tip_card(tip, idx, total, path):
     from PIL import ImageDraw
     img = xl.bg()
     d = xl.header(img, '鸡仔AI实战', '%02d / %02d' % (idx + 1, total))
-    f_w = xl.fr(34)
+    f_w = xl.fr(32)
     wl = _wrap2(d, '避坑：' + tip['warn'], f_w, W - 140 - 52)
-    warn_h = 28 + len(wl) * 50 + 24
+    warn_h = 28 + len(wl) * 44 + 24
     px0, px1 = 70, W - 70
     max_w = px1 - px0 - 200
 
-    def _layout(bsize, tsize, ssize):
-        f_bub, f_title, f_scene = xl.fr(bsize), xl.fs(tsize), xl.fr(ssize)
+    f_scene = xl.fr(32)
+    sl = _wrap2(d, tip['scene'], f_scene, W - 280)[:2]
+    sstep = 52
+    def _layout(bsize, tsize):
+        f_bub, f_title = xl.fr(bsize), xl.fs(tsize)
         tl = _wrap2(d, tip['title'], f_title, W - 280)[:2]
-        sl = _wrap2(d, tip['scene'], f_scene, W - 280)[:2]
         ul = _wrap2(d, tip['user'], f_bub, max_w - 52)
         al = _wrap2(d, tip['ai'], f_bub, max_w - 52)
-        bstep, tstep, sstep = bsize + 16, tsize + 24, ssize + 20
+        bstep, tstep = bsize + 16, tsize + 24
         uh = 30 + len(ul) * bstep + 26
         ah = 30 + len(al) * bstep + 26
         panel_h = 32 + uh + 24 + ah + 32
         total_h = (150 + len(tl) * tstep + 12 + len(sl) * sstep + 24
                    + panel_h + 24 + warn_h + 30)
-        return (f_bub, f_title, f_scene, tl, sl, ul, al, bstep,
+        return (f_bub, f_title, tl, ul, al, bstep,
                 uh, ah, panel_h, total_h)
 
-    for combo in [(40, 76, 38), (38, 72, 36), (36, 70, 34), (34, 66, 32)]:
-        (f_bub, f_title, f_scene, tl, sl, ul, al, bstep,
+    for combo in [(40, 72), (38, 68), (36, 64)]:
+        (f_bub, f_title, tl, ul, al, bstep,
          uh, ah, panel_h, total_h) = _layout(*combo)
         if total_h <= H:
             break
@@ -174,7 +176,6 @@ def draw_tip_card(tip, idx, total, path):
         d.text((70, y), ln, font=f_title, fill=xl.INK)
         y += tstep
     y += 12
-    sstep = f_scene.size + 20
     for ln in sl:
         d.text((70, y), ln, font=f_scene, fill=xl.GRAY)
         y += sstep
@@ -205,7 +206,7 @@ def draw_tip_card(tip, idx, total, path):
     crop = img.crop((70, y, W - 70, y + warn_h))
     tinted = Image.alpha_composite(
         crop.filter(ImageFilter.GaussianBlur(18)).convert('RGBA'),
-        Image.new('RGBA', (W - 140, warn_h), (255, 235, 232, 150)))
+        Image.new('RGBA', (W - 140, warn_h), xl.WARN_BG + (150,)))
     mask = Image.new('L', (W - 140, warn_h), 0)
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, W - 140, warn_h], radius=20, fill=255)
     img.paste(tinted, (70, y), mask)
@@ -216,20 +217,20 @@ def draw_tip_card(tip, idx, total, path):
     for i, ln in enumerate(wl):
         d.text((104, ty), ln, font=f_w,
                fill=xl.WARN_TITLE if i == 0 else xl.INK)
-        ty += 50
+        ty += 44
     img.save(path)
 
 
 def draw_end_tutorial(jinju, question, path, fav_text=None):
     img = xl.bg()
     d = xl.header(img, '鸡仔AI实战', '')
-    f_j, f_q = xl.fs(56), xl.fr(42)
+    f_j, f_q = xl.fs(48), xl.fr(40)
     jl = _wrap2(d, jinju, f_j, W - 280)[:3]
     ql = _wrap2(d, question, f_q, W - 280)[:3]
     t = fav_text or '收藏这篇，下次做报表时翻出来对照着用'
-    f_btn = xl.fs(38)
+    f_btn = xl.fs(40)
     top_pad, bot_pad = 110, 72
-    ch = (top_pad + len(jl) * 84 + 60 + 10 + 80 + len(ql) * 66 + 48 + 88 + bot_pad)
+    ch = (top_pad + len(jl) * 64 + 60 + 10 + 80 + len(ql) * 56 + 48 + 88 + bot_pad)
     px0, px1 = 48, W - 48
     py = 150 + max(0, (H - 250 - ch) / 2)
     img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
@@ -237,13 +238,13 @@ def draw_end_tutorial(jinju, question, path, fav_text=None):
     y = py + top_pad
     for ln in jl:
         d.text((118, y), ln, font=f_j, fill=xl.INK)
-        y += 84
+        y += 64
     y += 60
     d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
     y += 90
     for ln in ql:
         d.text((118, y), ln, font=f_q, fill=xl.GRAY)
-        y += 66
+        y += 56
     y += 48
     tw = d.textlength(t, font=f_btn)
     d.rounded_rectangle([(W - tw) / 2 - 34, y, (W + tw) / 2 + 34, y + 88],

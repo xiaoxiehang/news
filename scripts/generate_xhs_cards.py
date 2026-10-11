@@ -128,14 +128,14 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
     import xhs_light as xl
     img = xl.bg()
     d = xl.header(img, '鸡仔AI早报', '')
-    f_title, f_num, f_head, f_tip = xl.fs(110), xl.fs(52), xl.fr(46), xl.fr(38)
+    f_title, f_num, f_head, f_tip = xl.fs(96), xl.fs(48), xl.fr(48), xl.fr(32)
     tl = xl.wrap2(d, big_title, f_title, W - 280)[:2]
     heads = [xl.wrap2(d, p['title'], f_head, W - 280 - 100)[:2] for p in picks[:3]]
     tip_ls = xl.wrap2(d, tip_text, f_tip, W - 280)[:2]
     top_pad, bot_pad = 90, 80
-    ch = (top_pad + len(tl) * 140 + 40 + 10 + 60
-          + sum(len(h) * 72 + 30 for h in heads)
-          + 20 + len(tip_ls) * 58 + bot_pad)
+    ch = (top_pad + len(tl) * 128 + 40 + 10 + 60
+          + sum(len(h) * 64 + 30 for h in heads)
+          + 20 + len(tip_ls) * 44 + bot_pad)
     px0, px1 = 48, W - 48
     py = 150 + max(0, (H - 250 - ch) / 2)
     img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
@@ -143,7 +143,7 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
     y = py + top_pad
     for ln in tl:
         d.text((118, y), ln, font=f_title, fill=xl.INK)
-        y += 140
+        y += 128
     y += 40
     d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
     y += 70
@@ -152,12 +152,12 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
             if j == 0:
                 d.text((118, y), str(i + 1), font=f_num, fill=xl.AMBER_D)
             d.text((198, y), ln, font=f_head, fill=xl.BODY)
-            y += 72
+            y += 64
         y += 30
     y += 20
     for ln in tip_ls:
         d.text((118, y), ln, font=f_tip, fill=xl.GRAY)
-        y += 58
+        y += 44
     xl.footer(ImageDraw.Draw(img), footer_text or '鸡仔 · AI早报')
     img.save(path)
 
@@ -169,8 +169,8 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
     import xhs_light as xl
     img = xl.bg()
     d = xl.header(img, '鸡仔AI早报', '%02d / %02d' % (idx + 1, total))
-    f_num, f_num2 = xl.fs(64), xl.fr(38)
-    f_title, f_sum = xl.fs(72), xl.fr(44)
+    f_num, f_num2 = xl.fs(72), xl.fr(28)
+    f_title, f_sum = xl.fs(72), xl.fr(40)
     f_lab, f_ann = xl.fs(32), xl.fr(40)
     tl = xl.wrap2(d, pick['title'], f_title, W - 280)[:3]
     point = (item or {}).get('point', '').strip() or pick.get('summary', '')
@@ -181,10 +181,10 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
     cl = xl.wrap2(d, comment, f_ann, W - 280 - 40)[:3] if comment else []
 
     def _ch():
-        uh = (52 + len(ul) * 60 + 28) if ul else 0
-        chh = (52 + len(cl) * 60 + 28) if cl else 0
+        uh = (52 + len(ul) * 56 + 28) if ul else 0
+        chh = (52 + len(cl) * 56 + 28) if cl else 0
         return (64 + 108 + 32 + len(tl) * 96 + 40
-                + len(pl) * 64 + 36
+                + len(pl) * 56 + 36
                 + (uh + 30 if ul else 0) + (chh + 30 if cl else 0) + 64)
 
     while cl and _ch() > H - 320:
@@ -202,7 +202,7 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
     num = '%02d' % (idx + 1)
     d.text((118, y), num, font=f_num, fill=xl.AMBER_D)
     nw = d.textlength(num, font=f_num)
-    d.text((118 + nw + 16, y + 30), '/ %02d' % total, font=f_num2, fill=xl.MUTED)
+    d.text((118 + nw + 16, y + 36), '/ %02d' % total, font=f_num2, fill=xl.MUTED)
     y += 108
     for ln in tl:
         d.text((118, y), ln, font=f_title, fill=xl.INK)
@@ -214,12 +214,12 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
     y += 36
     if ul:
         # “你能怎么用”：黄竖线 + 小标签 + 正文，无底色块
-        d.rectangle([118, y + 8, 128, y + 52 + len(ul) * 60 + 20], fill=xl.YELLOW)
+        d.rectangle([118, y + 8, 128, y + 52 + len(ul) * 56 + 20], fill=xl.YELLOW)
         d.text((156, y), '你能怎么用', font=f_lab, fill=xl.AMBER_D)
         uy = y + 52
         for ln in ul:
             d.text((156, uy), ln, font=f_ann, fill=xl.BODY)
-            uy += 60
+            uy += 56
         y = uy + 30
     if cl:
         # “鸡仔点评”：小标签 + 正文，比用法更轻
@@ -227,7 +227,7 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
         cy = y + 52
         for ln in cl:
             d.text((118, cy), ln, font=f_ann, fill=xl.INK)
-            cy += 60
+            cy += 56
         y = cy + 30
     xl.footer(ImageDraw.Draw(img), footer_text or '鸡仔 · AI早报')
     img.save(path)
@@ -239,29 +239,29 @@ def draw_end(jinju, question, path, fav_text='收藏这篇，持续更新', foot
     import xhs_light as xl
     img = xl.bg()
     d = xl.header(img, '鸡仔AI早报', '')
-    f_lab, f_j, f_q, f_btn = xl.fs(40), xl.fs(56), xl.fr(42), xl.fs(38)
+    f_lab, f_j, f_q, f_btn = xl.fs(32), xl.fs(48), xl.fr(40), xl.fs(40)
     jl = xl.wrap2(d, jinju or '保持好奇，下周见。', f_j, W - 280)[:3]
     ql = xl.wrap2(d, question or '这周哪条 AI 新动态最让你意外？评论区聊聊。',
                   f_q, W - 280)[:3]
     top_pad, bot_pad = 100, 72
-    ch = (top_pad + 60 + 30 + len(jl) * 84 + 50 + 10 + 60
-          + len(ql) * 66 + 48 + 88 + bot_pad)
+    ch = (top_pad + 52 + 30 + len(jl) * 64 + 50 + 10 + 60
+          + len(ql) * 56 + 48 + 88 + bot_pad)
     px0, px1 = 48, W - 48
     py = 150 + max(0, (H - 250 - ch) / 2)
     img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
     d = ImageDraw.Draw(img)
     y = py + top_pad
     d.text((118, y), '本周金句', font=f_lab, fill=xl.AMBER_D)
-    y += 90
+    y += 80
     for ln in jl:
         d.text((118, y), ln, font=f_j, fill=xl.INK)
-        y += 84
+        y += 64
     y += 50
     d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
     y += 70
     for ln in ql:
         d.text((118, y), ln, font=f_q, fill=xl.GRAY)
-        y += 66
+        y += 56
     y += 48
     tw = d.textlength(fav_text, font=f_btn)
     d.rounded_rectangle([(W - tw) / 2 - 34, y, (W + tw) / 2 + 34, y + 88],
