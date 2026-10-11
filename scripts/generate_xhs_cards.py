@@ -162,7 +162,7 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
     img.save(path)
 
 
-def draw_card(pick, item, idx, total, path):
+def draw_card(pick, item, idx, total, path, footer_text=None):
     """周报内容卡：浅色轻盈玻璃拟态（2026-10-11 全类型统一）。"""
     from PIL import ImageDraw
     import xhs_light as xl
@@ -234,7 +234,7 @@ def draw_card(pick, item, idx, total, path):
             d.text((152, cy), ln, font=f_use, fill=xl.INK)
             cy += 60
         y += chh + 22
-    xl.footer(ImageDraw.Draw(img), '鸡仔 · AI早报')
+    xl.footer(ImageDraw.Draw(img), footer_text or '鸡仔 · AI早报')
     img.save(path)
 
 

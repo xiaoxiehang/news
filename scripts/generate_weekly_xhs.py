@@ -176,7 +176,8 @@ def main():
                tip_text='一次看懂本周 AI 大事')
     for i, p in enumerate(picks):
         draw_card(p, slim_items[i], i, N_TOTAL,
-                  os.path.join(out_dir, 'card_%02d.png' % (i + 1)))
+                  os.path.join(out_dir, 'card_%02d.png' % (i + 1)),
+                  footer_text=footer)
     draw_end(post.get('jinju', ''), post.get('question', ''),
              os.path.join(out_dir, 'end.png'),
              fav_text='收藏这篇，下周接着看', footer_text=footer)
