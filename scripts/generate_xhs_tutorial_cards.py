@@ -135,85 +135,54 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
 
 
 def draw_tip_card(tip, idx, total, path):
-    """tip: {title, scene, user, ai, warn}。
-    字号联动自适应：(气泡, 标题, 场景) 从 (40,76,38) 逐级降到 (34,66,32)，
-    保证 16 行以内的内容避坑条不溢出。"""
+    """v6: 项目卡样式 —— 标题 + 黄色圆点条目（场景/提示词/AI效果/避坑）。"""
     from PIL import ImageDraw
     img = xl.bg()
-    d = xl.header(img, '鸡仔AI实战', '%02d / %02d' % (idx + 1, total))
-    f_w = xl.fr(32)
-    wl = _wrap2(d, '避坑：' + tip['warn'], f_w, W - 140 - 52)
-    warn_h = 28 + len(wl) * 44 + 24
-    px0, px1 = 70, W - 70
-    max_w = px1 - px0 - 200
+    d = xl.header(img, '鸡仔AI实战', 'AI 提示词实战')
+    f = xl.fr(34)
+    t = '%02d / %02d' % (idx + 1, total)
+    tw = d.textlength(t, font=f)
+    d.text((W - 70 - tw, 112), t, font=f, fill=xl.MUTED)
 
-    f_scene = xl.fr(32)
-    sl = _wrap2(d, tip['scene'], f_scene, W - 280)[:2]
-    sstep = 52
-    def _layout(bsize, tsize):
-        f_bub, f_title = xl.fr(bsize), xl.fs(tsize)
-        tl = _wrap2(d, tip['title'], f_title, W - 280)[:2]
-        ul = _wrap2(d, tip['user'], f_bub, max_w - 52)
-        al = _wrap2(d, tip['ai'], f_bub, max_w - 52)
-        bstep, tstep = bsize + 16, tsize + 24
-        uh = 30 + len(ul) * bstep + 26
-        ah = 30 + len(al) * bstep + 26
-        panel_h = 32 + uh + 24 + ah + 32
-        total_h = (150 + len(tl) * tstep + 12 + len(sl) * sstep + 24
-                   + panel_h + 24 + warn_h + 30)
-        return (f_bub, f_title, tl, ul, al, bstep,
-                uh, ah, panel_h, total_h)
-
-    for combo in [(40, 72), (38, 68), (36, 64)]:
-        (f_bub, f_title, tl, ul, al, bstep,
-         uh, ah, panel_h, total_h) = _layout(*combo)
-        if total_h <= H:
+    items = [
+        ('场景', xl.AMBER_D, tip['scene']),
+        ('提示词', xl.AMBER_D, tip['user']),
+        ('AI 效果', xl.AMBER_D, tip['ai']),
+        ('避坑', xl.WARN_TITLE, tip['warn']),
+    ]
+    for tsize, bsize in [(60, 37), (56, 35), (52, 32)]:
+        f_title, f_b, f_lab = xl.fs(tsize), xl.fr(bsize), xl.fs(32)
+        tl = xl.wrap2(d, tip['title'], f_title, W - 280)[:2]
+        bl = []
+        for label, lfill, text in items:
+            lab_w = d.textlength(label + ' ', font=f_lab)
+            lines = xl.wrap_first(d, text, f_b,
+                                  W - 280 - 46 - lab_w, W - 280 - 46)[:4]
+            bl.append((label, lfill, lab_w, lines))
+        tstep, bstep = tsize + 28, bsize + 29
+        ch = (68 + len(tl) * tstep + 44
+              + sum(len(x[3]) * bstep + 26 for x in bl) - 26 + 68)
+        py = 150 + max(0, (H - 250 - ch) / 2)
+        if py + ch <= H - 40:
             break
 
-    y = 150
-    tstep = f_title.size + 24
+    img = xl.glass(img, (48, py, W - 48, py + ch), radius=40)
+    d = ImageDraw.Draw(img)
+    y = py + 68
     for ln in tl:
-        d.text((70, y), ln, font=f_title, fill=xl.INK)
+        d.text((118, y), ln, font=f_title, fill=xl.INK)
         y += tstep
-    y += 12
-    for ln in sl:
-        d.text((70, y), ln, font=f_scene, fill=xl.GRAY)
-        y += sstep
-    y += 24
-    img = xl.glass(img, (px0, y, px1, y + panel_h), radius=30)
-    d = ImageDraw.Draw(img)
-    by = y + 32
-    bw = min(max_w, max(d.textlength(ln, font=f_bub) for ln in ul) + 52) if ul else 0
-    bx = px1 - 96 - bw
-    ty = by + 26
-    for ln in ul:
-        d.text((bx + 26, ty), ln, font=f_bub, fill=xl.INK)
-        ty += bstep
-    xl.avatar(d, px1 - 44, by + 44, '你', xl.YELLOW, xl.BROWN)
-    by2 = by + uh + 24
-    bw2 = min(max_w, max(d.textlength(ln, font=f_bub) for ln in al) + 52) if al else 0
-    bx2 = px0 + 96
-    ty = by2 + 26
-    for ln in al:
-        d.text((bx2 + 26, ty), ln, font=f_bub, fill=xl.INK)
-        ty += bstep
-    xl.avatar(d, px0 + 44, by2 + 44, 'AI', (28, 28, 36), xl.WHITE)
-    y = y + panel_h + 24
-    crop = img.crop((70, y, W - 70, y + warn_h))
-    tinted = Image.alpha_composite(
-        crop.filter(ImageFilter.GaussianBlur(18)).convert('RGBA'),
-        Image.new('RGBA', (W - 140, warn_h), xl.WARN_BG + (150,)))
-    mask = Image.new('L', (W - 140, warn_h), 0)
-    ImageDraw.Draw(mask).rounded_rectangle([0, 0, W - 140, warn_h], radius=20, fill=255)
-    img.paste(tinted, (70, y), mask)
-    d = ImageDraw.Draw(img)
-    d.rounded_rectangle([70, y, W - 70, y + warn_h], radius=20,
-                        outline=xl.WARN_EDGE, width=2)
-    ty = y + 24
-    for i, ln in enumerate(wl):
-        d.text((104, ty), ln, font=f_w,
-               fill=xl.WARN_TITLE if i == 0 else xl.INK)
-        ty += 44
+    y += 44
+    for label, lfill, lab_w, lines in bl:
+        for j, ln in enumerate(lines):
+            if j == 0:
+                d.ellipse([120, y + 16, 142, y + 38], fill=xl.YELLOW)
+                d.text((166, y), label + ' ', font=f_lab, fill=lfill)
+                d.text((166 + lab_w, y), ln, font=f_b, fill=xl.BODY)
+            else:
+                d.text((166, y), ln, font=f_b, fill=xl.BODY)
+            y += bstep
+        y += 26
     img.save(path)
 
 

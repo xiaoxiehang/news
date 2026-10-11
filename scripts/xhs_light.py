@@ -130,6 +130,36 @@ def glass(img, box, radius=36, shadow=True):
     return img.convert('RGB')
 
 
+def _isword(ch):
+    return ch.isascii() and (ch.isalnum() or ch in '-_')
+
+
+def wrap_first(d, text, font, w1, w_rest):
+    """首行宽 w1、其余行宽 w_rest 的按字换行（用于行内标签条目）。
+    英文单词（含连字符）不拆半。"""
+    lines, cur, first = [], '', True
+    for ch in text:
+        w = w1 if first else w_rest
+        t = cur + ch
+        if d.textlength(t, font=font) <= w:
+            cur = t
+            continue
+        if cur and _isword(ch):
+            i = len(cur)
+            while i > 0 and _isword(cur[i - 1]):
+                i -= 1
+            if 0 < i < len(cur):
+                lines.append(cur[:i])
+                cur, first = cur[i:] + ch, False
+                continue
+        if cur:
+            lines.append(cur)
+        cur, first = ch, False
+    if cur:
+        lines.append(cur)
+    return lines
+
+
 def ctext(d, cx, cy, text, font, fill):
     """以文字墨迹中心为锚点绘制（真正的视觉居中）"""
     b = d.textbbox((0, 0), text, font=font)

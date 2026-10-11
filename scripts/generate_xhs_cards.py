@@ -47,10 +47,10 @@ def _wrap(draw, text, font, max_w):
             cur = t
         else:
             if cur:
-                # 英文单词不拆半：把整个单词挪到下一行
-                if ch.isascii() and ch.isalnum():
+                # 英文单词不拆半：把整个单词挪到下一行（连字符视为单词内字符）
+                if ch.isascii() and (ch.isalnum() or ch in '-_'):
                     i = len(cur)
-                    while i > 0 and cur[i - 1].isascii() and cur[i - 1].isalnum():
+                    while i > 0 and cur[i - 1].isascii() and (cur[i - 1].isalnum() or cur[i - 1] in '-_'):
                         i -= 1
                     if 0 < i < len(cur):
                         lines.append(cur[:i])
@@ -163,73 +163,60 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
 
 
 def draw_card(pick, item, idx, total, path, footer_text=None):
-    """周报内容卡：浅色轻盈玻璃拟态 v2（2026-10-11 重设计）。
-    拉开字号梯度（72/44/40/32），卡内说明改轻量注解（去色块）。"""
+    """v6: 项目卡样式 —— 标题 + 黄色圆点条目（摘要/你能怎么用/鸡仔点评）。"""
     from PIL import ImageDraw
     import xhs_light as xl
     img = xl.bg()
-    d = xl.header(img, '鸡仔AI早报', '%02d / %02d' % (idx + 1, total))
-    f_num, f_num2 = xl.fs(72), xl.fr(28)
-    f_title, f_sum = xl.fs(72), xl.fr(40)
-    f_lab, f_ann = xl.fs(32), xl.fr(40)
-    tl = xl.wrap2(d, pick['title'], f_title, W - 280)[:3]
+    d = xl.header(img, '鸡仔AI周报', '每周 AI 大事')
+    f = xl.fr(34)
+    t = '%02d / %02d' % (idx + 1, total)
+    tw = d.textlength(t, font=f)
+    d.text((W - 70 - tw, 112), t, font=f, fill=xl.MUTED)
+
     point = (item or {}).get('point', '').strip() or pick.get('summary', '')
-    pl = xl.wrap2(d, point, f_sum, W - 280)[:4]
     usage = (item or {}).get('usage', '').strip()
-    ul = xl.wrap2(d, usage, f_ann, W - 280 - 60)[:2] if usage else []
     comment = (item or {}).get('comment', '').strip()
-    cl = xl.wrap2(d, comment, f_ann, W - 280 - 40)[:3] if comment else []
+    items = [(None, None, point)]
+    if usage:
+        items.append(('你能怎么用', xl.AMBER_D, usage))
+    if comment:
+        items.append(('鸡仔点评', xl.AMBER_D, comment))
 
-    def _ch():
-        uh = (52 + len(ul) * 56 + 28) if ul else 0
-        chh = (52 + len(cl) * 56 + 28) if cl else 0
-        return (64 + 108 + 32 + len(tl) * 96 + 40
-                + len(pl) * 56 + 36
-                + (uh + 30 if ul else 0) + (chh + 30 if cl else 0) + 64)
+    for tsize, bsize in [(60, 37), (56, 35), (52, 32)]:
+        f_title, f_b, f_lab = xl.fs(tsize), xl.fr(bsize), xl.fs(32)
+        tl = xl.wrap2(d, pick['title'], f_title, W - 280)[:2]
+        bl = []
+        for n, (label, lfill, text) in enumerate(items):
+            lab_w = d.textlength(label + ' ', font=f_lab) if label else 0
+            cap = 4 if n == 0 else 3
+            lines = xl.wrap_first(d, text, f_b,
+                                  W - 280 - 46 - lab_w, W - 280 - 46)[:cap]
+            bl.append((label, lfill, lab_w, lines))
+        tstep, bstep = tsize + 28, bsize + 29
+        ch = (68 + len(tl) * tstep + 44
+              + sum(len(x[3]) * bstep + 26 for x in bl) - 26 + 68)
+        py = 150 + max(0, (H - 250 - ch) / 2)
+        if py + ch <= H - 40:
+            break
 
-    while cl and _ch() > H - 320:
-        cl = cl[:-1]
-    while ul and _ch() > H - 320:
-        ul = ul[:-1]
-    while len(pl) > 2 and _ch() > H - 320:
-        pl = pl[:-1]
-    ch = _ch()
-    px0, px1 = 48, W - 48
-    py = 150 + max(0, (H - 250 - ch) / 2)
-    img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
+    img = xl.glass(img, (48, py, W - 48, py + ch), radius=40)
     d = ImageDraw.Draw(img)
-    y = py + 64
-    num = '%02d' % (idx + 1)
-    d.text((118, y), num, font=f_num, fill=xl.AMBER_D)
-    nw = d.textlength(num, font=f_num)
-    d.text((118 + nw + 16, y + 36), '/ %02d' % total, font=f_num2, fill=xl.MUTED)
-    y += 108
+    y = py + 68
     for ln in tl:
         d.text((118, y), ln, font=f_title, fill=xl.INK)
-        y += 96
-    y += 40
-    for ln in pl:
-        d.text((118, y), ln, font=f_sum, fill=xl.BODY)
-        y += 64
-    y += 36
-    if ul:
-        # “你能怎么用”：黄竖线 + 小标签 + 正文，无底色块
-        d.rectangle([118, y + 8, 128, y + 52 + len(ul) * 56 + 20], fill=xl.YELLOW)
-        d.text((156, y), '你能怎么用', font=f_lab, fill=xl.AMBER_D)
-        uy = y + 52
-        for ln in ul:
-            d.text((156, uy), ln, font=f_ann, fill=xl.BODY)
-            uy += 56
-        y = uy + 30
-    if cl:
-        # “鸡仔点评”：小标签 + 正文，比用法更轻
-        d.text((118, y), '鸡仔点评', font=f_lab, fill=xl.AMBER_D)
-        cy = y + 52
-        for ln in cl:
-            d.text((118, cy), ln, font=f_ann, fill=xl.INK)
-            cy += 56
-        y = cy + 30
-    xl.footer(ImageDraw.Draw(img), footer_text or '鸡仔 · AI早报')
+        y += tstep
+    y += 44
+    for label, lfill, lab_w, lines in bl:
+        for j, ln in enumerate(lines):
+            if j == 0:
+                d.ellipse([120, y + 16, 142, y + 38], fill=xl.YELLOW)
+                if label:
+                    d.text((166, y), label + ' ', font=f_lab, fill=lfill)
+                d.text((166 + lab_w, y), ln, font=f_b, fill=xl.BODY)
+            else:
+                d.text((166, y), ln, font=f_b, fill=xl.BODY)
+            y += bstep
+        y += 26
     img.save(path)
 
 
