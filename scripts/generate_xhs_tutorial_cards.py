@@ -96,7 +96,7 @@ def _wrap2(d, text, font, max_w, min_last=4):
 def draw_cover_tutorial(kicker, title_lines, tips, path):
     img = xl.bg()
     d = xl.header(img, '鸡仔AI实战', '')
-    f_kick, f_big = xl.fs(48), xl.fs(xl.T_HERO)
+    f_kick, f_big = xl.fs(48), xl.fs(92)
     kl = _wrap2(d, kicker, f_kick, W - 280)[:1]
     tl = []
     for t in title_lines:
@@ -105,7 +105,7 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
     f_n, f_t = xl.fs(40), xl.fr(40)
     tip_ls = [_wrap2(d, tp, f_t, W - 280 - 90)[:2] for tp in tips]
     top_pad, bot_pad = 72, 72
-    ch = (top_pad + len(kl) * 64 + 20 + len(tl) * 170 + 44
+    ch = (top_pad + len(kl) * 64 + 20 + len(tl) * 118 + 44
           + 10 + 60 + sum(len(x) * 56 + 40 for x in tip_ls) + bot_pad)
     px0, px1 = 48, W - 48
     py = 150 + max(0, (H - 250 - ch) / 2)
@@ -113,12 +113,12 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
     d = ImageDraw.Draw(img)
     y = py + top_pad
     for ln in kl:
-        d.text((118, y), ln, font=f_kick, fill=xl.AMBER_D)
+        d.text((118, y), ln, font=f_kick, fill=xl.YELLOW)
         y += 64
     y += 20
     for ln in tl:
         d.text((118, y), ln, font=f_big, fill=xl.INK)
-        y += 170
+        y += 118
     y += 44
     d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
     y += 70

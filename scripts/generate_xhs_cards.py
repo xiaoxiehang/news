@@ -127,13 +127,13 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
     from PIL import ImageDraw
     import xhs_light as xl
     img = xl.bg()
-    d = xl.header(img, '鸡仔AI早报', '')
-    f_title, f_num, f_head, f_tip = xl.fs(xl.T_HERO), xl.fs(48), xl.fr(48), xl.fr(32)
+    d = xl.header(img, '鸡仔AI周报', '')
+    f_title, f_num, f_head, f_tip = xl.fs(92), xl.fs(48), xl.fr(48), xl.fr(32)
     tl = xl.wrap2(d, big_title, f_title, W - 280)[:2]
     heads = [xl.wrap2(d, p['title'], f_head, W - 280 - 100)[:2] for p in picks[:3]]
     tip_ls = xl.wrap2(d, tip_text, f_tip, W - 280)[:2]
     top_pad, bot_pad = 90, 80
-    ch = (top_pad + len(tl) * 170 + 40 + 10 + 60
+    ch = (top_pad + len(tl) * 118 + 40 + 10 + 60
           + sum(len(h) * 64 + 30 for h in heads)
           + 20 + len(tip_ls) * 44 + bot_pad)
     px0, px1 = 48, W - 48
@@ -143,14 +143,14 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
     y = py + top_pad
     for ln in tl:
         d.text((118, y), ln, font=f_title, fill=xl.INK)
-        y += 170
+        y += 118
     y += 40
     d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
     y += 70
     for i, h in enumerate(heads):
         for j, ln in enumerate(h):
             if j == 0:
-                d.text((118, y), str(i + 1), font=f_num, fill=xl.AMBER_D)
+                d.text((118, y), str(i + 1), font=f_num, fill=xl.YELLOW)
             d.text((198, y), ln, font=f_head, fill=xl.BODY)
             y += 64
         y += 30
@@ -218,7 +218,7 @@ def draw_end(jinju, question, path, fav_text='收藏这篇，持续更新', foot
     from PIL import ImageDraw
     import xhs_light as xl
     img = xl.bg()
-    d = xl.header(img, '鸡仔AI早报', '')
+    d = xl.header(img, '鸡仔AI周报', '')
     f_lab, f_j, f_q, f_btn = xl.fs(32), xl.fs(48), xl.fr(40), xl.fs(40)
     jl = xl.wrap2(d, jinju or '保持好奇，下周见。', f_j, W - 280)[:3]
     ql = xl.wrap2(d, question or '这周哪条 AI 新动态最让你意外？评论区聊聊。',
@@ -231,7 +231,7 @@ def draw_end(jinju, question, path, fav_text='收藏这篇，持续更新', foot
     img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
     d = ImageDraw.Draw(img)
     y = py + top_pad
-    d.text((118, y), '本周金句', font=f_lab, fill=xl.AMBER_D)
+    d.text((118, y), '本周金句', font=f_lab, fill=xl.YELLOW)
     y += 80
     for ln in jl:
         d.text((118, y), ln, font=f_j, fill=xl.INK)

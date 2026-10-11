@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""小红书卡片共享浅色视觉：参考风轻盈玻璃拟态（2026-10-11 用户定稿，全类型统一）。
+"""小红书卡片共享视觉：深色苹果风 + 毛玻璃（与此前已发布的开源项目卡一模一样）。
 
-平涂浅灰底 #F0F0F0（无彩色光斑）+ 卡片自带极淡冷色渐变 tint
-+ 克制阴影 + 白描边 + 黄色品牌点缀。
-参考：Grey黎《原创-Figma玻璃质感人物卡片教程》（笔记ID 6ac64e6d000000001203bac2）。
+深色渐变底 + 柔光色块 + 深色毛玻璃面板（模糊背景 + 半透明白 + 白描边）
++ 黄色点缀。2026-10-11 用户拍板：退回深色原版，三类卡片全部统一。
 各内容类型（开源项目 / AI 实战教程 / 每周盘点）共用这套视觉语言，
 只换 kicker 文案与内容结构。
 """
@@ -31,30 +30,22 @@ def fr(size):
 PUNCT = set('，。！？；：、）】”’')
 
 # 统一字阶（全类型共用，一卡内不超过 4 档）
-T_HERO = 132     # 封面超大标题（对标教程：占画面上三分之一）
-T_DISPLAY = 96   # 封面主标题
+T_DISPLAY = 92   # 封面主标题（与原版项目卡一致）
 T_TITLE = 72     # 内容卡标题 / 大数字
 T_LEAD = 48      # 封面副标题 / 引言
 T_BODY = 40      # 正文 / 气泡 / 注解正文
 T_SMALL = 32     # 标签 / 场景 / 次要说明
 T_META = 28      # 页眉页脚 / 计数
 
-# 浅色玻璃拟态配色
-INK = (28, 28, 34)
-BODY = (62, 62, 72)
-GRAY = (110, 112, 125)
-MUTED = (152, 154, 170)
+# 深色苹果风配色（与原版项目卡逐参数一致）
+INK = (245, 245, 247)
+BODY = (214, 214, 218)
+GRAY = (161, 161, 166)
+MUTED = (120, 120, 128)
 YELLOW = (245, 197, 24)
+YELLOW_D = (150, 110, 5)
 BROWN = (70, 50, 5)
-AMBER_D = (170, 115, 0)      # 浅底上的深金色小字
 WHITE = (255, 255, 255)
-USER_BUBBLE = (255, 243, 196)
-USER_EDGE = (235, 220, 170)
-AI_BUBBLE = (255, 255, 255)
-AI_EDGE = (226, 230, 242)
-WARN_BG = (255, 244, 232)
-WARN_EDGE = (238, 214, 178)
-WARN_TITLE = (170, 60, 30)
 CODE_BG = (30, 30, 40)
 CODE_INK = (255, 214, 120)
 
@@ -97,37 +88,41 @@ def wrap2(d, text, font, max_w, min_last=4):
 
 
 def bg():
-    """参考风：平涂浅灰 #F0F0F0，无彩色光斑（Grey黎教程原做法）"""
-    return Image.new('RGB', (W, H), (240, 240, 240))
-
-
-def glass(img, box, radius=36, shadow=True):
-    """参考风面板：平灰底上不再做真磨砂（无物可 blur），直接画极淡冷色渐变
-    面板 + 白描边 + 顶部高光 + 克制阴影（对标教程：2px 白描边、X0/Y20/模糊40）"""
-    x0, y0, x1, y1 = [int(v) for v in box]
-    w, h = x1 - x0, y1 - y0
-    img = img.convert('RGBA')
-    if shadow:
-        sh = Image.new('RGBA', img.size, (0, 0, 0, 0))
-        ImageDraw.Draw(sh).rounded_rectangle(
-            [x0, y0 + 20, x1, y1 + 20], radius=radius, fill=(31, 104, 126, 28))
-        sh = sh.filter(ImageFilter.GaussianBlur(42))
-        img = Image.alpha_composite(img, sh)
-    pane = Image.new('RGBA', (w, h))
-    td = ImageDraw.Draw(pane)
-    for yy in range(h):
-        t = yy / max(1, h - 1)
-        td.line([(0, yy), (w, yy)],
-                fill=(int(208 - 14 * t), int(228 - 12 * t), int(246 - 6 * t), 255))
-    mask = Image.new('L', (w, h), 0)
-    ImageDraw.Draw(mask).rounded_rectangle([0, 0, w, h], radius=radius, fill=255)
-    img.paste(pane, (x0, y0), mask)
+    """深色渐变底 + 柔光色块（与原版项目卡一致）"""
+    img = Image.new('RGB', (W, H))
     d = ImageDraw.Draw(img)
-    d.rounded_rectangle([x0, y0, x1, y1], radius=radius,
-                        outline=(255, 255, 255), width=2)
-    d.line([(x0 + 60, y0 + 2), (x1 - 60, y0 + 2)],
-           fill=(255, 255, 255), width=3)
-    return img.convert('RGB')
+    top, bot = (14, 14, 18), (30, 30, 38)
+    for y in range(H):
+        t = y / H
+        d.line([(0, y), (W, y)],
+               fill=tuple(int(top[i] + (bot[i] - top[i]) * t) for i in range(3)))
+    blob = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    bd = ImageDraw.Draw(blob)
+    bd.ellipse([-220, -160, 620, 560], fill=(90, 90, 200, 55))       # 靛蓝
+    bd.ellipse([560, 900, 1300, 1600], fill=(200, 150, 60, 40))      # 暗金
+    bd.ellipse([-260, 780, 420, 1380], fill=(60, 120, 200, 40))      # 深蓝
+    blob = blob.filter(ImageFilter.GaussianBlur(130))
+    img = Image.alpha_composite(img.convert('RGBA'), blob).convert('RGB')
+    return img
+
+
+def glass(img, box, radius=36, shadow=True, blur=24,
+            tint=(255, 255, 255, 22), edge=True):
+    """深色毛玻璃面板：模糊背景 + 半透明白 + 白描边（与原版 _frosted 一致）。"""
+    x0, y0, x1, y1 = [int(v) for v in box]
+    crop = img.crop((x0, y0, x1, y1))
+    pane = crop.filter(ImageFilter.GaussianBlur(blur)).convert('RGBA')
+    pane = Image.alpha_composite(
+        pane, Image.new('RGBA', pane.size, tint))
+    mask = Image.new('L', pane.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        [0, 0, pane.size[0], pane.size[1]], radius=radius, fill=255)
+    img.paste(pane, (x0, y0), mask)
+    if edge:
+        ImageDraw.Draw(img, 'RGBA').rounded_rectangle(
+            [x0, y0, x1, y1], radius=radius,
+            outline=(255, 255, 255, 45), width=2)
+    return img
 
 
 def _isword(ch):
