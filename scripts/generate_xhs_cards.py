@@ -122,106 +122,157 @@ def _centered(d, y, text, font, fill):
 
 
 def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
-             tip_text='每天 3 分钟，跟上 AI 圈动态'):
-    img, d = _bg()
-    _header(d, '')  # 封面不放日期：去日期化有利于搜索长尾流量
-    f_title = _font(110)
-    _centered(d, 330, big_title, f_title, C_WHITE)
-    # 黄色分隔线
-    d.rectangle([(W - 120) / 2, 500, (W + 120) / 2, 510], fill=C_YELLOW)
-    # 3 条头条
-    f_num, f_head = _font(52), _font(46)
-    y = 620
-    for i, p in enumerate(picks[:3]):
-        d.text((90, y), f'{i + 1}', font=f_num, fill=C_YELLOW)
-        for ln in _wrap(d, _clean(p['title']), f_head, W - 260)[:2]:
-            d.text((170, y), ln, font=f_head, fill=C_GRAY)
+               tip_text='每天 3 分钟，跟上 AI 圈动态'):
+    """周报封面：浅色轻盈玻璃拟态（2026-10-11 全类型统一）。"""
+    from PIL import ImageDraw
+    import xhs_light as xl
+    img = xl.bg()
+    d = xl.header(img, '鸡仔AI早报', '')
+    f_title, f_num, f_head, f_tip = xl.fs(110), xl.fs(52), xl.fr(46), xl.fr(38)
+    tl = xl.wrap2(d, big_title, f_title, W - 280)[:2]
+    heads = [xl.wrap2(d, p['title'], f_head, W - 280 - 100)[:2] for p in picks[:3]]
+    tip_ls = xl.wrap2(d, tip_text, f_tip, W - 280)[:2]
+    top_pad, bot_pad = 90, 80
+    ch = (top_pad + len(tl) * 140 + 40 + 10 + 60
+          + sum(len(h) * 72 + 30 for h in heads)
+          + 20 + len(tip_ls) * 58 + bot_pad)
+    px0, px1 = 48, W - 48
+    py = 150 + max(0, (H - 250 - ch) / 2)
+    img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
+    d = ImageDraw.Draw(img)
+    y = py + top_pad
+    for ln in tl:
+        d.text((118, y), ln, font=f_title, fill=xl.INK)
+        y += 140
+    y += 40
+    d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
+    y += 70
+    for i, h in enumerate(heads):
+        for j, ln in enumerate(h):
+            if j == 0:
+                d.text((118, y), str(i + 1), font=f_num, fill=xl.AMBER_D)
+            d.text((198, y), ln, font=f_head, fill=xl.BODY)
             y += 72
-        y += 50
-    f_tip = _font(38)
-    _centered(d, y + 40, tip_text, f_tip, C_DIM)
-    _footer(d, footer_text or '🐤 鸡仔 · AI早报')
+        y += 30
+    y += 20
+    for ln in tip_ls:
+        d.text((118, y), ln, font=f_tip, fill=xl.GRAY)
+        y += 58
+    xl.footer(ImageDraw.Draw(img), footer_text or '鸡仔 · AI早报')
     img.save(path)
 
 
 def draw_card(pick, item, idx, total, path):
-    img, d = _bg()
-    from PIL import ImageDraw  # noqa
-    _header(d, '')
-    # 大编号
-    f_idx, f_tot = _font(170), _font(60)
-    num = NUMERALS[idx] if idx < len(NUMERALS) else f'{idx + 1:02d}'
-    d.text((70, 200), num, font=f_idx, fill=C_YELLOW)
-    tw = d.textlength(f'/ {total}', font=f_tot)
-    d.text((70 + d.textlength(num, font=f_idx) + 20, 320), f'/ {total}', font=f_tot, fill=C_DIM)
-    # 标题
-    f_title = _font(62)
-    y = 460
-    for ln in _wrap(d, _clean(pick['title']), f_title, W - 140)[:3]:
-        d.text((70, y), ln, font=f_title, fill=C_WHITE)
-        y += 92
-    d.rectangle([70, y + 10, W - 70, y + 13], fill=C_LINE)
-    y += 70
-    # 口语化介绍（代替公文腔摘要）
+    """周报内容卡：浅色轻盈玻璃拟态（2026-10-11 全类型统一）。"""
+    from PIL import ImageDraw
+    import xhs_light as xl
+    img = xl.bg()
+    d = xl.header(img, '鸡仔AI早报', '%02d / %02d' % (idx + 1, total))
+    f_num, f_num2 = xl.fs(72), xl.fr(40)
+    f_title, f_sum, f_use = xl.fs(60), xl.fr(40), xl.fr(38)
+    tl = xl.wrap2(d, pick['title'], f_title, W - 280)[:3]
     point = (item or {}).get('point', '').strip() or pick.get('summary', '')
-    f_sum = _font(40)
-    for ln in _wrap(d, _clean(point), f_sum, W - 140)[:4]:
-        if y > H - 560:
-            break
-        d.text((70, y), ln, font=f_sum, fill=C_GRAY)
-        y += 66
-    # "你能怎么用"高亮行
+    pl = xl.wrap2(d, point, f_sum, W - 280)[:4]
     usage = (item or {}).get('usage', '').strip()
-    if usage and y < H - 460:
-        f_use = _font(38)
-        ulines = _wrap(d, _clean('你能怎么用：' + usage), f_use, W - 140)[:2]
-        box_h = 36 + len(ulines) * 58
-        if y + box_h < H - 330:
-            d.rounded_rectangle([70, y + 10, W - 70, y + 10 + box_h], radius=16, fill=(58, 48, 12))
-            d.rectangle([70, y + 10, 82, y + 10 + box_h], fill=C_YELLOW)
-            uy = y + 28
-            for ln in ulines:
-                d.text((104, uy), ln, font=f_use, fill=C_YELLOW)
-                uy += 58
-            y += 10 + box_h + 10
-    # 一句话点评（引用块，有空间才画）
+    ul = xl.wrap2(d, '你能怎么用：' + usage, f_use, W - 280 - 60)[:2] if usage else []
     comment = (item or {}).get('comment', '').strip()
-    if comment:
-        f_cmt = _font(38)
-        lines = _wrap(d, _clean(comment), f_cmt, W - 220)
-        box_h = 40 + len(lines[:3]) * 62
-        if y + box_h < H - 220:
-            d.rounded_rectangle([70, y + 20, W - 70, y + 20 + box_h], radius=18, fill=C_CARD)
-            d.rectangle([70, y + 20, 82, y + 20 + box_h], fill=C_YELLOW)
-            cy = y + 42
-            d.text((110, cy - 6), '鸡仔点评', font=_font(34), fill=C_YELLOW)
-            cy += 52
-            for ln in lines[:3]:
-                d.text((110, cy), ln, font=f_cmt, fill=C_WHITE)
-                cy += 62
-            y += 20 + box_h
-    _footer(d)
+    cl = xl.wrap2(d, comment, f_use, W - 280 - 100)[:3] if comment else []
+
+    def _ch():
+        uh = (36 + len(ul) * 58 + 32) if ul else 0
+        chh = (36 + 52 + len(cl) * 60 + 32) if cl else 0
+        return (64 + 100 + 24 + len(tl) * 88 + 30 + 8 + 30
+                + len(pl) * 62 + 28
+                + (uh + 22 if ul else 0) + (chh + 22 if cl else 0) + 64)
+
+    while cl and _ch() > H - 320:
+        cl = cl[:-1]
+    while ul and _ch() > H - 320:
+        ul = ul[:-1]
+    while len(pl) > 2 and _ch() > H - 320:
+        pl = pl[:-1]
+    ch = _ch()
+    px0, px1 = 48, W - 48
+    py = 150 + max(0, (H - 250 - ch) / 2)
+    img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
+    d = ImageDraw.Draw(img)
+    y = py + 64
+    num = '%02d' % (idx + 1)
+    d.text((118, y), num, font=f_num, fill=xl.AMBER_D)
+    nw = d.textlength(num, font=f_num)
+    d.text((118 + nw + 16, y + 34), '/ %02d' % total, font=f_num2, fill=xl.MUTED)
+    y += 124
+    for ln in tl:
+        d.text((118, y), ln, font=f_title, fill=xl.INK)
+        y += 88
+    y += 30
+    d.rectangle([118, y, px1 - 70, y + 8], fill=(214, 216, 228))
+    y += 38
+    for ln in pl:
+        d.text((118, y), ln, font=f_sum, fill=xl.BODY)
+        y += 62
+    y += 28
+    if ul:
+        uh = 36 + len(ul) * 58 + 32
+        d.rounded_rectangle([118, y, px1 - 70, y + uh], radius=18,
+                            fill=xl.USER_BUBBLE, outline=xl.USER_EDGE, width=2)
+        d.rectangle([118, y + 16, 128, y + uh - 16], fill=xl.YELLOW)
+        uy = y + 36
+        for ln in ul:
+            d.text((152, uy), ln, font=f_use, fill=(120, 85, 0))
+            uy += 58
+        y += uh + 22
+    if cl:
+        chh = 36 + 52 + len(cl) * 60 + 32
+        d.rounded_rectangle([118, y, px1 - 70, y + chh], radius=18,
+                            fill=xl.AI_BUBBLE, outline=xl.AI_EDGE, width=2)
+        d.rectangle([118, y + 16, 128, y + chh - 16], fill=xl.YELLOW)
+        cy = y + 36
+        d.text((152, cy), '鸡仔点评', font=xl.fs(34), fill=xl.AMBER_D)
+        cy += 52
+        for ln in cl:
+            d.text((152, cy), ln, font=f_use, fill=xl.INK)
+            cy += 60
+        y += chh + 22
+    xl.footer(ImageDraw.Draw(img), '鸡仔 · AI早报')
     img.save(path)
 
 
 def draw_end(jinju, question, path, fav_text='收藏这篇，持续更新', footer_text=None):
-    img, d = _bg()
-    f1 = _font(64)
-    _centered(d, 420, '今日金句', f1, C_YELLOW)
-    f_j = _font(52)
-    y = 560
-    for ln in _wrap(d, _clean(jinju) or '保持好奇，明天见。', f_j, W - 200)[:3]:
-        _centered(d, y, ln, f_j, C_WHITE)
+    """周报末页：浅色轻盈玻璃拟态（2026-10-11 全类型统一）。"""
+    from PIL import ImageDraw
+    import xhs_light as xl
+    img = xl.bg()
+    d = xl.header(img, '鸡仔AI早报', '')
+    f_lab, f_j, f_q, f_btn = xl.fs(40), xl.fs(56), xl.fr(42), xl.fs(38)
+    jl = xl.wrap2(d, jinju or '保持好奇，下周见。', f_j, W - 280)[:3]
+    ql = xl.wrap2(d, question or '这周哪条 AI 新动态最让你意外？评论区聊聊。',
+                  f_q, W - 280)[:3]
+    top_pad, bot_pad = 100, 72
+    ch = (top_pad + 60 + 30 + len(jl) * 84 + 50 + 10 + 60
+          + len(ql) * 66 + 48 + 88 + bot_pad)
+    px0, px1 = 48, W - 48
+    py = 150 + max(0, (H - 250 - ch) / 2)
+    img = xl.glass(img, (px0, py, px1, py + ch), radius=40)
+    d = ImageDraw.Draw(img)
+    y = py + top_pad
+    d.text((118, y), '本周金句', font=f_lab, fill=xl.AMBER_D)
+    y += 90
+    for ln in jl:
+        d.text((118, y), ln, font=f_j, fill=xl.INK)
         y += 84
-    d.rectangle([(W - 120) / 2, y + 30, (W + 120) / 2, y + 40], fill=C_YELLOW)
-    f_q = _font(44)
-    y += 120
-    for ln in _wrap(d, _clean(question) or '今天哪条新闻最让你意外？评论区聊聊', f_q, W - 200)[:3]:
-        _centered(d, y, ln, f_q, C_GRAY)
-        y += 76
-    f_fav = _font(40)
-    _centered(d, y + 40, fav_text, f_fav, C_DIM)
-    _footer(d, footer_text or '🐤 鸡仔 · AI早报')
+    y += 50
+    d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
+    y += 70
+    for ln in ql:
+        d.text((118, y), ln, font=f_q, fill=xl.GRAY)
+        y += 66
+    y += 48
+    tw = d.textlength(fav_text, font=f_btn)
+    d.rounded_rectangle([(W - tw) / 2 - 34, y, (W + tw) / 2 + 34, y + 88],
+                        radius=44, fill=xl.YELLOW)
+    xl.ctext(d, W / 2, y + 44, fav_text, f_btn, xl.BROWN)
+    xl.footer(ImageDraw.Draw(img), footer_text or '鸡仔 · AI早报')
     img.save(path)
 
 
