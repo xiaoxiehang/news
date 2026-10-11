@@ -18,13 +18,16 @@ import xhs_light as xl
 def draw_cover(title, subtitle, stats, points, path):
     img = xl.bg()
     d = xl.header(img, '开源项目介绍', 'GitHub 今日趋势')
-    f_t, f_s, f_st = xl.fs(92), xl.fr(42), xl.fr(36)
-    tl = xl.wrap2(d, title, f_t, W - 280)[:2]
+    f_t, f_s, f_st = xl.fs(xl.T_HERO), xl.fr(42), xl.fr(36)
+    tl = []
+    for seg in title.split('｜'):
+        tl.extend(xl.wrap2(d, seg, f_t, W - 280))
+    tl = tl[:2]
     sl = xl.wrap2(d, subtitle, f_s, W - 280)[:2]
     f_p = xl.fr(38)
     pl = [xl.wrap2(d, p, f_p, W - 280 - 90)[:2] for p in points]
     top_pad, bot_pad = 72, 72
-    ch = (top_pad + len(tl) * 118 + 14 + len(sl) * 62 + 44
+    ch = (top_pad + len(tl) * 170 + 14 + len(sl) * 62 + 44
           + 96 + sum(len(x) * 62 + 40 for x in pl) + bot_pad)
     px0, px1 = 48, W - 48
     py = 150 + max(0, (H - 250 - ch) / 2)
@@ -33,7 +36,7 @@ def draw_cover(title, subtitle, stats, points, path):
     y = py + top_pad
     for ln in tl:
         d.text((118, y), ln, font=f_t, fill=xl.INK)
-        y += 118
+        y += 170
     y += 14
     for ln in sl:
         d.text((120, y), ln, font=f_s, fill=xl.AMBER_D)

@@ -128,12 +128,12 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
     import xhs_light as xl
     img = xl.bg()
     d = xl.header(img, '鸡仔AI早报', '')
-    f_title, f_num, f_head, f_tip = xl.fs(96), xl.fs(48), xl.fr(48), xl.fr(32)
+    f_title, f_num, f_head, f_tip = xl.fs(xl.T_HERO), xl.fs(48), xl.fr(48), xl.fr(32)
     tl = xl.wrap2(d, big_title, f_title, W - 280)[:2]
     heads = [xl.wrap2(d, p['title'], f_head, W - 280 - 100)[:2] for p in picks[:3]]
     tip_ls = xl.wrap2(d, tip_text, f_tip, W - 280)[:2]
     top_pad, bot_pad = 90, 80
-    ch = (top_pad + len(tl) * 128 + 40 + 10 + 60
+    ch = (top_pad + len(tl) * 170 + 40 + 10 + 60
           + sum(len(h) * 64 + 30 for h in heads)
           + 20 + len(tip_ls) * 44 + bot_pad)
     px0, px1 = 48, W - 48
@@ -143,7 +143,7 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
     y = py + top_pad
     for ln in tl:
         d.text((118, y), ln, font=f_title, fill=xl.INK)
-        y += 128
+        y += 170
     y += 40
     d.rectangle([118, y, 118 + 128, y + 10], fill=xl.YELLOW)
     y += 70
