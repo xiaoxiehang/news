@@ -163,7 +163,7 @@ def draw_cover(picks, path, big_title='今日AI早报', footer_text=None,
 
 
 def draw_card(pick, item, idx, total, path, footer_text=None):
-    """v6: 项目卡样式 —— 标题 + 黄色圆点条目（摘要/你能怎么用/鸡仔点评）。"""
+    """与项目卡一模一样：标题 + 黄色圆点条目，无行内标签。"""
     from PIL import ImageDraw
     import xhs_light as xl
     img = xl.bg()
@@ -176,25 +176,22 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
     point = (item or {}).get('point', '').strip() or pick.get('summary', '')
     usage = (item or {}).get('usage', '').strip()
     comment = (item or {}).get('comment', '').strip()
-    items = [(None, None, point)]
+    bullets = [point]
     if usage:
-        items.append(('你能怎么用', xl.AMBER_D, usage))
+        bullets.append(usage)
     if comment:
-        items.append(('鸡仔点评', xl.AMBER_D, comment))
+        bullets.append(comment)
 
     for tsize, bsize in [(60, 37), (56, 35), (52, 32)]:
-        f_title, f_b, f_lab = xl.fs(tsize), xl.fr(bsize), xl.fs(32)
+        f_title, f_b = xl.fs(tsize), xl.fr(bsize)
         tl = xl.wrap2(d, pick['title'], f_title, W - 280)[:2]
         bl = []
-        for n, (label, lfill, text) in enumerate(items):
-            lab_w = d.textlength(label + ' ', font=f_lab) if label else 0
+        for n, b in enumerate(bullets):
             cap = 4 if n == 0 else 3
-            lines = xl.wrap_first(d, text, f_b,
-                                  W - 280 - 46 - lab_w, W - 280 - 46)[:cap]
-            bl.append((label, lfill, lab_w, lines))
+            bl.append(xl.wrap_first(d, b, f_b, W - 280 - 60, W - 280 - 60)[:cap])
         tstep, bstep = tsize + 28, bsize + 29
         ch = (68 + len(tl) * tstep + 44
-              + sum(len(x[3]) * bstep + 26 for x in bl) - 26 + 68)
+              + sum(len(x) * bstep + 26 for x in bl) - 26 + 68)
         py = 150 + max(0, (H - 250 - ch) / 2)
         if py + ch <= H - 40:
             break
@@ -206,15 +203,11 @@ def draw_card(pick, item, idx, total, path, footer_text=None):
         d.text((118, y), ln, font=f_title, fill=xl.INK)
         y += tstep
     y += 44
-    for label, lfill, lab_w, lines in bl:
+    for lines in bl:
         for j, ln in enumerate(lines):
             if j == 0:
                 d.ellipse([120, y + 16, 142, y + 38], fill=xl.YELLOW)
-                if label:
-                    d.text((166, y), label + ' ', font=f_lab, fill=lfill)
-                d.text((166 + lab_w, y), ln, font=f_b, fill=xl.BODY)
-            else:
-                d.text((166, y), ln, font=f_b, fill=xl.BODY)
+            d.text((166, y), ln, font=f_b, fill=xl.BODY)
             y += bstep
         y += 26
     img.save(path)

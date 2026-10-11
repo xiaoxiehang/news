@@ -135,7 +135,7 @@ def draw_cover_tutorial(kicker, title_lines, tips, path):
 
 
 def draw_tip_card(tip, idx, total, path):
-    """v6: 项目卡样式 —— 标题 + 黄色圆点条目（场景/提示词/AI效果/避坑）。"""
+    """与项目卡一模一样：标题 + 黄色圆点条目，无行内标签。"""
     from PIL import ImageDraw
     img = xl.bg()
     d = xl.header(img, '鸡仔AI实战', 'AI 提示词实战')
@@ -144,24 +144,15 @@ def draw_tip_card(tip, idx, total, path):
     tw = d.textlength(t, font=f)
     d.text((W - 70 - tw, 112), t, font=f, fill=xl.MUTED)
 
-    items = [
-        ('场景', xl.AMBER_D, tip['scene']),
-        ('提示词', xl.AMBER_D, tip['user']),
-        ('AI 效果', xl.AMBER_D, tip['ai']),
-        ('避坑', xl.WARN_TITLE, tip['warn']),
-    ]
+    bullets = [tip['scene'], tip['user'], tip['ai'], tip['warn']]
     for tsize, bsize in [(60, 37), (56, 35), (52, 32)]:
-        f_title, f_b, f_lab = xl.fs(tsize), xl.fr(bsize), xl.fs(32)
+        f_title, f_b = xl.fs(tsize), xl.fr(bsize)
         tl = xl.wrap2(d, tip['title'], f_title, W - 280)[:2]
-        bl = []
-        for label, lfill, text in items:
-            lab_w = d.textlength(label + ' ', font=f_lab)
-            lines = xl.wrap_first(d, text, f_b,
-                                  W - 280 - 46 - lab_w, W - 280 - 46)[:4]
-            bl.append((label, lfill, lab_w, lines))
+        bl = [xl.wrap_first(d, b, f_b, W - 280 - 60, W - 280 - 60)[:4]
+              for b in bullets]
         tstep, bstep = tsize + 28, bsize + 29
         ch = (68 + len(tl) * tstep + 44
-              + sum(len(x[3]) * bstep + 26 for x in bl) - 26 + 68)
+              + sum(len(x) * bstep + 26 for x in bl) - 26 + 68)
         py = 150 + max(0, (H - 250 - ch) / 2)
         if py + ch <= H - 40:
             break
@@ -173,14 +164,11 @@ def draw_tip_card(tip, idx, total, path):
         d.text((118, y), ln, font=f_title, fill=xl.INK)
         y += tstep
     y += 44
-    for label, lfill, lab_w, lines in bl:
+    for lines in bl:
         for j, ln in enumerate(lines):
             if j == 0:
                 d.ellipse([120, y + 16, 142, y + 38], fill=xl.YELLOW)
-                d.text((166, y), label + ' ', font=f_lab, fill=lfill)
-                d.text((166 + lab_w, y), ln, font=f_b, fill=xl.BODY)
-            else:
-                d.text((166, y), ln, font=f_b, fill=xl.BODY)
+            d.text((166, y), ln, font=f_b, fill=xl.BODY)
             y += bstep
         y += 26
     img.save(path)
