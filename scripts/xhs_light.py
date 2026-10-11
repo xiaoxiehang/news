@@ -118,7 +118,7 @@ def glass(img, box, radius=36, shadow=True):
     for yy in range(h):
         t = yy / max(1, h - 1)
         td.line([(0, yy), (w, yy)],
-                fill=(int(236 - 5 * t), int(239 - 4 * t), int(250 - 3 * t), 255))
+                fill=(int(208 - 14 * t), int(228 - 12 * t), int(246 - 6 * t), 255))
     mask = Image.new('L', (w, h), 0)
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, w, h], radius=radius, fill=255)
     img.paste(pane, (x0, y0), mask)
