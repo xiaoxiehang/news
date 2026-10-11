@@ -75,8 +75,8 @@ def build_prompt(cands):
         '3. hook 一句话开场钩子，点出本周最大看点。\n'
         '4. point：这条新闻讲了什么，1-2 句大白话，不超过 60 字，不要极客梗。\n'
         '5. usage：一句话"普通人能怎么用"，必须具体可操作；纯资讯类可写"适合谁关注"。\n'
-        '6. comment：一句话"鸡仔说"点评，大白话、有态度，20-40 字。\n'
-        '7. tags：首位必须是"鸡仔AI早报"，再加 4-6 个相关标签（含"一周盘点"）。\n'
+        '6. comment：一句话点评，大白话、有态度，15-30 字，不要带"鸡仔说"前缀（发布模板会自动加）。\n'
+        '7. tags：首位必须是"鸡仔AI早报"，再加 7-9 个相关标签（含"一周盘点"），总共 8-10 个。\n'
         '8. question：结尾互动提问，问本周相关的问题。\n'
         '9. jinju：一句本周金句，20 字以内。\n'
         '10. 注意：最终发布正文（含标签）最多 1000 字，point 务必精简。'
@@ -144,7 +144,14 @@ def main():
         if target is None:
             break
         it, k, v = target
-        it[k] = v[:max(20, int(len(v) * 0.7))]
+        cut = v[:max(20, int(len(v) * 0.7))]
+        # 避免半句截断：回退到切片内最后一个句读（2026-10-11 修：此前曾截出"……更直观，"类半句）
+        for sep in ('。', '！', '？', '；'):
+            j = cut.rfind(sep)
+            if j >= 10:
+                cut = cut[:j + 1]
+                break
+        it[k] = cut
         body = assemble_body(dict(post, items=slim_items), picks, include_point=False,
                              list_title='本周 8 大看点',
                              fav_line='收藏这篇，下周接着看')

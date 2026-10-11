@@ -55,12 +55,14 @@ def check_package(date, root="xhs"):
     elif len(title) > 20:
         fails.append(f"FAIL: title 长度 - {len(title)} 字超过 20 字上限: {title}")
 
-    # c. tags 非空且 tags[0] == '鸡仔AI早报'
+    # c. tags 非空且 tags[0] == '鸡仔AI早报'；发布任务要求标签 >= 8 个
     tags = post.get("tags")
     if not tags:
         fails.append("FAIL: tags 规范 - tags 字段缺失或为空")
     elif tags[0] != "鸡仔AI早报":
         fails.append(f"FAIL: tags 规范 - 首位应为'鸡仔AI早报'，实际为: {tags[0]}")
+    elif len(tags) < 8:
+        fails.append(f"FAIL: tags 数量 - 仅 {len(tags)} 个，发布要求 >= 8 个")
 
     # c2. 正文 + #标签行 合计不超过 1000 字（小红书平台正文上限）
     body = post.get("body") or ""
