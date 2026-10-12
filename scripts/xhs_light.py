@@ -21,10 +21,15 @@ def fs(size):
 
 
 def fr(size):
-    try:
-        return ImageFont.truetype(FONT_REG, size, index=2)
-    except Exception:
-        return ImageFont.truetype(FONT_REG, size)
+    # 常规字重：优先系统 NotoSansCJK（本机），CI 等无系统字体的环境
+    # 回退到仓库自带的 SemiBold，保证任何机器都能跑
+    for _p, _kw in ((FONT_REG, {'index': 2}), (FONT_REG, {}),
+                    (FONT_SEMI, {})):
+        try:
+            return ImageFont.truetype(_p, size, **_kw)
+        except Exception:
+            continue
+    return ImageFont.truetype(FONT_SEMI, size)
 
 
 PUNCT = set('，。！？；：、）】”’')
