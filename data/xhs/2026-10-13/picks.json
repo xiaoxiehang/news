@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-13",
+  "date_str": "2026年10月13日",
+  "overview": "今天的 AI 热点，一边是 Meta、微软继续推出新模型，一边是 AI 进入核电运营、天气预测和建筑制图等具体场景。与此同时，大规模企业数据提醒我们：AI 能让人写出更多代码，却未必能让软件更快交付；算力需求也正在影响普通消费者购买硬件的成本。",
+  "picks": [
+    {
+      "title": "AI 需求挤压供应，固态硬盘价格持续上涨",
+      "summary": "据 Solidot 报道，受 AI 企业需求影响，厂商优先向相关客户供应固态硬盘，普通电脑使用的产品因而面临缺货和涨价。相关价格已连续六个季度上涨；对准备升级电脑的消费者来说，AI 热潮正从云端服务延伸到看得见的硬件开支。",
+      "url": "https://www.solidot.org/story?sid=85586",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "AI 初创公司称可在数分钟内生成符合规范的建筑图纸",
+      "summary": "美国初创公司 Blueprints AI 开发了一款制图工具，声称能依据照片、PDF 或草图，在数分钟内生成符合建筑规范、可用于申请许可的图纸。它瞄准的是传统制图中耗时的整理与绘制环节；实际能否获批，仍取决于当地要求和后续审核。",
+      "url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes/",
+      "source": "TechCrunch",
+      "category": "效率工具"
+    },
+    {
+      "title": "研究发现：AI 编程智能体写出更多代码，软件产出却未同步增长",
+      "summary": "一项覆盖逾 700 家软件公司、70 多万名员工的研究发现，企业引入 AI 编程智能体后，代码总行数平均增加约 30%，但尚无充分证据表明软件产量随之提高。人工代码审查仍是重要瓶颈，提醒企业不能只用“写了多少代码”衡量 AI 效率。",
+      "url": "https://www.solidot.org/story?sid=85589",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "AI 智能体三周重构 30 万行代码：评分提升，质量仍待检验",
+      "summary": "CodeScene 公布案例：AI 编程智能体用三周重构一个约 30 万行的开源 C 语言项目，涉及 726 个文件，代码健康评分从 5.6 升至 10.0。不过，评分上涨不等于软件已全面变好；如此大规模的修改，仍需要人检查功能与长期维护效果。",
+      "url": "https://www.infoq.cn/article/Qk7CzmLpDCvfYpAiU6Tf",
+      "source": "InfoQ 推荐",
+      "category": "前沿动态"
+    },
+    {
+      "title": "微软基于通义千问推出决策模型 Microsoft-Decision-1",
+      "summary": "微软在阿里巴巴开放权重模型 Qwen3.5-9B 的基础上，推出面向特定决策任务的 Microsoft-Decision-1，目标是减少模型给出错误答案的情况。微软同时表示，未来计划以自研模型和 OpenAI 模型替代目前使用的 Qwen 模型。",
+      "url": "https://www.solidot.org/story?sid=85584",
+      "source": "Solidot",
+      "category": "今日头条"
+    },
+    {
+      "title": "Meta 推出两款全新 AI 模型",
+      "summary": "Meta 继推出 Muse Spark 模型和 Muse 智能体后，又发布了两款新模型，加快追赶其他 AI 大厂的步伐。这次发布值得关注的不只是模型数量：Meta 能否把连续推出的新技术变成普通人真正愿意使用的产品，仍有待观察。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "美国核反应堆开始引入 AI 助手",
+      "summary": "Atomic Canyon 与核工业组织合作推出核电运营助手 NIVA；在完成试点后，该工具现已向美国全部 94 座核反应堆开放使用。AI 正进入安全要求极高的行业，但“开放使用”不等于所有核电站都已部署，更不意味着关键操作交由 AI 自动决定。",
+      "url": "https://www.solidot.org/story?sid=85592",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "AI 天气预测公司 WindBorne 获近 5000 万美元美国空军合同",
+      "summary": "利用气象气球采集数据、借助 AI 预测天气的初创公司 WindBorne，获得一份价值近 5000 万美元的美国空军合同。这笔订单显示，AI 天气预测正在进入对实时信息有较高要求的应用场景；报道未说明合同将如何改变普通用户的天气预报体验。",
+      "url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    }
+  ]
+}

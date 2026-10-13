@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11 02:21:04",
+  "updated_at": "2026-10-13 02:21:34",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -2286,11 +2286,6 @@
       "why_hot": "开放支付基础设施受关注，新人需要清晰入口。",
       "who": "适合关注普惠支付和开源协作的人。"
     },
-    "not-a-bank/open-banking-tracker-data": {
-      "what": "整理开放银行 API 的目录数据。",
-      "why_hot": "找银行接口不容易，集中目录方便检索。",
-      "who": "适合做开放银行产品的人。"
-    },
     "FreeCodeCampChina/freecodecamp.cn": {
       "what": "提供中文版编程课程和开源学习平台。",
       "why_hot": "免费中文编程资源需求一直很大。",
@@ -2866,11 +2861,6 @@
       "why_hot": "免费中文学习资源好找、好分享，需求一直在。",
       "who": "适合自学编程、找教材的人。"
     },
-    "remotion-dev/remotion": {
-      "what": "用 React 组件和代码生成视频。",
-      "why_hot": "批量做视频内容时，写代码比手工剪更灵活。",
-      "who": "适合会 React 的视频创作者。"
-    },
     "team-spotube/spotube": {
       "what": "支持桌面和手机的开源音乐播放应用。",
       "why_hot": "跨设备听歌方便，开源客户端也容易引起关注。",
@@ -2920,11 +2910,6 @@
       "what": "把持续流入的内容变成可搜索、可告警的数据。",
       "why_hot": "信息更新太快，实时检索和监控更有用。",
       "who": "适合处理持续更新数据的团队。"
-    },
-    "YunaiV/ruoyi-vue-pro": {
-      "what": "覆盖权限、工作流和业务模块的后台系统。",
-      "why_hot": "企业后台功能杂，现成模块能少写不少重复代码。",
-      "who": "适合做 Java 企业管理系统的团队。"
     },
     "chatwoot/chatwoot": {
       "what": "整合在线聊天、邮件等渠道的开源客服平台。",
@@ -3231,16 +3216,6 @@
       "why_hot": "内容实用，手机能看还能搜索，分享起来方便。",
       "who": "适合想找生活建议、喜欢轻量阅读的人。"
     },
-    "dockur/windows": {
-      "what": "用 Docker 封装 Windows 虚拟机的部署项目。",
-      "why_hot": "一条熟悉的容器化路径就能部署 Windows，很直观。",
-      "who": "适合需要临时 Windows 环境的开发者。"
-    },
-    "sickcodes/Docker-OSX": {
-      "what": "通过 Docker 管理和运行 macOS 虚拟机。",
-      "why_hot": "跨平台测试和安全研究都需要可复现的 macOS 环境。",
-      "who": "适合做 macOS 测试和安全研究的人。"
-    },
     "LosaLosSantos/aurelio-finance": {
       "what": "可自托管的个人资产分析工具，带 AI 洞察。",
       "why_hot": "资产数据自己保管，还能看 AI 分析，挺对胃口。",
@@ -3250,21 +3225,6 @@
       "what": "结合规则和大模型，自动给代码做行级审查。",
       "why_hot": "规则兜底加智能分析，适合团队提速又控风险。",
       "who": "适合维护大型代码库的开发团队。"
-    },
-    "genspark-ai/genoffice": {
-      "what": "带 AI 助手的开源文档、表格和演示办公套件。",
-      "why_hot": "办公编辑器还能接编程智能体，玩法很新。",
-      "who": "适合想用 AI 处理办公文件的人。"
-    },
-    "oso95/scroll-world": {
-      "what": "把品牌内容做成可滚动的 3D 落地页。",
-      "why_hot": "品牌展示更有沉浸感，也容易做出传播效果。",
-      "who": "适合品牌设计师和前端开发者。"
-    },
-    "lnkiai/m3e-canvas": {
-      "what": "在浏览器里画界面，并转成生成代码的提示词。",
-      "why_hot": "把设计草图直接接到 AI 编程，省去描述界面。",
-      "who": "适合做原型的设计师和独立开发者。"
     },
     "multica-ai/andrej-karpathy-skills": {
       "what": "用一份 CLAUDE.md 改善 Claude Code 的编程习惯。",
@@ -3451,11 +3411,6 @@
       "why_hot": "模型任务越来越重，开发者需要更方便地扩容。",
       "who": "做大规模 AI 训练和推理的团队。"
     },
-    "deepspeedai/DeepSpeed": {
-      "what": "让大模型训练和推理更省资源的工具库。",
-      "why_hot": "算力成本不低，能提高效率的工具一直有人找。",
-      "who": "训练或部署大模型的工程师。"
-    },
     "heygen-com/hyperframes": {
       "what": "用 HTML 编写画面并渲染成视频。",
       "why_hot": "写代码就能做视频，很适合接入 AI 智能体。",
@@ -3465,16 +3420,6 @@
       "what": "帮玩家安装、调整和还原游戏画质增强方案。",
       "why_hot": "一键折腾多种游戏画质方案，容易吸引玩家尝鲜。",
       "who": "爱调画质和帧率的 PC 玩家。"
-    },
-    "farion1231/cc-switch": {
-      "what": "把 Claude Code、Codex 等 AI 编程工具集中到一个桌面应用。",
-      "why_hot": "AI 编程工具越用越多，能集中管理的工具容易受关注。",
-      "who": "同时用多个 AI 编程工具的开发者。"
-    },
-    "public-apis/public-apis": {
-      "what": "整理各类免费 API 的开源清单。",
-      "why_hot": "找免费接口做原型很方便，也适合顺手收藏。",
-      "who": "找接口做项目或练手的开发者。"
     },
     "DuarteSantos8/openGym": {
       "what": "自己部署的健身记录工具，能排计划、记训练。",
@@ -3486,45 +3431,65 @@
       "why_hot": "大家都在用编程助手，速度和费用自然成了痛点。",
       "who": "常用 AI 编程助手的大型项目团队。"
     },
-    "go-gitea/gitea": {
-      "what": "可自行部署的 Git 协作平台，带代码评审和 CI/CD。",
-      "why_hot": "想自己掌控代码和开发流程的团队一直有需求。",
-      "who": "想自建代码托管平台的团队。"
+    "mattpocock/skills": {
+      "what": "分享作者日常使用的工程师 Agent 技能配置。",
+      "why_hot": "大家都在找能直接借鉴的 Agent 工作流。",
+      "who": "适合想优化 AI 编程流程的开发者。"
     },
-    "clash-verge-rev/clash-verge-rev": {
-      "what": "基于 Tauri 的 Clash 代理客户端，支持 Windows、macOS 和 Linux。",
-      "why_hot": "体积轻量、界面简洁，维护活跃，是桌面代理的常用选择。",
-      "who": "需要桌面代理工具的用户。"
+    "storytold/lightcraft": {
+      "what": "用 Rust 从零开发的无损照片编辑器。",
+      "why_hot": "开源修图工具加上纯 Rust 实现，很吸引眼球。",
+      "who": "适合摄影爱好者和 Rust 开发者。"
     },
-    "anomalyco/opencode": {
-      "what": "跑在终端里的开源 AI 编程助手。",
-      "why_hot": "AI 编程工具正火，开源的终端方案给了开发者更多选择。",
-      "who": "习惯在终端里工作的开发者。"
+    "shihabal3amri/DiPlay": {
+      "what": "让兼容的安卓车机接收有线或无线 CarPlay。",
+      "why_hot": "安卓车机用 CarPlay 的需求很实在，公开预览也方便尝鲜。",
+      "who": "适合有兼容安卓车机的车主。"
     },
-    "2dust/v2rayN": {
-      "what": "Windows 等桌面平台的 V2Ray/Xray 图形客户端。",
-      "why_hot": "配置方便、更新及时，桌面代理用户装机常备。",
-      "who": "需要桌面代理客户端的用户。"
+    "baidu/Unlimited-OCR": {
+      "what": "用 OCR 处理长篇内容的解析项目。",
+      "why_hot": "长文档解析是常见痛点，一次处理的思路很抓人。",
+      "who": "适合做文档数字化和信息提取的人。"
     },
-    "jaywcjlove/awesome-mac": {
-      "what": "Mac 常用软件和工具的精选清单，按类别整理。",
-      "why_hot": "换机装机时照着清单找软件很省事，持续更新多年。",
-      "who": "Mac 用户，尤其是刚入门的新手。"
+    "paperclipai/paperclip": {
+      "what": "用于管理工作中多个 AI Agent 的开源应用。",
+      "why_hot": "Agent 越用越多，大家开始需要统一管理。",
+      "who": "适合在团队里使用多个 Agent 的人。"
     },
-    "torvalds/linux": {
-      "what": "Linux 操作系统的内核源码。",
-      "why_hot": "服务器、安卓、嵌入式几乎都跑在它上面，更新从未停过。",
-      "who": "系统开发和内核爱好者。"
+    "hugohe3/ppt-master": {
+      "what": "把文档或主题变成可编辑的原生 PowerPoint。",
+      "why_hot": "能生成图表、动画等原生元素，比只出图片更实用。",
+      "who": "适合经常做汇报和演示的人。"
     },
-    "nodejs/node": {
-      "what": "让 JavaScript 能跑在服务器端的运行时。",
-      "why_hot": "前后端统一语言的生态持续活跃，版本迭代快。",
-      "who": "全栈和后端开发者。"
+    "LeCoupa/awesome-cheatsheets": {
+      "what": "汇总编程语言和开发工具的单文件速查表。",
+      "why_hot": "查语法时能快速翻一眼，收藏起来很省事。",
+      "who": "适合常切换技术栈的开发者。"
     },
-    "HabitRPG/habitica": {
-      "what": "把习惯养成做成 RPG 游戏的开源应用。",
-      "why_hot": "打怪升级的机制让坚持习惯变得有意思，老牌项目。",
-      "who": "想靠游戏化改掉拖延的人。"
+    "pliang279/awesome-multimodal-ml": {
+      "what": "整理多模态机器学习研究资料的阅读清单。",
+      "why_hot": "多模态方向持续受关注，系统书单方便入门。",
+      "who": "适合研究或学习多模态模型的人。"
+    },
+    "YyzHarry/imbalanced-regression": {
+      "what": "研究数据分布不均时的深度回归方法。",
+      "why_hot": "不平衡数据不只困扰分类，回归问题也值得关注。",
+      "who": "适合处理长尾数值预测的研究者。"
+    },
+    "pliang279/MultiBench": {
+      "what": "提供多模态表示学习的多尺度评测基准。",
+      "why_hot": "多模态方法多了，统一评测就更有参考价值。",
+      "who": "适合做多模态模型实验的研究者。"
+    },
+    "devaccuracy/ledgerforge": {
+      "what": "为钱包、支付等场景提供开源复式记账账本。",
+      "why_hot": "精确金额和可核验审计链，正好切中资金系统痛点。",
+      "who": "适合开发支付或计费系统的团队。"
+    },
+    "Dujltqzv/Some-Many-Books": {
+      "what": "整理作者个人收藏书籍的清单。",
+      "why_hot": "书单容易被收藏转发，找书时也能顺手参考。",
+      "who": "适合喜欢逛书单、找阅读灵感的人。"
     }
   }
 }
