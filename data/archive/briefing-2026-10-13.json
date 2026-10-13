@@ -1,64 +1,64 @@
 {
   "date": "2026-10-13",
   "date_str": "2026年10月13日",
-  "overview": "今天的 AI 热点，一边是 Meta、微软继续推出新模型，一边是 AI 进入核电运营、天气预测和建筑制图等具体场景。与此同时，大规模企业数据提醒我们：AI 能让人写出更多代码，却未必能让软件更快交付；算力需求也正在影响普通消费者购买硬件的成本。",
+  "overview": "过去两天，Meta和微软发布新模型，具身智能公司星尘智能披露新一轮融资，AI的产品与资本动态都很活跃。与此同时，核电站开始引入AI助手，一项大规模研究则提醒人们：AI让代码变多，不等于软件产出也随之增加。",
   "picks": [
     {
-      "title": "Meta 推出两款全新 AI 模型",
-      "summary": "Meta 继推出 Muse Spark 模型和 Muse 智能体后，又发布了两款新模型，加快追赶其他 AI 大厂的步伐。这次发布值得关注的不只是模型数量：Meta 能否把连续推出的新技术变成普通人真正愿意使用的产品，仍有待观察。",
+      "title": "Meta推出两款新AI模型",
+      "summary": "Meta推出两款新AI模型，延续其近期在模型和AI助手领域的密集发布。继重组后的超级智能实验室推出首款模型后，这次上新也显示Meta正加快扩充产品阵容；新模型的具体能力和实际使用体验，仍有待进一步检验。",
       "url": "https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model",
       "source": "The Verge",
       "category": "今日头条"
     },
     {
-      "title": "微软基于通义千问推出决策模型 Microsoft-Decision-1",
-      "summary": "微软在阿里巴巴开放权重模型 Qwen3.5-9B 的基础上，推出面向特定决策任务的 Microsoft-Decision-1，目标是减少模型给出错误答案的情况。微软同时表示，未来计划以自研模型和 OpenAI 模型替代目前使用的 Qwen 模型。",
+      "title": "微软基于通义千问推出决策模型Microsoft-Decision-1",
+      "summary": "微软基于阿里巴巴开放权重模型Qwen3.5-9B，推出面向特定商业问题的Microsoft-Decision-1，重点是让模型给出更可靠的决策建议。微软表示，未来计划以自研模型及OpenAI模型替代当前所用的Qwen模型。",
       "url": "https://www.solidot.org/story?sid=85584",
       "source": "Solidot",
       "category": "今日头条"
     },
     {
-      "title": "美国核反应堆开始引入 AI 助手",
-      "summary": "Atomic Canyon 与核工业组织合作推出核电运营助手 NIVA；在完成试点后，该工具现已向美国全部 94 座核反应堆开放使用。AI 正进入安全要求极高的行业，但“开放使用”不等于所有核电站都已部署，更不意味着关键操作交由 AI 自动决定。",
+      "title": "星尘智能完成新一轮融资，估值达150亿元",
+      "summary": "具身智能公司星尘智能近日完成规模达10亿元的新一轮融资，披露的公司估值为150亿元。本轮由投控东海领投，多家机构参与；这笔融资也反映出资本市场仍在持续投入能走出实验室、进入实际场景的AI机器人。",
+      "url": "https://www.infoq.cn/article/z9ORbE470QJDHDiBCC8S",
+      "source": "InfoQ 推荐",
+      "category": "前沿动态"
+    },
+    {
+      "title": "美国核反应堆开始引入AI助手",
+      "summary": "Atomic Canyon与核工业组织合作推出面向核反应堆运营的AI助手NIVA。在完成试点后，该工具现已向美国全部94座核反应堆开放使用；“开放使用”不等于所有设施均已部署，但表明AI正进入安全要求极高的行业。",
       "url": "https://www.solidot.org/story?sid=85592",
       "source": "Solidot",
       "category": "前沿动态"
     },
     {
-      "title": "研究发现：AI 编程智能体写出更多代码，软件产出却未同步增长",
-      "summary": "一项覆盖逾 700 家软件公司、70 多万名员工的研究发现，企业引入 AI 编程智能体后，代码总行数平均增加约 30%，但尚无充分证据表明软件产量随之提高。人工代码审查仍是重要瓶颈，提醒企业不能只用“写了多少代码”衡量 AI 效率。",
+      "title": "研究发现：AI编程智能体让代码变多，却未带来更多软件",
+      "summary": "一项覆盖逾700家软件公司、70万余名员工的研究发现，引入AI编程智能体后，企业代码总行数平均增加约30%。但人工代码审查可能成为瓶颈，研究未找到充分证据表明软件产量随之提高，提醒企业别只用“写了多少代码”衡量成效。",
       "url": "https://www.solidot.org/story?sid=85589",
       "source": "Solidot",
       "category": "前沿动态"
     },
     {
-      "title": "AI 智能体三周重构 30 万行代码：评分提升，质量仍待检验",
-      "summary": "CodeScene 公布案例：AI 编程智能体用三周重构一个约 30 万行的开源 C 语言项目，涉及 726 个文件，代码健康评分从 5.6 升至 10.0。不过，评分上涨不等于软件已全面变好；如此大规模的修改，仍需要人检查功能与长期维护效果。",
-      "url": "https://www.infoq.cn/article/Qk7CzmLpDCvfYpAiU6Tf",
-      "source": "InfoQ 推荐",
+      "title": "AI需求挤占供应，固态硬盘价格持续上涨",
+      "summary": "报道称，固态硬盘价格已连续六个季度上涨，过去一年涨幅显著。AI公司的采购需求使供应商优先向其供货，挤压了个人电脑所用产品的供应；这一变化可能最终传导至电脑等消费设备的成本。",
+      "url": "https://www.solidot.org/story?sid=85586",
+      "source": "Solidot",
       "category": "前沿动态"
     },
     {
-      "title": "AI 初创公司称可在数分钟内生成符合规范的建筑图纸",
-      "summary": "美国初创公司 Blueprints AI 开发了一款制图工具，声称能依据照片、PDF 或草图，在数分钟内生成符合建筑规范、可用于申请许可的图纸。它瞄准的是传统制图中耗时的整理与绘制环节；实际能否获批，仍取决于当地要求和后续审核。",
+      "title": "创业公司推出AI制图工具，称可在几分钟内生成建筑蓝图",
+      "summary": "美国创业公司Blueprints AI开发了一款工具，可根据照片、PDF或手绘草图生成建筑蓝图。公司称图纸符合相关规范、可用于申请许可；对建筑设计和报批流程而言，这是一种潜在的提速方式，但具体项目仍需专业人员核查。",
       "url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes/",
       "source": "TechCrunch",
       "category": "效率工具"
     },
     {
-      "title": "AI 天气预测公司 WindBorne 获近 5000 万美元美国空军合同",
-      "summary": "利用气象气球采集数据、借助 AI 预测天气的初创公司 WindBorne，获得一份价值近 5000 万美元的美国空军合同。这笔订单显示，AI 天气预测正在进入对实时信息有较高要求的应用场景；报道未说明合同将如何改变普通用户的天气预报体验。",
-      "url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/",
-      "source": "TechCrunch",
-      "category": "前沿动态"
-    },
-    {
-      "title": "AI 需求挤压供应，固态硬盘价格持续上涨",
-      "summary": "据 Solidot 报道，受 AI 企业需求影响，厂商优先向相关客户供应固态硬盘，普通电脑使用的产品因而面临缺货和涨价。相关价格已连续六个季度上涨；对准备升级电脑的消费者来说，AI 热潮正从云端服务延伸到看得见的硬件开支。",
-      "url": "https://www.solidot.org/story?sid=85586",
-      "source": "Solidot",
-      "category": "前沿动态"
+      "title": "OpenClaw更新技能与应用接入功能",
+      "summary": "OpenClaw近日更新了Skills和MCP Apps等功能，继续扩充AI助手可调用的能力与应用连接方式。不过，功能持续增加也带来了上手和管理的负担；对普通用户来说，更新是否真正省事，比功能清单有多长更重要。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062250&idx=2&sn=4b583b388014abfa98ed7da7e2e36570",
+      "source": "机器之心",
+      "category": "效率工具"
     }
   ],
-  "generated_at": "2026-10-13 02:18:48"
+  "generated_at": "2026-10-13 04:01:33"
 }
