@@ -23,7 +23,21 @@ LLM_API_KEY = os.environ.get('LLM_API_KEY', '').strip()
 LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.deepseek.com').rstrip('/')
 LLM_MODEL = os.environ.get('LLM_MODEL', '').strip() or 'gpt-6-sol'
 
-DEFAULT_TAGS = ['鸡仔AI早报', 'AI资讯', '打工人日常', 'AI提效', '人工智能', '科技早报']
+DEFAULT_TAGS = ['鸡仔AI早报', 'AI资讯', '打工人日常', 'AI提效', '人工智能', '科技早报', 'AI工具', '大模型']
+
+
+def _pad_tags(tags):
+    """标签数对齐质检门槛：首位固定'鸡仔AI早报'，不足 8 个用 DEFAULT_TAGS 补齐。"""
+    tags = [t for t in tags if t]
+    if '鸡仔AI早报' in tags:
+        tags.remove('鸡仔AI早报')
+    tags.insert(0, '鸡仔AI早报')
+    for t in DEFAULT_TAGS:
+        if len(tags) >= 8:
+            break
+        if t not in tags:
+            tags.append(t)
+    return tags[:8]
 DEFAULT_QUESTION = '这 8 条里，你最想亲手试试的是哪个？评论区说说👇'
 AI_DISCLAIMER = '🤖 本内容由 AI 辅助生成，仅供资讯参考'
 
@@ -98,7 +112,7 @@ def build_prompt(briefing):
 4. order：把 8 条按"普通人获得感"从强到弱排序，输出原序号数组（如 [7,6,1,5,4,2,3,8]），
    最有用的放最前，纯行业/时事放最后。
 5. 结尾 question：一句具体的开放性提问，引导评论。
-6. tags：5-8 个全中文话题标签，大词+人群词+精准词组合，必须包含"鸡仔AI早报"。
+6. tags：8 个全中文话题标签，大词+人群词+精准词组合，首位必须是"鸡仔AI早报"。
 7. jinju：今日金句一句话，和效率/好奇心/打工人相关，口语化。
 8. 平台限制：小红书正文最多 1000 字（含末尾 #标签行）。请控制 point/usage/comment
    的长度，让组装后的正文（hook + 8 条 + 结尾提问 + 声明 + 标签行）尽量不超过 1000 字。
@@ -128,7 +142,7 @@ def fallback_post(briefing):
         'hook': hook,
         'items': items,
         'question': DEFAULT_QUESTION,
-        'tags': DEFAULT_TAGS[:6],
+        'tags': DEFAULT_TAGS[:8],
         'jinju': '别追每一个新模型，追那个让你少加班的。',
         'fallback': True,
         'order': list(range(1, len(picks) + 1)),
@@ -222,7 +236,7 @@ def main():
                            'comment': it.get('comment', '')}
                           for it in items[:n]],
                 'question': result.get('question') or DEFAULT_QUESTION,
-                'tags': [t for t in result.get('tags', []) if t][:8] or DEFAULT_TAGS[:6],
+                'tags': _pad_tags([t for t in result.get('tags', []) if t]),
                 'jinju': result.get('jinju', ''),
                 'fallback': False,
                 'order': result.get('order') or list(range(1, n + 1)),
