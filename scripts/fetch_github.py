@@ -89,7 +89,18 @@ CATEGORIES = {
     'media': {
         'name': '影音娱乐',
         'desc': '视频、流媒体、媒体中心',
-        'query': 'topic:video OR topic:audio OR topic:music OR topic:podcast OR topic:video-player OR topic:iptv stars:>100',
+        # GitHub 搜索不支持 qualifier 之间的 OR（报错 "Logical operators only apply
+        # to text, not to qualifiers"），多 topic 必须拆成多个单 topic 查询再合并。
+        # 2026-10-13：之前的 'topic:video OR topic:audio OR ...' 整条被 GitHub 拒绝
+        # （Validation Failed），media 分类连续三夜（10-10/10-11/10-13）取到 0 条。
+        'queries': [
+            'topic:video stars:>100',
+            'topic:audio stars:>100',
+            'topic:music stars:>100',
+            'topic:podcast stars:>100',
+            'topic:video-player stars:>100',
+            'topic:iptv stars:>100',
+        ],
         'sort': 'stars'
     },
 }
@@ -123,6 +134,20 @@ CATEGORY_OVERRIDES = {
     # Flink 视频课程：既不是影音娱乐也不是纯流媒体 -> education
     'flink-china/flink-training-course': 'education',
     'Dujltqzv/Some-Many-Books': 'education',  # 2026-10-11: 个人书籍收藏仓库，被 game 查询误吸入（GitHub 搜索全文匹配），非游戏
+    # topic:audio / topic:podcast 误吸入 media 的 AI 项目（2026-10-13 夜间质检）
+    'huggingface/transformers': 'ai',
+    'bytedance/deer-flow': 'ai-apps',
+    # 单 topic 标签误吸入 media 的非影音项目（2026-10-13 夜间质检）
+    'ahmedkhaleel2004/gitdiagram': 'devtools',  # 代码可视化开发工具，被 topic:video 误吸入
+    'ctjhoa/rust-learning': 'education',  # Rust 学习资源，被 topic:video 误吸入
+    'gztchan/awesome-design': 'education',  # 设计资源导航（同 education 现有 free-programming-books 一类），被 topic:podcast 误吸入
+    'mahmoud/awesome-python-applications': 'devtools',  # Python 应用导航（同 devtools 现有 vinta/awesome-python 一类），被 topic:audio 误吸入
+}
+
+# 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
+# stashapp/stash：成人内容管理工具，卡片会直接渲染其英文描述，不适合公开站点（2026-10-13 夜间质检）。
+CATEGORY_EXCLUDE = {
+    'stashapp/stash',
 }
 
 
@@ -196,7 +221,13 @@ def main():
 
     for cat_id, config in CATEGORIES.items():
         print(f"Fetching {cat_id}...")
-        repos = fetch_repos(config['query'], config['sort'], per_page=80)
+        queries = config.get('queries') or [config['query']]
+        merged = {}
+        for q in queries:
+            for r in fetch_repos(q, config['sort'], per_page=80):
+                merged.setdefault(r['full_name'], r)
+            time.sleep(1)
+        repos = sorted(merged.values(), key=lambda r: r['stars'], reverse=True)[:80]
         print(f"  ✅ {cat_id}: {len(repos)} repos")
         categories[cat_id] = {
             'name': config['name'],
@@ -223,6 +254,15 @@ def main():
     for r in rising_repos:
         all_repos.setdefault(r['full_name'], r)
     time.sleep(2)
+
+    # 内容黑名单：从所有分类和榜单候选里剔除
+    if CATEGORY_EXCLUDE:
+        for cat in categories.values():
+            cat['repos'] = [r for r in (cat.get('repos') or []) if r['full_name'] not in CATEGORY_EXCLUDE]
+        for fn in CATEGORY_EXCLUDE:
+            all_repos.pop(fn, None)
+        rising_repos[:] = [r for r in rising_repos if r['full_name'] not in CATEGORY_EXCLUDE]
+        print(f"  ✅ 内容黑名单已应用（{len(CATEGORY_EXCLUDE)} 个）")
 
     # 每日涨星：先算 stars_gain，再写文件（修写入顺序 bug）
     hist_file = os.path.join(repo_dir, 'github-stars-history.json')

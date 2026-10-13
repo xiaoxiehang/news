@@ -18,7 +18,10 @@ const CATEGORIES = [
   { id: 'fintech', name: '金融科技', desc: '交易、量化、金融工具', query: 'topic:fintech stars:>50', sort: 'stars' },
   { id: 'education', name: '教育学习', desc: '在线教育、课程、教程', query: 'topic:education stars:>100', sort: 'stars' },
   { id: 'research', name: '科学研究', desc: '科研工具、数据集', query: 'topic:science stars:>50', sort: 'stars' },
-  { id: 'media', name: '影音娱乐', desc: '视频、流媒体、媒体中心', query: 'topic:video OR topic:audio OR topic:music OR topic:podcast OR topic:video-player OR topic:iptv stars:>100', sort: 'stars' },
+  // 注意：GitHub 搜索不支持 qualifier 之间的 OR（"Logical operators only apply to
+  // text, not to qualifiers"），media 的多 topic 必须拆成 queries 数组并行查再合并。
+  // 2026-10-13：'topic:video OR topic:audio OR ...' 整条被 GitHub 拒绝，media 实时 tab 一直 500。
+  { id: 'media', name: '影音娱乐', desc: '视频、流媒体、媒体中心', queries: ['topic:video stars:>100', 'topic:audio stars:>100', 'topic:music stars:>100', 'topic:podcast stars:>100', 'topic:video-player stars:>100', 'topic:iptv stars:>100'], sort: 'stars' },
 ];
 
 // 分类修正表：full_name -> 正确分类。只做"过滤"（把放错 tab 的拿掉），
@@ -43,7 +46,17 @@ const CATEGORY_OVERRIDES = {
   'noob-hackers/infect': 'devtools',
   'flink-china/flink-training-course': 'education',
   'Dujltqzv/Some-Many-Books': 'education', // 2026-10-11: 个人书籍收藏仓库，被 game 查询误吸入（GitHub 搜索全文匹配），非游戏
+  'huggingface/transformers': 'ai', // 2026-10-13: AI 框架，被 topic:audio 误吸入 media
+  'bytedance/deer-flow': 'ai-apps', // 2026-10-13: AI Agent，被 topic:podcast 误吸入 media
+  'ahmedkhaleel2004/gitdiagram': 'devtools', // 2026-10-13: 代码可视化开发工具，被 topic:video 误吸入 media
+  'ctjhoa/rust-learning': 'education', // 2026-10-13: Rust 学习资源，被 topic:video 误吸入 media
+  'gztchan/awesome-design': 'education', // 2026-10-13: 设计资源导航，被 topic:podcast 误吸入 media
+  'mahmoud/awesome-python-applications': 'devtools', // 2026-10-13: Python 应用导航，被 topic:audio 误吸入 media
 };
+
+// 内容黑名单：不宜在公开站点展示的项目（2026-10-13 夜间质检）
+// stashapp/stash：成人内容管理工具，卡片直接渲染其英文描述，不适合公开站点
+const CATEGORY_EXCLUDE = new Set(['stashapp/stash']);
 
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);
@@ -113,9 +126,26 @@ export default async function handler(req, res) {
         noStore(res);
         return res.status(400).json({ ok: false, error: 'unknown tab' });
       }
-      repos = await search(c.query, c.sort, 80, headers).catch(() => []);
-      // 只过滤放错的，不搬运补回
+      if (c.queries) {
+        // 多查询合并：并行查、按 full_name 去重、按星数排序取前 80
+        const lists = await Promise.all(
+          c.queries.map(q => search(q, c.sort, 80, headers).catch(() => []))
+        );
+        const seen = new Set();
+        repos = [];
+        for (const list of lists) {
+          for (const r of list) {
+            if (!seen.has(r.full_name)) { seen.add(r.full_name); repos.push(r); }
+          }
+        }
+        repos.sort((a, b) => (b.stars || 0) - (a.stars || 0));
+        repos = repos.slice(0, 80);
+      } else {
+        repos = await search(c.query, c.sort, 80, headers).catch(() => []);
+      }
+      // 只过滤放错的，不搬运补回；黑名单直接剔除
       repos = repos.filter(r => {
+        if (CATEGORY_EXCLUDE.has(r.full_name)) return false;
         const t = CATEGORY_OVERRIDES[r.full_name];
         return !t || t === tab;
       });

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13 02:21:34",
+  "updated_at": "2026-10-13 03:37:30",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -3490,6 +3490,371 @@
       "what": "整理作者个人收藏书籍的清单。",
       "why_hot": "书单容易被收藏转发，找书时也能顺手参考。",
       "who": "适合喜欢逛书单、找阅读灵感的人。"
+    },
+    "ahmedkhaleel2004/gitdiagram": {
+      "what": "把任意 GitHub 仓库一键转成可交互的架构图和讲解。",
+      "why_hot": "读陌生代码库不用再逐文件啃，模块关系一目了然。",
+      "who": "适合要快速接手或评审代码库的开发者。"
+    },
+    "mahmoud/awesome-python-applications": {
+      "what": "收录真正好用的开源 Python 桌面和命令行应用。",
+      "why_hot": "按领域整理，找趁手工具不用大海捞针。",
+      "who": "适合想淘 Python 好用软件的人。"
+    },
+    "ctjhoa/rust-learning": {
+      "what": "汇总学 Rust 的博客、书籍、视频和教程链接。",
+      "why_hot": "按主题整理，入门路线一目了然。",
+      "who": "适合刚开始学 Rust 的人。"
+    },
+    "gztchan/awesome-design": {
+      "what": "收录全球设计资源：字体、UI、灵感站和工具。",
+      "why_hot": "分类细，找设计素材和灵感很顺手。",
+      "who": "适合设计师和做界面的前端。"
+    },
+    "iptv-org/iptv": {
+      "what": "收集全球公开的 IPTV 直播频道列表。",
+      "why_hot": "频道多、持续更新，M3U 拿到就能播。",
+      "who": "适合想看全球电视直播的人。"
+    },
+    "FFmpeg/FFmpeg": {
+      "what": "音视频转码、剪辑、推流的事实标准工具库。",
+      "why_hot": "几乎所有播放器和转码服务底层都在用它。",
+      "who": "适合做音视频开发的人。"
+    },
+    "remotion-dev/remotion": {
+      "what": "用 React 组件以代码方式生成视频。",
+      "why_hot": "视频变成可版本管理的代码，模板复用很爽。",
+      "who": "适合前端和做自动化视频的人。"
+    },
+    "iina/iina": {
+      "what": "macOS 上最好看的开源视频播放器。",
+      "why_hot": "界面原生、解码强，触控板手势跟手。",
+      "who": "适合 Mac 上看片追剧的人。"
+    },
+    "imputnet/cobalt": {
+      "what": "免安装下载各平台视频和音频的在线工具。",
+      "why_hot": "粘贴链接就行，无广告不登录。",
+      "who": "适合常存视频音频素材的人。"
+    },
+    "mifi/lossless-cut": {
+      "what": "无损快速剪切音视频的轻量工具。",
+      "why_hot": "不重新编码，剪片又快又不掉画质。",
+      "who": "适合粗剪视频和提取片段的人。"
+    },
+    "TeamNewPipe/NewPipe": {
+      "what": "Android 上的轻量开源流媒体客户端。",
+      "why_hot": "无广告、可后台播放，不用谷歌服务框架。",
+      "who": "适合安卓上看视频听歌的人。"
+    },
+    "videojs/video.js": {
+      "what": "网页端最常用的开源视频播放器框架。",
+      "why_hot": "插件生态全，HLS/DASH 开箱即用。",
+      "who": "适合要在网页里放视频的开发者。"
+    },
+    "OpenBMB/VoxCPM": {
+      "what": "免分词器的多语言语音合成模型。",
+      "why_hot": "中英等多语言语音自然，做配音很方便。",
+      "who": "适合做语音合成和配音的人。"
+    },
+    "mpv-player/mpv": {
+      "what": "极简强大的命令行视频播放器。",
+      "why_hot": "解码全、脚本可扩展，键盘党最爱。",
+      "who": "适合喜欢键盘操作看片的人。"
+    },
+    "pear-devs/pear-desktop": {
+      "what": "给音乐播放器加桌面扩展的项目。",
+      "why_hot": "把听歌体验搬到桌面，跨平台可用。",
+      "who": "适合折腾桌面音乐体验的人。"
+    },
+    "qier222/YesPlayMusic": {
+      "what": "高颜值的第三方网易云音乐播放器。",
+      "why_hot": "界面干净无广告，支持三平台。",
+      "who": "适合网易云用户换个清爽客户端。"
+    },
+    "bilibili/ijkplayer": {
+      "what": "基于 FFmpeg 的安卓/iOS 播放器内核。",
+      "why_hot": "B 站出品，移动端硬解和格式兼容稳。",
+      "who": "适合做移动端视频 App 的开发者。"
+    },
+    "lizongying/my-tv": {
+      "what": "装上就能看的电视直播软件。",
+      "why_hot": "开箱即用，频道源配好不用折腾。",
+      "who": "适合给家里电视装直播的人。"
+    },
+    "iawia002/lux": {
+      "what": "Go 写的快速视频下载命令行工具。",
+      "why_hot": "支持一堆站点，速度快还轻量。",
+      "who": "适合在命令行存视频的人。"
+    },
+    "imDazui/Tvlist-awesome-m3u-m3u8": {
+      "what": "IPTV、M3U 直播源资源汇总。",
+      "why_hot": "源多且有人维护，失效换得勤。",
+      "who": "适合自己配电视直播源的人。"
+    },
+    "jitsi/jitsi-meet": {
+      "what": "可自托管的开源视频会议系统。",
+      "why_hot": "不用注册就能开会，隐私自己说了算。",
+      "who": "适合团队自建会议服务的人。"
+    },
+    "ossrs/srs": {
+      "what": "高性能实时音视频服务器。",
+      "why_hot": "直播推流延迟低，配置简单。",
+      "who": "适合自建直播服务的人。"
+    },
+    "fanmingming/live": {
+      "what": "电视/广播图标库和直播相关工具。",
+      "why_hot": "台标全、直连快，配直播源省事。",
+      "who": "适合折腾 IPTV 界面的人。"
+    },
+    "NickeManarin/ScreenToGif": {
+      "what": "录屏并转成 GIF 的小工具。",
+      "why_hot": "录完直接编辑加字幕，做教程动图神器。",
+      "who": "适合写教程要录动图的人。"
+    },
+    "Igglybuff/awesome-piracy": {
+      "what": "汇总各类影音资源站点的导航列表。",
+      "why_hot": "分类全，找资源站点时有个地图。",
+      "who": "适合找影音资源导航的人。"
+    },
+    "Anjok07/ultimatevocalremovergui": {
+      "what": "用深度学习给歌曲去人声、提伴奏。",
+      "why_hot": "分离效果干净，做翻唱和 remix 好用。",
+      "who": "适合做翻唱和音频后期的人。"
+    },
+    "spotDL/spotify-downloader": {
+      "what": "批量下载 Spotify 歌单和专辑封面。",
+      "why_hot": "连歌带封面元数据一次抓齐。",
+      "who": "适合备份自己歌单的人。"
+    },
+    "Guovin/iptv-api": {
+      "what": "自动采集、测速、更新 IPTV 直播源。",
+      "why_hot": "源失效自动换，电视直播不断线。",
+      "who": "适合自建直播源服务的人。"
+    },
+    "iv-org/invidious": {
+      "what": "轻量无追踪的 YouTube 替代前端。",
+      "why_hot": "无广告、可自托管，隐私友好。",
+      "who": "适合不想被追踪看油管的人。"
+    },
+    "goldfire/howler.js": {
+      "what": "现代网页用的 JavaScript 音频库。",
+      "why_hot": "API 简单，游戏音效和背景音乐都好使。",
+      "who": "适合网页里要播音频的开发者。"
+    },
+    "navidrome/navidrome": {
+      "what": "自托管的个人音乐流媒体服务。",
+      "why_hot": "自己的歌库随时随地听，轻量不吃资源。",
+      "who": "适合想搭私人云音乐的人。"
+    },
+    "FreeTubeApp/FreeTube": {
+      "what": "注重隐私的开源 YouTube 桌面客户端。",
+      "why_hot": "无广告无追踪，还能不登录订阅。",
+      "who": "适合在意隐私看油管的人。"
+    },
+    "CarGuo/GSYVideoPlayer": {
+      "what": "Android 端全能视频播放器组件。",
+      "why_hot": "集成 IJK/ExoPlayer，弹幕手势都现成。",
+      "who": "适合安卓 App 里要播视频的开发者。"
+    },
+    "bloc97/Anime4K": {
+      "what": "动漫视频实时超分辨率算法。",
+      "why_hot": "老番放大看依然清晰，可接进播放器。",
+      "who": "适合看老动漫想提画质的人。"
+    },
+    "livekit/livekit": {
+      "what": "端到端的实时音视频通信栈。",
+      "why_hot": "会议、直播连麦场景开箱即用。",
+      "who": "适合做实时互动应用的开发者。"
+    },
+    "charmbracelet/vhs": {
+      "what": "在终端里录制命令行演示视频。",
+      "why_hot": "用文本脚本控制录制，演示可重复生成。",
+      "who": "适合给 CLI 工具做演示的人。"
+    },
+    "open-ani/animeko": {
+      "what": "找番追番看番的一站式弹幕 App。",
+      "why_hot": "云同步加离线缓存，追番流程全包。",
+      "who": "适合重度二次元追番党。"
+    },
+    "modelscope/FunASR": {
+      "what": "开源语音识别训练推理工具包。",
+      "why_hot": "中文识别准，还支持流式。",
+      "who": "适合做语音转写应用的人。"
+    },
+    "ExistentialAudio/BlackHole": {
+      "what": "macOS 的虚拟音频内录驱动。",
+      "why_hot": "免费开源，录系统声音和连麦都稳。",
+      "who": "适合 Mac 上录播客和教程的人。"
+    },
+    "kyleneideck/BackgroundMusic": {
+      "what": "macOS 音频增强小工具。",
+      "why_hot": "自动暂停音乐、单应用调音量，细节贴心。",
+      "who": "适合 Mac 重度音频用户。"
+    },
+    "alyssaxuu/screenity": {
+      "what": "免费无限制的隐私录屏浏览器扩展。",
+      "why_hot": "标注、摄像头画中画全免费。",
+      "who": "适合录网课和产品演示的人。"
+    },
+    "audacity/audacity": {
+      "what": "老牌免费开源音频编辑器。",
+      "why_hot": "剪辑、降噪、效果器全，播客必备。",
+      "who": "适合做播客和音频剪辑的人。"
+    },
+    "nukeop/nuclear": {
+      "what": "自动找免费音源的流媒体播放器。",
+      "why_hot": "搜歌即播，不用各平台来回切。",
+      "who": "适合想一个 App 听遍全网的人。"
+    },
+    "ffmpegwasm/ffmpeg.wasm": {
+      "what": "跑在浏览器里的 FFmpeg。",
+      "why_hot": "前端直接转码剪辑，不用传服务器。",
+      "who": "适合做网页音视频工具的开发者。"
+    },
+    "koel/koel": {
+      "what": "个人音乐流媒体解决方案。",
+      "why_hot": "界面现代，手机电脑都能听自家歌库。",
+      "who": "适合搭私人音乐库的人。"
+    },
+    "AaronFeng753/Waifu2x-Extension-GUI": {
+      "what": "视频图片 GIF 超分放大的图形界面。",
+      "why_hot": "集成多种超分算法，点点鼠标就行。",
+      "who": "适合给老视频老图提画质的人。"
+    },
+    "algerkong/AlgerMusicPlayer": {
+      "what": "带桌面歌词和下载的第三方音乐播放器。",
+      "why_hot": "本地服务加远程控制，功能堆得满。",
+      "who": "适合要桌面歌词和下载的人。"
+    },
+    "video-dev/hls.js": {
+      "what": "让浏览器直接播 HLS 流的 JS 库。",
+      "why_hot": "直播和点播网页播放的标配。",
+      "who": "适合做网页直播的开发者。"
+    },
+    "pion/webrtc": {
+      "what": "纯 Go 实现的 WebRTC 协议栈。",
+      "why_hot": "服务端也能玩实时音视频，媒体服务器好搭。",
+      "who": "适合 Go 开发者做实时通信。"
+    },
+    "DIYgod/DPlayer": {
+      "what": "可爱的 HTML5 弹幕视频播放器。",
+      "why_hot": "弹幕、截图、快捷键开箱即用。",
+      "who": "适合网站要加弹幕播放的开发者。"
+    },
+    "Tyrrrz/YoutubeDownloader": {
+      "what": "下载 YouTube 视频和播放列表。",
+      "why_hot": "可选画质格式，批量下很稳。",
+      "who": "适合存油管视频的人。"
+    },
+    "leandromoreira/digital_video_introduction": {
+      "what": "手把手学视频技术的开源教程。",
+      "why_hot": "从编码原理讲到实战，图文并茂。",
+      "who": "适合想搞懂视频编解码的人。"
+    },
+    "beetbox/beets": {
+      "what": "音乐库整理和自动打标签工具。",
+      "why_hot": "自动匹配 MusicBrainz，乱歌库变整齐。",
+      "who": "适合本地歌多到管不过来的人。"
+    },
+    "Chocobozzz/PeerTube": {
+      "what": "用 P2P 的去中心化视频平台。",
+      "why_hot": "自己架站播视频，不靠大平台。",
+      "who": "适合想自建视频站的人。"
+    },
+    "Zulko/moviepy": {
+      "what": "用 Python 代码剪视频。",
+      "why_hot": "加字幕转场写脚本，批量剪辑神器。",
+      "who": "适合程序员做自动化剪辑。"
+    },
+    "Tonejs/Tone.js": {
+      "what": "在浏览器里做交互音乐的框架。",
+      "why_hot": "采样合成调度全包，网页也能玩音乐。",
+      "who": "适合做网页音乐应用的开发者。"
+    },
+    "livekit/agents": {
+      "what": "搭实时语音 AI 智能体的框架。",
+      "why_hot": "语音对话低延迟，电话客服场景正好。",
+      "who": "适合做语音 AI 应用的开发者。"
+    },
+    "neutraltone/awesome-stock-resources": {
+      "what": "免费可商用图片视频字体素材导航。",
+      "why_hot": "分类齐，做设计找素材不怕侵权。",
+      "who": "适合设计师和自媒体人。"
+    },
+    "Hunlongyu/ZY-Player": {
+      "what": "简洁无广告的跨平台桌面播放器。",
+      "why_hot": "颜值高资源全，追剧不折腾。",
+      "who": "适合电脑上追剧看片的人。"
+    },
+    "LuckSiege/PictureSelector": {
+      "what": "Android 用的图片选择器组件。",
+      "why_hot": "拍照选图压缩裁剪一条龙。",
+      "who": "适合安卓开发要选图功能的人。"
+    },
+    "MetrolistGroup/Metrolist": {
+      "what": "Android 上的 YouTube Music 第三方客户端。",
+      "why_hot": "开源无广告，界面跟手。",
+      "who": "适合安卓上听油管音乐的人。"
+    },
+    "rShetty/awesome-podcasts": {
+      "what": "精选播客节目导航列表。",
+      "why_hot": "按主题分类，发现好节目不踩雷。",
+      "who": "适合播客爱好者找新节目。"
+    },
+    "iptv-org/awesome-iptv": {
+      "what": "IPTV 相关的资源导航。",
+      "why_hot": "播放器、源、工具一次找齐。",
+      "who": "适合入坑 IPTV 的新手。"
+    },
+    "SFML/SFML": {
+      "what": "简单好用的多媒体开发库。",
+      "why_hot": "图形音频网络都包，写小游戏上手快。",
+      "who": "适合 C++ 写 2D 游戏的人。"
+    },
+    "maxrave-dev/SimpMusic": {
+      "what": "用 YouTube Music 做后端的跨平台音乐 App。",
+      "why_hot": "一个 App 全平台听歌，界面清爽。",
+      "who": "适合到处听歌的人。"
+    },
+    "speechbrain/speechbrain": {
+      "what": "基于 PyTorch 的语音处理工具包。",
+      "why_hot": "识别合成增强一条龙，研究生产都好用。",
+      "who": "适合做语音 AI 研究开发的人。"
+    },
+    "laoma528/awesome-zhuiju-free": {
+      "what": "免费无广告的追剧资源指南。",
+      "why_hot": "人工精选、每天检测有效性。",
+      "who": "适合找免费追剧资源的人。"
+    },
+    "storytold/filmcraft": {
+      "what": "纯 Rust 写的开源非线性视频编辑器。",
+      "why_hot": "从零手写，性能有追求。",
+      "who": "适合想换开源剪辑软件的人。"
+    },
+    "owncast/owncast": {
+      "what": "自己架设的直播服务器。",
+      "why_hot": "开播不用看平台脸色，数据自己掌控。",
+      "who": "适合想独立开播的人。"
+    },
+    "AudioKit/AudioKit": {
+      "what": "iOS/macOS 音频合成处理平台。",
+      "why_hot": "合成采样分析全包，做音乐 App 省事。",
+      "who": "适合苹果平台音频开发者。"
+    },
+    "File-New-Project/EarTrumpet": {
+      "what": "Windows 上更好用的音量控制器。",
+      "why_hot": "单应用调音量，系统自带做不到。",
+      "who": "适合 Windows 重度用户。"
+    },
+    "Shabinder/SpotiFlyer": {
+      "what": "跨平台音乐下载器，支持多平台。",
+      "why_hot": "多源合一，一个 App 搞定。",
+      "who": "适合备份在线歌单的人。"
+    },
+    "TEN-framework/ten-framework": {
+      "what": "搭对话式语音 AI 智能体的开源框架。",
+      "why_hot": "实时多模态，语音助手开发提速。",
+      "who": "适合做语音 AI 产品的开发者。"
     }
   }
 }

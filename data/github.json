@@ -919,26 +919,6 @@
           "stars_gain": 265
         },
         {
-          "name": "transformers",
-          "full_name": "huggingface/transformers",
-          "owner": "huggingface",
-          "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-          "html_url": "https://github.com/huggingface/transformers",
-          "language": "Python",
-          "stars": 167609,
-          "forks": 34850,
-          "topics": [
-            "audio",
-            "deep-learning",
-            "deepseek",
-            "gemma",
-            "glm"
-          ],
-          "created_at": "2018-10-29",
-          "updated_at": "2026-10-13",
-          "stars_gain": 324
-        },
-        {
           "name": "ponytail",
           "full_name": "DietrichGebert/ponytail",
           "owner": "DietrichGebert",
@@ -1360,26 +1340,6 @@
           "created_at": "2018-08-21",
           "updated_at": "2026-10-13",
           "stars_gain": 56
-        },
-        {
-          "name": "deer-flow",
-          "full_name": "bytedance/deer-flow",
-          "owner": "bytedance",
-          "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of ta",
-          "html_url": "https://github.com/bytedance/deer-flow",
-          "language": "Python",
-          "stars": 83765,
-          "forks": 11654,
-          "topics": [
-            "agent",
-            "agentic",
-            "agentic-framework",
-            "agentic-workflow",
-            "ai"
-          ],
-          "created_at": "2025-05-07",
-          "updated_at": "2026-10-13",
-          "stars_gain": 97
         },
         {
           "name": "llm-course",
@@ -2307,6 +2267,26 @@
           "created_at": "2018-12-19",
           "updated_at": "2026-10-12",
           "stars_gain": 36
+        },
+        {
+          "name": "transformers",
+          "full_name": "huggingface/transformers",
+          "owner": "huggingface",
+          "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+          "html_url": "https://github.com/huggingface/transformers",
+          "language": "Python",
+          "stars": 167609,
+          "forks": 34850,
+          "topics": [
+            "audio",
+            "deep-learning",
+            "deepseek",
+            "gemma",
+            "glm"
+          ],
+          "created_at": "2018-10-29",
+          "updated_at": "2026-10-13",
+          "stars_gain": 324
         }
       ]
     },
@@ -3083,25 +3063,6 @@
           "updated_at": "2026-10-13"
         },
         {
-          "name": "deer-flow",
-          "full_name": "bytedance/deer-flow",
-          "owner": "bytedance",
-          "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of ta",
-          "html_url": "https://github.com/bytedance/deer-flow",
-          "language": "Python",
-          "stars": 83765,
-          "forks": 11654,
-          "topics": [
-            "agent",
-            "agentic",
-            "agentic-framework",
-            "agentic-workflow",
-            "ai"
-          ],
-          "created_at": "2025-05-07",
-          "updated_at": "2026-10-13"
-        },
-        {
           "name": "lobehub",
           "full_name": "lobehub/lobehub",
           "owner": "lobehub",
@@ -3778,6 +3739,26 @@
           "created_at": "2025-12-10",
           "updated_at": "2026-10-13",
           "stars_gain": null
+        },
+        {
+          "name": "deer-flow",
+          "full_name": "bytedance/deer-flow",
+          "owner": "bytedance",
+          "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of ta",
+          "html_url": "https://github.com/bytedance/deer-flow",
+          "language": "Python",
+          "stars": 83765,
+          "forks": 11654,
+          "topics": [
+            "agent",
+            "agentic",
+            "agentic-framework",
+            "agentic-workflow",
+            "ai"
+          ],
+          "created_at": "2025-05-07",
+          "updated_at": "2026-10-13",
+          "stars_gain": 97
         }
       ]
     },
@@ -6785,25 +6766,6 @@
           "updated_at": "2026-10-13"
         },
         {
-          "name": "deer-flow",
-          "full_name": "bytedance/deer-flow",
-          "owner": "bytedance",
-          "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of ta",
-          "html_url": "https://github.com/bytedance/deer-flow",
-          "language": "Python",
-          "stars": 83765,
-          "forks": 11654,
-          "topics": [
-            "agent",
-            "agentic",
-            "agentic-framework",
-            "agentic-workflow",
-            "ai"
-          ],
-          "created_at": "2025-05-07",
-          "updated_at": "2026-10-13"
-        },
-        {
           "name": "fzf",
           "full_name": "junegunn/fzf",
           "owner": "junegunn",
@@ -7609,6 +7571,44 @@
           "created_at": "2019-12-15",
           "updated_at": "2026-10-13",
           "stars_gain": 0
+        },
+        {
+          "name": "gitdiagram",
+          "full_name": "ahmedkhaleel2004/gitdiagram",
+          "owner": "ahmedkhaleel2004",
+          "description": "Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.",
+          "html_url": "https://github.com/ahmedkhaleel2004/gitdiagram",
+          "language": "TypeScript",
+          "stars": 18141,
+          "forks": 1392,
+          "topics": [
+            "ai",
+            "architecture-diagram",
+            "code",
+            "code-visualization",
+            "codebase-visualization"
+          ],
+          "created_at": "2024-12-15",
+          "updated_at": "2026-10-13"
+        },
+        {
+          "name": "awesome-python-applications",
+          "full_name": "mahmoud/awesome-python-applications",
+          "owner": "mahmoud",
+          "description": "💿 Free software that works great, and also happens to be open-source Python. ",
+          "html_url": "https://github.com/mahmoud/awesome-python-applications",
+          "language": "Jupyter Notebook",
+          "stars": 18094,
+          "forks": 2749,
+          "topics": [
+            "application",
+            "audio",
+            "education",
+            "game",
+            "graphics"
+          ],
+          "created_at": "2018-11-14",
+          "updated_at": "2026-10-13"
         }
       ]
     },
@@ -13600,6 +13600,44 @@
           "created_at": "2021-09-05",
           "updated_at": "2026-10-13",
           "stars_gain": 96
+        },
+        {
+          "name": "rust-learning",
+          "full_name": "ctjhoa/rust-learning",
+          "owner": "ctjhoa",
+          "description": "A bunch of links to blog posts, articles, videos, etc for learning Rust",
+          "html_url": "https://github.com/ctjhoa/rust-learning",
+          "language": null,
+          "stars": 12254,
+          "forks": 816,
+          "topics": [
+            "blog-article",
+            "book",
+            "hacktoberfest",
+            "learn",
+            "rust"
+          ],
+          "created_at": "2015-05-07",
+          "updated_at": "2026-10-12"
+        },
+        {
+          "name": "awesome-design",
+          "full_name": "gztchan/awesome-design",
+          "owner": "gztchan",
+          "description": "🌟 Curated design resources from all over the world.",
+          "html_url": "https://github.com/gztchan/awesome-design",
+          "language": null,
+          "stars": 17630,
+          "forks": 1239,
+          "topics": [
+            "adobe",
+            "awesome",
+            "creative",
+            "curated",
+            "design"
+          ],
+          "created_at": "2016-07-22",
+          "updated_at": "2026-10-12"
         }
       ]
     },
@@ -15082,7 +15120,1462 @@
     "media": {
       "name": "影音娱乐",
       "desc": "视频、流媒体、媒体中心",
-      "repos": []
+      "repos": [
+        {
+          "name": "iptv",
+          "full_name": "iptv-org/iptv",
+          "owner": "iptv-org",
+          "description": "Collection of publicly available IPTV channels from all over the world",
+          "html_url": "https://github.com/iptv-org/iptv",
+          "language": "TypeScript",
+          "stars": 140698,
+          "forks": 8256,
+          "topics": [
+            "iptv",
+            "m3u",
+            "playlist",
+            "streams",
+            "tv"
+          ],
+          "created_at": "2018-11-14",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "FFmpeg",
+          "full_name": "FFmpeg/FFmpeg",
+          "owner": "FFmpeg",
+          "description": "Mirror of https://git.ffmpeg.org/ffmpeg.git",
+          "html_url": "https://github.com/FFmpeg/FFmpeg",
+          "language": "C",
+          "stars": 65068,
+          "forks": 14346,
+          "topics": [
+            "audio",
+            "c",
+            "ffmpeg",
+            "fft",
+            "hevc"
+          ],
+          "created_at": "2011-04-14",
+          "updated_at": "2026-10-13",
+          "stars_gain": 192
+        },
+        {
+          "name": "remotion",
+          "full_name": "remotion-dev/remotion",
+          "owner": "remotion-dev",
+          "description": "🎥      Make videos programmatically with React",
+          "html_url": "https://github.com/remotion-dev/remotion",
+          "language": "TypeScript",
+          "stars": 63645,
+          "forks": 5014,
+          "topics": [
+            "javascript",
+            "react",
+            "video"
+          ],
+          "created_at": "2020-06-23",
+          "updated_at": "2026-10-13",
+          "stars_gain": 564
+        },
+        {
+          "name": "hyperframes",
+          "full_name": "heygen-com/hyperframes",
+          "owner": "heygen-com",
+          "description": "Write HTML. Render video. Built for agents.",
+          "html_url": "https://github.com/heygen-com/hyperframes",
+          "language": "TypeScript",
+          "stars": 61920,
+          "forks": 5545,
+          "topics": [
+            "ai",
+            "animation",
+            "ffmpeg",
+            "framework",
+            "gsap"
+          ],
+          "created_at": "2026-03-10",
+          "updated_at": "2026-10-13",
+          "stars_gain": 1528
+        },
+        {
+          "name": "spotube",
+          "full_name": "team-spotube/spotube",
+          "owner": "team-spotube",
+          "description": "🎧 Open source music streaming app! Available for both desktop & mobile!",
+          "html_url": "https://github.com/team-spotube/spotube",
+          "language": "Dart",
+          "stars": 49833,
+          "forks": 2331,
+          "topics": [
+            "android",
+            "android-client",
+            "android-music-player",
+            "desktop-client",
+            "fdroid"
+          ],
+          "created_at": "2021-02-14",
+          "updated_at": "2026-10-13",
+          "stars_gain": 72
+        },
+        {
+          "name": "iina",
+          "full_name": "iina/iina",
+          "owner": "iina",
+          "description": "The modern video player for macOS.",
+          "html_url": "https://github.com/iina/iina",
+          "language": "Swift",
+          "stars": 46753,
+          "forks": 2948,
+          "topics": [
+            "hacktoberfest",
+            "macos",
+            "mpv",
+            "swift",
+            "video"
+          ],
+          "created_at": "2016-12-19",
+          "updated_at": "2026-10-13",
+          "stars_gain": 91
+        },
+        {
+          "name": "cobalt",
+          "full_name": "imputnet/cobalt",
+          "owner": "imputnet",
+          "description": "best way to save what you love",
+          "html_url": "https://github.com/imputnet/cobalt",
+          "language": "Svelte",
+          "stars": 44912,
+          "forks": 3967,
+          "topics": [
+            "collaboration",
+            "downloader",
+            "instagram",
+            "javascript",
+            "music"
+          ],
+          "created_at": "2022-07-08",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "lossless-cut",
+          "full_name": "mifi/lossless-cut",
+          "owner": "mifi",
+          "description": "The swiss army knife of lossless video/audio editing",
+          "html_url": "https://github.com/mifi/lossless-cut",
+          "language": "TypeScript",
+          "stars": 44510,
+          "forks": 2212,
+          "topics": [
+            "codec",
+            "cut",
+            "editor",
+            "ffmpeg",
+            "lossless"
+          ],
+          "created_at": "2016-10-30",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "NewPipe",
+          "full_name": "TeamNewPipe/NewPipe",
+          "owner": "TeamNewPipe",
+          "description": "A libre lightweight streaming front-end for Android.",
+          "html_url": "https://github.com/TeamNewPipe/NewPipe",
+          "language": "Java",
+          "stars": 40102,
+          "forks": 3868,
+          "topics": [
+            "4k",
+            "android",
+            "bandcamp",
+            "download-videos",
+            "newpipe"
+          ],
+          "created_at": "2015-09-03",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "video.js",
+          "full_name": "videojs/video.js",
+          "owner": "videojs",
+          "description": "Video.js v10 - open source media player framework for HTML and React.",
+          "html_url": "https://github.com/videojs/video.js",
+          "language": "TypeScript",
+          "stars": 39956,
+          "forks": 7479,
+          "topics": [
+            "dash",
+            "hls",
+            "html",
+            "html5",
+            "html5-audio"
+          ],
+          "created_at": "2010-05-14",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "VoxCPM",
+          "full_name": "OpenBMB/VoxCPM",
+          "owner": "OpenBMB",
+          "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+          "html_url": "https://github.com/OpenBMB/VoxCPM",
+          "language": "Python",
+          "stars": 39206,
+          "forks": 4439,
+          "topics": [
+            "audio",
+            "deeplearning",
+            "minicpm",
+            "multilingual",
+            "python"
+          ],
+          "created_at": "2025-09-16",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "mpv",
+          "full_name": "mpv-player/mpv",
+          "owner": "mpv-player",
+          "description": "🎥 Command line media player",
+          "html_url": "https://github.com/mpv-player/mpv",
+          "language": "C",
+          "stars": 37356,
+          "forks": 3578,
+          "topics": [
+            "audio",
+            "c",
+            "ffmpeg",
+            "mplayer",
+            "mpv"
+          ],
+          "created_at": "2012-10-13",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "pear-desktop",
+          "full_name": "pear-devs/pear-desktop",
+          "owner": "pear-devs",
+          "description": "Pear 🍐 is extension for music player",
+          "html_url": "https://github.com/pear-devs/pear-desktop",
+          "language": "TypeScript",
+          "stars": 33730,
+          "forks": 2010,
+          "topics": [
+            "desktop-app",
+            "electron",
+            "linux",
+            "mac",
+            "macosx"
+          ],
+          "created_at": "2019-04-19",
+          "updated_at": "2026-10-12",
+          "stars_gain": 57
+        },
+        {
+          "name": "YesPlayMusic",
+          "full_name": "qier222/YesPlayMusic",
+          "owner": "qier222",
+          "description": "高颜值的第三方网易云播放器，支持 Windows / macOS / Linux :electron: ",
+          "html_url": "https://github.com/qier222/YesPlayMusic",
+          "language": "Vue",
+          "stars": 33375,
+          "forks": 4658,
+          "topics": [
+            "electron",
+            "javascript",
+            "linux",
+            "mac",
+            "macos"
+          ],
+          "created_at": "2020-10-09",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "ijkplayer",
+          "full_name": "bilibili/ijkplayer",
+          "owner": "bilibili",
+          "description": "Android/iOS video player based on FFmpeg n3.4, with MediaCodec, VideoToolbox support.",
+          "html_url": "https://github.com/bilibili/ijkplayer",
+          "language": "C",
+          "stars": 33207,
+          "forks": 8241,
+          "topics": [
+            "android",
+            "ffmpeg",
+            "ijkplayer",
+            "ios",
+            "player"
+          ],
+          "created_at": "2013-06-03",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "my-tv",
+          "full_name": "lizongying/my-tv",
+          "owner": "lizongying",
+          "description": "我的电视 电视直播软件，安装即可使用",
+          "html_url": "https://github.com/lizongying/my-tv",
+          "language": "C",
+          "stars": 31962,
+          "forks": 3588,
+          "topics": [
+            "iptv",
+            "my-tv",
+            "mytv",
+            "tv"
+          ],
+          "created_at": "2023-12-04",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "lux",
+          "full_name": "iawia002/lux",
+          "owner": "iawia002",
+          "description": "👾 Fast and simple video download library and CLI tool written in Go",
+          "html_url": "https://github.com/iawia002/lux",
+          "language": "Go",
+          "stars": 31767,
+          "forks": 3324,
+          "topics": [
+            "bilibili",
+            "crawler",
+            "download",
+            "downloader",
+            "go"
+          ],
+          "created_at": "2018-02-24",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "Tvlist-awesome-m3u-m3u8",
+          "full_name": "imDazui/Tvlist-awesome-m3u-m3u8",
+          "owner": "imDazui",
+          "description": "直播源相关资源汇总 📺 💯 IPTV、M3U —— 勤洗手、戴口罩，祝愿所有人百毒不侵",
+          "html_url": "https://github.com/imDazui/Tvlist-awesome-m3u-m3u8",
+          "language": null,
+          "stars": 30128,
+          "forks": 3469,
+          "topics": [
+            "awesome",
+            "iptv",
+            "iptv-channels",
+            "iptv-free",
+            "iptv-m3u8"
+          ],
+          "created_at": "2017-02-18",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "jitsi-meet",
+          "full_name": "jitsi/jitsi-meet",
+          "owner": "jitsi",
+          "description": "Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.",
+          "html_url": "https://github.com/jitsi/jitsi-meet",
+          "language": "TypeScript",
+          "stars": 30075,
+          "forks": 8075,
+          "topics": [
+            "debian",
+            "deep-video",
+            "jitsi",
+            "jitsi-meet",
+            "scalable-video-conferences"
+          ],
+          "created_at": "2013-12-16",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "srs",
+          "full_name": "ossrs/srs",
+          "owner": "ossrs",
+          "description": "SRS is a simple, high-performance, AI-driven real-time media server supporting RTMP, WebRTC, HLS, HTTP-FLV, HTTP-TS, SRT, MPEG-DASH, and GB28181, with codec support for H.264, H.265, AV1, VP9, AAC, Op",
+          "html_url": "https://github.com/ossrs/srs",
+          "language": "C++",
+          "stars": 29332,
+          "forks": 5702,
+          "topics": [
+            "ai-driven",
+            "audio",
+            "c-plus-plus",
+            "dash",
+            "hevc"
+          ],
+          "created_at": "2015-04-29",
+          "updated_at": "2026-10-13",
+          "stars_gain": 7
+        },
+        {
+          "name": "live",
+          "full_name": "fanmingming/live",
+          "owner": "fanmingming",
+          "description": "✯ 可直连访问的电视/广播图标库与相关工具项目 ✯ 🔕 永久免费 直连访问 完整开源 不断完善的台标 支持IPv4/IPv6双栈访问 🔕",
+          "html_url": "https://github.com/fanmingming/live",
+          "language": "JavaScript",
+          "stars": 28576,
+          "forks": 4221,
+          "topics": [
+            "china",
+            "converter",
+            "epg",
+            "iptv",
+            "ipv6"
+          ],
+          "created_at": "2022-11-16",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "ScreenToGif",
+          "full_name": "NickeManarin/ScreenToGif",
+          "owner": "NickeManarin",
+          "description": "🎬 ScreenToGif allows you to record a selected area of your screen, edit and save it as a gif or video.",
+          "html_url": "https://github.com/NickeManarin/ScreenToGif",
+          "language": "C#",
+          "stars": 27775,
+          "forks": 2375,
+          "topics": [
+            "editor",
+            "gif",
+            "recorder",
+            "sketchboard",
+            "video"
+          ],
+          "created_at": "2016-08-02",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "awesome-piracy",
+          "full_name": "Igglybuff/awesome-piracy",
+          "owner": "Igglybuff",
+          "description": "A curated list of awesome warez and piracy links",
+          "html_url": "https://github.com/Igglybuff/awesome-piracy",
+          "language": "HTML",
+          "stars": 26915,
+          "forks": 2283,
+          "topics": [
+            "audiobooks",
+            "awesome-list",
+            "comics",
+            "ebooks",
+            "movies"
+          ],
+          "created_at": "2018-10-09",
+          "updated_at": "2026-10-12",
+          "stars_gain": 1
+        },
+        {
+          "name": "ultimatevocalremovergui",
+          "full_name": "Anjok07/ultimatevocalremovergui",
+          "owner": "Anjok07",
+          "description": " GUI for a Vocal Remover that uses Deep Neural Networks.",
+          "html_url": "https://github.com/Anjok07/ultimatevocalremovergui",
+          "language": "Python",
+          "stars": 26586,
+          "forks": 2030,
+          "topics": [
+            "audio",
+            "instrumental",
+            "karaoke",
+            "kareokee",
+            "music"
+          ],
+          "created_at": "2020-07-20",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "spotify-downloader",
+          "full_name": "spotDL/spotify-downloader",
+          "owner": "spotDL",
+          "description": "Download your Spotify playlists and songs along with album art and metadata (from YouTube if a match is found).",
+          "html_url": "https://github.com/spotDL/spotify-downloader",
+          "language": "Python",
+          "stars": 26316,
+          "forks": 2278,
+          "topics": [
+            "download-music",
+            "hacktoberfest",
+            "mp3",
+            "music",
+            "playlists"
+          ],
+          "created_at": "2016-07-06",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "iptv-api",
+          "full_name": "Guovin/iptv-api",
+          "owner": "Guovin",
+          "description": "⚡️ IPTV直播源自动更新工具：自动采集、校验、测速并生成可播放结果，支持 M3U/TXT/API 输出、自定义频道、IPv4/IPv6、Docker、GitHub Actions、CLI 与 GUI 多端部署",
+          "html_url": "https://github.com/Guovin/iptv-api",
+          "language": "Python",
+          "stars": 25541,
+          "forks": 7548,
+          "topics": [
+            "auto-update",
+            "awesome",
+            "epg",
+            "iptv",
+            "iptv-api"
+          ],
+          "created_at": "2024-02-04",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "invidious",
+          "full_name": "iv-org/invidious",
+          "owner": "iv-org",
+          "description": "Invidious is an alternative front-end to YouTube",
+          "html_url": "https://github.com/iv-org/invidious",
+          "language": "Crystal",
+          "stars": 25382,
+          "forks": 2835,
+          "topics": [
+            "agplv3",
+            "hacktoberfest",
+            "invidious",
+            "libre",
+            "video"
+          ],
+          "created_at": "2018-02-07",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "howler.js",
+          "full_name": "goldfire/howler.js",
+          "owner": "goldfire",
+          "description": "Javascript audio library for the modern web.",
+          "html_url": "https://github.com/goldfire/howler.js",
+          "language": "JavaScript",
+          "stars": 25377,
+          "forks": 2279,
+          "topics": [
+            "audio",
+            "audio-library",
+            "howler",
+            "html5-audio",
+            "javascript"
+          ],
+          "created_at": "2013-01-28",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "navidrome",
+          "full_name": "navidrome/navidrome",
+          "owner": "navidrome",
+          "description": "🎧 Your Personal Streaming Service ",
+          "html_url": "https://github.com/navidrome/navidrome",
+          "language": "Go",
+          "stars": 24134,
+          "forks": 1756,
+          "topics": [
+            "airsonic",
+            "madsonic",
+            "media-server",
+            "music",
+            "music-server"
+          ],
+          "created_at": "2016-02-24",
+          "updated_at": "2026-10-13",
+          "stars_gain": 136
+        },
+        {
+          "name": "FreeTube",
+          "full_name": "FreeTubeApp/FreeTube",
+          "owner": "FreeTubeApp",
+          "description": "An Open Source YouTube app for privacy",
+          "html_url": "https://github.com/FreeTubeApp/FreeTube",
+          "language": "Vue",
+          "stars": 22045,
+          "forks": 1534,
+          "topics": [
+            "freetube",
+            "privacy",
+            "subscriptions",
+            "video",
+            "videos"
+          ],
+          "created_at": "2018-02-28",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "hypit",
+          "full_name": "hypit-ai/hypit",
+          "owner": "hypit-ai",
+          "description": "Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.",
+          "html_url": "https://github.com/hypit-ai/hypit",
+          "language": "TypeScript",
+          "stars": 21647,
+          "forks": 2385,
+          "topics": [
+            "agentic-ai",
+            "ai",
+            "ai-agents",
+            "ai-video",
+            "compiler"
+          ],
+          "created_at": "2026-07-29",
+          "updated_at": "2026-10-13",
+          "stars_gain": 826
+        },
+        {
+          "name": "GSYVideoPlayer",
+          "full_name": "CarGuo/GSYVideoPlayer",
+          "owner": "CarGuo",
+          "description": "Video players (IJKplayer, ExoPlayer, MediaPlayer), HTTPS, 16k page size, danmaku (bullet chat) support, external subtitles, support for filters, watermarks, and GIF screenshots, pre-roll and mid-roll ",
+          "html_url": "https://github.com/CarGuo/GSYVideoPlayer",
+          "language": "Java",
+          "stars": 21519,
+          "forks": 4321,
+          "topics": [
+            "16k",
+            "android",
+            "exoplayer",
+            "ffmpeg",
+            "gsy"
+          ],
+          "created_at": "2016-11-13",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "Anime4K",
+          "full_name": "bloc97/Anime4K",
+          "owner": "bloc97",
+          "description": "A High-Quality Real Time Upscaler for Anime Video",
+          "html_url": "https://github.com/bloc97/Anime4K",
+          "language": "Jupyter Notebook",
+          "stars": 21508,
+          "forks": 1400,
+          "topics": [
+            "anime",
+            "anime-upscaling",
+            "anime4k",
+            "cnn",
+            "computer-graphics"
+          ],
+          "created_at": "2019-08-13",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "livekit",
+          "full_name": "livekit/livekit",
+          "owner": "livekit",
+          "description": "End-to-end realtime stack for connecting humans and AI",
+          "html_url": "https://github.com/livekit/livekit",
+          "language": "Go",
+          "stars": 21397,
+          "forks": 2441,
+          "topics": [
+            "golang",
+            "media-server",
+            "sfu",
+            "video",
+            "voice"
+          ],
+          "created_at": "2020-09-30",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "vhs",
+          "full_name": "charmbracelet/vhs",
+          "owner": "charmbracelet",
+          "description": "Your CLI home video recorder 📼",
+          "html_url": "https://github.com/charmbracelet/vhs",
+          "language": "Go",
+          "stars": 21106,
+          "forks": 485,
+          "topics": [
+            "ascii",
+            "cli",
+            "command-line",
+            "gif",
+            "recording"
+          ],
+          "created_at": "2022-07-19",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "animeko",
+          "full_name": "open-ani/animeko",
+          "owner": "open-ani",
+          "description": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
+          "html_url": "https://github.com/open-ani/animeko",
+          "language": "Kotlin",
+          "stars": 20875,
+          "forks": 615,
+          "topics": [
+            "android",
+            "ani",
+            "anime",
+            "bangumi",
+            "bittorrent"
+          ],
+          "created_at": "2022-07-31",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "FunASR",
+          "full_name": "modelscope/FunASR",
+          "owner": "modelscope",
+          "description": "Open-source speech recognition toolkit for training, inference, streaming ASR, VAD, punctuation, speaker diarization pipelines, and OpenAI-compatible/MCP serving.",
+          "html_url": "https://github.com/modelscope/FunASR",
+          "language": "Python",
+          "stars": 20668,
+          "forks": 2077,
+          "topics": [
+            "asr",
+            "audio",
+            "chinese",
+            "emotion-recognition",
+            "funasr"
+          ],
+          "created_at": "2022-11-24",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "BlackHole",
+          "full_name": "ExistentialAudio/BlackHole",
+          "owner": "ExistentialAudio",
+          "description": "BlackHole is a modern macOS audio loopback driver that allows applications to pass audio to other applications with zero additional latency.",
+          "html_url": "https://github.com/ExistentialAudio/BlackHole",
+          "language": "C",
+          "stars": 19899,
+          "forks": 845,
+          "topics": [
+            "audio",
+            "driver",
+            "loopback",
+            "macos",
+            "virtual-audio-cable"
+          ],
+          "created_at": "2019-09-27",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "BackgroundMusic",
+          "full_name": "kyleneideck/BackgroundMusic",
+          "owner": "kyleneideck",
+          "description": "Background Music, a macOS audio utility: automatically pause your music, set individual apps' volumes and record system audio.",
+          "html_url": "https://github.com/kyleneideck/BackgroundMusic",
+          "language": "C++",
+          "stars": 19334,
+          "forks": 783,
+          "topics": [
+            "audio",
+            "audio-utility",
+            "cpp",
+            "macos",
+            "objective-c"
+          ],
+          "created_at": "2016-02-24",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "screenity",
+          "full_name": "alyssaxuu/screenity",
+          "owner": "alyssaxuu",
+          "description": "The free and privacy-friendly screen recorder with no limits 🎥",
+          "html_url": "https://github.com/alyssaxuu/screenity",
+          "language": "JavaScript",
+          "stars": 18774,
+          "forks": 1528,
+          "topics": [
+            "annotation",
+            "annotation-tool",
+            "audio",
+            "camera",
+            "chrome-extension"
+          ],
+          "created_at": "2020-11-01",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "audacity",
+          "full_name": "audacity/audacity",
+          "owner": "audacity",
+          "description": "Audio Editor                                     ",
+          "html_url": "https://github.com/audacity/audacity",
+          "language": "C++",
+          "stars": 18722,
+          "forks": 2683,
+          "topics": [
+            "audio",
+            "cross-platform",
+            "editor",
+            "gplv2",
+            "wxwidgets-applications"
+          ],
+          "created_at": "2015-03-26",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "nuclear",
+          "full_name": "nukeop/nuclear",
+          "owner": "nukeop",
+          "description": "Streaming music player that finds free music for you",
+          "html_url": "https://github.com/nukeop/nuclear",
+          "language": "TypeScript",
+          "stars": 18670,
+          "forks": 1336,
+          "topics": [
+            "desktop-app",
+            "linux",
+            "mac",
+            "mcp",
+            "mcp-server"
+          ],
+          "created_at": "2016-09-22",
+          "updated_at": "2026-10-12",
+          "stars_gain": 37
+        },
+        {
+          "name": "ffmpeg.wasm",
+          "full_name": "ffmpegwasm/ffmpeg.wasm",
+          "owner": "ffmpegwasm",
+          "description": "FFmpeg for browser, powered by WebAssembly",
+          "html_url": "https://github.com/ffmpegwasm/ffmpeg.wasm",
+          "language": "C",
+          "stars": 17859,
+          "forks": 1118,
+          "topics": [
+            "audio",
+            "experimental-features",
+            "ffmpeg",
+            "transcode",
+            "video"
+          ],
+          "created_at": "2019-10-16",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "koel",
+          "full_name": "koel/koel",
+          "owner": "koel",
+          "description": "Music streaming solution that works.",
+          "html_url": "https://github.com/koel/koel",
+          "language": "PHP",
+          "stars": 17278,
+          "forks": 2113,
+          "topics": [
+            "audio",
+            "hacktoberfest",
+            "laravel",
+            "music",
+            "music-player"
+          ],
+          "created_at": "2015-12-06",
+          "updated_at": "2026-10-13",
+          "stars_gain": 4
+        },
+        {
+          "name": "Waifu2x-Extension-GUI",
+          "full_name": "AaronFeng753/Waifu2x-Extension-GUI",
+          "owner": "AaronFeng753",
+          "description": "Video, Image and GIF upscale/enlarge(Super-Resolution) and Video frame interpolation. Achieved with Waifu2x,  Real-ESRGAN, Real-CUGAN, RTX Video Super Resolution VSR, SRMD, RealSR, Anime4K, RIFE, IFRN",
+          "html_url": "https://github.com/AaronFeng753/Waifu2x-Extension-GUI",
+          "language": "C++",
+          "stars": 17114,
+          "forks": 1057,
+          "topics": [
+            "anime",
+            "anime4k",
+            "esrgan",
+            "frame-interpolation",
+            "image-enlarger"
+          ],
+          "created_at": "2020-01-20",
+          "updated_at": "2026-10-12",
+          "stars_gain": 24
+        },
+        {
+          "name": "AlgerMusicPlayer",
+          "full_name": "algerkong/AlgerMusicPlayer",
+          "owner": "algerkong",
+          "description": "一个第三方音乐播放器、本地服务、桌面歌词、音乐下载、远程控制",
+          "html_url": "https://github.com/algerkong/AlgerMusicPlayer",
+          "language": "Vue",
+          "stars": 16977,
+          "forks": 1378,
+          "topics": [
+            "alger",
+            "music",
+            "music-player"
+          ],
+          "created_at": "2023-10-27",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "hls.js",
+          "full_name": "video-dev/hls.js",
+          "owner": "video-dev",
+          "description": "HLS.js is a JavaScript library that plays HLS in browsers with support for MSE.",
+          "html_url": "https://github.com/video-dev/hls.js",
+          "language": "TypeScript",
+          "stars": 16976,
+          "forks": 2763,
+          "topics": [
+            "ecmascript6",
+            "hacktoberfest",
+            "hls",
+            "hlsjs",
+            "html5"
+          ],
+          "created_at": "2015-01-30",
+          "updated_at": "2026-10-12",
+          "stars_gain": 7
+        },
+        {
+          "name": "webrtc",
+          "full_name": "pion/webrtc",
+          "owner": "pion",
+          "description": "Pure Go implementation of the WebRTC API",
+          "html_url": "https://github.com/pion/webrtc",
+          "language": "Go",
+          "stars": 16830,
+          "forks": 1904,
+          "topics": [
+            "audio",
+            "go",
+            "golang",
+            "live-video",
+            "ortc"
+          ],
+          "created_at": "2018-05-18",
+          "updated_at": "2026-10-12",
+          "stars_gain": 11
+        },
+        {
+          "name": "DPlayer",
+          "full_name": "DIYgod/DPlayer",
+          "owner": "DIYgod",
+          "description": ":lollipop: Wow, such a lovely HTML5 danmaku video player",
+          "html_url": "https://github.com/DIYgod/DPlayer",
+          "language": "JavaScript",
+          "stars": 16517,
+          "forks": 2484,
+          "topics": [
+            "danmaku",
+            "dash",
+            "dplayer",
+            "flv",
+            "hls"
+          ],
+          "created_at": "2016-05-03",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "YoutubeDownloader",
+          "full_name": "Tyrrrz/YoutubeDownloader",
+          "owner": "Tyrrrz",
+          "description": "Downloads videos and playlists from YouTube",
+          "html_url": "https://github.com/Tyrrrz/YoutubeDownloader",
+          "language": "C#",
+          "stars": 16409,
+          "forks": 2085,
+          "topics": [
+            "download",
+            "downloader",
+            "ffmpeg",
+            "mp3",
+            "mp4"
+          ],
+          "created_at": "2018-11-16",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "digital_video_introduction",
+          "full_name": "leandromoreira/digital_video_introduction",
+          "owner": "leandromoreira",
+          "description": "A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding). Translations: 🇺🇸 🇨🇳 🇯🇵 🇮🇹 🇰🇷 🇷🇺 🇧🇷 🇪🇸",
+          "html_url": "https://github.com/leandromoreira/digital_video_introduction",
+          "language": "Jupyter Notebook",
+          "stars": 16358,
+          "forks": 1381,
+          "topics": [
+            "adaptive-streaming",
+            "arithmetic-coding",
+            "audio",
+            "av1",
+            "bitstream"
+          ],
+          "created_at": "2017-01-28",
+          "updated_at": "2026-10-13",
+          "stars_gain": 15
+        },
+        {
+          "name": "beets",
+          "full_name": "beetbox/beets",
+          "owner": "beetbox",
+          "description": "music library manager and MusicBrainz tagger",
+          "html_url": "https://github.com/beetbox/beets",
+          "language": "Python",
+          "stars": 15786,
+          "forks": 2144,
+          "topics": [
+            "cli",
+            "hacktoberfest",
+            "music",
+            "music-library",
+            "musicbrainz"
+          ],
+          "created_at": "2010-08-09",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "PeerTube",
+          "full_name": "Chocobozzz/PeerTube",
+          "owner": "Chocobozzz",
+          "description": "ActivityPub-federated video streaming platform using P2P directly in your web browser",
+          "html_url": "https://github.com/Chocobozzz/PeerTube",
+          "language": "TypeScript",
+          "stars": 15361,
+          "forks": 1861,
+          "topics": [
+            "activitypub",
+            "angular",
+            "decentralized",
+            "p2p",
+            "video"
+          ],
+          "created_at": "2015-10-29",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "moviepy",
+          "full_name": "Zulko/moviepy",
+          "owner": "Zulko",
+          "description": "Video editing with Python",
+          "html_url": "https://github.com/Zulko/moviepy",
+          "language": "Python",
+          "stars": 14975,
+          "forks": 2117,
+          "topics": [
+            "animation",
+            "gif",
+            "hacktoberfest",
+            "python",
+            "video"
+          ],
+          "created_at": "2013-08-12",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "Tone.js",
+          "full_name": "Tonejs/Tone.js",
+          "owner": "Tonejs",
+          "description": "A Web Audio framework for making interactive music in the browser.",
+          "html_url": "https://github.com/Tonejs/Tone.js",
+          "language": "TypeScript",
+          "stars": 14759,
+          "forks": 1073,
+          "topics": [
+            "javascript",
+            "music",
+            "samples",
+            "scheduling",
+            "synthesis"
+          ],
+          "created_at": "2014-03-11",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "agents",
+          "full_name": "livekit/agents",
+          "owner": "livekit",
+          "description": "A framework for building realtime voice AI agents 🤖🎙️📹 ",
+          "html_url": "https://github.com/livekit/agents",
+          "language": "Python",
+          "stars": 14716,
+          "forks": 3920,
+          "topics": [
+            "agents",
+            "ai",
+            "openai",
+            "real-time",
+            "video"
+          ],
+          "created_at": "2023-10-19",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "awesome-stock-resources",
+          "full_name": "neutraltone/awesome-stock-resources",
+          "owner": "neutraltone",
+          "description": ":city_sunrise: A collection of links for free stock photography, video and Illustration websites",
+          "html_url": "https://github.com/neutraltone/awesome-stock-resources",
+          "language": "Ruby",
+          "stars": 14598,
+          "forks": 822,
+          "topics": [
+            "awesome",
+            "awesome-list",
+            "font",
+            "free-photos",
+            "icon-font"
+          ],
+          "created_at": "2015-10-31",
+          "updated_at": "2026-10-12",
+          "stars_gain": 16
+        },
+        {
+          "name": "ZY-Player",
+          "full_name": "Hunlongyu/ZY-Player",
+          "owner": "Hunlongyu",
+          "description": "▶️ 跨平台桌面端视频资源播放器.简洁无广告.免费高颜值. 🎞",
+          "html_url": "https://github.com/Hunlongyu/ZY-Player",
+          "language": "Vue",
+          "stars": 14512,
+          "forks": 2228,
+          "topics": [
+            "electron",
+            "electron-app",
+            "electron-application",
+            "player",
+            "video"
+          ],
+          "created_at": "2019-11-27",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "PictureSelector",
+          "full_name": "LuckSiege/PictureSelector",
+          "owner": "LuckSiege",
+          "description": "Picture Selector Library for Android or 图片选择器",
+          "html_url": "https://github.com/LuckSiege/PictureSelector",
+          "language": "Java",
+          "stars": 13587,
+          "forks": 3113,
+          "topics": [
+            "android",
+            "android-image-selector",
+            "camera",
+            "compress",
+            "glide"
+          ],
+          "created_at": "2017-01-04",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "Metrolist",
+          "full_name": "MetrolistGroup/Metrolist",
+          "owner": "MetrolistGroup",
+          "description": "YouTube Music client for Android",
+          "html_url": "https://github.com/MetrolistGroup/Metrolist",
+          "language": "Kotlin",
+          "stars": 13457,
+          "forks": 1135,
+          "topics": [
+            "android",
+            "foss",
+            "innertube",
+            "jetpack-compose",
+            "kotlin"
+          ],
+          "created_at": "2023-08-11",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "awesome-podcasts",
+          "full_name": "rShetty/awesome-podcasts",
+          "owner": "rShetty",
+          "description": "Collection of awesome podcasts",
+          "html_url": "https://github.com/rShetty/awesome-podcasts",
+          "language": null,
+          "stars": 13123,
+          "forks": 648,
+          "topics": [
+            "awesome",
+            "awesome-list",
+            "awesome-lists",
+            "podcast",
+            "software"
+          ],
+          "created_at": "2018-03-23",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "awesome-iptv",
+          "full_name": "iptv-org/awesome-iptv",
+          "owner": "iptv-org",
+          "description": "A curated list of resources related to IPTV",
+          "html_url": "https://github.com/iptv-org/awesome-iptv",
+          "language": null,
+          "stars": 12661,
+          "forks": 1350,
+          "topics": [
+            "epg",
+            "iptv",
+            "players",
+            "tv"
+          ],
+          "created_at": "2019-09-15",
+          "updated_at": "2026-10-13",
+          "stars_gain": 46
+        },
+        {
+          "name": "sonic-pi",
+          "full_name": "sonic-pi-net/sonic-pi",
+          "owner": "sonic-pi-net",
+          "description": "Code. Music. Live.",
+          "html_url": "https://github.com/sonic-pi-net/sonic-pi",
+          "language": "C++",
+          "stars": 12195,
+          "forks": 998,
+          "topics": [
+            "art",
+            "audio",
+            "education",
+            "instrument",
+            "live-coding"
+          ],
+          "created_at": "2013-04-29",
+          "updated_at": "2026-10-12",
+          "stars_gain": 0
+        },
+        {
+          "name": "SFML",
+          "full_name": "SFML/SFML",
+          "owner": "SFML",
+          "description": "Simple and Fast Multimedia Library",
+          "html_url": "https://github.com/SFML/SFML",
+          "language": "C++",
+          "stars": 12061,
+          "forks": 1914,
+          "topics": [
+            "audio",
+            "c-plus-plus",
+            "cross-platform",
+            "games",
+            "graphics"
+          ],
+          "created_at": "2011-03-25",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "SimpMusic",
+          "full_name": "maxrave-dev/SimpMusic",
+          "owner": "maxrave-dev",
+          "description": "A cross-platform music app using YouTube Music for backend",
+          "html_url": "https://github.com/maxrave-dev/SimpMusic",
+          "language": "Kotlin",
+          "stars": 11960,
+          "forks": 648,
+          "topics": [
+            "android",
+            "android-16",
+            "android-app",
+            "android-application",
+            "android-auto"
+          ],
+          "created_at": "2023-04-15",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "speechbrain",
+          "full_name": "speechbrain/speechbrain",
+          "owner": "speechbrain",
+          "description": "A PyTorch-based Speech Toolkit",
+          "html_url": "https://github.com/speechbrain/speechbrain",
+          "language": "Python",
+          "stars": 11868,
+          "forks": 1738,
+          "topics": [
+            "asr",
+            "audio",
+            "audio-processing",
+            "deep-learning",
+            "huggingface"
+          ],
+          "created_at": "2020-04-28",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "awesome-zhuiju-free",
+          "full_name": "laoma528/awesome-zhuiju-free",
+          "owner": "laoma528",
+          "description": "免费无广告的追剧资源指南，人工精选资源、每天检测资源有效性。收录在线影视、影视APP、网盘搜索、磁力BT、字幕、TVBox / 影视仓空壳软件/配置地址、IPTV直播源、会员拼团、影视相关开源项目。开源，社区共同维护。",
+          "html_url": "https://github.com/laoma528/awesome-zhuiju-free",
+          "language": "JavaScript",
+          "stars": 11864,
+          "forks": 818,
+          "topics": [
+            "awesome-list",
+            "bt-search",
+            "chinese",
+            "cloud-drive-search",
+            "free"
+          ],
+          "created_at": "2026-06-05",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "filmcraft",
+          "full_name": "storytold/filmcraft",
+          "owner": "storytold",
+          "description": "FilmCraft: An open-source, nonlinear video editor written by scratch in pure Rust",
+          "html_url": "https://github.com/storytold/filmcraft",
+          "language": "Rust",
+          "stars": 11637,
+          "forks": 4682,
+          "topics": [
+            "art",
+            "rust",
+            "video",
+            "video-editing",
+            "video-editor"
+          ],
+          "created_at": "2026-09-30",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "owncast",
+          "full_name": "owncast/owncast",
+          "owner": "owncast",
+          "description": "Take control over your live stream video by running it yourself.  Streaming + chat out of the box.",
+          "html_url": "https://github.com/owncast/owncast",
+          "language": "Go",
+          "stars": 11586,
+          "forks": 1184,
+          "topics": [
+            "activitypub",
+            "broadcasting",
+            "chat",
+            "decentralized",
+            "federation"
+          ],
+          "created_at": "2020-05-24",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "AudioKit",
+          "full_name": "AudioKit/AudioKit",
+          "owner": "AudioKit",
+          "description": "Audio synthesis, processing, & analysis platform for iOS, macOS and tvOS",
+          "html_url": "https://github.com/AudioKit/AudioKit",
+          "language": "Swift",
+          "stars": 11475,
+          "forks": 1625,
+          "topics": [
+            "audio",
+            "audiokit",
+            "ios",
+            "macos",
+            "midi"
+          ],
+          "created_at": "2014-01-21",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "EarTrumpet",
+          "full_name": "File-New-Project/EarTrumpet",
+          "owner": "File-New-Project",
+          "description": "EarTrumpet - Volume Control for Windows",
+          "html_url": "https://github.com/File-New-Project/EarTrumpet",
+          "language": "C#",
+          "stars": 11442,
+          "forks": 611,
+          "topics": [
+            "audio",
+            "eartrumpet",
+            "microsoft-store",
+            "mixer",
+            "playback-devices"
+          ],
+          "created_at": "2015-07-11",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        },
+        {
+          "name": "SpotiFlyer",
+          "full_name": "Shabinder/SpotiFlyer",
+          "owner": "Shabinder",
+          "description": "Kotlin Multiplatform Music Downloader, Supports Spotify /   Gaana / Youtube Music / Jio Saavn / SoundCloud.",
+          "html_url": "https://github.com/Shabinder/SpotiFlyer",
+          "language": "Kotlin",
+          "stars": 11299,
+          "forks": 820,
+          "topics": [
+            "album-downloader",
+            "albums",
+            "android",
+            "app",
+            "desktop"
+          ],
+          "created_at": "2020-07-15",
+          "updated_at": "2026-10-13",
+          "stars_gain": null
+        },
+        {
+          "name": "ten-framework",
+          "full_name": "TEN-framework/ten-framework",
+          "owner": "TEN-framework",
+          "description": " Open-source framework for conversational voice AI agents",
+          "html_url": "https://github.com/TEN-framework/ten-framework",
+          "language": "Python",
+          "stars": 11158,
+          "forks": 1362,
+          "topics": [
+            "ai",
+            "multi-modal",
+            "real-time",
+            "video",
+            "voice"
+          ],
+          "created_at": "2024-06-19",
+          "updated_at": "2026-10-12",
+          "stars_gain": null
+        }
+      ]
     }
   }
 }
