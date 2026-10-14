@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13 04:04:24",
+  "updated_at": "2026-10-14 02:19:08",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -391,25 +391,10 @@
       "why_hot": "插件入口集中，找扩展不用四处翻。",
       "who": "正在使用 DeepSeek Harness 的人。"
     },
-    "img2threejs/img2threejs": {
-      "what": "把参考图重建成可动画的 Three.js 模型。",
-      "why_hot": "图片转程序化 3D 模型，演示效果直观。",
-      "who": "做网页 3D 和互动展示的人。"
-    },
     "Niko1221/Strata": {
       "what": "在消费级设备上本地运行指定 Qwen 模型。",
       "why_hot": "一键安装加本地 API，降低了部署门槛。",
       "who": "想在自己电脑上跑模型的人。"
-    },
-    "latent-spaces/brag": {
-      "what": "一条命令把项目做成可分享的发布短片。",
-      "why_hot": "开发完顺手做宣传，流程足够省事。",
-      "who": "想展示作品的独立开发者。"
-    },
-    "miuuyy/codex-chatgpt-web": {
-      "what": "让 Codex 像调用模型一样使用 ChatGPT 网页版。",
-      "why_hot": "保留工具和流式体验，还瞄准额度痛点。",
-      "who": "同时使用 Codex 和 ChatGPT 的人。"
     },
     "dataelement/dsh-desktop": {
       "what": "DeepSeek Harness 的桌面版。",
@@ -655,11 +640,6 @@
       "what": "聚合热点与 RSS，并用 AI 筛选和分析资讯。",
       "why_hot": "信息太多看不过来，自动筛选和提醒很实用。",
       "who": "适合做舆情监测和内容选题的人。"
-    },
-    "microsoft/autogen": {
-      "what": "用来搭建多智能体协作应用的框架。",
-      "why_hot": "智能体应用热，大家想试试让多个模型分工。",
-      "who": "做 AI 应用和自动化流程的开发者。"
     },
     "BerriAI/litellm": {
       "what": "把多家大模型接口统一接入和管理。",
@@ -3426,11 +3406,6 @@
       "why_hot": "功能覆盖训练和恢复，还能导入常见应用的数据。",
       "who": "想自己管健身数据的训练爱好者。"
     },
-    "trailhq/Graft": {
-      "what": "帮 AI 编程工具理解代码库，减少耗时和成本。",
-      "why_hot": "大家都在用编程助手，速度和费用自然成了痛点。",
-      "who": "常用 AI 编程助手的大型项目团队。"
-    },
     "mattpocock/skills": {
       "what": "分享作者日常使用的工程师 Agent 技能配置。",
       "why_hot": "大家都在找能直接借鉴的 Agent 工作流。",
@@ -3455,11 +3430,6 @@
       "what": "用于管理工作中多个 AI Agent 的开源应用。",
       "why_hot": "Agent 越用越多，大家开始需要统一管理。",
       "who": "适合在团队里使用多个 Agent 的人。"
-    },
-    "hugohe3/ppt-master": {
-      "what": "把文档或主题变成可编辑的原生 PowerPoint。",
-      "why_hot": "能生成图表、动画等原生元素，比只出图片更实用。",
-      "who": "适合经常做汇报和演示的人。"
     },
     "devaccuracy/ledgerforge": {
       "what": "为钱包、支付等场景提供开源复式记账账本。",
@@ -3841,20 +3811,75 @@
       "why_hot": "能用容器搭 macOS 测试环境，做开发和安全研究都方便。",
       "who": "适合需要 macOS 测试环境的开发者。"
     },
-    "sherlock-project/sherlock": {
-      "what": "按用户名搜索各社交平台上的账号。",
-      "why_hot": "跨平台查用户名很直观，信息检索场景也多。",
-      "who": "适合做公开信息调查和账号排查的人。"
+    "Ebony-Vinyl/dsh-our-free-model": {
+      "what": "给 dsh 接入多个 AI 模型，号称免登录、免密钥。",
+      "why_hot": "免费用前沿模型的卖点很抓眼球，但稳定性还得验证。",
+      "who": "想低门槛试用 AI 模型的人。"
     },
-    "Z4nzu/hackingtool": {
-      "what": "把多种安全测试工具集中到一个入口。",
-      "why_hot": "工具多、上手快，容易吸引想省事的安全学习者。",
-      "who": "适合在授权环境中学习安全测试的人。"
+    "storytold/pdfcraft": {
+      "what": "一个用纯 Rust 从头开发的 PDF 阅读和编辑器。",
+      "why_hot": "PDF 工具需求一直很大，纯 Rust 实现也够吸睛。",
+      "who": "关注 PDF 工具和 Rust 桌面应用的人。"
     },
-    "MariaLetta/free-gophers-pack": {
-      "what": "提供上百张 Go 吉祥物图片和设计素材。",
-      "why_hot": "做 Go 相关内容时拿来就能用，省去找图的时间。",
-      "who": "适合做 Go 教程、分享和社区内容的人。"
+    "public-apis/public-apis": {
+      "what": "汇总各类免费 API 的开源清单。",
+      "why_hot": "做原型、找数据源时能直接翻，实用性很强。",
+      "who": "需要找 API 的开发者和产品原型作者。"
+    },
+    "yetone/magpie": {
+      "what": "在菜单栏里为不同 AI 编程工具切换模型。",
+      "why_hot": "大家想灵活搭配编程工具和模型，它正好省事。",
+      "who": "同时使用多个 AI 编程工具的人。"
+    },
+    "debpalash/VoiceStudio": {
+      "what": "本地运行的语音克隆、配音和转写工具。",
+      "why_hot": "本地处理兼顾隐私，功能又覆盖不少创作场景。",
+      "who": "做配音、有声书或视频本地化的人。"
+    },
+    "rustdesk/rustdesk": {
+      "what": "支持自建服务的开源远程桌面工具。",
+      "why_hot": "远程协助刚需常在，自建部署也让人更放心。",
+      "who": "需要远程运维或帮助家人修电脑的人。"
+    },
+    "localsend/localsend": {
+      "what": "让不同平台的设备互传文件，类似 AirDrop。",
+      "why_hot": "跨平台传文件够方便，少折腾账号和云盘。",
+      "who": "经常在手机和电脑间传文件的人。"
+    },
+    "laurent22/joplin": {
+      "what": "支持多端同步、注重隐私的开源笔记应用。",
+      "why_hot": "笔记和同步都是日常需求，隐私选项也加分。",
+      "who": "想自己掌控笔记数据的人。"
+    },
+    "chen08209/FlClash": {
+      "what": "基于 ClashMeta 的跨平台代理客户端。",
+      "why_hot": "界面简单、跨平台且没广告，容易被用户关注。",
+      "who": "需要管理代理配置的多设备用户。"
+    },
+    "LeCoupa/awesome-cheatsheets": {
+      "what": "把编程语言和开发工具的速查资料收在一起。",
+      "why_hot": "查语法和命令不用到处搜，随手翻很方便。",
+      "who": "常要速查语法的开发者和学生。"
+    },
+    "Aider-AI/aider": {
+      "what": "在终端里用 AI 协助修改代码的工具。",
+      "why_hot": "终端工作流里直接让 AI 改代码，很对开发者胃口。",
+      "who": "习惯命令行、想试 AI 结对编程的人。"
+    },
+    "pliang279/awesome-multimodal-ml": {
+      "what": "整理多模态机器学习研究资料的阅读清单。",
+      "why_hot": "多模态研究升温，系统化书单能省找论文的时间。",
+      "who": "刚入门或跟进多模态研究的人。"
+    },
+    "pliang279/MultiBench": {
+      "what": "用于评测多模态表示学习方法的基准项目。",
+      "why_hot": "多模态方法越来越多，统一评测方便横向比较。",
+      "who": "做多模态模型实验的研究者。"
+    },
+    "brycewang-stanford/Auto-Empirical-Research-Skills": {
+      "what": "整理面向社会科学实证研究的 Agent 技能。",
+      "why_hot": "AI 做研究很热，庞大的技能库容易引发讨论。",
+      "who": "想把 AI 用进实证研究流程的人。"
     }
   }
 }
