@@ -3990,6 +3990,166 @@
    "what": "开源免费的视频会议系统，无需注册即开即用。",
    "why_hot": "自部署会议的首选，隐私友好。",
    "who": "需要自建视频会议的团队。"
+  },
+  "wheresryan22/anatomy": {
+   "what": "一个智能体技能：为现实中的机器和复杂系统生成精细的交互式等距插画。",
+   "why_hot": "能输出带 WebGL 着色器的精美 SVG，AI 画图的新玩法。",
+   "who": "想让 AI 生成技术插画的人。"
+  },
+  "lidge-jun/opencodex": {
+   "what": "通用代理：让 OpenAI Codex 和 Claude Code 接入任意大模型。",
+   "why_hot": "不被官方模型绑定，编程智能体自由切换模型。",
+   "who": "用 Codex/Claude Code 但想换模型的人。"
+  },
+  "langchain-ai/openwiki": {
+   "what": "LangChain 出品的命令行工具：自动编写和维护智能体文档。",
+   "why_hot": "智能体文档也能自动化了，LangChain 背书。",
+   "who": "开发 AI 智能体、被文档折磨的人。"
+  },
+  "yc-software/qm": {
+   "what": "多人协作的智能体工作框架。",
+   "why_hot": "智能体也开始「多人在线」了，概念很新。",
+   "who": "想尝试多智能体协作办公的人。"
+  },
+  "Fei-Away/Codex-Dream-Skin": {
+   "what": "给 Codex CLI 换皮肤的主题项目。",
+   "why_hot": "程序员也要颜值，终端美化永不过时。",
+   "who": "用 Codex、喜欢折腾终端主题的人。"
+  },
+  "FlashML-org/FreeToken": {
+   "what": "把数据中心级模型推理搬到个人桌面端的项目。",
+   "why_hot": "本地跑大模型是硬核玩家的终极梦想。",
+   "who": "想在本地部署大模型推理的硬核玩家。"
+  },
+  "miuuyy/codex-chatgpt-web": {
+   "what": "把 ChatGPT 网页版（含 Pro）当作原生模型接入 Codex。",
+   "why_hot": "网页版额度用到 CLI 里，技巧性拉满。",
+   "who": "有 ChatGPT 会员、想在 Codex 里用的人。"
+  },
+  "apache/superset": {
+   "what": "Apache 基金会的数据可视化与探索平台。",
+   "why_hot": "开源 BI 标杆，替代商业看板的首选。",
+   "who": "需要自建数据看板的人。"
+  },
+  "marktext/marktext": {
+   "what": "简洁优雅的 Markdown 编辑器，支持三大桌面系统。",
+   "why_hot": "Typora 之外的免费优雅选择。",
+   "who": "爱用 Markdown 写作的人。"
+  },
+  "makeplane/plane": {
+   "what": "开源的 Jira/Linear 替代品，项目管理工具。",
+   "why_hot": "项目管理软件的开源平替，呼声一直很高。",
+   "who": "想自建项目管理系统的团队。"
+  },
+  "twentyhq/twenty": {
+   "what": "开源版 Salesforce，为 AI 时代设计的 CRM。",
+   "why_hot": "CRM 也要开源加 AI，概念踩在风口上。",
+   "who": "需要自建客户管理系统的团队。"
+  },
+  "FlowiseAI/Flowise": {
+   "what": "拖拽式搭建 AI 智能体的可视化工具。",
+   "why_hot": "不用写代码就能组装智能体，门槛极低。",
+   "who": "想快速做出 AI 应用的人。"
+  },
+  "lyswhut/lx-music-desktop": {
+   "what": "基于 Electron 的第三方音乐播放器。",
+   "why_hot": "免费听歌神器的桌面版，国人开发者作品。",
+   "who": "想在电脑上免费听歌的人。"
+  },
+  "mastodon/mastodon": {
+   "what": "去中心化开源微博客，联邦宇宙的代表。",
+   "why_hot": "X 的去中心化替代，自建社交的典范。",
+   "who": "想自建社交站点、不想被平台绑架的人。"
+  },
+  "GitHubDaily/GitHubDaily": {
+   "what": "持续分享 GitHub 优质开源项目的中文日报。",
+   "why_hot": "中文开发者发现好项目的情报站。",
+   "who": "想每天发现优质开源项目的人。"
+  },
+  "LeCoupa/awesome-cheatsheets": {
+   "what": "主流编程语言和框架的速查表合集。",
+   "why_hot": "查语法不用翻文档，一张表全搞定。",
+   "who": "多语言切换、总记混语法的开发者。"
+  },
+  "AstrBotDevs/AstrBot": {
+   "what": "能接入微信、QQ 等聊天软件的 AI 助手开发框架。",
+   "why_hot": "把 AI 助手装进微信，国人刚需。",
+   "who": "想做聊天软件里 AI 机器人的开发者。"
+  },
+  "ToolJet/ToolJet": {
+   "what": "开源的企业级应用生成平台，低代码搭内部工具。",
+   "why_hot": "低代码加 AI 生成应用，效率工具热门。",
+   "who": "需要快速搭建内部管理系统的团队。"
+  },
+  "sherlock-project/sherlock": {
+   "what": "输入用户名，一键搜遍各大社交平台的同名账号。",
+   "why_hot": "开源情报神器，找人查号必备。",
+   "who": "做开源情报、安全研究的人。"
+  },
+  "home-assistant/core": {
+   "what": "开源智能家居中枢，本地控制、隐私优先。",
+   "why_hot": "智能家居自建党的终极答案。",
+   "who": "想自己掌控全屋智能的人。"
+  },
+  "Z4nzu/hackingtool": {
+   "what": "集成了多种安全测试工具的一站式工具箱。",
+   "why_hot": "安全学习者的工具大礼包，星数 8 万加。",
+   "who": "学习网络安全、做渗透测试的人。"
+  },
+  "kepano/obsidian-skills": {
+   "what": "教 AI 智能体使用 Obsidian 的技能包。",
+   "why_hot": "让 AI 帮你整理知识库，笔记党狂喜。",
+   "who": "用 Obsidian、想让 AI 打理笔记的人。"
+  },
+  "HabitRPG/habitica": {
+   "what": "把习惯养成做成角色扮演游戏的打卡应用。",
+   "why_hot": "游戏化自律的鼻祖，坚持不下来的救星。",
+   "who": "想养成习惯但总是半途而废的人。"
+  },
+  "pliang279/MultiBench": {
+   "what": "NeurIPS 2021 的多模态表征学习基准测试集。",
+   "why_hot": "多模态研究的标准考场之一。",
+   "who": "做多模态模型评估的研究者。"
+  },
+  "plotly/react-plotly.js": {
+   "what": "Plotly 官方的 React 图表组件。",
+   "why_hot": "React 里画交互图表的标准件。",
+   "who": "需要在 React 里做数据可视化的前端。"
+  },
+  "gsantner/markor": {
+   "what": "安卓上的 Markdown 笔记和待办编辑器。",
+   "why_hot": "纯文本、离线优先，安卓笔记党的选择。",
+   "who": "在手机上记 Markdown 笔记的人。"
+  },
+  "brycewang-stanford/Auto-Empirical-Research-Skills": {
+   "what": "23000 多个实证研究智能体技能的精选合集。",
+   "why_hot": "学术圈也开始用智能体做研究了。",
+   "who": "做实证研究、想让 AI 打下手的研究者。"
+  },
+  "MariaLetta/free-gophers-pack": {
+   "what": "100 多张 Go 语言吉祥物 Gopher 插画素材包。",
+   "why_hot": "Gopher 表情包自由，Go 圈周边。",
+   "who": "Go 开发者、做技术分享需要配图的人。"
+  },
+  "GoldenCheetah/GoldenCheetah": {
+   "what": "给骑行、跑步、铁三运动员的开源训练分析软件。",
+   "why_hot": "耐力运动数据党的免费专业工具。",
+   "who": "认真训练、看功率数据的运动爱好者。"
+  },
+  "stared/science-based-games-list": {
+   "what": "基于科学的游戏清单，边玩边学科普。",
+   "why_hot": "寓教于乐，家长和老师都爱。",
+   "who": "想找有科学含量的游戏的人。"
+  },
+  "sachin-source/top-github-repositories-which-everyone-should-look": {
+   "what": "人人值得一看的重要 GitHub 仓库清单。",
+   "why_hot": "GitHub 入门导航，一篇顶十篇。",
+   "who": "刚玩 GitHub、不知道看什么的新人。"
+  },
+  "modelscope/FunASR": {
+   "what": "魔搭开源的语音识别工具包，支持训练推理和流式。",
+   "why_hot": "中文语音识别的开源利器。",
+   "who": "需要语音转文字能力的开发者。"
   }
  }
 }
