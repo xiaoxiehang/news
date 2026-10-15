@@ -146,8 +146,10 @@ CATEGORY_OVERRIDES = {
 
 # 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
 # stashapp/stash：成人内容管理工具，卡片会直接渲染其英文描述，不适合公开站点（2026-10-13 夜间质检）。
+# Igglybuff/awesome-piracy：盗版资源导航，不适合公开站点（2026-10-15 夜间质检）。
 CATEGORY_EXCLUDE = {
     'stashapp/stash',
+    'Igglybuff/awesome-piracy',
 }
 
 

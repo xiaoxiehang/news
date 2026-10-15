@@ -56,7 +56,8 @@ const CATEGORY_OVERRIDES = {
 
 // 内容黑名单：不宜在公开站点展示的项目（2026-10-13 夜间质检）
 // stashapp/stash：成人内容管理工具，卡片直接渲染其英文描述，不适合公开站点
-const CATEGORY_EXCLUDE = new Set(['stashapp/stash']);
+// Igglybuff/awesome-piracy：盗版资源导航，不适合公开站点（2026-10-15 夜间质检）
+const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy']);
 
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);
