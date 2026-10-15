@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-15",
+  "date_str": "2026年10月15日",
+  "overview": "今天的 AI 新闻，一边是智能体走进电商经营、网络安全和招聘面试，另一边是儿童安全与用户数据保护受到更严格的审视。机器人操作和 AI 辅助芯片设计也有新进展，但相关能力仍需经过实际应用检验。",
+  "picks": [
+    {
+      "title": "千问办公推出电商版，向商家开放邀测",
+      "summary": "千问办公宣布推出电商版，10 月 14 日起面向商家开放邀测，计划在一至两周内扩大开放。它试图让一个 AI 智能体处理跨平台查销售、核库存和汇总报表等事务；标题所称的成本降幅属于产品方说法，实际效果仍待验证。",
+      "url": "https://www.infoq.cn/article/IAAteiFAzfescqFHIyQU",
+      "source": "InfoQ 推荐",
+      "category": "今日头条"
+    },
+    {
+      "title": "Character.AI 破产后，用户数据将如何处理？",
+      "summary": "据 The Verge 报道，纽约州总检察长披露了针对 Character.AI、持续多年的多州调查，并寻求在其破产程序中的数据出售环节保护消费者。事件把一个现实问题摆上台面：AI 聊天服务若陷入经营困境，用户留下的对话和个人数据该由谁保护？",
+      "url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy",
+      "source": "The Verge",
+      "category": "前沿动态"
+    },
+    {
+      "title": "美国八州起诉 OpenAI，指控 ChatGPT 对儿童不安全",
+      "summary": "美国八个州对 OpenAI 提起诉讼，指控 ChatGPT 伤害儿童，并误导消费者相信其对未成年人足够安全。这是围绕生成式 AI 儿童保护问题的新一轮法律行动；目前这些说法仍是诉讼指控，并非法院认定的事实。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "麦肯锡拟让部分求职者与 AI 模拟客户对话",
+      "summary": "据 The Verge 报道，麦肯锡计划在部分初级岗位的招聘流程中，安排求职者与 AI 模拟客户交谈约十分钟。这让 AI 不只用于筛选简历，还进入面试环节；目前报道说的是部分候选人，并非所有应聘者都会接受这种测试。",
+      "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
+      "source": "The Verge",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Amp 借助 OpenAI 模型，让 AI 智能体走出编程场景",
+      "summary": "OpenAI 介绍了 Amp 如何利用其模型，将智能体的工作范围从写代码扩展到其他任务。官方提到 GPT-6 Astra 等模型及“使用 ChatGPT 登录”功能；这篇发布主要展示合作方的应用实践，并非宣布面向所有用户推出新模型。",
+      "url": "https://openai.com/index/amp-beyond-coding",
+      "source": "OpenAI 官方",
+      "category": "效率工具"
+    },
+    {
+      "title": "OpenAI：SentinelOne 将恶意软件分析从数周缩短至数小时",
+      "summary": "OpenAI 发布的案例称，网络安全公司 SentinelOne 使用其 Daybreak 技术后，将部分恶意软件分析工作从数周缩短至数小时。这可能让安全团队有余力调查更多威胁，但数字来自合作案例，不宜视为所有安全任务都能达到的效果。",
+      "url": "https://openai.com/index/sentinelone",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Natura-1 发布，尝试让机器人从人类经验中学习操作",
+      "summary": "机器之心报道，Natura-1 发布，主打从大量人类经验中学习，让机器人面对未见过的任务时也能尝试操作。报道提及百万小时数据、零样本泛化和灵巧操作等指标；这些能力在不同机器人与真实环境中的稳定性，仍需更多验证。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062756&idx=1&sn=fa2d7404984d41c4d2e1e61c8caa24af",
+      "source": "机器之心",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Ricursive Intelligence 探索用 AI 设计芯片",
+      "summary": "据 TechCrunch 报道，初创公司 Ricursive Intelligence 正在开发能参与芯片设计的 AI，希望系统从每轮设计结果中学习，再改进下一轮方案。其目标是加快芯片研发、缓解算力供给压力；目前报道聚焦研发方向，而不是已经解决芯片短缺。",
+      "url": "https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    }
+  ]
+}

@@ -1,64 +1,64 @@
 {
-  "date": "2026-10-14",
-  "date_str": "2026年10月14日",
-  "overview": "今天的 AI 新闻从模型延伸到了手机、视频创作和购物：Meta 发布新模型，阶跃星辰推出智能体手机，Shopify 则让更多 AI 助手接入商品目录。另一边，核电站、视觉医疗和工厂机器人出现新进展，AI 训练数据的来源也受到关注。",
+  "date": "2026-10-15",
+  "date_str": "2026年10月15日",
+  "overview": "今天的 AI 新闻，一边是智能体走进电商经营、网络安全和招聘面试，另一边是儿童安全与用户数据保护受到更严格的审视。机器人操作和 AI 辅助芯片设计也有新进展，但相关能力仍需经过实际应用检验。",
   "picks": [
     {
-      "title": "Meta 发布 Muse Wonder 系列新模型，瞄准个人与专业 AI 助手",
-      "summary": "Meta 于 10 月 12 日发布 Muse Wonder 和 Muse Wonder Full，称其为公司目前能力最强的模型，并将应用目标指向个人与专业 AI 助手。这是 Meta 在模型竞争中的一次重要更新，但新模型能否转化为普通人日常可用的产品，仍有待观察。",
-      "url": "https://www.infoq.cn/article/2QXm6PqYYX57AOxTYyO0",
+      "title": "美国八州起诉 OpenAI，指控 ChatGPT 对儿童不安全",
+      "summary": "美国八个州对 OpenAI 提起诉讼，指控 ChatGPT 伤害儿童，并误导消费者相信其对未成年人足够安全。这是围绕生成式 AI 儿童保护问题的新一轮法律行动；目前这些说法仍是诉讼指控，并非法院认定的事实。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "千问办公推出电商版，向商家开放邀测",
+      "summary": "千问办公宣布推出电商版，10 月 14 日起面向商家开放邀测，计划在一至两周内扩大开放。它试图让一个 AI 智能体处理跨平台查销售、核库存和汇总报表等事务；标题所称的成本降幅属于产品方说法，实际效果仍待验证。",
+      "url": "https://www.infoq.cn/article/IAAteiFAzfescqFHIyQU",
       "source": "InfoQ 推荐",
       "category": "今日头条"
     },
     {
-      "title": "阶跃星辰推出首款智能体手机，先行版定价 3999 元",
-      "summary": "阶跃终端 10 月 13 日发布 STEPX Neo 先行版，同时推出配套操作系统和开发工具，尝试让用户解锁手机后先接触 AI，而不是先寻找 App。手机定价 3999 元，已开放预售，计划于 10 月 16 日开售；它也让“AI 手机”从概念走向更具体的产品体验。",
-      "url": "https://www.infoq.cn/article/p2TobACROBC8UBPlRKXx",
-      "source": "InfoQ 推荐",
-      "category": "今日头条"
-    },
-    {
-      "title": "Higgsfield 借助 OpenAI 技术，将 AI 视频时长从一分钟延长至十分钟以上",
-      "summary": "OpenAI 介绍，视频创作平台 Higgsfield 借助其模型，将可生成的视频从约一分钟延长到十分钟以上，并改进画面控制能力。双方还计划探索用实时语音技术制作带声音的影片；对创作者来说，更长的视频有望减少反复拼接短片的工作。",
-      "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "title": "Amp 借助 OpenAI 模型，让 AI 智能体走出编程场景",
+      "summary": "OpenAI 介绍了 Amp 如何利用其模型，将智能体的工作范围从写代码扩展到其他任务。官方提到 GPT-6 Astra 等模型及“使用 ChatGPT 登录”功能；这篇发布主要展示合作方的应用实践，并非宣布面向所有用户推出新模型。",
+      "url": "https://openai.com/index/amp-beyond-coding",
       "source": "OpenAI 官方",
       "category": "效率工具"
     },
     {
-      "title": "Shopify 向更多 AI 助手开放商品目录",
-      "summary": "Shopify 宣布扩大商品目录对 AI 助手的开放范围，让更多助手能够浏览其平台上的商品，并协助用户完成购买。这意味着消费者今后可能直接在与 AI 的对话中找货、比较和下单，而不必每次都从传统购物页面开始。",
-      "url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
+      "title": "OpenAI：SentinelOne 将恶意软件分析从数周缩短至数小时",
+      "summary": "OpenAI 发布的案例称，网络安全公司 SentinelOne 使用其 Daybreak 技术后，将部分恶意软件分析工作从数周缩短至数小时。这可能让安全团队有余力调查更多威胁，但数字来自合作案例，不宜视为所有安全任务都能达到的效果。",
+      "url": "https://openai.com/index/sentinelone",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "麦肯锡拟让部分求职者与 AI 模拟客户对话",
+      "summary": "据 The Verge 报道，麦肯锡计划在部分初级岗位的招聘流程中，安排求职者与 AI 模拟客户交谈约十分钟。这让 AI 不只用于筛选简历，还进入面试环节；目前报道说的是部分候选人，并非所有应聘者都会接受这种测试。",
+      "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
       "source": "The Verge",
-      "category": "效率工具"
-    },
-    {
-      "title": "美国核反应堆运营开始引入 AI 助手",
-      "summary": "Atomic Canyon 与核工业组织合作推出面向核反应堆运营的 AI 助手 NIVA；在完成试点后，该工具现已向美国全部 94 座核反应堆开放使用。这表明 AI 正进入安全要求极高的行业，但“开放使用”不等于由 AI 接管反应堆运行。",
-      "url": "https://www.solidot.org/story?sid=85592",
-      "source": "Solidot",
       "category": "前沿动态"
     },
     {
-      "title": "AI 实验室购买已倒闭初创公司的数据，用于训练模型",
-      "summary": "《MIT 科技评论》报道，部分 AI 实验室正购买已倒闭初创公司留下的数据，用于训练模型；这些数据过去可能并未被视为重要资产。这笔新生意也提出了一个与用户切身相关的问题：公司停止运营后，用户曾留下的数据会流向哪里、被如何使用？",
-      "url": "https://www.technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models/",
-      "source": "MIT 科技评论",
+      "title": "Character.AI 破产后，用户数据将如何处理？",
+      "summary": "据 The Verge 报道，纽约州总检察长披露了针对 Character.AI、持续多年的多州调查，并寻求在其破产程序中的数据出售环节保护消费者。事件把一个现实问题摆上台面：AI 聊天服务若陷入经营困境，用户留下的对话和个人数据该由谁保护？",
+      "url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy",
+      "source": "The Verge",
       "category": "前沿动态"
     },
     {
-      "title": "Science Corporation 首次为斯塔加特病患者植入视觉芯片",
-      "summary": "Science Corporation 已为首位斯塔加特病患者植入其视觉恢复芯片，这是该技术面向这一患者群体的一项新进展。公司创始人表示，相关工作也是其探索新型脑机接口的一部分；目前报道的是植入进展，并非已证实患者恢复视力。",
-      "url": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient/",
-      "source": "TechCrunch",
+      "title": "Natura-1 发布，尝试让机器人从人类经验中学习操作",
+      "summary": "机器之心报道，Natura-1 发布，主打从大量人类经验中学习，让机器人面对未见过的任务时也能尝试操作。报道提及百万小时数据、零样本泛化和灵巧操作等指标；这些能力在不同机器人与真实环境中的稳定性，仍需更多验证。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062756&idx=1&sn=fa2d7404984d41c4d2e1e61c8caa24af",
+      "source": "机器之心",
       "category": "前沿动态"
     },
     {
-      "title": "Industrial Next 希望让工厂机器人在数分钟内切换任务",
-      "summary": "Industrial Next 正开发面向工厂的机器人方案，目标是让机器人切换任务所需的时间从数周缩短至数分钟。其关注的是过去往往需要人工完成的复杂、精细操作；这一目标若能实现，工厂在更换产品或调整生产线时将更灵活。",
-      "url": "https://techcrunch.com/2026/10/13/industrial-next-wants-factory-robots-to-switch-tasks-in-minutes-not-weeks/",
+      "title": "Ricursive Intelligence 探索用 AI 设计芯片",
+      "summary": "据 TechCrunch 报道，初创公司 Ricursive Intelligence 正在开发能参与芯片设计的 AI，希望系统从每轮设计结果中学习，再改进下一轮方案。其目标是加快芯片研发、缓解算力供给压力；目前报道聚焦研发方向，而不是已经解决芯片短缺。",
+      "url": "https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
       "source": "TechCrunch",
       "category": "前沿动态"
     }
   ],
-  "generated_at": "2026-10-14 02:16:05"
+  "generated_at": "2026-10-15 01:57:13"
 }
