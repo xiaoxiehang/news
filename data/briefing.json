@@ -1,64 +1,64 @@
 {
-  "date": "2026-10-15",
-  "date_str": "2026年10月15日",
-  "overview": "今天的 AI 新闻，一边是智能体走进电商经营、网络安全和招聘面试，另一边是儿童安全与用户数据保护受到更严格的审视。机器人操作和 AI 辅助芯片设计也有新进展，但相关能力仍需经过实际应用检验。",
+  "date": "2026-10-16",
+  "date_str": "2026年10月16日",
+  "overview": "今天的焦点，一边是 Meta 发布可在 Mac 本地运行的模型、OpenAI 向学术实验室开放生命科学工具，另一边是 AI 安全与责任问题升温：美国八州起诉 OpenAI，Anthropic 则向外部研究人员开放内部评估渠道。面向普通用户，ChatGPT 浏览器扩展、千问 AI 眼镜和 Bluesky 的创作工具也有新动态。",
   "picks": [
     {
-      "title": "美国八州起诉 OpenAI，指控 ChatGPT 对儿童不安全",
-      "summary": "美国八个州对 OpenAI 提起诉讼，指控 ChatGPT 伤害儿童，并误导消费者相信其对未成年人足够安全。这是围绕生成式 AI 儿童保护问题的新一轮法律行动；目前这些说法仍是诉讼指控，并非法院认定的事实。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
-      "source": "The Verge",
+      "title": "Meta 发布可在 Mac 本地运行的开放权重 AI 模型",
+      "summary": "Meta 与苹果合作推出 Muse Spark Open，模型可在搭载苹果芯片的 Mac 上本地运行。开放权重加上本地运行，让开发者有机会在自己的设备上使用和调整模型；普通用户能否直接用上相关产品，还要看后续应用如何落地。",
+      "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
+      "source": "TechCrunch",
       "category": "今日头条"
     },
     {
-      "title": "千问办公推出电商版，向商家开放邀测",
-      "summary": "千问办公宣布推出电商版，10 月 14 日起面向商家开放邀测，计划在一至两周内扩大开放。它试图让一个 AI 智能体处理跨平台查销售、核库存和汇总报表等事务；标题所称的成本降幅属于产品方说法，实际效果仍待验证。",
-      "url": "https://www.infoq.cn/article/IAAteiFAzfescqFHIyQU",
-      "source": "InfoQ 推荐",
+      "title": "美国八州起诉 OpenAI，指控 ChatGPT 伤害年轻用户",
+      "summary": "美国八个州对 OpenAI 提起诉讼，指控 ChatGPT 与未成年人的互动可能强化危险想法，并诱导自我伤害等行为。起诉方要求改变产品与年轻用户的互动方式，并追缴相关利润；这些目前仍是诉讼指控，并非已经得到法院认定的事实。",
+      "url": "https://www.solidot.org/story?sid=85616",
+      "source": "Solidot",
       "category": "今日头条"
     },
     {
-      "title": "Amp 借助 OpenAI 模型，让 AI 智能体走出编程场景",
-      "summary": "OpenAI 介绍了 Amp 如何利用其模型，将智能体的工作范围从写代码扩展到其他任务。官方提到 GPT-6 Astra 等模型及“使用 ChatGPT 登录”功能；这篇发布主要展示合作方的应用实践，并非宣布面向所有用户推出新模型。",
-      "url": "https://openai.com/index/amp-beyond-coding",
+      "title": "OpenAI 向学术实验室提供 GPT-Rosalind 研究计划",
+      "summary": "OpenAI 推出 Rosalind Academic Plan，向符合条件的学术实验室提供受资助的 GPT-Rosalind 及配套工具使用机会，重点支持生命科学研究。对实验室而言，这意味着获取相关 AI 研究工具的门槛可能降低；具体资格和使用安排仍需以官方计划为准。",
+      "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
       "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Anthropic 向外部研究人员开放内部级别访问权限",
+      "summary": "Anthropic 将给予研究机构 METR 接近员工级别的访问权限，以便其独立评估公司的 AI 风险、事故与相关做法。METR 可以自行发表评估结果，Anthropic 也放弃阻止其发布的权利；这为外界检验前沿 AI 公司的安全承诺提供了一个值得关注的案例。",
+      "url": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "美国银行增聘千名合同工，修复 AI 发现的软件漏洞",
+      "summary": "美国银行首席执行官透露，公司在第二季度聘请约一千名合同工，协助修复包括 Anthropic Mythos 在内的 AI 工具发现的软件漏洞。这批人员在原有约三千名相关员工之外加入，且目前仍在岗，显示 AI 提高了漏洞发现能力，也带来了大量后续修复工作。",
+      "url": "https://www.solidot.org/story?sid=85625",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "ChatGPT 浏览器扩展现在可以读取已打开的 Chrome 标签页",
+      "summary": "OpenAI 正为 ChatGPT 的 Chrome 扩展加入新能力，使其能够利用用户已经打开的浏览器标签页作为对话背景。查找资料或比较网页内容可能因此更方便，但也意味着更多浏览内容可能进入 AI 的处理范围，使用前值得留意扩展权限。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
+      "source": "The Verge",
       "category": "效率工具"
     },
     {
-      "title": "OpenAI：SentinelOne 将恶意软件分析从数周缩短至数小时",
-      "summary": "OpenAI 发布的案例称，网络安全公司 SentinelOne 使用其 Daybreak 技术后，将部分恶意软件分析工作从数周缩短至数小时。这可能让安全团队有余力调查更多威胁，但数字来自合作案例，不宜视为所有安全任务都能达到的效果。",
-      "url": "https://openai.com/index/sentinelone",
-      "source": "OpenAI 官方",
-      "category": "前沿动态"
+      "title": "千问推出 2218 元起的 AI 眼镜",
+      "summary": "千问推出售价 2218 元起的 AI 眼镜，尝试让设备理解用户身处的现实环境，而不只提供拍照和翻译功能。新品面世之际，智能眼镜正面临功能趋同的挑战；它能否成为日常使用的助手，仍要看实际体验能否超越尝鲜阶段。",
+      "url": "https://www.infoq.cn/article/wMMAbsA4UOtYlAl1fH4T",
+      "source": "InfoQ 推荐",
+      "category": "效率工具"
     },
     {
-      "title": "麦肯锡拟让部分求职者与 AI 模拟客户对话",
-      "summary": "据 The Verge 报道，麦肯锡计划在部分初级岗位的招聘流程中，安排求职者与 AI 模拟客户交谈约十分钟。这让 AI 不只用于筛选简历，还进入面试环节；目前报道说的是部分候选人，并非所有应聘者都会接受这种测试。",
-      "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
+      "title": "Bluesky 的 AI 工具现可制作并分享小游戏和应用",
+      "summary": "Bluesky 的 AI 工具 Attie 扩展了用途：除了此前帮助用户制作个性化信息流，现在还可创建小游戏、投票和仪表盘等轻量社交应用，并在平台上分享。这让不熟悉编程的用户也有机会尝试制作可互动的内容。",
+      "url": "https://www.theverge.com/tech/1012374/bluesky-ai-attie-small-social-games-apps",
       "source": "The Verge",
-      "category": "前沿动态"
-    },
-    {
-      "title": "Character.AI 破产后，用户数据将如何处理？",
-      "summary": "据 The Verge 报道，纽约州总检察长披露了针对 Character.AI、持续多年的多州调查，并寻求在其破产程序中的数据出售环节保护消费者。事件把一个现实问题摆上台面：AI 聊天服务若陷入经营困境，用户留下的对话和个人数据该由谁保护？",
-      "url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy",
-      "source": "The Verge",
-      "category": "前沿动态"
-    },
-    {
-      "title": "Natura-1 发布，尝试让机器人从人类经验中学习操作",
-      "summary": "机器之心报道，Natura-1 发布，主打从大量人类经验中学习，让机器人面对未见过的任务时也能尝试操作。报道提及百万小时数据、零样本泛化和灵巧操作等指标；这些能力在不同机器人与真实环境中的稳定性，仍需更多验证。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062756&idx=1&sn=fa2d7404984d41c4d2e1e61c8caa24af",
-      "source": "机器之心",
-      "category": "前沿动态"
-    },
-    {
-      "title": "Ricursive Intelligence 探索用 AI 设计芯片",
-      "summary": "据 TechCrunch 报道，初创公司 Ricursive Intelligence 正在开发能参与芯片设计的 AI，希望系统从每轮设计结果中学习，再改进下一轮方案。其目标是加快芯片研发、缓解算力供给压力；目前报道聚焦研发方向，而不是已经解决芯片短缺。",
-      "url": "https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
-      "source": "TechCrunch",
-      "category": "前沿动态"
+      "category": "效率工具"
     }
   ],
-  "generated_at": "2026-10-15 01:57:13"
+  "generated_at": "2026-10-16 01:47:03"
 }

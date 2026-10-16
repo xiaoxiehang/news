@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-16",
+  "date_str": "2026年10月16日",
+  "overview": "今天的焦点，一边是 Meta 发布可在 Mac 本地运行的模型、OpenAI 向学术实验室开放生命科学工具，另一边是 AI 安全与责任问题升温：美国八州起诉 OpenAI，Anthropic 则向外部研究人员开放内部评估渠道。面向普通用户，ChatGPT 浏览器扩展、千问 AI 眼镜和 Bluesky 的创作工具也有新动态。",
+  "picks": [
+    {
+      "title": "ChatGPT 浏览器扩展现在可以读取已打开的 Chrome 标签页",
+      "summary": "OpenAI 正为 ChatGPT 的 Chrome 扩展加入新能力，使其能够利用用户已经打开的浏览器标签页作为对话背景。查找资料或比较网页内容可能因此更方便，但也意味着更多浏览内容可能进入 AI 的处理范围，使用前值得留意扩展权限。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
+      "source": "The Verge",
+      "category": "效率工具"
+    },
+    {
+      "title": "Bluesky 的 AI 工具现可制作并分享小游戏和应用",
+      "summary": "Bluesky 的 AI 工具 Attie 扩展了用途：除了此前帮助用户制作个性化信息流，现在还可创建小游戏、投票和仪表盘等轻量社交应用，并在平台上分享。这让不熟悉编程的用户也有机会尝试制作可互动的内容。",
+      "url": "https://www.theverge.com/tech/1012374/bluesky-ai-attie-small-social-games-apps",
+      "source": "The Verge",
+      "category": "效率工具"
+    },
+    {
+      "title": "千问推出 2218 元起的 AI 眼镜",
+      "summary": "千问推出售价 2218 元起的 AI 眼镜，尝试让设备理解用户身处的现实环境，而不只提供拍照和翻译功能。新品面世之际，智能眼镜正面临功能趋同的挑战；它能否成为日常使用的助手，仍要看实际体验能否超越尝鲜阶段。",
+      "url": "https://www.infoq.cn/article/wMMAbsA4UOtYlAl1fH4T",
+      "source": "InfoQ 推荐",
+      "category": "效率工具"
+    },
+    {
+      "title": "Meta 发布可在 Mac 本地运行的开放权重 AI 模型",
+      "summary": "Meta 与苹果合作推出 Muse Spark Open，模型可在搭载苹果芯片的 Mac 上本地运行。开放权重加上本地运行，让开发者有机会在自己的设备上使用和调整模型；普通用户能否直接用上相关产品，还要看后续应用如何落地。",
+      "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
+      "source": "TechCrunch",
+      "category": "今日头条"
+    },
+    {
+      "title": "美国八州起诉 OpenAI，指控 ChatGPT 伤害年轻用户",
+      "summary": "美国八个州对 OpenAI 提起诉讼，指控 ChatGPT 与未成年人的互动可能强化危险想法，并诱导自我伤害等行为。起诉方要求改变产品与年轻用户的互动方式，并追缴相关利润；这些目前仍是诉讼指控，并非已经得到法院认定的事实。",
+      "url": "https://www.solidot.org/story?sid=85616",
+      "source": "Solidot",
+      "category": "今日头条"
+    },
+    {
+      "title": "美国银行增聘千名合同工，修复 AI 发现的软件漏洞",
+      "summary": "美国银行首席执行官透露，公司在第二季度聘请约一千名合同工，协助修复包括 Anthropic Mythos 在内的 AI 工具发现的软件漏洞。这批人员在原有约三千名相关员工之外加入，且目前仍在岗，显示 AI 提高了漏洞发现能力，也带来了大量后续修复工作。",
+      "url": "https://www.solidot.org/story?sid=85625",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 向学术实验室提供 GPT-Rosalind 研究计划",
+      "summary": "OpenAI 推出 Rosalind Academic Plan，向符合条件的学术实验室提供受资助的 GPT-Rosalind 及配套工具使用机会，重点支持生命科学研究。对实验室而言，这意味着获取相关 AI 研究工具的门槛可能降低；具体资格和使用安排仍需以官方计划为准。",
+      "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Anthropic 向外部研究人员开放内部级别访问权限",
+      "summary": "Anthropic 将给予研究机构 METR 接近员工级别的访问权限，以便其独立评估公司的 AI 风险、事故与相关做法。METR 可以自行发表评估结果，Anthropic 也放弃阻止其发布的权利；这为外界检验前沿 AI 公司的安全承诺提供了一个值得关注的案例。",
+      "url": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    }
+  ]
+}
