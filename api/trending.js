@@ -52,6 +52,11 @@ const CATEGORY_OVERRIDES = {
   'ctjhoa/rust-learning': 'education', // 2026-10-13: Rust 学习资源，被 topic:video 误吸入 media
   'gztchan/awesome-design': 'education', // 2026-10-13: 设计资源导航，被 topic:podcast 误吸入 media
   'mahmoud/awesome-python-applications': 'devtools', // 2026-10-13: Python 应用导航，被 topic:audio 误吸入 media
+  'zatosource/zato': 'backend-infra', // 2026-10-16 夜间质检：企业 ESB/SOA 集成工具，被 healthcare 查询误吸入
+  'you-dont-need/You-Dont-Need-JavaScript': 'frontend-mobile', // 2026-10-16 夜间质检：纯 CSS 技巧指南，被 game 查询误吸入
+  'Kaustubh-Natuskar/moreThanFAANGM': 'education', // 2026-10-16 夜间质检：400+ 公司求职机会清单，被 fintech 查询误吸入
+  '996icu/996.ICU': 'education', // 2026-10-16 夜间质检：劳工权益纪念仓库，非开发工具，被 devtools 查询误吸入
+  'GitHubDaily/GitHubDaily': 'education', // 2026-10-16 夜间质检：中文 GitHub 资讯/教程聚合，被 backend-infra 查询误吸入
 };
 
 // 内容黑名单：不宜在公开站点展示的项目（2026-10-13 夜间质检）

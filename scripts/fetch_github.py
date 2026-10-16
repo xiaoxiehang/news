@@ -142,6 +142,12 @@ CATEGORY_OVERRIDES = {
     'ctjhoa/rust-learning': 'education',  # Rust 学习资源，被 topic:video 误吸入
     'gztchan/awesome-design': 'education',  # 设计资源导航（同 education 现有 free-programming-books 一类），被 topic:podcast 误吸入
     'mahmoud/awesome-python-applications': 'devtools',  # Python 应用导航（同 devtools 现有 vinta/awesome-python 一类），被 topic:audio 误吸入
+    # 2026-10-16 夜间质检新增（实时 tab 全文/topic 误吸入，只过滤不搬运）
+    'zatosource/zato': 'backend-infra',  # 企业 ESB/SOA 集成工具，被 healthcare 查询误吸入
+    'you-dont-need/You-Dont-Need-JavaScript': 'frontend-mobile',  # 纯 CSS 技巧指南，被 game 查询误吸入
+    'Kaustubh-Natuskar/moreThanFAANGM': 'education',  # 400+ 公司求职机会清单，被 fintech 查询误吸入
+    '996icu/996.ICU': 'education',  # 劳工权益纪念仓库，非开发工具，被 devtools 查询误吸入
+    'GitHubDaily/GitHubDaily': 'education',  # 中文 GitHub 资讯/教程聚合，被 backend-infra 查询误吸入
 }
 
 # 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
