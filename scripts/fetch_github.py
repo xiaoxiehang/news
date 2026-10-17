@@ -148,6 +148,12 @@ CATEGORY_OVERRIDES = {
     'Kaustubh-Natuskar/moreThanFAANGM': 'education',  # 400+ 公司求职机会清单，被 fintech 查询误吸入
     '996icu/996.ICU': 'education',  # 劳工权益纪念仓库，非开发工具，被 devtools 查询误吸入
     'GitHubDaily/GitHubDaily': 'education',  # 中文 GitHub 资讯/教程聚合，被 backend-infra 查询误吸入
+    # 2026-10-17 夜间质检新增（实时 tab 全文/topic 误吸入，管线侧搬运归位）
+    'shap/shap': 'ai',  # SHAP 机器学习可解释性库，被 game 查询误吸入（"game theoretic" 全文匹配）
+    'YyzHarry/imbalanced-regression': 'ai',  # ICML 不平衡回归论文仓库，被 healthcare 查询误吸入
+    'pliang279/MultiBench': 'ai',  # 多模态 ML 基准，被 healthcare 查询误吸入
+    'pliang279/awesome-multimodal-ml': 'ai',  # 多模态 ML 阅读清单，被 healthcare 查询误吸入
+    'frappe/erpnext': 'backend-infra',  # 开源 ERP 系统，被 healthcare 查询误吸入
 }
 
 # 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
