@@ -1,9 +1,21 @@
 {
-  "fetched_at": "2026-10-16 01:46:40",
+  "fetched_at": "2026-10-17 01:40:50",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
+        {
+          "title": "How Itaú is building generative AI for its entire customer base",
+          "url": "https://openai.com/index/itau-generative-ai",
+          "desc": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors.",
+          "published": "Fri, 16 Oct 2026"
+        },
+        {
+          "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+          "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+          "desc": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation.",
+          "published": "Fri, 16 Oct 2026"
+        },
         {
           "title": "Bringing GPT-Rosalind to academic research labs",
           "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
@@ -21,24 +33,30 @@
           "url": "https://openai.com/index/sullivan-cromwell",
           "desc": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.",
           "published": "Thu, 15 Oct 2026"
-        },
-        {
-          "title": "Amp puts AI agents to work beyond code with OpenAI models",
-          "url": "https://openai.com/index/amp-beyond-coding",
-          "desc": "See how Amp pushes the frontier of what agents can do with GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT.",
-          "published": "Wed, 14 Oct 2026"
-        },
-        {
-          "title": "SentinelOne cuts malware analysis from weeks to hours",
-          "url": "https://openai.com/index/sentinelone",
-          "desc": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats.",
-          "published": "Wed, 14 Oct 2026"
         }
       ]
     },
     {
       "name": "机器之心",
       "items": [
+        {
+          "title": "卡加了，吞吐为何没跟上？大模型推理中的等待，有了新解法",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063125&idx=1&sn=f5030e5f29a40a6c8d742d2485efcb5b",
+          "desc": "突破大模型推理的数据并行负载均衡瓶颈",
+          "published": "Fri, 16 Oct 2026"
+        },
+        {
+          "title": "算力、算法、数据之外：这家南大系公司，押注智能增长的第四要素",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063125&idx=2&sn=4de0bf62f1f1a4e67105ef9d663dced8",
+          "desc": "模型群体智能（Collective Model Intelligence）。",
+          "published": "Fri, 16 Oct 2026"
+        },
+        {
+          "title": "Agent推理快10倍是怎么做到的？苹果×CMU：把「生成」改成「做选择题」",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063125&idx=3&sn=ea4caa15e65862454b786586bfcce177",
+          "desc": "多模态搜索每轮推理延迟降低超过 90%。",
+          "published": "Fri, 16 Oct 2026"
+        },
         {
           "title": "独立建制、招10名顶尖安全人才：字节Seed对AGI的目标可能被低估了",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062870&idx=1&sn=a16c85f0a054c2e0fffdcb7f6a38b4ee",
@@ -68,24 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062756&idx=2&sn=d303e463a1408dbefefecd7ebb10fe8f",
           "desc": "统治程序员20年的Git，被AI撼动了。",
           "published": "Wed, 14 Oct 2026"
-        },
-        {
-          "title": "苹果LensVLM：长上下文压缩成图片，模型边看边「放大」",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062756&idx=3&sn=7b77525c43945b4e5a775f0d78cb4cbd",
-          "desc": "让模型在阅读压缩内容时，仍能按需查阅原文",
-          "published": "Wed, 14 Oct 2026"
-        },
-        {
-          "title": "九章云极问鼎陶哲轩数学挑战赛！让强化学习成为AI4S新基建",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062445&idx=1&sn=608c7ccba2cb0bcd1a34da07084d6cd1",
-          "desc": "让 AI 探索更广袤的未知。",
-          "published": "Tue, 13 Oct 2026"
-        },
-        {
-          "title": "申报倒计时7天！2026云程奖，要给「在校AI本硕博」发奖学金",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062445&idx=2&sn=09d3ae148779c3bd1a544b44f72c02ea",
-          "desc": "北京时间10月20日23:59截止！阅读原文完成报名/提名",
-          "published": "Tue, 13 Oct 2026"
         }
       ]
     },
@@ -93,34 +93,34 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "陆挺：AI驱动的全球经济新周期",
-          "url": "https://www.huxiu.com/article/4897907.html?f=rss",
+          "title": "美银、花旗出手，限制AI Agent",
+          "url": "https://www.huxiu.com/article/4898215.html?f=rss",
           "desc": "",
-          "published": "Fri, 16 Oct 2026"
+          "published": "Sat, 17 Oct 2026"
         },
         {
-          "title": "Meta发布，美国最强开源大模型",
-          "url": "https://www.huxiu.com/article/4897887.html?f=rss",
+          "title": "我被AI诈骗盯上了",
+          "url": "https://www.huxiu.com/article/4898214.html?f=rss",
           "desc": "",
-          "published": "Fri, 16 Oct 2026"
+          "published": "Sat, 17 Oct 2026"
         },
         {
-          "title": "造神之后：AI绝非新神，却是人类进化史上的终极考验",
-          "url": "https://www.huxiu.com/article/4897886.html?f=rss",
-          "desc": "",
-          "published": "Fri, 16 Oct 2026"
-        },
-        {
-          "title": "欣顿的务实主义AI监管主张",
-          "url": "https://www.huxiu.com/article/4897882.html?f=rss",
-          "desc": "",
-          "published": "Fri, 16 Oct 2026"
+          "title": "该撕下Anthropic“2万亿预期估值”的面具了",
+          "url": "https://www.huxiu.com/article/4898196.html?f=rss",
+          "desc": "现在的增速撑不起2万亿叙事",
+          "published": "Sat, 17 Oct 2026"
         }
       ]
     },
     {
       "name": "Solidot",
       "items": [
+        {
+          "title": "Meta 发布其开放权重模型 Muse Spark Open",
+          "url": "https://www.solidot.org/story?sid=85634",
+          "desc": "Meta 发布了 Muse Spark Open，称它是目前美国最强大的开放权重模型。Muse Spark Open 为多模态模型，总共有 8160 亿参数，激活参数 420 亿，支持 100 万 Token 上下文。该模型利用了苹果最新版本的开源数组框架 MLX，对苹果 Apple Silicon 的统一内存架构进行了优化，能运行在搭载 M5 Ultra 芯片的 Mac Studio 上。M5 ",
+          "published": "Sat, 17 Oct 2026"
+        },
         {
           "title": "美国银行雇佣千名合同工修复 AI 工具发现的软件漏洞",
           "url": "https://www.solidot.org/story?sid=85625",
@@ -138,30 +138,18 @@
           "url": "https://www.solidot.org/story?sid=85616",
           "desc": "堪萨斯州、亚利桑那州和蒙大拿州等美国八个州对 OpenAI 提起诉讼，指控 ChatGPT 诱导儿童自我伤害。八个州要求 OpenAI 改变其产品与年轻用户互动的方式，没收由此产生的利润。诉讼指出 ChatGPT 的设计初衷是通过表现得随和、善于互动去赢得用户信任。但诉讼称聊天机器人会强化妄想、鼓励危险行为，协助用户策划诸如大规模枪击之类的暴力行为。诉讼指控 OpenAI 在 ChatGPT 的安",
           "published": "Thu, 15 Oct 2026"
-        },
-        {
-          "title": "Linus Torvalds 用 LLM 辅助开发的补丁递交接受审查",
-          "url": "https://www.solidot.org/story?sid=85612",
-          "desc": "Linux 作者 Linus Torvalds 在维护者峰会上透露他在大模型帮助下开发了一系列补丁解决一个长期存在的问题。现在这组 10 个补丁已递交接受审查。这些补丁主要增强 folio 的查找机制：通过识别处于热数据状态的 folio，设置一个“延迟释放该 folio 直至 RCU 周期结束”的标志。随后利用 RCU 延迟在 RCU 保护下进行常规的 folio 查找，同时在 RCU 保护下直",
-          "published": "Wed, 14 Oct 2026"
-        },
-        {
-          "title": "NetBSD 成为反 AI 开发者青睐的开源操作系统",
-          "url": "https://www.solidot.org/story?sid=85608",
-          "desc": "随着 Linux 阵营拥抱亲 AI 路线，NetBSD 意外成为抵触 AI 的开发者青睐的开源操作系统。NetBSD 项目透露，上个月它收到了 120,282 美元捐款，远超 50,000 美元的筹款目标。过去几个月，Linux 作者 Linus Torvalds、社区发行版项目 Debian、商业发行版 Ubuntu 和 Red Hat 都展现了亲 AI 立场，相比下 NetBSD 项目则早在 ",
-          "published": "Wed, 14 Oct 2026"
-        },
-        {
-          "title": "OpenAI 工程师因在高管会议室放置监听设备被捕",
-          "url": "https://www.solidot.org/story?sid=85605",
-          "desc": "35 岁的沙特籍 OpenAI 工程师 Abdulrahman Alfozan 因在高管会议室内放置监听设备遭到逮捕。Alfozan 是一家专注于中东和北非市场的风投公司 Raed Ventures 的合伙人，该风投的合伙人还包括沙特王室成员 Khalid Bin Bader Al Saud 亲王。Alfozan 曾在 Meta、微软和 SAP 任职，曾在 MIT 攻读计算机科学与工程专业。Ope",
-          "published": "Wed, 14 Oct 2026"
         }
       ]
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "刘尚@香港科技大学 - FABO：Agent workflow改进芯片自动化设计中的np-hard布线算法",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557525&idx=1&sn=8baa7037c51ce5d1a8f99624f30435a7",
+          "desc": "本期MLNLP学术Talk邀请了香港科技大学博士生刘尚在2026年10月17日9:00-10:00为我们带来“FABO：Agentworkflow改进芯片自动化设计中的np-hard布线算法”的主题报告。",
+          "published": "Sat, 17 Oct 2026"
+        },
         {
           "title": "今年最火00后诞生！Instinct创始人深度专访来了",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557520&idx=1&sn=3a4c8e473e6d04486e3c0cf2cc353882",
@@ -191,12 +179,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557488&idx=1&sn=e4d3971c2a838c1296a0c9687c20dd69",
           "desc": "谁能率先把「长程信用分配」与「环境噪声鲁棒的可复现大规模合成」这两块最硬的骨头啃下来，并在模型-harness-环境的协同设计上形成闭环，谁就能在下一轮Agentic智能的竞赛中握住先手。",
           "published": "Mon, 12 Oct 2026"
-        },
-        {
-          "title": "王的猜想，刚刚扩展到四维",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557469&idx=1&sn=2c0de391596916c27b83fb17b19aa06c",
-          "desc": "",
-          "published": "Sun, 11 Oct 2026"
         }
       ]
     },
@@ -204,40 +186,40 @@
       "name": "InfoQ 推荐",
       "items": [
         {
-          "title": "拍照和翻译救不了AI眼镜？千问2218元起推新硬件，要抢现实世界里的上下文",
-          "url": "https://www.infoq.cn/article/wMMAbsA4UOtYlAl1fH4T",
-          "desc": "国产智能眼镜正遭遇一个尴尬境地：摄像头像素越来越高，翻译语言涵盖几十种，AI 功能越塞越满，但用户新鲜劲一过，它依然逃不过躺在角落里吃灰的宿命。 IDC 最新公布的数据已经透露出一些信号：2026 年第二季度，全球智能眼镜出货量同比增长 35.3%，中国市场却首次出现 8% 的同比下滑。其中，音频及音频拍摄眼镜品类更是下降 35.4%。功能同质化与产品迭代接续不足，让该品类触到了天花板。 这并非意",
-          "published": "Thu, 15 Oct 2026"
+          "title": "聚焦 AI 场景落地与 FDE 创新，2026 人工智能产业大会专项活动在济南举行",
+          "url": "https://www.infoq.cn/article/1XtKjZ1OCyrYTCmb4Zkb",
+          "desc": "随着大模型和智能体加快进入企业生产经营环节，AI 应用正在从“能力可用”进一步走向“业务可交付”。围绕真实场景、工程交付和产业协同，2026 人工智能产业大会专项活动“ AI 场景落地与 FDE 创新发展交流对接活动”在济南举行，并同步启动 2027 人工智能产业大赛、共智方舟社区，发布《 2026—2027 AI 场景落地与 FDE 创新发展行动计划》。 10 月16 日，2026 人工智能产业",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "阶跃星辰开放 Step 5 Preview 权重：长程 Agent 的竞争，延伸到上下文管理与训练系统",
-          "url": "https://www.infoq.cn/article/EwqsJX6f03ODRac6Kk4c",
-          "desc": "10 月 15 日，阶跃星辰宣布正式开放 Step 5 Preview 权重，包括 BF16 与 FP8 两个版本，并同步发布技术博客、配套开源开发工具及部署指南。模型权重已上线 Hugging Face 和 ModelScope。 Hugging Face 地址：https://huggingface.co/stepfun-ai/Step-5-Preview ModelScope 地址：http",
-          "published": "Thu, 15 Oct 2026"
+          "title": "生产级大模型平台工程实战手册",
+          "url": "https://www.infoq.cn/article/xQLd004RGWrzFhwqBOyC",
+          "desc": "在我们将基于 LLM 的库存推荐系统投入生产运行的第一个月末，约 15% 的智能体返回结果是幻觉——听起来言之凿凿，但内容毫无事实依据。 六个月后，幻觉率降到了 1.5%。推动这一数字下降的关键，并非换用更强大的基础模型，而是我们做出的一个决定：不再将大模型相关能力视作应用层的业务问题，而是把它当作平台基础设施来对待。 本文所描述的项目，是一家大型零售企业的库存准确性平台。系统库存记录会因错放、损",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "蚂蚁百灵开源 560B 模型 Ling-3.0-flash：0.19 美元搞定复杂工作流",
-          "url": "https://www.infoq.cn/article/SxQO3Aw6JCTgNMTGPPE8",
-          "desc": "10月15日，蚂蚁集团旗下百灵大模型宣布开源 Ling-3.1-flash。该模型主打“真实可用”，面向真实世界任务实现能力升级，让模糊的业务需求更快变成可用的成果。开源模型面向 Hugging Face 和 ModelScope 提供权重下载。 Hugging Face 地址：https://huggingface.co/inclusionAI/Ling-3.1-flash ModelScope",
-          "published": "Thu, 15 Oct 2026"
+          "title": "AI 生成的代码，怎么才能进得了工程体系？",
+          "url": "https://www.infoq.cn/article/8iKz8xNQvxDfeuxH1QLA",
+          "desc": "AI 编程工具的竞争，在过去一年里换了个赛道。 2025 年上半年，话题还集中在\"能不能生成\"——模型能不能写出可编译的代码，能不能一次跑通一个完整功能。到 2025 年下半年，Cursor、GitHub Copilot、Codex CLI、Gemini CLI 以及 Kiro CLI 先后把 Agent 推进终端之后，生成能力本身已经很难再构成差异点。 真正的问题后移了：AI 写出来的代码，能不",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "国产 GPU 越来越多，为什么反而更难用？",
-          "url": "https://www.infoq.cn/article/pkyTD9OWfpU7QvIbLX2j",
-          "desc": "国产算力的问题正在发生变化。 三年前，对不少模型公司和算力建设方而言，最迫切的问题是“有没有卡”；当国产芯片、服务器和集群方案逐渐丰富之后，另一个问题开始变得更突出：拿到一批卡，并不等于真正获得了同等规模的有效算力。 模型迁移到新的芯片上，接口能够对上，只是第一步；集群从几十张卡扩大到几千、上万张卡之后，通信、网络、调度以及故障定位中的任何一个短板，都有可能让大量加速卡陷入等待。再往前一步，当一家",
-          "published": "Thu, 15 Oct 2026"
+          "title": "范式智能联合睿思智联推出开源一站式生产级AI部署平台 “模域ModelSphere”",
+          "url": "https://www.infoq.cn/article/VZPlIIdGRg062mgwJe5y",
+          "desc": "10月16日，北京-范式智能联合北京睿思智联科技有限公司宣布，一站式生产级AI部署平台“模域” (ModelSphere)正式上线。该平台面向企业用户免费开源，将算力管理、模型部署和运行优化整合在统一平台，帮助企业降低部署与运维门槛，更高效地将算力转化为安全、稳定、可用于实际业务的AI服务。 随着大模型进入规模化商业阶段，企业在算力统筹、模型部署与效能优化中，普遍面临资源利用率低、芯片生态割裂、部",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "黄仁勋谈中国 AI 公司：算力很缺，但他们就是在拼命把事情做成",
-          "url": "https://www.infoq.cn/article/HC8SAgaZmHc6sfwp9gc9",
-          "desc": "“嘿，大家安静！张忠谋打电话来了！” 接到这通电话时，黄仁勋办公室外面的员工正在玩第一代 PlayStation，笑声、喊声混成一片。而他已经为联系台积电等了很久：翻黄页、查号码，反复拨打美国办公室的电话，留下语音，却始终没有收到回电。最后，他给张忠谋写了一封长信。 直到一个傍晚，电话那头传来一句：“我是台积电的张忠谋。” 多年后，黄仁勋仍然记得当时的兴奋：“也许我们不用倒闭了。” 在与 Lex ",
-          "published": "Thu, 15 Oct 2026"
+          "title": "Cloudflare 计划推出公共证书颁发机构，用于签发量子安全的 TLS 证书",
+          "url": "https://www.infoq.cn/article/CoGZq3xgQhZI4rBH8pjA",
+          "desc": "Cloudflare 宣布，计划运营一个免费的公共证书颁发机构（CA），旨在签发 量子安全的传输层安全（TLS）证书 \"。该举措旨在解决现代网络基础设施面临的最关键的结构性瓶颈之一，那就是即将到来的从经典公钥加密技术向后量子加密技术的过渡。尽管后量子密钥交换算法已经开始在生产环境中得到积极的部署，但由于抗量子数字签名的有效载荷体积庞大，整个 Web 公钥基础设施（PKI） \"中的后量子身份验证推进",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "AI 侦察团集结 QCon 上海：企业一号位，如何把 AI 从试点带进业务？",
-          "url": "https://www.infoq.cn/article/GSZMrydgKuejLcCpEGYb",
-          "desc": "AI 浪潮加速演进，企业 AI 转型需求持续升温。一方面，现有技术大会大多面向技术从业者，面向企业创始人、CEO 等最高决策者的深度交流场景仍相对稀缺；另一方面，身处 AI 时代的企业“一号位”，也面临着前所未有的挑战：如何判断技术趋势、明确投入方向、推动组织变革，并将 AI 真正转化为企业增长的新动能？ 10 月 22 日，InfoQ 将首次联合中欧国际工商学院、独角兽创业营、TGO 鲲鹏会发起",
-          "published": "Thu, 15 Oct 2026"
+          "title": "Pi 抛出全新 Agent Harness，还把自己骂了一年的 MCP 装进了核心",
+          "url": "https://www.infoq.cn/article/hQOHf1ZXoBs7uMpWJQss",
+          "desc": "Pi 迎来了今年规模最大的一次更新：项目升级到 1.0，Code Mode 与原生 MCP 正式进入稳定版；同一天，团队还推出了一套全新的 Harness——Pi Durable。 这些变化已经酝酿了一段时间。过去一年，MCP 协议经历了六七轮调整，逐渐发展到真正可用的阶段；Pi Durable 的架构也前后经历了八轮迭代。一个曾被 Pi 公开拒绝的协议进入核心，一套反复打磨的长时 Agent 框",
+          "published": "Fri, 16 Oct 2026"
         }
       ]
     },
@@ -245,34 +227,16 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "ChatGPT can peek at your Chrome tabs now",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
-          "desc": "OpenAI's ChatGPT Atlas browser is gone, but now ChatGPT's Google Chrome extension is getting some upgrades that allow it to use the browser tabs you already have open. With the extension installed, Op",
-          "published": "2026-10-15T18:43"
+          "title": "Apple&#8217;s updated App Store rules go after &#8216;nudify&#8217; AI apps",
+          "url": "https://www.theverge.com/tech/1013314/apple-app-store-nudify-ai-apps-harassment",
+          "desc": "Apple's App Store rules now more explicitly ban so-called \"nudify\" apps that generate intimate images of people without their consent using AI tools. The rule changes follow significant criticism towa",
+          "published": "2026-10-16T18:51"
         },
         {
-          "title": "Sega pulls Total War: Shogun 2 remaster from sale following disastrous launch",
-          "url": "https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled",
-          "desc": "Sega is removing Total War: Shogun 2 - Complete Edition from storefronts following a disastrous launch where users complained about issues like bugs and upscaling that appears to have been done by AI.",
-          "published": "2026-10-15T18:35"
-        },
-        {
-          "title": "Trump posts AI-edited photo to brag about White House restoration work",
-          "url": "https://www.theverge.com/policy/1012445/donald-trump-ai-photo-white-house-rennovation-column",
-          "desc": "President Donald Trump posted a series of photos on Truth Social showing off renovations to the White House - but one of them appears to be modified with AI. The picture, which compares an old White H",
-          "published": "2026-10-15T17:09"
-        },
-        {
-          "title": "Bluesky&#8217;s AI tool now lets you make games and apps to share on social",
-          "url": "https://www.theverge.com/tech/1012374/bluesky-ai-attie-small-social-games-apps",
-          "desc": "Bluesky's Attie AI tool, which initially launched earlier this year as a way to use AI to build your own feeds, now lets you make \"small\" social apps like games, polls, and dashboards that you can the",
-          "published": "2026-10-15T15:57"
-        },
-        {
-          "title": "Meta and Apple team up to make Muse AI models run better on Macs",
-          "url": "https://www.theverge.com/news/1012293/meta-apple-muse-spark-open-ai-model-mlx",
-          "desc": "Meta announced the Muse Spark Open AI model today, claiming that it's the \"most capable US open-weight model to date.\" But the company also says that it's the \"the first model in its class\" that can \"",
-          "published": "2026-10-15T14:15"
+          "title": "A week with RTX Spark: everything we’ve learned using Nvidia’s new laptops",
+          "url": "https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions",
+          "desc": "Nvidia's RTX Spark N1X processor is finally here, and we've been collectively testing a small fortune's worth of powerful laptops sporting this new \"superchip.\" RTX Spark is designed to be a high-perf",
+          "published": "2026-10-16T11:00"
         }
       ]
     },
@@ -280,40 +244,40 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "When it came to Cal AI’s viral success, a small army of influencers paid off",
-          "url": "https://techcrunch.com/2026/10/15/when-it-came-to-cal-ais-viral-success-a-small-army-of-influencers-paid-off/",
-          "desc": "The company generated over $30 million in revenue in two years and was acquired by MyFitnessPal for an undisclosed amount of money in March.",
-          "published": "Thu, 15 Oct 2026"
+          "title": "Replit is no longer working with Anthropic, CEO says",
+          "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
+          "desc": "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with ",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "Meta launches an open-weight AI model that runs on Macs",
-          "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
-          "desc": "Meta and Apple have teamed up for the launch of the social media giant's newest model, Muse Spark Open, which will run locally on Apple silicon.",
-          "published": "Thu, 15 Oct 2026"
+          "title": "India becomes the latest country to report rogue AI agent activity",
+          "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
+          "desc": "The agents got in through credentials and connection settings left exposed in app configurations, public code repositories, and overly permissive cloud roles.",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "Amazon devices chief Panos Panay sees a future where AI devices replace the need to use apps",
-          "url": "https://techcrunch.com/2026/10/15/amazon-devices-chief-panos-panay-sees-a-future-where-ai-devices-replace-the-need-to-use-apps/",
-          "desc": "Speaking at TechCrunch Disrupt, Amazon devices chief Panos Panay described a future where ambient AI devices work in the background, anticipating users' needs instead of waiting for commands.",
-          "published": "Thu, 15 Oct 2026"
+          "title": "An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet",
+          "url": "https://techcrunch.com/video/a-nvidia-insider-turned-vc-on-why-robotics-hasnt-hit-its-chatgpt-moment-yet/",
+          "desc": "Amulya Vishwanath, who spent seven years leading product marketing for NVIDIA’s robotics platforms, says robotics is currently in its “Lego era,” with the basic building blocks like actuators, robotic",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "Anthropic is letting METR researchers look under the hood with employee-level access",
-          "url": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
-          "desc": "METR will publish its own assessments of Anthropic’s risks, incidents, and practices, and the frontier AI model maker has given up the right to block them.",
-          "published": "Thu, 15 Oct 2026"
+          "title": "Waymo’s robotaxis are headed to Canada",
+          "url": "https://techcrunch.com/2026/10/16/waymos-robotaxis-are-headed-to-canada/",
+          "desc": "The company will start off by testing its self-driving vehicles on Toronto's streets.",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "Bluesky expands its AI-powered Attie app to let anyone build websites, games, and more",
-          "url": "https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/",
-          "desc": "Bluesky is bringing “social vibe coding” to its experimental Attie platform, allowing users to create interactive experiences like games, quizzes, and websites that can tap into the social network's a",
-          "published": "Thu, 15 Oct 2026"
+          "title": "Elorian’s first AI model wants to reason with images, not just about them",
+          "url": "https://techcrunch.com/2026/10/16/elorians-first-ai-model-wants-to-reason-with-images-not-just-about-them/",
+          "desc": "According to Elorian's evaluations, Glimpse outperforms even GPT-6 Astra on scientific chart reasoning and short-form video captioning, with competitive results on other visual reasoning tasks.",
+          "published": "Fri, 16 Oct 2026"
         },
         {
-          "title": "Volvo makes a bigger bet on Nvidia for hands-free automated driving",
-          "url": "https://techcrunch.com/2026/10/15/volvo-makes-a-bigger-bet-on-nvidia/",
-          "desc": "Volvo is leveling up its automated driving system through an expansion of its nearly decade-long partnership with Nvidia that will extend beyond its battery electric vehicles.",
-          "published": "Thu, 15 Oct 2026"
+          "title": "Jev is Vercel’s fastest-adopted AI model ever",
+          "url": "https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/",
+          "desc": "The data comes from Vercel's AI gateway, a unified API service similar to OpenRouter.",
+          "published": "Fri, 16 Oct 2026"
         }
       ]
     },
@@ -321,10 +285,10 @@
       "name": "MIT 科技评论",
       "items": [
         {
-          "title": "AI labs are buying data from dead startups to train their models",
-          "url": "https://www.technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models/",
-          "desc": "When Keelan Miskell began winding down his crypto startup this year, he didn’t think its data was worth much: the users were anonymous, the company just a few years old. But he’s since turned the firm",
-          "published": "Tue, 13 Oct 2026"
+          "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
+          "url": "https://www.technologyreview.com/2026/10/16/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses/",
+          "desc": "Listen to the session or watch below Can AI design new life forms? In 2025, Stanford University PhD student Samuel King came up with a preliminary answer when he used a generative AI model to propose ",
+          "published": "Fri, 16 Oct 2026"
         }
       ]
     },
@@ -332,52 +296,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "SuperLocalMemory",
-          "url": "https://www.producthunt.com/products/superlocalmemory-v2",
-          "desc": "Agent memory with Laya, Jev + Google Gemma Discussion | Link",
-          "published": "2026-10-13T12:43"
+          "title": "Palomino",
+          "url": "https://www.producthunt.com/products/palomino",
+          "desc": "Ultrafast workspace for agents to run in parallel Discussion | Link",
+          "published": "2026-10-10T17:10"
         },
         {
-          "title": "Dreamscale Labs",
-          "url": "https://www.producthunt.com/products/dreamscale-labs",
-          "desc": "Run the best robot AI models over the cloud Discussion | Link",
-          "published": "2026-10-12T23:27"
+          "title": "Harness by Autonomous",
+          "url": "https://www.producthunt.com/products/harness-by-autonomous",
+          "desc": "Every coding agent, every machine, one command center. Discussion | Link",
+          "published": "2026-10-15T06:27"
         },
         {
-          "title": "Backdrop",
-          "url": "https://www.producthunt.com/products/backdrop",
-          "desc": "Build AI coworkers for any workflow, any industry Discussion | Link",
-          "published": "2026-10-12T22:14"
+          "title": "Neophyte",
+          "url": "https://www.producthunt.com/products/neophyte",
+          "desc": "Watch an AI agent sign up and onboard to any product Discussion | Link",
+          "published": "2026-10-12T18:43"
         },
         {
-          "title": "Navige",
-          "url": "https://www.producthunt.com/products/navige",
-          "desc": "Cut AI agent costs and control runaway spending Discussion | Link",
-          "published": "2026-10-13T23:29"
+          "title": "Tetriz Harness",
+          "url": "https://www.producthunt.com/products/tetriz-harness",
+          "desc": "Turn what your team learns into everyone’s agent setup Discussion | Link",
+          "published": "2026-10-15T04:55"
         },
         {
-          "title": "Shrine",
-          "url": "https://www.producthunt.com/products/shrine-2",
-          "desc": "A home for your agents Discussion | Link",
-          "published": "2026-10-12T13:55"
+          "title": "Fish Audio Drama 3",
+          "url": "https://www.producthunt.com/products/fish-speech",
+          "desc": "AI voice acting you can direct, not just generate Discussion | Link",
+          "published": "2026-10-13T17:37"
         },
         {
-          "title": "AI Sandboxes by Buddy",
-          "url": "https://www.producthunt.com/products/buddy",
-          "desc": "Isolated cloud machines for your AI coding agents Discussion | Link",
-          "published": "2026-10-14T05:11"
+          "title": "Nemotron 3.5 Super VL",
+          "url": "https://www.producthunt.com/products/nvidia",
+          "desc": "NVIDIA’s open multimodal model for specialized agents Discussion | Link",
+          "published": "2026-10-15T08:27"
         },
         {
-          "title": "withHuman",
-          "url": "https://www.producthunt.com/products/withhuman",
-          "desc": "A open-source human approval layer for AI Agents Discussion | Link",
-          "published": "2026-10-14T09:01"
+          "title": "Dottr",
+          "url": "https://www.producthunt.com/products/dottr",
+          "desc": "Agent that drafts contracts, flags risks + gets them signed Discussion | Link",
+          "published": "2026-10-14T19:37"
         },
         {
-          "title": "Actually Asked",
-          "url": "https://www.producthunt.com/products/actually-asked",
-          "desc": "A self-improving branded AI FAQ page Discussion | Link",
-          "published": "2026-10-14T08:36"
+          "title": "Grablo Spot",
+          "url": "https://www.producthunt.com/products/grablo-spot",
+          "desc": "Free AI NVR that finds any person or vehicle in seconds Discussion | Link",
+          "published": "2026-10-15T04:36"
         }
       ]
     }
