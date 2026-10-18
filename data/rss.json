@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-17 01:40:50",
+  "fetched_at": "2026-10-18 01:36:55",
   "feeds": [
     {
       "name": "OpenAI 官方",
@@ -8,6 +8,12 @@
           "title": "How Itaú is building generative AI for its entire customer base",
           "url": "https://openai.com/index/itau-generative-ai",
           "desc": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors.",
+          "published": "Fri, 16 Oct 2026"
+        },
+        {
+          "title": "Benefit Street Partners answers questions faster with Codex",
+          "url": "https://openai.com/index/benefit-street-partners",
+          "desc": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups.",
           "published": "Fri, 16 Oct 2026"
         },
         {
@@ -27,18 +33,30 @@
           "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
           "desc": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
           "published": "Thu, 15 Oct 2026"
-        },
-        {
-          "title": "Sullivan & Cromwell brings legal expertise into agreement review",
-          "url": "https://openai.com/index/sullivan-cromwell",
-          "desc": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.",
-          "published": "Thu, 15 Oct 2026"
         }
       ]
     },
     {
       "name": "机器之心",
       "items": [
+        {
+          "title": "李飞飞看了要点赞：15分钟，一台相机，把真实世界搬进了AI",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063453&idx=1&sn=6cfe0625d6f43a0a07e6aaa09172f42c",
+          "desc": "高德、皮克斯都在用的3D世界，来自这台国产AI空间相机。",
+          "published": "Sat, 17 Oct 2026"
+        },
+        {
+          "title": "Tibo的Codex翻盘记：接手不到一年就吞掉了ChatGPT",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063453&idx=2&sn=47364ac1026540b67b675fa686d100a0",
+          "desc": "从一次失败的发布到「吞掉」ChatGPT：Codex 是怎么炼成的",
+          "published": "Sat, 17 Oct 2026"
+        },
+        {
+          "title": "给多模态大模型选「眼睛」，两个简单改进让评测相关性接近翻倍",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063453&idx=3&sn=6a2fa8d5b0af63412b2da5c4e4c222be",
+          "desc": "如何在完整训练 MLLM 之前，为目标 LLM 选择合适的视觉编码器？",
+          "published": "Sat, 17 Oct 2026"
+        },
         {
           "title": "卡加了，吞吐为何没跟上？大模型推理中的等待，有了新解法",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063125&idx=1&sn=f5030e5f29a40a6c8d742d2485efcb5b",
@@ -68,24 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062870&idx=2&sn=bfccde7c324d1dcba2e68b1684ebbff9",
           "desc": "具身智能公司要被 GPT、Claude、Gemini 抢饭碗了？",
           "published": "Thu, 15 Oct 2026"
-        },
-        {
-          "title": "EMNLP 2026 | 大模型推理如何再快一步？SpecTr-GBV统一多草稿与块验证，加速推测解码",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062870&idx=3&sn=d54670961b32ab464a6856529d7a8a8a",
-          "desc": "SpecTr-GBV，将 multi-draft 与 greedy block verification（GBV）统一进同一个推测解码框架。",
-          "published": "Thu, 15 Oct 2026"
-        },
-        {
-          "title": "Natura-1发布：从百万小时人类经验中学会零样本泛化与灵巧操作",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062756&idx=1&sn=fa2d7404984d41c4d2e1e61c8caa24af",
-          "desc": "50B、百万小时、100 毫秒、零样本泛化：Natura-1 来了",
-          "published": "Wed, 14 Oct 2026"
-        },
-        {
-          "title": "7个人、5个月！Anthropic造出了Git替代品",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062756&idx=2&sn=d303e463a1408dbefefecd7ebb10fe8f",
-          "desc": "统治程序员20年的Git，被AI撼动了。",
-          "published": "Wed, 14 Oct 2026"
         }
       ]
     },
@@ -93,28 +93,46 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "美银、花旗出手，限制AI Agent",
-          "url": "https://www.huxiu.com/article/4898215.html?f=rss",
+          "title": "4.99美元的AI医生",
+          "url": "https://www.huxiu.com/article/4898357.html?f=rss",
           "desc": "",
-          "published": "Sat, 17 Oct 2026"
+          "published": "Sun, 18 Oct 2026"
         },
         {
-          "title": "我被AI诈骗盯上了",
-          "url": "https://www.huxiu.com/article/4898214.html?f=rss",
+          "title": "观察｜AI时代，不敢裁员也不愿招聘：中国企业的“不裁只冻”困局",
+          "url": "https://www.huxiu.com/article/4898351.html?f=rss",
           "desc": "",
-          "published": "Sat, 17 Oct 2026"
+          "published": "Sun, 18 Oct 2026"
         },
         {
-          "title": "该撕下Anthropic“2万亿预期估值”的面具了",
-          "url": "https://www.huxiu.com/article/4898196.html?f=rss",
-          "desc": "现在的增速撑不起2万亿叙事",
-          "published": "Sat, 17 Oct 2026"
+          "title": "马斯克：美债问题只能靠AI和机器人解决",
+          "url": "https://www.huxiu.com/article/4898352.html?f=rss",
+          "desc": "",
+          "published": "Sun, 18 Oct 2026"
+        },
+        {
+          "title": "Anthropic，也要付10%高息",
+          "url": "https://www.huxiu.com/article/4898347.html?f=rss",
+          "desc": "",
+          "published": "Sun, 18 Oct 2026"
+        },
+        {
+          "title": "小红书的AI，开始和自己的生意算账",
+          "url": "https://www.huxiu.com/article/4898344.html?f=rss",
+          "desc": "",
+          "published": "Sun, 18 Oct 2026"
         }
       ]
     },
     {
       "name": "Solidot",
       "items": [
+        {
+          "title": "游戏逆向工程网站宣布关闭因为 AI 让反编译游戏变得非常容易",
+          "url": "https://www.solidot.org/story?sid=85638",
+          "desc": "协作游戏逆向工程网站 decomp.dev 宣布将关闭，管理员称 AI 让游戏反编译变得快且易于操作，基于人工的社区协作模式实际上已经瓦解，无法再区分哪些项目是以人工为主导的，哪些是由 AI 完成的。decomp.dev 管理员 Encounter 在官网声明中表示，从历史上看，匹配反编译一直是极其困难且耗时的任务，即便是对那些有适量活跃贡献者的中等规模游戏来说，反编译要以“年”为单位计时，但 G",
+          "published": "Sat, 17 Oct 2026"
+        },
         {
           "title": "Meta 发布其开放权重模型 Muse Spark Open",
           "url": "https://www.solidot.org/story?sid=85634",
@@ -132,18 +150,18 @@
           "url": "https://www.solidot.org/story?sid=85622",
           "desc": "代表美国科技巨头亚马逊、Google 和 Meta 的行业组织 CCIA Europe 委托进行的一项研究声称，欧洲如果推行数据主权法案 Cloud and AI Development Act（CADA） 会在十年内带来 1150 亿欧元的成本，是欧盟委员会预估的最高值的六倍多。其中 800 亿欧元的成本是假设数字主权法扩大至私营部门关键服务四分之一的云工作负载。报告特别针对了 CADA 中的第",
           "published": "Thu, 15 Oct 2026"
-        },
-        {
-          "title": "美国八个州起诉 OpenAI 称 ChatGPT 伤害年轻用户",
-          "url": "https://www.solidot.org/story?sid=85616",
-          "desc": "堪萨斯州、亚利桑那州和蒙大拿州等美国八个州对 OpenAI 提起诉讼，指控 ChatGPT 诱导儿童自我伤害。八个州要求 OpenAI 改变其产品与年轻用户互动的方式，没收由此产生的利润。诉讼指出 ChatGPT 的设计初衷是通过表现得随和、善于互动去赢得用户信任。但诉讼称聊天机器人会强化妄想、鼓励危险行为，协助用户策划诸如大规模枪击之类的暴力行为。诉讼指控 OpenAI 在 ChatGPT 的安",
-          "published": "Thu, 15 Oct 2026"
         }
       ]
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "突发！DeepSeek新模型发布，超级性价比斩杀一切",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557532&idx=1&sn=dbd59b7b6b4975f5c8986c4fb9432023",
+          "desc": "新版本V4.1-Flash-1017，还开放了自研搜索API",
+          "published": "Sun, 18 Oct 2026"
+        },
         {
           "title": "刘尚@香港科技大学 - FABO：Agent workflow改进芯片自动化设计中的np-hard布线算法",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557525&idx=1&sn=8baa7037c51ce5d1a8f99624f30435a7",
@@ -173,18 +191,24 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557495&idx=1&sn=339ab2f9b8fdbc96125fb28a90b005fa",
           "desc": "",
           "published": "Tue, 13 Oct 2026"
-        },
-        {
-          "title": "Agentic RL Infra 主流技术路线综述",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557488&idx=1&sn=e4d3971c2a838c1296a0c9687c20dd69",
-          "desc": "谁能率先把「长程信用分配」与「环境噪声鲁棒的可复现大规模合成」这两块最硬的骨头啃下来，并在模型-harness-环境的协同设计上形成闭环，谁就能在下一轮Agentic智能的竞赛中握住先手。",
-          "published": "Mon, 12 Oct 2026"
         }
       ]
     },
     {
       "name": "InfoQ 推荐",
       "items": [
+        {
+          "title": "Akka 在 65 个开源项目中测试基于规格的 AI 交付",
+          "url": "https://www.infoq.cn/article/uGNQwpOt5GGAKm2XlEZC",
+          "desc": "Akka 利用 65 个开源项目，对一种基于规格说明的 AI 辅助软件移植工作流进行了 测试 \"，评估内容包括：规格说明的结构、上下文、模型和工作量选择、自动化验证、token 消耗以及运行时性能。首轮测试耗时 99.3 小时，消耗了 94.1 亿个令牌。根据 Akka 的报告，在 65 个移植项目中，有 57 个在代码行数或性能方面实现了提升。 该实验分成了两个阶段。 Akka \" 对全部 65",
+          "published": "Sat, 17 Oct 2026"
+        },
+        {
+          "title": "The World Is Not a Dataset - Building AI Systems That Continuously Learn from Reality｜QCon上海",
+          "url": "https://www.infoq.cn/article/JMZ6WUx4a4cVqAwhwviU",
+          "desc": "从「构建 AI」到「驾驭 AI」，100+ 实战案例拆解 AI Native 时代的工程新实践！ 2026 年 QCon 全球软件开发大会大会 · 上海站 \"将于 10 月 22 日-24 日举办，来自阿里巴巴、腾讯、字节跳动、美团、小红书、蚂蚁集团、无问芯穹、阶跃星辰、快手、百度、网易、微软、华为、携程、平安等企业的一线技术实践者，将从 AI 应用、Agent 工程、AI Coding、基础设施",
+          "published": "Sat, 17 Oct 2026"
+        },
         {
           "title": "聚焦 AI 场景落地与 FDE 创新，2026 人工智能产业大会专项活动在济南举行",
           "url": "https://www.infoq.cn/article/1XtKjZ1OCyrYTCmb4Zkb",
@@ -208,18 +232,6 @@
           "url": "https://www.infoq.cn/article/VZPlIIdGRg062mgwJe5y",
           "desc": "10月16日，北京-范式智能联合北京睿思智联科技有限公司宣布，一站式生产级AI部署平台“模域” (ModelSphere)正式上线。该平台面向企业用户免费开源，将算力管理、模型部署和运行优化整合在统一平台，帮助企业降低部署与运维门槛，更高效地将算力转化为安全、稳定、可用于实际业务的AI服务。 随着大模型进入规模化商业阶段，企业在算力统筹、模型部署与效能优化中，普遍面临资源利用率低、芯片生态割裂、部",
           "published": "Fri, 16 Oct 2026"
-        },
-        {
-          "title": "Cloudflare 计划推出公共证书颁发机构，用于签发量子安全的 TLS 证书",
-          "url": "https://www.infoq.cn/article/CoGZq3xgQhZI4rBH8pjA",
-          "desc": "Cloudflare 宣布，计划运营一个免费的公共证书颁发机构（CA），旨在签发 量子安全的传输层安全（TLS）证书 \"。该举措旨在解决现代网络基础设施面临的最关键的结构性瓶颈之一，那就是即将到来的从经典公钥加密技术向后量子加密技术的过渡。尽管后量子密钥交换算法已经开始在生产环境中得到积极的部署，但由于抗量子数字签名的有效载荷体积庞大，整个 Web 公钥基础设施（PKI） \"中的后量子身份验证推进",
-          "published": "Fri, 16 Oct 2026"
-        },
-        {
-          "title": "Pi 抛出全新 Agent Harness，还把自己骂了一年的 MCP 装进了核心",
-          "url": "https://www.infoq.cn/article/hQOHf1ZXoBs7uMpWJQss",
-          "desc": "Pi 迎来了今年规模最大的一次更新：项目升级到 1.0，Code Mode 与原生 MCP 正式进入稳定版；同一天，团队还推出了一套全新的 Harness——Pi Durable。 这些变化已经酝酿了一段时间。过去一年，MCP 协议经历了六七轮调整，逐渐发展到真正可用的阶段；Pi Durable 的架构也前后经历了八轮迭代。一个曾被 Pi 公开拒绝的协议进入核心，一套反复打磨的长时 Agent 框",
-          "published": "Fri, 16 Oct 2026"
         }
       ]
     },
@@ -227,16 +239,16 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "Apple&#8217;s updated App Store rules go after &#8216;nudify&#8217; AI apps",
-          "url": "https://www.theverge.com/tech/1013314/apple-app-store-nudify-ai-apps-harassment",
-          "desc": "Apple's App Store rules now more explicitly ban so-called \"nudify\" apps that generate intimate images of people without their consent using AI tools. The rule changes follow significant criticism towa",
-          "published": "2026-10-16T18:51"
+          "title": "Meta removes language that may have allowed it to scrape news sites",
+          "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
+          "desc": "After backlash, Meta is updating its terms again to remove language that suggested it could scrape content from sites, including news sites, to train its AI. Specifically, the following language no lo",
+          "published": "2026-10-17T11:04"
         },
         {
-          "title": "A week with RTX Spark: everything we’ve learned using Nvidia’s new laptops",
-          "url": "https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions",
-          "desc": "Nvidia's RTX Spark N1X processor is finally here, and we've been collectively testing a small fortune's worth of powerful laptops sporting this new \"superchip.\" RTX Spark is designed to be a high-perf",
-          "published": "2026-10-16T11:00"
+          "title": "Websites are closing their doors to AI agents",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+          "desc": "Autonomous agents are the hottest thing in AI. OpenAI, Meta, Google, Instinct, and others promise their agents can scour the internet on your behalf, doing anything from booking a dinner reservation a",
+          "published": "2026-10-17T09:00"
         }
       ]
     },
@@ -244,10 +256,22 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "Replit is no longer working with Anthropic, CEO says",
-          "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
-          "desc": "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with ",
-          "published": "Fri, 16 Oct 2026"
+          "title": "Meta removes language that raised scraping and AI training concerns",
+          "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+          "desc": "A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web.",
+          "published": "Sat, 17 Oct 2026"
+        },
+        {
+          "title": "Anthropic says its workforce has become less junior and is spending more time in meetings",
+          "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
+          "desc": "The composition of Anthropic’s workforce and the type of work getting done have changed significantly in the past year.",
+          "published": "Sat, 17 Oct 2026"
+        },
+        {
+          "title": "Replit makes OpenAI its default over Anthropic, CEO says",
+          "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+          "desc": "Over the weekend, Masad clarified that OpenAI would replace Anthropic as its default model provider. Claude will still be available to customers on the platform.",
+          "published": "Sat, 17 Oct 2026"
         },
         {
           "title": "India becomes the latest country to report rogue AI agent activity",
@@ -265,18 +289,6 @@
           "title": "Waymo’s robotaxis are headed to Canada",
           "url": "https://techcrunch.com/2026/10/16/waymos-robotaxis-are-headed-to-canada/",
           "desc": "The company will start off by testing its self-driving vehicles on Toronto's streets.",
-          "published": "Fri, 16 Oct 2026"
-        },
-        {
-          "title": "Elorian’s first AI model wants to reason with images, not just about them",
-          "url": "https://techcrunch.com/2026/10/16/elorians-first-ai-model-wants-to-reason-with-images-not-just-about-them/",
-          "desc": "According to Elorian's evaluations, Glimpse outperforms even GPT-6 Astra on scientific chart reasoning and short-form video captioning, with competitive results on other visual reasoning tasks.",
-          "published": "Fri, 16 Oct 2026"
-        },
-        {
-          "title": "Jev is Vercel’s fastest-adopted AI model ever",
-          "url": "https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/",
-          "desc": "The data comes from Vercel's AI gateway, a unified API service similar to OpenRouter.",
           "published": "Fri, 16 Oct 2026"
         }
       ]
@@ -296,46 +308,46 @@
       "name": "Product Hunt",
       "items": [
         {
+          "title": "CrewTower Mod for Claude Code",
+          "url": "https://www.producthunt.com/products/crew-tower",
+          "desc": "Talk to Claude Code right from your MacBook notch Discussion | Link",
+          "published": "2026-10-14T14:15"
+        },
+        {
+          "title": "Craft Agents",
+          "url": "https://www.producthunt.com/products/craft-agents",
+          "desc": "The world's most powerful agents, with the UX they deserve Discussion | Link",
+          "published": "2026-10-14T21:48"
+        },
+        {
+          "title": "Step 5 Preview",
+          "url": "https://www.producthunt.com/products/step-3-5-flash",
+          "desc": "600B open weights, trained for long-running agents Discussion | Link",
+          "published": "2026-10-16T08:06"
+        },
+        {
+          "title": "Notion: Context for your agents",
+          "url": "https://www.producthunt.com/products/notion",
+          "desc": "Switch AI agents without re-explaining your work Discussion | Link",
+          "published": "2026-10-14T00:00"
+        },
+        {
+          "title": "Ultracite v8",
+          "url": "https://www.producthunt.com/products/ultracite",
+          "desc": "The linter and formatter for agentic development Discussion | Link",
+          "published": "2026-10-12T14:05"
+        },
+        {
           "title": "Palomino",
           "url": "https://www.producthunt.com/products/palomino",
           "desc": "Ultrafast workspace for agents to run in parallel Discussion | Link",
           "published": "2026-10-10T17:10"
         },
         {
-          "title": "Harness by Autonomous",
-          "url": "https://www.producthunt.com/products/harness-by-autonomous",
-          "desc": "Every coding agent, every machine, one command center. Discussion | Link",
-          "published": "2026-10-15T06:27"
-        },
-        {
           "title": "Neophyte",
           "url": "https://www.producthunt.com/products/neophyte",
           "desc": "Watch an AI agent sign up and onboard to any product Discussion | Link",
           "published": "2026-10-12T18:43"
-        },
-        {
-          "title": "Tetriz Harness",
-          "url": "https://www.producthunt.com/products/tetriz-harness",
-          "desc": "Turn what your team learns into everyone’s agent setup Discussion | Link",
-          "published": "2026-10-15T04:55"
-        },
-        {
-          "title": "Fish Audio Drama 3",
-          "url": "https://www.producthunt.com/products/fish-speech",
-          "desc": "AI voice acting you can direct, not just generate Discussion | Link",
-          "published": "2026-10-13T17:37"
-        },
-        {
-          "title": "Nemotron 3.5 Super VL",
-          "url": "https://www.producthunt.com/products/nvidia",
-          "desc": "NVIDIA’s open multimodal model for specialized agents Discussion | Link",
-          "published": "2026-10-15T08:27"
-        },
-        {
-          "title": "Dottr",
-          "url": "https://www.producthunt.com/products/dottr",
-          "desc": "Agent that drafts contracts, flags risks + gets them signed Discussion | Link",
-          "published": "2026-10-14T19:37"
         },
         {
           "title": "Grablo Spot",

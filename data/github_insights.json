@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17 11:31:48",
+  "updated_at": "2026-10-18 01:39:14",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -1235,11 +1235,6 @@
       "what": "让团队轻松做数据看板和报表。",
       "why_hot": "不用写太多代码就能看数据，门槛低。",
       "who": "需要做报表的业务和数据团队。"
-    },
-    "bigskysoftware/htmx": {
-      "what": "给 HTML 加上轻量的交互能力。",
-      "why_hot": "前端工具链太重，简单方案更吸引人。",
-      "who": "想少写 JavaScript 的 Web 开发者。"
     },
     "leereilly/games": {
       "what": "汇总托管在 GitHub 上的游戏和相关资源。",
@@ -3801,11 +3796,6 @@
       "why_hot": "模块多、技术栈常见，做业务项目能少搭不少轮子。",
       "who": "要快速搭建 Java 后台的团队。"
     },
-    "a-b-street/abstreet": {
-      "what": "用交通仿真帮城市规划步行、骑行和公交。",
-      "why_hot": "能直观看交通方案效果，城市议题也容易引发讨论。",
-      "who": "关注交通规划和城市仿真的人。"
-    },
     "jitsi/jitsi-meet": {
       "what": "开源免费的视频会议系统，无需注册即开即用。",
       "why_hot": "自部署会议的首选，隐私友好。",
@@ -3841,21 +3831,6 @@
       "who": "正在找大厂产品岗工作的人。",
       "why_hot": "找工作季的投递地图，一站式抄作业。"
     },
-    "browser-use/jev-ultrafast": {
-      "what": "号称最快最便宜的网页自动化智能体。",
-      "who": "做网页自动化、数据抓取的人。",
-      "why_hot": "网页 Agent 正卷成本和速度，它宣称两者兼得。"
-    },
-    "farion1231/cc-switch": {
-      "what": "Claude Code、Codex 等 AI 编程工具的跨平台 All-in-One 助手。",
-      "who": "同时用好几个 AI 编程工具的人。",
-      "why_hot": "14 万星，一个面板管所有 AI 编程工具。"
-    },
-    "go-gitea/gitea": {
-      "what": "开箱即用的自托管 Git 服务。",
-      "who": "想自己搭代码托管的人。",
-      "why_hot": "代码私有化部署的首选，轻量好养。"
-    },
     "trailhq/Trail-Code": {
       "what": "给 Claude Code、Cursor、Codex 等编码智能体加速降本的工具。",
       "who": "重度使用 AI 编程工具的人。",
@@ -3881,110 +3856,15 @@
       "why_hot": "AI 应用越来越需要长期记忆，本地部署也很有吸引力。",
       "who": "做 AI 助手或智能体的开发者值得关注。"
     },
-    "AIGC-Audio/AudioGPT": {
-      "what": "理解和生成语音、音乐、音效与数字人说话头的多模态音频大模型。",
-      "why_hot": "一个模型同时搞定“听懂+生成”多种声音，音频 AI 领域的全能选手。",
-      "who": "做语音、音乐、播客类 AI 应用的开发者。"
-    },
-    "LMMS/lmms": {
-      "what": "跨平台开源音乐制作软件（DAW）。",
-      "why_hot": "免费版“FL Studio”，编曲混音全流程免费做。",
-      "who": "预算有限的音乐制作人。"
-    },
-    "aandrew-me/ytDownloader": {
-      "what": "从几百个网站下载音视频的桌面应用。",
-      "why_hot": "一个客户端搞定全网音视频下载，不用再装一堆插件。",
-      "who": "需要离线保存音视频的人。"
-    },
-    "cookpete/react-player": {
-      "what": "支持 YouTube、Twitch、SoundCloud 等多种来源的 React 播放器组件。",
-      "why_hot": "一个组件接入全网主流视频源，前端做播放功能不用重复造轮子。",
-      "who": "需要在网页里嵌入视频播放的前端开发者。"
-    },
-    "deniscerri/ytdlnis": {
-      "what": "基于 yt-dlp 的安卓全功能音视频下载器。",
-      "why_hot": "手机端也有桌面级下载体验，yt-dlp 生态在移动端落地。",
-      "who": "常在手机上存视频的安卓用户。"
-    },
-    "gwuhaolin/livego": {
-      "what": "用 Go 写的轻量直播推流服务器。",
-      "why_hot": "部署简单、资源占用低，个人搭直播服务的好选择。",
-      "who": "想自建直播推流服务的开发者。"
-    },
-    "katspaugh/wavesurfer.js": {
-      "what": "在网页里绘制音频波形的 JS 库。",
-      "why_hot": "播客、音乐类网页的标配，波形可视化交互做得很细。",
-      "who": "做音频网页应用的前端开发者。"
-    },
-    "openframeworks/openFrameworks": {
-      "what": "面向创意编程的 C++ 开源工具包。",
-      "why_hot": "新媒体艺术、交互装置领域的祖师爷级工具，社区沉淀深厚。",
-      "who": "做创意编码、交互艺术的人。"
-    },
-    "AstrBotDevs/AstrBot": {
-      "what": "对接多家 IM 平台、支持插件扩展的 AI Agent 助手开发框架。",
-      "why_hot": "一个框架同时管微信、QQ、Telegram 等多平台机器人，插件生态活跃。",
-      "who": "想快速做出聊天机器人的开发者。"
-    },
-    "LeCoupa/awesome-cheatsheets": {
-      "what": "主流编程语言、框架和开发工具的速查表合集。",
-      "why_hot": "查语法不用翻文档，速查表界的常青树。",
-      "who": "全栈开发者。"
-    },
-    "Stirling-Tools/Stirling-PDF": {
-      "what": "GitHub 上星数第一的 PDF 工具箱，可在任意设备上编辑 PDF。",
-      "why_hot": "合并、拆分、压缩、转换一条龙，自部署后全家都能用。",
-      "who": "不想买 Adobe、又天天跟 PDF 打交道的人。"
-    },
-    "ToolJet/ToolJet": {
-      "what": "面向企业内部工具的低代码应用生成平台。",
-      "why_hot": "拖拖拽拽拼出管理后台，还能接入 AI 能力，省开发人力。",
-      "who": "需要快速搭建内部工具的团队。"
-    },
-    "dani-garcia/vaultwarden": {
-      "what": "用 Rust 写的 Bitwarden 兼容密码服务器。",
-      "why_hot": "官方有的功能它全有，资源占用还低，自建密码库的首选。",
-      "who": "想自建密码管理服务的用户。"
-    },
     "dockur/windows": {
       "what": "在 Docker 容器里跑一个完整的 Windows 系统。",
       "why_hot": "一行命令起 Windows，测试、跑老软件都不用开虚拟机。",
       "who": "需要在 Linux 服务器上用 Windows 环境的人。"
     },
-    "macrozheng/mall": {
-      "what": "基于 Spring Boot 的全套电商系统，含前台商城与后台管理。",
-      "why_hot": "中文社区最火的电商实战项目，学 Java 商城开发的必看仓库。",
-      "who": "学 Java 后端、想做电商项目的人。"
-    },
-    "mastodon/mastodon": {
-      "what": "去中心化开源社交网络，可自建实例互联。",
-      "why_hot": "“不被算法绑架”的社交方案，联邦宇宙的代表作。",
-      "who": "想自建社交站点或逃离大平台的人。"
-    },
-    "GoldenCheetah/GoldenCheetah": {
-      "what": "面向骑行、跑步、铁三运动员的开源运动表现分析软件。",
-      "why_hot": "功率、心率数据分析做得专业，耐力运动爱好者的免费神器。",
-      "who": "用功率计训练的骑行跑步爱好者。"
-    },
-    "Revolutionary-Games/Thrive": {
-      "what": "开源进化主题策略游戏，从单细胞微生物一路进化。",
-      "why_hot": "“孢子精神续作”，科学和游戏结合的硬核之作。",
-      "who": "喜欢进化题材游戏的玩家。"
-    },
-    "sachin-source/top-github-repositories-which-everyone-should-look": {
-      "what": "开发者、学生必看的 GitHub 优质仓库导航清单。",
-      "why_hot": "一份清单省下无数搜仓库的时间，新手入门的藏宝图。",
-      "who": "想系统逛 GitHub 找资源的新手。"
-    },
     "stared/science-based-games-list": {
       "what": "基于科学的协作式游戏清单。",
       "why_hot": "玩游戏顺便学生物物理，寓教于乐的选品单。",
       "who": "想找有“营养”游戏的玩家和家长。"
-    },
-    "HabitRPG/habitica": {
-      "what": "把自律目标做成 RPG 游戏的习惯养成应用。",
-      "why_hot": "打怪升级式自律，游戏化习惯养成的鼻祖，多年不倒。",
-      "who": "立 flag 总倒、需要外部激励的人。"
     },
     "shap/shap": {
       "what": "用博弈论解释任意机器学习模型输出的开源库。",
@@ -4016,86 +3896,6 @@
       "why_hot": "做 Go 相关设计再也不缺图，画风统一又可爱。",
       "who": "做 Go 社区设计、幻灯片的人。"
     },
-    "brycewang-stanford/Auto-Empirical-Research-Skills": {
-      "what": "覆盖 8 大社科实证研究的 23000+ Agent 技能精选库。",
-      "why_hot": "号称 20 分钟产出一篇可复现的实证论文，学术圈的 Agent 技能大礼包。",
-      "who": "做社科实证研究的学者和学生。"
-    },
-    "carbon-app/carbon": {
-      "what": "把源代码生成漂亮分享图的小工具。",
-      "why_hot": "代码截图秒变精美卡片，发社交媒体的利器。",
-      "who": "爱在网上晒代码的人。"
-    },
-    "gsantner/markor": {
-      "what": "安卓上的 Markdown 笔记与待办文本编辑器。",
-      "why_hot": "纯文本本地存储、不绑云服务，极客风笔记的首选。",
-      "who": "喜欢 Markdown 和本地文件的安卓用户。"
-    },
-    "FlowiseAI/Flowise": {
-      "what": "可视化搭建 AI Agent 的低代码平台。",
-      "why_hot": "拖拽连线拼出 Agent 工作流，不懂代码也能做 AI 应用。",
-      "who": "想快速验证 AI 产品想法的用户。"
-    },
-    "apache/superset": {
-      "what": "Apache 出品的数据可视化与探索平台。",
-      "why_hot": "开源 BI 天花板，拖拽出大屏看板，替代昂贵的商业 BI。",
-      "who": "需要做数据看板的分析师和工程师。"
-    },
-    "chen08209/FlClash": {
-      "what": "基于 ClashMeta 的多平台开源代理客户端。",
-      "why_hot": "界面简洁、无广告，跨平台代理客户端的新选择。",
-      "who": "需要代理工具的用户。"
-    },
-    "immich-app/immich": {
-      "what": "高性能自托管照片视频管理方案。",
-      "why_hot": "开源版 Google Photos，AI 搜图、人脸识别全都有。",
-      "who": "想把照片存在自己服务器的人。"
-    },
-    "laurent22/joplin": {
-      "what": "注重隐私的跨平台笔记应用，支持多端同步。",
-      "why_hot": "开源、端到端加密同步，Evernote 替代品里的实力派。",
-      "who": "在意笔记隐私的用户。"
-    },
-    "localsend/localsend": {
-      "what": "开源跨平台的 AirDrop 替代品。",
-      "why_hot": "全平台互传文件不走云端，局域网直传又快又稳。",
-      "who": "多设备混用、经常传文件的人。"
-    },
-    "lyswhut/lx-music-desktop": {
-      "what": "基于 Electron 的第三方音乐播放器。",
-      "why_hot": "聚合多平台音源，听歌不用装一堆 App。",
-      "who": "想一个软件听全网歌的人。"
-    },
-    "makeplane/plane": {
-      "what": "开源的 Jira、Linear 项目管理替代品。",
-      "why_hot": "需求、缺陷、迭代管理全套免费，团队协作不用上云也行。",
-      "who": "找开源项目管理工具的团队。"
-    },
-    "rustdesk/rustdesk": {
-      "what": "可自建服务器的开源远程桌面。",
-      "why_hot": "TeamViewer 平替，数据走自己的服务器更放心。",
-      "who": "需要远程协助或远程办公的人。"
-    },
-    "ruvnet/RuView": {
-      "what": "用普通 WiFi 信号做实时空间感知与体征监测。",
-      "why_hot": "不用摄像头就能感知人员存在和生命体征，黑科技拉满。",
-      "who": "智能家居与健康监测爱好者。"
-    },
-    "twentyhq/twenty": {
-      "what": "为 AI 时代设计的开源 Salesforce 替代 CRM。",
-      "why_hot": "客户关系管理开源化，还能自己魔改接入 AI。",
-      "who": "想自建 CRM 的创业团队。"
-    },
-    "usememos/memos": {
-      "what": "轻量个人碎片笔记时间线。",
-      "why_hot": "随手记、随手搜，极简主义者的灵感捕手。",
-      "who": "喜欢随时记录灵感的人。"
-    },
-    "home-assistant/core": {
-      "what": "本地优先、注重隐私的开源智能家居中枢。",
-      "why_hot": "全屋设备一个大脑管，不依赖云端，自动化玩法深。",
-      "who": "玩智能家居、想摆脱厂商绑定的极客。"
-    },
     "sherlock-project/sherlock": {
       "what": "按用户名全网搜索社交账号的开源工具。",
       "why_hot": "输入一个用户名，几十个平台的同名账号一网打尽。",
@@ -4106,90 +3906,15 @@
       "why_hot": "常用网页秒变原生感 App，打包快、体积小。",
       "who": "想把网页工具变成桌面 App 的人。"
     },
-    "yt-dlp/yt-dlp": {
-      "what": "功能最强的命令行音视频下载器。",
-      "why_hot": "支持上千个站点，下载界的瑞士军刀，经久不衰。",
-      "who": "需要批量下载网络音视频的人。"
-    },
-    "anomalyco/opencode": {
-      "what": "开源的终端 AI 编程 Agent。",
-      "why_hot": "不依附特定编辑器，在终端里直接调 AI 写代码的新流派。",
-      "who": "重度终端用户和 AI 编程尝鲜者。"
-    },
-    "clash-verge-rev/clash-verge-rev": {
-      "what": "基于 Tauri 的现代化 Clash 图形客户端。",
-      "why_hot": "跨平台、界面现代，Clash 系客户端的主力接班人。",
-      "who": "用 Clash 系代理的用户。"
-    },
-    "massgravel/Microsoft-Activation-Scripts": {
-      "what": "Windows、Office 激活脚本合集（HWID、KMS 等多种方式）。",
-      "why_hot": "重装系统后一条命令搞定激活，装机圈人手一份。",
-      "who": "经常重装系统的用户。"
-    },
-    "microsoft/vscode": {
-      "what": "微软出品的免费代码编辑器。",
-      "why_hot": "插件生态无敌，全球开发者使用率最高的编辑器。",
-      "who": "几乎所有写代码的人。"
-    },
-    "torvalds/linux": {
-      "what": "Linux 内核源码主仓库。",
-      "why_hot": "整个现代互联网都跑在它上面，开源世界的基石。",
-      "who": "所有对操作系统感兴趣的开发者。"
-    },
-    "Fei-Away/Codex-Dream-Skin": {
-      "what": "给 Codex 桌面端换梦境主题皮肤的开源项目。",
-      "why_hot": "一张壁纸一种心情，原生控件全部保留，美化不折腾。",
-      "who": "用 Codex 桌面版、想换个心情写代码的人。"
-    },
-    "FlashML-org/FreeToken": {
-      "what": "把数据中心级模型服务搬到桌面端的本地推理框架。",
-      "why_hot": "在本地又快又省地跑超大模型，摆脱云端账单。",
-      "who": "想在个人电脑上跑大模型的人。"
-    },
-    "andrewyng/openworker": {
-      "what": "吴恩达团队做的开源桌面 AI 助手，直接交付做完的工作。",
-      "why_hot": "不锁定模型、可本地运行，“AI 同事”概念的产品化落地。",
-      "who": "想让 AI 直接帮自己干活的普通用户。"
-    },
-    "firecrawl/anydoc": {
-      "what": "把 Word、PDF、EPUB 等文档转成干净 Markdown 的 Rust 工具。",
-      "why_hot": "文档转 Markdown 又快又准，给 RAG 和 AI 喂料的神器。",
-      "who": "需要把文档喂给 AI 的开发者。"
-    },
-    "guillaumemeyer/watermarks-remover": {
-      "what": "去掉自己内容上 AI 水印的隐私优先小工具。",
-      "why_hot": "C2PA 时代给创作者的内容“松绑”，Agent skill 形态很新。",
-      "who": "在意内容自主权的创作者。"
-    },
-    "img2threejs/img2threejs": {
-      "what": "把参考图里的物体重建成 Three.js 程序化 3D 模型。",
-      "why_hot": "图片直接变可动画的 3D 资产，省 token 的 image-to-3D 新思路。",
-      "who": "做 Web 3D 和游戏素材的开发者。"
-    },
-    "langchain-ai/openwiki": {
-      "what": "为代码库自动编写和维护 Agent 文档的 CLI。",
-      "why_hot": "LangChain 官方出品，专治“代码没文档、Agent 看不懂”。",
-      "who": "维护代码库、想让 AI 更好理解项目的团队。"
-    },
     "miuuyy/codex-chatgpt-web": {
       "what": "把 ChatGPT 网页版（含 Pro）当作 Codex 原生模型用。",
       "why_hot": "不走 API 配额，用网页版额度跑 Codex 的新玩法。",
       "who": "有 ChatGPT 会员又想用 Codex 的人。"
     },
-    "xai-org/grok-build": {
-      "what": "带全屏可鼠标交互 TUI 的 coding agent 脚手架。",
-      "why_hot": "在终端里用鼠标就能指挥 Agent 写代码，交互形态新鲜。",
-      "who": "喜欢 TUI、想自己搭 coding agent 的人。"
-    },
-    "yc-software/qm": {
-      "what": "面向工作的多人协作 Agent 调度框架。",
-      "why_hot": "多个 Agent 一起干活，协作式 AI 办公的新尝试。",
-      "who": "探索 Agent 协作办公的团队。"
-    },
-    "plotly/react-plotly.js": {
-      "what": "Plotly 官方的 React 图表组件封装。",
-      "why_hot": "金融数据可视化的标配，图表类型全、交互细。",
-      "who": "需要在 React 里画专业图表的前端开发者。"
+    "rehan-remade/universal-modder": {
+      "what": "让 Claude Code 帮你给 PC 游戏做模组，从找线索到测试都能搭把手。",
+      "why_hot": "逆向、生成素材、游戏内测试一条龙，做模组的门槛看起来低了不少。",
+      "who": "想做游戏模组的玩家和开发者。"
     }
   }
 }
