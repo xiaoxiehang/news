@@ -63,6 +63,10 @@ const CATEGORY_OVERRIDES = {
   'pliang279/MultiBench': 'ai', // 多模态 ML 基准，被 healthcare 查询误吸入
   'pliang279/awesome-multimodal-ml': 'ai', // 多模态 ML 阅读清单，被 healthcare 查询误吸入
   'frappe/erpnext': 'backend-infra', // 开源 ERP 系统，被 healthcare 查询误吸入
+  // 2026-10-20 夜间质检新增（实时 tab 只过滤不搬运）
+  'coollabsio/coolify': 'backend-infra', // 自建 PaaS/Vercel 平替，被 frontend-mobile 查询误吸入
+  'team-spotube/spotube': 'media', // 开源音乐流媒体 App，被 frontend-mobile 查询误吸入
+  'redis/redis': 'backend-infra', // 数据库，被 devtools 查询误吸入（"developers" 全文匹配）
 };
 
 // 内容黑名单：不宜在公开站点展示的项目（2026-10-13 夜间质检）
