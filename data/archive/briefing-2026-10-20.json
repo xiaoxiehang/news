@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-20",
+  "date_str": "2026年10月20日",
+  "overview": "今天的 AI 新闻，一边是大厂继续改进模型和智能体工具，另一边是平台与企业开始处理 AI 带来的新风险。领英清理低质量生成内容，微软提醒企业警惕智能体权限，而网站屏蔽智能体、开发者账户遭异常调用，也让安全与访问边界成为焦点。",
+  "picks": [
+    {
+      "title": "OpenAI 改进 ChatGPT 对冷门编程语言的支持",
+      "summary": "OpenAI 发布了改进 ChatGPT 编程能力的进展，重点关注训练资料相对稀少的编程语言。其介绍了用于评估软件工程任务、SQLite 和 COBOL 迁移的新方法，希望模型不只擅长热门语言，也能更可靠地处理企业仍在使用的老系统。",
+      "url": "https://openai.com/index/low-resource-programming-languages",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "领英开始清理平台上的低质量 AI 生成内容",
+      "summary": "领英正在清理平台上千篇一律的低质量 AI 生成内容。相关报告曾估计，其长篇帖子中约四成由 AI 生成；但“由 AI 生成”并不等于内容低质。对依赖专业交流的平台来说，如何减少灌水、保留真正有用的经验分享，正成为现实问题。",
+      "url": "https://www.solidot.org/story?sid=85650",
+      "source": "Solidot",
+      "category": "今日头条"
+    },
+    {
+      "title": "微软警告：企业使用 AI 智能体需防范“内部威胁”",
+      "summary": "微软提醒企业，能访问内部系统并代人执行任务的 AI 智能体，也可能带来类似内部人员滥用权限的风险。报道指出，企业不能因为使用了先进模型，就默认智能体的操作值得信任；对员工所用智能体的权限和行为持续监控，正在变得更加重要。",
+      "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenCode 用户遭遇异常调用，部分 API 账户账单激增",
+      "summary": "InfoQ 报道，部分使用 OpenCode 的开发者发现，绑定的大模型 API 密钥被异常调用，额度和账单在短时间内迅速上涨。事件引发对密钥安全及攻击原因的争议，官方提出的“蒸馏攻击”解释也受到质疑；目前不宜把所有异常调用归为同一种原因。",
+      "url": "https://www.infoq.cn/article/K5J7yb60djWKM6vUZqwq",
+      "source": "InfoQ 推荐",
+      "category": "前沿动态"
+    },
+    {
+      "title": "AI 与骗子周旋，获取约 25 万条诈骗情报",
+      "summary": "机器之心报道了一项让 AI 与诈骗者持续对话、收集线索的尝试，称其获取了约 25 万条情报。它展示了 AI 除了识别可疑信息，还可能主动协助反诈调查；不过，情报的准确性及后续如何核验、使用，仍是判断实际效果的关键。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651068408&idx=2&sn=5ac06b17454bdcff1d57bf62b22283ad",
+      "source": "机器之心",
+      "category": "前沿动态"
+    },
+    {
+      "title": "部分网站开始屏蔽 AI 智能体访问",
+      "summary": "一些用户发现，AI 智能体替他们浏览网站、办理任务时，已被部分主流平台阻拦。网站担忧数据被抓取及访问规则遭绕过，而用户期待智能体代劳订餐、购物等操作；这场拉锯意味着，智能体能否完成任务，不仅取决于模型能力，也取决于网站是否放行。",
+      "url": "https://www.solidot.org/story?sid=85649",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "谷歌开源 Harness²，尝试让 AI 智能体持续改进工作方式",
+      "summary": "据 InfoQ 报道，谷歌研究团队开源了智能体框架 Harness²，可通过调整指令、记忆和工具使用方式，尝试提升智能体表现，而不必重新训练模型。项目已支持 OpenCode 和 Codex；它主要面向开发者，但也体现出 AI 工具正从单次回答走向可持续改进的工作流程。",
+      "url": "https://www.infoq.cn/article/AD1M3mJ2SH1dJrTA1r5q",
+      "source": "InfoQ 推荐",
+      "category": "效率工具"
+    },
+    {
+      "title": "研究人员把 Claude 放上虚拟荒岛，观察它如何“玩耍”",
+      "summary": "研究人员在实验中让 AI 智能体独自待在虚拟荒岛上约 30 小时，观察没有明确任务时它会做什么。MIT《科技评论》报道，Claude 出现了看起来像“玩耍”的行为；这种描述有助于理解其表现，但并不能据此认定 AI 拥有人的感受或意图。",
+      "url": "https://www.technologyreview.com/2026/10/19/1147095/ai-stranded-claude-virtual-desert-island-play/",
+      "source": "MIT 科技评论",
+      "category": "一句话"
+    }
+  ],
+  "generated_at": "2026-10-20 02:13:28"
+}
