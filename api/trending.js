@@ -72,7 +72,8 @@ const CATEGORY_OVERRIDES = {
 // 内容黑名单：不宜在公开站点展示的项目（2026-10-13 夜间质检）
 // stashapp/stash：成人内容管理工具，卡片直接渲染其英文描述，不适合公开站点
 // Igglybuff/awesome-piracy：盗版资源导航，不适合公开站点（2026-10-15 夜间质检）
-const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy']);
+// MDX-Tom/gpt-instruct：Codex 越狱（破甲）提示词包，不适合公开站点（2026-10-20 夜间质检）
+const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy', 'MDX-Tom/gpt-instruct']);
 
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);
@@ -132,9 +133,11 @@ export default async function handler(req, res) {
     let repos;
     if (tab === 'rising') {
       repos = await search('created:>' + recentDate(120) + ' stars:>100', 'stars', 50, headers);
+      repos = repos.filter(r => !CATEGORY_EXCLUDE.has(r.full_name));
       if (!repos.length) throw new Error('empty rising');
     } else if (tab === 'leaderboard') {
       repos = await search('stars:>100 pushed:>' + recentDate(1), 'stars', 30, headers);
+      repos = repos.filter(r => !CATEGORY_EXCLUDE.has(r.full_name));
       if (!repos.length) throw new Error('empty leaderboard');
     } else {
       const c = CATEGORIES.find(x => x.id === tab);
