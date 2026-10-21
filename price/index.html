@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="/assets/minimal.css">
 <style>
 /* 本页特有 */
-.price-wrap { padding: 0 var(--pad-x); }
+.price-wrap { padding: 0 var(--pad-x) 56px; }
+.price-loading { text-align: center; color: var(--muted); font-size: 15px; padding: 72px 0; animation: price-pulse 1.6s ease-in-out infinite; }
+@keyframes price-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
 
 /* 表单 */
 
@@ -74,7 +76,10 @@ a.price-card:hover .price-name { color: var(--accent); }
 .price-bottom {
   display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
   padding-top: 12px; border-top: 1px solid var(--hairline-soft);
+  flex-wrap: wrap; row-gap: 4px;
 }
+.price-bottom > div { min-width: 0; overflow-wrap: break-word; }
+.price-was { white-space: nowrap; }
 .price-now { font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
 .price-now em { font-style: normal; font-size: 11px; font-weight: 600; color: var(--faint); margin-left: 6px; }
 .price-now-us { display: block; font-size: 14px; color: var(--ink); margin-top: 2px; }
@@ -109,6 +114,7 @@ a.price-card:hover .price-name { color: var(--accent); }
 
 @media (prefers-reduced-motion: reduce) {
   .price-card { animation: none; transition: none; }
+  .price-loading { animation: none; }
   a.price-card:hover, a.price-card:active { transform: none; }
   .price-tab { transition: none; }
   .price-tab:active { transform: none; }
@@ -137,6 +143,7 @@ a.price-card:hover .price-name { color: var(--accent); }
 <main>
 <div class="price-wrap">
 
+  <div id="price-loading" class="price-loading">正在为你搜罗今日好价…</div>
   <section id="all-section" style="display:none;">
     <div class="price-tabs" id="price-tabs">
       <button class="price-tab active" data-cat="all">全部</button>
@@ -229,10 +236,16 @@ function renderAll() {
     // 5. Google Play 降价：只上榜单（有降价/限免的），没降价的不展示
     var play = res[4], playDrops = (play && play.drops) || [];
     playDrops.forEach(function(it) { items.push(normalizePlay(it)); });
-    if (!items.length) return;
+    if (!items.length) {
+      var ld = document.getElementById('price-loading');
+      if (ld) { ld.textContent = '今日暂无降价，明天再来看看'; ld.style.animation = 'none'; }
+      return;
+    }
     // 按折扣从大到小，无折扣的保持原相对顺序沉底
     items.sort(function(a, b) { return (b.disc || 0) - (a.disc || 0); });
     window.__priceItems = items;
+    var ld2 = document.getElementById('price-loading');
+    if (ld2) ld2.style.display = 'none';
     document.getElementById('all-section').style.display = '';
     renderPriceTab('all');
     // tab 切换
