@@ -46,9 +46,9 @@ header {
 .search input {
   flex: 1; background: rgba(255, 255, 255, 0.08); border: 1px solid transparent; color: var(--ink);
   border-radius: var(--radius-pill); padding: 11px 20px; font-size: 15px; font-family: var(--font);
-  transition: all 0.2s;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
-.search input:focus { outline: none; border-color: var(--accent); background: rgba(255, 255, 255, 0.12); }
+.search input:focus { outline: none; border-color: var(--accent); background: rgba(255, 255, 255, 0.12); box-shadow: 0 0 0 4px var(--accent-soft); }
 .search input::placeholder { color: var(--faint); }
 .home-link { color: var(--muted); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .home-link:hover { color: var(--ink); }
@@ -89,10 +89,20 @@ main { padding: 8px var(--pad-x) 72px; }
 .scroller::-webkit-scrollbar { display: none; }
 .mcard {
   flex: 0 0 150px; cursor: pointer; border-radius: 14px; overflow: hidden;
-  background: var(--card); border: 1px solid var(--hairline); transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--card); border: 1px solid var(--hairline);
+  transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s cubic-bezier(.22,.61,.36,1);
+  animation: card-in .45s cubic-bezier(.22,.61,.36,1) backwards;
 }
+@keyframes card-in { from { opacity: 0; transform: translateY(12px); } }
+.scroller .mcard:nth-child(2), .grid .mcard:nth-child(2) { animation-delay: .05s; }
+.scroller .mcard:nth-child(3), .grid .mcard:nth-child(3) { animation-delay: .10s; }
+.scroller .mcard:nth-child(4), .grid .mcard:nth-child(4) { animation-delay: .15s; }
+.scroller .mcard:nth-child(5), .grid .mcard:nth-child(5) { animation-delay: .20s; }
+.scroller .mcard:nth-child(6), .grid .mcard:nth-child(6) { animation-delay: .25s; }
 .mcard:hover { transform: translateY(-4px) scale(1.02); box-shadow: var(--shadow-md); }
-.mcard img { width: 150px; height: 225px; object-fit: cover; display: block; background: #2a2a2e; }
+.mcard:active { transform: scale(.98); transition-duration: .12s; }
+.mcard img { width: 150px; height: 225px; object-fit: cover; display: block; background: #2a2a2e; transition: transform .4s cubic-bezier(.22,.61,.36,1); }
+.mcard:hover img { transform: scale(1.05); }
 .mcard .t { padding: 10px 12px 12px; }
 .mcard .t .name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mcard .t .meta { font-size: 12px; color: var(--muted); margin-top: 5px; }
@@ -103,6 +113,10 @@ main { padding: 8px var(--pad-x) 72px; }
 
 #modal { position: fixed; inset: 0; z-index: 100; display: none; }
 #modal.show { display: block; }
+#modal.show .mask { animation: mask-in .3s ease backwards; }
+#modal.show .sheet { animation: sheet-in .42s cubic-bezier(.22,.61,.36,1) backwards; }
+@keyframes mask-in { from { opacity: 0; } }
+@keyframes sheet-in { from { opacity: 0; transform: translateY(28px); } }
 #modal .mask { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.7); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 #modal .sheet {
   position: absolute; inset: 4% 0 0; max-width: 880px; margin: 0 auto;
@@ -147,6 +161,33 @@ main { padding: 8px var(--pad-x) 72px; }
 .loading, .empty { text-align: center; color: var(--muted); padding: 48px 0; font-size: 15px; }
 footer { text-align: center; color: var(--faint); font-size: 13px; padding: 28px 0 48px; border-top: 1px solid var(--hairline); }
 footer a { color: var(--muted); }
+/* 加载骨架：结构先行，内容到了直接替换 */
+.skel { position: relative; overflow: hidden; background: rgba(255,255,255,.07); border-radius: 8px; }
+.skel::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.09) 50%, transparent 80%);
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+.hero-skel { position: relative; padding: 48px var(--pad-x) 64px; width: 100%; }
+.hero-skel .sk-kicker { width: 120px; height: 14px; margin-bottom: 18px; }
+.hero-skel .sk-title { width: min(560px, 82%); height: 64px; border-radius: 12px; margin-bottom: 20px; }
+.hero-skel .sk-line { width: min(640px, 92%); height: 16px; margin-bottom: 10px; }
+.hero-skel .sk-line.short { width: min(420px, 64%); margin-bottom: 30px; }
+.hero-skel .sk-btn { width: 150px; height: 46px; border-radius: 999px; }
+.skel-card { flex: 0 0 150px; }
+.skel-poster { width: 150px; height: 225px; border-radius: 14px; }
+.skel-bar { height: 13px; margin-top: 10px; }
+.skel-bar.short { width: 55%; }
+@media (prefers-reduced-motion: reduce) {
+  .mcard { animation: none; transition: none; }
+  .mcard:hover, .mcard:active { transform: none; }
+  .mcard img { transition: none; }
+  .mcard:hover img { transform: none; }
+  #modal.show .mask, #modal.show .sheet { animation: none; }
+  .skel::after { animation: none; }
+  .btn, .search input { transition: none; }
+}
 @media (min-width: 700px) { #modal .sheet { inset: 6% 24px; border-radius: 22px; } }
 </style>
 </head>
@@ -158,12 +199,12 @@ footer a { color: var(--muted); }
   </div>
 </header>
 
-<div id="hero"><div class="loading">加载中…</div></div>
+<div id="hero"><div class="hero-skel"><div class="skel sk-kicker"></div><div class="skel sk-title"></div><div class="skel sk-line"></div><div class="skel sk-line short"></div><div class="skel sk-btn"></div></div></div>
 
 <main id="home">
-  <section class="rowsec"><h2>🔥 本周热门</h2><div class="scroller" id="row-trending"></div></section>
-  <section class="rowsec"><h2>⭐ 高分佳片</h2><div class="scroller" id="row-top"></div></section>
-  <section class="rowsec"><h2>📅 即将上映</h2><div class="scroller" id="row-upcoming"></div></section>
+  <section class="rowsec"><h2>🔥 本周热门</h2><div class="scroller" id="row-trending"><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div></div></section>
+  <section class="rowsec"><h2>⭐ 高分佳片</h2><div class="scroller" id="row-top"><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div></div></section>
+  <section class="rowsec"><h2>📅 即将上映</h2><div class="scroller" id="row-upcoming"><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div><div class="skel-card"><div class="skel skel-poster"></div><div class="skel skel-bar"></div><div class="skel skel-bar short"></div></div></div></section>
   <section class="rowsec" id="sec-search" hidden>
     <h2>🔍 搜索结果</h2><div class="grid" id="grid-search"></div>
   </section>

@@ -20,9 +20,23 @@
 .price-card {
   position: relative; background: #fff; border-radius: 14px; box-shadow: var(--shadow-card);
   padding: 20px; text-decoration: none; color: inherit;
-  display: flex; flex-direction: column; transition: transform .2s;
+  display: flex; flex-direction: column;
+  transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s cubic-bezier(.22,.61,.36,1);
+  animation: price-in .45s cubic-bezier(.22,.61,.36,1) backwards;
 }
-a.price-card:hover { transform: translateY(-3px); }
+@keyframes price-in { from { opacity: 0; transform: translateY(10px); } }
+.price-grid .price-card:nth-child(2) { animation-delay: .04s; }
+.price-grid .price-card:nth-child(3) { animation-delay: .08s; }
+.price-grid .price-card:nth-child(4) { animation-delay: .12s; }
+.price-grid .price-card:nth-child(5) { animation-delay: .16s; }
+.price-grid .price-card:nth-child(6) { animation-delay: .20s; }
+.price-grid .price-card:nth-child(7) { animation-delay: .24s; }
+.price-grid .price-card:nth-child(8) { animation-delay: .28s; }
+a.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(0,0,0,.03) 0 0 0 1px, rgba(0,0,0,.05) 0 4px 10px 0, rgba(0,0,0,.12) 0 16px 32px 0;
+}
+a.price-card:active { transform: translateY(-1px) scale(.99); transition-duration: .12s; }
 a.price-card:hover .price-name { color: var(--accent); }
 .price-rank {
   position: absolute; top: 12px; right: 16px; z-index: 2;
@@ -87,8 +101,18 @@ a.price-card:hover .price-name { color: var(--accent); }
   border: none; cursor: pointer; font-size: 14px; font-weight: 600;
   padding: 8px 20px; border-radius: var(--radius-pill);
   background: var(--paper); color: var(--muted);
+  transition: background .2s ease, color .2s ease, transform .12s ease;
 }
+.price-tab:not(.active):hover { color: var(--ink); }
+.price-tab:active { transform: scale(.95); }
 .price-tab.active { background: var(--primary); color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .price-card { animation: none; transition: none; }
+  a.price-card:hover, a.price-card:active { transform: none; }
+  .price-tab { transition: none; }
+  .price-tab:active { transform: none; }
+}
 
 @media (max-width: 720px) {  }
 </style>
