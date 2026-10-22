@@ -67,6 +67,7 @@ const CATEGORY_OVERRIDES = {
   'coollabsio/coolify': 'backend-infra', // 自建 PaaS/Vercel 平替，被 frontend-mobile 查询误吸入
   'team-spotube/spotube': 'media', // 开源音乐流媒体 App，被 frontend-mobile 查询误吸入
   'redis/redis': 'backend-infra', // 数据库，被 devtools 查询误吸入（"developers" 全文匹配）
+  'thedaviddias/Front-End-Checklist': 'frontend-mobile', // 2026-10-22 夜间质检：纯前端开发 checklist，被 ai-apps 查询误吸入
 };
 
 // 内容黑名单：不宜在公开站点展示的项目（2026-10-13 夜间质检）
