@@ -1,64 +1,64 @@
 {
-  "date": "2026-10-21",
-  "date_str": "2026年10月21日",
-  "overview": "今天的 AI 热点从聊天框延伸到汽车、药物研发和康复治疗：OpenAI 宣布收购生物科技公司，谷歌则让车载 Gemini 读取更多个人信息。与此同时，AI 安全立法提案、网页隐藏指令和低质量生成内容，也让技术落地后的风险成为焦点。",
+  "date": "2026-10-22",
+  "date_str": "2026年10月22日",
+  "overview": "今天的 AI 新闻，一边是 OpenAI 扩大模型分发与广告业务，另一边是 AI 发现的安全漏洞引发网站故障。Meta 和特斯拉继续为 AI 投入寻找资金与产能，而数据中心污染、智能体研究和新工具也值得关注。",
   "picks": [
     {
-      "title": "OpenAI 宣布收购 Orchestra Bio，进军药物研发",
-      "summary": "OpenAI 宣布收购生物科技公司 Orchestra Bio，希望将 AI 用于生命科学研发的日常运营，帮助药企加快药物开发、推进新疗法。公告聚焦的是研发流程提效，而非宣布某款新药或临床成果；收购价格等交易细节未见于所给简介。",
-      "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+      "title": "AI 发现的 PHP 漏洞引发多家网站故障",
+      "summary": "据 The Verge 报道，两处借助 AI 发现的 PHP 漏洞，导致维基百科、DeviantArt 等网站当天出现问题。PHP 被大量网站用于后台运行，这次事件提醒网站运营者：AI 加快发现漏洞的同时，修复与协调响应也必须跟上。",
+      "url": "https://www.theverge.com/tech/1015906/php2shell-vulnerability-october-2026",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "OpenAI 模型将登陆谷歌云",
+      "summary": "OpenAI 宣布与谷歌云合作，将其模型和 Codex 编程工作流程带入 Gemini 的 Model Garden，并通过 Google Cloud Marketplace 提供。企业今后可在谷歌云的现有采购渠道中使用这些能力，AI 服务商之间的合作也进一步加深。",
+      "url": "https://openai.com/index/openai-models-google-cloud",
       "source": "OpenAI 官方",
       "category": "今日头条"
     },
     {
-      "title": "SpaceX 称 AI 业务推动第三季度营收大涨",
-      "summary": "SpaceX 公布第三季度营收为 146 亿美元，同比增长 161%，并将增长归因于其“超级智能”业务及其他业务的加速发展。这份财报显示，AI 已成为公司对外强调的增长动力；不过，现有简介没有给出 AI 业务单独贡献的营收数字。",
-      "url": "https://www.theverge.com/science/1014150/spacex-q3-2026-earnings",
-      "source": "The Verge",
-      "category": "今日头条"
+      "title": "ChatGPT 广告扩展至另外 26 个国家",
+      "summary": "OpenAI 宣布，ChatGPT 广告业务新增覆盖 26 个国家；该公司称，已有超过 10 万家广告主使用其平台。广告将触及用户在 ChatGPT 中探索商品、比较选项和作出购买决定的过程，这也标志着 OpenAI 正扩大面向消费者的广告业务。",
+      "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
     },
     {
-      "title": "谷歌将更懂你的 Gemini 带进汽车",
-      "summary": "谷歌正将 Gemini 的“个人智能”功能带入 Android Auto 和内置谷歌服务的汽车，让车载助手利用用户在谷歌应用中的信息提供更贴合个人需求的帮助。这意味着开车时与 AI 交互可能更方便，也让用户值得留意跨应用信息如何被调用。",
-      "url": "https://www.theverge.com/tech/1014999/google-gemini-ai-cars-android-auto",
+      "title": "Meta 拟设立新类别股票，为 AI 投资筹资",
+      "summary": "Meta 在第三季度财报中表示，计划发行一类新的无投票权股票，为 AI 等业务投入筹集资金。此举显示，大规模建设 AI 模型和服务不仅需要技术，也需要持续的资本支持；对普通投资者来说，新股类别及其用途同样值得留意。",
+      "url": "https://www.theverge.com/tech/1015799/meta-shares-class-ai-q3-2026-earnings",
       "source": "The Verge",
-      "category": "效率工具"
+      "category": "前沿动态"
     },
     {
-      "title": "Anthropic 提出 AI 安全法案方案，模型发布限制引争议",
-      "summary": "Anthropic 提出一项 AI 安全立法方案，涉及可能造成严重伤亡风险的模型能否发布。TechCrunch 指出，方案虽然强调防范风险，却也要求联邦机构在没有法官许可时不得阻止模型发布；这使“谁有权及时叫停危险模型”成为争议核心。",
-      "url": "https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/",
+      "title": "报告警示：数据中心扩张或冲淡空气质量改善成果",
+      "summary": "The Verge 报道，一份新报告警告，数据中心快速扩张可能使美国得克萨斯州的空气污染回升至多年未见的水平。生成式 AI 背后的算力设施正在加速建设，这则消息提醒公众：讨论 AI 的成本时，不能只看用电量，也要关注当地空气质量。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report",
+      "source": "The Verge",
+      "category": "前沿动态"
+    },
+    {
+      "title": "特斯拉在加州启动 Optimus 机器人生产",
+      "summary": "据 TechCrunch 报道，特斯拉已在加州启动 Optimus 机器人生产，同时其利润下滑 43%。公司正继续加大机器人、AI 和自动驾驶投入，但收入持平、支出上升也让这些项目面临更直接的财务压力；启动生产并不等于机器人已大规模普及。",
+      "url": "https://techcrunch.com/2026/10/21/tesla-stars-optimus-robot-production-in-california-as-profit-falls-43/",
       "source": "TechCrunch",
       "category": "前沿动态"
     },
     {
-      "title": "MiniMax 发布 M3.1 Flash，主打低成本智能体应用",
-      "summary": "MiniMax 正式发布 M3.1 Flash，InfoQ 报道重点关注其价格与执行复杂任务的能力，而不只是传统测试榜单成绩。对普通用户而言，这类模型的看点在于：未来由 AI 操作工具、完成多步骤工作的服务，能否在保持可用性的同时降低成本。",
-      "url": "https://www.infoq.cn/article/7Twa7KBWIzi8JGOdVwCK",
-      "source": "InfoQ 推荐",
+      "title": "微软与加州大学圣巴巴拉分校研究让 AI 智能体读论文、改代码",
+      "summary": "机器之心报道了微软与加州大学圣巴巴拉分校的一项新研究：研究者尝试让 AI 智能体阅读论文，并据此修改自身代码。它探索的是智能体能否从外部研究中学习、改进工作方式，目前更适合视作研究进展，而非已经成熟的日常产品。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651068870&idx=3&sn=c2afa68be033b7f3864579adae468ef1",
+      "source": "机器之心",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Notion Auto 推出可长时间运行的智能体",
+      "summary": "Product Hunt 上线的 Notion Auto 介绍了重新设计的 Notion 智能体，称其能够连续运行数小时，使用成本也更低。对经常在 Notion 中整理资料、推进项目的人来说，值得关注它能否承担更长流程的任务；实际效果仍需结合具体使用场景判断。",
+      "url": "https://www.producthunt.com/products/notion-99",
+      "source": "Product Hunt",
       "category": "效率工具"
-    },
-    {
-      "title": "机器人疗法尝试缓解中风患者康复资源短缺",
-      "summary": "《MIT 科技评论》报道一种面向中风患者的机器人辅助康复新方法，试图缓解物理治疗师不足带来的照护缺口。报道指出，每年有约 500 万人在中风后留下长期功能障碍；这项尝试的意义，是探索如何让更多患者获得持续康复支持。",
-      "url": "https://www.technologyreview.com/2026/10/20/1145282/robotic-therapy-for-stroke-patients/",
-      "source": "MIT 科技评论",
-      "category": "前沿动态"
-    },
-    {
-      "title": "WhatsApp 帮助页面被发现藏有针对 AI 的指令",
-      "summary": "WhatsApp 帮助页面被发现含有对人眼不可见、却可能被大模型读取的指令，其中包括不要建议特定用户联系数据保护监管机构。Meta 发言人称这是程序错误，相关内容已移除。这起事件提醒人们：AI 阅读网页时，也可能受到页面隐藏文字影响。",
-      "url": "https://www.solidot.org/story?sid=85658",
-      "source": "Solidot",
-      "category": "前沿动态"
-    },
-    {
-      "title": "Steam 新品节出现大量低质量 AI 生成游戏",
-      "summary": "10 月 19 日开幕的 Steam 新品节上，大量被玩家认为质量粗糙的 AI 生成游戏引发不满。部分玩家在社交媒体上呼吁平台加入 AI 内容过滤功能，以便筛选试玩作品；争议折射出生成工具降低制作门槛后，平台如何帮助用户发现好作品。",
-      "url": "https://www.solidot.org/story?sid=85667",
-      "source": "Solidot",
-      "category": "一句话"
     }
   ],
-  "generated_at": "2026-10-21 02:07:15"
+  "generated_at": "2026-10-22 02:01:18"
 }
