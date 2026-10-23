@@ -5,139 +5,184 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>降价提醒助手 - 盯住想买的东西</title>
 <meta name="description" content="每天为你搜罗真正值得买的低价：游戏、会员、机票酒店。">
-<link rel="stylesheet" href="/assets/minimal.css">
 <style>
-/* 本页特有 */
-.price-wrap { padding: 0 var(--pad-x) 56px; }
-.price-loading { text-align: center; color: var(--muted); font-size: 15px; padding: 72px 0; animation: price-pulse 1.6s ease-in-out infinite; }
-@keyframes price-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+  :root {
+    --ink: #1d1d1f;
+    --grey: #6e6e73;
+    --hair: #d2d2d7;
+    --wash: #f5f5f7;
+    --pad-x: 6vw;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+    /* 本页语义别名：次要文字/发线/价格红，映射到 C 令牌 */
+    --muted: var(--grey);
+    --faint: #a1a1a6;
+    --hairline-soft: #e9e9ec;
+    --bg-secondary: var(--wash);
+    --paper: var(--wash);
+    --accent: #ff385c;
+    --primary: var(--ink);
+    --radius-pill: 999px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
 
-/* 表单 */
+  /* ── 顶栏（与新首页同语言，绝对链接） ── */
+  .topbar {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 28px var(--pad-x) 0;
+  }
+  .brand { font-size: 21px; font-weight: 700; letter-spacing: .01em; }
+  .topnav { display: flex; gap: 34px; font-size: 17px; color: var(--grey); }
+  .topnav a { position: relative; padding: 4px 0; transition: color .3s var(--ease); }
+  .topnav a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+    background: var(--ink); transform: scaleX(0); transform-origin: right;
+    transition: transform .45s var(--ease);
+  }
+  .topnav a:hover { color: var(--ink); }
+  .topnav a:hover::after { transform: scaleX(1); transform-origin: left; }
+  .topnav a.active { color: var(--ink); }
+  .topnav a.active::after { transform: scaleX(1); }
 
-/* 提醒横幅 */
+  /* ── 内容区 ─────────────────────────── */
+  .price-wrap { padding: 12px var(--pad-x) 72px; }
+  .price-loading { text-align: center; color: var(--muted); font-size: 15px; padding: 72px 0; animation: price-pulse 1.6s ease-in-out infinite; }
+  @keyframes price-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
 
-/* ---------- 榜单风 ---------- */
-/* 价格卡片（统一卡片布局） */
-.price-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-.price-card {
-  position: relative; background: #fff; border-radius: 14px; box-shadow: var(--shadow-card);
-  padding: 20px; text-decoration: none; color: inherit;
-  display: flex; flex-direction: column;
-  transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s cubic-bezier(.22,.61,.36,1);
-  animation: price-in .45s cubic-bezier(.22,.61,.36,1) backwards;
-}
-@keyframes price-in { from { opacity: 0; transform: translateY(10px); } }
-.price-grid .price-card:nth-child(2) { animation-delay: .04s; }
-.price-grid .price-card:nth-child(3) { animation-delay: .08s; }
-.price-grid .price-card:nth-child(4) { animation-delay: .12s; }
-.price-grid .price-card:nth-child(5) { animation-delay: .16s; }
-.price-grid .price-card:nth-child(6) { animation-delay: .20s; }
-.price-grid .price-card:nth-child(7) { animation-delay: .24s; }
-.price-grid .price-card:nth-child(8) { animation-delay: .28s; }
-a.price-card:hover {
-  transform: translateY(-4px);
-  box-shadow: rgba(0,0,0,.03) 0 0 0 1px, rgba(0,0,0,.05) 0 4px 10px 0, rgba(0,0,0,.12) 0 16px 32px 0;
-}
-a.price-card:active { transform: translateY(-1px) scale(.99); transition-duration: .12s; }
-a.price-card:hover .price-name { color: var(--accent); }
-.price-rank {
-  position: absolute; top: 12px; right: 16px; z-index: 2;
-  font-size: 12px; font-weight: 800; color: var(--faint); font-variant-numeric: tabular-nums;
-}
-.price-rank.top3 { color: var(--accent); font-size: 15px; }
-.price-img {
-  width: 100%; height: 120px; border-radius: 10px; object-fit: cover;
-  margin-bottom: 14px; background: var(--bg-secondary);
-}
-.price-icon { width: 56px; height: 56px; border-radius: 14px; margin-bottom: 14px; }
-.price-img-ph {
-  width: 100%; height: 120px; border-radius: 10px; margin-bottom: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px; font-weight: 800; background: var(--bg-secondary);
-}
-/* App 卡大图：图标高斯模糊铺底 + 居中图标，与游戏横幅同高 */
-.price-banner {
-  position: relative; width: 100%; height: 120px; border-radius: 10px;
-  overflow: hidden; margin-bottom: 14px; background: var(--bg-secondary);
-  display: flex; align-items: center; justify-content: center;
-}
-.price-banner-bg {
-  position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px);
-  object-fit: cover; filter: blur(28px) saturate(1.5); opacity: .6;
-}
-.price-banner-fg {
-  position: relative; width: 64px; height: 64px; border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,.28);
-}
-.price-name { font-size: 16px; font-weight: 700; margin: 0 0 6px; color: var(--ink); padding-right: 28px; }
-.price-note { font-size: 13px; color: var(--muted); margin: 0 0 10px; line-height: 1.6; flex: 1; }
-.price-note b { color: var(--accent); font-weight: 600; }
-.price-tags { margin-bottom: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.price-bottom {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
-  padding-top: 12px; border-top: 1px solid var(--hairline-soft);
-  flex-wrap: wrap; row-gap: 4px;
-}
-.price-bottom > div { min-width: 0; overflow-wrap: break-word; }
-.price-was { white-space: nowrap; }
-.price-now { font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
-.price-now em { font-style: normal; font-size: 11px; font-weight: 600; color: var(--faint); margin-left: 6px; }
-.price-now-us { display: block; font-size: 14px; color: var(--ink); margin-top: 2px; }
-.price-was { font-size: 12px; color: var(--faint); }
-.price-was s { margin-right: 4px; }
-.pf-tag {
-  display: inline-block; font-size: 11px; font-weight: 600; color: var(--muted);
-  background: var(--bg-secondary); border: 1px solid var(--hairline-soft);
-  padding: 3px 10px; border-radius: 999px;
-}
-.price-disc {
-  display: inline-block; font-size: 12px; font-weight: 800; color: #fff;
-  background: var(--accent); border-radius: 8px; padding: 3px 8px;
-}
-@media (max-width: 640px) {
-  .price-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .price-card { padding: 14px; }
-  .price-img, .price-img-ph, .price-banner { height: 90px; }
-}
-/* 今日好价 */
-/* 分类 tab（与 GitHub 页 category-btn 同款 pill 样式） */
-.price-tabs { display: flex; gap: 10px; margin: 28px 0 20px; flex-wrap: wrap; }
-.price-tab {
-  border: none; cursor: pointer; font-size: 14px; font-weight: 600;
-  padding: 8px 20px; border-radius: var(--radius-pill);
-  background: var(--paper); color: var(--muted);
-  transition: background .2s ease, color .2s ease, transform .12s ease;
-}
-.price-tab:not(.active):hover { color: var(--ink); }
-.price-tab:active { transform: scale(.95); }
-.price-tab.active { background: var(--primary); color: #fff; }
+  /* 价格卡片（统一卡片布局） */
+  .price-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .price-card {
+    position: relative; background: #fff; border: 1px solid var(--hair); border-radius: 18px;
+    padding: 20px; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    transition: background .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+    animation: price-in .45s var(--ease) backwards;
+  }
+  @keyframes price-in { from { opacity: 0; transform: translateY(10px); } }
+  .price-grid .price-card:nth-child(2) { animation-delay: .04s; }
+  .price-grid .price-card:nth-child(3) { animation-delay: .08s; }
+  .price-grid .price-card:nth-child(4) { animation-delay: .12s; }
+  .price-grid .price-card:nth-child(5) { animation-delay: .16s; }
+  .price-grid .price-card:nth-child(6) { animation-delay: .20s; }
+  .price-grid .price-card:nth-child(7) { animation-delay: .24s; }
+  .price-grid .price-card:nth-child(8) { animation-delay: .28s; }
+  a.price-card:hover {
+    background: var(--wash);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+  }
+  a.price-card:active { transform: translateY(-1px) scale(.99); transition-duration: .12s; }
+  a.price-card:hover .price-name { color: var(--accent); }
+  .price-rank {
+    position: absolute; top: 12px; right: 16px; z-index: 2;
+    font-size: 12px; font-weight: 800; color: var(--faint); font-variant-numeric: tabular-nums;
+  }
+  .price-rank.top3 { color: var(--accent); font-size: 15px; }
+  .price-img {
+    width: 100%; height: 120px; border-radius: 12px; object-fit: cover;
+    margin-bottom: 14px; background: var(--bg-secondary);
+  }
+  .price-icon { width: 56px; height: 56px; border-radius: 14px; margin-bottom: 14px; }
+  .price-img-ph {
+    width: 100%; height: 120px; border-radius: 12px; margin-bottom: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 800; background: var(--bg-secondary);
+  }
+  /* App 卡大图：图标高斯模糊铺底 + 居中图标，与游戏横幅同高 */
+  .price-banner {
+    position: relative; width: 100%; height: 120px; border-radius: 12px;
+    overflow: hidden; margin-bottom: 14px; background: var(--bg-secondary);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .price-banner-bg {
+    position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px);
+    object-fit: cover; filter: blur(28px) saturate(1.5); opacity: .6;
+  }
+  .price-banner-fg {
+    position: relative; width: 64px; height: 64px; border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.28);
+  }
+  .price-name { font-size: 16px; font-weight: 700; margin: 0 0 6px; color: var(--ink); padding-right: 28px; }
+  .price-note { font-size: 13px; color: var(--muted); margin: 0 0 10px; line-height: 1.6; flex: 1; }
+  .price-note b { color: var(--accent); font-weight: 600; }
+  .price-tags { margin-bottom: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .price-bottom {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+    padding-top: 12px; border-top: 1px solid var(--hairline-soft);
+    flex-wrap: wrap; row-gap: 4px;
+  }
+  .price-bottom > div { min-width: 0; overflow-wrap: break-word; }
+  .price-now { font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
+  .price-now em { font-style: normal; font-size: 11px; font-weight: 600; color: var(--faint); margin-left: 6px; }
+  .price-now-us { display: block; font-size: 14px; color: var(--ink); margin-top: 2px; }
+  .price-now-hk { display: block; font-size: 14px; color: var(--ink); margin-top: 2px; }
+  .price-was { font-size: 12px; color: var(--faint); white-space: nowrap; }
+  .price-was s { margin-right: 4px; }
+  .pf-tag {
+    display: inline-block; font-size: 11px; font-weight: 600; color: var(--muted);
+    background: var(--bg-secondary); border: 1px solid var(--hairline-soft);
+    padding: 3px 10px; border-radius: 999px;
+  }
+  .price-disc {
+    display: inline-block; font-size: 12px; font-weight: 800; color: #fff;
+    background: var(--accent); border-radius: 8px; padding: 3px 8px;
+  }
+  @media (max-width: 640px) {
+    .price-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .price-card { padding: 14px; }
+    .price-img, .price-img-ph, .price-banner { height: 90px; }
+  }
+  /* 分类 tab（C 语言 pill：wash 底，active 墨色） */
+  .price-tabs { display: flex; gap: 10px; margin: 28px 0 20px; flex-wrap: wrap; }
+  .price-tab {
+    border: none; cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 600;
+    padding: 8px 20px; border-radius: var(--radius-pill);
+    background: var(--wash); color: var(--muted);
+    transition: background .3s var(--ease), color .3s var(--ease), transform .12s var(--ease);
+  }
+  .price-tab:not(.active):hover { color: var(--ink); }
+  .price-tab:active { transform: scale(.95); }
+  .price-tab.active { background: var(--ink); color: #fff; }
 
-@media (prefers-reduced-motion: reduce) {
-  .price-card { animation: none; transition: none; }
-  .price-loading { animation: none; }
-  a.price-card:hover, a.price-card:active { transform: none; }
-  .price-tab { transition: none; }
-  .price-tab:active { transform: none; }
-}
+  /* ── 页脚（footer.js 注入） ────────── */
+  .footer { padding: 0 var(--pad-x) 44px; }
+  .footer-inner { display: flex; gap: 10px; align-items: baseline; font-size: 14px; color: var(--grey); }
+  .footer-inner a { transition: color .3s var(--ease); }
+  .footer-inner a:hover { color: var(--ink); }
 
-@media (max-width: 720px) {  }
+  @media (max-width: 744px) {
+    :root { --pad-x: 24px; }
+    .topnav { gap: 18px; font-size: 15px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .price-card { animation: none; transition: none; }
+    .price-loading { animation: none; }
+    a.price-card:hover, a.price-card:active { transform: none; }
+    .price-tab { transition: none; }
+    .price-tab:active { transform: none; }
+    .topnav a, .topnav a::after { transition: none; }
+  }
 </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <div class="header-title"><span class="brand-mark">鸡</span>鸡仔</div>
-      <div class="header-subtitle" id="header-subtitle">加载中...</div>
-    </div>
-    <nav class="header-nav">
-      <a href="https://xiaojj.pro/" class="nav-link">首页</a>
-      <a href="https://tv.xiaojj.pro" class="nav-link">电视浏览器</a>
-      <a href="https://video.xiaojj.pro" class="nav-link">电影发现</a>
-      <a href="https://price.xiaojj.pro" class="nav-link active">降价提醒</a>
-    </nav>
-  </div>
+<header class="topbar">
+  <a class="brand" href="https://1.xiaojj.pro/">鸡仔</a>
+  <nav class="topnav">
+    <a href="https://1.xiaojj.pro/news.html">AI 早报</a>
+    <a href="https://1.xiaojj.pro/github.html">GitHub</a>
+    <a href="https://price.xiaojj.pro/" class="active">降价</a>
+    <a href="https://video.xiaojj.pro/">电影</a>
+    <a href="https://tv.xiaojj.pro/">电视</a>
+  </nav>
 </header>
 
 <main>
