@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>鸡仔 · 为自己打磨的小产品</title>
-<meta name="description" content="鸡仔的产品集合：AI 科技早报、极客资讯——每一个都是为了解决自己真实遇到的问题。">
+<meta name="description" content="鸡仔的产品集合：AI 科技早报、GitHub 速览、降价提醒、电视浏览器、电影发现——每一个都是为了解决自己真实遇到的问题。">
 <link rel="stylesheet" href="assets/minimal.css">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 /* 首页：瘦题头 + 产品卡片陈列（与 GitHub 卡片同语言） */
 .products-section { padding: 8px 0 96px; }
@@ -21,14 +22,28 @@
   gap: 24px;
   padding: 0 var(--pad-x);
 }
+/* 首页题头：左对齐、放大，与下方卡片同一左线 */
+.home-head { padding-top: 72px; padding-bottom: 40px; }
+.home-head .hero-title { font-size: clamp(32px, 4.2vw, 56px); letter-spacing: -0.01em; margin-bottom: 14px; }
+.home-head .hero-sub { font-size: 17px; max-width: 46em; }
+.feature-card { display: flex; flex-direction: column; min-height: 210px; }
+.feature-desc { flex: 1; }
+@media (min-width: 1100px) {
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .product-grid .feature-card:first-child { grid-column: span 2; background: var(--surface-soft); box-shadow: none; }
+  .product-grid .feature-card:first-child .feature-title { font-size: 26px; }
+  .product-grid .feature-card:first-child .feature-desc { font-size: 16px; max-width: 34em; }
+}
 /* 进入动画 */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
-.reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
 @media (max-width: 744px) {
   .product-grid { grid-template-columns: 1fr; padding: 0 24px; }
   .products-section { padding-bottom: 72px; }
   .products-head { padding: 0 24px; }
+  .feature-card { min-height: 0; }
+  .home-head { padding-top: 40px; padding-bottom: 32px; }
 }
 </style>
 </head>
@@ -52,10 +67,10 @@
 </header>
 
 <main>
-  <section class="page-head">
+  <section class="page-head left home-head">
     <div class="hero-eyebrow">鸡仔出品 · 个人产品集合</div>
     <h1 class="hero-title">为自己打磨的小产品</h1>
-    <p class="hero-sub">AI 早报、极客资讯——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
+    <p class="hero-sub">AI 早报、GitHub 速览、降价提醒、电视浏览器、电影发现——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
   </section>
 
   <section class="products-section">
@@ -74,25 +89,25 @@
         <div class="feature-icon">极客</div>
         <div class="feature-title">极客资讯</div>
         <div class="feature-desc">GitHub 热门项目每日速览，附 AI 一句话点评。</div>
-        <span class="feature-link">进入</span>
+        <span class="feature-link">看今日热门</span>
       </a>
       <a class="feature-card reveal" href="https://price.xiaojj.pro">
         <div class="feature-icon">省钱</div>
         <div class="feature-title">降价提醒助手</div>
         <div class="feature-desc">Steam 游戏、App Store 应用自动盯价，设好目标价，跌破就提醒你下手。</div>
-        <span class="feature-link">进入</span>
+        <span class="feature-link">去盯价</span>
       </a>
       <a class="feature-card reveal" href="https://tv.xiaojj.pro">
         <div class="feature-icon">大屏</div>
         <div class="feature-title">鸡仔浏览器</div>
         <div class="feature-desc">Android TV 大屏浏览器，遥控器原生导航，免费开源 APK。</div>
-        <span class="feature-link">进入</span>
+        <span class="feature-link">下载 APK</span>
       </a>
       <a class="feature-card reveal" href="https://video.xiaojj.pro">
         <div class="feature-icon">电影</div>
         <div class="feature-title">电影发现</div>
         <div class="feature-desc">基于 TMDB 的电影发现，去哪看一键直达。</div>
-        <span class="feature-link">进入</span>
+        <span class="feature-link">找部电影</span>
       </a>
     </div>
   </section>
