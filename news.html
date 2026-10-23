@@ -6,77 +6,155 @@
 <title>AI 科技早报 - 鸡仔</title>
 <meta name="description" content="每天早上 8 点，AI 精选最值得读的科技新闻。">
 <link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
-<link rel="stylesheet" href="assets/minimal.css">
 <style>
-/* 早报：栏目模板风 */
-.briefing-feed { padding: 8px var(--pad-x) 0;}
-/* 双栏：内容 + 右侧边栏 */
-@media (max-width: 1024px) {
-}
-/* 栏目分组 */
-/* 新闻条目：标题 → 详细摘要 → 来源 */
-.news-item {
-display: block; padding: 22px 0; text-decoration: none; color: inherit;
-border-bottom: 1px solid var(--hairline-soft);
-}
-.news-item:last-child { border-bottom: none;}
-.news-title {
-font-size: 20px; font-weight: 700; line-height: 1.5;
-letter-spacing: -0.01em; color: var(--ink); margin: 0 0 10px;
-transition: color .15s ease;
-}
-a.news-item:hover .news-title { color: var(--primary);}
-.news-summary {
-font-size: 15px; line-height: 1.9; color: var(--body); margin: 0 0 12px;
-max-width: 960px;
-}
-.news-meta { display: flex; align-items: center; gap: 10px;}
-.news-tag {
-font-size: 12px; font-weight: 600; color: var(--primary);
-background: var(--blue-soft); border-radius: 999px; padding: 4px 12px;
-}
-.pane-actions { display: flex; gap: 12px; justify-content: center; margin: 36px 0 40px; flex-wrap: wrap;}
-@media (max-width: 720px) {
-.news-title { font-size: 18px;}
-}
-/* 早报布局：左内容 + 右往期边栏 */
-.briefing-layout { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
-.briefing-side { position: sticky; top: calc(var(--nav-h) + 24px); }
-.side-card { background: var(--surface-soft); border-radius: 14px; padding: 20px; }
-.side-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
-.archive-list { display: flex; flex-direction: column; }
-.archive-list button {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 10px 4px; background: none; border: none; border-bottom: 1px solid var(--hairline-soft);
-  font-size: 14px; color: var(--secondary); cursor: pointer; text-align: left; font-family: var(--sans);
-}
-.archive-list button:last-child { border-bottom: none; }
-.archive-list button:hover { color: var(--primary); }
-.archive-list button.active { color: var(--primary); font-weight: 700; }
-.archive-list .cnt { font-size: 12px; color: var(--faint); }
-@media (max-width: 1024px) {
-  .briefing-layout { grid-template-columns: 1fr; }
-  .briefing-side { position: static; }
-}
+  :root {
+    --ink: #1d1d1f;
+    --grey: #6e6e73;
+    --hair: #d2d2d7;
+    --wash: #f5f5f7;
+    --pad-x: 6vw;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; }
+
+  /* ── 顶栏 ─────────────────────────── */
+  .topbar {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 28px var(--pad-x) 0;
+  }
+  .brand-wrap { display: flex; align-items: baseline; gap: 16px; }
+  .brand { font-size: 21px; font-weight: 700; letter-spacing: .01em; }
+  .topbar-date { font-size: 14px; color: var(--grey); }
+  .topnav { display: flex; gap: 34px; font-size: 17px; color: var(--grey); }
+  .topnav a { position: relative; padding: 4px 0; transition: color .3s var(--ease); }
+  .topnav a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+    background: var(--ink); transform: scaleX(0); transform-origin: right;
+    transition: transform .45s var(--ease);
+  }
+  .topnav a:hover { color: var(--ink); }
+  .topnav a:hover::after { transform: scaleX(1); transform-origin: left; }
+  .topnav a.active { color: var(--ink); }
+  .topnav a.active::after { transform: scaleX(1); }
+
+  /* ── 早报流 ───────────────────────── */
+  .briefing-feed { padding: 30px var(--pad-x) 0; }
+  .briefing-layout { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
+
+  /* 新闻条目：标题 → 详细摘要 → 来源标签 */
+  .news-item {
+    display: block; padding: 26px 14px; margin: 0 -14px;
+    border-bottom: 1px solid var(--hair);
+    position: relative; isolation: isolate;
+    animation: rise .55s var(--ease) both;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--wash); opacity: 0; transition: opacity .35s var(--ease);
+  }
+  a.news-item:hover::before { opacity: 1; }
+  .news-title {
+    font-size: 20px; font-weight: 700; line-height: 1.5;
+    letter-spacing: -0.01em; color: var(--ink); margin: 0 0 10px;
+  }
+  .news-summary {
+    font-size: 15px; line-height: 1.9; color: var(--grey); margin: 0 0 12px;
+    max-width: 960px;
+  }
+  .news-meta { display: flex; align-items: center; gap: 10px; }
+  .news-tag {
+    font-size: 12px; font-weight: 600; color: var(--ink);
+    background: var(--wash); border: 1px solid var(--hair); border-radius: 999px; padding: 4px 12px;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  /* ── 往期边栏 ─────────────────────── */
+  .briefing-side { position: sticky; top: 28px; }
+  .side-card {
+    background: #fff; border: 1px solid var(--hair); border-radius: 18px; padding: 20px;
+  }
+  .side-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  .archive-list { display: flex; flex-direction: column; }
+  .archive-list button {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 4px; background: none; border: none; border-bottom: 1px solid var(--hair);
+    font-size: 14px; color: var(--grey); cursor: pointer; text-align: left;
+    transition: color .3s var(--ease);
+  }
+  .archive-list button:last-child { border-bottom: none; }
+  .archive-list button:hover { color: var(--ink); }
+  .archive-list button.active { color: var(--ink); font-weight: 700; }
+  .archive-list .cnt { font-size: 12px; color: var(--grey); }
+
+  /* ── 操作区 / 按钮 / 提示 ──────────── */
+  .pane-actions { display: flex; gap: 12px; justify-content: center; margin: 36px 0 48px; flex-wrap: wrap; }
+  .btn {
+    font-size: 15px; font-weight: 500; color: var(--ink);
+    background: #fff; border: 1px solid var(--hair); border-radius: 999px;
+    padding: 10px 22px; cursor: pointer;
+    transition: background .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .btn:hover { background: var(--wash); }
+  .btn-primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .btn-primary:hover { background: var(--ink); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(29, 29, 31, .16); }
+  .toast {
+    position: fixed; left: 50%; bottom: 30px; z-index: 60;
+    transform: translateX(-50%) translateY(8px);
+    background: var(--ink); color: #fff; font-size: 14px;
+    padding: 10px 22px; border-radius: 999px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .35s var(--ease), transform .35s var(--ease);
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── 页脚（footer.js 注入） ────────── */
+  .footer { padding: 0 var(--pad-x) 44px; }
+  .footer-inner { display: flex; gap: 10px; align-items: baseline; font-size: 14px; color: var(--grey); }
+  .footer-inner a { transition: color .3s var(--ease); }
+  .footer-inner a:hover { color: var(--ink); }
+
+  @media (max-width: 1024px) {
+    .briefing-layout { grid-template-columns: 1fr; }
+    .briefing-side { position: static; }
+  }
+  @media (max-width: 744px) {
+    :root { --pad-x: 24px; }
+    .topnav { gap: 18px; font-size: 15px; }
+    .topbar-date { display: none; }
+    .news-title { font-size: 18px; }
+    .news-item { padding: 22px 10px; margin: 0 -10px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .news-item { animation: none; }
+    .topnav a::after, .row, .btn, .toast { transition: none; }
+  }
 </style>
 </head>
 <body>
 
-<header class="header">
-<div class="header-inner">
-<div class="header-brand">
-<a class="header-title" href="index.html"><span class="brand-mark">鸡</span>鸡仔</a>
-<div class="header-subtitle" id="header-subtitle">加载中...</div>
-</div>
-<nav class="header-nav">
-<a href="index.html" class="nav-link">首页</a>
-<a href="news.html" class="nav-link active">早报</a>
-<a href="github.html" class="nav-link">GitHub</a>
-<a href="https://tv.xiaojj.pro" class="nav-link">电视浏览器</a>
-<a href="https://video.xiaojj.pro" class="nav-link">电影发现</a>
-<a href="https://price.xiaojj.pro" class="nav-link">降价提醒</a>
-</nav>
-</div>
+<header class="topbar">
+  <div class="brand-wrap">
+    <a class="brand" href="https://1.xiaojj.pro/">鸡仔</a>
+    <span class="topbar-date" id="header-subtitle">加载中...</span>
+  </div>
+  <nav class="topnav">
+    <a href="https://1.xiaojj.pro/news.html" class="active">AI 早报</a>
+    <a href="https://1.xiaojj.pro/github.html">GitHub</a>
+    <a href="https://price.xiaojj.pro/">降价</a>
+    <a href="https://video.xiaojj.pro/">电影</a>
+    <a href="https://tv.xiaojj.pro/">电视</a>
+  </nav>
 </header>
 
 <main>
