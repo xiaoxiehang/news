@@ -18,13 +18,13 @@
   --ink: #222222;
   --body: #3f3f3f;
   --muted: #6a6a6a;
-  --muted-soft: #929292;
+  --muted-soft: #717171;
 
   --hairline: #dddddd;
   --hairline-soft: #ebebeb;
 
-  --primary: #ff385c;
-  --primary-active: #e00b41;
+  --primary: #e00b41;
+  --primary-active: #b8082f;
   --primary-disabled: #ffd1da;
   --on-primary: #ffffff;
 
@@ -344,7 +344,9 @@ a.ruled-row:hover .ruled-arrow { transform: translateX(5px); color: var(--primar
   display: block;
   transition: transform 0.2s;
 }
-.feature-card:hover { transform: translateY(-2px); }
+.feature-card:hover { transform: translateY(-2px); box-shadow: rgba(0,0,0,.04) 0 0 0 1px, rgba(0,0,0,.08) 0 6px 16px 0; }
+.feature-card:hover .feature-link { color: var(--primary); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
 .feature-icon { font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 12px; }
 .feature-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
 .feature-desc { font-size: 14px; color: var(--body); line-height: 1.43; }
@@ -539,7 +541,10 @@ textarea.input { resize: vertical; min-height: 84px; }
 /* ============ 响应式 ============ */
 @media (max-width: 744px) {
   :root { --pad-x: 24px; --nav-h: 64px; }
-  .header-inner { gap: 14px; }
+  .header-inner { gap: 0; flex-wrap: wrap; padding-top: 10px; padding-bottom: 0; min-height: 0; }
+  .header-brand { flex: 1 0 100%; }
+  .header-nav { flex: 1 0 100%; margin: 2px -16px 0; }
+  .nav-link { font-size: 15px; padding: 10px 14px; }
   .header-title { font-size: 18px; }
   .header-subtitle { display: none; }
   .band { padding: 48px 24px; }
