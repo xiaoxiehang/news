@@ -3,137 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>鸡仔 · 为自己打磨的小产品</title>
-<meta name="description" content="鸡仔的产品集合：AI 科技早报、GitHub 速览、降价提醒、电视浏览器、电影发现——每一个都是为了解决自己真实遇到的问题。">
-<link rel="stylesheet" href="assets/minimal.css">
-<script>document.documentElement.classList.add('js')</script>
+<title>鸡仔 · 少，但更好</title>
+<meta name="description" content="鸡仔的产品集合：AI 早报、GitHub 趋势、降价雷达、电影发现、电视浏览器。五个为自己打磨的小产品。">
 <style>
-/* 首页：瘦题头 + 产品卡片陈列（与 GitHub 卡片同语言） */
-.products-section { padding: 8px 0 96px; }
-.products-head {
-  display: flex; align-items: baseline; gap: 16px;
-  padding: 0 var(--pad-x); margin-bottom: 24px;
-}
-.products-head h2 { font-size: 22px; font-weight: 600; }
-.products-head span { font-size: 13px; color: var(--muted); }
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 24px;
-  padding: 0 var(--pad-x);
-}
-/* 首页题头：左对齐、放大，与下方卡片同一左线 */
-.home-head { padding-top: 72px; padding-bottom: 40px; }
-.home-head .hero-title { font-size: clamp(32px, 4.2vw, 56px); letter-spacing: -0.01em; margin-bottom: 14px; }
-.home-head .hero-sub { font-size: 17px; max-width: 46em; }
-.feature-card { display: flex; flex-direction: column; min-height: 210px; }
-.feature-desc { flex: 1; }
-@media (min-width: 1100px) {
-  .product-grid { grid-template-columns: repeat(3, 1fr); }
-  .product-grid .feature-card:first-child { grid-column: span 2; background: var(--surface-soft); box-shadow: none; }
-  .product-grid .feature-card:first-child .feature-title { font-size: 26px; }
-  .product-grid .feature-card:first-child .feature-desc { font-size: 16px; max-width: 34em; }
-}
-/* 进入动画 */
-.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
-.js .reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
-@media (max-width: 744px) {
-  .product-grid { grid-template-columns: 1fr; padding: 0 24px; }
-  .products-section { padding-bottom: 72px; }
-  .products-head { padding: 0 24px; }
-  .feature-card { min-height: 0; }
-  .home-head { padding-top: 40px; padding-bottom: 32px; }
-}
+  :root {
+    --ink: #1d1d1f;
+    --grey: #6e6e73;
+    --hair: #d2d2d7;
+    --wash: #f5f5f7;
+    --pad-x: 6vw;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── 顶栏 ─────────────────────────── */
+  .topbar {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 28px var(--pad-x) 0;
+  }
+  .brand { font-size: 21px; font-weight: 700; letter-spacing: .01em; }
+  .topnav { display: flex; gap: 34px; font-size: 17px; color: var(--grey); }
+  .topnav a { position: relative; padding: 4px 0; transition: color .3s var(--ease); }
+  .topnav a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+    background: var(--ink); transform: scaleX(0); transform-origin: right;
+    transition: transform .45s var(--ease);
+  }
+  .topnav a:hover { color: var(--ink); }
+  .topnav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  /* ── 主标题 ───────────────────────── */
+  .hero { padding: 15vh var(--pad-x) 0; }
+  .hero-title {
+    font-size: clamp(64px, 9.2vw, 132px);
+    font-weight: 700; line-height: 1.04; letter-spacing: -0.015em;
+  }
+  .hero-sub {
+    margin-top: 34px; font-size: clamp(19px, 1.75vw, 25px);
+    color: var(--grey); font-weight: 400; letter-spacing: .01em;
+  }
+  .rise { opacity: 0; transform: translateY(34px); animation: rise .9s var(--ease) forwards; }
+  .rise.d1 { animation-delay: .05s; }
+  .rise.d2 { animation-delay: .18s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  /* ── 今日条 ───────────────────────── */
+  .today {
+    margin: 11vh var(--pad-x) 0;
+    border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair);
+    display: flex; align-items: baseline; gap: 28px;
+    padding: 24px 0;
+  }
+  .today-label { font-size: 16px; color: var(--grey); white-space: nowrap; }
+  .today-headline {
+    font-size: clamp(18px, 1.5vw, 21px); font-weight: 500;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .today-more { margin-left: auto; font-size: 19px; color: var(--grey); white-space: nowrap; transition: color .3s var(--ease); }
+  .today:hover .today-more { color: var(--ink); }
+
+  /* ── 产品行 ───────────────────────── */
+  .rows { padding: 26px var(--pad-x) 110px; }
+  .row {
+    display: flex; align-items: baseline; gap: 36px;
+    padding: 27px 14px; margin: 0 -14px;
+    border-bottom: 1px solid var(--hair);
+    position: relative; isolation: isolate;
+    opacity: 0; transform: translateY(18px);
+    transition: opacity .7s var(--ease), transform .7s var(--ease);
+  }
+  .row.in { opacity: 1; transform: none; }
+  .row::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--wash); opacity: 0; transition: opacity .35s var(--ease);
+  }
+  .row:hover::before { opacity: 1; }
+  .row-name {
+    font-size: clamp(24px, 2vw, 29px); font-weight: 700; letter-spacing: .005em;
+    white-space: nowrap; transition: transform .35s var(--ease);
+  }
+  .row:hover .row-name { transform: translateX(6px); }
+  .row-desc { font-size: clamp(16px, 1.4vw, 20px); color: var(--grey); }
+  .row-arrow {
+    margin-left: auto; font-size: 24px; line-height: 1;
+    transition: transform .35s var(--ease);
+  }
+  .row:hover .row-arrow { transform: translateX(8px); }
+  .row:first-child { border-top: none; }
+
+  /* ── 页脚（footer.js 注入） ────────── */
+  .footer { padding: 0 var(--pad-x) 44px; }
+  .footer-inner { display: flex; gap: 10px; align-items: baseline; font-size: 14px; color: var(--grey); }
+  .footer-inner a { transition: color .3s var(--ease); }
+  .footer-inner a:hover { color: var(--ink); }
+
+  @media (max-width: 744px) {
+    :root { --pad-x: 24px; }
+    .topnav { gap: 20px; font-size: 15px; }
+    .topnav a:nth-child(1) { display: none; }
+    .hero { padding-top: 11vh; }
+    .today { gap: 16px; }
+    .today-headline { white-space: normal; }
+    .row { flex-wrap: wrap; gap: 4px 20px; padding: 22px 10px; margin: 0 -10px; }
+    .row-desc { flex-basis: calc(100% - 44px); order: 3; }
+    .row-arrow { order: 2; }
+    .rows { padding-bottom: 84px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rise, .row { opacity: 1; transform: none; animation: none; transition: none; }
+    .row:hover .row-name, .row:hover .row-arrow { transform: none; }
+  }
 </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a class="header-title" href="index.html"><span class="brand-mark">鸡</span>鸡仔</a>
-      <div class="header-subtitle" id="header-subtitle">加载中...</div>
-    </div>
-        <nav class="header-nav">
-      <a href="index.html" class="nav-link active">首页</a>
-      <a href="news.html" class="nav-link">早报</a>
-      <a href="github.html" class="nav-link">GitHub</a>
-      <a href="https://tv.xiaojj.pro" class="nav-link">电视浏览器</a>
-      <a href="https://video.xiaojj.pro" class="nav-link">电影发现</a>
-      <a href="https://price.xiaojj.pro" class="nav-link">降价提醒</a>
-    </nav>
-  </div>
+<header class="topbar">
+  <a class="brand" href="index.html">鸡仔</a>
+  <nav class="topnav">
+    <a href="news.html">AI 早报</a>
+    <a href="github.html">GitHub</a>
+    <a href="https://price.xiaojj.pro">降价</a>
+    <a href="https://video.xiaojj.pro">电影</a>
+    <a href="https://tv.xiaojj.pro">电视</a>
+  </nav>
 </header>
 
 <main>
-  <section class="page-head left home-head">
-    <div class="hero-eyebrow">鸡仔出品 · 个人产品集合</div>
-    <h1 class="hero-title">为自己打磨的小产品</h1>
-    <p class="hero-sub">AI 早报、GitHub 速览、降价提醒、电视浏览器、电影发现——每一个都是为了解决自己真实遇到的问题，顺手分享出来。</p>
+  <section class="hero">
+    <h1 class="hero-title rise d1">少，但更好。</h1>
+    <p class="hero-sub rise d2">五个为自己打磨的小产品。没有账号，没有广告，没有多余的按钮。</p>
   </section>
 
-  <section class="products-section">
-    <div class="products-head reveal">
-      <h2>产品</h2>
-      <span>05 · 持续维护中</span>
-    </div>
-    <div class="product-grid">
-      <a class="feature-card reveal" href="news.html">
-        <div class="feature-icon">资讯</div>
-        <div class="feature-title">AI 科技早报</div>
-        <div class="feature-desc">每天早上 8 点，AI 从权威科技媒体精选 8 条最值得读的新闻，一杯咖啡的时间读完。</div>
-        <span class="feature-link">看今日早报</span>
-      </a>
-      <a class="feature-card reveal" href="github.html">
-        <div class="feature-icon">极客</div>
-        <div class="feature-title">极客资讯</div>
-        <div class="feature-desc">GitHub 热门项目每日速览，附 AI 一句话点评。</div>
-        <span class="feature-link">看今日热门</span>
-      </a>
-      <a class="feature-card reveal" href="https://price.xiaojj.pro">
-        <div class="feature-icon">省钱</div>
-        <div class="feature-title">降价提醒助手</div>
-        <div class="feature-desc">Steam 游戏、App Store 应用自动盯价，设好目标价，跌破就提醒你下手。</div>
-        <span class="feature-link">去盯价</span>
-      </a>
-      <a class="feature-card reveal" href="https://tv.xiaojj.pro">
-        <div class="feature-icon">大屏</div>
-        <div class="feature-title">鸡仔浏览器</div>
-        <div class="feature-desc">Android TV 大屏浏览器，遥控器原生导航，免费开源 APK。</div>
-        <span class="feature-link">下载 APK</span>
-      </a>
-      <a class="feature-card reveal" href="https://video.xiaojj.pro">
-        <div class="feature-icon">电影</div>
-        <div class="feature-title">电影发现</div>
-        <div class="feature-desc">基于 TMDB 的电影发现，去哪看一键直达。</div>
-        <span class="feature-link">找部电影</span>
-      </a>
-    </div>
+  <a class="today" href="news.html" id="today-strip">
+    <span class="today-label">今日</span>
+    <span class="today-headline" id="today-headline">AI 早报</span>
+    <span class="today-more" id="today-more">看早报 →</span>
+  </a>
+
+  <section class="rows">
+    <a class="row" href="news.html">
+      <span class="row-name">AI 早报</span>
+      <span class="row-desc">每天 8 条，48 小时内的真新闻</span>
+      <span class="row-arrow">→</span>
+    </a>
+    <a class="row" href="github.html">
+      <span class="row-name">GitHub 趋势</span>
+      <span class="row-desc">总榜 · 新星 · 11 个分类，实时查询</span>
+      <span class="row-arrow">→</span>
+    </a>
+    <a class="row" href="https://price.xiaojj.pro">
+      <span class="row-name">降价雷达</span>
+      <span class="row-desc">App / 游戏 / 会员，三区比价</span>
+      <span class="row-arrow">→</span>
+    </a>
+    <a class="row" href="https://video.xiaojj.pro">
+      <span class="row-name">电影发现</span>
+      <span class="row-desc">热门 · 高分 · 即将上映</span>
+      <span class="row-arrow">→</span>
+    </a>
+    <a class="row" href="https://tv.xiaojj.pro">
+      <span class="row-name">电视浏览器</span>
+      <span class="row-desc">为客厅大屏做的浏览器</span>
+      <span class="row-arrow">→</span>
+    </a>
   </section>
 </main>
 
 <footer class="footer"></footer>
 
-<script src="scripts/header-info.js"></script>
 <script src="scripts/footer.js"></script>
 <script>
-// 进入动画
+// 今日条：读当天早报数据，第一条标题 + 条数
 (function() {
-  var els = document.querySelectorAll('.reveal');
+  fetch('data/briefing.json', { cache: 'no-store' })
+    .then(function(r) { return r.json(); })
+    .then(function(b) {
+      var picks = b.picks || [];
+      if (!picks.length) return;
+      document.getElementById('today-headline').textContent = picks[0].title || 'AI 早报';
+      document.getElementById('today-more').textContent = '等 ' + picks.length + ' 条早报 →';
+    })
+    .catch(function() { /* 静态文案兜底 */ });
+})();
+// 产品行入场
+(function() {
+  var rows = document.querySelectorAll('.row');
   if (!('IntersectionObserver' in window)) {
-    els.forEach(function(el) { el.classList.add('in'); });
+    rows.forEach(function(el) { el.classList.add('in'); });
     return;
   }
   var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
+    entries.forEach(function(e, i) {
       if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i * 60) + 'ms';
         e.target.classList.add('in');
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
-  els.forEach(function(el) { io.observe(el); });
+  }, { threshold: 0.15 });
+  rows.forEach(function(el) { io.observe(el); });
 })();
 </script>
 </body>
