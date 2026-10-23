@@ -264,10 +264,36 @@ def main():
             f, ensure_ascii=False, indent=2)
 
     post['body'] = assemble_body(post, ordered_picks)
-    # 小红书正文上限 1000 字（含末尾 #标签行）：超限则去掉每条的 point 长描述
+    # 小红书正文上限 1000 字（含末尾 #标签行）：超限则逐步精简，保证质检长度项必过
+    #（与 generate_weekly_xhs.py 同策略：去 point -> 逐轮压缩最长 usage/comment -> 硬截断）
     if len(published_text(post)) > 1000:
         post['body'] = assemble_body(post, ordered_picks, include_point=False)
-        print(f"   正文超 1000 字，已按精简模式重组（去 point 长描述）")
+        print("   正文超 1000 字，已按精简模式重组（去 point 长描述）")
+    while len(published_text(post)) > 1000:
+        target = None
+        for it in post['items']:
+            for k in ('usage', 'comment'):
+                v = it.get(k) or ''
+                if len(v) > 20 and (target is None or len(v) > len(target[2])):
+                    target = (it, k, v)
+        if target is None:
+            break
+        it, k, v = target
+        cut = v[:max(20, int(len(v) * 0.7))]
+        # 避免半句截断：回退到切片内最后一个句读
+        for sep in ('。', '！', '？', '；'):
+            j = cut.rfind(sep)
+            if j >= 10:
+                cut = cut[:j + 1]
+                break
+        it[k] = cut
+        post['body'] = assemble_body(post, ordered_picks, include_point=False)
+        print(f"   仍超限，已压缩一条{k}描述（全文 {len(published_text(post))} 字）")
+    if len(published_text(post)) > 1000:
+        # 最后一道防线：硬截断正文（保留标签行），绝不让超长包流到质检
+        tags_line = ' '.join('#' + t for t in (post.get('tags') or []))
+        post['body'] = post['body'][:1000 - 1 - len(tags_line)].rstrip()
+        print("   仍超限，已硬截断正文兜底")
     post['date'] = today
     post['generated_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -277,7 +303,8 @@ def main():
     print(f"✅ 小红书文案已生成 -> {out_path}")
     print(f"   标题: {post['title']}")
     print(f"   标签: {' '.join('#' + t for t in post['tags'])}")
-    print(f"   正文 {len(post['body'])} 字{'（模板降级）' if post.get('fallback') else ''}")
+    print(f"   发布全文 {len(published_text(post))} 字（正文 {len(post['body'])} 字）"
+          f"{'（模板降级）' if post.get('fallback') else ''}")
 
 
 if __name__ == '__main__':
