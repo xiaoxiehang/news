@@ -56,6 +56,18 @@
   .price-wrap { padding: 12px var(--pad-x) 72px; }
   .price-loading { text-align: center; color: var(--muted); font-size: 15px; padding: 72px 0; animation: price-pulse 1.6s ease-in-out infinite; }
   @keyframes price-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+  /* 骨架屏：先占住版式，数据到了不跳版 */
+  .skl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .skl-card { border: 1px solid var(--hairline-soft); border-radius: 18px; padding: 20px; }
+  .skl { border-radius: 8px; background: linear-gradient(100deg, #eeeef1 40%, #f7f7f9 50%, #eeeef1 60%); background-size: 200% 100%; animation: skl-shine 1.3s linear infinite; }
+  .skl-img { height: 120px; border-radius: 12px; margin-bottom: 14px; }
+  .skl-line { height: 14px; margin-bottom: 10px; }
+  .skl-line.short { width: 55%; }
+  @keyframes skl-shine { to { background-position: -200% 0; } }
+  /* 数据状态行：款数 + 更新时间（功能信息，非题头） */
+  .price-meta { display: flex; align-items: baseline; gap: 14px; margin: 26px 0 0; font-size: 14px; color: var(--muted); }
+  .price-meta b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .price-meta .dot-sep { color: var(--faint); }
 
   /* 价格卡片（统一卡片布局） */
   .price-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
@@ -120,7 +132,7 @@
     flex-wrap: wrap; row-gap: 4px;
   }
   .price-bottom > div { min-width: 0; overflow-wrap: break-word; }
-  .price-now { font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
+  .price-now { display: block; font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
   .price-now em { font-style: normal; font-size: 11px; font-weight: 600; color: var(--faint); margin-left: 6px; }
   .price-now-us { display: block; font-size: 14px; color: var(--ink); margin-top: 2px; }
   .price-now-hk { display: block; font-size: 14px; color: var(--ink); margin-top: 2px; }
@@ -136,12 +148,17 @@
     background: var(--accent); border-radius: 8px; padding: 3px 8px;
   }
   @media (max-width: 640px) {
-    .price-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .price-grid, .skl-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .skl-img { height: 90px; }
     .price-card { padding: 14px; }
     .price-img, .price-img-ph, .price-banner { height: 90px; }
   }
-  /* 分类 tab（C 语言 pill：wash 底，active 墨色） */
-  .price-tabs { display: flex; gap: 10px; margin: 28px 0 20px; flex-wrap: wrap; }
+  /* 分类 tab（C 语言 pill：wash 底，active 墨色）；滚动时吸顶，带计数 */
+  .price-tabs {
+    display: flex; gap: 10px; margin: 14px 0 20px; flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 5; background: #fff; padding: 12px 0 4px;
+  }
+  .price-tab .cnt { font-variant-numeric: tabular-nums; opacity: .55; font-weight: 600; margin-left: 2px; }
   .price-tab {
     border: none; cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 600;
     padding: 8px 20px; border-radius: var(--radius-pill);
@@ -165,6 +182,7 @@
   @media (prefers-reduced-motion: reduce) {
     .price-card { animation: none; transition: none; }
     .price-loading { animation: none; }
+    .skl { animation: none; }
     a.price-card:hover, a.price-card:active { transform: none; }
     .price-tab { transition: none; }
     .price-tab:active { transform: none; }
@@ -188,8 +206,20 @@
 <main>
 <div class="price-wrap">
 
-  <div id="price-loading" class="price-loading">正在为你搜罗今日好价…</div>
+  <div id="price-loading">
+    <div class="skl-grid" aria-hidden="true">
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+      <div class="skl-card"><div class="skl skl-img"></div><div class="skl skl-line"></div><div class="skl skl-line short"></div></div>
+    </div>
+  </div>
   <section id="all-section" style="display:none;">
+    <p class="price-meta" id="price-meta"></p>
     <div class="price-tabs" id="price-tabs">
       <button class="price-tab active" data-cat="all">全部</button>
       <button class="price-tab" data-cat="apple">Apple</button>
@@ -206,7 +236,6 @@
 
 <footer class="footer"></footer>
 
-<script src="/scripts/header-info.js"></script>
 <script src="/scripts/footer.js"></script>
 <script>
 function esc(s) {
@@ -283,23 +312,42 @@ function renderAll() {
     playDrops.forEach(function(it) { items.push(normalizePlay(it)); });
     if (!items.length) {
       var ld = document.getElementById('price-loading');
-      if (ld) { ld.textContent = '今日暂无降价，明天再来看看'; ld.style.animation = 'none'; }
+      if (ld) { ld.innerHTML = '<p style="text-align:center;color:var(--muted);font-size:15px;padding:72px 0;">今日暂无降价，明天再来看看</p>'; }
       return;
     }
     // 按折扣从大到小，无折扣的保持原相对顺序沉底
     items.sort(function(a, b) { return (b.disc || 0) - (a.disc || 0); });
+    // 全局名次：分类 tab 里也显示真实名次，前三红标只属于全局前三
+    items.forEach(function(it, i) { it.rank = i + 1; });
     window.__priceItems = items;
     var ld2 = document.getElementById('price-loading');
     if (ld2) ld2.style.display = 'none';
     document.getElementById('all-section').style.display = '';
+    // 状态行：总款数 + 最新数据日期
+    var dates = [res[0], res[1], res[2], res[3], res[4]].map(function(x) { return (x && x.date) || ''; }).filter(Boolean).sort();
+    var latest = dates.length ? dates[dates.length - 1] : '';
+    var meta = document.getElementById('price-meta');
+    if (meta) {
+      meta.innerHTML = '今日好价 <b>' + items.length + '</b> 款' +
+        (latest ? '<span class="dot-sep">·</span>数据截至 ' + esc(latest.replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$2月$3日')) : '');
+    }
+    // tab 计数
+    var counts = { all: items.length };
+    items.forEach(function(it) { counts[it.cat] = (counts[it.cat] || 0) + 1; });
+    document.querySelectorAll('.price-tab').forEach(function(btn) {
+      var c = counts[btn.getAttribute('data-cat')] || 0;
+      btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+      btn.insertAdjacentHTML('beforeend', ' <span class="cnt">' + c + '</span>');
+    });
     renderPriceTab('all');
     // tab 切换
     document.getElementById('price-tabs').addEventListener('click', function(e) {
       var btn = e.target.closest('.price-tab');
       if (!btn) return;
       var tabs = this.querySelectorAll('.price-tab');
-      for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
+      for (var i = 0; i < tabs.length; i++) { tabs[i].classList.remove('active'); tabs[i].setAttribute('aria-pressed', 'false'); }
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       renderPriceTab(btn.getAttribute('data-cat'));
     });
   });
@@ -378,13 +426,13 @@ function normalizePlay(it) {
     price: price, was: was
   };
 }
-function cardHtml(it, i) {
-  var rankCls = i < 3 ? ' top3' : '';
+function cardHtml(it) {
+  var rankCls = it.rank <= 3 ? ' top3' : '';
   return '<a class="price-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
-    '<div class="price-rank' + rankCls + '">#' + (i + 1) + '</div>' +
+    '<div class="price-rank' + rankCls + '">#' + it.rank + '</div>' +
     it.img +
     '<p class="price-name">' + esc(it.name) + '</p>' +
-    (it.note ? '<p class="price-note">' + it.note + '</p>' : '') +
+    '<p class="price-note">' + (it.note || '') + '</p>' +
     '<div class="price-tags">' + platformTag(it.tag) +
     (it.disc ? '<span class="price-disc">-' + it.disc + '%</span>' : '') + '</div>' +
     '<div class="price-bottom"><div>' + it.price + '</div>' +
