@@ -396,7 +396,8 @@ function normalizeDeal(it) {
     url: it.url, name: it.name,
     note: '好评 ' + it.positive_rate + '% · ' + it.total_reviews + ' 条评价',
     tag: 'Steam', disc: it.discount_percent || 0, cat: 'steam',
-    img: it.header_image ? '<img class="price-img" loading="lazy" src="' + esc(it.header_image) + '" alt="">' : '',
+    // 无头图时按 appid 拼 CDN 图，再不行用占位块——绝不让卡片缺媒体区（标题会比邻卡高一截）
+    img: it.header_image ? '<img class="price-img" loading="lazy" src="' + esc(it.header_image) + '" alt="">' : thumbCardHtml({ url: it.url, source: 'Steam' }),
     price: '<span class="price-now">¥' + it.final_price + '</span>',
     was: '¥' + it.original_price
   };
@@ -428,9 +429,10 @@ function normalizePlay(it) {
 }
 function cardHtml(it) {
   var rankCls = it.rank <= 3 ? ' top3' : '';
+  var media = it.img || '<div class="price-img-ph" style="background:#e8e8ec;color:#8e8e93">' + esc((it.tag || '?').charAt(0)) + '</div>';
   return '<a class="price-card" href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
     '<div class="price-rank' + rankCls + '">#' + it.rank + '</div>' +
-    it.img +
+    media +
     '<p class="price-name">' + esc(it.name) + '</p>' +
     '<p class="price-note">' + (it.note || '') + '</p>' +
     '<div class="price-tags">' + platformTag(it.tag) +
