@@ -26,7 +26,7 @@ CATEGORIES = [
 ]
 
 # 从 api/trending.js 抄的过滤表（只过滤不搬运）
-EXCLUDE = {"stashapp/stash", "Igglybuff/awesome-piracy", "MDX-Tom/gpt-instruct"}
+EXCLUDE = {"stashapp/stash", "Igglybuff/awesome-piracy", "MDX-Tom/gpt-instruct", "laoma528/awesome-zhuiju-free"}  # 2026-10-25：与 fetch_github.py 黑名单同步
 OVERRIDES = {
     "apache/iggy": "backend-infra", "travisjeffery/jocko": "backend-infra",
     "memgraph/memgraph": "backend-infra", "Cysharp/MagicOnion": "backend-infra",

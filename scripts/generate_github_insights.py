@@ -154,8 +154,9 @@ def main():
 
     merged = dict(existing)
     merged.update(new_insights)
-    # 清理：不在当前数据里的旧点评删掉
-    merged = {k: v for k, v in merged.items() if k in seen}
+    # 2026-10-25 修正：不再清理"不在当前快照里"的旧点评——夜间质检回填的实时榜点评
+    # （仓库不在当日快照里）此前每天都被这行清掉，第二天又得重补（西西弗斯循环）。
+    # 旧点评保留无害：展示时只按 full_name 匹配出现过的仓库。
 
     out = {
         'updated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),

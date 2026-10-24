@@ -165,10 +165,13 @@ CATEGORY_OVERRIDES = {
 # stashapp/stash：成人内容管理工具，卡片会直接渲染其英文描述，不适合公开站点（2026-10-13 夜间质检）。
 # Igglybuff/awesome-piracy：盗版资源导航，不适合公开站点（2026-10-15 夜间质检）。
 # MDX-Tom/gpt-instruct：Codex 越狱（破甲）提示词包，不适合公开站点（2026-10-20 夜间质检）。
+# laoma528/awesome-zhuiju-free：追剧资源指南，含磁力BT、TVBox/影视仓、IPTV直播源、会员拼团，
+# 与 awesome-piracy 同类且撞"不推拼团黑号"红线（2026-10-25 夜间质检）。
 CATEGORY_EXCLUDE = {
     'stashapp/stash',
     'Igglybuff/awesome-piracy',
     'MDX-Tom/gpt-instruct',
+    'laoma528/awesome-zhuiju-free',
 }
 
 
