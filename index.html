@@ -100,6 +100,15 @@
   .row:hover .row-arrow { transform: translateX(8px); }
   .row:first-child { border-top: none; }
 
+  /* ── 全部子域名 ────────── */
+  .domains { padding: 0 var(--pad-x) 90px; }
+  .domains-title { font-size: 14px; color: var(--grey); letter-spacing: .04em; margin: 0 0 14px; font-weight: 500; }
+  .domains-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); border-top: 1px solid var(--hair); }
+  .domain { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--hair); margin-right: 24px; transition: color .3s var(--ease); }
+  .domain-host { font-size: 16px; color: var(--ink); font-weight: 500; }
+  .domain-desc { font-size: 13px; color: var(--grey); }
+  .domain:hover .domain-host { text-decoration: underline; text-underline-offset: 3px; }
+  .rows { padding-bottom: 64px !important; }
   /* ── 页脚（footer.js 注入） ────────── */
   .footer { padding: 0 var(--pad-x) 44px; }
   .footer-inner { display: flex; gap: 10px; align-items: baseline; font-size: 14px; color: var(--grey); }
@@ -175,6 +184,22 @@
       <span class="row-desc">为客厅大屏做的浏览器</span>
       <span class="row-arrow">→</span>
     </a>
+  </section>
+
+  <section class="domains">
+    <h2 class="domains-title">全部子域名</h2>
+    <div class="domains-grid">
+      <a class="domain" href="https://xiaojj.pro/"><span class="domain-host">xiaojj.pro</span><span class="domain-desc">主页</span></a>
+      <a class="domain" href="https://1.xiaojj.pro/"><span class="domain-host">1.xiaojj.pro</span><span class="domain-desc">本站 · 小产品合集</span></a>
+      <a class="domain" href="https://price.xiaojj.pro/"><span class="domain-host">price.xiaojj.pro</span><span class="domain-desc">降价雷达</span></a>
+      <a class="domain" href="https://video.xiaojj.pro/"><span class="domain-host">video.xiaojj.pro</span><span class="domain-desc">电影发现</span></a>
+      <a class="domain" href="https://tv.xiaojj.pro/"><span class="domain-host">tv.xiaojj.pro</span><span class="domain-desc">电视浏览器</span></a>
+      <a class="domain" href="https://hub.xiaojj.pro/"><span class="domain-host">hub.xiaojj.pro</span><span class="domain-desc">JJ 的总览</span></a>
+      <a class="domain" href="https://motion.xiaojj.pro/"><span class="domain-host">motion.xiaojj.pro</span><span class="domain-desc">玄天 · 四十秒动效</span></a>
+      <a class="domain" href="https://img.xiaojj.pro/"><span class="domain-host">img.xiaojj.pro</span><span class="domain-desc">Gemini 生图</span></a>
+      <a class="domain" href="https://moss.xiaojj.pro/"><span class="domain-host">moss.xiaojj.pro</span><span class="domain-desc">MOSS 生图</span></a>
+      <a class="domain" href="https://flow.xiaojj.pro/"><span class="domain-host">flow.xiaojj.pro</span><span class="domain-desc">tb-dev-hub 产品流程</span></a>
+    </div>
   </section>
 </main>
 
