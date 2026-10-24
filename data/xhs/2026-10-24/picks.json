@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-24",
+  "date_str": "2026年10月24日",
+  "overview": "今天的焦点是 AI 的安全边界与个人数据：OpenAI 介绍了将前沿模型训练、测试环境与互联网隔离的做法，谷歌的隐私政策更新则引发了对个性化 AI 数据用途的关注。产品方面，Arc 公布关闭时间表，新语音模型和应用开发接口相继亮相。",
+  "picks": [
+    {
+      "title": "谷歌更新隐私政策，个性化 AI 数据用途引发关注",
+      "summary": "据 The Verge 报道，谷歌更新隐私政策后，使用个性化 AI 功能的用户，其 Gmail 和 Google 相册数据未来可能被用于定向广告。这并不等于相关广告已经上线，但提醒用户留意：授权 AI 读取私人信息时，也要弄清数据可能被怎样使用。",
+      "url": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "Arc 浏览器将于 12 月关闭，现有用户需留意时间表",
+      "summary": "The Browser Company 宣布，Arc 浏览器将于 12 月 22 日关闭，届时应用将无法启动；新账号创建已于 10 月 22 日停止，部分功能也将从 11 月 23 日起停用。公司此前已转向开发 AI 驱动的浏览器 Dia，Arc 用户应留意剩余使用期限。",
+      "url": "https://www.solidot.org/story?sid=85692",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 加强前沿模型训练环境安全，采用离线环境",
+      "summary": "OpenAI 公布了保护前沿模型训练与评估环境的新做法，包括建设与互联网隔离的环境，并对模型开展高算力安全测试。这反映出模型能力提升后，开发者不仅要防范外部攻击，也要更严格地控制模型在测试和训练期间能接触什么。",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "Block 推出语音 AI 模型 Dessa，尝试像新朋友一样交谈",
+      "summary": "据 The Verge 报道，杰克·多尔西旗下的 Block 公布语音 AI 模型 Dessa，称其仅用人类对话数据从零训练，并展示了它与真人聊天的片段。这次发布的重点是交流方式，而不只是回答问题；这些演示还不足以说明它在日常使用中的表现。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
+      "source": "The Verge",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 推出 Decisions API，帮助应用更快作出决策",
+      "summary": "OpenAI 发布 Decisions API，称其可以让应用以更快、更聚焦且成本更低的方式作出决策。它主要面向应用开发者，而非供普通用户直接使用的新聊天产品；对用户来说，潜在变化是应用在需要判断下一步操作时，响应可能更及时。",
+      "url": "https://openai.com/index/decisions-api",
+      "source": "OpenAI 官方",
+      "category": "效率工具"
+    },
+    {
+      "title": "调查显示，过半美国受访者认为 AI 对社会有害",
+      "summary": "据 Solidot 转述的 ABC News、《华盛顿邮报》和 Ipsos 调查，57% 的美国受访者认为 AI 对社会有害，42% 认为有益。30 岁以下受访者中，持负面看法的比例达到 65%；这组数据呈现了公众态度，但不能直接代表其他国家的看法。",
+      "url": "https://www.solidot.org/story?sid=85686",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "PostgreSQL 19 推迟发布，AI 找漏洞的速度引发讨论",
+      "summary": "InfoQ 报道称，PostgreSQL 19 的正式发布时间由原定的 10 月 29 日推迟至 11 月 19 日，项目还计划增加一个候选版本供社区验证。官方给出的原因是近期纳入维护分支的修复较多；报道同时讨论了 AI 辅助发现问题加快后，人工修复与验证面临的压力。",
+      "url": "https://www.infoq.cn/article/Q6mgHWCSqV6KeZzee3NT",
+      "source": "InfoQ 推荐",
+      "category": "前沿动态"
+    },
+    {
+      "title": "AI 智能体云服务公司 Daytona 估值达到 10 亿美元",
+      "summary": "据 TechCrunch 报道，Daytona 在 FirstMark 等投资者支持下，估值达到 10 亿美元。它开发的云服务旨在为 AI 智能体提供各自运行任务的计算环境；这笔投资动态显示，除了模型本身，支撑智能体实际工作的基础设施也正受到关注。",
+      "url": "https://techcrunch.com/2026/10/23/agent-cloud-startup-daytona-hits-1b-valuation-backed-by-firstmark-and-a-whos-who-of-angels/",
+      "source": "TechCrunch",
+      "category": "一句话"
+    }
+  ]
+}

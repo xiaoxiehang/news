@@ -1,9 +1,21 @@
 {
-  "fetched_at": "2026-10-23 11:10:25",
+  "fetched_at": "2026-10-24 02:03:35",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
+        {
+          "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+          "desc": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+          "published": "Fri, 23 Oct 2026"
+        },
+        {
+          "title": "Securing our frontier model training environment",
+          "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+          "desc": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+          "published": "Fri, 23 Oct 2026"
+        },
         {
           "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
           "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
@@ -21,18 +33,6 @@
           "url": "https://openai.com/index/forward-deployed-engineering-means",
           "desc": "What forward deployed engineering means at OpenAI",
           "published": "Thu, 22 Oct 2026"
-        },
-        {
-          "title": "Uber brings ChatGPT Work to all employees with OpenAI",
-          "url": "https://openai.com/index/uber-chatgpt-work-rollout",
-          "desc": "Uber is rolling out ChatGPT Work to more than 30,000 employees, helping teams research, analyze data, create presentations, and complete complex workflows.",
-          "published": "Thu, 22 Oct 2026"
-        },
-        {
-          "title": "How AT&T is rethinking in-house legal work with OpenAI",
-          "url": "https://openai.com/index/att-legal",
-          "desc": "AT&amp;T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
-          "published": "Wed, 21 Oct 2026"
         }
       ]
     },
@@ -93,52 +93,10 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "算力底座的裂缝：AI存储芯片短缺与美国的政策校准",
-          "url": "https://www.huxiu.com/article/4899982.html?f=rss",
+          "title": "巨头们的新战役：抬高AI制药，抢占AI4S",
+          "url": "https://www.huxiu.com/article/4900070.html?f=rss",
           "desc": "",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "什么？一个人就能训练大模型，指标还能硬刚K3V4？",
-          "url": "https://www.huxiu.com/article/4899823.html?f=rss",
-          "desc": "99%的活都交给了agent",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "AI助理争夺战：解析Muse、Grok Bot与Instinct背后的产品布局、入口生意与盈利难题",
-          "url": "https://www.huxiu.com/article/4899828.html?f=rss",
-          "desc": "AI助理已经不是“聊聊就好",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "AI供电遭全方位围剿？20家企业被拖入专利卡位战",
-          "url": "https://www.huxiu.com/article/4899960.html?f=rss",
-          "desc": "",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "深度讨论Personal Agent：“最互联网”的AI 命题",
-          "url": "https://www.huxiu.com/article/4899942.html?f=rss",
-          "desc": "",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "让AI替你花钱，Muse带火的这波风潮能刮多久？",
-          "url": "https://www.huxiu.com/article/4899934.html?f=rss",
-          "desc": "",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "Personal Agent越能干，创业公司越难干",
-          "url": "https://www.huxiu.com/article/4899463.html?f=rss",
-          "desc": "“格局已定”",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "浦江科技评论｜AI重塑文创：从创作工具到生产系统",
-          "url": "https://www.huxiu.com/article/4899916.html?f=rss",
-          "desc": "",
-          "published": "Fri, 23 Oct 2026"
+          "published": "Sat, 24 Oct 2026"
         }
       ]
     },
@@ -174,24 +132,18 @@
           "url": "https://www.solidot.org/story?sid=85682",
           "desc": "周三旧金山举行的 Cloudflare Connect 2026 大会上，OpenAI 技术部成员、OpenClaw 作者 Peter Steinberger 在与 Cloudflare CTO Dane Knecht 对话时透露，上个月运行 AI 工作负载消耗了价值约 1000 万美元的 Token。当然这笔支出不用他自己掏钱，他花的是投资人的钱。Steinberger 称自己拥有几乎无限的 T",
           "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "微软下一代 Xbox 游戏机售价在 1200-1800 美元之间",
-          "url": "https://www.solidot.org/story?sid=85677",
-          "desc": "微软此前披露它的下一代 Xbox 游戏机代号为 Project Helix。根据财富杂志对 Xbox 业务 CEO Asha Sharma 的深度报道：微软计划 2027 年底推出新一代掌机，2028 年底/假期发布新主机，而该主机的售价在 1200-1800 美元之间。由于 AI 热导致内存价格飙升，很多硬件产品都提高了定价，Steam Machine 售价超过 1000 美元，两年前的游戏机 ",
-          "published": "Wed, 21 Oct 2026"
-        },
-        {
-          "title": "AI 增加了英国公务员的工作量",
-          "url": "https://www.solidot.org/story?sid=85676",
-          "desc": "自 ChatGPT 问世以来，世界各地的政府部门正经历针对监管机构与官方单位的投诉、请求和回应数量的异常暴增。法院系统的情况同样如此。以英国为例，英格兰、苏格兰和威尔士的劳动仲裁案件一年内激增了 39%，部分原因在于原告利用 AI 起草诉状；与此同时，面对大批因请不起律师而使用 ChatGPT 拼凑案情的当事人，基层法官和高级法官感到焦头烂额，因为这些案由往往漏洞百出、毫无逻辑。而所有这些繁杂的内",
-          "published": "Wed, 21 Oct 2026"
         }
       ]
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "杨骁文@南京大学小红书-面向通用智能体的环境工程：CompoWorld与Skill2Env的合成、扩展与训练",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557578&idx=1&sn=7feb43d8ec7f91a71971fbea2d590c37",
+          "desc": "本期MLNLP学术Talk邀请了南京大学LAMDA实验室博士研究生杨骁文在2026年10月24日9:00-10:00为我们带来“面向通用智能体的环境工程：CompoWorld与Skill2Env的合成、扩展与训练”的主题报告。",
+          "published": "Sat, 24 Oct 2026"
+        },
         {
           "title": "MLNLP第四十五次学术研讨会开始报名｜上海人工智能实验室、中国科学技术大学、英国伦敦国王学院、南京航空航天大学等知名学者重磅来袭！",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557571&idx=1&sn=daac7e7076524f199b6ebec9e6764f37",
@@ -221,18 +173,18 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557546&idx=1&sn=05e5c797f864c00029df8165b8d72786",
           "desc": "坏了，三个模型，够Tibo水三天了。",
           "published": "Tue, 20 Oct 2026"
-        },
-        {
-          "title": "刚刚，英伟达开源机器人Harness！接入GPT-6 Astra一夜刷爆所有基准",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557539&idx=1&sn=f864f540b8b3558ba4b30277214f1f1c",
-          "desc": "李飞飞Atlas也开始推送Beta",
-          "published": "Mon, 19 Oct 2026"
         }
       ]
     },
     {
       "name": "InfoQ 推荐",
       "items": [
+        {
+          "title": "智源众智 FlagOS 2.2 让前沿模型与多元算力协同演进",
+          "url": "https://www.infoq.cn/article/mhdJwMMzYFedMFHKfHWs",
+          "desc": "2026 年 10 月 17 日，以“一栈贯通，智算无界”为主题的 2026 人工智能开放计算大会暨众智 FlagOS 技术大会在北京举行；继 9 月 30 日 FlagOS 2.2 发布后，大会展示了从底层算子、编译器到模型部署与服务的技术进展，并提出 AI 模型快速换代而算力基础设施需长期服役的现实问题。 智源众智 FlagOS 2.2 从多芯适配走向跨芯复用，九大算子库合计覆盖 1454 个",
+          "published": "Fri, 23 Oct 2026"
+        },
         {
           "title": "刘铁岩、诺奖、图灵奖得主等嘉宾共话AI的下一个十年：Transformer一统天下之后，AI的下一张王牌是什么？",
           "url": "https://www.infoq.cn/article/UmD4aAerZEts8sZ5t791",
@@ -262,12 +214,6 @@
           "url": "https://www.infoq.cn/article/sI3z2UMCrB5PPVDWTsLo",
           "desc": "如果有一天，AI 能够完成最复杂的数学证明、发现新的物理学规律，甚至找到重大疾病的治疗方法，人类还需要做什么？ 在 OpenAI CEO Sam Altman 看来，这已经不再是一个遥远的问题。随着 AI 开始参与真正的科学发现，人类正在进入一个新阶段。他预计，未来几年内，AI 有望帮助找到重大疾病的候选治疗方案。但相比医学进展，最让他个人感到兴奋的，反而是物理学领域可能出现的重大突破。 不过，A",
           "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "AI 赋能开发，Spotify 月代码变更量翻倍",
-          "url": "https://www.infoq.cn/article/rVqEbaXeaJ91UWlQF4F9",
-          "desc": "Spotify 扩大了 AI 辅助开发的应用范围，8 月份合并变更量同比增长一倍以上，从约 8100 个增至 17000 个。该公司正在调整质量与可靠性控制体系，以应对生产系统中激增的软件变更数量。 Spotify 运营着近 3000 个生产服务，支撑着 7.77 亿月活用户，约 1 亿并发客户端，每秒处理 1100 万至 1200 万次后端请求。在复盘工作中发现了内容处理、集群变更、计算容量以及",
-          "published": "Fri, 23 Oct 2026"
         }
       ]
     },
@@ -275,34 +221,22 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "Etsy is cracking down on AI slop listings",
-          "url": "https://www.theverge.com/tech/1017261/etsy-ai-rules-policies-restrictions-listing",
-          "desc": "Etsy is announcing stricter rules about how AI can be used in listings to reduce the volume of AI slop on the platform. In a post, the company says that \"many active buyers say they can't tell which i",
-          "published": "2026-10-22T20:09"
+          "title": "OpenAI now trains its frontier AI models with no internet access",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+          "desc": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment ",
+          "published": "2026-10-23T17:11"
         },
         {
-          "title": "Canva’s first AI image model plans designs before generating them",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model",
-          "desc": "Canva is diving even deeper into AI with the launch of an image generation model that competes directly with those from OpenAI, Microsoft, and Google. The model, called Canva Craft, uses a two-stage a",
-          "published": "2026-10-22T17:51"
+          "title": "Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
+          "desc": "Jack Dorsey's Block announced an AI model called Dessa that's trained \"from scratch on nothing but human conversation,\" and to show off the model, Block shared chats it has had with humans that can oc",
+          "published": "2026-10-23T15:32"
         },
         {
-          "title": "Fall 2026 earnings watch",
-          "url": "https://www.theverge.com/tech/1016506/fall-2026-earnings-watch",
-          "desc": "Every company is suddenly an AI company. Compute is an asset. Cars are flying. We’ve been promised robots — again. It’s time again to dig through earnings reports, listen to investor calls, and call o",
-          "published": "2026-10-22T17:15"
-        },
-        {
-          "title": "Meta&#8217;s AI could still scrape news sites, legal experts say",
-          "url": "https://www.theverge.com/tech/1017082/meta-terms-update-ai-training-concerns",
-          "desc": "Meta has tweaked its business terms to remove language suggesting that it could freely train its AI models on news sites, like The Verge - but legal experts say these changes aren't enough to address ",
-          "published": "2026-10-22T16:32"
-        },
-        {
-          "title": "The FCC is beginning to block gadgets with ‘foreign surveillance chips’",
-          "url": "https://www.theverge.com/policy/1017016/fcc-block-foreign-surveillance-chips-hivision-huawei-loophole",
-          "desc": "On October 13th, Brendan Carr's FCC gave itself a new power - it can block gadgets for containing any computer chip made by any company on its list of potential threats to national security. Today, it",
-          "published": "2026-10-22T16:23"
+          "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
+          "url": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+          "desc": "Google has updated its privacy policy in a way that could mean you'll start seeing targeted ads based on your personal data if you're using personalized AI features. The update, spotted by Android Aut",
+          "published": "2026-10-23T12:52"
         }
       ]
     },
@@ -310,40 +244,40 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony.ai and Nvidia",
+          "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
+          "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+          "desc": "OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.",
+          "published": "Fri, 23 Oct 2026"
+        },
+        {
+          "title": "Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell",
+          "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/",
+          "desc": "The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a \"nap,\" and summersaulted on voice command.",
+          "published": "Fri, 23 Oct 2026"
+        },
+        {
+          "title": "From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026",
+          "url": "https://techcrunch.com/2026/10/23/from-toast-to-bessemer-who-founders-will-hear-from-at-techcrunch-founder-summit-2026/",
+          "desc": "Hosted by TechCrunch in partnership with Fidelity Private Shares, the full-day event goes beyond fundraising and AI to explore the realities of finding customers, building teams, sharpening a pitch, d",
+          "published": "Fri, 23 Oct 2026"
+        },
+        {
+          "title": "Agent cloud startup Daytona hits $1B valuation backed by FirstMark and a who’s who of angels",
+          "url": "https://techcrunch.com/2026/10/23/agent-cloud-startup-daytona-hits-1b-valuation-backed-by-firstmark-and-a-whos-who-of-angels/",
+          "desc": "Daytona is building a cloud for agents that's like giving every agent its own computer. It has attracted founders of Stripe, Perplextity, Datadog, Mercor, and others as angels, it says.",
+          "published": "Fri, 23 Oct 2026"
+        },
+        {
+          "title": "What some of Anthropic’s backers are worth before its IPO",
+          "url": "https://techcrunch.com/2026/10/23/what-some-of-anthropics-backers-are-reportedly-worth-before-its-ipo/",
+          "desc": "Early-stage and follow-on investors in the AI lab are already sitting on major paper returns.",
+          "published": "Fri, 23 Oct 2026"
+        },
+        {
+          "title": "Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony AI and Nvidia",
           "url": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/",
-          "desc": "inDrive plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027.",
+          "desc": "The company plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027.",
           "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "Left alone with nothing to do, AI agents started playing",
-          "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
-          "desc": "MIT researchers marooned 13 AIs on a virtual island, and they responded by inventing games, mourning a lost ring and, eventually, getting better at their jobs.",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "OpenAI working on new $30B raise at $1.25T valuation ahead of IPO",
-          "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
-          "desc": "Should OpenAI command an over $1 trillion valuation with this round, it would break records as the most highly valued private company ever.",
-          "published": "Thu, 22 Oct 2026"
-        },
-        {
-          "title": "Rivian buys world model startup to accelerate self-driving ambitions",
-          "url": "https://techcrunch.com/2026/10/22/rivian-buys-world-model-startup-to-accelerate-self-driving-ambitions/",
-          "desc": "Third Dimension's technology uses AI to match the physical world, which when combined with Rivian's reams of data could turn into a valuable simulator.",
-          "published": "Thu, 22 Oct 2026"
-        },
-        {
-          "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
-          "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
-          "desc": "The new feature allows agents to log into a customer's personal accounts while still protecting the private credentials that secure those accounts.",
-          "published": "Thu, 22 Oct 2026"
-        },
-        {
-          "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
-          "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
-          "desc": "OpenAI is launching its decision model to the world. Can it compete with the original Jev?",
-          "published": "Thu, 22 Oct 2026"
         }
       ]
     },
@@ -380,22 +314,16 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "ElevenLabs Realtime",
-          "url": "https://www.producthunt.com/products/realtime-max-mini",
-          "desc": "Realtime voice agent models with 570ms to first audio Discussion | Link",
-          "published": "2026-10-20T07:31"
+          "title": "FLUX 3 Max",
+          "url": "https://www.producthunt.com/products/fal-ai",
+          "desc": "fal’s FLUX 3 Max: 10-second AI video in about 12 seconds Discussion | Link",
+          "published": "2026-10-19T13:10"
         },
         {
-          "title": "MOVO AI",
-          "url": "https://www.producthunt.com/products/movo-ai",
-          "desc": "The world's first long-form video agent for mobile Discussion | Link",
-          "published": "2026-09-18T22:45"
-        },
-        {
-          "title": "Instant Search",
-          "url": "https://www.producthunt.com/products/instant-search-2",
-          "desc": "The fastest, most precise local AI Search for your files. Discussion | Link",
-          "published": "2026-10-22T22:36"
+          "title": "Agent Hunt",
+          "url": "https://www.producthunt.com/products/monid",
+          "desc": "Live rankings of the tools AI agents use most Discussion | Link",
+          "published": "2026-10-22T21:03"
         },
         {
           "title": "Cloudflare Clairic",
@@ -404,28 +332,34 @@
           "published": "2026-10-20T19:18"
         },
         {
+          "title": "Peras",
+          "url": "https://www.producthunt.com/products/peras",
+          "desc": "Pause Claude Code and Codex before they burn your week Discussion | Link",
+          "published": "2026-10-22T14:38"
+        },
+        {
+          "title": "ElevenLabs Realtime",
+          "url": "https://www.producthunt.com/products/realtime-max-mini",
+          "desc": "Realtime voice agent models with 570ms to first audio Discussion | Link",
+          "published": "2026-10-20T07:31"
+        },
+        {
           "title": "Monish",
           "url": "https://www.producthunt.com/products/monish",
           "desc": "Your AI agents, live on your iPhone lock screen Discussion | Link",
           "published": "2026-10-22T07:38"
         },
         {
-          "title": "Inyon",
-          "url": "https://www.producthunt.com/products/inyon",
-          "desc": "Answer your coding agents from your phone Discussion | Link",
-          "published": "2026-10-16T03:57"
+          "title": "Gerty",
+          "url": "https://www.producthunt.com/products/gerty",
+          "desc": "Private ChatGPT alternative that sets itself up on your Mac Discussion | Link",
+          "published": "2026-10-22T07:14"
         },
         {
           "title": "Termi Protocol",
           "url": "https://www.producthunt.com/products/termi-protocol",
           "desc": "Watch AI agents code in 3D and hand off the work Discussion | Link",
           "published": "2026-10-22T21:32"
-        },
-        {
-          "title": "Bloblings",
-          "url": "https://www.producthunt.com/products/bloblings",
-          "desc": "A pet for every Claude Code session Discussion | Link",
-          "published": "2026-10-22T02:49"
         }
       ]
     }

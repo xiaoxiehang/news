@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 11:13:53",
+  "updated_at": "2026-10-24 02:06:09",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -2191,11 +2191,6 @@
       "why_hot": "银行接口标准各异，适配层能省不少事。",
       "who": "适合金融科技和银行接口开发者。"
     },
-    "rootSunc/CNEquity": {
-      "what": "提供可自托管、可溯源的 A 股数据集。",
-      "why_hot": "免注册又支持历史数据语义，量化研究很需要。",
-      "who": "适合做 A 股研究和回测的人。"
-    },
     "iyzico/iyzipay-php": {
       "what": "供 PHP 项目接入 iyzipay 支付接口。",
       "why_hot": "支付接入需要现成客户端，老项目也用得上。",
@@ -2940,11 +2935,6 @@
       "what": "设计并模拟数字逻辑电路。",
       "why_hot": "画电路、跑模拟都方便，学计算机组成很实用。",
       "who": "适合电子和计算机专业学生。"
-    },
-    "ivmm/Student-resources": {
-      "what": "整理学生和教职工可用的教育优惠。",
-      "why_hot": "优惠信息分散，集中查找能省钱也省时间。",
-      "who": "适合有资格申请教育优惠的人。"
     },
     "hneemann/Digital": {
       "what": "设计数字逻辑电路并模拟运行。",
@@ -3851,11 +3841,6 @@
       "why_hot": "大模型推理成本受关注，专用框架自然吸引开发者。",
       "who": "适合部署 DeepSeek 模型的团队关注。"
     },
-    "mattpocock/skills": {
-      "what": "分享作者日常使用的 AI 编程助手技能配置。",
-      "why_hot": "大家都想让 AI 助手更好用，现成配置容易上手。",
-      "who": "适合折腾 AI 编程工作流的开发者。"
-    },
     "cheaper-inference/OmniRoute": {
       "what": "用一个接口接入多家 AI 服务商和上千款模型。",
       "why_hot": "模型选择多，还有免费选项，切换工具省事。",
@@ -3876,11 +3861,6 @@
       "who": "需要客服系统的团队。",
       "why_hot": "Intercom 平替，自建省下 SaaS 费用。"
     },
-    "chen08209/FlClash": {
-      "what": "基于 ClashMeta 的多平台代理客户端。",
-      "who": "需要代理上网工具的人。",
-      "why_hot": "界面简单易用，开源免费，更新勤快。"
-    },
     "dockur/windows": {
       "what": "在 Docker 容器里跑 Windows。",
       "who": "需要在 Linux 上跑 Windows 的人。",
@@ -3890,26 +3870,6 @@
       "what": "根据参考图，用纯代码重建物体的程序化 3D 模型。",
       "who": "做 3D、可视化或 Three.js 的人。",
       "why_hot": "图片转 3D 全流程代码化、可质检，思路很特别。"
-    },
-    "immich-app/immich": {
-      "what": "高性能自建照片视频管理方案。",
-      "who": "想自己搭私有相册的人。",
-      "why_hot": "Google Photos 平替，本地部署隐私有保障。"
-    },
-    "jitsi/jitsi-meet": {
-      "what": "安全简单的开源视频会议，可独立部署。",
-      "who": "需要开视频会议的团队。",
-      "why_hot": "不用注册就能开会，自建可控。"
-    },
-    "laurent22/joplin": {
-      "what": "注重隐私、支持同步的开源笔记应用。",
-      "who": "重度笔记用户。",
-      "why_hot": "Evernote 平替，全平台同步不收费。"
-    },
-    "localsend/localsend": {
-      "what": "开源跨平台的 AirDrop 平替。",
-      "who": "经常在设备间传文件的人。",
-      "why_hot": "局域网传文件快又免费，跨平台都好用。"
     },
     "sickcodes/Docker-OSX": {
       "what": "在 Docker 里跑 macOS 虚拟机。",
@@ -3921,15 +3881,35 @@
       "who": "中小学老师、家长和教育开发者。",
       "why_hot": "1503 个知识点、6000 多道题，自适应诊断很实在。"
     },
-    "awesome-selfhosted/awesome-selfhosted": {
-      "what": "一份能自己部署的免费开源服务清单。",
-      "why_hot": "大家想把数据握在自己手里，也想少交订阅费。",
-      "who": "适合想自己搭网盘、相册等服务的人。"
-    },
     "jub0t/Concat": {
       "what": "一款本地优先、支持脚本控制的开源剪辑工具。",
       "why_hot": "免费跨平台，还能自动化剪辑，戳中想找剪映替代品的人。",
       "who": "适合想本地剪视频、批量处理素材的人。"
+    },
+    "openai/codex": {
+      "what": "在终端里运行的轻量级 AI 编程助手。",
+      "why_hot": "不用离开终端就能让 AI 帮忙写代码，很顺手。",
+      "who": "常在终端里写代码的开发者。"
+    },
+    "farion1231/cc-switch": {
+      "what": "把多款 AI 编程助手放进一个跨平台桌面应用。",
+      "why_hot": "编程助手越来越多，大家想少开几个窗口。",
+      "who": "同时用多款 AI 编程工具的人。"
+    },
+    "Z4nzu/hackingtool": {
+      "what": "汇集多种安全测试工具的一站式工具箱。",
+      "why_hot": "工具集中、上手省事，容易在安全圈传播。",
+      "who": "安全研究者和渗透测试学习者。"
+    },
+    "LosaLosSantos/aurelio-finance": {
+      "what": "在自己电脑上管理资产和负债，还带 AI 财务顾问。",
+      "why_hot": "财务数据留在本地，加上 AI 建议，很有吸引力。",
+      "who": "想自己掌握财务数据的人。"
+    },
+    "stared/science-based-games-list": {
+      "what": "一份由大家共同维护的科学主题游戏清单。",
+      "why_hot": "边玩边学的题材有趣，清单也方便收藏分享。",
+      "who": "想找科学主题游戏的玩家和老师。"
     }
   }
 }
