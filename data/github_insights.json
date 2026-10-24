@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24 11:30:00",
+  "updated_at": "2026-10-24 11:50:00",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -4140,6 +4140,66 @@
       "what": "功能强大的命令行音视频下载器，支持上千个网站。",
       "why_hot": "下载界的瑞士军刀，站点支持广到离谱。",
       "who": "需要下载在线视频音频做存档的人。"
+    },
+    "Fei-Away/Codex-Dream-Skin": {
+      "what": "给 Codex 桌面 App 换皮肤的主题工具，一张壁纸一种心情，原生控件全部保留。",
+      "why_hot": "Codex 桌面版刚出，美化主题永远不缺受众。",
+      "who": "用 Codex 桌面版、想换个好看皮肤的人。"
+    },
+    "miuuyy/codex-chatgpt-web": {
+      "what": "把 ChatGPT 网页版（含 Pro）接成 Codex 原生模型的桥接工具，支持上下文、工具调用和流式输出。",
+      "why_hot": "用 Pro 订阅跑 Codex 的野路子，省钱党狂喜。",
+      "who": "有 ChatGPT 会员、想在 Codex 里用的人。"
+    },
+    "FlashML-org/FreeToken": {
+      "what": "把数据中心级模型推理搬到桌面端的工具，能在本地跑超大模型。",
+      "why_hot": "本地跑大模型是硬核玩家的终极浪漫，还省下云端账单。",
+      "who": "想在自己机器上跑大模型的极客。"
+    },
+    "cdyforever/how-to-live-better": {
+      "what": "《高性价比人生指南》528 条的在线单页阅读版，手机可读、可搜索、零依赖、支持离线。",
+      "why_hot": "中文互联网人生经验帖的天花板，做成单页方便随时翻。",
+      "who": "想薅生活智慧、爱收藏干货的人。"
+    },
+    "hydra-db/hydradb": {
+      "what": "跑在对象存储上的高速图数据库，Rust 写的。",
+      "why_hot": "图数据库加对象存储的组合少见，云原生味十足。",
+      "who": "做图数据、知识图谱的后端工程师。"
+    },
+    "petergyang/no-ai-slop": {
+      "what": "一键清除文本里 20 多种 AI 腔写作痕迹的工具。",
+      "why_hot": "“AI 味”太冲正在成为社交减分项，去味是刚需。",
+      "who": "写东西怕被看出 AI 代笔的人。"
+    },
+    "shihabal3amri/DiPlay": {
+      "what": "安卓车机用的独立 CarPlay 接收端，有线无线都支持。",
+      "why_hot": "老车机秒变 CarPlay，花小钱办大事。",
+      "who": "想给安卓车机加上 CarPlay 的车主。"
+    },
+    "tester-army/e2e": {
+      "what": "面向 Web 和移动端的新一代端到端测试框架。",
+      "why_hot": "E2E 测试是前端之痛，新框架总有人愿意试。",
+      "who": "做前端、移动端自动化测试的工程师。"
+    },
+    "trycompai/crm": {
+      "what": "为 AI Agent 优先设计的开源 CRM。",
+      "why_hot": "CRM 赛道也在 Agent 化，开源先行一步。",
+      "who": "想让 AI 帮自己管客户的团队。"
+    },
+    "openai/codex-security": {
+      "what": "OpenAI 出品的 Codex 安全工具：CLI 加 TS SDK，找漏洞、验证、修漏洞一条龙。",
+      "why_hot": "官方下场做代码安全，AI 审代码正在变成标配。",
+      "who": "想给项目加一道 AI 安全检查的开发者。"
+    },
+    "KnifeLemon/Filee": {
+      "what": "免费开源的文件格式转换器，拖拽即转，支持 255 种格式，纯离线。",
+      "why_hot": "转格式是在线网站的重灾区，离线免费一次解决。",
+      "who": "经常要转图片、PDF、音视频格式的人。"
+    },
+    "pathwaycom/arc-task-gen": {
+      "what": "按公开评测集分布生成原创 ARC-AGI-1 风格推理任务的工具。",
+      "why_hot": "ARC 是测 AI 推理的硬通货，自产题目方便刷榜研究。",
+      "who": "研究大模型推理能力的开发者。"
     }
   }
 }
