@@ -13,7 +13,7 @@
     --hair: #d2d2d7;
     --wash: #f5f5f7;
     --pad-x: 6vw;
-    --ease: cubic-bezier(.22, .61, .36, 1);
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -30,12 +30,12 @@
   /* ── 顶栏 ─────────────────────────── */
   .topbar {
     display: flex; align-items: baseline; justify-content: space-between;
-    padding: 28px var(--pad-x) 0;
+    padding: 24px var(--pad-x) 0;
   }
   .brand-wrap { display: flex; align-items: baseline; gap: 16px; }
-  .brand { font-size: 21px; font-weight: 700; letter-spacing: .01em; }
+  .brand { font-size: 20px; font-weight: 700; letter-spacing: .01em; }
   .topbar-date { font-size: 14px; color: var(--grey); }
-  .topnav { display: flex; gap: 34px; font-size: 17px; color: var(--grey); }
+  .topnav { display: flex; gap: 32px; font-size: 16px; color: var(--grey); }
   .topnav a { position: relative; padding: 4px 0; transition: color .3s var(--ease); }
   .topnav a::after {
     content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
@@ -48,12 +48,12 @@
   .topnav a.active::after { transform: scaleX(1); }
 
   /* ── 早报流 ───────────────────────── */
-  .briefing-feed { padding: 30px var(--pad-x) 0; }
+  .briefing-feed { padding: 32px var(--pad-x) 0; }
   .briefing-layout { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
 
   /* 新闻条目：标题 → 详细摘要 → 来源标签 */
   .news-item {
-    display: block; padding: 26px 14px; margin: 0 -14px;
+    display: block; padding: 24px 12px; margin: 0 -12px;
     border-bottom: 1px solid var(--hair);
     position: relative; isolation: isolate;
     animation: rise .55s var(--ease) both;
@@ -66,13 +66,13 @@
   a.news-item:hover::before { opacity: 1; }
   .news-title {
     font-size: 20px; font-weight: 700; line-height: 1.5;
-    letter-spacing: -0.01em; color: var(--ink); margin: 0 0 10px;
+    letter-spacing: -0.01em; color: var(--ink); margin: 0 0 8px;
   }
   .news-summary {
-    font-size: 15px; line-height: 1.9; color: var(--grey); margin: 0 0 12px;
+    font-size: 14px; line-height: 1.9; color: var(--grey); margin: 0 0 12px;
     max-width: 960px;
   }
-  .news-meta { display: flex; align-items: center; gap: 10px; }
+  .news-meta { display: flex; align-items: center; gap: 8px; }
   .news-tag {
     font-size: 12px; font-weight: 600; color: var(--ink);
     background: var(--wash); border: 1px solid var(--hair); border-radius: 999px; padding: 4px 12px;
@@ -82,13 +82,13 @@
   /* ── 往期边栏 ─────────────────────── */
   .briefing-side { position: sticky; top: 28px; }
   .side-card {
-    background: #fff; border: 1px solid var(--hair); border-radius: 18px; padding: 20px;
+    background: #fff; border: 1px solid var(--hair); border-radius: 16px; padding: 16px;
   }
   .side-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
   .archive-list { display: flex; flex-direction: column; }
   .archive-list button {
     display: flex; justify-content: space-between; align-items: baseline;
-    padding: 10px 4px; background: none; border: none; border-bottom: 1px solid var(--hair);
+    padding: 8px 4px; background: none; border: none; border-bottom: 1px solid var(--hair);
     font-size: 14px; color: var(--grey); cursor: pointer; text-align: left;
     transition: color .3s var(--ease);
   }
@@ -98,11 +98,11 @@
   .archive-list .cnt { font-size: 12px; color: var(--grey); }
 
   /* ── 操作区 / 按钮 / 提示 ──────────── */
-  .pane-actions { display: flex; gap: 12px; justify-content: center; margin: 36px 0 48px; flex-wrap: wrap; }
+  .pane-actions { display: flex; gap: 12px; justify-content: center; margin: 32px 0 48px; flex-wrap: wrap; }
   .btn {
-    font-size: 15px; font-weight: 500; color: var(--ink);
+    font-size: 14px; font-weight: 500; color: var(--ink);
     background: #fff; border: 1px solid var(--hair); border-radius: 999px;
-    padding: 10px 22px; cursor: pointer;
+    padding: 8px 24px; cursor: pointer;
     transition: background .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
   }
   .btn:hover { background: var(--wash); }
@@ -112,15 +112,15 @@
     position: fixed; left: 50%; bottom: 30px; z-index: 60;
     transform: translateX(-50%) translateY(8px);
     background: var(--ink); color: #fff; font-size: 14px;
-    padding: 10px 22px; border-radius: 999px;
+    padding: 8px 24px; border-radius: 999px;
     opacity: 0; pointer-events: none;
     transition: opacity .35s var(--ease), transform .35s var(--ease);
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   /* ── 页脚（footer.js 注入） ────────── */
-  .footer { padding: 0 var(--pad-x) 44px; }
-  .footer-inner { display: flex; gap: 10px; align-items: baseline; font-size: 14px; color: var(--grey); }
+  .footer { padding: 0 var(--pad-x) 40px; }
+  .footer-inner { display: flex; gap: 8px; align-items: baseline; font-size: 14px; color: var(--grey); }
   .footer-inner a { transition: color .3s var(--ease); }
   .footer-inner a:hover { color: var(--ink); }
 
@@ -130,15 +130,16 @@
   }
   @media (max-width: 744px) {
     :root { --pad-x: 24px; }
-    .topnav { gap: 18px; font-size: 15px; }
+    .topnav { gap: 16px; font-size: 14px; }
     .topbar-date { display: none; }
     .news-title { font-size: 18px; }
-    .news-item { padding: 22px 10px; margin: 0 -10px; }
+    .news-item { padding: 24px 8px; margin: 0 -8px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .news-item { animation: none; }
     .topnav a::after, .row, .btn, .toast { transition: none; }
   }
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 </style>
 </head>
 <body>

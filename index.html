@@ -12,7 +12,7 @@
     --hair: #d2d2d7;
     --wash: #f5f5f7;
     --pad-x: 6vw;
-    --ease: cubic-bezier(.22, .61, .36, 1);
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -28,10 +28,10 @@
   /* ── 顶栏 ─────────────────────────── */
   .topbar {
     display: flex; align-items: baseline; justify-content: space-between;
-    padding: 28px var(--pad-x) 0;
+    padding: 24px var(--pad-x) 0;
   }
-  .brand { font-size: 21px; font-weight: 700; letter-spacing: .01em; }
-  .topnav { display: flex; gap: 34px; font-size: 17px; color: var(--grey); }
+  .brand { font-size: 20px; font-weight: 700; letter-spacing: .01em; }
+  .topnav { display: flex; gap: 32px; font-size: 16px; color: var(--grey); }
   .topnav a { position: relative; padding: 4px 0; transition: color .3s var(--ease); }
   .topnav a::after {
     content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
@@ -48,7 +48,7 @@
     font-weight: 700; line-height: 1.04; letter-spacing: -0.015em;
   }
   .hero-sub {
-    margin-top: 34px; font-size: clamp(19px, 1.75vw, 25px);
+    margin-top: 32px; font-size: clamp(19px, 1.75vw, 25px);
     color: var(--grey); font-weight: 400; letter-spacing: .01em;
   }
   .rise { opacity: 0; transform: translateY(34px); animation: rise .9s var(--ease) forwards; }
@@ -60,7 +60,7 @@
   .today {
     margin: 11vh var(--pad-x) 0;
     border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair);
-    display: flex; align-items: baseline; gap: 28px;
+    display: flex; align-items: baseline; gap: 24px;
     padding: 24px 0;
   }
   .today-label { font-size: 16px; color: var(--grey); white-space: nowrap; }
@@ -68,14 +68,14 @@
     font-size: clamp(18px, 1.5vw, 21px); font-weight: 500;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
-  .today-more { margin-left: auto; font-size: 19px; color: var(--grey); white-space: nowrap; transition: color .3s var(--ease); }
+  .today-more { margin-left: auto; font-size: 18px; color: var(--grey); white-space: nowrap; transition: color .3s var(--ease); }
   .today:hover .today-more { color: var(--ink); }
 
   /* ── 产品行 ───────────────────────── */
-  .rows { padding: 26px var(--pad-x) 110px; }
+  .rows { padding: 24px var(--pad-x) 96px; }
   .row {
-    display: flex; align-items: baseline; gap: 36px;
-    padding: 27px 14px; margin: 0 -14px;
+    display: flex; align-items: baseline; gap: 32px;
+    padding: 24px 12px; margin: 0 -12px;
     border-bottom: 1px solid var(--hair);
     position: relative; isolation: isolate;
     opacity: 0; transform: translateY(18px);
@@ -101,36 +101,37 @@
   .row:first-child { border-top: none; }
 
   /* ── 全部子域名 ────────── */
-  .domains { padding: 0 var(--pad-x) 90px; }
-  .domains-title { font-size: 14px; color: var(--grey); letter-spacing: .04em; margin: 0 0 14px; font-weight: 500; }
+  .domains { padding: 0 var(--pad-x) 96px; }
+  .domains-title { font-size: 14px; color: var(--grey); letter-spacing: .04em; margin: 0 0 12px; font-weight: 500; }
   .domains-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); border-top: 1px solid var(--hair); }
   .domain { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--hair); margin-right: 24px; transition: color .3s var(--ease); }
   .domain-host { font-size: 16px; color: var(--ink); font-weight: 500; }
-  .domain-desc { font-size: 13px; color: var(--grey); }
+  .domain-desc { font-size: 12px; color: var(--grey); }
   .domain:hover .domain-host { text-decoration: underline; text-underline-offset: 3px; }
   .rows { padding-bottom: 64px !important; }
   /* ── 页脚（footer.js 注入） ────────── */
-  .footer { padding: 0 var(--pad-x) 44px; }
-  .footer-inner { display: flex; gap: 10px; align-items: baseline; font-size: 14px; color: var(--grey); }
+  .footer { padding: 0 var(--pad-x) 40px; }
+  .footer-inner { display: flex; gap: 8px; align-items: baseline; font-size: 14px; color: var(--grey); }
   .footer-inner a { transition: color .3s var(--ease); }
   .footer-inner a:hover { color: var(--ink); }
 
   @media (max-width: 744px) {
     :root { --pad-x: 24px; }
-    .topnav { gap: 20px; font-size: 15px; }
+    .topnav { gap: 16px; font-size: 14px; }
     .topnav a:nth-child(1) { display: none; }
     .hero { padding-top: 11vh; }
     .today { gap: 16px; }
     .today-headline { white-space: normal; }
-    .row { flex-wrap: wrap; gap: 4px 20px; padding: 22px 10px; margin: 0 -10px; }
+    .row { flex-wrap: wrap; gap: 4px 16px; padding: 24px 8px; margin: 0 -8px; }
     .row-desc { flex-basis: calc(100% - 44px); order: 3; }
     .row-arrow { order: 2; }
-    .rows { padding-bottom: 84px; }
+    .rows { padding-bottom: 80px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .rise, .row { opacity: 1; transform: none; animation: none; transition: none; }
     .row:hover .row-name, .row:hover .row-arrow { transform: none; }
   }
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 </style>
 </head>
 <body>

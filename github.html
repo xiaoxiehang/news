@@ -13,7 +13,7 @@
     --hair: #d2d2d7;
     --wash: #f5f5f7;
     --pad-x: 6vw;
-    --ease: cubic-bezier(.22, .61, .36, 1);
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -30,10 +30,10 @@
   /* ── 顶栏（全站统一，绝对链接） ─────── */
   .topbar {
     display: flex; align-items: baseline; justify-content: space-between;
-    padding: 28px var(--pad-x) 20px;
+    padding: 24px var(--pad-x) 16px;
   }
-  .brand { font-size: 21px; font-weight: 700; letter-spacing: .01em; }
-  .topnav { display: flex; gap: 34px; font-size: 17px; color: var(--grey); }
+  .brand { font-size: 20px; font-weight: 700; letter-spacing: .01em; }
+  .topnav { display: flex; gap: 32px; font-size: 16px; color: var(--grey); }
   .topnav a { position: relative; padding: 4px 0; transition: color .3s var(--ease); }
   .topnav a::after {
     content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
@@ -58,12 +58,12 @@
     background: rgba(255,255,255,.88);
     -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid var(--hair);
-    padding: 14px var(--pad-x); margin-bottom: 8px;
+    padding: 12px var(--pad-x); margin-bottom: 8px;
   }
   .categories { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
   .categories::-webkit-scrollbar { display: none; }
   .category-btn {
-    font-size: 14px; font-weight: 500; padding: 9px 20px;
+    font-size: 14px; font-weight: 500; padding: 8px 16px;
     background: #fff; border: 1px solid var(--hair); border-radius: 999px;
     color: var(--grey); cursor: pointer; white-space: nowrap; flex-shrink: 0;
     transition: color .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease);
@@ -72,17 +72,17 @@
   .category-btn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
 
   /* ── 工具条：创建时间筛选 + 计数 ────── */
-  .gh-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 2px var(--pad-x) 14px; flex-wrap: wrap; }
-  .gh-created-filter { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--grey); flex-wrap: wrap; }
+  .gh-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 2px var(--pad-x) 12px; flex-wrap: wrap; }
+  .gh-created-filter { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--grey); flex-wrap: wrap; }
   .cf-btn {
-    font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 999px;
+    font-size: 12px; font-weight: 500; padding: 8px 16px; border-radius: 999px;
     border: 1px solid var(--hair); background: #fff; color: var(--grey);
     cursor: pointer; white-space: nowrap;
     transition: color .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease);
   }
   .cf-btn:hover { color: var(--ink); border-color: var(--ink); }
   .cf-btn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
-  .gh-count { font-size: 13px; color: var(--grey); white-space: nowrap; }
+  .gh-count { font-size: 12px; color: var(--grey); white-space: nowrap; }
 
   /* ── 仓库卡片 ───────────────────────── */
   .projects-grid {
@@ -91,7 +91,7 @@
   }
   .project-card {
     position: relative;
-    background: #fff; border: 1px solid var(--hair); border-radius: 20px;
+    background: #fff; border: 1px solid var(--hair); border-radius: 16px;
     padding: 24px; text-decoration: none; color: inherit;
     display: flex; flex-direction: column;
     transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease);
@@ -110,48 +110,48 @@
   .rank-badge.top3 { color: var(--ink); font-weight: 800; font-size: 14px; }
   .section-head {
     font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
-    padding: 28px 4px 4px; display: flex; align-items: baseline; gap: 10px;
+    padding: 24px 4px 4px; display: flex; align-items: baseline; gap: 8px;
   }
-  .section-head .sub { font-size: 13px; color: var(--grey); font-weight: 400; }
+  .section-head .sub { font-size: 12px; color: var(--grey); font-weight: 400; }
   .new-dot {
-    display: inline-block; font-size: 11px; font-weight: 700; color: #fff;
-    background: var(--ink); border-radius: 4px; padding: 2px 6px; margin-left: 8px;
+    display: inline-block; font-size: 12px; font-weight: 700; color: #fff;
+    background: var(--ink); border-radius: 4px; padding: 2px 4px; margin-left: 8px;
     vertical-align: 2px;
   }
-  .project-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
-  .gain { color: var(--ink); font-weight: 700; font-size: 12px; margin-left: 6px; }
+  .project-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .gain { color: var(--ink); font-weight: 700; font-size: 12px; margin-left: 4px; }
   .project-icon {
     width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
     background: var(--wash); color: var(--ink);
     display: flex; align-items: center; justify-content: center; font-size: 20px;
   }
   .project-info { flex: 1; min-width: 0; }
-  .project-name { font-size: 17px; font-weight: 600; margin-bottom: 2px; word-break: break-word; transition: color .35s var(--ease); }
-  .project-owner { font-size: 13px; color: var(--grey); }
+  .project-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; word-break: break-word; transition: color .35s var(--ease); }
+  .project-owner { font-size: 12px; color: var(--grey); }
   .project-desc {
-    font-size: 14px; color: var(--ink); line-height: 1.43; margin-bottom: 14px; flex: 1;
+    font-size: 14px; color: var(--ink); line-height: 1.43; margin-bottom: 12px; flex: 1;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
   }
   .project-insight {
     background: var(--wash); border-radius: 12px;
-    padding: 12px 14px; margin-bottom: 14px; font-size: 13px; line-height: 1.43;
+    padding: 12px 12px; margin-bottom: 12px; font-size: 12px; line-height: 1.43;
   }
   .insight-label { font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
   .insight-what { color: var(--ink); margin-bottom: 4px; }
   .insight-meta { color: var(--grey); font-size: 12px; }
   .project-meta {
-    display: flex; gap: 18px; row-gap: 8px; flex-wrap: wrap; font-size: 13px; color: var(--grey);
-    padding-top: 14px; border-top: 1px solid var(--hair);
+    display: flex; gap: 16px; row-gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--grey);
+    padding-top: 12px; border-top: 1px solid var(--hair);
   }
-  .meta-item { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .meta-item { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
   .meta-value { font-weight: 600; color: var(--ink); }
   .meta-label { color: var(--grey); font-weight: 400; }
   .language-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
   /* ── 分页 / 重试 ────────────────────── */
-  .gh-end { text-align: center; color: var(--grey); font-size: 13px; padding: 8px 0 48px; }
+  .gh-end { text-align: center; color: var(--grey); font-size: 12px; padding: 8px 0 48px; }
   .retry-btn {
-    height: 42px; padding: 0 28px; border-radius: 999px; border: 1px solid var(--hair);
+    height: 42px; padding: 0 24px; border-radius: 999px; border: 1px solid var(--hair);
     background: #fff; color: var(--ink); font-size: 14px; cursor: pointer;
     transition: border-color .35s var(--ease), color .35s var(--ease);
   }
@@ -159,28 +159,28 @@
   .pane-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
 
   /* ── 加载 / 空态 / Toast / 页脚 ─────── */
-  .loading { text-align: center; padding: 64px 20px; color: var(--grey); font-size: 14px; }
-  .empty-state { text-align: center; padding: 64px 20px; }
+  .loading { text-align: center; padding: 64px 16px; color: var(--grey); font-size: 14px; }
+  .empty-state { text-align: center; padding: 64px 16px; }
   .empty-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
   .empty-desc { font-size: 14px; color: var(--grey); }
   .toast {
     position: fixed; bottom: 36px; left: 50%;
     transform: translateX(-50%) translateY(20px);
     background: var(--ink); color: #fff;
-    font-size: 14px; padding: 12px 22px; border-radius: 999px;
+    font-size: 14px; padding: 12px 24px; border-radius: 999px;
     opacity: 0; pointer-events: none; z-index: 100;
     transition: opacity .35s var(--ease), transform .35s var(--ease);
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  .footer { padding: 0 var(--pad-x) 44px; }
-  .footer-inner { display: flex; gap: 10px; align-items: baseline; font-size: 14px; color: var(--grey); }
+  .footer { padding: 0 var(--pad-x) 40px; }
+  .footer-inner { display: flex; gap: 8px; align-items: baseline; font-size: 14px; color: var(--grey); }
   .footer-inner a { transition: color .3s var(--ease); }
   .footer-inner a:hover { color: var(--ink); }
 
   @media (max-width: 744px) {
     :root { --pad-x: 24px; }
-    .topbar { padding-bottom: 14px; }
-    .topnav { gap: 20px; font-size: 15px; }
+    .topbar { padding-bottom: 12px; }
+    .topnav { gap: 16px; font-size: 14px; }
     .topnav a:nth-child(1) { display: none; }
     .projects-grid { grid-template-columns: 1fr; padding: 8px var(--pad-x) 48px; }
     .filter-bar { padding: 12px var(--pad-x); }
@@ -192,6 +192,7 @@
     .topnav a::after { transition: none; }
     .toast { transition: none; }
   }
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -402,7 +403,7 @@ function renderGhProjects() {
     if (ghError && !ghLoading) {
       container.innerHTML = '<div class="empty-state"><div class="empty-title">加载失败</div>' +
         '<div class="empty-desc">GitHub 接口暂时不可用，稍后重试</div>' +
-        '<div style="margin-top:18px"><button class="retry-btn" onclick="retryGhTab()">重新加载</button></div></div>';
+        '<div style="margin-top:16px"><button class="retry-btn" onclick="retryGhTab()">重新加载</button></div></div>';
     } else {
       container.innerHTML = '<div class="loading">加载中...</div>';
     }
