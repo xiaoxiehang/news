@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25 01:53:12",
+  "updated_at": "2026-10-25 11:45:00",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -4220,6 +4220,26 @@
       "what": "一个本地优先的个人媒体管理系统。",
       "why_hot": "不想把私人媒体交给云端的人，容易看中它。",
       "who": "适合想自己管理媒体资料的人。"
+    },
+    "nodejs/node": {
+      "what": "JavaScript 运行时，让 JS 能跑在服务器端。",
+      "why_hot": "生态最广的服务端运行时，几乎所有 Web 后端都绕不开它。",
+      "who": "做 Web 开发、写后端服务的人。"
+    },
+    "rust-lang/rust": {
+      "what": "强调内存安全与高性能的系统编程语言。",
+      "why_hot": "安全性和性能兼得，越来越多底层工具用它重写。",
+      "who": "写系统工具、追求性能又不想踩内存坑的开发者。"
+    },
+    "jaywcjlove/awesome-mac": {
+      "what": "系统整理的 macOS 优质软件清单。",
+      "why_hot": "按类别收齐 Mac 必备软件，换新机装机照着抄就行。",
+      "who": "刚换 Mac 或想给 Mac 找好软件的人。"
+    },
+    "microsoft/TypeScript": {
+      "what": "给 JavaScript 加上静态类型的超集语言。",
+      "why_hot": "大项目标配，类型检查让重构和协作都更稳。",
+      "who": "写前端或 Node.js、想让大型 JS 项目更好维护的人。"
     }
   }
 }
