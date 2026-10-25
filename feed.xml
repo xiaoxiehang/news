@@ -5,62 +5,62 @@
   <link>https://xiaojj.pro/</link>
   <description>每天早上 8 点，一份中文 AI 早报：精选权威科技媒体最值得读的 AI 新闻。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Sat, 24 Oct 2026 08:00:00 +0800</lastBuildDate>
+  <lastBuildDate>Sun, 25 Oct 2026 08:00:00 +0800</lastBuildDate>
     <item>
-      <title>OpenAI 加强前沿模型训练环境安全，采用离线环境</title>
+      <title>OpenAI 披露前沿模型训练环境的安全防护措施</title>
       <link>https://openai.com/index/securing-our-frontier-model-training-environment</link>
       <guid>https://openai.com/index/securing-our-frontier-model-training-environment</guid>
-      <description>OpenAI 公布了保护前沿模型训练与评估环境的新做法，包括建设与互联网隔离的环境，并对模型开展高算力安全测试。这反映出模型能力提升后，开发者不仅要防范外部攻击，也要更严格地控制模型在测试和训练期间能接触什么。（来源：OpenAI 官方）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <description>OpenAI 公布了保护前沿模型训练和评估环境的做法，包括使用离线环境，并针对高算力条件开展安全测试。随着模型能力提升，如何防止训练设施和模型被不当利用，正成为与模型研发同样重要的安全问题。（来源：OpenAI 官方）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>谷歌更新隐私政策，个性化 AI 数据用途引发关注</title>
-      <link>https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update</link>
-      <guid>https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update</guid>
-      <description>据 The Verge 报道，谷歌更新隐私政策后，使用个性化 AI 功能的用户，其 Gmail 和 Google 相册数据未来可能被用于定向广告。这并不等于相关广告已经上线，但提醒用户留意：授权 AI 读取私人信息时，也要弄清数据可能被怎样使用。（来源：The Verge）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <title>谷歌开源 TorchTPU，让 TPU 更易用于 PyTorch</title>
+      <link>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069794&amp;idx=2&amp;sn=ae62dbad6234b3c4c7359543936974c7</link>
+      <guid>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069794&amp;idx=2&amp;sn=ae62dbad6234b3c4c7359543936974c7</guid>
+      <description>据机器之心报道，谷歌开源 TorchTPU，推动自家 TPU 成为 PyTorch 可直接使用的设备。报道提到，相关测试覆盖 4917 个模型，与 GPU 的结果有 97% 对齐；这有望降低开发者改用 TPU 的门槛，但不等于两种硬件已可完全互换。（来源：机器之心）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>OpenAI 推出 Decisions API，帮助应用更快作出决策</title>
-      <link>https://openai.com/index/decisions-api</link>
-      <guid>https://openai.com/index/decisions-api</guid>
-      <description>OpenAI 发布 Decisions API，称其可以让应用以更快、更聚焦且成本更低的方式作出决策。它主要面向应用开发者，而非供普通用户直接使用的新聊天产品；对用户来说，潜在变化是应用在需要判断下一步操作时，响应可能更及时。（来源：OpenAI 官方）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <title>OpenAI：支撑超十亿 ChatGPT 用户的存储系统如何扩容</title>
+      <link>https://openai.com/index/scaling-storage-one-billion-users-part-two</link>
+      <guid>https://openai.com/index/scaling-storage-one-billion-users-part-two</guid>
+      <description>OpenAI 介绍了为 ChatGPT 扩容在线存储系统的工程实践，包括让不同用户可靠地共享系统资源、使用全球缓存，以及接入 Azure Cosmos DB。官方称相关改进使读取速度提升至原来的 12 倍；这一数字针对存储读取，并非所有聊天回答都会快 12 倍。（来源：OpenAI 官方）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>Block 推出语音 AI 模型 Dessa，尝试像新朋友一样交谈</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech</link>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech</guid>
-      <description>据 The Verge 报道，杰克·多尔西旗下的 Block 公布语音 AI 模型 Dessa，称其仅用人类对话数据从零训练，并展示了它与真人聊天的片段。这次发布的重点是交流方式，而不只是回答问题；这些演示还不足以说明它在日常使用中的表现。（来源：The Verge）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <title>OpenAI 与波兰 NASK 合作推进 AI 安全</title>
+      <link>https://openai.com/index/openai-nask-ai-safety-security-partnership</link>
+      <guid>https://openai.com/index/openai-nask-ai-safety-security-partnership</guid>
+      <description>OpenAI 宣布与波兰机构 NASK 建立合作，围绕 AI 安全、网络安全及技术研究加强防护。公告将目标指向更具韧性的数字生态，但现有简介没有列出具体产品或落地时间表；现阶段更值得关注的是双方后续会公开哪些实际成果。（来源：OpenAI 官方）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>Arc 浏览器将于 12 月关闭，现有用户需留意时间表</title>
-      <link>https://www.solidot.org/story?sid=85692</link>
-      <guid>https://www.solidot.org/story?sid=85692</guid>
-      <description>The Browser Company 宣布，Arc 浏览器将于 12 月 22 日关闭，届时应用将无法启动；新账号创建已于 10 月 22 日停止，部分功能也将从 11 月 23 日起停用。公司此前已转向开发 AI 驱动的浏览器 Dia，Arc 用户应留意剩余使用期限。（来源：Solidot）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <title>研究发现：Grok 与 OpenAI 模型的选举推荐明显不同</title>
+      <link>https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/</link>
+      <guid>https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/</guid>
+      <description>TechCrunch 报道，一项研究要求 AI 模型在选举中做出选择：Grok 更多推荐共和党候选人，OpenAI 的 GPT 则更偏向民主党候选人。在近 500 场选举的测试中，两者超过九成的选择不一致；结果提示读者，不应把聊天机器人的政治回答当作中立投票指南。（来源：TechCrunch）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>PostgreSQL 19 推迟发布，AI 找漏洞的速度引发讨论</title>
+      <title>PostgreSQL 19 延期发布，将增加测试版本</title>
       <link>https://www.infoq.cn/article/Q6mgHWCSqV6KeZzee3NT</link>
       <guid>https://www.infoq.cn/article/Q6mgHWCSqV6KeZzee3NT</guid>
-      <description>InfoQ 报道称，PostgreSQL 19 的正式发布时间由原定的 10 月 29 日推迟至 11 月 19 日，项目还计划增加一个候选版本供社区验证。官方给出的原因是近期纳入维护分支的修复较多；报道同时讨论了 AI 辅助发现问题加快后，人工修复与验证面临的压力。（来源：InfoQ 推荐）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <description>据 InfoQ 报道，数据库软件 PostgreSQL 19 原定 10 月 29 日发布，现推迟至 11 月 19 日，并计划在 11 月 12 日增加一个候选版本供社区验证。团队给出的原因是近期纳入的修复较多；报道也关注到，AI 辅助找错正在给人工修复与测试带来压力。（来源：InfoQ 推荐）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>调查显示，过半美国受访者认为 AI 对社会有害</title>
-      <link>https://www.solidot.org/story?sid=85686</link>
-      <guid>https://www.solidot.org/story?sid=85686</guid>
-      <description>据 Solidot 转述的 ABC News、《华盛顿邮报》和 Ipsos 调查，57% 的美国受访者认为 AI 对社会有害，42% 认为有益。30 岁以下受访者中，持负面看法的比例达到 65%；这组数据呈现了公众态度，但不能直接代表其他国家的看法。（来源：Solidot）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <title>Arc 浏览器将于 12 月关闭</title>
+      <link>https://www.solidot.org/story?sid=85692</link>
+      <guid>https://www.solidot.org/story?sid=85692</guid>
+      <description>The Browser Company 宣布，Arc 从 10 月 22 日起停止注册新账号，部分功能将于 11 月 23 日停用，应用预计在 12 月 22 日无法启动。公司此前已停止开发 Arc，转向 AI 驱动的浏览器 Dia；仍在使用 Arc 的读者应留意停用安排。（来源：Solidot）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>AI 智能体云服务公司 Daytona 估值达到 10 亿美元</title>
-      <link>https://techcrunch.com/2026/10/23/agent-cloud-startup-daytona-hits-1b-valuation-backed-by-firstmark-and-a-whos-who-of-angels/</link>
-      <guid>https://techcrunch.com/2026/10/23/agent-cloud-startup-daytona-hits-1b-valuation-backed-by-firstmark-and-a-whos-who-of-angels/</guid>
-      <description>据 TechCrunch 报道，Daytona 在 FirstMark 等投资者支持下，估值达到 10 亿美元。它开发的云服务旨在为 AI 智能体提供各自运行任务的计算环境；这笔投资动态显示，除了模型本身，支撑智能体实际工作的基础设施也正受到关注。（来源：TechCrunch）</description>
-      <pubDate>Sat, 24 Oct 2026 08:00:00 +0800</pubDate>
+      <title>《蓝色星球 III》保留不完美画面，以凸显影像真实</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai</link>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai</guid>
+      <description>The Verge 报道，BBC 的《蓝色星球 III》计划保留一些不够完美的镜头，而不是只呈现无瑕的自然影像。在 AI 生成画面越来越逼真的背景下，这种制作选择意在让观众更清楚地感受到：眼前的画面来自真实拍摄。（来源：The Verge）</description>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
     </item>
 </channel>
 </rss>

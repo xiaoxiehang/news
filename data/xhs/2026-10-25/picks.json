@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-25",
+  "date_str": "2026年10月25日",
+  "overview": "今天的焦点是 AI 的安全与可信度：OpenAI 披露前沿模型训练防护措施，一项研究则显示，不同聊天模型在选举问题上的回答差异显著。与此同时，谷歌推进 TPU 开源适配，AI 生成内容也让自然纪录片更重视如何向观众证明真实。",
+  "picks": [
+    {
+      "title": "Arc 浏览器将于 12 月关闭",
+      "summary": "The Browser Company 宣布，Arc 从 10 月 22 日起停止注册新账号，部分功能将于 11 月 23 日停用，应用预计在 12 月 22 日无法启动。公司此前已停止开发 Arc，转向 AI 驱动的浏览器 Dia；仍在使用 Arc 的读者应留意停用安排。",
+      "url": "https://www.solidot.org/story?sid=85692",
+      "source": "Solidot",
+      "category": "效率工具"
+    },
+    {
+      "title": "研究发现：Grok 与 OpenAI 模型的选举推荐明显不同",
+      "summary": "TechCrunch 报道，一项研究要求 AI 模型在选举中做出选择：Grok 更多推荐共和党候选人，OpenAI 的 GPT 则更偏向民主党候选人。在近 500 场选举的测试中，两者超过九成的选择不一致；结果提示读者，不应把聊天机器人的政治回答当作中立投票指南。",
+      "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "《蓝色星球 III》保留不完美画面，以凸显影像真实",
+      "summary": "The Verge 报道，BBC 的《蓝色星球 III》计划保留一些不够完美的镜头，而不是只呈现无瑕的自然影像。在 AI 生成画面越来越逼真的背景下，这种制作选择意在让观众更清楚地感受到：眼前的画面来自真实拍摄。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai",
+      "source": "The Verge",
+      "category": "一句话"
+    },
+    {
+      "title": "OpenAI：支撑超十亿 ChatGPT 用户的存储系统如何扩容",
+      "summary": "OpenAI 介绍了为 ChatGPT 扩容在线存储系统的工程实践，包括让不同用户可靠地共享系统资源、使用全球缓存，以及接入 Azure Cosmos DB。官方称相关改进使读取速度提升至原来的 12 倍；这一数字针对存储读取，并非所有聊天回答都会快 12 倍。",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "谷歌开源 TorchTPU，让 TPU 更易用于 PyTorch",
+      "summary": "据机器之心报道，谷歌开源 TorchTPU，推动自家 TPU 成为 PyTorch 可直接使用的设备。报道提到，相关测试覆盖 4917 个模型，与 GPU 的结果有 97% 对齐；这有望降低开发者改用 TPU 的门槛，但不等于两种硬件已可完全互换。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069794&idx=2&sn=ae62dbad6234b3c4c7359543936974c7",
+      "source": "机器之心",
+      "category": "今日头条"
+    },
+    {
+      "title": "OpenAI 披露前沿模型训练环境的安全防护措施",
+      "summary": "OpenAI 公布了保护前沿模型训练和评估环境的做法，包括使用离线环境，并针对高算力条件开展安全测试。随着模型能力提升，如何防止训练设施和模型被不当利用，正成为与模型研发同样重要的安全问题。",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "PostgreSQL 19 延期发布，将增加测试版本",
+      "summary": "据 InfoQ 报道，数据库软件 PostgreSQL 19 原定 10 月 29 日发布，现推迟至 11 月 19 日，并计划在 11 月 12 日增加一个候选版本供社区验证。团队给出的原因是近期纳入的修复较多；报道也关注到，AI 辅助找错正在给人工修复与测试带来压力。",
+      "url": "https://www.infoq.cn/article/Q6mgHWCSqV6KeZzee3NT",
+      "source": "InfoQ 推荐",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 与波兰 NASK 合作推进 AI 安全",
+      "summary": "OpenAI 宣布与波兰机构 NASK 建立合作，围绕 AI 安全、网络安全及技术研究加强防护。公告将目标指向更具韧性的数字生态，但现有简介没有列出具体产品或落地时间表；现阶段更值得关注的是双方后续会公开哪些实际成果。",
+      "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    }
+  ]
+}
