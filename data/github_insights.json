@@ -4240,6 +4240,56 @@
       "what": "给 JavaScript 加上静态类型的超集语言。",
       "why_hot": "大项目标配，类型检查让重构和协作都更稳。",
       "who": "写前端或 Node.js、想让大型 JS 项目更好维护的人。"
+    },
+    "clash-verge-rev/clash-verge-rev": {
+      "what": "基于 Tauri 的跨平台代理图形客户端，支持 Windows、macOS 和 Linux。",
+      "why_hot": "星数超 15 万，是目前最主流的开源代理客户端之一，更新活跃。",
+      "who": "需要跨平台代理客户端的用户。"
+    },
+    "golang/go": {
+      "what": "Go 编程语言的官方仓库。",
+      "why_hot": "云原生时代的主流后端语言，长期高热、持续演进。",
+      "who": "学后端与云原生开发的开发者。"
+    },
+    "langchain-ai/langgraph": {
+      "what": "用图结构编排多步骤智能体的框架，适合做有状态、可回溯的 Agent。",
+      "why_hot": "LangChain 生态的核心组件，是搭建复杂 Agent 的主流选择。",
+      "who": "想搭建多步骤 AI 智能体的开发者。"
+    },
+    "LMMS/lmms": {
+      "what": "跨平台开源音乐制作软件，可以编曲、混音和合成音色。",
+      "why_hot": "免费开源的 DAW 平替，适合零成本入门音乐制作。",
+      "who": "想免费做编曲、混音的音乐爱好者。"
+    },
+    "aandrew-me/ytDownloader": {
+      "what": "支持从几百个网站下载音视频的桌面应用。",
+      "why_hot": "一站式下载、覆盖站点多，适合离线收藏。",
+      "who": "需要离线保存网络音视频的人。"
+    },
+    "openframeworks/openFrameworks": {
+      "what": "面向创意编程的跨平台 C++ 工具包，适合做交互装置与视觉作品。",
+      "why_hot": "创意编程领域的经典工具，社区积累深厚。",
+      "who": "做交互装置、生成艺术的创作者。"
+    },
+    "katspaugh/wavesurfer.js": {
+      "what": "可以绘制波形并支持交互的音频播放器库。",
+      "why_hot": "波形可视化播放的事实标准，众多音频产品都在用。",
+      "who": "要在网页里做音频播放与波形展示的前端开发者。"
+    },
+    "cookpete/react-player": {
+      "what": "一个组件搞定 YouTube、Twitch、SoundCloud 等多平台视频播放的 React 组件。",
+      "why_hot": "覆盖平台广、接入成本低，是 React 项目里播视频的省事选择。",
+      "who": "在 React 项目里需要嵌入多平台视频的开发者。"
+    },
+    "gwuhaolin/livego": {
+      "what": "用 Go 写的高性能直播推流服务器。",
+      "why_hot": "部署轻、性能好，适合快速搭建私有直播服务。",
+      "who": "想自建直播推流服务的人。"
+    },
+    "AIGC-Audio/AudioGPT": {
+      "what": "能理解并生成语音、音乐、音效与数字人的多模态音频大模型。",
+      "why_hot": "把“听懂 + 生成”打通的音频 Agent 方向代表作。",
+      "who": "关注语音与音频 AI 应用的开发者。"
     }
   }
 }
