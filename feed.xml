@@ -5,62 +5,62 @@
   <link>https://xiaojj.pro/</link>
   <description>每天早上 8 点，一份中文 AI 早报：精选权威科技媒体最值得读的 AI 新闻。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Sun, 25 Oct 2026 08:00:00 +0800</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 08:00:00 +0800</lastBuildDate>
     <item>
-      <title>OpenAI 披露前沿模型训练环境的安全防护措施</title>
-      <link>https://openai.com/index/securing-our-frontier-model-training-environment</link>
-      <guid>https://openai.com/index/securing-our-frontier-model-training-environment</guid>
-      <description>OpenAI 公布了保护前沿模型训练和评估环境的做法，包括使用离线环境，并针对高算力条件开展安全测试。随着模型能力提升，如何防止训练设施和模型被不当利用，正成为与模型研发同样重要的安全问题。（来源：OpenAI 官方）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <title>Gemini 协助发现 Softmax 隐藏问题，PyTorch、JAX 被点名</title>
+      <link>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069889&amp;idx=1&amp;sn=f243963ab47a3c32471ca7d3319ef4c6</link>
+      <guid>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069889&amp;idx=1&amp;sn=f243963ab47a3c32471ca7d3319ef4c6</guid>
+      <description>机器之心报道，Gemini 协助发现了 Softmax 实现中的一个隐藏问题，并承担了大量相关实验；PyTorch、JAX 等常用框架也出现在讨论中。Softmax 是许多 AI 模型处理预测结果时会用到的基础方法，这起发现提醒业界：看似成熟的底层代码仍值得反复检查。（来源：机器之心）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>谷歌开源 TorchTPU，让 TPU 更易用于 PyTorch</title>
-      <link>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069794&amp;idx=2&amp;sn=ae62dbad6234b3c4c7359543936974c7</link>
-      <guid>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069794&amp;idx=2&amp;sn=ae62dbad6234b3c4c7359543936974c7</guid>
-      <description>据机器之心报道，谷歌开源 TorchTPU，推动自家 TPU 成为 PyTorch 可直接使用的设备。报道提到，相关测试覆盖 4917 个模型，与 GPU 的结果有 97% 对齐；这有望降低开发者改用 TPU 的门槛，但不等于两种硬件已可完全互换。（来源：机器之心）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <title>Reddit 开源社区出台新规：禁发使用 AI 的项目</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban</link>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban</guid>
+      <description>The Verge 报道，Reddit 的 r/opensource 版主公布了新的投稿规则，其中禁止发布使用 AI 或由 AI 制作的项目。新规还涉及非英语使用者，引发的争议不只关乎 AI：一个以开放为名的社区，该如何划定投稿边界？（来源：The Verge）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>OpenAI：支撑超十亿 ChatGPT 用户的存储系统如何扩容</title>
-      <link>https://openai.com/index/scaling-storage-one-billion-users-part-two</link>
-      <guid>https://openai.com/index/scaling-storage-one-billion-users-part-two</guid>
-      <description>OpenAI 介绍了为 ChatGPT 扩容在线存储系统的工程实践，包括让不同用户可靠地共享系统资源、使用全球缓存，以及接入 Azure Cosmos DB。官方称相关改进使读取速度提升至原来的 12 倍；这一数字针对存储读取，并非所有聊天回答都会快 12 倍。（来源：OpenAI 官方）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <title>“AI 大妈”陪骗子聊天，消耗大量诈骗时间</title>
+      <link>https://www.huxiu.com/article/4899968.html?f=rss</link>
+      <guid>https://www.huxiu.com/article/4899968.html?f=rss</guid>
+      <description>虎嗅报道，一种能与骗子持续对话的“AI 大妈”被用于反诈尝试：它不急着挂断，而是让诈骗者把时间花在无效通话上。报道介绍称，相关对话累计达数百万次，折算消耗约 17 年诈骗时间；这一数字衡量的是占用时长，并不等于实际阻止的案件数量。（来源：虎嗅）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>OpenAI 与波兰 NASK 合作推进 AI 安全</title>
-      <link>https://openai.com/index/openai-nask-ai-safety-security-partnership</link>
-      <guid>https://openai.com/index/openai-nask-ai-safety-security-partnership</guid>
-      <description>OpenAI 宣布与波兰机构 NASK 建立合作，围绕 AI 安全、网络安全及技术研究加强防护。公告将目标指向更具韧性的数字生态，但现有简介没有列出具体产品或落地时间表；现阶段更值得关注的是双方后续会公开哪些实际成果。（来源：OpenAI 官方）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <title>Grok 公布 AI 生成作品《奥德赛》前七分钟</title>
+      <link>https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/</link>
+      <guid>https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/</guid>
+      <description>TechCrunch 报道，Grok 发布了 AI 生成作品《奥德赛》的前七分钟片段，让公众得以直接观看其影像生成效果。这段内容展示了 AI 制作较长视频的尝试；画面是否流畅之外，作品能否形成吸引人的叙事，仍是值得观察的问题。（来源：TechCrunch）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>研究发现：Grok 与 OpenAI 模型的选举推荐明显不同</title>
-      <link>https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/</link>
-      <guid>https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/</guid>
-      <description>TechCrunch 报道，一项研究要求 AI 模型在选举中做出选择：Grok 更多推荐共和党候选人，OpenAI 的 GPT 则更偏向民主党候选人。在近 500 场选举的测试中，两者超过九成的选择不一致；结果提示读者，不应把聊天机器人的政治回答当作中立投票指南。（来源：TechCrunch）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <title>人大等团队开源 TabClustPFN：给表格数据自动分组</title>
+      <link>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069889&amp;idx=3&amp;sn=be03ed61a5b5eccacdb6e68cce1c5210</link>
+      <guid>https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651069889&amp;idx=3&amp;sn=be03ed61a5b5eccacdb6e68cce1c5210</guid>
+      <description>机器之心报道，人大等团队开源了 TabClustPFN，尝试让用户输入一张表格，就能自动把相似数据分到同一组。以往完成这类任务通常需要选择方法并反复调整参数；这项研究的目标是降低使用门槛，但实际效果仍需结合具体数据检验。（来源：机器之心）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>PostgreSQL 19 延期发布，将增加测试版本</title>
-      <link>https://www.infoq.cn/article/Q6mgHWCSqV6KeZzee3NT</link>
-      <guid>https://www.infoq.cn/article/Q6mgHWCSqV6KeZzee3NT</guid>
-      <description>据 InfoQ 报道，数据库软件 PostgreSQL 19 原定 10 月 29 日发布，现推迟至 11 月 19 日，并计划在 11 月 12 日增加一个候选版本供社区验证。团队给出的原因是近期纳入的修复较多；报道也关注到，AI 辅助找错正在给人工修复与测试带来压力。（来源：InfoQ 推荐）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <title>Papermark Data Rooms：面向 AI 智能体的数据室</title>
+      <link>https://www.producthunt.com/products/papermark-2</link>
+      <guid>https://www.producthunt.com/products/papermark-2</guid>
+      <description>Product Hunt 上架了 Papermark Data Rooms，产品定位是可供 AI 智能体操作的安全数据室。它面向需要集中存放并分享资料的场景，重点在于让自动化助手参与资料处理；目前候选信息主要是产品简介，具体权限设计和使用效果仍需进一步了解。（来源：Product Hunt）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>Arc 浏览器将于 12 月关闭</title>
-      <link>https://www.solidot.org/story?sid=85692</link>
-      <guid>https://www.solidot.org/story?sid=85692</guid>
-      <description>The Browser Company 宣布，Arc 从 10 月 22 日起停止注册新账号，部分功能将于 11 月 23 日停用，应用预计在 12 月 22 日无法启动。公司此前已停止开发 Arc，转向 AI 驱动的浏览器 Dia；仍在使用 Arc 的读者应留意停用安排。（来源：Solidot）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <title>阿波罗经济学家：多数企业尚未从 AI 获得财务回报</title>
+      <link>https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/</link>
+      <guid>https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/</guid>
+      <description>TechCrunch 报道，阿波罗的一位经济学家认为，尽管企业大量投资 AI，科技行业以外的多数公司尚未看到相应的财务回报。这是对当前企业收益状况的判断，并非证明 AI 毫无用途；它也提醒读者区分工具使用率、工作效率和最终利润。（来源：TechCrunch）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
     <item>
-      <title>《蓝色星球 III》保留不完美画面，以凸显影像真实</title>
+      <title>《蓝色星球 III》在 AI 时代保留影像的“不完美”</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai</link>
       <guid>https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai</guid>
-      <description>The Verge 报道，BBC 的《蓝色星球 III》计划保留一些不够完美的镜头，而不是只呈现无瑕的自然影像。在 AI 生成画面越来越逼真的背景下，这种制作选择意在让观众更清楚地感受到：眼前的画面来自真实拍摄。（来源：The Verge）</description>
-      <pubDate>Sun, 25 Oct 2026 08:00:00 +0800</pubDate>
+      <description>The Verge 报道，BBC 的《蓝色星球 III》打算保留部分不够完美的自然影像，以呈现拍摄过程中的真实感。在 AI 能生成越来越精致画面的当下，这一制作选择让观众重新关注纪录片的可信度：镜头是否漂亮，与画面是否真实，并不是同一回事。（来源：The Verge）</description>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 +0800</pubDate>
     </item>
 </channel>
 </rss>

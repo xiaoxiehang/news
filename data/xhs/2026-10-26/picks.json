@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-26",
+  "date_str": "2026年10月26日",
+  "overview": "今天的热点，一边是 Gemini 协助发现常用 AI 算法的潜在问题，以及让表格自动分组的新研究；另一边，开源社区对 AI 生成内容的态度出现分歧。AI 防诈、影像生成和企业投资回报也受到关注，讨论焦点正从“能不能做”转向“是否可靠、是否有用”。",
+  "picks": [
+    {
+      "title": "阿波罗经济学家：多数企业尚未从 AI 获得财务回报",
+      "summary": "TechCrunch 报道，阿波罗的一位经济学家认为，尽管企业大量投资 AI，科技行业以外的多数公司尚未看到相应的财务回报。这是对当前企业收益状况的判断，并非证明 AI 毫无用途；它也提醒读者区分工具使用率、工作效率和最终利润。",
+      "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "“AI 大妈”陪骗子聊天，消耗大量诈骗时间",
+      "summary": "虎嗅报道，一种能与骗子持续对话的“AI 大妈”被用于反诈尝试：它不急着挂断，而是让诈骗者把时间花在无效通话上。报道介绍称，相关对话累计达数百万次，折算消耗约 17 年诈骗时间；这一数字衡量的是占用时长，并不等于实际阻止的案件数量。",
+      "url": "https://www.huxiu.com/article/4899968.html?f=rss",
+      "source": "虎嗅",
+      "category": "前沿动态"
+    },
+    {
+      "title": "人大等团队开源 TabClustPFN：给表格数据自动分组",
+      "summary": "机器之心报道，人大等团队开源了 TabClustPFN，尝试让用户输入一张表格，就能自动把相似数据分到同一组。以往完成这类任务通常需要选择方法并反复调整参数；这项研究的目标是降低使用门槛，但实际效果仍需结合具体数据检验。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=3&sn=be03ed61a5b5eccacdb6e68cce1c5210",
+      "source": "机器之心",
+      "category": "效率工具"
+    },
+    {
+      "title": "Papermark Data Rooms：面向 AI 智能体的数据室",
+      "summary": "Product Hunt 上架了 Papermark Data Rooms，产品定位是可供 AI 智能体操作的安全数据室。它面向需要集中存放并分享资料的场景，重点在于让自动化助手参与资料处理；目前候选信息主要是产品简介，具体权限设计和使用效果仍需进一步了解。",
+      "url": "https://www.producthunt.com/products/papermark-2",
+      "source": "Product Hunt",
+      "category": "效率工具"
+    },
+    {
+      "title": "Gemini 协助发现 Softmax 隐藏问题，PyTorch、JAX 被点名",
+      "summary": "机器之心报道，Gemini 协助发现了 Softmax 实现中的一个隐藏问题，并承担了大量相关实验；PyTorch、JAX 等常用框架也出现在讨论中。Softmax 是许多 AI 模型处理预测结果时会用到的基础方法，这起发现提醒业界：看似成熟的底层代码仍值得反复检查。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=1&sn=f243963ab47a3c32471ca7d3319ef4c6",
+      "source": "机器之心",
+      "category": "今日头条"
+    },
+    {
+      "title": "《蓝色星球 III》在 AI 时代保留影像的“不完美”",
+      "summary": "The Verge 报道，BBC 的《蓝色星球 III》打算保留部分不够完美的自然影像，以呈现拍摄过程中的真实感。在 AI 能生成越来越精致画面的当下，这一制作选择让观众重新关注纪录片的可信度：镜头是否漂亮，与画面是否真实，并不是同一回事。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai",
+      "source": "The Verge",
+      "category": "一句话"
+    },
+    {
+      "title": "Grok 公布 AI 生成作品《奥德赛》前七分钟",
+      "summary": "TechCrunch 报道，Grok 发布了 AI 生成作品《奥德赛》的前七分钟片段，让公众得以直接观看其影像生成效果。这段内容展示了 AI 制作较长视频的尝试；画面是否流畅之外，作品能否形成吸引人的叙事，仍是值得观察的问题。",
+      "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Reddit 开源社区出台新规：禁发使用 AI 的项目",
+      "summary": "The Verge 报道，Reddit 的 r/opensource 版主公布了新的投稿规则，其中禁止发布使用 AI 或由 AI 制作的项目。新规还涉及非英语使用者，引发的争议不只关乎 AI：一个以开放为名的社区，该如何划定投稿边界？",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban",
+      "source": "The Verge",
+      "category": "今日头条"
+    }
+  ]
+}

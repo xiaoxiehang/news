@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-25 01:50:54",
+  "fetched_at": "2026-10-26 01:52:19",
   "feeds": [
     {
       "name": "OpenAI 官方",
@@ -40,6 +40,24 @@
       "name": "机器之心",
       "items": [
         {
+          "title": "PyTorch、JAX都被点名！Softmax曝出隐藏Bug，Gemini立功",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=1&sn=f243963ab47a3c32471ca7d3319ef4c6",
+          "desc": "Gemini发现Bug、包揽大量实验。",
+          "published": "Sun, 25 Oct 2026"
+        },
+        {
+          "title": "Muse 能否帮 Meta 打赢翻身仗？",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=2&sn=961329a6795b7ba229a01c9f08a20237",
+          "desc": "Meta 在 Muse 的设计上做对了哪些事？",
+          "published": "Sun, 25 Oct 2026"
+        },
+        {
+          "title": "聚类也能「开箱即用」了！人大等团队开源TabClustPFN，给张表格就能自动分组",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=3&sn=be03ed61a5b5eccacdb6e68cce1c5210",
+          "desc": "聚类还要反复调参吗？",
+          "published": "Sun, 25 Oct 2026"
+        },
+        {
           "title": "RoboTwin第一、RoboDojo领跑：Physical AI的下一轮Scaling，为什么是Physics？",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069794&idx=1&sn=27a6d06d4f43e6c032d7f79db1222815",
           "desc": "厘清智能新成果：PrismWAM 与 RoboDoctor",
@@ -68,24 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069672&idx=2&sn=068a7cc38c194f505ebebf54e913d5fc",
           "desc": "竞争正在向模型之下的基础设施延伸。",
           "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "FP4 W/A+FP4 KV的强化学习也能「又快又稳」：阿里千问提出TRACE，Rollout最高加速5.4倍",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069672&idx=3&sn=6b461b4dbff4fd3f156ce081b60ac69e",
-          "desc": "用 Rollout 侧真实的 FP4 量化结果，反过来指导训练侧的舍入方向。",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "首发实测！鹅厂刚开放的「元宝搜索」，给开发者减负了！（附福利激活码）",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069516&idx=1&sn=2c2aa87e6fc360179ea20a6253cd2bd4",
-          "desc": "终于不用自己造轮子了！",
-          "published": "Thu, 22 Oct 2026"
-        },
-        {
-          "title": "田渊栋新公司首个模型亮相！AI全程参与、不到4个月从零造",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069516&idx=2&sn=c8828ee6931d4fb8aa6a093d9c964b0f",
-          "desc": "用AI研究系统开发AI模型。",
-          "published": "Thu, 22 Oct 2026"
         }
       ]
     },
@@ -93,10 +93,52 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "机器人IPO，门槛提高了",
-          "url": "https://www.huxiu.com/article/4900219.html?f=rss",
+          "title": "以后骗子最怕的，可能不是反诈中心，是一个特别能唠的“AI大妈”",
+          "url": "https://www.huxiu.com/article/4899968.html?f=rss",
+          "desc": "AI陪骗子聊了几百万次，白白消耗他们17年诈骗时间",
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
+          "title": "手把手教你用AI逆向现实世界，把一切改成自己喜欢的样子",
+          "url": "https://www.huxiu.com/article/4900366.html?f=rss",
+          "desc": "好的设计，应该符合人的认知和使用习惯，让东西更容易理解、更好用",
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
+          "title": "IPO暂缓，智元机器人何去何从？",
+          "url": "https://www.huxiu.com/article/4900375.html?f=rss",
           "desc": "",
-          "published": "Sun, 25 Oct 2026"
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
+          "title": "开源还是闭源？这场AI战争正在决定未来十年的资本流向！",
+          "url": "https://www.huxiu.com/article/4900374.html?f=rss",
+          "desc": "",
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
+          "title": "屠光绍：AI重构经济体系：K型分化与金融应对",
+          "url": "https://www.huxiu.com/article/4900371.html?f=rss",
+          "desc": "",
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
+          "title": "国务院定调AI就业：劳动密集型行业要“稳慎”",
+          "url": "https://www.huxiu.com/article/4900361.html?f=rss",
+          "desc": "",
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
+          "title": "离开华为的人：23位AI创业者，18家公司，一场门外的商业征程",
+          "url": "https://www.huxiu.com/article/4900357.html?f=rss",
+          "desc": "",
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
+          "title": "AI 最大的尴尬：客户要结果，却只肯为软件付费",
+          "url": "https://www.huxiu.com/article/4900358.html?f=rss",
+          "desc": "",
+          "published": "Mon, 26 Oct 2026"
         }
       ]
     },
@@ -133,6 +175,12 @@
       "name": "大模型智能",
       "items": [
         {
+          "title": "从白盒蒸馏、黑盒蒸馏，再到自蒸馏！深度理解 OPD 训练的本质",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557592&idx=1&sn=99ed19f13f9e82b016e1b4f88f91e2eb",
+          "desc": "这篇就从白盒蒸馏讲起，再看自蒸馏和黑盒蒸馏，最后谈OPD训练的本质。",
+          "published": "Mon, 26 Oct 2026"
+        },
+        {
           "title": "RoboTwin第一、RoboDojo领跑：Physical AI的下一轮Scaling，为什么是Physics？",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557585&idx=1&sn=a822dbe7750cb768a887e17b45773785",
           "desc": "厘清智能新成果：PrismWAM与RoboDoctor",
@@ -161,18 +209,18 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557561&idx=1&sn=a2aebf130b63e17e95a3dded50d636ea",
           "desc": "列举了RSI方法从深度学习借鉴的十一种机制：优化、反向传播、强化学习、元学习、蒸馏、正则化、数据增强、持续学习、剪枝、集成学习和对抗学习",
           "published": "Thu, 22 Oct 2026"
-        },
-        {
-          "title": "何恺明团队发布视觉原生Harness框架：赋予多模态模型“按需回看”的视觉记忆",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557554&idx=1&sn=dae573da61c282293eabb243bdf59944",
-          "desc": "",
-          "published": "Wed, 21 Oct 2026"
         }
       ]
     },
     {
       "name": "InfoQ 推荐",
       "items": [
+        {
+          "title": "四分之一PR是“AI垃圾”！Linux基金会发布新报告：AI写代码快了52%，开源维护者却更累了",
+          "url": "https://www.infoq.cn/article/9TSuUDxrUSGS26XTA2yB",
+          "desc": "AI 编程工具正在大幅缩短开发者写代码的时间，但开源社区可能正在为这种效率提升付出另一种代价。 10 月 20 日， Linux 基金会发布最新研究报告《Navigating Open Source Software Development in the Generative AI Era》 \"，调查生成式 AI 对开源软件开发、代码贡献和社区维护的影响。 报告给出了一组颇具反差的数据：受访者估计",
+          "published": "Sun, 25 Oct 2026"
+        },
         {
           "title": "智源众智 FlagOS 2.2 让前沿模型与多元算力协同演进",
           "url": "https://www.infoq.cn/article/mhdJwMMzYFedMFHKfHWs",
@@ -202,18 +250,24 @@
           "url": "https://www.infoq.cn/article/Lo9TLlRdvy4II38yaex0",
           "desc": "10月22日，科大讯飞披露最新开发者生态数据。目前讯飞开放平台开发者总数已经达到1187万，2026年大模型相关企业开发者同比增长超过104%。此外，按照讯飞以单次调用互动数超过1万衡量复杂任务的口径，平台上使用大模型处理复杂任务的用户占比，已经从此前不足10%快速提升至60%。 这意味着，现在企业开始把长链路、多任务和复杂上下文工作交给Agent，希望它能够真正进入业务流程并持续执行。 围绕这一",
           "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "奥特曼最新 45 分钟访谈：一年不写代码、压力大到不想起床，还嫌 ChatGPT 太谄媚",
-          "url": "https://www.infoq.cn/article/sI3z2UMCrB5PPVDWTsLo",
-          "desc": "如果有一天，AI 能够完成最复杂的数学证明、发现新的物理学规律，甚至找到重大疾病的治疗方法，人类还需要做什么？ 在 OpenAI CEO Sam Altman 看来，这已经不再是一个遥远的问题。随着 AI 开始参与真正的科学发现，人类正在进入一个新阶段。他预计，未来几年内，AI 有望帮助找到重大疾病的候选治疗方案。但相比医学进展，最让他个人感到兴奋的，反而是物理学领域可能出现的重大突破。 不过，A",
-          "published": "Fri, 23 Oct 2026"
         }
       ]
     },
     {
       "name": "The Verge",
       "items": [
+        {
+          "title": "r/opensource just banned AI, non-English speakers, and more",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban",
+          "desc": "The mods at r/opensource posted new submission rules that, among other things, banned projects that use AI. The post made Saturday evening opens by saying, \"If your project uses AI, is made by AI, or ",
+          "published": "2026-10-25T09:25"
+        },
+        {
+          "title": "Google’s AI search changes upended online publishing",
+          "url": "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
+          "desc": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more about AI's impact on the web, follow Emma Roth. The Stepback arrives in our subscribers' inbox",
+          "published": "2026-10-25T08:00"
+        },
         {
           "title": "Blue Planet III is keeping the rough edges in the age of AI",
           "url": "https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai",
@@ -225,18 +279,36 @@
           "url": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
           "desc": "On Thursday, Pennsylvania Governor Josh Shapiro signed the Artificial Intelligence Deceptive Advertising Act into law, requiring disclosures on AI-generated ads. The law requires any ad - whether it's",
           "published": "2026-10-24T14:32"
-        },
-        {
-          "title": "I hope Apple’s touchscreen MacBook takes some lessons from this Lenovo laptop",
-          "url": "https://www.theverge.com/report/1018131/apple-macbook-touchscreen-stylus-pencil-lenovo-laptop-analysis",
-          "desc": "It looks like the long-rumored touchscreen MacBook might actually get announced next week, and after using the Lenovo Yoga 9n for our testing of Nvidia's RTX Spark platform, it got me thinking: this i",
-          "published": "2026-10-24T10:00"
         }
       ]
     },
     {
       "name": "TechCrunch",
       "items": [
+        {
+          "title": "Grok releases the first seven minutes of its AI-generated ‘Odyssey’",
+          "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+          "desc": "The footage looks okay, as long as you're not seeking artistry, inspiration, or human interest.",
+          "published": "Sun, 25 Oct 2026"
+        },
+        {
+          "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+          "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+          "desc": "\"Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.\"",
+          "published": "Sun, 25 Oct 2026"
+        },
+        {
+          "title": "TechCrunch Mobility: Blue-green is the color of autonomy",
+          "url": "https://techcrunch.com/2026/10/25/techcrunch-mobility-blue-green-is-the-color-of-autonomy/",
+          "desc": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, the role AI is playing in it.",
+          "published": "Sun, 25 Oct 2026"
+        },
+        {
+          "title": "The hottest AI wearables and gadgets you should know about",
+          "url": "https://techcrunch.com/2026/10/25/the-hottest-ai-wearables-and-gadgets-you-should-know-about/",
+          "desc": "We compiled a list of all the hottest AI wearables, including Muse Charm, Bee, Friend, Plaud, and more.",
+          "published": "Sun, 25 Oct 2026"
+        },
         {
           "title": "Will AI expose the rickety infrastructure of the internet?",
           "url": "https://techcrunch.com/2026/10/24/will-ai-expose-the-rickety-infrastructure-of-the-internet/",
@@ -248,30 +320,6 @@
           "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
           "desc": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
           "published": "Sat, 24 Oct 2026"
-        },
-        {
-          "title": "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
-          "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
-          "desc": "A new study found Grok's AI overwhelmingly recommends Republican candidates while OpenAI's GPT favors Democrats, with the two AI models disagreeing in more than 90% of nearly 500 election races.",
-          "published": "Sat, 24 Oct 2026"
-        },
-        {
-          "title": "Here are the top AI agents that can live in your text messages",
-          "url": "https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/",
-          "desc": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
-          "published": "Sat, 24 Oct 2026"
-        },
-        {
-          "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
-          "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
-          "desc": "OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.",
-          "published": "Fri, 23 Oct 2026"
-        },
-        {
-          "title": "Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell",
-          "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/",
-          "desc": "The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a \"nap,\" and summersaulted on voice command.",
-          "published": "Fri, 23 Oct 2026"
         }
       ]
     },
@@ -308,52 +356,52 @@
       "name": "Product Hunt",
       "items": [
         {
+          "title": "Papermark Data Rooms",
+          "url": "https://www.producthunt.com/products/papermark-2",
+          "desc": "Secure data rooms your AI agents can run. Live in Discussion | Link",
+          "published": "2026-10-24T12:09"
+        },
+        {
+          "title": "Llama Windows",
+          "url": "https://www.producthunt.com/products/llama-windows",
+          "desc": "One local AI server for all your Windows apps Discussion | Link",
+          "published": "2026-10-23T19:40"
+        },
+        {
+          "title": "Specsight",
+          "url": "https://www.producthunt.com/products/specsight",
+          "desc": "Product observability for teams shipping fast with AI Discussion | Link",
+          "published": "2026-10-18T11:03"
+        },
+        {
+          "title": "Moli by Lexmount",
+          "url": "https://www.producthunt.com/products/lexmount-browser",
+          "desc": "The fastest headless browser for agents and harnesses Discussion | Link",
+          "published": "2026-10-12T23:39"
+        },
+        {
+          "title": "AgentGrid.io",
+          "url": "https://www.producthunt.com/products/agentgrid-io",
+          "desc": "Shared workspace for humans and agents Discussion | Link",
+          "published": "2026-10-24T22:39"
+        },
+        {
+          "title": "Yourcast 2.0",
+          "url": "https://www.producthunt.com/products/yourcast",
+          "desc": "AI summaries with tap-to-jump timestamps, right in Telegram Discussion | Link",
+          "published": "2026-10-24T07:42"
+        },
+        {
           "title": "LinkIntel",
           "url": "https://www.producthunt.com/products/linkintel",
           "desc": "Post insights delivered direct to your AI Discussion | Link",
           "published": "2026-10-14T14:47"
         },
         {
-          "title": "zCAD AI",
-          "url": "https://www.producthunt.com/products/zcad-ai",
-          "desc": "AI 3D that creates real parts, not just shapes Discussion | Link",
-          "published": "2026-10-15T08:16"
-        },
-        {
-          "title": "1Password for Agents",
-          "url": "https://www.producthunt.com/products/1password",
-          "desc": "Let AI agents sign in for you without seeing your passwords Discussion | Link",
-          "published": "2026-10-22T11:14"
-        },
-        {
-          "title": "AgentValley",
-          "url": "https://www.producthunt.com/products/agentvalley",
-          "desc": "Every Claude Code agent, at a glance, in your Mac's notch Discussion | Link",
-          "published": "2026-10-20T05:55"
-        },
-        {
-          "title": "sideOS.ai",
-          "url": "https://www.producthunt.com/products/sideos-ai",
-          "desc": "Local AI for dictation, meetings, background tasks and more Discussion | Link",
-          "published": "2026-10-23T06:28"
-        },
-        {
           "title": "myPip",
           "url": "https://www.producthunt.com/products/mypip-2",
           "desc": "Vibe code, publish, and monetize games with AI Discussion | Link",
           "published": "2026-10-15T10:34"
-        },
-        {
-          "title": "Context Engine",
-          "url": "https://www.producthunt.com/products/context-engine-2",
-          "desc": "One memory for your AI agents and human team members. Discussion | Link",
-          "published": "2026-10-19T03:05"
-        },
-        {
-          "title": "Monish",
-          "url": "https://www.producthunt.com/products/monish",
-          "desc": "Your AI agents, live on your iPhone lock screen Discussion | Link",
-          "published": "2026-10-22T07:38"
         }
       ]
     }
