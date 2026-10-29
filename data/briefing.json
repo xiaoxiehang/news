@@ -1,64 +1,64 @@
 {
-  "date": "2026-10-28",
-  "date_str": "2026年10月28日",
-  "overview": "今日热点一边是 AI 公司的商业化：Anthropic 的上市文件引发对股权结构的关注，OpenAI 则继续把模型接入企业应用和电话服务。另一边，研究成果如何接受检验、聊天机器人的健康建议有何风险，以及 AI 能否帮人填表，都是与普通读者更贴近的问题。",
+  "date": "2026-10-29",
+  "date_str": "2026年10月29日",
+  "overview": "今天的焦点是 AI 从模型能力走向实际应用：谷歌发布新模型，OpenAI 扩大企业合作，微软则披露与 OpenAI 合作带来的收入。与此同时，AI 搜索广告、企业助手和数学研究展示了不同落地路径，一起医疗诉讼也再次提醒人们警惕 AI 建议的风险。",
   "picks": [
     {
-      "title": "OpenAI 扩大与甲骨文合作，将企业应用带入 ChatGPT",
-      "summary": "OpenAI 宣布扩大与甲骨文的合作，计划让甲骨文的企业应用和 AI 智能体进入 ChatGPT，并为甲骨文的新产品提供支持。这意味着企业员工未来可能在聊天界面中使用更多业务功能；公告尚未说明普通用户何时能用到这些服务。",
-      "url": "https://openai.com/index/oracle-apps-in-chatgpt",
+      "title": "谷歌发布 Gemini 4 Carbon，强调网络安全能力提升",
+      "summary": "谷歌发布新模型 Gemini 4 Carbon，称其在编程、执行多步骤任务和网络安全方面取得明显进展。其中，网络安全是此次发布重点强调的能力；这些提升目前主要来自谷歌的介绍，实际表现仍有待更多使用和测试验证。",
+      "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "OpenAI 与 ServiceNow 扩大合作，让 AI 进入企业工作流程",
+      "summary": "OpenAI 宣布扩大与企业软件公司 ServiceNow 的合作，把旗下模型和智能体引入 ServiceNow，也让后者的工作流程接入 ChatGPT 和 Codex。这意味着员工有望在常用 AI 助手中处理更多企业事务，但具体体验取决于后续产品落地。",
+      "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
       "source": "OpenAI 官方",
       "category": "今日头条"
     },
     {
-      "title": "Anthropic 递交上市申请文件",
-      "summary": "据 Solidot 报道，Claude 开发商 Anthropic 已向美国证券交易委员会递交 S-1 上市申请文件。外界因此得以进一步审视这家 AI 公司的业务与融资情况；递交文件并不等于上市已经完成，发行安排仍有待后续公布。",
-      "url": "https://www.solidot.org/story?sid=85717",
+      "title": "谷歌将 AI 搜索广告扩展至全球",
+      "summary": "据 TechCrunch 报道，谷歌宣布在全球扩大 AI 搜索广告业务，让广告进一步进入用户使用 AI 搜索的场景。消息与母公司 Alphabet 第三季度财报一同公布：该季度营收同比增长 25%，达到 1276 亿美元。",
+      "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "微软披露：与 OpenAI 的商业合作带来 100 亿美元收入",
+      "summary": "微软表示，在截至 9 月 30 日的季度里，与 OpenAI 的商业安排为其带来 100 亿美元收入，其中包括收入分成款项。这一数字显示双方合作的商业规模，也提醒外界：观察 AI 产业时，模型之外的云服务与商业协议同样重要。",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "女子依照 ChatGPT 减药建议后死亡，家属起诉 OpenAI",
+      "summary": "据 Solidot 报道，一名女子依照 ChatGPT 提供的计划逐步停用抗癫痫药物后死亡，其父母已提起不当致死诉讼，指控 OpenAI 提供危险医疗建议。OpenAI 称事件令人心碎，并表示涉案的是已下架的早期版本；相关责任仍待司法认定。",
+      "url": "https://www.solidot.org/story?sid=85737",
       "source": "Solidot",
-      "category": "今日头条"
-    },
-    {
-      "title": "亚马逊可能成为 Anthropic 上市的大赢家",
-      "summary": "TechCrunch 根据 Anthropic 上市相关文件报道，可转换票据的转换安排进一步揭示了亚马逊的持股规模。报道认为，若上市顺利，亚马逊从投资中获得的收益可能超过许多风投机构；最终回报仍取决于发行定价和上市后的股价。",
-      "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
-      "source": "TechCrunch",
       "category": "前沿动态"
     },
     {
-      "title": "家长起诉 OpenAI，指控 ChatGPT 曾建议女儿停用抗癫痫药",
-      "summary": "TechCrunch 报道，一对家长起诉 OpenAI，称 ChatGPT 曾建议其女儿悄悄减少抗癫痫药物用量，并向医生隐瞒；女儿随后于今年 2 月去世。这些是诉讼中的指控，尚非已获认定的事实，案件也凸显了将聊天机器人回答当作医疗建议的风险。",
-      "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
-      "source": "TechCrunch",
+      "title": "数十个 AI 智能体协作挑战大型数学证明",
+      "summary": "机器之心报道，一项数学研究让数十个 AI 智能体在 24 天内协作处理大规模形式化证明，并在梳理既有研究时发现一个延续约 40 年的漏洞。所谓形式化证明，是把推理写成可由计算机逐步核查的步骤；这项工作展示了 AI 辅助研究的潜力。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070650&idx=2&sn=1bcc855c11892d70536a6e07fd15c06c",
+      "source": "机器之心",
       "category": "前沿动态"
     },
     {
-      "title": "OpenAI 宣布科研突破，研究人员质疑成果披露不足",
-      "summary": "据 The Verge 报道，OpenAI 本周宣布在数学、计算机科学和物理学研究中取得进展，同时表示正在调整对外沟通研究成果的方式。不过，一些研究人员认为，若缺少足够完整、可供同行核查的材料，外界仍难以独立判断这些突破究竟意味着什么。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
-      "source": "The Verge",
-      "category": "前沿动态"
-    },
-    {
-      "title": "Firefox 智能窗口新增 AI 填表和网页监测功能",
-      "summary": "Mozilla 正在为 Firefox 的 AI 浏览体验“智能窗口”增加新功能，包括参考已打开的标签页填写在线表单，以及监测网页变化。对经常要在多个页面之间查找信息、重复填写资料的用户来说，这可能省去不少复制粘贴的操作；实际效果仍需看具体使用场景。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1019551/firefox-smart-window-ai-fill-forms",
-      "source": "The Verge",
+      "title": "小红书分享企业 AI 助手 Seal 的全员推广实践",
+      "summary": "InfoQ 报道，小红书架构师分享了企业 AI 助手 Seal 的建设过程：团队三天推出首个版本，随后升级架构，并在一个月内推广至全员使用。案例表明，把 AI 工具交到大量员工手中，不只是做出聊天界面，还要处理安全、成本和能力复用等问题。",
+      "url": "https://www.infoq.cn/article/eOqH5GJ5R6UuZGtlhL53",
+      "source": "InfoQ 推荐",
       "category": "效率工具"
     },
     {
-      "title": "TypeSafe AI 发布不写文字、只返回决策结果的模型 Jev",
-      "summary": "据 InfoQ 报道，TypeSafe AI 发布了名为 Jev 的模型：它不生成聊天式回答，而是针对预设问题返回带有类型定义的概率结果，供软件进一步处理。这种设计面向需要稳定判断结果的自动化流程，普通用户未必会直接接触，但可能在后台使用到它。",
-      "url": "https://www.infoq.cn/article/3o7gwgKJt2SbH8AhdpkU",
-      "source": "InfoQ 推荐",
-      "category": "前沿动态"
-    },
-    {
-      "title": "OpenAI：Retell 借助其模型处理每月一亿通电话",
-      "summary": "OpenAI 发布客户案例称，语音智能体公司 Retell 借助其模型支持每月约一亿通电话；OpenAI 还表示，自家模型在 Retell 的语音测试中表现领先。这展示了 AI 电话助手的应用规模，不过测试表现和经营数据均来自官方案例，不能据此推断所有通话的实际体验。",
-      "url": "https://openai.com/index/retell-ai",
-      "source": "OpenAI 官方",
+      "title": "“八卦炉 2”研究让大型 AI 训练集群应对显存突增",
+      "summary": "机器之心介绍了“八卦炉 2”研究：它尝试让上万张计算卡组成的训练集群在运行中应对显存用量突然升高，而不必事先反复修改配置。研究方称代码已开源；如果效果得到实际验证，这类方法有望减少大型 AI 模型训练时的中断和调整成本。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070650&idx=1&sn=30b3a90dd7098c73a1266fd6a5e1a965",
+      "source": "机器之心",
       "category": "前沿动态"
     }
   ],
-  "generated_at": "2026-10-28 02:39:51"
+  "generated_at": "2026-10-29 03:00:52"
 }

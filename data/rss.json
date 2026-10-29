@@ -1,9 +1,27 @@
 {
-  "fetched_at": "2026-10-28 02:39:25",
+  "fetched_at": "2026-10-29 03:00:20",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
+        {
+          "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+          "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+          "desc": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
+          "published": "Wed, 28 Oct 2026"
+        },
+        {
+          "title": "The future of the firm",
+          "url": "https://openai.com/index/the-future-of-the-firm",
+          "desc": "How AI might enter the org chart—beneath, beside, and between us.",
+          "published": "Wed, 28 Oct 2026"
+        },
+        {
+          "title": "Legora is building the agentic operating system for legal work",
+          "url": "https://openai.com/index/legora",
+          "desc": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
+          "published": "Wed, 28 Oct 2026"
+        },
         {
           "title": "Retell uses OpenAI models to help power 100M monthly calls",
           "url": "https://openai.com/index/retell-ai",
@@ -15,30 +33,30 @@
           "url": "https://openai.com/index/oracle-apps-in-chatgpt",
           "desc": "OpenAI and Oracle are expanding their partnership to bring business applications and AI agents into ChatGPT and power new Oracle offerings.",
           "published": "Tue, 27 Oct 2026"
-        },
-        {
-          "title": "How Check Point accelerates vulnerability research with Daybreak",
-          "url": "https://openai.com/index/check-point-daybreak",
-          "desc": "With OpenAI Daybreak, Check Point speeds up the research behind new security protections, enabling its analysts to turn vulnerability intelligence into customer defenses faster.",
-          "published": "Tue, 27 Oct 2026"
-        },
-        {
-          "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
-          "url": "https://openai.com/index/greptile-code-review-codex-astra",
-          "desc": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.",
-          "published": "Mon, 26 Oct 2026"
-        },
-        {
-          "title": "Working with academic communities to build scientific understanding",
-          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
-          "desc": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
-          "published": "Mon, 26 Oct 2026"
         }
       ]
     },
     {
       "name": "机器之心",
       "items": [
+        {
+          "title": "SC26 顶会论文：八卦炉 2—— 让万卡集群学会临场应变",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070650&idx=1&sn=30b3a90dd7098c73a1266fd6a5e1a965",
+          "desc": "运行时自适应化解显存尖峰，无需修改配置，代码已开源",
+          "published": "Wed, 28 Oct 2026"
+        },
+        {
+          "title": "数十agent，24天挑战数学界巨型工程，还揪出40年前漏洞",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070650&idx=2&sn=1bcc855c11892d70536a6e07fd15c06c",
+          "desc": "这一次，AI不仅完成了大规模数学形式化证明，还在前人的研究中找到了新的突破口。",
+          "published": "Wed, 28 Oct 2026"
+        },
+        {
+          "title": "95后创业者推动设立太空算力科研基金，院士点赞硬科技企业创新担当",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070650&idx=3&sn=0ea3e7726522f258551cc543b8e5c8d4",
+          "desc": "基金重点支持颠覆性技术探索与工程应用落地！",
+          "published": "Wed, 28 Oct 2026"
+        },
         {
           "title": "人类数据如何变成机器人真实能力？Ropedia重磅发布六项研究成果",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070489&idx=1&sn=979e5eb39baa3b368af94c9c73dd2afc",
@@ -68,24 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070119&idx=2&sn=bb57ff281605456e1b9a19fdff11ef66",
           "desc": "对「苦涩的教训」的又一次致敬？",
           "published": "Mon, 26 Oct 2026"
-        },
-        {
-          "title": "先在平行世界里试一试，机器人再动手：清华提出ParallelWorld",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070119&idx=3&sn=0b5bcfa3dbbba88884cf9dbff0a0c6a9",
-          "desc": "ParallelWorld 将多步预演引入具身智能体的高层规划，将任务成功率从 56% 提升至 83%。",
-          "published": "Mon, 26 Oct 2026"
-        },
-        {
-          "title": "PyTorch、JAX都被点名！Softmax曝出隐藏Bug，Gemini立功",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=1&sn=f243963ab47a3c32471ca7d3319ef4c6",
-          "desc": "Gemini发现Bug、包揽大量实验。",
-          "published": "Sun, 25 Oct 2026"
-        },
-        {
-          "title": "Muse 能否帮 Meta 打赢翻身仗？",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=2&sn=961329a6795b7ba229a01c9f08a20237",
-          "desc": "Meta 在 Muse 的设计上做对了哪些事？",
-          "published": "Sun, 25 Oct 2026"
         }
       ]
     },
@@ -93,58 +93,70 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "Anthropic招股书划重点：分享关于AI生意和组织的10件事",
-          "url": "https://www.huxiu.com/article/4900977.html?f=rss",
+          "title": "AI时代，老登也更新了语言包",
+          "url": "https://www.huxiu.com/article/4901331.html?f=rss",
+          "desc": "这股熟悉的登味儿，像不像你身边的谁？",
+          "published": "Thu, 29 Oct 2026"
+        },
+        {
+          "title": "AI时代可能催生很多不那么AI的工作机会",
+          "url": "https://www.huxiu.com/article/4901305.html?f=rss",
           "desc": "",
-          "published": "Wed, 28 Oct 2026"
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "湾区爱情故事：锁定期里的硅谷娇妻",
-          "url": "https://www.huxiu.com/article/4900965.html?f=rss",
-          "desc": "眼下旧金山的约会，是做 AI 的男性在主导",
-          "published": "Wed, 28 Oct 2026"
-        },
-        {
-          "title": "美国科技观察家：AI 恐慌诡异地类似早期资本主义诞生时的焦虑",
-          "url": "https://www.huxiu.com/article/4900964.html?f=rss",
+          "title": "借助AI，老干妈一年营收54亿",
+          "url": "https://www.huxiu.com/article/4901301.html?f=rss",
           "desc": "",
-          "published": "Wed, 28 Oct 2026"
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "Anthropic招股书：暂时赚钱，但没算力也是给云厂商打工",
-          "url": "https://www.huxiu.com/article/4900959.html?f=rss",
+          "title": "Gemini 4 Carbon能给谷歌挽尊吗？",
+          "url": "https://www.huxiu.com/article/4901291.html?f=rss",
           "desc": "",
-          "published": "Wed, 28 Oct 2026"
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "医疗AI诊断：为什么很难成为一门独立生意？",
-          "url": "https://www.huxiu.com/article/4900954.html?f=rss",
+          "title": "公司以AI之名拿走了她的工作后，她最信任的AI让她丢了性命",
+          "url": "https://www.huxiu.com/article/4901296.html?f=rss",
           "desc": "",
-          "published": "Wed, 28 Oct 2026"
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "老干妈否认AI裁员传闻，去年营收54亿创历史新高",
-          "url": "https://www.huxiu.com/article/4900795.html?f=rss",
-          "desc": "老干妈因AI质检引发裁员争议，公司回应",
-          "published": "Wed, 28 Oct 2026"
-        },
-        {
-          "title": "史上最大IPO临门，腾讯、阿里、字节抢卡：Anthropic和中国大厂一起为算力上头",
-          "url": "https://www.huxiu.com/article/4900952.html?f=rss",
+          "title": "魏尚进对话谢丹夏、刘楚：AI开源是门什么生意？一场关于AI竞争与未来十年的对话",
+          "url": "https://www.huxiu.com/article/4901293.html?f=rss",
           "desc": "",
-          "published": "Wed, 28 Oct 2026"
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "SpaceX的算力宏图",
-          "url": "https://www.huxiu.com/article/4900951.html?f=rss",
+          "title": "谁在瓦解美国的芯片管控？",
+          "url": "https://www.huxiu.com/article/4901278.html?f=rss",
           "desc": "",
-          "published": "Wed, 28 Oct 2026"
+          "published": "Thu, 29 Oct 2026"
+        },
+        {
+          "title": "OpenAI联合创始人：全球只有5000人站在AI最前沿……",
+          "url": "https://www.huxiu.com/article/4901290.html?f=rss",
+          "desc": "",
+          "published": "Thu, 29 Oct 2026"
         }
       ]
     },
     {
       "name": "Solidot",
       "items": [
+        {
+          "title": "女子信任 ChatGPT 的用药决策，结果因此猝死",
+          "url": "https://www.solidot.org/story?sid=85737",
+          "desc": "一名住在西雅图的 31 岁华人女子，因依照 ChatGPT 提供的逐日减药计划，自行将抗癫痫药物逐步减量至停药后死亡。其父母向旧金山高等法院提起不当致死诉讼，控告 OpenAI 及其 CEO Sam Altman，指 ChatGPT 无照行医、提供危险且不准确的医疗建议。OpenAI 回应称这是“令人心碎的事件”，但涉案的是已经下架的早期版本。死者名为万博文(Bowen Wan)，来自江苏，毕业于",
+          "published": "Wed, 28 Oct 2026"
+        },
+        {
+          "title": "加州亿万富翁投入逾 2.93 亿美元反对亿万富翁税",
+          "url": "https://www.solidot.org/story?sid=85736",
+          "desc": "统计数据显示，至少 30 位加州亿万富翁累计投入逾 2.93 亿美元反对亿万富翁税。亿万富翁税将对任何身价逾 10 亿美元的加州居民一次性征收 5% 的税，该税将用于医保和教育等项目。加州是全美亿万富翁人数最多的州，总数超过 200 人，很多人在 AI 热下积累了巨额财富。在反对该税的亿万富翁中，Google 联合创始人 Sergey Brin 出资最多，投入巨资的还有 Google 前 CEO ",
+          "published": "Wed, 28 Oct 2026"
+        },
         {
           "title": "维基百科如何清理 AI 生成文本",
           "url": "https://www.solidot.org/story?sid=85727",
@@ -175,6 +187,12 @@
       "name": "大模型智能",
       "items": [
         {
+          "title": "史曜睿@中国科学技术大学-从长程执行到持续进化：构建自我演进的大模型智能体",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557611&idx=1&sn=782d8251fd48002b78a0e367548a7bf9",
+          "desc": "本期MLNLP学术Talk邀请了中国科学技术大学二年级博士研究生史曜睿在2026年10月31日9:00-10:00为我们带来“从长程执行到持续进化：构建自我演进的大模型智能体”的主题报告。",
+          "published": "Thu, 29 Oct 2026"
+        },
+        {
           "title": "KV Cache被压成常数！OCR开源新王：页数没上限，缓存砍96%",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557606&idx=1&sn=462d5d78de2fa8e6b275618cd6e85d30",
           "desc": "OCR3.0时代，来了",
@@ -203,12 +221,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557578&idx=1&sn=7feb43d8ec7f91a71971fbea2d590c37",
           "desc": "本期MLNLP学术Talk邀请了南京大学LAMDA实验室博士研究生杨骁文在2026年10月24日9:00-10:00为我们带来“面向通用智能体的环境工程：CompoWorld与Skill2Env的合成、扩展与训练”的主题报告。",
           "published": "Sat, 24 Oct 2026"
-        },
-        {
-          "title": "MLNLP第四十五次学术研讨会开始报名｜上海人工智能实验室、中国科学技术大学、英国伦敦国王学院、南京航空航天大学等知名学者重磅来袭！",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557571&idx=1&sn=daac7e7076524f199b6ebec9e6764f37",
-          "desc": "MLNLP社区将在10月25日于线上举办第四十五次学术研讨会，欢迎大家参加。",
-          "published": "Fri, 23 Oct 2026"
         }
       ]
     },
@@ -216,40 +228,40 @@
       "name": "InfoQ 推荐",
       "items": [
         {
-          "title": "在AI时代如何提升软件工程能力",
-          "url": "https://www.infoq.cn/article/Qwr9oqOSAdmi1YibHVWr",
-          "desc": "软件工程师的技能培养需要放慢节奏。工具和AI可以加速工作成果的交付，但它们未必能支持技能的培养。 Chelsea Troy \"在 Craft \"大会上的演讲 “AI时代的程序员进阶”（Leveling up as a Programmer in the Age of AI） \"中提到了这一点。工程师必须理解系统是如何运作的，才能真正学到东西。资深开发者可以通过运用学习技巧来指导初级开发者。 软件工",
-          "published": "Wed, 28 Oct 2026"
+          "title": "AI 用起来了，业务价值谁来打分？",
+          "url": "https://www.infoq.cn/article/LLbRSSwTyvqTpFsaJs3v",
+          "desc": "10 月 23 日晚，“极客时间 9 周年 × QCon 上海同行之夜”在上海举行。活动以“AI 落地见真章”为主题，邀请 zoowork.ai 联合创始人徐文浩、奇点智能研究院研究员兼首席技术咨询师吴咏炜、知名游戏公司业务质量负责人何纯等嘉宾，与技术从业者、企业实践者及用户展开交流。本次活动由极客邦科技副总裁、极客时间首席专家尹会生主持。 当 AI 从“要不要用”进入“用出了什么价值”的新阶段，",
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "TypeSafe AI发布Jev：一种只返回类型化概率而非文本的决策模型",
-          "url": "https://www.infoq.cn/article/3o7gwgKJt2SbH8AhdpkU",
-          "desc": "前OpenAI研究员Diogo Almeida创立的旧金山AI实验室 TypeSafe AI \"发布了 Jev \"，这是其所谓的System One Models中的首款产品。Jev不生成文本，而是返回带有类型的概率化决策，软件可以直接据此采取行动。 调用方会发送一段状态信息（可以是字符串或结构化数据）以及一组带有类型定义的问题。Jev会在单次并行处理中对它们进行全部评估，并返回 Choice（选",
-          "published": "Tue, 27 Oct 2026"
+          "title": "从三天Demo到一个月全员可用：小红书企业级AI助理Seal的规模化实践",
+          "url": "https://www.infoq.cn/article/eOqH5GJ5R6UuZGtlhL53",
+          "desc": "在 AICon 全球人工智能开发与应用大会上，小红书架构师孟洪进分享了企业级 AI 个人助理 Seal 的建设实践。春节前，小红书团队基于 OpenClaw 启动内测，只用三天推出第一个版本；在验证产品价值后，又迅速完成架构升级和规模化推广，最终在一个月内实现全员覆盖。 从 Demo 走向万级用户，难点并不只是把 Agent 部署起来。企业还必须解决安全、成本、记忆、能力复用和产品生态等一系列问题",
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "Docker Cloud Sandboxes在笔记本和云端之间提供一致的沙箱抽象",
-          "url": "https://www.infoq.cn/article/gXKvW3g4KXhTTiIaJFkl",
-          "desc": "Docker Cloud Sandboxes为在Docker管理的基础设施上运行AI编码智能体（AI coding agents）提供了安全的托管执行环境 \"。该平台基于硬件强制隔离的microVM构建，提供了一致的执行环境和统一的CLI工作流，使工作负载能够在本地机器与云端之间无缝迁移。 Docker Cloud Sandboxes是 Docker Sandboxes \"的演进版本。Docker",
-          "published": "Tue, 27 Oct 2026"
+          "title": "活动回顾｜InfoQ AI 侦察团的实战一天：企业 AI 如何走向落地？",
+          "url": "https://www.infoq.cn/article/g7TTtqzU1qyQXooXFQGN",
+          "desc": "10 月 22 日，由 InfoQ 极客传媒主办，联合中欧国际工商学院 EMBA 课程部、独角兽创业营、TGO 鲲鹏会共同发起的&nbsp;InfoQ AI 侦察团 @QCon 上海 2026&nbsp;首次集结。 从 QCon 上海主论坛，到午餐圆桌、技术专场和闭门私董会，成员们在一天中听技术、聊实践、谈问题，也尝试从其他同侪的经验中寻找企业 AI 落地的解决思路。 AI 侦察团的每个环节各有亮",
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "Kubernetes 1.37发布：稳定版Metrics API和Beta版Rootless Kubelet",
-          "url": "https://www.infoq.cn/article/TrI8l3CYeAJER9tgR5Jt",
-          "desc": "云原生计算基金会（CNCF）发布了Kubernetes 1.37版本，该版本命名为“Garhwal”，重点强调稳定性、安全性以及AI/ML工作负载优化。 1.37版本的一个主要特性是Metrics API正式发布（general availability，GA）。metrics.k8s.io API提供了一种监控和衡量节点与Pod健康状况的统一方式，从而支持 水平Pod自动扩缩容器（Horizon",
-          "published": "Tue, 27 Oct 2026"
+          "title": "告别 Kafka 中转，让实时数据更快服务业务分析 ｜ 技术实践",
+          "url": "https://www.infoq.cn/article/ii1qFkWaDFZudHSL1lIM",
+          "desc": "2026 年，智能体将在企业级应用中取得哪些实质性突破？ 点击下载 \"《2026 年 AI 与数据发展预测》白皮书，获悉专家一手前瞻，抢先拥抱新的工作方式！ 多年来，将流式数据写入 Snowflake 的默认架构几乎一直没变：应用生成事件，Kafka（或 Kinesis、Pub/Sub）负责缓冲，再由连接器将数据写入 Snowflake。消息总线的存在只是为了把数据落到目标位置。它不是为了将数据分",
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "中科慧灵完成数亿元A++轮融资：制鞋机器人订单超 4 亿元，具身智能开始拼量产交付",
-          "url": "https://www.infoq.cn/article/2svt5BbWUOHbADdo0UZo",
-          "desc": "近日，聚焦人形机器人与具身智能核心技术研发及产业化应用的北京中科慧灵机器人技术有限公司（以下简称“中科慧灵”），完成数亿元人民币A++轮融资。本轮融资由知来投资、涌铧投资、茂天投资、元禾辰坤、国科科智、鲁宁投资等机构联合投资。投资方涵盖市场化股权投资机构、专业母基金及产业投资平台，投资布局涉及人工智能、硬科技、先进制造等领域。 &nbsp; 2025年6月，中科慧灵曾完成由精密制造企业蓝思科技领投",
-          "published": "Mon, 26 Oct 2026"
+          "title": "优化软件工作流：探索技术带来的根本性影响",
+          "url": "https://www.infoq.cn/article/QDQLUs4cCqLqC9WlvAyY",
+          "desc": "软件只有在发布后才有价值；因此，加快发布节奏至关重要。在 Craft Conference 大会 \"上，Titus Winters 发表了题为“ 软件工作流优化 \"”的演讲。他指出，开发、部署和运维需要不同的思维方式、考核指标和投入。他提到了影响技术领域的四个方面：产品成功、计算能力、工程能力以及战略创新。他认为，最大的成本在于人力，而非计算资源，而人力成本往往未被充分衡量。他强调，人工智能促使工",
+          "published": "Thu, 29 Oct 2026"
         },
         {
-          "title": "让 AI 从需求一路干到上线，软件开发组织要变了？",
-          "url": "https://www.infoq.cn/article/b32Mw2zaPrxyJ6ChePD5",
-          "desc": "过去两年，AI Coding 几乎成为软件开发者的标配。无论是代码补全、函数生成，还是 Bug 修复、代码重构，AI 都在不断提高开发人员的工作效率。 但一个值得注意的现象是，开发者写代码的速度越来越快，企业的软件项目交付效率却未必同步提升。 美国软件工程数据分析与研发效能管理公司 Faros AI 分析了超过 1 万名开发者、1255 个软件工程团队的工作流数据，涵盖版本控制、代码审查、任务管理",
-          "published": "Mon, 26 Oct 2026"
+          "title": "亚马逊云科技开源智能体“决策器”和“安全箱”，但并发与冷启动仍待解决",
+          "url": "https://www.infoq.cn/article/YmgmEh686wTClmj3PY8o",
+          "desc": "亚马逊云科技推出了两个面向 AI 智能体开发的开源项目： Strands Decider 2B \" 是一个用于在智能体工作流中作出决策的小型模型， Strands Box \" 则是一个用于控制智能体执行的沙箱。两个项目分别解决了构建能够使用工具、执行代码并与外部系统交互的智能体时所面临的不同问题。 Strands Decider 2B \" 是一个拥有 20 亿参数的模型，旨在从预定义选项中进行选择",
+          "published": "Thu, 29 Oct 2026"
         }
       ]
     },
@@ -257,28 +269,28 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
-          "desc": "On Monday, OpenAI announced impressive breakthroughs in mathematics, computer science, and physics, along with what the company says is an evolving approach to communicating its findings. But despite ",
-          "published": "2026-10-27T16:48"
+          "title": "Anduril now says its BlueChip laptop will meet Buy American standards at launch",
+          "url": "https://www.theverge.com/policy/1021554/anduril-bluechip-65-percent-domestic-buy-american",
+          "desc": "On Tuesday, defense contractor Anduril and chipmaker Qualcomm announced a partnership to build laptops entirely in the United States, starting with a single model in 2027. They also announced a \"long-",
+          "published": "2026-10-28T22:22"
         },
         {
-          "title": "VisionQuest is what happens when AI really goes rogue",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1017064/visionquest-marvel-rogue-ai",
-          "desc": "In Marvel's VisionQuest, a superpowered robot tries to better understand humanity by getting lost in elaborate, digital daydreams in which he and other artificial intelligence-powered beings live toge",
-          "published": "2026-10-27T13:30"
+          "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1021644/adam-mosseri-instagram-ai-negativity",
+          "desc": "Asked about AI and the trend of college students booing tech CEOs at graduation ceremonies, Instagram head Adam Mosseri acknowledged in an interview that a lot of people really don't like AI, and it's",
+          "published": "2026-10-28T19:05"
         },
         {
-          "title": "Anthropic’s elaborate plan to keep Wall Street at bay",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety",
-          "desc": "Anthropic wants to have it both ways. With its impending IPO, it wants to tap the vast riches of the public markets and insists it doesn't want to compromise its core mission of developing AI safely a",
-          "published": "2026-10-27T12:51"
+          "title": "Google says its investments in AI are driving more searches",
+          "url": "https://www.theverge.com/tech/1020811/alphabet-google-earnings-q3-2026",
+          "desc": "Google parent company Alphabet says that its AI investments are leading to a big growth in searches year-over-year, as noted in its Q3 2026 earnings today. \"Our AI investments are driving overall Sear",
+          "published": "2026-10-28T16:22"
         },
         {
-          "title": "Firefox’s Smart Window adds AI form filling and webpage monitoring",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1019551/firefox-smart-window-ai-fill-forms",
-          "desc": "Mozilla is updating Smart Window - Firefox's AI-powered browsing experience - with a new feature that can help you fill out online forms based on your open tabs. As an example, Mozilla says Smart Wind",
-          "published": "2026-10-27T12:14"
+          "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+          "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+          "desc": "Google has released its latest frontier model, Gemini 4 Carbon, offering \"significant gains\" in coding, agentic tasks, and cybersecurity. In an announcement on Wednesday, Google highlights Carbon's to",
+          "published": "2026-10-28T16:03"
         }
       ]
     },
@@ -286,46 +298,64 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "VCs will make billions on Anthropic’s IPO, but Amazon is set to make much (much) more",
-          "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
-          "desc": "Massive note conversions reveal the true extent of Amazon's ownership in Anthropic.",
+          "title": "Google expands AI Search ads globally as core ad growth slows",
+          "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
+          "desc": "The announcement came alongside parent company Alphabet's third-quarter earnings report, which saw revenue grow 25% year over year to $127.6 billion.",
           "published": "Wed, 28 Oct 2026"
         },
         {
-          "title": "Parents sue OpenAI, alleging GPT-4o coached their daughter off seizure medication",
-          "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
-          "desc": "A family is suing OpenAI, saying ChatGPT coached their daughter to quietly taper off her seizure medication and keep it from her doctors before she died in February.",
-          "published": "Tue, 27 Oct 2026"
+          "title": "Microsoft recorded $10 billion in revenue from OpenAI",
+          "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+          "desc": "Microsoft said it made $10 billion in revenue from commercial arrangements with OpenAI, including revenue-sharing payments, in the quarter ending September 30. It underscores the still-enormous financ",
+          "published": "Wed, 28 Oct 2026"
         },
         {
-          "title": "The data center boom has an upside: innovation for the US grid",
-          "url": "https://techcrunch.com/2026/10/27/the-data-center-boom-has-an-upside-innovation-for-the-us-grid/",
-          "desc": "As the AI boom stresses the existing power grid, all sorts of new opportunities for grid modernization are also emerging as a result, industry insiders say.",
-          "published": "Tue, 27 Oct 2026"
+          "title": "Microsoft hits 10 quarters of record-breaking revenue in a row",
+          "url": "https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/",
+          "desc": "Whatever the future of AI might be, the current situation is still very good for Microsoft. The tech giant reported yet another record for quarterly revenue on Wednesday: $92.3 billion, a 19% increase",
+          "published": "Wed, 28 Oct 2026"
         },
         {
-          "title": "Guidewire buys Hyperexponential for $1.7B in cash",
-          "url": "https://techcrunch.com/2026/10/27/guidewire-buys-hyperexponential-for-1-7b-in-cash/",
-          "desc": "The deal, expected to close sometime next year, is to help bring AI agents to work alongside humans to underwrite, analyze, and price decisions.",
-          "published": "Tue, 27 Oct 2026"
+          "title": "Hacker stole personnel data about thousands of Homeland Security employees, including CBP and ICE agents",
+          "url": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents/",
+          "desc": "A hacker obtained personally identifiable information about more than 40,000 Homeland Security staffers, which has since been published online.",
+          "published": "Wed, 28 Oct 2026"
         },
         {
-          "title": "Bank of America kindly asks that you don’t share your banking password with your AI assistant",
-          "url": "https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/",
-          "desc": "The banking giant reminds customers that \"you're responsible for activity\" resulting from your AI agents' access.",
-          "published": "Tue, 27 Oct 2026"
+          "title": "Anthropic just launched tools to show companies what their AI spending is buying",
+          "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+          "desc": "The frontier lab is lifting the curtain on how users spend money on its models ahead of a planned IPO.",
+          "published": "Wed, 28 Oct 2026"
         },
         {
-          "title": "Who’s really in charge at Anthropic after the IPO?",
-          "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/",
-          "desc": "Here's a clear explanation of Anthropic's incredibly complex governance structure.",
-          "published": "Tue, 27 Oct 2026"
+          "title": "As AI agents reshape the web, Google opens Gemini and Search to more apps",
+          "url": "https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/",
+          "desc": "A new developer platform will let businesses bring their services to Google's AI experiences, potentially changing how consumers discover and use apps.",
+          "published": "Wed, 28 Oct 2026"
         }
       ]
     },
     {
       "name": "MIT 科技评论",
       "items": [
+        {
+          "title": "Creating AI value with enterprise context",
+          "url": "https://www.technologyreview.com/2026/10/28/1147709/creating-ai-value-with-enterprise-context/",
+          "desc": "Across a business, any number of AI platforms, systems, and tools may be at work simultaneously—for example, AI-powered customer platforms, conversational assistants, and workflow and process automati",
+          "published": "Wed, 28 Oct 2026"
+        },
+        {
+          "title": "The Download: dead startups fueling AI and interspecies communication",
+          "url": "https://www.technologyreview.com/2026/10/28/1147767/the-download-dead-startups-fueling-ai-interspecies-communication/",
+          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. AI labs are buying data from dead startups to trai",
+          "published": "Wed, 28 Oct 2026"
+        },
+        {
+          "title": "Pairing industrial AI autonomy and human control",
+          "url": "https://www.technologyreview.com/2026/10/28/1147637/pairing-industrial-ai-autonomy-and-human-control/",
+          "desc": "",
+          "published": "Wed, 28 Oct 2026"
+        },
         {
           "title": "The Download: Anthropic’s IPO, smarter power grids, and exercise pills",
           "url": "https://www.technologyreview.com/2026/10/27/1147693/the-download-anthropic-ipo-smarter-power-grids-exercise-pills/",
@@ -343,24 +373,6 @@
           "url": "https://www.technologyreview.com/2026/10/26/1147672/will-the-real-anthropic-please-stand-up/",
           "desc": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first,&#160;sign up here. After weeks of frenzied speculation, Anthropic has filed ",
           "published": "Mon, 26 Oct 2026"
-        },
-        {
-          "title": "The Download: everyday AI harms and the race to nuclear spaceflight",
-          "url": "https://www.technologyreview.com/2026/10/26/1147650/the-download-everyday-ai-harms-nuclear-spaceflight/",
-          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Opinion: The focus on AI safety disasters ignores ",
-          "published": "Mon, 26 Oct 2026"
-        },
-        {
-          "title": "The focus on AI safety disasters ignores everyday harms",
-          "url": "https://www.technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms/",
-          "desc": "Consider what passes for success in technology policy. An AI company promises that its chatbot will not encourage suicide. A social media platform makes it more difficult for children to buy fentanyl.",
-          "published": "Mon, 26 Oct 2026"
-        },
-        {
-          "title": "Designing an AI serving harness built to last",
-          "url": "https://www.technologyreview.com/2026/10/22/1146109/designing-an-ai-serving-harness-built-to-last/",
-          "desc": "The next competitive advantage in enterprise AI has less to do with which model you choose than with what you build around it. That’s an important shift. For the past several years, much of the AI con",
-          "published": "Thu, 22 Oct 2026"
         }
       ]
     },
@@ -368,52 +380,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "GPT-6.1 Terra",
-          "url": "https://www.producthunt.com/products/openai",
-          "desc": "Fast, capable computer use at half the price Discussion | Link",
-          "published": "2026-10-26T16:33"
+          "title": "BotGauge",
+          "url": "https://www.producthunt.com/products/botgauge-2",
+          "desc": "The trust layer for your agents Discussion | Link",
+          "published": "2026-10-15T11:04"
         },
         {
-          "title": "Nuvio 5.0",
-          "url": "https://www.producthunt.com/products/nuvio",
-          "desc": "Hand your financial admin to your AI agent Discussion | Link",
-          "published": "2026-10-26T13:06"
+          "title": "Hob",
+          "url": "https://www.producthunt.com/products/hob-3",
+          "desc": "Open-source, on device alternative to Claude and ChatGPT Discussion | Link",
+          "published": "2026-10-26T09:38"
         },
         {
-          "title": "SavorApp_AI",
-          "url": "https://www.producthunt.com/products/savor-3",
-          "desc": "Capture what matters and move your intentions forward Discussion | Link",
-          "published": "2026-09-12T09:45"
+          "title": "OpenLLM",
+          "url": "https://www.producthunt.com/products/openllm",
+          "desc": "Take your AI tokens anywhere Discussion | Link",
+          "published": "2026-10-27T23:14"
         },
         {
-          "title": "NuPlay",
-          "url": "https://www.producthunt.com/products/nuplay",
-          "desc": "AI transformation, run on one self-improving platform Discussion | Link",
-          "published": "2026-10-22T07:16"
+          "title": "Yardlet",
+          "url": "https://www.producthunt.com/products/yardlet-2",
+          "desc": "The Mac app for the coding agents you already use Discussion | Link",
+          "published": "2026-10-27T02:15"
         },
         {
-          "title": "Notra",
-          "url": "https://www.producthunt.com/products/notra-3",
-          "desc": "Notra is a GEO tool that helps you rank in AI Search. Discussion | Link",
-          "published": "2026-10-23T13:02"
+          "title": "Dedica",
+          "url": "https://www.producthunt.com/products/dedica",
+          "desc": "Check if AI agents can use your website Discussion | Link",
+          "published": "2026-10-27T17:45"
         },
         {
-          "title": "Paddock",
-          "url": "https://www.producthunt.com/products/paddock-2",
-          "desc": "Computers and sandboxes for your agents Discussion | Link",
-          "published": "2026-10-26T19:46"
+          "title": "Tulu",
+          "url": "https://www.producthunt.com/products/tulu",
+          "desc": "Autonomous marketing operations & analytics for SMBs Discussion | Link",
+          "published": "2026-07-19T08:47"
         },
         {
-          "title": "Off Grid AI",
-          "url": "https://www.producthunt.com/products/off-grid-ai",
-          "desc": "Private AI on your phone and computer. Discussion | Link",
-          "published": "2026-10-26T05:12"
+          "title": "App Store Screenshots",
+          "url": "https://www.producthunt.com/products/app-store-screenshots",
+          "desc": "Your coding agent designs your app store screenshots Discussion | Link",
+          "published": "2026-10-04T00:57"
         },
         {
-          "title": "NINX",
-          "url": "https://www.producthunt.com/products/ninx-2",
-          "desc": "Private On-device AI, connected tools, & creative workflows Discussion | Link",
-          "published": "2026-07-21T12:34"
+          "title": "LFM3 by Liquid AI",
+          "url": "https://www.producthunt.com/products/lfm2",
+          "desc": "Six 2B-class models for phones, laptops and robots Discussion | Link",
+          "published": "2026-10-27T10:20"
         }
       ]
     }
