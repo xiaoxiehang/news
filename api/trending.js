@@ -74,7 +74,9 @@ const CATEGORY_OVERRIDES = {
 // stashapp/stash：成人内容管理工具，卡片直接渲染其英文描述，不适合公开站点
 // Igglybuff/awesome-piracy：盗版资源导航，不适合公开站点（2026-10-15 夜间质检）
 // MDX-Tom/gpt-instruct：Codex 越狱（破甲）提示词包，不适合公开站点（2026-10-20 夜间质检）
-const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy', 'MDX-Tom/gpt-instruct']);
+// laoma528/awesome-zhuiju-free：追剧资源指南，管线侧已于 2026-10-25 拉黑，本次同步到实时接口
+// YuJunZhiXue/dsh-purge：多模型越狱（破甲）提示词切换工具，与 gpt-instruct 同类，不适合公开站点（2026-10-29 夜间质检）
+const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy', 'MDX-Tom/gpt-instruct', 'laoma528/awesome-zhuiju-free', 'YuJunZhiXue/dsh-purge']);
 
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);
