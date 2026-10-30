@@ -159,6 +159,7 @@ CATEGORY_OVERRIDES = {
     'team-spotube/spotube': 'media',  # 开源音乐流媒体 App，被 frontend-mobile 查询误吸入（Flutter 全文匹配）
     # 2026-10-22 夜间质检新增（管线侧搬运归位）
     'thedaviddias/Front-End-Checklist': 'frontend-mobile',  # 纯前端开发 checklist（for humans），被 ai-apps 查询误吸入
+    'redis/redis': 'backend-infra',  # 2026-10-22 夜间质检：数据库，被 devtools 查询误吸入（"developers" 全文匹配）
 }
 
 # 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
