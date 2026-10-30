@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-30",
+  "date_str": "2026年10月30日",
+  "overview": "今天的热点一边是 AI 能力扩张，一边是如何管住它：OpenAI 更新模型行为规范，并公布监测智能体越界行为的方法。与此同时，谷歌 AI 搜索的变现难题、网站流量变化，以及更方便的文件编辑工具，都在影响普通人使用 AI 的方式。",
+  "picks": [
+    {
+      "title": "Gemini 聊天现在可以直接生成和编辑文档等文件",
+      "summary": "谷歌为 Gemini 增加文件处理能力，用户可以在聊天中生成、预览和编辑 Google 文档、表格、PDF、幻灯片等文件，也支持 Markdown、纯文本和代码文件。这让整理材料、修改文件的流程更集中，不必在对话与多个编辑工具之间反复切换。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+      "source": "[The Verge]",
+      "category": "效率工具"
+    },
+    {
+      "title": "美国银行提醒客户：不要向 AI 助手提供网银密码",
+      "summary": "美国银行向客户发送邮件，提醒不要把银行账户的用户名和密码交给外部服务，包括声称能代办事务的 AI 工具或智能体。银行指出，主动共享登录凭证后若发生问题，客户可能需要自行承担后果；让 AI 帮忙处理财务事务时，账户权限尤其要谨慎。",
+      "url": "https://www.solidot.org/story?sid=85742",
+      "source": "[Solidot]",
+      "category": "一句话"
+    },
+    {
+      "title": "搜索流量减少，Reddit 宣布转向更依赖登录的使用体验",
+      "summary": "随着 AI 改变人们查找信息的方式，Reddit 宣布将调整产品方向，转向更依赖用户登录的体验。搜索流量减少正促使这家社区平台重新考虑开放网页模式，以保护自身的用户关系和业务；调整也可能影响人们从搜索结果进入社区内容的方式。",
+      "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/",
+      "source": "[TechCrunch]",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 更新模型行为规范，为更强大的 AI 设定五项核心价值",
+      "summary": "OpenAI 发布新版《模型规范》，提出五项核心价值，用来指导能力更强的 AI 作出判断。新版规范强调尊重人的自主权、忠实理解用户意图，说明模型不仅要会完成任务，也要在目标含糊或要求冲突时把握分寸。",
+      "url": "https://openai.com/index/updated-model-spec",
+      "source": "[OpenAI 官方]",
+      "category": "今日头条"
+    },
+    {
+      "title": "拓元智慧开源四维世界动作模型，尝试让机器人预测后再行动",
+      "summary": "拓元智慧开源机器人动作模型 E0.5，尝试把对未来物理环境的预测与动作生成结合起来，让机器人不只识别眼前场景，还能推演行动后的变化。报道指出，该模型在真机测试中优于对比模型 π0.5；实际应用效果仍需更多场景检验。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070899&idx=1&sn=79fca61238019e09fdc1d38766304109",
+      "source": "[机器之心]",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Chainguard 推出供 AI 编码智能体使用的安全工作区",
+      "summary": "Chainguard 发布两款测试版产品：Workspaces 为开发者和 AI 编码智能体提供隔离的远程工作环境，Checks 则把安全校验融入代码开发流程。两者针对的是智能体需要运行、测试代码时带来的风险，主要面向使用 AI 辅助编程的团队。",
+      "url": "https://www.infoq.cn/article/UNli8x0wc8XUNjI5ETya",
+      "source": "[InfoQ 推荐]",
+      "category": "效率工具"
+    },
+    {
+      "title": "OpenAI 公布如何发现前沿模型的行为偏离",
+      "summary": "OpenAI 介绍了监测前沿模型行为的方法，包括通过多层监控识别模型偏离预期目标、智能体未经授权采取行动等迹象。其目标是在问题升级为事故前提醒相关人员介入，回应外界对 AI 自主执行任务时能否受控的担忧。",
+      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "source": "[OpenAI 官方]",
+      "category": "前沿动态"
+    },
+    {
+      "title": "谷歌称 AI 搜索的收入表现不及传统搜索",
+      "summary": "Alphabet 第三季度财报显示，搜索业务收入同比增长 12%，达到 632.5 亿美元，但 AI 搜索的变现能力低于传统搜索。公司高管将搜索增速放缓部分归因于 AI Mode 收入较低；消息公布后，Alphabet 股价下跌近 10%。",
+      "url": "https://www.solidot.org/story?sid=85748",
+      "source": "[Solidot]",
+      "category": "今日头条"
+    }
+  ]
+}

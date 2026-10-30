@@ -1,64 +1,64 @@
 {
-  "date": "2026-10-29",
-  "date_str": "2026年10月29日",
-  "overview": "今天的焦点是 AI 从模型能力走向实际应用：谷歌发布新模型，OpenAI 扩大企业合作，微软则披露与 OpenAI 合作带来的收入。与此同时，AI 搜索广告、企业助手和数学研究展示了不同落地路径，一起医疗诉讼也再次提醒人们警惕 AI 建议的风险。",
+  "date": "2026-10-30",
+  "date_str": "2026年10月30日",
+  "overview": "今天的热点一边是 AI 能力扩张，一边是如何管住它：OpenAI 更新模型行为规范，并公布监测智能体越界行为的方法。与此同时，谷歌 AI 搜索的变现难题、网站流量变化，以及更方便的文件编辑工具，都在影响普通人使用 AI 的方式。",
   "picks": [
     {
-      "title": "谷歌发布 Gemini 4 Carbon，强调网络安全能力提升",
-      "summary": "谷歌发布新模型 Gemini 4 Carbon，称其在编程、执行多步骤任务和网络安全方面取得明显进展。其中，网络安全是此次发布重点强调的能力；这些提升目前主要来自谷歌的介绍，实际表现仍有待更多使用和测试验证。",
-      "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
-      "source": "The Verge",
+      "title": "OpenAI 更新模型行为规范，为更强大的 AI 设定五项核心价值",
+      "summary": "OpenAI 发布新版《模型规范》，提出五项核心价值，用来指导能力更强的 AI 作出判断。新版规范强调尊重人的自主权、忠实理解用户意图，说明模型不仅要会完成任务，也要在目标含糊或要求冲突时把握分寸。",
+      "url": "https://openai.com/index/updated-model-spec",
+      "source": "[OpenAI 官方]",
       "category": "今日头条"
     },
     {
-      "title": "OpenAI 与 ServiceNow 扩大合作，让 AI 进入企业工作流程",
-      "summary": "OpenAI 宣布扩大与企业软件公司 ServiceNow 的合作，把旗下模型和智能体引入 ServiceNow，也让后者的工作流程接入 ChatGPT 和 Codex。这意味着员工有望在常用 AI 助手中处理更多企业事务，但具体体验取决于后续产品落地。",
-      "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
-      "source": "OpenAI 官方",
+      "title": "谷歌称 AI 搜索的收入表现不及传统搜索",
+      "summary": "Alphabet 第三季度财报显示，搜索业务收入同比增长 12%，达到 632.5 亿美元，但 AI 搜索的变现能力低于传统搜索。公司高管将搜索增速放缓部分归因于 AI Mode 收入较低；消息公布后，Alphabet 股价下跌近 10%。",
+      "url": "https://www.solidot.org/story?sid=85748",
+      "source": "[Solidot]",
       "category": "今日头条"
     },
     {
-      "title": "谷歌将 AI 搜索广告扩展至全球",
-      "summary": "据 TechCrunch 报道，谷歌宣布在全球扩大 AI 搜索广告业务，让广告进一步进入用户使用 AI 搜索的场景。消息与母公司 Alphabet 第三季度财报一同公布：该季度营收同比增长 25%，达到 1276 亿美元。",
-      "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
-      "source": "TechCrunch",
+      "title": "OpenAI 公布如何发现前沿模型的行为偏离",
+      "summary": "OpenAI 介绍了监测前沿模型行为的方法，包括通过多层监控识别模型偏离预期目标、智能体未经授权采取行动等迹象。其目标是在问题升级为事故前提醒相关人员介入，回应外界对 AI 自主执行任务时能否受控的担忧。",
+      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "source": "[OpenAI 官方]",
       "category": "前沿动态"
     },
     {
-      "title": "微软披露：与 OpenAI 的商业合作带来 100 亿美元收入",
-      "summary": "微软表示，在截至 9 月 30 日的季度里，与 OpenAI 的商业安排为其带来 100 亿美元收入，其中包括收入分成款项。这一数字显示双方合作的商业规模，也提醒外界：观察 AI 产业时，模型之外的云服务与商业协议同样重要。",
-      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
-      "source": "TechCrunch",
+      "title": "搜索流量减少，Reddit 宣布转向更依赖登录的使用体验",
+      "summary": "随着 AI 改变人们查找信息的方式，Reddit 宣布将调整产品方向，转向更依赖用户登录的体验。搜索流量减少正促使这家社区平台重新考虑开放网页模式，以保护自身的用户关系和业务；调整也可能影响人们从搜索结果进入社区内容的方式。",
+      "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/",
+      "source": "[TechCrunch]",
       "category": "前沿动态"
     },
     {
-      "title": "女子依照 ChatGPT 减药建议后死亡，家属起诉 OpenAI",
-      "summary": "据 Solidot 报道，一名女子依照 ChatGPT 提供的计划逐步停用抗癫痫药物后死亡，其父母已提起不当致死诉讼，指控 OpenAI 提供危险医疗建议。OpenAI 称事件令人心碎，并表示涉案的是已下架的早期版本；相关责任仍待司法认定。",
-      "url": "https://www.solidot.org/story?sid=85737",
-      "source": "Solidot",
+      "title": "拓元智慧开源四维世界动作模型，尝试让机器人预测后再行动",
+      "summary": "拓元智慧开源机器人动作模型 E0.5，尝试把对未来物理环境的预测与动作生成结合起来，让机器人不只识别眼前场景，还能推演行动后的变化。报道指出，该模型在真机测试中优于对比模型 π0.5；实际应用效果仍需更多场景检验。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070899&idx=1&sn=79fca61238019e09fdc1d38766304109",
+      "source": "[机器之心]",
       "category": "前沿动态"
     },
     {
-      "title": "数十个 AI 智能体协作挑战大型数学证明",
-      "summary": "机器之心报道，一项数学研究让数十个 AI 智能体在 24 天内协作处理大规模形式化证明，并在梳理既有研究时发现一个延续约 40 年的漏洞。所谓形式化证明，是把推理写成可由计算机逐步核查的步骤；这项工作展示了 AI 辅助研究的潜力。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070650&idx=2&sn=1bcc855c11892d70536a6e07fd15c06c",
-      "source": "机器之心",
-      "category": "前沿动态"
-    },
-    {
-      "title": "小红书分享企业 AI 助手 Seal 的全员推广实践",
-      "summary": "InfoQ 报道，小红书架构师分享了企业 AI 助手 Seal 的建设过程：团队三天推出首个版本，随后升级架构，并在一个月内推广至全员使用。案例表明，把 AI 工具交到大量员工手中，不只是做出聊天界面，还要处理安全、成本和能力复用等问题。",
-      "url": "https://www.infoq.cn/article/eOqH5GJ5R6UuZGtlhL53",
-      "source": "InfoQ 推荐",
+      "title": "Gemini 聊天现在可以直接生成和编辑文档等文件",
+      "summary": "谷歌为 Gemini 增加文件处理能力，用户可以在聊天中生成、预览和编辑 Google 文档、表格、PDF、幻灯片等文件，也支持 Markdown、纯文本和代码文件。这让整理材料、修改文件的流程更集中，不必在对话与多个编辑工具之间反复切换。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+      "source": "[The Verge]",
       "category": "效率工具"
     },
     {
-      "title": "“八卦炉 2”研究让大型 AI 训练集群应对显存突增",
-      "summary": "机器之心介绍了“八卦炉 2”研究：它尝试让上万张计算卡组成的训练集群在运行中应对显存用量突然升高，而不必事先反复修改配置。研究方称代码已开源；如果效果得到实际验证，这类方法有望减少大型 AI 模型训练时的中断和调整成本。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070650&idx=1&sn=30b3a90dd7098c73a1266fd6a5e1a965",
-      "source": "机器之心",
-      "category": "前沿动态"
+      "title": "Chainguard 推出供 AI 编码智能体使用的安全工作区",
+      "summary": "Chainguard 发布两款测试版产品：Workspaces 为开发者和 AI 编码智能体提供隔离的远程工作环境，Checks 则把安全校验融入代码开发流程。两者针对的是智能体需要运行、测试代码时带来的风险，主要面向使用 AI 辅助编程的团队。",
+      "url": "https://www.infoq.cn/article/UNli8x0wc8XUNjI5ETya",
+      "source": "[InfoQ 推荐]",
+      "category": "效率工具"
+    },
+    {
+      "title": "美国银行提醒客户：不要向 AI 助手提供网银密码",
+      "summary": "美国银行向客户发送邮件，提醒不要把银行账户的用户名和密码交给外部服务，包括声称能代办事务的 AI 工具或智能体。银行指出，主动共享登录凭证后若发生问题，客户可能需要自行承担后果；让 AI 帮忙处理财务事务时，账户权限尤其要谨慎。",
+      "url": "https://www.solidot.org/story?sid=85742",
+      "source": "[Solidot]",
+      "category": "一句话"
     }
   ],
-  "generated_at": "2026-10-29 03:00:52"
+  "generated_at": "2026-10-30 03:03:36"
 }
