@@ -1,9 +1,27 @@
 {
-  "fetched_at": "2026-10-30 03:02:51",
+  "fetched_at": "2026-10-31 02:49:52",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
+        {
+          "title": "Making it easier for websites to express AI training preferences",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+          "desc": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers.",
+          "published": "Fri, 30 Oct 2026"
+        },
+        {
+          "title": "Community safety report and new protections for teens",
+          "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+          "desc": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting.",
+          "published": "Fri, 30 Oct 2026"
+        },
+        {
+          "title": "Fair use benefits everyone",
+          "url": "https://openai.com/index/fair-use-benefits-everyone",
+          "desc": "OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation.",
+          "published": "Fri, 30 Oct 2026"
+        },
         {
           "title": "An updated Model Spec for more capable and beneficial AI",
           "url": "https://openai.com/index/updated-model-spec",
@@ -15,24 +33,6 @@
           "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
           "desc": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
           "published": "Thu, 29 Oct 2026"
-        },
-        {
-          "title": "How Ropes & Gray is developing AI for transactional diligence",
-          "url": "https://openai.com/index/ropes-gray-ai-diligence",
-          "desc": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
-          "published": "Thu, 29 Oct 2026"
-        },
-        {
-          "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
-          "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
-          "desc": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
-          "published": "Wed, 28 Oct 2026"
-        },
-        {
-          "title": "The future of the firm",
-          "url": "https://openai.com/index/the-future-of-the-firm",
-          "desc": "How AI might enter the org chart—beneath, beside, and between us.",
-          "published": "Wed, 28 Oct 2026"
         }
       ]
     },
@@ -93,22 +93,28 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "具身机器人，凛冬将至",
-          "url": "https://www.huxiu.com/article/4901608.html?f=rss",
-          "desc": "",
-          "published": "Fri, 30 Oct 2026"
+          "title": "AI泡沫破裂的前夜",
+          "url": "https://www.huxiu.com/article/4901869.html?f=rss",
+          "desc": "AI 现在到底有没有创造增量价值。",
+          "published": "Sat, 31 Oct 2026"
         },
         {
-          "title": "焦点｜西班牙高铁惨剧给AI时代的警示：当机器失能时，人恰恰是最危险的“备份”",
-          "url": "https://www.huxiu.com/article/4901566.html?f=rss",
+          "title": "观察｜荷兰计划用AI替代2.5万公务员，IMF警告税基被侵蚀：AI时代，谁来为公共财政买单？",
+          "url": "https://www.huxiu.com/article/4901868.html?f=rss",
           "desc": "",
-          "published": "Fri, 30 Oct 2026"
+          "published": "Sat, 31 Oct 2026"
         },
         {
-          "title": "一集AI 爽剧只赚1块钱：为什么比尔盖茨错了两次？",
-          "url": "https://www.huxiu.com/article/4901560.html?f=rss",
+          "title": "AI 泡沫破裂的前夜",
+          "url": "https://www.huxiu.com/article/4901863.html?f=rss",
           "desc": "",
-          "published": "Fri, 30 Oct 2026"
+          "published": "Sat, 31 Oct 2026"
+        },
+        {
+          "title": "进医保只是开始，医疗AI正在迎来价值兑现",
+          "url": "https://www.huxiu.com/article/4901860.html?f=rss",
+          "desc": "",
+          "published": "Sat, 31 Oct 2026"
         }
       ]
     },
@@ -116,9 +122,39 @@
       "name": "Solidot",
       "items": [
         {
+          "title": "英特尔股价暴跌 29%",
+          "url": "https://www.solidot.org/story?sid=85757",
+          "desc": "英特尔股价周五暴跌 29%，创芯片巨人最大单日跌幅，整个科技股市场受其影响呈现整体跌势。英特尔市值蒸发逾 1370 亿美元，PC 市场的持续低迷，抵消了该公司在 AI 领域及制造能力扩张方面的大规模投入。AMD、Arm Holdings、高通、英伟达、博通和美光等半导体公司股价跌幅在 2%-10% 之间。戴尔、HPE 和超微等服务器制造商的股价跌幅在 6%-10% 之间。英特尔预计第四季度营收将在",
+          "published": "Fri, 30 Oct 2026"
+        },
+        {
+          "title": "Claude Code for VS Code 官方扩展被植入后门",
+          "url": "https://www.solidot.org/story?sid=85756",
+          "desc": "安全研究人员在 Cursor Marketplace 的 Claude Code for VS Code 官方扩展中发现了后门，该恶意版本已经撤下，攻击者也关闭了其服务器。Cursor 已发布安全公告，但 Claude Code 开发商 Anthropic 尚未做出任何声明。受影响的版本是 Anthropic.claude-code 2.1.313，共上线了大约 11 小时，受影响用户估计有 5,",
+          "published": "Fri, 30 Oct 2026"
+        },
+        {
+          "title": "LibreOffice 项目递交的代码发现使用LLM 的明确标记",
+          "url": "https://www.solidot.org/story?sid=85755",
+          "desc": "开发 LibreOffice 的 The Document Foundation(TDF)此前表示这款办公软件不会内置 AI 功能，其核心开发者也不使用 LLM 等 AI 辅助编程工具。但向该项目贡献代码的社区开发者未必会遵守该规定。对今年递交到 LibreOffice 的代码的分析显示至少由三处明确提及使用 LLM。社区开发者在代码中提及他们使用了 Claude 或 GitHub Copilot",
+          "published": "Fri, 30 Oct 2026"
+        },
+        {
+          "title": "Reddit 将强制要求所有用户登录",
+          "url": "https://www.solidot.org/story?sid=85753",
+          "desc": "在强制要求旧版本 Old Reddit(old.reddit.com)的用户必须登录之后，Reddit 宣布接下来将强制要求所有用户必须登录。Reddit 成为最新一个限制非登录用户浏览的社交平台，而它也准备推出类似其它社交平台的算法推荐信息流 For You 以及 Following 功能。CEO Steve Huffman 在致股东的信中称，此举有助于确保用户获得最佳的 Reddit 体验，对",
+          "published": "Fri, 30 Oct 2026"
+        },
+        {
+          "title": "Google 创上市至今最大跌幅，市值蒸发逾 5000 亿美元",
+          "url": "https://www.solidot.org/story?sid=85752",
+          "desc": "Google 在公布三季度财报之后遭遇了它自 2004 年上市以来最大的单日跌幅，市值蒸发逾 5000 亿美元。在股价最低点，Google 市值蒸发 5240 亿美元，这是美股上市公司有史以来第二大单日市值缩水。仅次于英伟达在 2025 年 1 月 27 日因 DeepSeek 模型引发的市场震荡其市值单日缩水约 5930 亿美元。此前排名第二的单日跌幅由 SpaceX 创造，该公司在 6 月 2",
+          "published": "Fri, 30 Oct 2026"
+        },
+        {
           "title": "Google AI 搜索产生的收入低于传统搜索",
           "url": "https://www.solidot.org/story?sid=85748",
-          "desc": "Google/Alphabet 在公布第三季度财报之后股价下跌了近 10%，原因是搜索巨人披露 AI 搜索产生的收入低于传统搜索，尽管其整体搜索业务收入同比增长 12% 达到 632.5 亿美元。搜索业务增速略低于去年第三季度的 14.5% ，Alphabet 首席商务官 Philipp Schindler 称，搜索业务增长放缓的原因在于“我们观察到 AI Mode 变现能力较低”。为推动 AI ",
+          "desc": "Google/Alphabet 在公布第三季度财报之后股价下跌了近 10%，原因是搜索巨人披露 AI 搜索产生的收入低于传统搜索，尽管其整体搜索业务收入同比增长 12% 达到 632.5 亿美元。搜索业务增速略低于去年第三季度的 14.5%，Alphabet 首席商务官 Philipp Schindler 称，搜索业务增长放缓的原因在于“我们观察到 AI Mode 变现能力较低”。为推动 AI 业",
           "published": "Thu, 29 Oct 2026"
         },
         {
@@ -132,36 +168,18 @@
           "url": "https://www.solidot.org/story?sid=85743",
           "desc": "45 岁的 David Durman 是肯塔基大学的研究管理员，作为人文主义者（humanist）他坚信生活中人的重要性。这意味着他要坚持自主决策，确保自己的工作能促进他人成长。当学校要求员工在工作流程中使用 AI 他忧心忡忡，认为这意味着日常工作中须将思考这一环节转交给 Microsoft Teams Copilot、Claude 或 ChatGPT 等 AI 工具完成。他认为这违背了个人信念。",
           "published": "Thu, 29 Oct 2026"
-        },
-        {
-          "title": "美银建议客户不要与 AI 助手共享银行账号密码",
-          "url": "https://www.solidot.org/story?sid=85742",
-          "desc": "美国银行（Bank of America）向客户群发电子邮件，邮件主题是《Protecting your finances in the Al World》，督促客户不要与他人或外部服务机构共享其用户名和密码，其中也包括声称可代客户行事的 AI 工具或智能体。共享银行账号一旦出事，那么后果将由客户自己承担。大多数银行的账户协议都规定，如果客户将登录凭证提供给他人，那么由此产生的一切后果均由客户负责",
-          "published": "Thu, 29 Oct 2026"
-        },
-        {
-          "title": "Valve 无意对 AI Slop 和克隆游戏采取行动",
-          "url": "https://www.solidot.org/story?sid=85741",
-          "desc": "对于玩家对 Steam 平台涌入大量 AI Slop 游戏，以及开发商担心其游戏创意被克隆的担忧，Valve 的员工在韩国举行的活动 Steam Indie Connect 上对此做出了回应，该公司的立场是无意采取行动。来自 Steam Business Team 团队的 Tom Giardino 称，Valve 的原则是它不想成为限制开发者使用哪些工具的守门人，是否使用 AI 由游戏开发商自己决",
-          "published": "Thu, 29 Oct 2026"
-        },
-        {
-          "title": "女子信任 ChatGPT 的用药决策，结果因此猝死",
-          "url": "https://www.solidot.org/story?sid=85737",
-          "desc": "一名住在西雅图的 31 岁华人女子，因依照 ChatGPT 提供的逐日减药计划，自行将抗癫痫药物逐步减量至停药后死亡。其父母向旧金山高等法院提起不当致死诉讼，控告 OpenAI 及其 CEO Sam Altman，指 ChatGPT 无照行医、提供危险且不准确的医疗建议。OpenAI 回应称这是“令人心碎的事件”，但涉案的是已经下架的早期版本。死者名为万博文(Bowen Wan)，来自江苏，毕业于",
-          "published": "Wed, 28 Oct 2026"
-        },
-        {
-          "title": "加州亿万富翁投入逾 2.93 亿美元反对亿万富翁税",
-          "url": "https://www.solidot.org/story?sid=85736",
-          "desc": "统计数据显示，至少 30 位加州亿万富翁累计投入逾 2.93 亿美元反对亿万富翁税。亿万富翁税将对任何身价逾 10 亿美元的加州居民一次性征收 5% 的税，该税将用于医保和教育等项目。加州是全美亿万富翁人数最多的州，总数超过 200 人，很多人在 AI 热下积累了巨额财富。在反对该税的亿万富翁中，Google 联合创始人 Sergey Brin 出资最多，投入巨资的还有 Google 前 CEO ",
-          "published": "Wed, 28 Oct 2026"
         }
       ]
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "王文轩@中国人民大学：大模型及其智能体安全",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557626&idx=1&sn=84cb63365a0630145cc580d4c18eda63",
+          "desc": "本期GenTalk真知论坛学术分享邀请了中国人民大学王文轩老师在2026年10月31日10:30-11:30为我们带来“大模型及其智能体安全”的主题报告，欢迎感兴趣的老师同学关注。",
+          "published": "Sat, 31 Oct 2026"
+        },
         {
           "title": "13 个 Agent 实测，DeepSeek+Hermes 隐私泄露率达 96.15%",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557618&idx=1&sn=9c976f3a00b109fb09e34cdde69e4ee2",
@@ -191,12 +209,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557592&idx=1&sn=99ed19f13f9e82b016e1b4f88f91e2eb",
           "desc": "这篇就从白盒蒸馏讲起，再看自蒸馏和黑盒蒸馏，最后谈OPD训练的本质。",
           "published": "Mon, 26 Oct 2026"
-        },
-        {
-          "title": "RoboTwin第一、RoboDojo领跑：Physical AI的下一轮Scaling，为什么是Physics？",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557585&idx=1&sn=a822dbe7750cb768a887e17b45773785",
-          "desc": "厘清智能新成果：PrismWAM与RoboDoctor",
-          "published": "Sun, 25 Oct 2026"
         }
       ]
     },
@@ -204,40 +216,40 @@
       "name": "InfoQ 推荐",
       "items": [
         {
-          "title": "腾讯 AI Lab 又一核心骨干去向确认！“王者绝悟”前技术负责人叶德珩加入字节 Seed",
-          "url": "https://www.infoq.cn/article/u23wUVUDcFqL7hLBWXuW",
-          "desc": "近日，前腾讯 AI Lab R4 部门合伙人、“王者绝悟”技术负责人叶德珩（Deheng Ye）在个人主页更新了职业信息，确认已加入字节跳动 Seed 团队，担任研究员，从事基础模型（Foundation Models）相关研究。 叶德珩在托管于 GitHub Pages 的个人主页中写道： I am a Researcher at ByteDance Seed working on founda",
+          "title": "终于不是 AI 了：Lambda 直接运行 Express，API Gateway 还需要吗？",
+          "url": "https://www.infoq.cn/article/fcdAAd69U452t9b39rLU",
+          "desc": "亚马逊云科技最近 推出了 Lambda Web Functions \"，让开发者能够直接在 Lambda 上运行使用 Express 和 Hono 等框架构建的 Node.js Web 应用，并支持并发请求和流式响应。 根据 Lambda Web Functions 文档 \"，新函数支持并发 HTTP 请求和流式响应。其计费依据是活跃 CPU 时间和内存，而不是等待下游服务期间的 CPU 时间。多",
+          "published": "Sat, 31 Oct 2026"
+        },
+        {
+          "title": "AI+垂类Agent：任务跑得久、工具用得熟，撑不起Agent公司长期竞争力｜贝联珠贯创始人兼CEO 毕玄分享",
+          "url": "https://www.infoq.cn/article/sCKczimP9lSEl0rgJ7VY",
+          "desc": "在 1024 模力工场 · AI社区日 \"主论坛上，模力工场贝联珠贯创始人兼CEO、前阿里巴巴集团研究员毕玄，以《以SREAgent为例：看垂类Agent的竞争力》为题作主题分享。 SREAgent，是一款面向企业 IT 系统的 AI 运维助手，通过分析监控数据和日志，帮助运维人员排查故障、定位原因并处理问题。 毕玄以SREAgent的实践为例，讨论了一个垂类Agent公司绕不开的问题：大模型越来",
           "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "Chainguard 推出面向 AI 编码智能体的安全工作区与安全校验能力",
-          "url": "https://www.infoq.cn/article/UNli8x0wc8XUNjI5ETya",
-          "desc": "软件供应链安全公司 Chainguard \" 发布两款测试版产品，用于运行和测试开发者与 AI 智能体编写的代码。 Chainguard Workspaces \" 提供基于加固型微型虚拟机的远程开发环境，而 Chainguard Checks \" 将持续集成能力融入开发流程。该公司在伦敦 Assemble 大会上公布了这两款产品。 推出这两款产品是为了解决代码智能体面临的一个实际难题。智能体需要权",
+          "title": "AI+社区：「模力工场」连接AI供需，补上信任缺口｜极客邦科技创始人兼CEO 霍太稳分享",
+          "url": "https://www.infoq.cn/article/f3FdeDczctAdHMhvBdKw",
+          "desc": "极客邦科技创始人兼CEO霍太稳，为1024 模力工场·AI社区日的主论坛开场致辞，并以《AI 破局的生态法则：从零和博弈到共生智能》为题作主题分享。 霍太稳在开场致辞中表示，举办此次社区日、推动总部落地杭州，是希望立足本地，通过持续的社区建设与交流合作，为 AI 应用落地培育生态。 在主题分享中，他提出，AI 行业的关注点，正从大模型的参数竞争转向智能体及具体业务应用，于此同时，企业的需求正在变化",
           "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "启元 CEO 田华：启元机器人接入WorkBuddy，不仅看见你的世界，还能走得到你身边",
-          "url": "https://www.infoq.cn/article/fHXiS2bsEFHDXdwVK6KP",
-          "desc": "10月29日，2026腾讯全球数字生态大会于深圳国际会展中心开幕。上纬新材、启元机器人CEO田华受邀出席大会并发表主旨演讲，系统阐述了启元机器人对构建个人机器人物理AI能力的思考，分享了启元机器人接入腾讯WorkBuddy的最新合作进展。 田华表示，从数字AI走向物理AI需要机器人本体、AI与生态协同进化。启元机器人接入WorkBuddy，让AI从屏幕走进现实，在真实场景中感知环境、理解需求并执行",
-          "published": "Thu, 29 Oct 2026"
+          "title": "超节点火了一年后，“算力不够就加机器”的扩张逻辑正在被改写",
+          "url": "https://www.infoq.cn/article/ZolBIJdvK5Icdqg6FB0X",
+          "desc": "几十卡、数百卡、上千卡，AI 算力基础设施的规模竞赛，正在进入一个新的阶段。 过去，大模型厂商展示算力实力，最直观的方式是拥有多少张 GPU、建设了多大规模的计算集群。如今，随着超节点成为 AI 基础设施领域的热门方向，厂商展示实力的方式又多了一个：能够把多少颗 AI 芯片连接起来，让它们像一台计算机一样协同工作。 从英伟达的 GB200 NVL72，到华为的数百卡、千卡级超节点，再到各家国产厂商",
+          "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "谷歌赢了 AI 排行榜，却没赢下华尔街：Gemini 4 Carbon 登顶背后的昂贵代价",
-          "url": "https://www.infoq.cn/article/dXwHCW7kjGX1kjPqtla9",
-          "desc": "谷歌又把大模型排行榜的第一名抢回来了。 距离 Gemini 4 Argon 面向更广泛用户开放仅过去约两周，谷歌便推出了新一代前沿模型 Gemini 4 Carbon。这一次，谷歌不仅将目标对准了大模型综合智能榜首，更把编程、长程智能体任务和网络安全能力推到了核心位置。 谷歌发布Gemini 4 Carbon 10 月 28 日，谷歌 CEO 皮查伊也在x 上宣布了该消息，他表示，继两周前推出 G",
-          "published": "Thu, 29 Oct 2026"
+          "title": "2026年AI技术演进与2027年趋势前瞻报告",
+          "url": "https://www.infoq.cn/article/lmVM6XjSDMpMb6QTbK0l",
+          "desc": "《2026 AI技术演进与2027趋势前瞻：从Agent到自主智能》 出品 ：极客时间企业版 ｜ 联合观察 ：极客邦科技双数研究院· InfoQ 极客传媒 导语 2026年，AI产业从\"能力展示\"进入\"价值兑现\"。这一年，Agent工程化取代模型接入成为主战场，智能体规模化落地并接受生产环境检验，企业评价标准从\"调用量\"转向\"投入产出比\"。 这份报告基于InfoQ与极客时间企业版全年深度观察，从 ",
+          "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "概率、插座与5000个爱因斯坦：专访阿里云研发副总裁周琦",
-          "url": "https://www.infoq.cn/article/5xCWuR8CMGosWrEuNbix",
-          "desc": "撰稿：白默 企业做Agent，最该担心什么？ 花了钱换不来效率？安全和组织跟不上？系统不够稳定，模型一换，整套架构推倒重来？ 阿里云智能集团研发副总裁、云原生应用平台负责人周琦没有从中挑一个。他讲起了电力的发展。 “过去的产业变革靠大发电厂、一根大传动轴，能量输出方是集中的。你不可能每家每户都在家里造一个巨大的机械电机。” 电能让能量的使用变得平权。AI则让智能变得平权。 传动轴是工业史上一件具体",
-          "published": "Thu, 29 Oct 2026"
-        },
-        {
-          "title": "AI+增长：员工提效了，企业为什么没多赚钱？｜上海鲸阙AI联合创始人 沈涛分享",
-          "url": "https://www.infoq.cn/article/aK6ADSkIvwf265yc8PuT",
-          "desc": "在1024 模力工场·AI社区日主论坛上，上海鲸阙人工智能有限公司联合创始人，帆软软件战略副总裁沈涛，以《AI 助力企业找增长方向、找商机客户，实现效率到利润的转化》为题作主题分享。 沈涛提出了一个足以打动大多数企业老板的问题：AI 让员工一年多做1000份幻灯片，能多带来多少利润？ 对此，分享了一次化工企业的交流：大家讨论了两个小时的研发、生产提效，休息时却发现，选定的技术路线可能已经失去竞争力",
-          "published": "Thu, 29 Oct 2026"
+          "title": "谷歌推出 EnvHarness，支持自进化智能体动态环境学习",
+          "url": "https://www.infoq.cn/article/FJqN3mFVyN1lMqHOiegs",
+          "desc": "谷歌研究人员开源 EnvHarness \"，这是一个能够根据智能体的短板动态调整智能体训练环境的框架，且无需修改智能体、环境或评估系统。研究人员表示，这种方法既能提高学习效果和效率，又能帮助智能体克服自身缺陷。 研究人员表示，自我进化型智能体通常通过重写提示词和获取新技能来改进自身，但很少会对其运行的环境进行调整。这带来了一个关键问题： 一个在固定基准上不断改进的智能体最终将无法再从该基准中学到东",
+          "published": "Fri, 30 Oct 2026"
         }
       ]
     },
@@ -245,22 +257,28 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "Intel says it&#8217;s selling every affordable laptop chip it can make",
-          "url": "https://www.theverge.com/tech/1022911/intel-wildcat-lake-sold-out-ram-shortage",
-          "desc": "During Intel's latest earnings call, CEO Lip-Bu Tan said that demand for its budget-focused Wildcat Lake chips \"is outstripping supply.\" According to CFO David Zinsner, the chips are now sold out. Zin",
-          "published": "2026-10-29T19:42"
+          "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
+          "desc": "Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an interview that it's \"terrible\" to have RAM in personal PCs instead of data centers. During his appea",
+          "published": "2026-10-30T16:48"
         },
         {
-          "title": "Reddit’s CEO says Google’s AI Mode ‘does not drive traffic’",
-          "url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
-          "desc": "Reddit CEO Steve Huffman said in an earnings call today that Google's AI-powered search modes do not help with traffic to the platform, echoing problems facing other websites and publishers. As part o",
-          "published": "2026-10-29T18:19"
+          "title": "The biggest names in AI are backing a new way to opt out of scraping",
+          "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+          "desc": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable. With this contro",
+          "published": "2026-10-30T16:26"
         },
         {
-          "title": "You can generate and edit Google Docs files directly in Gemini chats now",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
-          "desc": "Now you can generate, preview, and edit PDFs, Google Docs, Google Sheets, slide decks, Markdown files, TXT files, and code directly within Google Gemini. The new file editing capabilities are availabl",
-          "published": "2026-10-29T14:45"
+          "title": "Google&#8217;s satellite AI server transmits its first response to Earth",
+          "url": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+          "desc": "Google's AI chip-equipped satellite has generated its first response from space. In a blog post on Friday, Google says it successfully booted up the satellite's Tensor Processing Units (TPUs), allowin",
+          "published": "2026-10-30T14:21"
+        },
+        {
+          "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+          "desc": "Starbucks could eventually show you a personalized digital menu when you pull up to the drive-thru. During an earnings call on Thursday, Starbucks CEO Brian Niccol said the company is going to explore",
+          "published": "2026-10-30T13:38"
         }
       ]
     },
@@ -268,40 +286,40 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "You don’t need to believe in a god to get a religious exemption from using AI at work",
-          "url": "https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/",
-          "desc": "David Durman, a University of Kentucky administrator, recently earned a religious exemption from using AI in the workplace.",
+          "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+          "url": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+          "desc": "When investors get nervous about AI spending, it helps to have the chipmaker that sells the chips offer to cosign the loan.",
+          "published": "Sat, 31 Oct 2026"
+        },
+        {
+          "title": "Salesforce’s M&A spree continues with a reported $375M deal for defense tech startup Rune",
+          "url": "https://techcrunch.com/2026/10/30/salesforces-ma-spree-continues-with-a-reported-375m-deal-for-defense-tech-startup-rune/",
+          "desc": "The AI logistics startup will bolster the CRM giant's Missionforce defense platform.",
           "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "AWS will be a $1T business, Jassy says. But first, it will spend big.",
-          "url": "https://techcrunch.com/2026/10/29/aws-will-be-a-1t-business-jassy-says-but-first-it-will-spend-big/",
-          "desc": "Amazon wants to be the king of AI cloud computing and become the first $1 trillion revenue business. But to do that it will have to continue on its capex spending spree, its CEO said Thursday.",
-          "published": "Thu, 29 Oct 2026"
+          "title": "Ollie, a privacy-focused AI assistant, is shutting down",
+          "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
+          "desc": "As an increasing number of AI assistants flood the market, the founder of Ollie, an assistant that respected its users' privacy, says it will be shutting down in a week.",
+          "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "As search traffic dries up, Reddit announces it’s shifting to a logged-in experience",
-          "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/",
-          "desc": "As AI transforms how people find information online, Reddit is rethinking its open-web roots to protect its audience and business.",
-          "published": "Thu, 29 Oct 2026"
+          "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+          "url": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+          "desc": "Intel is being hurt by PC sales as the AI industry gobbles memory and other components causing PC prices to rise.",
+          "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "Rivian expands joint venture with VW to include AI assistant",
-          "url": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant/",
-          "desc": "Rivian doesn't disclose if the value of its $5.8 billion joint venture will expand as a result.",
-          "published": "Thu, 29 Oct 2026"
+          "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
+          "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+          "desc": "Blackstone's forecast is just a prediction, but naturally, a high junk rating would make it more difficult and costlier for Anthropic to raise the money to keep funding its massive spending that has u",
+          "published": "Fri, 30 Oct 2026"
         },
         {
-          "title": "OpenAI-backed Thrive Holdings acquires ADT",
-          "url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt/",
-          "desc": "OpenAI-backed Thrive Holdings is buying ADT in a $15.3 billion deal, with plans to bring AI to the home security business.",
-          "published": "Thu, 29 Oct 2026"
-        },
-        {
-          "title": "Meta quietly launches an AI fashion app called Style Sketch",
-          "url": "https://techcrunch.com/2026/10/29/meta-quietly-launches-an-ai-fashion-app-called-style-sketch/",
-          "desc": "The app connects to Instagram to build a virtual closet from photos you’ve already shared, or lets you add items manually by snapping a photo, recording a quick video, or uploading images from your ca",
-          "published": "Thu, 29 Oct 2026"
+          "title": "Last-minute Halloween costumes for tech nerds",
+          "url": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
+          "desc": "No Halloween costume? Just be a deceptively cute AI agent icon, a PHP vulnerability, or sleepy time Bryan Johnson.",
+          "published": "Fri, 30 Oct 2026"
         }
       ]
     },
@@ -350,52 +368,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "MAO",
-          "url": "https://www.producthunt.com/products/mao-multi-agentic-orchestration-tool",
-          "desc": "Team up Claude Code, Codex and Grok on one canvas Discussion | Link",
-          "published": "2026-10-28T04:27"
+          "title": "Vaani Developer Platform",
+          "url": "https://www.producthunt.com/products/vaani-developer-platfrom",
+          "desc": "The only voice AI harness that you'll ever need Discussion | Link",
+          "published": "2026-10-27T22:20"
         },
         {
-          "title": "OutreachGuy",
-          "url": "https://www.producthunt.com/products/outreachguy",
-          "desc": "The AI SDR that works the leads you never followed up Discussion | Link",
-          "published": "2026-10-19T01:05"
+          "title": "MCP Server by XWiki",
+          "url": "https://www.producthunt.com/products/xwiki",
+          "desc": "Give your AI your wiki's knowledge while keeping the control Discussion | Link",
+          "published": "2026-10-20T01:15"
         },
         {
-          "title": "Kin",
-          "url": "https://www.producthunt.com/products/kin-6",
-          "desc": "The AI labs want to own you. Make them answer to you. Discussion | Link",
-          "published": "2026-10-28T03:24"
+          "title": "SpeakON Agent",
+          "url": "https://www.producthunt.com/products/speakon",
+          "desc": "Turn natural speech into real work for an agent to complete Discussion | Link",
+          "published": "2026-10-29T03:44"
         },
         {
-          "title": "Suno MCP",
-          "url": "https://www.producthunt.com/products/suno",
-          "desc": "The music layerfor your AI stack Discussion | Link",
-          "published": "2026-10-28T11:33"
+          "title": "Knocket AI",
+          "url": "https://www.producthunt.com/products/knocket-ai",
+          "desc": "Chat with visitors from your website or link Discussion | Link",
+          "published": "2026-10-26T00:29"
         },
         {
-          "title": "Voxel51 Multimodal",
-          "url": "https://www.producthunt.com/products/voxel51",
-          "desc": "Better data. Smarter robots. Repeat. Discussion | Link",
-          "published": "2026-10-27T10:03"
+          "title": "SparkBots AI (Powered by Jev)",
+          "url": "https://www.producthunt.com/products/sparkbots-ai-analyze-pages-and-pdfs",
+          "desc": "Instantly extract key details and analyze any webpage or PDF Discussion | Link",
+          "published": "2026-10-26T22:29"
         },
         {
-          "title": "Intrascope 2.0",
-          "url": "https://www.producthunt.com/products/intrascope-app",
-          "desc": "New AI agent, 1,650+ apps, Skills and smart model routing Discussion | Link",
-          "published": "2026-10-26T06:58"
+          "title": "Faylee",
+          "url": "https://www.producthunt.com/products/faylee",
+          "desc": "Bug reports your coding agent can fix from one link Discussion | Link",
+          "published": "2026-10-29T10:54"
         },
         {
-          "title": "IFTTT.ai",
-          "url": "https://www.producthunt.com/products/ifttt",
-          "desc": "The easiest way to automate anything Discussion | Link",
-          "published": "2026-10-28T11:26"
+          "title": "fastbrowse",
+          "url": "https://www.producthunt.com/products/fastbrowse",
+          "desc": "Fastest open source browser agent Discussion | Link",
+          "published": "2026-10-28T20:25"
         },
         {
-          "title": "Radar",
-          "url": "https://www.producthunt.com/products/radar-7",
-          "desc": "You don't need an AI SRE. Give your agent Radar. Discussion | Link",
-          "published": "2026-10-27T13:41"
+          "title": "Axonnic",
+          "url": "https://www.producthunt.com/products/axonnic",
+          "desc": "Muscle-sensing sleeves for robot training Discussion | Link",
+          "published": "2026-10-29T18:11"
         }
       ]
     }
