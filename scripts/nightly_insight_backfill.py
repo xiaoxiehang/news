@@ -26,7 +26,7 @@ CATEGORIES = [
 ]
 
 # 从 api/trending.js 抄的过滤表（只过滤不搬运）
-EXCLUDE = {"stashapp/stash", "Igglybuff/awesome-piracy", "MDX-Tom/gpt-instruct", "laoma528/awesome-zhuiju-free"}  # 2026-10-25：与 fetch_github.py 黑名单同步
+EXCLUDE = {"stashapp/stash", "Igglybuff/awesome-piracy", "MDX-Tom/gpt-instruct", "laoma528/awesome-zhuiju-free", "YuJunZhiXue/dsh-purge"}  # 2026-10-29：与 api/trending.js 黑名单同步
 OVERRIDES = {
     "apache/iggy": "backend-infra", "travisjeffery/jocko": "backend-infra",
     "memgraph/memgraph": "backend-infra", "Cysharp/MagicOnion": "backend-infra",
@@ -48,6 +48,7 @@ OVERRIDES = {
     "pliang279/awesome-multimodal-ml": "ai", "frappe/erpnext": "backend-infra",
     "coollabsio/coolify": "backend-infra", "team-spotube/spotube": "media",
     "redis/redis": "backend-infra",
+    "thedaviddias/Front-End-Checklist": "frontend-mobile",  # 2026-10-22：与 api/trending.js 同步
 }
 
 
@@ -101,13 +102,13 @@ def tab_repos(tab_id, queries, take):
     return out
 
 
-today = date(2026, 10, 22)
+today = date.today()
 d120 = str(today - timedelta(days=120))
 d1 = str(today - timedelta(days=1))
 
 results = {}
-results["rising"] = tab_repos("rising", [f"created:>{d120} stars:>100"], 30)
-results["leaderboard"] = tab_repos("leaderboard", [f"stars:>100 pushed:>{d1}"], 20)
+results["rising"] = tab_repos("rising", [f"created:>{d120} stars:>100"], 50)  # 2026-10-25：按任务书实际渲染面 50
+results["leaderboard"] = tab_repos("leaderboard", [f"stars:>100 pushed:>{d1}"], 30)  # api/trending.js 实取 30，按服务端实际渲染面回填
 for tab_id, _, queries in CATEGORIES:
     results[tab_id] = tab_repos(tab_id, queries, 80)
 
