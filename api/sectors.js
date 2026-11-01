@@ -10,7 +10,7 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 const HOSTS = ['query1.finance.yahoo.com', 'query2.finance.yahoo.com'];
 // Yahoo 对机房 IP 并发限流：分批拉，失败换 host 重试一次。
 const BATCH = 4;
-const BATCH_GAP_MS = 300;
+const BATCH_GAP_MS = 200;
 
 const GROUPS = [
   {
@@ -55,7 +55,7 @@ async function fetchQuoteOnce(symbol, host) {
     encodeURIComponent(symbol) + '?interval=1d&range=5d';
   const r = await fetch(url, {
     headers: { 'User-Agent': UA },
-    signal: AbortSignal.timeout(12000),
+    signal: AbortSignal.timeout(8000),
   });
   if (!r.ok) throw new Error('yahoo ' + r.status + ' for ' + symbol);
   const j = await r.json();
