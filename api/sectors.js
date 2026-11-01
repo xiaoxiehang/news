@@ -50,11 +50,43 @@ function displayCode(symbol) {
   return symbol.replace(/^\^/, '').replace(/\.SS$/, '');
 }
 
-async function fetchQuoteOnce(symbol, host) {
-  const url = 'https://' + host + '/v8/finance/chart/' +
-    encodeURIComponent(symbol) + '?interval=1d&range=5d';
-  const r = await fetch(url, {
+async function getYahooAuth() {
+  // fc.yahoo.com 经常回 404，但会照常 Set-Cookie；只取 cookie，不校验状态码。
+  const r = await fetch('https://fc.yahoo.com', {
     headers: { 'User-Agent': UA },
+    signal: AbortSignal.timeout(5000),
+  });
+  const setCookie = r.headers.get('set-cookie') || '';
+  const cookie = setCookie.split(';')[0];
+  if (!cookie) throw new Error('no yahoo cookie');
+  let lastErr = null;
+  for (const host of HOSTS) {
+    try {
+      const r2 = await fetch('https://' + host + '/v1/test/getcrumb', {
+        headers: { 'User-Agent': UA, Cookie: cookie },
+        signal: AbortSignal.timeout(5000),
+      });
+      if (!r2.ok) throw new Error('crumb ' + r2.status);
+      const crumb = (await r2.text()).trim();
+      if (!crumb || crumb.length > 64) throw new Error('bad crumb');
+      return { crumb, cookie };
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr;
+}
+
+async function fetchQuoteOnce(symbol, host, auth) {
+  let url = 'https://' + host + '/v8/finance/chart/' +
+    encodeURIComponent(symbol) + '?interval=1d&range=5d';
+  const headers = { 'User-Agent': UA };
+  if (auth) {
+    url += '&crumb=' + encodeURIComponent(auth.crumb);
+    headers.Cookie = auth.cookie;
+  }
+  const r = await fetch(url, {
+    headers,
     signal: AbortSignal.timeout(8000),
   });
   if (!r.ok) throw new Error('yahoo ' + r.status + ' for ' + symbol);
@@ -73,11 +105,12 @@ async function fetchQuoteOnce(symbol, host) {
   };
 }
 
-async function fetchQuote(symbol) {
+async function fetchQuote(symbol, auth) {
+  // auth 由 decideStrategy 统一决策：全体用同一种策略，不再逐标的试错。
   let lastErr = null;
   for (const host of HOSTS) {
     try {
-      return await fetchQuoteOnce(symbol, host);
+      return await fetchQuoteOnce(symbol, host, auth);
     } catch (e) {
       lastErr = e;
     }
@@ -85,17 +118,53 @@ async function fetchQuote(symbol) {
   throw lastErr;
 }
 
+// 策略决策：会话和裸奔并行探路，哪个先通全体就用哪个。
+// 返回 auth 对象（走会话）、null（裸奔）或 'fail'（都走不通）。
+async function decideStrategy() {
+  const authPending = getYahooAuth();
+  authPending.catch(() => {}); // 避免后台未处理 rejection
+  const plainProbe = fetchQuoteOnce('XLK', 'query1.finance.yahoo.com', null)
+    .then(() => true)
+    .catch(() => false);
+  // 会话最多等 2.5s，超时不等了（裸奔探针同时在跑）
+  const authFast = await Promise.race([
+    authPending.then((a) => a).catch(() => null),
+    sleep(2500).then(() => 'slow'),
+  ]);
+  const plainOk = await plainProbe;
+  if (plainOk) return null;
+  if (authFast && authFast !== 'slow') {
+    const ok = await fetchQuoteOnce('XLK', 'query1.finance.yahoo.com', authFast)
+      .then(() => true)
+      .catch(() => false);
+    if (ok) return authFast;
+    return 'fail';
+  }
+  // 会话来得慢：再宽限 4s，行就行、不行就认
+  const auth = await Promise.race([
+    authPending.catch(() => null),
+    sleep(4000).then(() => null),
+  ]);
+  if (auth) {
+    const ok = await fetchQuoteOnce('XLK', 'query1.finance.yahoo.com', auth)
+      .then(() => true)
+      .catch(() => false);
+    if (ok) return auth;
+  }
+  return 'fail';
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // 分批并行：每批 BATCH 个，批间歇 BATCH_GAP_MS，避免触发 Yahoo 并发限流。
-async function fetchAllBatched(items) {
+async function fetchAllBatched(items, auth) {
   const out = new Array(items.length);
   for (let i = 0; i < items.length; i += BATCH) {
     const batch = items.slice(i, i + BATCH);
     const settled = await Promise.allSettled(batch.map(async (it) => {
-      const q = await fetchQuote(it.symbol);
+      const q = await fetchQuote(it.symbol, auth);
       return { group: it.group, name: it.name, code: displayCode(it.symbol), ...q };
     }));
     settled.forEach((s, k) => { out[i + k] = s; });
@@ -110,7 +179,13 @@ export default async function handler(req, res) {
     for (const g of GROUPS) {
       for (const it of g.items) all.push({ group: g.id, name: it.name, symbol: it.symbol });
     }
-    const settled = await fetchAllBatched(all);
+    // 先决策走会话还是裸奔（两种出口环境自适应），再分批拉全量。
+    const strategy = await decideStrategy();
+    if (strategy === 'fail') {
+      res.status(503).json({ ok: false, error: 'quote_unavailable' });
+      return;
+    }
+    const settled = await fetchAllBatched(all, strategy);
     const okItems = settled
       .filter((s) => s.status === 'fulfilled')
       .map((s) => s.value);
