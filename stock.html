@@ -222,7 +222,7 @@ function renderToolbar(group, updated_at, refreshing, partial) {
   el.style.display = '';
   var upd = '更新于 ' + fmtTime(updated_at) + (refreshing ? ' · 刷新中…' : '');
   el.innerHTML = '<div class="stock-count">共 ' + group.items.length + ' 项 · ' + esc(upd) +
-    ' · 报价延迟约 15 分钟' + (partial ? ' · 部分标的暂不可用' : '') + '</div>';
+    ' · 每日更新' + (partial ? ' · 部分标的暂不可用' : '') + '</div>';
 }
 
 function renderSectors() {
@@ -264,13 +264,15 @@ function renderSectors() {
 var stockUpdatedAt = null;
 var stockPartial = false;
 
+/* 行情来自每日快照 data/sectors.json（cron 在本机拉 Yahoo 后提交），
+   不再经过 serverless 实时拉取——Yahoo 会封 Vercel 机房 IP。 */
 async function loadSectors() {
   if (stockLoading) return;
   stockLoading = true;
   stockError = false;
   renderSectors();
   try {
-    const r = await fetch('/api/sectors', { cache: 'no-store' });
+    const r = await fetch('data/sectors.json', { cache: 'no-store' });
     const data = await r.json();
     if (!data || !data.ok || !Array.isArray(data.groups)) throw new Error('bad api');
     stockGroups = data.groups;
