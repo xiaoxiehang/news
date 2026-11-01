@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-01",
+  "date_str": "2026年11月01日",
+  "overview": "今天的热点一边是 AI 服务如何设定边界：OpenAI 公布网站训练偏好机制和青少年保护措施，ChatGPT、Claude 的订阅额度变化也受到关注。另一边，AI 扩张带来的安全与现实成本浮现，从开发工具遭植入后门，到数据中心污染诉讼和地方选举讨论。",
+  "picks": [
+    {
+      "title": "报道称 ChatGPT 与 Codex 将共用使用额度",
+      "summary": "虎嗅报道称，ChatGPT 与编程工具 Codex 的使用额度将合并计算，这可能影响同时用它们聊天和写代码的订阅用户。报道将变化形容为“无限聊天的时代结束”，但实际影响取决于套餐及额度细则，用户不宜仅凭标题判断自己会受到多大限制。",
+      "url": "https://www.huxiu.com/article/4902024.html?f=rss",
+      "source": "虎嗅",
+      "category": "效率工具"
+    },
+    {
+      "title": "OpenAI 发布社区安全报告，并加强青少年保护",
+      "summary": "OpenAI 发布社区安全报告，宣布加强 ChatGPT 对暴力风险的防范，包括扩大安全措施、提前介入，并承诺持续公开安全报告。公告还涉及针对青少年的新保护措施，重点是让潜在风险更早被发现和处理，而不只是等待有害内容出现。",
+      "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "OpenAI 推出网站表达 AI 训练偏好的新方式",
+      "summary": "OpenAI 表示，将遵循一种共享的 robots.txt 信号，让网站运营者向参与该机制的 AI 服务商表达内容是否可用于训练的偏好。这为网站提供了更明确的表态方式，但目前不能将其理解为所有 AI 公司都会遵守的统一规则。",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "Claude 每月 200 美元套餐调整五小时使用限制",
+      "summary": "据机器之心报道，Anthropic 调整了 Claude 的订阅计划名称，并取消每月 200 美元套餐原有的五小时使用限制。对高频用户而言，这可能改变使用节奏；不过，“取消五小时限制”不等于所有用量限制都已取消，具体规则仍需以官方说明为准。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651071332&idx=2&sn=9dacc8ad2d49132915dd05571bef77a7",
+      "source": "机器之心",
+      "category": "效率工具"
+    },
+    {
+      "title": "开源 AI 邮件客户端 Godwit 登上 Product Hunt",
+      "summary": "Godwit 出现在 Product Hunt 的新品页面，定位为开源、以 AI 为核心设计的邮件客户端。对想尝试 AI 处理邮件的读者来说，这是一个可关注的新选择；不过现有简介没有列出具体功能、平台支持或隐私处理方式，使用前仍需查看项目说明。",
+      "url": "https://www.producthunt.com/products/godwit",
+      "source": "Product Hunt",
+      "category": "效率工具"
+    },
+    {
+      "title": "Claude Code 官方扩展在 Cursor 市场遭植入后门",
+      "summary": "Solidot 报道，安全研究人员在 Cursor 插件市场发现遭植入后门的 Claude Code for VS Code 官方扩展版本，受影响版本随后被撤下。该恶意版本约上线 11 小时；Cursor 已发布安全公告，使用相关开发工具的用户应留意自己安装的版本及后续处置说明。",
+      "url": "https://www.solidot.org/story?sid=85756",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "法官允许针对 xAI 数据中心污染的诉讼继续审理",
+      "summary": "据 TechCrunch 报道，法官允许美国全国有色人种协进会针对 xAI 数据中心污染提起的诉讼继续推进。诉讼指控该公司违反《清洁空气法》；案件获准继续审理并不代表指控已经成立，却显示 AI 数据中心的环境影响正进入司法程序。",
+      "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "数据中心成美国地方选举讨论话题",
+      "summary": "TechCrunch 报道，在纽约布鲁克林一场中期选举活动上，从议员交流到党派讨论，话题多次转向 AI 和数据中心。这不是一项已经出台的新政策，却反映出数据中心建设正在走出科技行业，成为选民和地方政治人物会公开讨论的问题。",
+      "url": "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
+      "source": "TechCrunch",
+      "category": "一句话"
+    }
+  ]
+}
