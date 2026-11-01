@@ -1,11 +1,16 @@
 // GET /api/sectors — 全球股市板块热度代理（Vercel Serverless）
 //
-// 一次并行拉 Yahoo v8 chart（每个标的 1 个请求），无 key、服务端 UA。
+// 分批并行拉 Yahoo v8 chart（每批 4 个，批间歇 300ms），无 key、服务端 UA；
+// 单个失败换 host（query1/query2）重试一次。
 // 边缘缓存 5 分钟：盘中数据不需要秒级新鲜，缓存省掉重复打 Yahoo。
 // 任一标的失败只丢该标的；全部失败才返回 503，前端显示错误重试——
 // 假装实时比诚实报错更糟。
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+const HOSTS = ['query1.finance.yahoo.com', 'query2.finance.yahoo.com'];
+// Yahoo 对机房 IP 并发限流：分批拉，失败换 host 重试一次。
+const BATCH = 4;
+const BATCH_GAP_MS = 300;
 
 const GROUPS = [
   {
@@ -45,12 +50,12 @@ function displayCode(symbol) {
   return symbol.replace(/^\^/, '').replace(/\.SS$/, '');
 }
 
-async function fetchQuote(symbol) {
-  const url = 'https://query1.finance.yahoo.com/v8/finance/chart/' +
+async function fetchQuoteOnce(symbol, host) {
+  const url = 'https://' + host + '/v8/finance/chart/' +
     encodeURIComponent(symbol) + '?interval=1d&range=5d';
   const r = await fetch(url, {
     headers: { 'User-Agent': UA },
-    signal: AbortSignal.timeout(9000),
+    signal: AbortSignal.timeout(12000),
   });
   if (!r.ok) throw new Error('yahoo ' + r.status + ' for ' + symbol);
   const j = await r.json();
@@ -68,16 +73,44 @@ async function fetchQuote(symbol) {
   };
 }
 
+async function fetchQuote(symbol) {
+  let lastErr = null;
+  for (const host of HOSTS) {
+    try {
+      return await fetchQuoteOnce(symbol, host);
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// 分批并行：每批 BATCH 个，批间歇 BATCH_GAP_MS，避免触发 Yahoo 并发限流。
+async function fetchAllBatched(items) {
+  const out = new Array(items.length);
+  for (let i = 0; i < items.length; i += BATCH) {
+    const batch = items.slice(i, i + BATCH);
+    const settled = await Promise.allSettled(batch.map(async (it) => {
+      const q = await fetchQuote(it.symbol);
+      return { group: it.group, name: it.name, code: displayCode(it.symbol), ...q };
+    }));
+    settled.forEach((s, k) => { out[i + k] = s; });
+    if (i + BATCH < items.length) await sleep(BATCH_GAP_MS);
+  }
+  return out;
+}
+
 export default async function handler(req, res) {
   try {
     const all = [];
     for (const g of GROUPS) {
       for (const it of g.items) all.push({ group: g.id, name: it.name, symbol: it.symbol });
     }
-    const settled = await Promise.allSettled(all.map(async (it) => {
-      const q = await fetchQuote(it.symbol);
-      return { group: it.group, name: it.name, code: displayCode(it.symbol), ...q };
-    }));
+    const settled = await fetchAllBatched(all);
     const okItems = settled
       .filter((s) => s.status === 'fulfilled')
       .map((s) => s.value);
