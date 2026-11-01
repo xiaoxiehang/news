@@ -54,11 +54,17 @@
 
   /* ── 早报流 ───────────────────────── */
   .briefing-feed { padding: 32px var(--pad-x) 0; }
+  .feed-head {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    padding: 0 0 12px; border-bottom: 1px solid var(--hair); margin-bottom: 8px;
+  }
+  .feed-date { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+  .feed-count { font-size: 13px; color: var(--grey); font-variant-numeric: tabular-nums; white-space: nowrap; }
   .briefing-layout { display: grid; grid-template-columns: 1fr 280px; gap: 48px; align-items: start; }
 
   /* 新闻条目：标题 → 详细摘要 → 来源标签 */
   .news-item {
-    display: block; padding: 24px 12px; margin: 0 -12px;
+    display: block; padding: 20px 12px; margin: 0 -12px;
     border-bottom: 1px solid var(--hair);
     position: relative; isolation: isolate;
     animation: rise .55s var(--ease) both;
@@ -138,7 +144,7 @@
     .topnav { gap: 16px; font-size: 14px; }
     .topbar-date { display: none; }
     .news-title { font-size: 18px; }
-    .news-item { padding: 24px 8px; margin: 0 -8px; }
+    .news-item { padding: 20px 8px; margin: 0 -8px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .news-item { animation: none; }
@@ -157,6 +163,7 @@
   <nav class="topnav">
     <a href="https://1.xiaojj.pro/news.html" class="active">AI 早报</a>
     <a href="https://1.xiaojj.pro/github.html">GitHub</a>
+    <a href="https://1.xiaojj.pro/stock.html">股市</a>
     <a href="https://price.xiaojj.pro/">降价</a>
     <a href="https://video.xiaojj.pro/">电影</a>
     <a href="https://tv.xiaojj.pro/">电视</a>
@@ -166,6 +173,10 @@
 <main>
 <div id="briefing-section" style="display:none;">
 <div class="briefing-feed">
+<div class="feed-head" id="feed-head" style="display:none;">
+<span class="feed-date" id="feed-date"></span>
+<span class="feed-count" id="feed-count"></span>
+</div>
 <div class="briefing-layout">
 <div id="briefing-cols"></div>
 <aside class="briefing-side" id="briefing-side" style="display:none;">
@@ -250,6 +261,9 @@ function renderBriefing(data) {
 briefingData = data;
 document.getElementById('briefing-cols').innerHTML =
 data.picks.map(renderItem).join('');
+document.getElementById('feed-date').textContent = data.date_str || '';
+document.getElementById('feed-count').textContent = data.picks.length + ' 条';
+document.getElementById('feed-head').style.display = '';
 document.getElementById('briefing-section').style.display = '';
 }
 async function loadArchiveItem(date, btn) {

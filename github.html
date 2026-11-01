@@ -89,67 +89,43 @@
   .cf-btn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
   .gh-count { font-size: 12px; color: var(--grey); white-space: nowrap; }
 
-  /* ── 仓库卡片 ───────────────────────── */
-  .projects-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    gap: 24px; padding: 8px var(--pad-x) 64px;
-  }
-  .project-card {
-    position: relative;
-    background: #fff; border: 1px solid var(--hair); border-radius: 16px;
-    padding: 24px; text-decoration: none; color: inherit;
-    display: flex; flex-direction: column;
-    transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease);
+  /* ── 仓库行（方向 A：卡片海改单栏紧凑行） ── */
+  .projects-list { padding: 8px var(--pad-x) 64px; }
+  .project-row {
+    display: block; padding: 20px 12px; margin: 0 -12px;
+    border-bottom: 1px solid var(--hair);
+    position: relative; isolation: isolate;
     animation: card-in .55s var(--ease) backwards;
   }
+  .project-row::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--wash); opacity: 0; transition: opacity .35s var(--ease);
+  }
+  a.project-row:hover::before { opacity: 1; }
   @keyframes card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-  a.project-card:hover {
-    background: var(--wash); transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, .08);
-  }
-  a.project-card:hover .project-name { color: var(--ink); }
-  .rank-badge {
-    position: absolute; top: 12px; right: 14px;
-    font-size: 12px; font-weight: 700; color: var(--grey); font-variant-numeric: tabular-nums;
-  }
-  .rank-badge.top3 { color: var(--ink); font-weight: 800; font-size: 14px; }
-  .section-head {
-    font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
-    padding: 24px 4px 4px; display: flex; align-items: baseline; gap: 8px;
-  }
-  .section-head .sub { font-size: 12px; color: var(--grey); font-weight: 400; }
+  .row-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .row-name { font-size: 16px; font-weight: 600; word-break: break-word; }
+  .rank-num { font-weight: 800; margin-right: 8px; font-variant-numeric: tabular-nums; }
   .new-dot {
     display: inline-block; font-size: 12px; font-weight: 700; color: #fff;
     background: var(--ink); border-radius: 4px; padding: 2px 4px; margin-left: 8px;
     vertical-align: 2px;
   }
-  .project-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .row-stars { font-size: 14px; font-weight: 600; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
   .gain { color: var(--ink); font-weight: 700; font-size: 12px; margin-left: 4px; }
-  .project-icon {
-    width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-    background: var(--wash); color: var(--ink);
-    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  .row-desc {
+    font-size: 14px; color: var(--ink); line-height: 1.6; margin: 6px 0 0;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
-  .project-info { flex: 1; min-width: 0; }
-  .project-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; word-break: break-word; transition: color .35s var(--ease); }
-  .project-owner { font-size: 12px; color: var(--grey); }
-  .project-desc {
-    font-size: 14px; color: var(--ink); line-height: 1.43; margin-bottom: 12px; flex: 1;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-  }
-  .project-insight {
-    background: var(--wash); border-radius: 12px;
-    padding: 12px 12px; margin-bottom: 12px; font-size: 12px; line-height: 1.43;
-  }
-  .insight-label { font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-  .insight-what { color: var(--ink); margin-bottom: 4px; }
-  .insight-meta { color: var(--grey); font-size: 12px; }
-  .project-meta {
+  .row-insight { font-size: 12px; line-height: 1.6; color: var(--ink); margin: 8px 0 0; }
+  .insight-label { font-weight: 600; margin-right: 6px; }
+  .insight-meta { color: var(--grey); }
+  .row-meta {
     display: flex; gap: 16px; row-gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--grey);
-    padding-top: 12px; border-top: 1px solid var(--hair);
+    margin-top: 8px;
   }
   .meta-item { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
-  .meta-value { font-weight: 600; color: var(--ink); }
+  .meta-value { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
   .meta-label { color: var(--grey); font-weight: 400; }
   .language-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
@@ -187,13 +163,13 @@
     .topbar { padding-bottom: 12px; }
     .topnav { gap: 16px; font-size: 14px; }
     .topnav a:nth-child(1) { display: none; }
-    .projects-grid { grid-template-columns: 1fr; padding: 8px var(--pad-x) 48px; }
+    .projects-list { padding: 8px var(--pad-x) 48px; }
+    .project-row { padding: 20px 8px; margin: 0 -8px; }
     .filter-bar { padding: 12px var(--pad-x); }
     .lede { font-size: 18px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .project-card { animation: none; transition: none; }
-    a.project-card:hover { transform: none; }
+    .project-row { animation: none; transition: none; }
     .topnav a::after { transition: none; }
     .toast { transition: none; }
   }
@@ -207,6 +183,7 @@
   <nav class="topnav">
     <a href="https://1.xiaojj.pro/news.html">AI 早报</a>
     <a href="https://1.xiaojj.pro/github.html" class="active">GitHub</a>
+    <a href="https://1.xiaojj.pro/stock.html">股市</a>
     <a href="https://price.xiaojj.pro/">降价</a>
     <a href="https://video.xiaojj.pro/">电影</a>
     <a href="https://tv.xiaojj.pro/">电视</a>
@@ -430,43 +407,42 @@ function renderGhProjects() {
   const langColors = { 'JavaScript': '#f1e05a', 'TypeScript': '#2b7489', 'Python': '#3572A5', 'Java': '#b07219', 'Go': '#00ADD8', 'Rust': '#dea584', 'C++': '#f34b7d', 'C': '#555555', 'Ruby': '#701516', 'PHP': '#4F5D95', 'Swift': '#ffac45', 'Kotlin': '#F18E33', 'Dart': '#00B4AB', 'HTML': '#e34c26', 'CSS': '#563d7c' };
   function card(p, i, showRank) {
     const ins = ghInsights[p.full_name];
-    const insight = ins ? '<div class="project-insight">' +
-      '<div class="insight-label">AI 点评</div>' +
-      '<div class="insight-what">' + esc(ins.what) + '</div>' +
-      (ins.why_hot ? '<div class="insight-meta">热度：' + esc(ins.why_hot) + '</div>' : '') +
-      (ins.who ? '<div class="insight-meta">适合：' + esc(ins.who) + '</div>' : '') +
+    const why = ins && ins.why_hot ? esc(ins.why_hot).replace(/[。；]+$/, '') : '';
+    const insight = ins ? '<div class="row-insight">' +
+      '<span class="insight-label">AI 点评</span>' + esc(ins.what) +
+      ((why || ins.who) ? '<div class="insight-meta">' +
+        (why ? '热度：' + why + (ins.who ? ' · ' : '') : '') +
+        (ins.who ? '适合：' + esc(ins.who) : '') + '</div>' : '') +
     '</div>' : '';
     const langColor = langColors[p.language] || '#888';
-    const badge = showRank
-      ? '<div class="rank-badge' + (i < 3 ? ' top3' : '') + '">#' + (i + 1) + '</div>' : '';
+    const rank = showRank
+      ? '<span class="rank-num">#' + (i + 1) + '</span>' : '';
     const newTag = p._isNew ? '<span class="new-dot">NEW</span>' : '';
-    return '<a class="project-card" href="https://github.com/' + esc(p.full_name) + '" target="_blank" rel="noopener">' + badge +
-      '<div class="project-header"><div class="project-icon">\u2726</div>' +
-      '<div class="project-info"><div class="project-name">' + esc(p.name) + newTag + '</div>' +
-      '<div class="project-owner">' + esc(p.owner || '') + '</div></div></div>' +
-      '<div class="project-desc">' + esc(emojify(p.description || '暂无描述')) + '</div>' +
+    return '<a class="project-row" href="https://github.com/' + esc(p.full_name) + '" target="_blank" rel="noopener">' +
+      '<div class="row-head"><span class="row-name">' + rank + esc(p.full_name) + newTag + '</span>' +
+      '<span class="row-stars">\u2605 ' + formatNumber(p.stars || 0) +
+      (p.stars_gain != null && p.stars_gain > 0 ? '<span class="gain">+' + formatNumber(p.stars_gain) + '</span>' : '') +
+      '</span></div>' +
+      '<div class="row-desc">' + esc(emojify(p.description || '暂无描述')) + '</div>' +
       insight +
-      '<div class="project-meta">' +
+      '<div class="row-meta">' +
         (p.language ? '<div class="meta-item"><span class="language-dot" style="background:' + langColor + '"></span><span class="meta-value">' + esc(p.language) + '</span></div>' : '') +
-        '<div class="meta-item"><span>\u2605</span><span class="meta-value">' + formatNumber(p.stars || 0) +
-        (p.stars_gain != null && p.stars_gain > 0 ? '<span class="gain">+' + formatNumber(p.stars_gain) + '</span>' : '') +
-        '</span></div>' +
         '<div class="meta-item"><span>\u2682</span><span class="meta-value">' + formatNumber(p.forks || 0) + '</span></div>' +
         (p.created_at ? '<div class="meta-item"><span class="meta-label">创建</span><span class="meta-value">' + esc(p.created_at) + '</span></div>' : '') +
         (p.updated_at ? '<div class="meta-item"><span class="meta-label">更新</span><span class="meta-value">' + esc(p.updated_at) + '</span></div>' : '') +
       '</div></a>';
   }
-  function grid(list, showRank) {
-    return '<div class="projects-grid">' + list.map(function(p, i) { return card(p, i, showRank); }).join('') + '</div>';
+  function list(list, showRank) {
+    return '<div class="projects-list">' + list.map(function(p, i) { return card(p, i, showRank); }).join('') + '</div>';
   }
   if (isRising) {
-    container.innerHTML = grid(shown.map(function(p) {
+    container.innerHTML = list(shown.map(function(p) {
       const q = Object.assign({}, p); q._isNew = true; return q;
     }), false) + endMarkHtml(allShown, cap);
   } else if (isBoard) {
-    container.innerHTML = grid(shown, true) + endMarkHtml(allShown, cap);
+    container.innerHTML = list(shown, true) + endMarkHtml(allShown, cap);
   } else {
-    container.innerHTML = grid(shown, false) + endMarkHtml(allShown, cap);
+    container.innerHTML = list(shown, false) + endMarkHtml(allShown, cap);
   }
 }
 async function loadGithub() {

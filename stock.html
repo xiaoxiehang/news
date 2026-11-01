@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<title>全球股市板块热度 - 鸡仔</title>
+<meta name="description" content="全球股市板块热度：美股 11 大行业板块与全球主要股指，按当日涨跌幅排序。">
+<link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
+<style>
+  :root {
+    --ink: #1d1d1f;
+    --grey: #6e6e73;
+    --hair: #d2d2d7;
+    --wash: #f5f5f7;
+    --up: #d7000f;
+    --down: #0a9d58;
+    --pad-x: 6vw;
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; }
+
+  /* ── 顶栏（全站统一，绝对链接） ─────── */
+  .topbar {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 24px var(--pad-x) 16px;
+  }
+  .brand { font-size: 20px; font-weight: 700; letter-spacing: .01em; }
+  .topnav { display: flex; gap: 32px; font-size: 16px; color: var(--grey); }
+  .topnav a { position: relative; padding: 4px 0; transition: color .3s var(--ease); }
+  .topnav a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+    background: var(--ink); transform: scaleX(0); transform-origin: right;
+    transition: transform .45s var(--ease);
+  }
+  .topnav a:hover { color: var(--ink); }
+  .topnav a:hover::after { transform: scaleX(1); transform-origin: left; }
+  .topnav a.active { color: var(--ink); }
+  .topnav a.active::after { transform: scaleX(1); }
+
+  /* ── 分类条 ─────────────────────────── */
+  .filter-bar {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(255,255,255,.88);
+    -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--hair);
+    padding: 12px var(--pad-x); margin-bottom: 8px;
+  }
+  .categories { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .categories::-webkit-scrollbar { display: none; }
+  .category-btn {
+    font-size: 14px; font-weight: 500; padding: 8px 16px;
+    background: #fff; border: 1px solid var(--hair); border-radius: 999px;
+    color: var(--grey); cursor: pointer; white-space: nowrap; flex-shrink: 0;
+    transition: color .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease);
+  }
+  .category-btn:hover { color: var(--ink); border-color: var(--ink); }
+  .category-btn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+  /* ── 工具条：计数 + 更新时间 ────────── */
+  .stock-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 2px var(--pad-x) 12px; flex-wrap: wrap; }
+  .stock-count { font-size: 12px; color: var(--grey); white-space: nowrap; }
+
+  /* ── 板块行（方向 A：单栏紧凑行） ───── */
+  .sectors-list { padding: 8px var(--pad-x) 64px; }
+  .sector-row {
+    display: block; padding: 18px 12px; margin: 0 -12px;
+    border-bottom: 1px solid var(--hair);
+    position: relative; isolation: isolate;
+    animation: card-in .55s var(--ease) backwards;
+  }
+  .sector-row::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--wash); opacity: 0; transition: opacity .35s var(--ease);
+  }
+  .sector-row:hover::before { opacity: 1; }
+  @keyframes card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .row-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .row-name { font-size: 16px; font-weight: 600; word-break: break-word; }
+  .rank-num { font-weight: 800; margin-right: 8px; font-variant-numeric: tabular-nums; }
+  .code-pill {
+    display: inline-block; font-size: 12px; font-weight: 600; color: var(--grey);
+    background: var(--wash); border: 1px solid var(--hair); border-radius: 4px;
+    padding: 2px 6px; margin-left: 8px; vertical-align: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .row-quote { display: flex; align-items: baseline; gap: 16px; white-space: nowrap; }
+  .price { font-size: 14px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .chg { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; min-width: 76px; text-align: right; }
+  .chg.up { color: var(--up); }
+  .chg.down { color: var(--down); }
+  .chg.flat { color: var(--grey); }
+
+  /* ── 加载 / 空态 / Toast / 页脚 ─────── */
+  .loading { text-align: center; padding: 64px 16px; color: var(--grey); font-size: 14px; }
+  .empty-state { text-align: center; padding: 64px 16px; }
+  .empty-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+  .empty-desc { font-size: 14px; color: var(--grey); }
+  .retry-btn {
+    height: 42px; padding: 0 24px; border-radius: 999px; border: 1px solid var(--hair);
+    background: #fff; color: var(--ink); font-size: 14px; cursor: pointer;
+    transition: border-color .35s var(--ease), color .35s var(--ease);
+  }
+  .retry-btn:hover { border-color: var(--ink); }
+  .toast {
+    position: fixed; bottom: 36px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: #fff;
+    font-size: 14px; padding: 12px 24px; border-radius: 999px;
+    opacity: 0; pointer-events: none; z-index: 100;
+    transition: opacity .35s var(--ease), transform .35s var(--ease);
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .footer { padding: 0 var(--pad-x) 40px; }
+  .footer-inner { display: flex; gap: 8px; align-items: baseline; font-size: 14px; color: var(--grey); }
+  .footer-inner a { transition: color .3s var(--ease); }
+  .footer-inner a:hover { color: var(--ink); }
+
+  @media (max-width: 744px) {
+    :root { --pad-x: 24px; }
+    .topbar { padding-bottom: 12px; }
+    .topnav { gap: 16px; font-size: 14px; }
+    .topnav a:nth-child(1) { display: none; }
+    .sectors-list { padding: 8px var(--pad-x) 48px; }
+    .sector-row { padding: 18px 8px; margin: 0 -8px; }
+    .filter-bar { padding: 12px var(--pad-x); }
+    .chg { min-width: 68px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sector-row { animation: none; transition: none; }
+    .topnav a::after { transition: none; }
+    .toast { transition: none; }
+  }
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="https://1.xiaojj.pro/">鸡仔</a>
+  <nav class="topnav">
+    <a href="https://1.xiaojj.pro/news.html">AI 早报</a>
+    <a href="https://1.xiaojj.pro/github.html">GitHub</a>
+    <a href="https://1.xiaojj.pro/stock.html" class="active">股市</a>
+    <a href="https://price.xiaojj.pro/">降价</a>
+    <a href="https://video.xiaojj.pro/">电影</a>
+    <a href="https://tv.xiaojj.pro/">电视</a>
+  </nav>
+</header>
+
+<main>
+  <div class="filter-bar"><div class="categories" id="categories"></div></div>
+  <div class="stock-toolbar" id="stock-toolbar" style="display:none;"></div>
+  <div id="sectors-container"><div class="loading">加载中...</div></div>
+</main>
+
+<footer class="footer"></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+var stockGroups = null;
+var stockGroupId = 'sectors';
+var stockLoading = false;
+var stockError = false;
+
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function renderStockCategories() {
+  var container = document.getElementById('categories');
+  container.innerHTML = (stockGroups || []).map(function(g) {
+    return '<button class="category-btn' + (g.id === stockGroupId ? ' active' : '') + '" ' +
+      'onclick="switchStockGroup(\'' + g.id + '\')">' + esc(g.name) + '</button>';
+  }).join('');
+}
+
+function switchStockGroup(id) {
+  if (id === stockGroupId && stockLoading) return;
+  stockGroupId = id;
+  renderStockCategories();
+  renderSectors();
+}
+
+function fmtTime(iso) {
+  if (!iso) return '';
+  var d = new Date(iso);
+  var m = d.getMonth() + 1, day = d.getDate();
+  var h = d.getHours(), min = d.getMinutes();
+  function p(n) { return (n < 10 ? '0' : '') + n; }
+  return m + '-' + day + ' ' + p(h) + ':' + p(min);
+}
+
+function chgClass(v) {
+  if (v > 0.005) return 'up';
+  if (v < -0.005) return 'down';
+  return 'flat';
+}
+
+function chgText(v) {
+  var sign = v > 0.005 ? '+' : '';
+  return sign + v.toFixed(2) + '%';
+}
+
+function renderToolbar(group, updated_at, refreshing, partial) {
+  var el = document.getElementById('stock-toolbar');
+  el.style.display = '';
+  var upd = '更新于 ' + fmtTime(updated_at) + (refreshing ? ' · 刷新中…' : '');
+  el.innerHTML = '<div class="stock-count">共 ' + group.items.length + ' 项 · ' + esc(upd) +
+    ' · 报价延迟约 15 分钟' + (partial ? ' · 部分标的暂不可用' : '') + '</div>';
+}
+
+function renderSectors() {
+  var container = document.getElementById('sectors-container');
+  var toolbar = document.getElementById('stock-toolbar');
+  if (!stockGroups) {
+    toolbar.style.display = 'none';
+    if (stockError && !stockLoading) {
+      container.innerHTML = '<div class="empty-state"><div class="empty-title">加载失败</div>' +
+        '<div class="empty-desc">行情接口暂时不可用，稍后重试</div>' +
+        '<div style="margin-top:16px"><button class="retry-btn" onclick="loadSectors()">重新加载</button></div></div>';
+    } else {
+      container.innerHTML = '<div class="loading">加载中...</div>';
+    }
+    return;
+  }
+  var group = null;
+  for (var i = 0; i < stockGroups.length; i++) {
+    if (stockGroups[i].id === stockGroupId) group = stockGroups[i];
+  }
+  if (!group || !group.items.length) {
+    toolbar.style.display = 'none';
+    container.innerHTML = '<div class="empty-state"><div class="empty-title">暂无数据</div>' +
+      '<div class="empty-desc">该分组暂无行情，换个分组试试</div></div>';
+    return;
+  }
+  renderToolbar(group, stockUpdatedAt, stockLoading, stockPartial);
+  container.innerHTML = '<div class="sectors-list">' + group.items.map(function(it, i) {
+    var cls = chgClass(it.change_pct);
+    return '<div class="sector-row">' +
+      '<div class="row-head"><span class="row-name"><span class="rank-num">#' + (i + 1) + '</span>' +
+      esc(it.name) + '<span class="code-pill">' + esc(it.code) + '</span></span>' +
+      '<span class="row-quote"><span class="price">' + esc(String(it.price)) + '</span>' +
+      '<span class="chg ' + cls + '">' + esc(chgText(it.change_pct)) + '</span></span></div>' +
+      '</div>';
+  }).join('') + '</div>';
+}
+
+var stockUpdatedAt = null;
+var stockPartial = false;
+
+async function loadSectors() {
+  if (stockLoading) return;
+  stockLoading = true;
+  stockError = false;
+  renderSectors();
+  try {
+    const r = await fetch('/api/sectors', { cache: 'no-store' });
+    const data = await r.json();
+    if (!data || !data.ok || !Array.isArray(data.groups)) throw new Error('bad api');
+    stockGroups = data.groups;
+    stockUpdatedAt = data.updated_at;
+    stockPartial = !!data.partial;
+  } catch (e) {
+    stockError = true;
+  }
+  stockLoading = false;
+  renderStockCategories();
+  renderSectors();
+}
+
+/* ============ 初始化 ============ */
+loadSectors();
+</script>
+<script src="scripts/footer.js"></script>
+</body>
+</html>
