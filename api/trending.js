@@ -76,7 +76,9 @@ const CATEGORY_OVERRIDES = {
 // MDX-Tom/gpt-instruct：Codex 越狱（破甲）提示词包，不适合公开站点（2026-10-20 夜间质检）
 // laoma528/awesome-zhuiju-free：追剧资源指南，管线侧已于 2026-10-25 拉黑，本次同步到实时接口
 // YuJunZhiXue/dsh-purge：多模型越狱（破甲）提示词切换工具，与 gpt-instruct 同类，不适合公开站点（2026-10-29 夜间质检）
-const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy', 'MDX-Tom/gpt-instruct', 'laoma528/awesome-zhuiju-free', 'YuJunZhiXue/dsh-purge']);
+// Ebony-Vinyl/dsh-our-free-model：dsh 插件，免登录/免 API Key 不限量调用 DeepSeek/Kimi 等付费模型，
+// 与 dsh-purge 同属 dsh 破甲家族且撞"不推拼团黑号"红线，不适合公开站点（2026-11-02 夜间质检）
+const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy', 'MDX-Tom/gpt-instruct', 'laoma528/awesome-zhuiju-free', 'YuJunZhiXue/dsh-purge', 'Ebony-Vinyl/dsh-our-free-model']);
 
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);

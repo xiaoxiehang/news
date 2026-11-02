@@ -26,7 +26,7 @@ CATEGORIES = [
 ]
 
 # 从 api/trending.js 抄的过滤表（只过滤不搬运）
-EXCLUDE = {"stashapp/stash", "Igglybuff/awesome-piracy", "MDX-Tom/gpt-instruct", "laoma528/awesome-zhuiju-free", "YuJunZhiXue/dsh-purge"}  # 2026-10-29：与 api/trending.js 黑名单同步
+EXCLUDE = {"stashapp/stash", "Igglybuff/awesome-piracy", "MDX-Tom/gpt-instruct", "laoma528/awesome-zhuiju-free", "YuJunZhiXue/dsh-purge", "Ebony-Vinyl/dsh-our-free-model"}  # 2026-10-29：与 api/trending.js 黑名单同步；2026-11-02：加 dsh-our-free-model（dsh 破甲家族，免 Key 免费用付费模型）
 OVERRIDES = {
     "apache/iggy": "backend-infra", "travisjeffery/jocko": "backend-infra",
     "memgraph/memgraph": "backend-infra", "Cysharp/MagicOnion": "backend-infra",
