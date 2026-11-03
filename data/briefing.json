@@ -1,64 +1,64 @@
 {
-  "date": "2026-11-02",
-  "date_str": "2026年11月02日",
-  "overview": "今天的 AI 新闻，一头连着搜索流量和数据中心用电，另一头连着机器人与大模型的新实验。值得留意的是，有些报道涉及研究结果或未来排放估算，距离大规模应用或实际发生仍有距离。",
+  "date": "2026-11-03",
+  "date_str": "2026年11月03日",
+  "overview": "今天的热点不只是模型能力：OpenAI提出让数据中心减轻电网压力，谷歌则披露了AI深度参与内部开发的变化。与此同时，游戏复刻限制、AI搜索流量和面向日常任务的新评测，也显示出AI落地后需要回答的现实问题。",
   "picks": [
     {
-      "title": "Reddit 称谷歌 AI 搜索模式未给网站带来流量",
-      "summary": "据 Solidot 援引 Reddit 最新财报报道，谷歌 AI Mode 用生成式回答回应搜索请求，却没有像传统搜索那样持续为 Reddit 导入访问者。Reddit 首席执行官表示，用户仍需要社区内容，但谷歌已不再像过去那样将他们引向网站；这也让内容网站与 AI 搜索之间的关系受到关注。",
-      "url": "https://www.solidot.org/story?sid=85767",
-      "source": "Solidot",
+      "title": "OpenAI推出“电网守护者计划”",
+      "summary": "OpenAI宣布推出“电网守护者计划”，将与电力公司合作，探索让未来的大型算力园区支持电网稳定、避免推高居民电费。随着AI数据中心用电需求增长，这项计划把公众关心的供电压力和电费问题摆到了项目建设的前台；具体成效仍有待检验。",
+      "url": "https://openai.com/index/grid-protectors-program",
+      "source": "OpenAI 官方",
       "category": "今日头条"
     },
     {
-      "title": "国产机器人模型在 24 项真机测试中取得导航和移动操作第一",
-      "summary": "机器之心报道，具身智能模型 Fysiverse-UniWAM 在涵盖导航、停靠和抓取的 24 项真机测试中，取得导航与移动操作两类任务的第一名。报道强调，该模型不依赖大规模机器人预训练；不过，这些测试成绩还不能直接等同于在复杂日常环境中的稳定表现。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651071440&idx=1&sn=913d398a504d3e029db48cde218437a2",
-      "source": "机器之心",
+      "title": "谷歌优先为Gemini保留算力，皮查伊谈AI如何改变内部开发",
+      "summary": "谷歌CEO皮查伊在访谈中谈到，公司会优先把部分算力留给Gemini，而不只是对外销售云算力。他还表示，AI已深入参与谷歌内部开发；据报道，Gemini 4 Argon发布后四周，代码变更提交量增加约30%，回滚次数减少约三分之一。",
+      "url": "https://www.infoq.cn/article/JmVl0yY2RYIBNpuD0xuu",
+      "source": "InfoQ 推荐",
+      "category": "今日头条"
+    },
+    {
+      "title": "Anthropic限制Claude复刻现有电子游戏",
+      "summary": "Anthropic更新了Claude Code的系统提示，限制用户借助这款AI编程工具重新制作已有电子游戏。AI让模仿游戏内容变得更容易，也让相关使用边界受到关注；这次调整针对的是复刻现有作品，并非禁止用AI开发游戏。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
+      "source": "The Verge",
       "category": "前沿动态"
     },
     {
-      "title": "Buildkite 推出帮助排查构建故障的智能体工具",
-      "summary": "InfoQ 报道，持续集成服务商 Buildkite 推出一组工具，可供 AI 智能体验证软件构建流程、诊断构建失败，并协助修复 Webhook 问题。公司同时增加了限定在单条流水线内使用的密钥，目的是让自动化排障获得所需权限，同时缩小凭据泄露可能造成的影响。",
-      "url": "https://www.infoq.cn/article/WmlATgJudjwPKqHf4QgX",
-      "source": "InfoQ 推荐",
+      "title": "谷歌将AI个性化故事实验Dreambeans带到印度",
+      "summary": "谷歌把AI个性化故事实验Dreambeans扩展到印度，目前支持13种印度语言。用户能否用熟悉的语言使用生成式AI，是产品走向更多人群的重要一步；这次更新的看点不在模型参数，而在降低不同语言用户的使用门槛。",
+      "url": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
+      "source": "TechCrunch",
       "category": "效率工具"
     },
     {
-      "title": "报道关注 OpenAI 使用额度调整",
-      "summary": "机器之心关注 OpenAI 产品额度的调整，称不同用途的额度可能被合并管理，并将这一变化与按使用量计费的趋势联系起来。对经常使用 ChatGPT 或编程工具的人来说，关键仍是查看自己套餐的官方额度说明；报道标题中的计费判断，不宜直接当作已公布的新收费规则。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651071440&idx=2&sn=06d8aa900e443f086c007d9ee4de9789",
-      "source": "机器之心",
-      "category": "一句话"
+      "title": "OpenAI提高安全漏洞悬赏奖金",
+      "summary": "OpenAI宣布提高安全漏洞悬赏奖励，并为独立安全研究人员新增报告质量、持续参与和重点活动等方面的奖金。此举希望鼓励研究人员提交更有价值的漏洞报告；它关注的是产品防护，而不是推出新的聊天功能。",
+      "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
     },
     {
-      "title": "报告警示数据中心用电可能抵消美国减排成果",
-      "summary": "据 Solidot 报道，环保组织 Sierra Club 的最新分析估计，若数据中心需求持续增长，美国电力行业到 2030 年的碳排放可能比 2025 年高约 42%。报道指出，部分科技公司为绕开电网接入排队而建设自备发电设施；这一数字是基于情景的预测，并非已经发生的排放增量。",
-      "url": "https://www.solidot.org/story?sid=85766",
+      "title": "OpenAI推出日常任务AI评测LifeVal",
+      "summary": "OpenAI发布新评测LifeVal，用来衡量AI能否帮助人们完成寻找托育服务、管理财务和处理政府文件等日常任务。与只考知识或编程的测试相比，它把重点放在普通人实际要办的事上；LifeVal是评测项目，并非新聊天产品。",
+      "url": "https://openai.com/index/lifeval",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Reddit称谷歌AI模式未给网站带来流量",
+      "summary": "据Solidot报道，Reddit在最新财报相关表述中称，谷歌AI模式没有像传统搜索那样为其带来流量。AI直接汇总答案可能减少用户点进原网站的机会；这一案例让内容网站如何获得访问量与回报的问题再次受到关注。",
+      "url": "https://www.solidot.org/story?sid=85767",
       "source": "Solidot",
       "category": "前沿动态"
     },
     {
-      "title": "TokenRouter 探索让大模型按词元分配计算任务",
-      "summary": "大模型智能介绍了 TokenRouter：它尝试让模型在生成回答时，按词元将计算任务交给不同处理环节，而不只是停留在算法设计上。报道重点讨论请求接口、异步交接和延迟批处理如何影响实际吞吐量与等待时间；这些效果仍需结合具体实验条件理解。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557645&idx=1&sn=0578828cf310efffad56f0347cd84bac",
-      "source": "大模型智能",
-      "category": "前沿动态"
-    },
-    {
-      "title": "研究团队探索结合两种注意力机制的大模型架构",
-      "summary": "机器之心介绍了复旦创智 OpenMOSS 团队的一项大模型架构研究，讨论如何同时利用线性注意力和滑窗注意力。两种方法各有处理长文本与控制计算开销的取舍，研究希望通过组合设计改善表现；对普通用户而言，这仍属于模型底层研究，而非可直接使用的新功能。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651071440&idx=3&sn=ac0f863b4725bef4e45e4453d7e081e3",
-      "source": "机器之心",
-      "category": "前沿动态"
-    },
-    {
-      "title": "报道称谷歌 TPU 已在太空运行 Gemma 4",
-      "summary": "大模型智能报道称，谷歌 TPU 已在太空开机运行 Gemma 4，并以模型生成诗句作为报道切入点。如果相关运行细节得到证实，这将为太空环境中的 AI 计算提供新案例；但仅凭候选报道的简介，尚无法判断任务规模、运行时长或与地面计算相比的实际收益。",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557638&idx=2&sn=c64bbefb4b06ed13647f8f87c56e29bb",
-      "source": "大模型智能",
-      "category": "一句话"
+      "title": "Xmind 2027亮相，主打AI思维伙伴",
+      "summary": "思维导图工具Xmind 2027登上Product Hunt，将新版定位为能参与思考的AI伙伴，而不只是整理想法的画布。对习惯用导图梳理学习、写作或工作计划的人来说，值得关注的是AI能否真正帮助组织思路；现有简介尚未说明具体功能细节。",
+      "url": "https://www.producthunt.com/products/xmind",
+      "source": "Product Hunt",
+      "category": "效率工具"
     }
   ],
-  "generated_at": "2026-11-02 02:52:01"
+  "generated_at": "2026-11-03 04:08:17"
 }
