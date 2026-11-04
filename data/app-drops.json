@@ -1,5 +1,5 @@
 {
- "date": "2026-11-03",
+ "date": "2026-11-04",
  "drops": [
   {
    "id": 1622869542,
@@ -208,6 +208,40 @@
    "region": "CN",
    "discount": 67,
    "original_price": 3.0,
+   "is_free": false
+  },
+  {
+   "id": 1159700098,
+   "name": "去月球-To the Moon",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 12.0,
+     "hist_max": 30.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.99,
+     "hist_max": 1.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 18.0,
+     "hist_max": 38.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/b4/70/9a/b4709aac-55d1-21e8-89d4-ccdeccf04a1f/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%8E%BB%E6%9C%88%E7%90%83-to-the-moon/id1159700098?uo=4",
+   "region": "CN",
+   "discount": 60,
+   "original_price": 30.0,
    "is_free": false
   },
   {
@@ -635,6 +669,36 @@
    "url": "https://apps.apple.com/cn/app/stylebook/id335709058?uo=4"
   },
   {
+   "id": 338893931,
+   "name": "Prepware Aviation Maintenance",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 68.0,
+     "hist_max": 68.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 9.99,
+     "hist_max": 9.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 88.0,
+     "hist_max": 88.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/2a/3c/412a3c83-9b62-ffad-91dc-595097827e16/AppIcon-AMT-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/prepware-aviation-maintenance/id338893931?uo=4"
+  },
+  {
    "id": 357421934,
    "name": "PeakFinder",
    "prices": {
@@ -691,7 +755,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/61/cd/d1/61cdd1fe-5fad-21f5-3b02-436f09f03e83/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/81/8d/71818d3c-7dbf-c7f4-a2b9-2b9eae725ac4/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/jump-desktop-rdp-vnc-fluid/id364876095?uo=4"
   },
   {
@@ -751,7 +815,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/30/6b/da/306bdac5-3088-c97f-c682-e4626bfc6b43/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2d/8d/fa/2d8dfa4b-c21e-b77e-83da-fe7e3c459858/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/ankimobile-flashcards/id373493387?uo=4"
   },
   {
@@ -1087,29 +1151,6 @@
    "url": "https://apps.apple.com/cn/app/%E4%B8%9C%E6%96%B9%E8%B4%A2%E5%AF%8C%E9%A2%86%E5%85%88%E7%89%88-%E8%B4%A2%E7%BB%8F%E8%B5%84%E8%AE%AF-%E8%82%A1%E7%A5%A8%E5%BC%80%E6%88%B7/id530425820?uo=4"
   },
   {
-   "id": 535176909,
-   "name": "BADLAND",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 0.99,
-     "hist_max": 0.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 8.0,
-     "hist_max": 8.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/35/d2/0b/35d20b3f-8ac5-f88f-3809-54b7998d6736/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/badland/id535176909?uo=4"
-  },
-  {
    "id": 549105915,
    "name": "True Skate",
    "prices": {
@@ -1131,29 +1172,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/46/8a/3e468a34-207c-3093-8fec-49919232f7e1/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/true-skate/id549105915?uo=4"
-  },
-  {
-   "id": 554937499,
-   "name": "Earn to Die",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 0.99,
-     "hist_max": 0.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 8.0,
-     "hist_max": 8.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/0f/b3/b0/0fb3b02a-8b71-2854-e478-04b9c5ec66ff/mzl.sdmrqvyg.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/earn-to-die/id554937499?uo=4"
   },
   {
    "id": 563718995,
@@ -1232,6 +1250,29 @@
    "url": "https://apps.apple.com/us/app/pou/id575154654?uo=4"
   },
   {
+   "id": 578448682,
+   "name": "Grand Theft Auto: Vice City",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 4.99,
+     "hist_max": 4.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 38.0,
+     "hist_max": 38.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/57/01/fd/5701fd72-a6a2-35db-0710-30a0fb014cc6/AppIcon-0-1x_U007emarketing-85-220-4.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/grand-theft-auto-vice-city/id578448682?uo=4"
+  },
+  {
    "id": 578665578,
    "name": "Threema. The Secure Messenger",
    "prices": {
@@ -1251,8 +1292,38 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8d/44/40/8d444022-7333-6930-0576-919c6497c4b4/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bf/d4/b0/bfd4b033-7c8a-c9fa-7b9b-58d104879a98/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/threema-the-secure-messenger/id578665578?uo=4"
+  },
+  {
+   "id": 582584117,
+   "name": "Solocator - GPS Field Camera",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.99,
+     "hist_max": 0.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/15/61/c015618b-35e8-a2cb-0cbc-a51b9b74fdf5/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/solocator-gps-field-camera/id582584117?uo=4"
   },
   {
    "id": 586149216,
@@ -1423,6 +1494,59 @@
    "url": "https://apps.apple.com/us/app/terraria/id640364616?uo=4"
   },
   {
+   "id": 728293409,
+   "name": "Monument Valley",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 3.99,
+     "hist_max": 3.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 32.0,
+     "hist_max": 32.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/8e/d8/218ed8a3-c616-9ec7-419e-368073b9deb7/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/monument-valley/id728293409?uo=4"
+  },
+  {
+   "id": 755018884,
+   "name": "新概念英语专业版 - 英语美语全四册",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 1.0,
+     "hist_max": 1.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.99,
+     "hist_max": 0.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/6f/a0/f56fa014-9d75-65d1-567d-8e2f49720b38/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E6%96%B0%E6%A6%82%E5%BF%B5%E8%8B%B1%E8%AF%AD%E4%B8%93%E4%B8%9A%E7%89%88-%E8%8B%B1%E8%AF%AD%E7%BE%8E%E8%AF%AD%E5%85%A8%E5%9B%9B%E5%86%8C/id755018884?uo=4"
+  },
+  {
    "id": 763692274,
    "name": "Grand Theft Auto: San Andreas",
    "prices": {
@@ -1472,7 +1596,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9a/bc/52/9abc524a-21a0-7cd3-b5ca-ccabda1800e1/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/25/2e/ae/252eaeb0-b04a-65bf-c876-643d0cadc518/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E8%88%AA%E6%97%85%E7%BA%B5%E6%A8%AApro-%E6%B0%91%E8%88%AA%E5%AE%98%E6%96%B9%E7%9B%B4%E9%94%80%E5%B9%B3%E5%8F%B0/id768160271?uo=4"
   },
   {
@@ -1504,36 +1628,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ba/54/7e/ba547e19-e612-5b7c-d35d-8f5ac684b2e8/AppIcon-std-0-0-1x_U007epad-0-11-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/goodreader-pdf-editor-viewer/id777310222?uo=4"
-  },
-  {
-   "id": 780656219,
-   "name": "Sounds of Speech",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 28.0,
-     "hist_max": 28.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 3.99,
-     "hist_max": 3.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 32.0,
-     "hist_max": 32.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/08/28/5608289c-3b65-c942-d9dc-14da247a5679/AppIcon-0-0-1x_U007epad-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/sounds-of-speech/id780656219?uo=4"
   },
   {
    "id": 807317212,
@@ -1610,6 +1704,36 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fe/cc/ab/feccab35-76b9-2ffa-7a6a-40ea9af24707/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/earn-to-die-2/id891194610?uo=4"
+  },
+  {
+   "id": 892347083,
+   "name": "FORScan Lite - for Ford, Mazda",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 48.0,
+     "hist_max": 48.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 6.99,
+     "hist_max": 6.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 58.0,
+     "hist_max": 58.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/05/4b/59/054b5916-9ac4-578e-f0b7-06730ecf0e83/AppIcon-0-0-1x_U007emarketing-0-6-0-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/forscan-lite-for-ford-mazda/id892347083?uo=4"
   },
   {
    "id": 901738789,
@@ -1877,6 +2001,36 @@
    "url": "https://apps.apple.com/cn/app/%E5%90%8C%E6%AD%A5%E9%9F%B3%E5%BE%8B/id935528099?uo=4"
   },
   {
+   "id": 936694037,
+   "name": "录音机专业版: 高清录制",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 38.0,
+     "hist_max": 38.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 5.99,
+     "hist_max": 5.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 48.0,
+     "hist_max": 48.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b5/c2/fe/b5c2fec3-e472-ee95-d6c5-d436ad40af83/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%BD%95%E9%9F%B3%E6%9C%BA%E4%B8%93%E4%B8%9A%E7%89%88-%E9%AB%98%E6%B8%85%E5%BD%95%E5%88%B6/id936694037?uo=4"
+  },
+  {
    "id": 941143328,
    "name": "Five Nights at Freddy's 2",
    "prices": {
@@ -1898,29 +2052,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/74/30/b1/7430b134-0ebe-53ef-88b9-53cfc8d3acce/AppIcon-0-0-1x_U007epad-0-0-0-0-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/five-nights-at-freddys-2/id941143328?uo=4"
-  },
-  {
-   "id": 945322477,
-   "name": "新仙劍奇俠傳(正版單機)",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 8.99,
-     "hist_max": 8.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 68.0,
-     "hist_max": 68.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/73/1f/54/731f5487-1496-ab8a-9e75-b00247c31021/AppIcon-0-0-1x_U007emarketing-0-0-0-9-0-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/%E6%96%B0%E4%BB%99%E5%8A%8D%E5%A5%87%E4%BF%A0%E5%82%B3-%E6%AD%A3%E7%89%88%E5%96%AE%E6%A9%9F/id945322477?uo=4"
   },
   {
    "id": 952625011,
@@ -2002,7 +2133,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/68/3b/ca/683bca08-5be0-bcd3-300e-eb63aa125d94/orange_normal-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d5/41/5e/d5415e5d-a948-0c81-0b21-d47da74caee4/orange_normal-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/streaks/id963034692?uo=4"
   },
   {
@@ -2043,36 +2174,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/52/ca/a1/52caa126-18de-d239-7ee0-b80401b566b6/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E8%81%9A%E7%88%86implosion/id982227026?uo=4"
-  },
-  {
-   "id": 998437373,
-   "name": "欧路背单词",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 18.0,
-     "hist_max": 18.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 2.99,
-     "hist_max": 2.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/03/ee/b9/03eeb91d-3564-56e9-6562-e8c8b2165bda/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E6%AC%A7%E8%B7%AF%E8%83%8C%E5%8D%95%E8%AF%8D/id998437373?uo=4"
   },
   {
    "id": 1010311475,
@@ -2156,36 +2257,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d2/c2/fb/d2c2fb3a-6e26-04b4-35f3-69f8a54f938e/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E8%B4%AA%E5%A9%AA%E6%B4%9E%E7%AA%9F/id1028950091?uo=4"
-  },
-  {
-   "id": 1043963852,
-   "name": "Pipefitter",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 48.0,
-     "hist_max": 48.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 6.99,
-     "hist_max": 6.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 58.0,
-     "hist_max": 58.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a9/7c/0b/a97c0b4f-9f13-e47d-07b0-7b1ead6bf61e/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/pipefitter/id1043963852?uo=4"
   },
   {
    "id": 1062022008,
@@ -2386,6 +2457,29 @@
    "url": "https://apps.apple.com/cn/app/%E7%89%A9%E7%A7%8D%E8%B5%B7%E6%BA%90/id1112429079?uo=4"
   },
   {
+   "id": 1115520522,
+   "name": "姬魔恋战纪-单机剧情手游戏",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 1.0,
+     "hist_max": 1.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.99,
+     "hist_max": 0.99,
+     "currency": "USD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/88/dd/1a/88dd1a5f-1547-f495-f1a1-c9bcab709120/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.jpeg/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%A7%AC%E9%AD%94%E6%81%8B%E6%88%98%E7%BA%AA-%E5%8D%95%E6%9C%BA%E5%89%A7%E6%83%85%E6%89%8B%E6%B8%B8%E6%88%8F/id1115520522?uo=4"
+  },
+  {
    "id": 1116905928,
    "name": "nPlayer",
    "prices": {
@@ -2416,6 +2510,36 @@
    "url": "https://apps.apple.com/cn/app/nplayer/id1116905928?uo=4"
   },
   {
+   "id": 1117998129,
+   "name": "2027人体解剖学图谱",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 148.0,
+     "hist_max": 148.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 24.99,
+     "hist_max": 24.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 148.0,
+     "hist_max": 148.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/10/b2/8b/10b28bc7-8d86-7c5a-177d-1d17a6bbf710/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/2027%E4%BA%BA%E4%BD%93%E8%A7%A3%E5%89%96%E5%AD%A6%E5%9B%BE%E8%B0%B1/id1117998129?uo=4"
+  },
+  {
    "id": 1118115766,
    "name": "Bloons TD 6",
    "prices": {
@@ -2437,6 +2561,36 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ec/ea/72/ecea728c-c718-b232-3078-98cbfd464349/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/bloons-td-6/id1118115766?uo=4"
+  },
+  {
+   "id": 1129429340,
+   "name": "RaceChrono Pro",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 148.0,
+     "hist_max": 148.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 19.99,
+     "hist_max": 19.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 148.0,
+     "hist_max": 148.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/58/cf/c3/58cfc3de-5ee0-2443-c1fe-b48debe7adb8/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/racechrono-pro/id1129429340?uo=4"
   },
   {
    "id": 1134805859,
@@ -2515,6 +2669,36 @@
    "url": "https://apps.apple.com/cn/app/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A/id1157863540?uo=4"
   },
   {
+   "id": 1159700098,
+   "name": "去月球-To the Moon",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 12.0,
+     "hist_max": 30.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.99,
+     "hist_max": 1.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 18.0,
+     "hist_max": 38.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/b4/70/9a/b4709aac-55d1-21e8-89d4-ccdeccf04a1f/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%8E%BB%E6%9C%88%E7%90%83-to-the-moon/id1159700098?uo=4"
+  },
+  {
    "id": 1164801111,
    "name": "AutoSleep - 苹果手表睡眠监测，睡觉记录及智能闹钟",
    "prices": {
@@ -2541,7 +2725,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6b/ab/79/6bab79e0-1df5-2f33-f254-d8d695473f8a/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3b/00/cc/3b00ccbb-dfa7-03f5-744e-93a514fcc58d/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/autosleep-%E8%8B%B9%E6%9E%9C%E6%89%8B%E8%A1%A8%E7%9D%A1%E7%9C%A0%E7%9B%91%E6%B5%8B-%E7%9D%A1%E8%A7%89%E8%AE%B0%E5%BD%95%E5%8F%8A%E6%99%BA%E8%83%BD%E9%97%B9%E9%92%9F/id1164801111?uo=4"
   },
   {
@@ -2559,6 +2743,29 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0a/79/cd/0a79cdfe-31e9-1392-df8c-58f3a8a5c5e4/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E6%B4%BB%E4%B8%8B%E5%8E%BB-%E4%B8%A7%E5%B0%B8%E9%A2%98%E6%9D%90%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E5%86%92%E9%99%A9%E6%B8%B8%E6%88%8F/id1169282239?uo=4"
+  },
+  {
+   "id": 1189781891,
+   "name": "Five Nights at Freddy's: SL",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 2.99,
+     "hist_max": 2.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 22.0,
+     "hist_max": 22.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b5/ae/4c/b5ae4c56-804f-1953-6fd5-eeabec3f759c/AppIcon-1x_U007epad-0-1-85-220-0.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/five-nights-at-freddys-sl/id1189781891?uo=4"
   },
   {
    "id": 1197275827,
@@ -2591,29 +2798,6 @@
    "url": "https://apps.apple.com/cn/app/%E9%87%91%E5%8D%81%E6%95%B0%E6%8D%AE%E4%B8%93%E4%B8%9A%E7%89%88-%E4%B8%BA%E4%BA%A4%E6%98%93%E8%80%8C%E7%94%9F/id1197275827?uo=4"
   },
   {
-   "id": 1212201213,
-   "name": "Big 2 - Pusoy Dos (Deluxe)",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 12.99,
-     "hist_max": 12.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 98.0,
-     "hist_max": 98.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/76/aa/5f/76aa5f9f-04ba-35d2-f28c-1c2d506d5aa4/AppIcon-1x_U007emarketing-0-8-0-P3-85-220-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/big-2-pusoy-dos-deluxe/id1212201213?uo=4"
-  },
-  {
    "id": 1217732174,
    "name": "TA - 一对一聊天，遇见对的人",
    "prices": {
@@ -2628,36 +2812,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/5b/59/ef/5b59efaa-0e2a-8c02-5c51-7f7696fdd77d/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/ta-%E4%B8%80%E5%AF%B9%E4%B8%80%E8%81%8A%E5%A4%A9-%E9%81%87%E8%A7%81%E5%AF%B9%E7%9A%84%E4%BA%BA/id1217732174?uo=4"
-  },
-  {
-   "id": 1221958710,
-   "name": "Everyday Witch Tarot",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 28.0,
-     "hist_max": 28.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 3.99,
-     "hist_max": 3.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 32.0,
-     "hist_max": 32.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/7a/d8/d5/7ad8d5f4-0d5f-20f2-bc41-5ee1fc03cb69/AppIconED-0-1x_U007emarketing-0-85-220-4.jpeg/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/everyday-witch-tarot/id1221958710?uo=4"
   },
   {
    "id": 1238778050,
@@ -2858,36 +3012,6 @@
    "url": "https://apps.apple.com/cn/app/paprika%E9%A3%9F%E8%B0%B1%E7%AE%A1%E7%90%863/id1303222868?uo=4"
   },
   {
-   "id": 1326693810,
-   "name": "Outcast for Watch",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 2.99,
-     "hist_max": 2.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/18/aa/81/18aa8127-c86f-e52a-bdb4-b18b6bdfc70a/AppIcon-0-0-1x_U007emarketing-0-0-0-3-0-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/outcast-for-watch/id1326693810?uo=4"
-  },
-  {
    "id": 1329434099,
    "name": "乱斗堂3",
    "prices": {
@@ -3042,29 +3166,6 @@
    "url": "https://apps.apple.com/us/app/imo-video-calls-and-chat-hd/id1400579543?uo=4"
   },
   {
-   "id": 1403183441,
-   "name": "Ala Mobile",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 1.99,
-     "hist_max": 1.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 18.0,
-     "hist_max": 18.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/c0/99/48c099d0-241d-9731-affc-24656bb9ef9a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/ala-mobile/id1403183441?uo=4"
-  },
-  {
    "id": 1406710800,
    "name": "Stardew Valley",
    "prices": {
@@ -3088,29 +3189,6 @@
    "url": "https://apps.apple.com/us/app/stardew-valley/id1406710800?uo=4"
   },
   {
-   "id": 1437096541,
-   "name": "Rush Rally 3",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 4.99,
-     "hist_max": 4.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 38.0,
-     "hist_max": 38.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e8/f0/82/e8f0826a-ff86-3d38-8399-52174ed21461/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/rush-rally-3/id1437096541?uo=4"
-  },
-  {
    "id": 1437479513,
    "name": "逃脱者：困境突围",
    "prices": {
@@ -3132,59 +3210,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a0/47/d2/a047d23d-47a5-70f6-970e-f6e1a27c2c30/AppIcon-1x_U007emarketing-0-10-0-85-220-0.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E9%80%83%E8%84%B1%E8%80%85-%E5%9B%B0%E5%A2%83%E7%AA%81%E5%9B%B4/id1437479513?uo=4"
-  },
-  {
-   "id": 1437669537,
-   "name": "Bendy and the Ink Machine",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 0.99,
-     "hist_max": 0.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 8.0,
-     "hist_max": 8.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e3/19/97/e31997d2-a073-bbc8-179f-c7ef2019a322/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/bendy-and-the-ink-machine/id1437669537?uo=4"
-  },
-  {
-   "id": 1437715202,
-   "name": "倉頡詞典",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 38.0,
-     "hist_max": 38.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 5.99,
-     "hist_max": 5.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 48.0,
-     "hist_max": 48.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/90/df/71/90df7178-9db8-eff1-141d-3828423da927/AppIcon-0-1x_U007emarketing-0-0-85-220-7.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E5%80%89%E9%A0%A1%E8%A9%9E%E5%85%B8/id1437715202?uo=4"
   },
   {
    "id": 1439723850,
@@ -3215,6 +3240,29 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/69/f7/a0/69f7a0c5-f8d2-a1ce-ea52-f018161433ba/AppIcon-0-0-1x_U007emarketing-0-5-0-sRGB-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E6%97%B6%E9%97%B4%E8%A7%84%E5%88%92%E5%B1%80-%E5%80%92%E8%AE%A1%E6%97%B6%E4%B8%8E%E6%8F%90%E9%86%92%E4%BA%8B%E9%A1%B9/id1439723850?uo=4"
+  },
+  {
+   "id": 1443988620,
+   "name": "Quantumult X",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 9.99,
+     "hist_max": 9.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 88.0,
+     "hist_max": 88.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/84/ae/50/84ae5055-dc8c-2f6e-cea6-8b543f72ae98/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/quantumult-x/id1443988620?uo=4"
   },
   {
    "id": 1444761746,
@@ -3259,7 +3307,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/6f/61/3c6f6196-4e67-2863-2024-64d5436f926f/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8b/fd/ea/8bfdea67-c122-fa01-1cc4-721e6efcde6d/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/%E4%B8%89%E5%9C%8B%E5%BF%97%E5%A4%A9%E4%B8%8B%E5%B8%83%E6%AD%A6-%E5%96%AE%E6%A9%9F%E6%88%B0%E6%A3%8B%E7%AD%96%E7%95%A5%E9%81%8A%E6%88%B2/id1450144092?uo=4"
   },
   {
@@ -3415,6 +3463,29 @@
    "url": "https://apps.apple.com/cn/app/%E5%B8%95%E6%96%AF%E5%8D%A1%E5%A5%91%E7%BA%A6/id1476649036?uo=4"
   },
   {
+   "id": 1477229754,
+   "name": "Papa's Cheeseria To Go!",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.99,
+     "hist_max": 1.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 18.0,
+     "hist_max": 18.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/8d/66/03/8d660358-ede2-e838-9110-3b5f227dd76c/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/papas-cheeseria-to-go/id1477229754?uo=4"
+  },
+  {
    "id": 1477966166,
    "name": "MONOPOLY: The Board Game",
    "prices": {
@@ -3475,6 +3546,36 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/91/0c/92/910c920a-0ab6-1939-e297-083995b640c7/AppIcon-1x_U007emarketing-0-11-0-0-85-220-0.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/slay-the-spire/id1491530147?uo=4"
+  },
+  {
+   "id": 1498550832,
+   "name": "ASCCP Management Guidelines",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 98.0,
+     "hist_max": 98.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 14.99,
+     "hist_max": 14.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 118.0,
+     "hist_max": 118.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d6/ad/dd/d6adddda-c8a2-98e8-2acc-6905fa0d1ab1/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/asccp-management-guidelines/id1498550832?uo=4"
   },
   {
    "id": 1499849161,
@@ -3546,6 +3647,36 @@
    "url": "https://apps.apple.com/us/app/the-game-of-life-2/id1512751689?uo=4"
   },
   {
+   "id": 1515215584,
+   "name": "RakugakiAR",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.99,
+     "hist_max": 0.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4c/df/0e/4cdf0e23-a172-0578-97ea-6fe2e3d4d753/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/rakugakiar/id1515215584?uo=4"
+  },
+  {
    "id": 1517349382,
    "name": "群雄时代 - 单机三国战棋策略游戏",
    "prices": {
@@ -3601,34 +3732,27 @@
    "url": "https://apps.apple.com/cn/app/%E6%A1%82%E6%9E%97%E5%AD%97%E7%89%8C%E6%89%8B%E6%9C%BA%E7%89%88/id1531462734?uo=4"
   },
   {
-   "id": 1536762482,
-   "name": "Spirit Talker ®",
+   "id": 1531654315,
+   "name": "MayLikeWallpaper - best hiapk",
    "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 38.0,
-     "hist_max": 38.0,
-     "currency": "CNY"
-    },
     "US": {
      "label": "美区",
      "symbol": "$",
-     "price": 4.99,
-     "hist_max": 4.99,
+     "price": 0.39,
+     "hist_max": 0.39,
      "currency": "USD"
     },
     "HK": {
      "label": "港区",
      "symbol": "HK$",
-     "price": 38.0,
-     "hist_max": 38.0,
+     "price": 2.0,
+     "hist_max": 2.0,
      "currency": "HKD"
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/eb/45/43/eb4543d2-bea2-e962-67fc-b993c516e241/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/spirit-talker/id1536762482?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0c/5c/ed/0c5cedd4-8a0d-22c0-d255-b2a3322e0aa9/AppIcon-1x_U007emarketing-0-8-0-sRGB-85-220-0.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/maylikewallpaper-best-hiapk/id1531654315?uo=4"
   },
   {
    "id": 1543161449,
@@ -3741,29 +3865,6 @@
    "url": "https://apps.apple.com/us/app/lets-get-lit/id1554805547?uo=4"
   },
   {
-   "id": 1566275194,
-   "name": "Forest Camp Story",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 5.99,
-     "hist_max": 5.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 48.0,
-     "hist_max": 48.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/51/17/d0/5117d040-b537-dec1-c002-0f5065b3ec50/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/forest-camp-story/id1566275194?uo=4"
-  },
-  {
    "id": 1576329230,
    "name": "传奇1.76官方正版盛大首发(重置版)今日开服送点卡迷失传说",
    "prices": {
@@ -3840,6 +3941,22 @@
    "url": "https://apps.apple.com/cn/app/noir-%E4%B8%BAsafari%E6%B7%BB%E5%8A%A0%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F/id1581140954?uo=4"
   },
   {
+   "id": 1584313012,
+   "name": "笼中窥梦",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 25.0,
+     "hist_max": 25.0,
+     "currency": "CNY"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/0d/e0/66/0de0660e-222b-b9bc-66d8-5fb98d4567a0/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E7%AC%BC%E4%B8%AD%E7%AA%A5%E6%A2%A6/id1584313012?uo=4"
+  },
+  {
    "id": 1596063349,
    "name": "Stash - Rule Based Proxy",
    "prices": {
@@ -3879,29 +3996,6 @@
    "url": "https://apps.apple.com/us/app/reds-first-flight/id1596736236?uo=4"
   },
   {
-   "id": 1600307023,
-   "name": "Dealer's Life 2",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 8.99,
-     "hist_max": 8.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 58.0,
-     "hist_max": 58.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/76/47/03/764703d4-c77f-e593-502b-6196818f1cc8/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/dealers-life-2/id1600307023?uo=4"
-  },
-  {
    "id": 1600873673,
    "name": "炭炭背单词｜四六级考研等英语单词学习",
    "prices": {
@@ -3937,7 +4031,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/61/80/a8/6180a895-ef5b-3ec2-587b-e1cba3a1e08a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/54/bc/5c/54bc5c32-c077-2e05-dbd1-2a61da7ea2b6/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/hk/app/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9E/id1609910024?uo=4"
   },
   {
@@ -3955,6 +4049,52 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ba/08/6c/ba086ccf-bf01-12e0-0aee-bbed9c494519/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E9%83%A8%E8%90%BD%E4%B8%8E%E5%BC%AF%E5%88%80/id1614200925?uo=4"
+  },
+  {
+   "id": 1614771445,
+   "name": "Rotaeno",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.49,
+     "hist_max": 1.49,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 12.0,
+     "hist_max": 12.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/66/78/d5/6678d5f6-6ffc-3724-eb96-5f3854c8084c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/rotaeno/id1614771445?uo=4"
+  },
+  {
+   "id": 1620883955,
+   "name": "Little Nightmares",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 7.99,
+     "hist_max": 7.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 58.0,
+     "hist_max": 58.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/9d/7f/fd9d7f67-ec50-01c3-c695-14113dafa0b8/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/little-nightmares/id1620883955?uo=4"
   },
   {
    "id": 1622869542,
@@ -4008,29 +4148,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/ed/47/aded4706-56fc-e2a8-f27e-fc33078c3123/AppIcon-0-0-1x_U007ephone-0-1-85-220.jpeg/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E7%A9%BA%E6%B0%94%E6%8A%95%E7%AF%AE/id1625289361?uo=4"
-  },
-  {
-   "id": 1630887189,
-   "name": "20 Minutes Till Dawn:Premium",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 3.49,
-     "hist_max": 3.49,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 28.0,
-     "hist_max": 28.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1c/81/2d/1c812d6f-3f5c-8d8b-476e-a6807e67b67f/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/20-minutes-till-dawn-premium/id1630887189?uo=4"
   },
   {
    "id": 1631859420,
@@ -4093,29 +4210,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/c2/b9/05c2b9d4-189c-dfaf-1efd-09838d14142f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/tokyo-train/id1642139491?uo=4"
-  },
-  {
-   "id": 1642601792,
-   "name": "The Past Within",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 2.99,
-     "hist_max": 2.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/2c/df/bb2cdff2-5289-a7b8-da79-4b7323917d16/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/the-past-within/id1642601792?uo=4"
   },
   {
    "id": 1659211813,
@@ -4270,68 +4364,6 @@
    "url": "https://apps.apple.com/us/app/underground-blossom/id1665706687?uo=4"
   },
   {
-   "id": 1668755109,
-   "name": "Brotato:Premium",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 4.99,
-     "hist_max": 4.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 38.0,
-     "hist_max": 38.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1e/cc/e8/1ecce840-d8c2-cd22-8ccd-fcef0d434f44/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/brotato-premium/id1668755109?uo=4"
-  },
-  {
-   "id": 1671505630,
-   "name": "迷失岛外传南瓜镇",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 1.0,
-     "hist_max": 1.0,
-     "currency": "CNY"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ed/ce/d5/edced5cd-ce57-dc35-d6e2-b4e0ca9bfe02/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E8%BF%B7%E5%A4%B1%E5%B2%9B%E5%A4%96%E4%BC%A0%E5%8D%97%E7%93%9C%E9%95%87/id1671505630?uo=4"
-  },
-  {
-   "id": 6443723657,
-   "name": "filmhwa - @hwa.min's filter",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 2.99,
-     "hist_max": 2.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bb/b5/e5/bbb5e51d-023a-a85a-37ae-d46fb74c301e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/filmhwa-hwa-mins-filter/id6443723657?uo=4"
-  },
-  {
    "id": 6443786927,
    "name": "全面憨憨战争模拟器",
    "prices": {
@@ -4362,6 +4394,29 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/37/b2/62/37b26252-e809-0016-eb2a-165c7911bf07/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E7%8E%8B%E5%9B%BD%E4%BF%9D%E5%8D%AB%E6%88%984/id6444782083?uo=4"
+  },
+  {
+   "id": 6448352407,
+   "name": "Unboxing the Cryptic Killer",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.99,
+     "hist_max": 1.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 18.0,
+     "hist_max": 18.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/33/09/9a/33099a64-2396-9c64-d690-078a48574958/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/unboxing-the-cryptic-killer/id6448352407?uo=4"
   },
   {
    "id": 6448477521,
@@ -4424,27 +4479,20 @@
    "url": "https://apps.apple.com/cn/app/goblin-tools/id6449003064?uo=4"
   },
   {
-   "id": 6449233549,
-   "name": "Ark Nova",
+   "id": 6450877530,
+   "name": "花园之间",
    "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 10.99,
-     "hist_max": 10.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 88.0,
-     "hist_max": 88.0,
-     "currency": "HKD"
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 3.0,
+     "hist_max": 3.0,
+     "currency": "CNY"
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5f/b8/67/5fb867c2-7c15-868a-088c-80075702847c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/ark-nova/id6449233549?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/45/09/fd/4509fdc5-d0a5-4dd0-c48b-ef028d1243a6/AppIcon-1x_U007emarketing-0-7-0-0-85-220-0.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E8%8A%B1%E5%9B%AD%E4%B9%8B%E9%97%B4/id6450877530?uo=4"
   },
   {
    "id": 6456751953,
@@ -4498,36 +4546,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f5/82/8c/f5828c28-9855-272a-7f85-b7a1da8d2afe/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E7%8C%AB%E5%8E%86-%E5%8F%AF%E7%88%B1%E6%B8%85%E6%96%B0%E6%97%A5%E5%8E%86%E5%92%8C%E6%97%A5%E7%A8%8B%E8%A1%A8%E6%8F%90%E9%86%92%E4%BA%8B%E9%A1%B9/id6471479898?uo=4"
-  },
-  {
-   "id": 6472380172,
-   "name": "Kino - Pro Video Camera",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 9.99,
-     "hist_max": 9.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 88.0,
-     "hist_max": 88.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8d/df/57/8ddf5799-ae9f-c92a-967d-70e14e36d4da/AppIcon-0-0-1x_U007ephone-0-1-0-0-sRGB-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/kino-pro-video-camera/id6472380172?uo=4"
   },
   {
    "id": 6473001577,
@@ -4599,59 +4617,6 @@
    "url": "https://apps.apple.com/us/app/wagotabi-learn-japanese/id6474207287?uo=4"
   },
   {
-   "id": 6474479684,
-   "name": "Spark - Ren'Py 小说们",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 48.0,
-     "hist_max": 48.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 6.99,
-     "hist_max": 6.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 58.0,
-     "hist_max": 58.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/89/4d/a5/894da542-d295-eb34-54f9-094707000c4f/Spark_Retro_Icon_Main-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/spark-renpy-%E5%B0%8F%E8%AF%B4%E4%BB%AC/id6474479684?uo=4"
-  },
-  {
-   "id": 6474672665,
-   "name": "Beastie Bay DX",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 3.99,
-     "hist_max": 3.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 32.0,
-     "hist_max": 32.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/3a/71/4b/3a714b7a-a740-f832-6863-fc9f279e5abf/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/beastie-bay-dx/id6474672665?uo=4"
-  },
-  {
    "id": 6476064417,
    "name": "Knight & Dragon III",
    "prices": {
@@ -4705,27 +4670,57 @@
    "url": "https://apps.apple.com/cn/app/%E7%81%B5%E4%BD%93%E4%BE%A6%E6%B5%8B%E5%99%A8-%E8%83%BD%E9%87%8F-%E8%B6%85%E8%87%AA%E7%84%B6%E7%8E%B0%E8%B1%A1%E5%B9%BD%E7%81%B5%E6%8E%A2%E6%B5%8B%E5%99%A8/id6479307181?uo=4"
   },
   {
-   "id": 6498879077,
-   "name": "Heian City Story",
+   "id": 6480453979,
+   "name": "Saints Row: The Third",
    "prices": {
     "US": {
      "label": "美区",
      "symbol": "$",
-     "price": 6.99,
-     "hist_max": 6.99,
+     "price": 19.99,
+     "hist_max": 19.99,
      "currency": "USD"
     },
     "HK": {
      "label": "港区",
      "symbol": "HK$",
-     "price": 58.0,
-     "hist_max": 58.0,
+     "price": 139.0,
+     "hist_max": 139.0,
      "currency": "HKD"
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/ea/35/19ea35fa-7626-c396-be18-1ad04dac4af2/AppIcon-1x_U007emarketing-0-5-85-220-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/heian-city-story/id6498879077?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/cf/96/c0cf96f0-71f8-074a-9664-5c55f5eb8e7f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/saints-row-the-third/id6480453979?uo=4"
+  },
+  {
+   "id": 6480501528,
+   "name": "TODO：猫咪待办事项 & 提醒事项 & 备忘录",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 0.0,
+     "hist_max": 0.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.0,
+     "hist_max": 0.0,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 2.0,
+     "hist_max": 2.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/36/e5/88/36e588d4-c7e8-3800-03f6-147e8fd1f351/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/todo-%E7%8C%AB%E5%92%AA%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9-%E6%8F%90%E9%86%92%E4%BA%8B%E9%A1%B9-%E5%A4%87%E5%BF%98%E5%BD%95/id6480501528?uo=4"
   },
   {
    "id": 6499125531,
@@ -4836,6 +4831,29 @@
    "url": "https://apps.apple.com/us/app/pro-wrestler-story/id6505046490?uo=4"
   },
   {
+   "id": 6547834967,
+   "name": "Animal Crossing: Pocket Camp C",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 19.99,
+     "hist_max": 19.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 118.0,
+     "hist_max": 118.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8e/2d/5c/8e2d5cb5-de9a-4f0b-618d-696159bb922c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/animal-crossing-pocket-camp-c/id6547834967?uo=4"
+  },
+  {
    "id": 6639610182,
    "name": "武士零",
    "prices": {
@@ -4937,9 +4955,46 @@
    "url": "https://apps.apple.com/cn/app/%E9%AC%BC%E8%B0%B7%E5%85%AB%E8%8D%92/id6737795387?uo=4"
   },
   {
-   "id": 6738371720,
-   "name": "Skating Rink Story",
+   "id": 6738114005,
+   "name": "同城约友-梦幻沉浸式交友新体验",
    "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 1.0,
+     "hist_max": 1.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.99,
+     "hist_max": 0.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/67/e5/48/67e54819-7eaf-0bcb-5bb5-76ae91cd389c/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%90%8C%E5%9F%8E%E7%BA%A6%E5%8F%8B-%E6%A2%A6%E5%B9%BB%E6%B2%89%E6%B5%B8%E5%BC%8F%E4%BA%A4%E5%8F%8B%E6%96%B0%E4%BD%93%E9%AA%8C/id6738114005?uo=4"
+  },
+  {
+   "id": 6738342400,
+   "name": "Tampermonkey",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 15.0,
+     "hist_max": 15.0,
+     "currency": "CNY"
+    },
     "US": {
      "label": "美区",
      "symbol": "$",
@@ -4956,8 +5011,8 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/28/1d/b3/281db3b7-cbaf-8246-43ae-4b7444de67ea/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/skating-rink-story/id6738371720?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/73/9e/84/739e845c-3970-0174-ffef-75ec375a6706/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/tampermonkey/id6738342400?uo=4"
   },
   {
    "id": 6738571698,
@@ -5020,29 +5075,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/97/b0/81/97b0810b-a2b3-8a8a-72bb-2dfb890a4e6f/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E8%8A%B1%E7%9A%AE-%E5%90%8C%E5%9F%8E%E7%BA%A6%E4%BC%9A-%E6%97%A0%E9%9D%A2%E5%85%B7%E7%A4%BE%E4%BA%A4-%E8%A7%A3%E5%8E%8B%E9%87%8A%E6%94%BE%E6%AD%A3%E5%BF%B5%E7%B4%A0%E9%A2%9C/id6740246950?uo=4"
-  },
-  {
-   "id": 6740349587,
-   "name": "Backyard Baseball '01",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 4.99,
-     "hist_max": 4.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 38.0,
-     "hist_max": 38.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f2/2d/3e/f22d3ebd-1e8e-0f33-aeb9-8a65b6daf3f8/AppIcon-1x_U007epad-0-1-85-220-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/backyard-baseball-01/id6740349587?uo=4"
   },
   {
    "id": 6741474933,
@@ -5255,31 +5287,8 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0a/f4/8c/0af48c85-ad91-cf61-2911-d9e091155be3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/41/3b/ea/413bea65-3ac2-46aa-0956-e3ba32dcbe21/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/voidlink/id6747717070?uo=4"
-  },
-  {
-   "id": 6747814605,
-   "name": "Is This Seat Taken?",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 9.99,
-     "hist_max": 9.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 78.0,
-     "hist_max": 78.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f4/64/17/f4641715-47d5-674e-6e56-4095af083d39/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/is-this-seat-taken/id6747814605?uo=4"
   },
   {
    "id": 6748056918,
@@ -5388,6 +5397,36 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ba/2b/72/ba2b72f2-1872-822a-5330-f122eed88b57/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E6%B2%99%E7%9F%B3%E9%95%87%E6%97%B6%E5%85%89/id6749369705?uo=4"
+  },
+  {
+   "id": 6749500972,
+   "name": "哔咔漫岛-二次元日韩耽美漫画大全",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.99,
+     "hist_max": 0.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 8.0,
+     "hist_max": 8.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/85/87/a5/8587a5e9-0dbe-e66f-d81a-d34383464e23/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%93%94%E5%92%94%E6%BC%AB%E5%B2%9B-%E4%BA%8C%E6%AC%A1%E5%85%83%E6%97%A5%E9%9F%A9%E8%80%BD%E7%BE%8E%E6%BC%AB%E7%94%BB%E5%A4%A7%E5%85%A8/id6749500972?uo=4"
   },
   {
    "id": 6749542417,
@@ -5507,6 +5546,59 @@
    "url": "https://apps.apple.com/us/app/skyship-quest-story/id6752695239?uo=4"
   },
   {
+   "id": 6752695482,
+   "name": "莫比乌斯之恋 - 真人悬疑恋爱互动影游",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 1.0,
+     "hist_max": 1.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.99,
+     "hist_max": 1.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 18.0,
+     "hist_max": 18.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e5/d1/47/e5d14708-3c4d-8fe8-8f8c-437055ba4c22/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E4%B9%8B%E6%81%8B-%E7%9C%9F%E4%BA%BA%E6%82%AC%E7%96%91%E6%81%8B%E7%88%B1%E4%BA%92%E5%8A%A8%E5%BD%B1%E6%B8%B8/id6752695482?uo=4"
+  },
+  {
+   "id": 6752803014,
+   "name": "Joguman Daily Calendar",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.99,
+     "hist_max": 1.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 18.0,
+     "hist_max": 18.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/aa/2d/d5aa2d93-141c-52ca-5687-b3437438f20f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/joguman-daily-calendar/id6752803014?uo=4"
+  },
+  {
    "id": 6753077755,
    "name": "How Many Dudes?",
    "prices": {
@@ -5615,6 +5707,29 @@
    "url": "https://apps.apple.com/us/app/cloverpit/id6754894237?uo=4"
   },
   {
+   "id": 6755103808,
+   "name": "VoidLink - Extreme",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 1.49,
+     "hist_max": 1.49,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 12.0,
+     "hist_max": 12.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/44/55/a9/4455a9b7-8766-bd87-6254-d970790b1fcb/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/voidlink-extreme/id6755103808?uo=4"
+  },
+  {
    "id": 6755228041,
    "name": "潜水员戴夫",
    "prices": {
@@ -5684,8 +5799,8 @@
    "url": "https://apps.apple.com/cn/app/%E9%80%BB%E8%BE%91%E8%AE%AD%E7%BB%83-%E6%89%AB%E9%9B%B7%E6%97%A0%E5%B9%BF%E5%91%8A-2048-%E6%95%B0%E7%8B%AC-%E5%8D%8E%E5%AE%B9%E9%81%93-%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E7%BB%8F%E5%85%B8/id6756371706?uo=4"
   },
   {
-   "id": 6757136435,
-   "name": "绿水镇",
+   "id": 6757433259,
+   "name": "勇敢幻想-创新碰撞卡牌·放置三国挂机·新国风q版剪纸",
    "prices": {
     "CN": {
      "label": "国区",
@@ -5696,31 +5811,8 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f0/b2/ae/f0b2ae48-d36d-ba76-edf6-f43b72246084/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E7%BB%BF%E6%B0%B4%E9%95%87/id6757136435?uo=4"
-  },
-  {
-   "id": 6757245003,
-   "name": "Go Lab: AI Baduk KataGo Engine",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 3.99,
-     "hist_max": 3.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 32.0,
-     "hist_max": 32.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d2/aa/fe/d2aafe27-e96b-e8db-3e58-bd6ea693ac65/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/go-lab-ai-baduk-katago-engine/id6757245003?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ae/6a/96/ae6a9638-af49-3832-eae3-aec4c75d6a30/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%8B%87%E6%95%A2%E5%B9%BB%E6%83%B3-%E5%88%9B%E6%96%B0%E7%A2%B0%E6%92%9E%E5%8D%A1%E7%89%8C-%E6%94%BE%E7%BD%AE%E4%B8%89%E5%9B%BD%E6%8C%82%E6%9C%BA-%E6%96%B0%E5%9B%BD%E9%A3%8Eq%E7%89%88%E5%89%AA%E7%BA%B8/id6757433259?uo=4"
   },
   {
    "id": 6757729278,
@@ -5788,7 +5880,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/03/07/89/0307893b-7334-ab98-350e-506944e17d48/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1d/11/8c/1d118cae-8a42-04c6-1730-086995461c1b/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E8%BD%BB%E6%9D%BE%E7%9C%81%E9%92%B1-%E8%AE%B0%E8%B4%A6%E9%A2%84%E7%AE%97/id6759556305?uo=4"
   },
   {
@@ -5845,36 +5937,6 @@
    "url": "https://apps.apple.com/cn/app/%E6%B1%9F%E5%9F%8E%E5%88%9B%E4%B8%9A%E8%AE%B0/id6760122905?uo=4"
   },
   {
-   "id": 6760255621,
-   "name": "Race Recorder",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 12.0,
-     "hist_max": 12.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 2.99,
-     "hist_max": 2.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ef/f3/e1/eff3e170-aa00-cc5a-f96f-e0887671c680/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/race-recorder/id6760255621?uo=4"
-  },
-  {
    "id": 6760676546,
    "name": "Very Good Camera",
    "prices": {
@@ -5901,7 +5963,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/fd/39/0ffd3990-f528-010f-3cdc-198eb0bddd85/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/06/a6/cf/06a6cf52-7555-f1d5-5a29-a6f92a3e5890/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/very-good-camera/id6760676546?uo=4"
   },
   {
@@ -5935,6 +5997,36 @@
    "url": "https://apps.apple.com/cn/app/%E5%AF%B9%E4%B8%8D%E8%B5%B7-%E6%88%91%E6%98%AF%E8%AD%A6%E5%AF%9F/id6760693468?uo=4"
   },
   {
+   "id": 6762279908,
+   "name": "DayGrid: 데일리스케줄, 하루 계획표",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 3.0,
+     "hist_max": 3.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.49,
+     "hist_max": 0.49,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 2.0,
+     "hist_max": 2.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/87/56/4d/87564dc6-eddf-478b-74b5-18bea84688e1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/daygrid-%EB%8D%B0%EC%9D%BC%EB%A6%AC%EC%8A%A4%EC%BC%80%EC%A4%84-%ED%95%98%EB%A3%A8-%EA%B3%84%ED%9A%8D%ED%91%9C/id6762279908?uo=4"
+  },
+  {
    "id": 6762803589,
    "name": "Slots & Daggers",
    "prices": {
@@ -5956,29 +6048,6 @@
    "platform": "ios",
    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/a2/7c/85a27cac-3117-0225-bb77-9a5940865e5b/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/slots-daggers/id6762803589?uo=4"
-  },
-  {
-   "id": 6762813110,
-   "name": "Sifu",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 7.99,
-     "hist_max": 7.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 48.0,
-     "hist_max": 48.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/50/3a/be/503abe1c-f51e-41cf-b7a9-8c04786d6916/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/sifu/id6762813110?uo=4"
   },
   {
    "id": 6763063611,
@@ -6053,7 +6122,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/82/9f/22/829f2256-b340-6d16-131f-4b3e96057151/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/50/57/28/50572830-d7b3-8f4e-030f-73518fa22a47/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/sky-routes/id6766557247?uo=4"
   },
   {
@@ -6112,57 +6181,34 @@
    "url": "https://apps.apple.com/cn/app/%E6%83%85%E6%84%9F%E5%8F%8D%E8%AF%88%E6%A8%A1%E6%8B%9F%E5%99%A8/id6772103820?uo=4"
   },
   {
-   "id": 6773184246,
-   "name": "Lets Get Lit - Family Edition",
-   "prices": {
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 0.99,
-     "hist_max": 0.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 8.0,
-     "hist_max": 8.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/12/9f/45/129f457f-e87c-7882-d9f8-bb9fbcc098ae/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/us/app/lets-get-lit-family-edition/id6773184246?uo=4"
-  },
-  {
-   "id": 6775108560,
-   "name": "消防處投考全攻略",
+   "id": 6772719928,
+   "name": "入境處投考全攻略",
    "prices": {
     "CN": {
      "label": "国区",
      "symbol": "¥",
-     "price": 98.0,
-     "hist_max": 98.0,
+     "price": 88.0,
+     "hist_max": 88.0,
      "currency": "CNY"
     },
     "US": {
      "label": "美区",
      "symbol": "$",
-     "price": 14.99,
-     "hist_max": 14.99,
+     "price": 11.99,
+     "hist_max": 11.99,
      "currency": "USD"
     },
     "HK": {
      "label": "港区",
      "symbol": "HK$",
-     "price": 128.0,
-     "hist_max": 128.0,
+     "price": 98.0,
+     "hist_max": 98.0,
      "currency": "HKD"
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/99/b5/8b/99b58b98-92ab-a63f-c354-3083fb85f8dd/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E6%B6%88%E9%98%B2%E8%99%95%E6%8A%95%E8%80%83%E5%85%A8%E6%94%BB%E7%95%A5/id6775108560?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bd/71/af/bd71aff7-d22c-8f68-a0ae-e2ff1bd22be1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%85%A5%E5%A2%83%E8%99%95%E6%8A%95%E8%80%83%E5%85%A8%E6%94%BB%E7%95%A5/id6772719928?uo=4"
   },
   {
    "id": 6777792345,
@@ -6195,20 +6241,57 @@
    "url": "https://apps.apple.com/cn/app/blueprint-4-track/id6777792345?uo=4"
   },
   {
-   "id": 6777909648,
-   "name": "桥梁工程师：传送门",
+   "id": 6778126949,
+   "name": "Underground: Bunker Survival",
+   "prices": {
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 0.29,
+     "hist_max": 0.29,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 2.0,
+     "hist_max": 2.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1e/56/d1/1e56d18d-4d45-5eb8-2117-f3430daa3e2c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/us/app/underground-bunker-survival/id6778126949?uo=4"
+  },
+  {
+   "id": 6779188669,
+   "name": "水银疗养院",
    "prices": {
     "CN": {
      "label": "国区",
      "symbol": "¥",
-     "price": 12.0,
-     "hist_max": 6.0,
+     "price": 18.0,
+     "hist_max": 18.0,
      "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 6.99,
+     "hist_max": 6.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 58.0,
+     "hist_max": 58.0,
+     "currency": "HKD"
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b8/8e/84/b88e8447-9769-9f60-a9e9-dcedab66aedf/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E6%A1%A5%E6%A2%81%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BC%A0%E9%80%81%E9%97%A8/id6777909648?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/25/71/a1/2571a1ea-ea61-95c2-eb77-e9d7d8f6ef6c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E6%B0%B4%E9%93%B6%E7%96%97%E5%85%BB%E9%99%A2/id6779188669?uo=4"
   },
   {
    "id": 6783953753,
@@ -6472,7 +6555,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c4/53/e3/c453e30f-f6ad-0893-ec4a-cd03ca348fc6/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5b/11/17/5b1117ea-367b-c3cd-8a76-54a24c11c37e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/%E6%9F%94%E7%B2%92%E8%83%B6%E7%89%87%E7%9B%B8%E6%9C%BA-%E5%A4%8D%E5%8F%A4%E8%83%B6%E5%8D%B7-%E9%9F%A9%E7%B3%BB%E8%87%AA%E6%8B%8D/id6805318319?uo=4"
   },
   {
@@ -6518,7 +6601,7 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ca/9a/04/ca9a0493-7a05-1802-de07-aae9dcc3f045/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/81/f2/e6/81f2e624-7004-1419-d715-8dd08c54b448/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/us/app/toastie-grilled-cheese-game/id6813841355?uo=4"
   },
   {
@@ -6674,66 +6757,6 @@
    "url": "https://apps.apple.com/us/app/rupteur-sensor/id6819721109?uo=4"
   },
   {
-   "id": 6820818828,
-   "name": "奶蛙之眼 - 奶蛙一直看你抽象魔性奶蛙眼睛",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 2.0,
-     "hist_max": 2.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 0.99,
-     "hist_max": 0.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 8.0,
-     "hist_max": 8.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d0/a2/f0/d0a2f047-6f2f-c58e-c190-521fcec1d0c4/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E5%A5%B6%E8%9B%99%E4%B9%8B%E7%9C%BC-%E5%A5%B6%E8%9B%99%E4%B8%80%E7%9B%B4%E7%9C%8B%E4%BD%A0%E6%8A%BD%E8%B1%A1%E9%AD%94%E6%80%A7%E5%A5%B6%E8%9B%99%E7%9C%BC%E7%9D%9B/id6820818828?uo=4"
-  },
-  {
-   "id": 6822176574,
-   "name": "清风提词",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 1.0,
-     "hist_max": 1.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 0.99,
-     "hist_max": 0.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 8.0,
-     "hist_max": 8.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5b/49/f2/5b49f23f-7e37-5992-8f82-2fbabadd22c6/QingfengIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E6%B8%85%E9%A3%8E%E6%8F%90%E8%AF%8D/id6822176574?uo=4"
-  },
-  {
    "id": 6822194774,
    "name": "TypeDraw",
    "prices": {
@@ -6760,98 +6783,38 @@
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/33/01/b3/3301b3cf-d6a3-d62c-436a-5900a4374dd3/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e0/47/cf/e047cf32-1f37-c739-13c7-6095a34a0794/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
    "url": "https://apps.apple.com/cn/app/typedraw/id6822194774?uo=4"
   },
   {
-   "id": 6822356428,
-   "name": "腕记 - 手表录音笔·AI录音转文字",
+   "id": 6823139521,
+   "name": "內科考一考",
    "prices": {
     "CN": {
      "label": "国区",
      "symbol": "¥",
-     "price": 28.0,
-     "hist_max": 28.0,
+     "price": 38.0,
+     "hist_max": 38.0,
      "currency": "CNY"
     },
     "US": {
      "label": "美区",
      "symbol": "$",
-     "price": 3.99,
-     "hist_max": 3.99,
+     "price": 5.99,
+     "hist_max": 5.99,
      "currency": "USD"
     },
     "HK": {
      "label": "港区",
      "symbol": "HK$",
-     "price": 32.0,
-     "hist_max": 32.0,
+     "price": 48.0,
+     "hist_max": 48.0,
      "currency": "HKD"
     }
    },
    "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c5/12/ef/c512ef02-2b06-d30f-9ea8-611e494f8dc0/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/%E8%85%95%E8%AE%B0-%E6%89%8B%E8%A1%A8%E5%BD%95%E9%9F%B3%E7%AC%94-ai%E5%BD%95%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/id6822356428?uo=4"
-  },
-  {
-   "id": 6822695409,
-   "name": "Play Music Theory Games",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 15.0,
-     "hist_max": 15.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 1.99,
-     "hist_max": 1.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 18.0,
-     "hist_max": 18.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f7/14/75/f71475a8-2ca9-c053-94bb-a76b439e3861/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/play-music-theory-games/id6822695409?uo=4"
-  },
-  {
-   "id": 6824686276,
-   "name": "Wider - Fullscreen Browsing",
-   "prices": {
-    "CN": {
-     "label": "国区",
-     "symbol": "¥",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "CNY"
-    },
-    "US": {
-     "label": "美区",
-     "symbol": "$",
-     "price": 2.99,
-     "hist_max": 2.99,
-     "currency": "USD"
-    },
-    "HK": {
-     "label": "港区",
-     "symbol": "HK$",
-     "price": 22.0,
-     "hist_max": 22.0,
-     "currency": "HKD"
-    }
-   },
-   "platform": "ios",
-   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cb/90/c9/cb90c9e5-e22b-7529-166d-81c9853a599a/AppIcon-0-0-1x_U007ephone-0-0-0-sRGB-85-220.png/256x256bb.jpg",
-   "url": "https://apps.apple.com/cn/app/wider-fullscreen-browsing/id6824686276?uo=4"
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/44/3c/1e/443c1e8a-bacf-5168-0c04-9e2eed04412a/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E5%85%A7%E7%A7%91%E8%80%83%E4%B8%80%E8%80%83/id6823139521?uo=4"
   },
   {
    "id": 6825181273,
@@ -6884,20 +6847,80 @@
    "url": "https://apps.apple.com/cn/app/altopaint-oil-gouache/id6825181273?uo=4"
   },
   {
+   "id": 6825619119,
+   "name": "針灸考一考",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 38.0,
+     "hist_max": 38.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 4.99,
+     "hist_max": 4.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 38.0,
+     "hist_max": 38.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dc/94/42/dc94422d-d71c-fb7c-10d4-b68b6cdfc514/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/%E9%87%9D%E7%81%B8%E8%80%83%E4%B8%80%E8%80%83/id6825619119?uo=4"
+  },
+  {
+   "id": 6826478625,
+   "name": "Pocket Mac Lab",
+   "prices": {
+    "CN": {
+     "label": "国区",
+     "symbol": "¥",
+     "price": 38.0,
+     "hist_max": 38.0,
+     "currency": "CNY"
+    },
+    "US": {
+     "label": "美区",
+     "symbol": "$",
+     "price": 5.99,
+     "hist_max": 5.99,
+     "currency": "USD"
+    },
+    "HK": {
+     "label": "港区",
+     "symbol": "HK$",
+     "price": 48.0,
+     "hist_max": 48.0,
+     "currency": "HKD"
+    }
+   },
+   "platform": "ios",
+   "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e5/27/18/e5271884-cb32-faf2-3f6a-58c55a6ff334/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x256bb.jpg",
+   "url": "https://apps.apple.com/cn/app/pocket-mac-lab/id6826478625?uo=4"
+  },
+  {
    "id": 6826854291,
    "name": "DuoMiniMac",
    "prices": {
     "US": {
      "label": "美区",
      "symbol": "$",
-     "price": 1.99,
+     "price": 2.99,
      "hist_max": 1.99,
      "currency": "USD"
     },
     "HK": {
      "label": "港区",
      "symbol": "HK$",
-     "price": 18.0,
+     "price": 22.0,
      "hist_max": 18.0,
      "currency": "HKD"
     }
@@ -7087,6 +7110,6 @@
    "url": "https://apps.apple.com/cn/app/pixelmator-pro/id1289583905?mt=12&uo=4"
   }
  ],
- "tracked_count": 271,
+ "tracked_count": 269,
  "fx_usd_cny": 7.2
 }
