@@ -178,6 +178,7 @@ CATEGORY_EXCLUDE = {
     'laoma528/awesome-zhuiju-free',
     'YuJunZhiXue/dsh-purge',
     'Ebony-Vinyl/dsh-our-free-model',
+    'HunYiSage/dsh-purge',  # 2026-11-04：dsh 破甲家族新变体（"Jailbreak for every model"），与已拉黑的 YuJunZhiXue/dsh-purge 同名同类
 }
 
 
