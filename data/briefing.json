@@ -1,64 +1,64 @@
 {
-  "date": "2026-11-04",
-  "date_str": "2026年11月04日",
-  "overview": "今天的 AI 热点一头连着现实应用：百度披露用于自动驾驶测试的世界模型，OpenAI 展示 AI 如何辅助工程设计。另一头是使用边界与信任问题：学校能否关闭 AI、出版内容如何被抓取，以及 AI 回答和游戏模组该怎样证明来源。",
+  "date": "2026-11-05",
+  "date_str": "2026年11月05日",
+  "overview": "今天的热点一头连着日常使用，一头连着 AI 背后的基础设施：OpenAI 更新图像生成功能，苹果开始在中国测试 Apple Intelligence。与此同时，AI 也在改变代码安全、家庭安防和数据备份，但 Uber 的数据提醒我们，能替人办事的 AI 距离普及还有一段路。",
   "picks": [
     {
-      "title": "谷歌将让美国学校默认关闭 AI 功能，拒绝启用或影响搜索",
-      "summary": "谷歌表示，美国中小学使用的软件将默认关闭 AI 功能，是否启用由学校管理员决定，以回应家长和教育工作者希望加强管控的诉求。不过，谷歌称搜索已与 AI 深度融合：如果学校禁用 AI，学生也将无法使用相关搜索功能。",
-      "url": "https://www.solidot.org/story?sid=85787",
-      "source": "Solidot",
-      "category": "今日头条"
-    },
-    {
-      "title": "百度首次披露 Apollo World 世界模型，已用于无人驾驶测试",
-      "summary": "百度在 11 月 3 日的 Apollo 专场活动上首次披露 Apollo World，称其可模拟驾驶环境，帮助自动驾驶系统测试和验证。百度表示，这一模型已用于萝卜快跑的全球化测试；它能否持续准确还原真实道路上的复杂情况，仍是落地关键。",
-      "url": "https://www.infoq.cn/article/tIt75FRqU2hwy4eWrOIu",
-      "source": "InfoQ 推荐",
-      "category": "今日头条"
-    },
-    {
-      "title": "OpenAI 展示 ChatGPT 和 Codex 如何辅助实体工程设计",
-      "summary": "OpenAI 发布案例，介绍工程师如何使用 ChatGPT 和 Codex 辅助计算机辅助设计、印刷电路板设计及仿真等工作。这些应用把 AI 从写文案、写代码延伸到实体产品的研发流程，但文章主要展示现有工具的用法，并非发布新模型。",
-      "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+      "title": "OpenAI 发布 Images 2.6：生成更快，还能制作 GIF",
+      "summary": "OpenAI 发布图像模型 Images 2.6，称新版生成图片更快、编辑更精确，并支持制作 GIF 动图。相关能力将用于 ChatGPT、Codex 和开发者接口；对普通用户而言，最直接的变化是做图和修改图片时可尝试更多形式。",
+      "url": "https://openai.com/index/introducing-images-2-6",
       "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "苹果开始在中国测试 Apple Intelligence",
+      "summary": "据 Solidot 报道，苹果从 11 月 4 日起通过最新版 iOS 开发者测试版，在中国推出 Apple Intelligence 功能供测试。首批功能包括实时翻译、写作工具和照片消除等；报道称，中国版本与阿里巴巴合作，正式推出计划在 12 月。",
+      "url": "https://www.solidot.org/story?sid=85793",
+      "source": "Solidot",
+      "category": "今日头条"
+    },
+    {
+      "title": "OpenAI 将收购 Pierre Computer Company，扩充编程工具",
+      "summary": "OpenAI 宣布将收购 Pierre Computer Company，以扩充 Codex 在编写、理解和检查代码方面的工具。此次收购聚焦 AI 编程产品：它不直接改变普通人的聊天体验，却反映出 OpenAI 正继续投入让 AI 协助开发软件的能力。",
+      "url": "https://openai.com/index/openai-to-acquire-pierre",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 称自动化流程发现并修补 948 个 Linux 内核安全漏洞",
+      "summary": "OpenAI 介绍了一套自动化安全流程，称其在 Linux 内核中发现、验证了 948 个本地提权漏洞，并生成相应补丁。所谓“提权”是指取得本不该拥有的系统权限；这项成果展示了 AI 协助排查安全问题的潜力，但生成补丁不等于补丁均已被采用。",
+      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "谷歌 Gemini for Home 接入 AT&T 智能安防系统",
+      "summary": "据 The Verge 报道，AT&T 的 Connected Life 家庭安防系统现已与谷歌 Gemini for Home 集成。AT&T 称，这是首个接入 Google Home Premium 的家庭安防产品；这次合作让 AI 家居助手与安防设备之间有了更直接的连接。",
+      "url": "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system",
+      "source": "The Verge",
       "category": "效率工具"
     },
     {
-      "title": "《纽约时报》等出版商起诉 Brave 涉嫌抓取付费内容",
-      "summary": "《纽约时报》等美国出版商起诉 Brave，指控其未经许可抓取网站内容，并通过相关功能帮助用户绕过付费墙。诉讼还涉及 Brave 向多家 AI 公司提供搜索索引的做法；这些均为原告指控，案件结果尚未确定。",
-      "url": "https://www.solidot.org/story?sid=85788",
+      "title": "Nexus Mods 公布 AI 生成内容新规",
+      "summary": "游戏模组分享平台 Nexus Mods 公布新政策：不禁止上传 AI 生成的模组，但要求新上传内容披露是否使用 AI，使用者还须说明具体方式和范围。现有模组需在 2027 年 1 月 2 日前符合要求，让玩家能更清楚地辨别作品如何制作。",
+      "url": "https://www.solidot.org/story?sid=85794",
       "source": "Solidot",
       "category": "前沿动态"
     },
     {
-      "title": "Anthropic 正研发 AI 模型身份验证系统",
-      "summary": "据 TechCrunch 报道，Anthropic 正开发名为 FlashProve 的系统，让外界核验一段 AI 回答是否真的出自其声称的模型。如果可行，这类验证有助于辨别冒名输出；目前报道描述的是研发中的方案，并非已经面向公众推出的服务。",
-      "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/",
+      "title": "Uber：用 AI 智能体叫车的人仍极少",
+      "summary": "据 TechCrunch 报道，Uber 表示，在上季度最繁忙的一周里，只有四名用户通过 AI 智能体预订行程。尽管“让 AI 替人完成任务”受到关注，这组数据表明，至少在叫车这一具体场景，用户目前仍主要使用熟悉的方式下单。",
+      "url": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/",
       "source": "TechCrunch",
-      "category": "前沿动态"
+      "category": "一句话"
     },
     {
-      "title": "游戏模组网站 Nexus Mods 要求新作品披露 AI 使用情况",
-      "summary": "大型 PC 游戏模组网站 Nexus Mods 将要求新上传作品的作者说明创作中是否使用了 AI。新规并非禁止 AI 作品，而是让下载者知道作品的制作方式；对玩家和创作者来说，披露要求也使“用了多少 AI”成为需要正面回答的问题。",
-      "url": "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures",
-      "source": "The Verge",
-      "category": "前沿动态"
-    },
-    {
-      "title": "Sonos 推出应用预设功能，准备开放 AI 语音助手测试",
-      "summary": "Sonos 正更新应用，加入可按房间、音量等条件设置播放方式的“预设”功能，并为 AI 语音助手提供早期体验。预设让常用播放操作更省步骤；语音助手则仍处于测试准备阶段，实际使用体验有待观察。",
-      "url": "https://www.theverge.com/tech/1025903/sonos-presets-27voice-ai-early-access",
-      "source": "The Verge",
-      "category": "效率工具"
-    },
-    {
-      "title": "AI 推理公司 Fal 融资 13 亿美元，估值升至 160 亿美元",
-      "summary": "据 TechCrunch 报道，AI 推理公司 Fal 完成由 Bessemer 领投的 13 亿美元融资，估值升至 160 亿美元，约为此前的两倍。推理服务负责让训练好的模型实际运行并响应请求；这笔融资显示，支撑 AI 应用运行的基础设施仍受到资本关注。",
-      "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/",
-      "source": "TechCrunch",
+      "title": "富士胶片因 AI 需求增加磁带产能",
+      "summary": "富士胶片表示将大幅增加磁带产能，原因是云服务商和数据中心正扩大使用磁带备份海量数据。磁带虽已淡出多数人的日常生活，却因存储成本较低、可与系统物理隔离而仍有用途；AI 热潮也正在推高这类传统存储介质的需求。",
+      "url": "https://www.solidot.org/story?sid=85795",
+      "source": "Solidot",
       "category": "前沿动态"
     }
   ],
-  "generated_at": "2026-11-04 03:26:20"
+  "generated_at": "2026-11-05 03:49:56"
 }

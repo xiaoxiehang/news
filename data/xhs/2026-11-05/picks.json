@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-05",
+  "date_str": "2026年11月05日",
+  "overview": "今天的热点一头连着日常使用，一头连着 AI 背后的基础设施：OpenAI 更新图像生成功能，苹果开始在中国测试 Apple Intelligence。与此同时，AI 也在改变代码安全、家庭安防和数据备份，但 Uber 的数据提醒我们，能替人办事的 AI 距离普及还有一段路。",
+  "picks": [
+    {
+      "title": "OpenAI 发布 Images 2.6：生成更快，还能制作 GIF",
+      "summary": "OpenAI 发布图像模型 Images 2.6，称新版生成图片更快、编辑更精确，并支持制作 GIF 动图。相关能力将用于 ChatGPT、Codex 和开发者接口；对普通用户而言，最直接的变化是做图和修改图片时可尝试更多形式。",
+      "url": "https://openai.com/index/introducing-images-2-6",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "苹果开始在中国测试 Apple Intelligence",
+      "summary": "据 Solidot 报道，苹果从 11 月 4 日起通过最新版 iOS 开发者测试版，在中国推出 Apple Intelligence 功能供测试。首批功能包括实时翻译、写作工具和照片消除等；报道称，中国版本与阿里巴巴合作，正式推出计划在 12 月。",
+      "url": "https://www.solidot.org/story?sid=85793",
+      "source": "Solidot",
+      "category": "今日头条"
+    },
+    {
+      "title": "Nexus Mods 公布 AI 生成内容新规",
+      "summary": "游戏模组分享平台 Nexus Mods 公布新政策：不禁止上传 AI 生成的模组，但要求新上传内容披露是否使用 AI，使用者还须说明具体方式和范围。现有模组需在 2027 年 1 月 2 日前符合要求，让玩家能更清楚地辨别作品如何制作。",
+      "url": "https://www.solidot.org/story?sid=85794",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "谷歌 Gemini for Home 接入 AT&T 智能安防系统",
+      "summary": "据 The Verge 报道，AT&T 的 Connected Life 家庭安防系统现已与谷歌 Gemini for Home 集成。AT&T 称，这是首个接入 Google Home Premium 的家庭安防产品；这次合作让 AI 家居助手与安防设备之间有了更直接的连接。",
+      "url": "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system",
+      "source": "The Verge",
+      "category": "效率工具"
+    },
+    {
+      "title": "Uber：用 AI 智能体叫车的人仍极少",
+      "summary": "据 TechCrunch 报道，Uber 表示，在上季度最繁忙的一周里，只有四名用户通过 AI 智能体预订行程。尽管“让 AI 替人完成任务”受到关注，这组数据表明，至少在叫车这一具体场景，用户目前仍主要使用熟悉的方式下单。",
+      "url": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/",
+      "source": "TechCrunch",
+      "category": "一句话"
+    },
+    {
+      "title": "富士胶片因 AI 需求增加磁带产能",
+      "summary": "富士胶片表示将大幅增加磁带产能，原因是云服务商和数据中心正扩大使用磁带备份海量数据。磁带虽已淡出多数人的日常生活，却因存储成本较低、可与系统物理隔离而仍有用途；AI 热潮也正在推高这类传统存储介质的需求。",
+      "url": "https://www.solidot.org/story?sid=85795",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 称自动化流程发现并修补 948 个 Linux 内核安全漏洞",
+      "summary": "OpenAI 介绍了一套自动化安全流程，称其在 Linux 内核中发现、验证了 948 个本地提权漏洞，并生成相应补丁。所谓“提权”是指取得本不该拥有的系统权限；这项成果展示了 AI 协助排查安全问题的潜力，但生成补丁不等于补丁均已被采用。",
+      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 将收购 Pierre Computer Company，扩充编程工具",
+      "summary": "OpenAI 宣布将收购 Pierre Computer Company，以扩充 Codex 在编写、理解和检查代码方面的工具。此次收购聚焦 AI 编程产品：它不直接改变普通人的聊天体验，却反映出 OpenAI 正继续投入让 AI 协助开发软件的能力。",
+      "url": "https://openai.com/index/openai-to-acquire-pierre",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    }
+  ]
+}
