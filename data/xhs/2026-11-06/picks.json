@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-06",
+  "date_str": "2026年11月06日",
+  "overview": "今天的 AI 新闻，一边是 OpenAI 推出网络安全模型，另一边是数据中心建设遭遇社区阻力，能力扩张与风险治理同时成为焦点。面向普通用户，旅行规划、工作协作和视频聊天的 AI 助手也有了新进展，但其中部分产品仍要等到明年推出。",
+  "picks": [
+    {
+      "title": "研究发现，多款 AI 语音模型对部分英语口音评分偏低",
+      "summary": "研究人员测试了谷歌、OpenAI 和通义千问等模型对不同英语口音的评价，场景包括面试、会议报告和口语考试。结果显示，中国和尼日利亚口音普遍得到较低评分，提醒使用 AI 辅助招聘或测评的机构留意可能存在的不公平。",
+      "url": "https://www.solidot.org/story?sid=85804",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "Perplexity 推出面向工作的 AI 助手 Teammates",
+      "summary": "Perplexity 推出名为 Teammates 的常驻工作助手，可在同一工作空间承担不同角色，并利用已有项目资料完成任务。这类产品正试图让 AI 从回答单个问题转向持续参与团队协作；实际使用时，资料访问范围和结果核对仍值得关注。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
+      "source": "The Verge",
+      "category": "效率工具"
+    },
+    {
+      "title": "印度金融机构遭遇利用 AI 工具的网络攻击",
+      "summary": "印度计算机应急响应小组通报，黑客组织已入侵当地非银行贷款机构、金融科技公司及加密货币交易所，并借助公开可用的 AI 工具加快攻击。该机构称威胁仍在持续，显示 AI 不仅能帮助防守方排查漏洞，也可能降低攻击者批量入侵的门槛。",
+      "url": "https://www.solidot.org/story?sid=85809",
+      "source": "Solidot",
+      "category": "前沿动态"
+    },
+    {
+      "title": "爱彼迎计划于 2027 年上半年推出 AI 旅行助手",
+      "summary": "爱彼迎表示，计划在 2027 年上半年推出 AI 旅行助手，帮助用户规划行程、比较选择、管理预订，并在住宿期间提供协助。它目前还是尚未上线的产品计划，而非已经可以使用的新功能；若按计划推出，订房平台的服务将延伸到整个旅程。",
+      "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+      "source": "TechCrunch",
+      "category": "效率工具"
+    },
+    {
+      "title": "Meta 让美国用户与 Muse AI 虚拟形象视频聊天",
+      "summary": "Meta 表示，美国用户现在可以与 Muse AI 的可定制动画形象进行视频聊天，让助手以更直观的方式回应。公司还提到一款计划中的配套可穿戴设备，但目前能够体验的是视频互动功能，并非这款尚未推出的硬件。",
+      "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
+      "source": "TechCrunch",
+      "category": "一句话"
+    },
+    {
+      "title": "OpenAI 发布网络安全模型 GPT‑6 Cyber",
+      "summary": "OpenAI 发布 GPT‑6 Cyber，称这款模型可帮助安全人员寻找可被利用的软件漏洞，并协助制定修复方案。官方表示，模型经过专门训练，以便将操作限制在获得授权的范围内；它的实际效果和安全边界仍有待应用检验。",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "百度开源主打效率的文心 5.5 Flash 基础模型",
+      "summary": "据机器之心报道，百度开源了新的预训练基础模型“文心 5.5 Flash Base”，将效率作为主要卖点。基础模型通常还需要针对具体任务进一步开发；此次开放为研究者和企业提供了一个新选择，但报道简介未给出可供比较的性能数据。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072404&idx=2&sn=4dafbecc77de04a45e65aa78c40e6b16",
+      "source": "机器之心",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 减少数据中心项目的保密协议限制",
+      "summary": "据《The Verge》报道，OpenAI 宣布调整数据中心项目中的保密协议做法，并提出面向项目所在地社区的新承诺。这一变化发生在美国选民对数据中心扩张表达反对意见之后，反映出大型 AI 设施建设正面临更强的地方监督。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
+      "source": "The Verge",
+      "category": "今日头条"
+    }
+  ]
+}

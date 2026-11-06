@@ -1,64 +1,64 @@
 {
-  "date": "2026-11-05",
-  "date_str": "2026年11月05日",
-  "overview": "今天的热点一头连着日常使用，一头连着 AI 背后的基础设施：OpenAI 更新图像生成功能，苹果开始在中国测试 Apple Intelligence。与此同时，AI 也在改变代码安全、家庭安防和数据备份，但 Uber 的数据提醒我们，能替人办事的 AI 距离普及还有一段路。",
+  "date": "2026-11-06",
+  "date_str": "2026年11月06日",
+  "overview": "今天的 AI 新闻，一边是 OpenAI 推出网络安全模型，另一边是数据中心建设遭遇社区阻力，能力扩张与风险治理同时成为焦点。面向普通用户，旅行规划、工作协作和视频聊天的 AI 助手也有了新进展，但其中部分产品仍要等到明年推出。",
   "picks": [
     {
-      "title": "OpenAI 发布 Images 2.6：生成更快，还能制作 GIF",
-      "summary": "OpenAI 发布图像模型 Images 2.6，称新版生成图片更快、编辑更精确，并支持制作 GIF 动图。相关能力将用于 ChatGPT、Codex 和开发者接口；对普通用户而言，最直接的变化是做图和修改图片时可尝试更多形式。",
-      "url": "https://openai.com/index/introducing-images-2-6",
+      "title": "OpenAI 发布网络安全模型 GPT‑6 Cyber",
+      "summary": "OpenAI 发布 GPT‑6 Cyber，称这款模型可帮助安全人员寻找可被利用的软件漏洞，并协助制定修复方案。官方表示，模型经过专门训练，以便将操作限制在获得授权的范围内；它的实际效果和安全边界仍有待应用检验。",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber",
       "source": "OpenAI 官方",
       "category": "今日头条"
     },
     {
-      "title": "苹果开始在中国测试 Apple Intelligence",
-      "summary": "据 Solidot 报道，苹果从 11 月 4 日起通过最新版 iOS 开发者测试版，在中国推出 Apple Intelligence 功能供测试。首批功能包括实时翻译、写作工具和照片消除等；报道称，中国版本与阿里巴巴合作，正式推出计划在 12 月。",
-      "url": "https://www.solidot.org/story?sid=85793",
+      "title": "OpenAI 减少数据中心项目的保密协议限制",
+      "summary": "据《The Verge》报道，OpenAI 宣布调整数据中心项目中的保密协议做法，并提出面向项目所在地社区的新承诺。这一变化发生在美国选民对数据中心扩张表达反对意见之后，反映出大型 AI 设施建设正面临更强的地方监督。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "百度开源主打效率的文心 5.5 Flash 基础模型",
+      "summary": "据机器之心报道，百度开源了新的预训练基础模型“文心 5.5 Flash Base”，将效率作为主要卖点。基础模型通常还需要针对具体任务进一步开发；此次开放为研究者和企业提供了一个新选择，但报道简介未给出可供比较的性能数据。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072404&idx=2&sn=4dafbecc77de04a45e65aa78c40e6b16",
+      "source": "机器之心",
+      "category": "前沿动态"
+    },
+    {
+      "title": "印度金融机构遭遇利用 AI 工具的网络攻击",
+      "summary": "印度计算机应急响应小组通报，黑客组织已入侵当地非银行贷款机构、金融科技公司及加密货币交易所，并借助公开可用的 AI 工具加快攻击。该机构称威胁仍在持续，显示 AI 不仅能帮助防守方排查漏洞，也可能降低攻击者批量入侵的门槛。",
+      "url": "https://www.solidot.org/story?sid=85809",
       "source": "Solidot",
-      "category": "今日头条"
-    },
-    {
-      "title": "OpenAI 将收购 Pierre Computer Company，扩充编程工具",
-      "summary": "OpenAI 宣布将收购 Pierre Computer Company，以扩充 Codex 在编写、理解和检查代码方面的工具。此次收购聚焦 AI 编程产品：它不直接改变普通人的聊天体验，却反映出 OpenAI 正继续投入让 AI 协助开发软件的能力。",
-      "url": "https://openai.com/index/openai-to-acquire-pierre",
-      "source": "OpenAI 官方",
       "category": "前沿动态"
     },
     {
-      "title": "OpenAI 称自动化流程发现并修补 948 个 Linux 内核安全漏洞",
-      "summary": "OpenAI 介绍了一套自动化安全流程，称其在 Linux 内核中发现、验证了 948 个本地提权漏洞，并生成相应补丁。所谓“提权”是指取得本不该拥有的系统权限；这项成果展示了 AI 协助排查安全问题的潜力，但生成补丁不等于补丁均已被采用。",
-      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
-      "source": "OpenAI 官方",
+      "title": "研究发现，多款 AI 语音模型对部分英语口音评分偏低",
+      "summary": "研究人员测试了谷歌、OpenAI 和通义千问等模型对不同英语口音的评价，场景包括面试、会议报告和口语考试。结果显示，中国和尼日利亚口音普遍得到较低评分，提醒使用 AI 辅助招聘或测评的机构留意可能存在的不公平。",
+      "url": "https://www.solidot.org/story?sid=85804",
+      "source": "Solidot",
       "category": "前沿动态"
     },
     {
-      "title": "谷歌 Gemini for Home 接入 AT&T 智能安防系统",
-      "summary": "据 The Verge 报道，AT&T 的 Connected Life 家庭安防系统现已与谷歌 Gemini for Home 集成。AT&T 称，这是首个接入 Google Home Premium 的家庭安防产品；这次合作让 AI 家居助手与安防设备之间有了更直接的连接。",
-      "url": "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system",
+      "title": "Perplexity 推出面向工作的 AI 助手 Teammates",
+      "summary": "Perplexity 推出名为 Teammates 的常驻工作助手，可在同一工作空间承担不同角色，并利用已有项目资料完成任务。这类产品正试图让 AI 从回答单个问题转向持续参与团队协作；实际使用时，资料访问范围和结果核对仍值得关注。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
       "source": "The Verge",
       "category": "效率工具"
     },
     {
-      "title": "Nexus Mods 公布 AI 生成内容新规",
-      "summary": "游戏模组分享平台 Nexus Mods 公布新政策：不禁止上传 AI 生成的模组，但要求新上传内容披露是否使用 AI，使用者还须说明具体方式和范围。现有模组需在 2027 年 1 月 2 日前符合要求，让玩家能更清楚地辨别作品如何制作。",
-      "url": "https://www.solidot.org/story?sid=85794",
-      "source": "Solidot",
-      "category": "前沿动态"
+      "title": "爱彼迎计划于 2027 年上半年推出 AI 旅行助手",
+      "summary": "爱彼迎表示，计划在 2027 年上半年推出 AI 旅行助手，帮助用户规划行程、比较选择、管理预订，并在住宿期间提供协助。它目前还是尚未上线的产品计划，而非已经可以使用的新功能；若按计划推出，订房平台的服务将延伸到整个旅程。",
+      "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+      "source": "TechCrunch",
+      "category": "效率工具"
     },
     {
-      "title": "Uber：用 AI 智能体叫车的人仍极少",
-      "summary": "据 TechCrunch 报道，Uber 表示，在上季度最繁忙的一周里，只有四名用户通过 AI 智能体预订行程。尽管“让 AI 替人完成任务”受到关注，这组数据表明，至少在叫车这一具体场景，用户目前仍主要使用熟悉的方式下单。",
-      "url": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/",
+      "title": "Meta 让美国用户与 Muse AI 虚拟形象视频聊天",
+      "summary": "Meta 表示，美国用户现在可以与 Muse AI 的可定制动画形象进行视频聊天，让助手以更直观的方式回应。公司还提到一款计划中的配套可穿戴设备，但目前能够体验的是视频互动功能，并非这款尚未推出的硬件。",
+      "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
       "source": "TechCrunch",
       "category": "一句话"
-    },
-    {
-      "title": "富士胶片因 AI 需求增加磁带产能",
-      "summary": "富士胶片表示将大幅增加磁带产能，原因是云服务商和数据中心正扩大使用磁带备份海量数据。磁带虽已淡出多数人的日常生活，却因存储成本较低、可与系统物理隔离而仍有用途；AI 热潮也正在推高这类传统存储介质的需求。",
-      "url": "https://www.solidot.org/story?sid=85795",
-      "source": "Solidot",
-      "category": "前沿动态"
     }
   ],
-  "generated_at": "2026-11-05 03:49:56"
+  "generated_at": "2026-11-06 03:46:56"
 }
