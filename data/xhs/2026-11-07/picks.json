@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-07",
+  "date_str": "2026年11月07日",
+  "overview": "今天的 AI 新闻，一边是 OpenAI 的高额融资消息和安全合作，另一边是智能体加速进入科研、办公与日常生活。与此同时，家务机器人试用、AI 安全工具暴露和数据中心项目转手，也提醒我们：能力进步之外，安全与基础设施同样值得关注。",
+  "picks": [
+    {
+      "title": "Meta 为 Muse 推出可定制的“空间”功能",
+      "summary": "Meta 为 AI 助手 Muse 推出名为 Spaces 的新功能，让用户按需要创建类似小应用的专属界面，例如购物中心、学校信息面板或音乐页面。它试图把与助手的一问一答，变成可反复使用的个性化工作空间。实际体验如何，仍要看功能能否满足具体需求。",
+      "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
+      "source": "The Verge",
+      "category": "效率工具"
+    },
+    {
+      "title": "OpenAI 携手 Hacktron 寻找系统漏洞",
+      "summary": "OpenAI 宣布与 Hacktron 合作，检查自身系统中的安全漏洞，并测试与第三方服务连接时可能出现的风险。双方还将利用前沿 AI 加强防御。随着 AI 助手能够调用更多外部工具，这类连接是否安全，正成为影响用户数据和服务可靠性的关键问题。",
+      "url": "https://openai.com/index/partnering-with-hacktron",
+      "source": "OpenAI 官方",
+      "category": "今日头条"
+    },
+    {
+      "title": "记者体验人形机器人上门打扫公寓",
+      "summary": "《MIT 科技评论》记者记录了一次让人形机器人打扫自己公寓的体验，观察它在真实家庭环境中如何完成清洁任务。相比实验室里的演示，普通住宅有更多杂物和不可预料的情况。这次现场体验提供了一个观察家务机器人进展的窗口，但不代表它已能普遍替代人工保洁。",
+      "url": "https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/",
+      "source": "MIT 科技评论",
+      "category": "前沿动态"
+    },
+    {
+      "title": "数百台运行 Artex AI 黑客工具的服务器暴露在公网",
+      "summary": "据 TechCrunch 报道，安全研究人员发现，数百台搭载 Artex 渗透测试工具的服务器直接暴露在互联网上，可能让未经授权的人接触这些工具。这并不等于已证实发生攻击，但说明安全工具自身也需要严格保护。AI 降低测试门槛的同时，部署失误带来的风险值得警惕。",
+      "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    },
+    {
+      "title": "DigitalOcean 推出帮助 AI 智能体持续改进的新服务",
+      "summary": "DigitalOcean 发布 Learning Services 和 Agent Data Services 的公开预览版，帮助开发者利用实际交互和企业自有数据，评估并改进 AI 智能体。简单说，企业可以更系统地发现助手哪里做得不好，再测试调整是否有效。目前两项服务仍处于预览阶段。",
+      "url": "https://www.infoq.cn/article/upfROwtEl8R75H24D13J",
+      "source": "InfoQ 推荐",
+      "category": "效率工具"
+    },
+    {
+      "title": "OpenAI 推出测试 AI 智能体实验室能力的新基准",
+      "summary": "OpenAI 发布 BioBasicsBench，用 100 项任务衡量 AI 智能体能否解读原始实验数据、处理日常湿实验室工作。这项评测关注的不是模型会不会回答科学知识题，而是它面对真实实验材料时能做得怎样。评测结果有助于厘清 AI 辅助科研的能力边界。",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+      "source": "OpenAI 官方",
+      "category": "前沿动态"
+    },
+    {
+      "title": "OpenAI 据报以 1.25 万亿美元估值再获 110 亿美元融资",
+      "summary": "据《The Verge》援引彭博社报道，OpenAI 在新一轮融资中又筹得约 110 亿美元，估值达到 1.25 万亿美元。不过融资轮次尚未最终完成，这一数字仍属媒体报道而非公司正式确认。高额估值显示，资本市场对 AI 公司的投入热度仍在持续。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
+      "source": "The Verge",
+      "category": "今日头条"
+    },
+    {
+      "title": "Crusoe 将陷入困境的怀俄明州数据中心项目出售给谷歌",
+      "summary": "据 TechCrunch 报道，Crusoe 已将一个进展不顺的怀俄明州数据中心项目出售给谷歌。这笔交易反映出，大规模建设 AI 数据中心不仅需要资金和算力设备，项目开发本身也可能遭遇难题。对普通用户来说，数据中心能否顺利落地，将影响未来 AI 服务的供给。",
+      "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+      "source": "TechCrunch",
+      "category": "前沿动态"
+    }
+  ]
+}

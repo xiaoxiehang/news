@@ -1,9 +1,21 @@
 {
-  "fetched_at": "2026-11-06 03:46:24",
+  "fetched_at": "2026-11-07 03:18:23",
   "feeds": [
     {
       "name": "OpenAI 官方",
       "items": [
+        {
+          "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+          "url": "https://openai.com/index/partnering-with-hacktron",
+          "desc": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
+          "published": "Fri, 06 Nov 2026"
+        },
+        {
+          "title": "Measuring how AI agents handle everyday wet-lab science",
+          "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+          "desc": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+          "published": "Fri, 06 Nov 2026"
+        },
         {
           "title": "Australian universities are creating AI-native graduates",
           "url": "https://openai.com/index/australian-universities-ai-native-graduates",
@@ -21,24 +33,30 @@
           "url": "https://openai.com/index/introducing-gpt-6-cyber",
           "desc": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
           "published": "Thu, 05 Nov 2026"
-        },
-        {
-          "title": "Merge builds product and business tools with OpenAI technology",
-          "url": "https://openai.com/index/merge-builds-with-openai",
-          "desc": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
-          "published": "Thu, 05 Nov 2026"
-        },
-        {
-          "title": "Setting a new standard for responsible AI infrastructure",
-          "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
-          "desc": "OpenAI introduces its National Community Compact and Compute Campus Policy Blueprint to protect local resources, create jobs, and guide responsible AI infrastructure development.",
-          "published": "Thu, 05 Nov 2026"
         }
       ]
     },
     {
       "name": "机器之心",
       "items": [
+        {
+          "title": "纵横9米高空的机器人，跑出3.3个马拉松，一座大仓的极速28小时",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072640&idx=1&sn=e52b59c8ea12a5344d99ebea6098370e",
+          "desc": "既要，也要。",
+          "published": "Fri, 06 Nov 2026"
+        },
+        {
+          "title": "让机器人学会「一口气干完一件活」",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072640&idx=2&sn=b87d67bebe76dda38cc9eb5123d49239",
+          "desc": "从只会 “单步演示” 到 “连续干完一件活”，长程规划正在成为机器人的新分水岭。",
+          "published": "Fri, 06 Nov 2026"
+        },
+        {
+          "title": "世界模型「云游戏」问世，李飞飞World Labs出品",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072640&idx=3&sn=52917d7d6f2663f8f3276ce4ae36cbb6",
+          "desc": "Frameboy。",
+          "published": "Fri, 06 Nov 2026"
+        },
         {
           "title": "对谈千问蒋冠军：从模型、记忆到生态，Personal Agent的技术架构如何搭建？",
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072404&idx=1&sn=1de487a458c1d282c00b4a696aae70ee",
@@ -68,24 +86,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072104&idx=2&sn=76f783cd421be6688eed397816487dfa",
           "desc": "让Agent换个对话也能记住你！",
           "published": "Wed, 04 Nov 2026"
-        },
-        {
-          "title": "让Code Agent从自己的错误中进化：ReTerm探索失败驱动的RSI",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651072104&idx=3&sn=72caa8c3d846ccf53820d188e298acec",
-          "desc": "代码写错了、命令报错了、环境配坏了，Code Agent 接下来会做什么？",
-          "published": "Wed, 04 Nov 2026"
-        },
-        {
-          "title": "具身智能的下一个主战场，为什么是「仓储物流」？",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651071984&idx=1&sn=a21668592af67a5670548f881a042de3",
-          "desc": "谁能把机器人变成整仓生产力？",
-          "published": "Tue, 03 Nov 2026"
-        },
-        {
-          "title": "便利店打工24小时后，智元两名机器人员工「转正」失败",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651071984&idx=2&sn=0fa8db8b5270b28fa06cf816a062d61e",
-          "desc": "机器人在便利店的 24 小时直播结束了，但由真实场景牵引的机器人，才刚刚开始。",
-          "published": "Tue, 03 Nov 2026"
         }
       ]
     },
@@ -93,58 +93,46 @@
       "name": "虎嗅",
       "items": [
         {
-          "title": "AI失去的第一个秋天",
-          "url": "https://www.huxiu.com/article/4903503.html?f=rss",
+          "title": "AI面试逼疯打工人",
+          "url": "https://www.huxiu.com/article/4903745.html?f=rss",
           "desc": "",
-          "published": "Fri, 06 Nov 2026"
+          "published": "Sat, 07 Nov 2026"
         },
         {
-          "title": "孤立的特朗普，失控的AI",
-          "url": "https://www.huxiu.com/article/4903495.html?f=rss",
+          "title": "世界一下就切换到了禁止AI 的时间线",
+          "url": "https://www.huxiu.com/article/4903719.html?f=rss",
           "desc": "",
-          "published": "Fri, 06 Nov 2026"
-        },
-        {
-          "title": "史诗级暴跌之后，美国AI要算账了",
-          "url": "https://www.huxiu.com/article/4903467.html?f=rss",
-          "desc": "",
-          "published": "Fri, 06 Nov 2026"
-        },
-        {
-          "title": "去缺人的地方，慢点来：AI落地的一张红绿灯地图",
-          "url": "https://www.huxiu.com/article/4903456.html?f=rss",
-          "desc": "",
-          "published": "Fri, 06 Nov 2026"
-        },
-        {
-          "title": "美国白左，开始围剿AI",
-          "url": "https://www.huxiu.com/article/4903451.html?f=rss",
-          "desc": "",
-          "published": "Fri, 06 Nov 2026"
-        },
-        {
-          "title": "李振华：AI支付推动全球支付产业变革",
-          "url": "https://www.huxiu.com/article/4903442.html?f=rss",
-          "desc": "",
-          "published": "Fri, 06 Nov 2026"
-        },
-        {
-          "title": "跌麻了，美股AI泡沫破了？",
-          "url": "https://www.huxiu.com/article/4903427.html?f=rss",
-          "desc": "大 A 锻炼出来的超级韭菜绝不认输",
-          "published": "Fri, 06 Nov 2026"
-        },
-        {
-          "title": "这可能是美国AI最魔幻的一天。",
-          "url": "https://www.huxiu.com/article/4903422.html?f=rss",
-          "desc": "",
-          "published": "Fri, 06 Nov 2026"
+          "published": "Sat, 07 Nov 2026"
         }
       ]
     },
     {
       "name": "Solidot",
       "items": [
+        {
+          "title": "NASA 通过 AI 生成图像宣布 X-70 试验机",
+          "url": "https://www.solidot.org/story?sid=85818",
+          "desc": "NASA 宣布了新试验机 X-70 Fractal，它展示了一幅生成图像——即并非实图，而是 AI 生成的。NASA 称，X-70 是载人飞行器，设计巡航速度为 0.75 马赫，最大飞行高度约 13700 米，航程 2778 公里。X-70 起飞重量为 4536 公斤，设计可容纳 900 公斤的机内外试验载荷。NASA 局长 Jared Isaacman 表示，这架试验机有望在两年内首飞。关于其具",
+          "published": "Fri, 06 Nov 2026"
+        },
+        {
+          "title": "摩托罗拉宣布第一款支持 GrapheneOS 的旗舰手机",
+          "url": "https://www.solidot.org/story?sid=85814",
+          "desc": "摩托罗拉宣布了第一款支持安全加固发行版 GrapheneOS 的旗舰手机 Signature 27，但售价高达 1600 美元。Signature 27 配备了高通目前最强大的移动芯片骁龙 8 Elite Extreme Gen 6，内存只有 12GB 没有 16GB 版本（目前内存供应紧张而且价格昂贵），存储空间为 512G​​B (UFS 4.1）；显示屏为 6.8英寸 Extreme AMO",
+          "published": "Fri, 06 Nov 2026"
+        },
+        {
+          "title": "微软画图应用曝出远程代码执行漏洞",
+          "url": "https://www.solidot.org/story?sid=85813",
+          "desc": "微软画图应用曝出了一个越界读取导致的远程代码执行漏洞，受影响版本从 11.0.0.0 到 11.2605.91.0 之前。画图应用被预装在每一台 Windows PC 上，最近一段时间微软为画图应用引入了越来越多的新功能，其中包括 AI 生成功能，它同时也给画图引入了新 bug。微软用户目前可能需要通过 Microsoft Store 官方应用商店下载修正后的版本，Windows Update 尚",
+          "published": "Fri, 06 Nov 2026"
+        },
+        {
+          "title": "Kagi 开放搜索",
+          "url": "https://www.solidot.org/story?sid=85812",
+          "desc": "付费无广告搜索引擎 Kagi 宣布了最新更新，向所有人开放搜索，但免费用户搜索次数有限额。现在任何人无需注册账号可搜索 50 次，注册账号之后再增加 100 次。Kagi 还抨击了 Google 最近的一项决定：如果美国学校选择禁用 AI 那么它的搜索引擎也将会对学校关闭。Kagi 认为：教育不应沦为广告公司的人质，应当停止将企业利润置于教育学生这一核心使命之上。它呼吁美国学校可选择包括 Kagi",
+          "published": "Fri, 06 Nov 2026"
+        },
         {
           "title": "印度金融机构遭黑客利用 AI 工具发动的网络攻击",
           "url": "https://www.solidot.org/story?sid=85809",
@@ -162,36 +150,18 @@
           "url": "https://www.solidot.org/story?sid=85801",
           "desc": "任天堂 Switch 游戏机实体游戏卡带使用的 ROM 芯片供应也受到了 AI 热的影响。任天堂最大 ROM 芯片供应商旺宏电子在其第三季度财报中宣布它准备终止 ROM 芯片生产，脱离游戏行业。旺宏电子表示，ROM 芯片的产量在过去一年中缩减了 39%，目前仅占其业务总量的 5%。ROM 芯片正逐渐被利润更高、需求更旺盛的其它存储芯片所取代。这意味着任天堂未来只能依靠其它 ROM 芯片供应商如罗姆",
           "published": "Thu, 05 Nov 2026"
-        },
-        {
-          "title": "富士胶片因 AI 热加大磁带产能",
-          "url": "https://www.solidot.org/story?sid=85795",
-          "desc": "富士胶片表示它将大幅增加磁带产能，原因是磁带备份成为 AI 热的一个意外受益者。普通消费者可能早在几十年前就已不再使用磁带，但业界却从未将其抛弃。云服务巨头依靠磁带对海量数据进行备份。富士胶片称，大型云服务商和数据中心运营商正在扩大对磁带的使用，因为磁带能以相对较低的成本存储海量数据。磁带备份可以轻松与系统断开连接，存放在抽屉、保险库或独立设施内。富士胶片强调，磁带介质能实现物理隔离（air-ga",
-          "published": "Wed, 04 Nov 2026"
-        },
-        {
-          "title": "Nexus Mods 公布 AI 生成内容政策",
-          "url": "https://www.solidot.org/story?sid=85794",
-          "desc": "最大 PC 游戏 Mod 分享托管平台 Nexus Mods 公布了 AI 生成内容政策。Nexus Mods 没有禁止 AI 生成 Mod，但对此类 Mod 的分享设定了更严格的规定。新上传 Mod 必须披露是否使用 AI，AI 辅助 Mod 必须说明如何使用 AI 以及 AI 的使用范围。现有 Mod 需在 2027 年 1 月 2 日前符合新要求。如果 Mod 作者无视平台方提出的要求，可能",
-          "published": "Wed, 04 Nov 2026"
-        },
-        {
-          "title": "苹果开始在中国推出 Apple Intelligence",
-          "url": "https://www.solidot.org/story?sid=85793",
-          "desc": "苹果从 11 月 4 日起开始在中国推出 AI 功能 Apple Intelligence，中国用户可通过最新的 iOS 开发者 Beta 版进行测试，AI 功能将于 12 月随 iOS 27.3 的发布正式推出。中国版本的 Apple Intelligence 是苹果和阿里巴巴合作推出的，基于阿里巴巴的千问模型。首批 AI 功能包括实时翻译、写作工具、视觉智能、照片 app 的消除工具、智绘表情",
-          "published": "Wed, 04 Nov 2026"
-        },
-        {
-          "title": "SUSE 因 AI 而计划裁员十分之一",
-          "url": "https://www.solidot.org/story?sid=85791",
-          "desc": "德国开源软件公司 SUSE 现有员工 1900 人，它计划裁掉十分之一的员工。CEO Dirk-Peter van Leeuwen 在电子邮件里表示，自动化和 AI 降低了某些岗位的需求。他表示做出这一决定是非常痛苦的，但也是必要的。Van Leeuwen 称，在被瑞典私募股权投资公司殷拓集团收购后，公司在仔细审视了其未来战略、所需能力及团队架构后做出了裁员决定,“显而易见自动化和 AI 正从根本",
-          "published": "Wed, 04 Nov 2026"
         }
       ]
     },
     {
       "name": "大模型智能",
       "items": [
+        {
+          "title": "郑童@马里兰大学帕克分校 - Dream-RSI：让智能体通过“做梦”实现递归自我改进",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557678&idx=1&sn=4bd61855e7945fba828d27ef5b0f6dc8",
+          "desc": "本期MLNLP学术Talk邀请了马里兰大学帕克分校计算机科学系博士三年级学生郑童在2026年11月7日9:00-10:00为我们带来“Dream-RSI：让智能体通过“做梦”实现递归自我改进”的主题报告。",
+          "published": "Sat, 07 Nov 2026"
+        },
         {
           "title": "Linux内核被挖出948个漏洞！OpenAI花120万美元找到的",
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557673&idx=1&sn=e34304b320e40a3f19dd4b584c6c0c0a",
@@ -221,12 +191,6 @@
           "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557645&idx=1&sn=0578828cf310efffad56f0347cd84bac",
           "desc": "词元级路由的算法收益为何难以转化为部署效率？解读TokenRouter的请求接口、异步交接和延迟批处理，结合实验条件分析吞吐与延迟收益。",
           "published": "Mon, 02 Nov 2026"
-        },
-        {
-          "title": "难怪Claude突然封号！Anthropic自曝：你聊的每句话，它都在后台悄悄举报",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzU3NjE4NjQ4MA==&mid=2247557638&idx=1&sn=a7846d7a68688aa02df20f68242b2987",
-          "desc": "",
-          "published": "Sun, 01 Nov 2026"
         }
       ]
     },
@@ -234,40 +198,40 @@
       "name": "InfoQ 推荐",
       "items": [
         {
-          "title": "AI Native 企业研发工具链：架构重构与持续演进｜AICon北京",
-          "url": "https://www.infoq.cn/article/4IUSd2wP28ua4Jd5fHG2",
+          "title": "CyberwIIOS：如何驾驭大模型在 OT 侧跨越“幻觉”与“失控”｜AICon北京",
+          "url": "https://www.infoq.cn/article/K1bCIbHxeu3wLIjdusgr",
           "desc": "当 Agent 真正进入企业流程，哪些工作可以交给 AI ？50 + 实战案例揭晓答案！ AI 正在从回答问题的辅助工具，走向理解目标、调用系统、完成任务的工作承担者。当 Agent 真正进入企业流程，问题不再是 “如何把 AI 做出来”，而是哪些工作可以交给 AI、结果如何验收、权限、成本与风险如何收住。随着大模型向推理、工具调用、多模态和长任务延伸，开发重心正从单次调用转向上下文、工具、执行环",
+          "published": "Sat, 07 Nov 2026"
+        },
+        {
+          "title": "Cloudflare 与 VoidZero 联合推出 tsrs：由 AI 生成的 TypeScript 编译器 Rust 移植版",
+          "url": "https://www.infoq.cn/article/lGoA1ZSw6ojeh68GVlBl",
+          "desc": "tsrs \" 是 TypeScript 编译器的 Rust 移植版， 由 Cloudflare 宣布推出， \"并与 VoidZero 及 Owner.com \" 的 Max Schwenk 共同开发。该项目在 Oxc 工具链 \"中孵化，并与 TypeScript 团队密切合作。Cloudflare 强调，tsrs 并非 TypeScript 的分支，语言设计仍完全由 TypeScript 团队掌控",
           "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "AI 狂烧 2000亿美元，谷歌全球启动“自愿买断”计划：最高补偿12个月工资",
-          "url": "https://www.infoq.cn/article/vMSj216sQUhmeDH4H0G7",
-          "desc": "一家季度营收超过 1200 亿美元、云业务收入同比翻倍的科技巨头，为什么还要花钱让员工离开？ 这个看似矛盾的场景，正在谷歌上演。 11 月 4 日，据路透社独家报道，Alphabet 旗下谷歌今年已将自愿离职计划扩大至加拿大、法国、德国、日本和瑞士等多个国家。部分符合条件的员工可以主动申请离职，并获得相应的经济补偿。其中，瑞士员工的补偿标准为每工作一年获得一个月工资，最高可达 12 个月。 更值得",
+          "title": "DigitalOcean 推出学习与数据服务，帮助 AI 智能体进行自我迭代",
+          "url": "https://www.infoq.cn/article/upfROwtEl8R75H24D13J",
+          "desc": "DigitalOcean 发布 Learning Services 和 Agent Data Services 公开预览版 \"，让开发者可以在统一的 AI 原生云平台上构建、评估和持续改进 AI 智能体。 新服务基于 DigitalOcean 的 Inference Engine 和 Managed Agents \" 构建，智能体能够从真实世界的交互中学习、识别弱点、测试改进并使用企业自有数据： ",
           "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "当 Coding Agent 走进研发团队：我们打造并开源了自进化研发平台 LoopForge",
-          "url": "https://www.infoq.cn/article/QGaIWSgd9uwx2WGw0yFv",
-          "desc": "导 读单机 Coding Agent 已经能飞快写出代码，但一旦走进真实研发团队，合盖断流、多人上下文割裂、自由 Vibe Coding 质量失控、日常盯单耗时以及同类问题反复踩坑，很快就会把团队卡在“单兵提效、全局内耗”的瓶颈里。为此，腾讯轻量云团队打造并开源了云端自进化 AI 研发平台 LoopForge——集 7×24 小时云端工作区、多角色共享会话、工程级 SOP 流水线、无人值守自动化与",
-          "published": "Thu, 05 Nov 2026"
+          "title": "从混元研发体系重构到 MaaS 推理优化，模型能力如何走向真实业务？",
+          "url": "https://www.infoq.cn/article/azhgYaRTIjsSSVfA8AaU",
+          "desc": "过去几年，大模型厂商发布新产品，总少不了一张密密麻麻的 Benchmark 成绩表。但当模型真正进入工作场景，评判标准就没那么简单了。 今年 3 月，一项研究分析了 43 套 Agent 评测基准，涉及超过 7.2 万项任务，并与美国劳动力市场的 1016 种职业进行对照。结果发现，现有评测高度集中于编程等计算机相关任务，管理、法律等大量真实工作场景却明显覆盖不足。 模型在测试中表现出色，究竟能在",
+          "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "模型之外，腾讯还在补什么？",
-          "url": "https://www.infoq.cn/article/UMlHzxNiS9tFfG9KadYs",
-          "desc": "Agent 能干的活，从年初到现在肉眼可见地变多了，企业应用也在加速。麦肯锡今年 8 月的调查显示，大型企业 Agent 规模化应用比例从去年的 27% 升至 40%。 但在 Agent 深入企业业务的过程中，一些问题也开始显现。行业里的判断比较一致：不是模型不够强，而是断点太多。在 2026 腾讯全球数字生态大会上，腾讯集团高级执行副总裁、云与智慧产业事业群 CEO 汤道生谈及这一话题时，将解决",
-          "published": "Thu, 05 Nov 2026"
+          "title": "智能体 Harness 的演进：从链、图到代码化",
+          "url": "https://www.infoq.cn/article/B7tsA5tjD08k2gd0OtXd",
+          "desc": "在过去几年里，基于大语言模型构建的智能体经历了翻天覆地的变化。最初只是用粘合代码拼凑起来的临时提示词，如今已逐渐演变为我们所说的智能体 Harness 框架，也叫结构化执行框架——它们围绕概率模型搭建起脚手架，让模型变得稳定、可观测，达到生产级水准。 这一演变并非一蹴而就，而是渐进式的，由真实业务场景不断增长的需求推动。在这条变革弧线上，先后出现了三种截然不同的范式，每一种都反映出人们对如何约束非",
+          "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "Claude Code 产品负责人Cut Wu 官宣加入 OpenAI",
-          "url": "https://www.infoq.cn/article/cDERcarozbrsCBNs5sWM",
-          "desc": "刚刚，Claude Code 产品负责人 Cat Wu 官宣加入OpenAI，上周五刚从 Anthropic 离职。 她在 x 上写道：“我将加入 OpenAI，负责核心产品的产品管理！我非常尊重 OpenAI，因为它向世界证明了Scaling 是可行的，它让超过十亿人受益于AI，并且它坚信优秀的产品是其使命的核心。 我很高兴能与Tibo 以及 OpenAI 的全体员工一起协作。我们将携手打造能够",
-          "published": "Thu, 05 Nov 2026"
-        },
-        {
-          "title": "视频生成只是开始，AI 如何把内容做对？",
-          "url": "https://www.infoq.cn/article/GGILIuzW0RTGhoeuz9TD",
-          "desc": "过去做一条视频，通常要先学会使用剪辑软件，再选择模板、调整镜头，最后一点点完成包装。工具降低了创作门槛，却没有替用户回答一个更关键的问题：这条视频究竟要完成什么？ 10 月 22 日，在 QCon 上海 2026 主论坛上，小影科技创始人兼 CEO 韩晟以《从工具到 Agent：小影内容创作的三次范式迁移》为题，分享了小影在内容创作领域的长期实践。 在他看来，AI 对内容创作的改变，正从“帮助用户",
-          "published": "Thu, 05 Nov 2026"
+          "title": "“超脑”统一指挥，“狼族”协同作战：京东物流打造供应链 AI 机器人军团",
+          "url": "https://www.infoq.cn/article/1YeowHagkg1Or6wwy23P",
+          "desc": "京东物流正加速推进“超脑+狼族”机器人军团在供应链全链路的规模化应用。其中，“超脑”大模型负责复杂供应链场景下的智能决策与协同调度，“狼族”机器人军团则深入仓储、分拣、配送等实际作业环节，已形成涵盖“九狼”（9 款产品、11 款机器人）的完整阵容，并持续拓展具身智能在不同物流场景中的应用能力。 物流是机器人应用前景最广阔的场景之一，京东物流致力于打造全球最大规模的具身机器人应用军团，目前已在供应链",
+          "published": "Fri, 06 Nov 2026"
         }
       ]
     },
@@ -275,28 +239,28 @@
       "name": "The Verge",
       "items": [
         {
-          "title": "OpenAI is stepping back from NDAs for data center projects",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
-          "desc": "Following this week's midterms where voters resoundingly voiced their opposition to data center expansion, OpenAI today announced new commitments to communities where it is working on data center proj",
-          "published": "2026-11-05T19:37"
+          "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
+          "desc": "OpenAI is now valued at $1.25 trillion in a new round of funding that has raised another $11 billion, according to Bloomberg. That would make it one of the world's most valuable companies, not long af",
+          "published": "2026-11-06T18:46"
         },
         {
-          "title": "Airbnb is working on an AI travel agent",
-          "url": "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings",
-          "desc": "Airbnb plans to roll out an AI agent in the first half of 2027 that will help users plan and book travel, the company said in its Q3 2026 earnings shareholder letter released today. \"Today's AI agents",
-          "published": "2026-11-05T19:06"
+          "title": "China reportedly recruited AI exec to spy on Jensen Huang",
+          "url": "https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy",
+          "desc": "China's intelligence agency recruited Megaspeed executive Alice Huang to spy on Nvidia CEO Jensen Huang, according to The New York Times. The Ministry of State Security (MSS) enlisted her to glean inf",
+          "published": "2026-11-06T18:00"
         },
         {
-          "title": "Perplexity launches its own take on AI agents for work",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
-          "desc": "Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup's new always-on \"Teammates\" can take on multiple roles within a workspace, while pulling existing projects",
-          "published": "2026-11-05T17:26"
+          "title": "All the latest updates on AI data centers",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+          "desc": "Massive new data centers are the physical foundation for tech companies’ hopes and dreams for AI. But the rush to expand warehouses full of energy-hungry servers has also kicked up fights across the w",
+          "published": "2026-11-06T15:02"
         },
         {
-          "title": "Muse has a voice mode now",
-          "url": "https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar",
-          "desc": "Meta now lets you have voice conversations with your Muse AI agent in real time, CEO Mark Zuckerberg announced today. The feature has been rolled out to me, and I gave it a spin on the iOS app while w",
-          "published": "2026-11-05T14:03"
+          "title": "Meta&#8217;s Muse AI can create custom &#8216;spaces&#8217; for the version of the app you need right now",
+          "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
+          "desc": "Meta will now allow you to build customized, app-like experiences within Muse. The new feature, called \"spaces,\" allows its AI assistant to build things like a shopping hub, school dashboard, music tr",
+          "published": "2026-11-06T13:10"
         }
       ]
     },
@@ -304,46 +268,58 @@
       "name": "TechCrunch",
       "items": [
         {
-          "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
-          "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
-          "desc": "Airbnb says its upcoming AI agent will help travelers plan trips, compare options, manage bookings, and get assistance throughout their stay.",
-          "published": "Thu, 05 Nov 2026"
+          "title": "Crusoe sells troubled Wyoming data center project to Google",
+          "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+          "desc": "The deal highlights the challenges of developing massive AI data centers.",
+          "published": "Sat, 07 Nov 2026"
         },
         {
-          "title": "Serve Robotics launches new business to become the AWS for robots",
-          "url": "https://techcrunch.com/2026/11/05/serve-robotics-launches-new-business-to-become-the-aws-for-robots/",
-          "desc": "Serve Robotics announced alonsgside its third-quarter earnings that it will launch a new business line called Physical AI Services to offer customers its connectivity and data tools.",
-          "published": "Thu, 05 Nov 2026"
+          "title": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
+          "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+          "desc": "OpenAI has reportedly raised an additional $11 billion as part of a funding round that hasn't closed yet but is expected to in the coming weeks.",
+          "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "Meta says US users can now video chat with their Muse AI avatar",
-          "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
-          "desc": "Meta's AI agent can now take calls as a customizable animated avatar, ahead of the launch of a Tamagotchi-like wearable designed to bring Muse to life.",
-          "published": "Thu, 05 Nov 2026"
+          "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+          "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+          "desc": "Security researchers found hundreds of servers hosting the penetration testing tool Artex exposed to the internet, allowing anyone access to the hacking tool.",
+          "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "Meta warns that election backlash against data centers could make AI expansion harder",
-          "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/",
-          "desc": "Meta warns that growing political opposition to data centers could threaten future AI investments, as communities push back against massive infrastructure projects.",
-          "published": "Thu, 05 Nov 2026"
+          "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+          "desc": "Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers.",
+          "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "OpenAI released a new cybersecurity model. Is that enough?",
-          "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
-          "desc": "OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.",
-          "published": "Thu, 05 Nov 2026"
+          "title": "After the midterms, is the AI industry in for a rough two years?",
+          "url": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years/",
+          "desc": "Democrats’ historic victories in this week’s U.S. midterm elections could also transform the tech industry. The public voted on 41 data center-related ballot measures on Tuesday — in all but one, the ",
+          "published": "Fri, 06 Nov 2026"
         },
         {
-          "title": "OpenAI president Greg Brockman says company could be IPO ready in 2027",
-          "url": "https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/",
-          "desc": "Speaking at a Wall Street Journal tech conference on Wednesday, the executive touted how the company had been gaining ground in the enterprise market, where rival Anthropic had already successfully ma",
-          "published": "Thu, 05 Nov 2026"
+          "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+          "desc": "AI usage keeps climbing, but spending has stalled. Price cuts and smarter cost controls among the biggest spenders could challenge investor assumptions about AI hypergrowth.",
+          "published": "Fri, 06 Nov 2026"
         }
       ]
     },
     {
       "name": "MIT 科技评论",
       "items": [
+        {
+          "title": "The Download: a humanoid cleans house and Samsung builds for the AI boom",
+          "url": "https://www.technologyreview.com/2026/11/06/1148154/the-download-humanoid-robot-cleaner-samsung-ai-chip-boom/",
+          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. I watched a humanoid robot clean my apartment. It ",
+          "published": "Fri, 06 Nov 2026"
+        },
+        {
+          "title": "I watched a humanoid robot clean my apartment. It felt like a taste of the future.",
+          "url": "https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/",
+          "desc": "I’m not the sort of person who typically pays for a house cleaner. I’m too frugal, and I kind of enjoy putting on a podcast and going to town on my tub with a Magic Eraser. But when I saw an X post ab",
+          "published": "Fri, 06 Nov 2026"
+        },
         {
           "title": "The Download: Texas’s fragile AI boom and energy policy shifts",
           "url": "https://www.technologyreview.com/2026/11/05/1144908/the-download-texas-fragile-ai-boom-us-energy-policy/",
@@ -367,18 +343,6 @@
           "url": "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/",
           "desc": "A sales representative asks an AI agent for customer pricing, and the agent pulls data from multiple sources: restricted pricing systems, internal communications, and archived quotes. The output looks",
           "published": "Wed, 04 Nov 2026"
-        },
-        {
-          "title": "The Download: controlling AI agents and “Super Intelligence” loyalty tests",
-          "url": "https://www.technologyreview.com/2026/11/03/1147940/the-download-controlling-ai-agents-trump-super-intelligence/",
-          "desc": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. How “reverse game theory” could keep AI agents in ",
-          "published": "Tue, 03 Nov 2026"
-        },
-        {
-          "title": "How “reverse game theory” could keep AI agents in check",
-          "url": "https://www.technologyreview.com/2026/11/03/1147934/reverse-game-theory-mechanism-design-ai-alignment/",
-          "desc": "A new approach known as “reverse game theory” aims to control powerful AI models by designing systems that incentivize them to stick to the rules. As AI models become more capable, safety researchers ",
-          "published": "Tue, 03 Nov 2026"
         }
       ]
     },
@@ -386,52 +350,52 @@
       "name": "Product Hunt",
       "items": [
         {
-          "title": "Cosyra",
-          "url": "https://www.producthunt.com/products/cosyra",
-          "desc": "Launch and steer agents on your machines from your phone Discussion | Link",
-          "published": "2026-11-03T12:20"
+          "title": "Alysis Code",
+          "url": "https://www.producthunt.com/products/alysis-code",
+          "desc": "Open-source AI coding agent Discussion | Link",
+          "published": "2026-11-03T04:47"
         },
         {
-          "title": "Seamcult",
-          "url": "https://www.producthunt.com/products/seamcult",
-          "desc": "A pattern design tool for the LLM era ('paper' for patterns) Discussion | Link",
-          "published": "2026-11-03T03:42"
+          "title": "Tobira Site Agent",
+          "url": "https://www.producthunt.com/products/tobira-ai",
+          "desc": "Turn your website into an AI agent that sells to AI agents Discussion | Link",
+          "published": "2026-10-24T04:25"
         },
         {
-          "title": "Stitch.ai",
-          "url": "https://www.producthunt.com/products/stitch-ai",
-          "desc": "Your AI workspace for mail, calendar, notes, tasks and more Discussion | Link",
-          "published": "2026-11-02T22:04"
+          "title": "OrgSync",
+          "url": "https://www.producthunt.com/products/orgsync-2",
+          "desc": "Company brain for Claude, ChatGPT & Codex teams Discussion | Link",
+          "published": "2026-11-04T07:12"
         },
         {
-          "title": "Vibeconferencing",
-          "url": "https://www.producthunt.com/products/vibeconferencing",
-          "desc": "Your Claude Code session, in your Meet, Zoom or Teams call Discussion | Link",
-          "published": "2026-11-02T14:49"
+          "title": "Meadow",
+          "url": "https://www.producthunt.com/products/meadow-3",
+          "desc": "Hidden songs on your walk, chosen by people, not algorithms Discussion | Link",
+          "published": "2026-09-22T11:01"
         },
         {
-          "title": "Living Brain",
-          "url": "https://www.producthunt.com/products/chatandbuild",
-          "desc": "Interoperable, efficient memory layer for agentic AI Discussion | Link",
-          "published": "2026-11-02T07:07"
+          "title": "Turnstone",
+          "url": "https://www.producthunt.com/products/turnstone",
+          "desc": "Grok Bot alternative that runs on your AI, completely free Discussion | Link",
+          "published": "2026-08-19T21:40"
         },
         {
-          "title": "Clocknext",
-          "url": "https://www.producthunt.com/products/clocknext",
-          "desc": "Pricing and Billing Infrastructure for AI Agents Discussion | Link",
-          "published": "2026-11-02T03:41"
+          "title": "crystl",
+          "url": "https://www.producthunt.com/products/crystl-multitasking-terminal",
+          "desc": "multitasking terminal for AI coding agents, built for macOS Discussion | Link",
+          "published": "2026-11-05T18:44"
         },
         {
-          "title": "Maritime",
-          "url": "https://www.producthunt.com/products/maritime",
-          "desc": "Cloud computers for any AI agent, customized your way Discussion | Link",
-          "published": "2026-11-01T11:24"
+          "title": "Kodivo",
+          "url": "https://www.producthunt.com/products/kodivo",
+          "desc": "Learn coding with AI and PHP through swipeable cards Discussion | Link",
+          "published": "2026-11-05T16:07"
         },
         {
-          "title": "Glasshand",
-          "url": "https://www.producthunt.com/products/glasshand",
-          "desc": "Give your agent a real iPhone and Mac Discussion | Link",
-          "published": "2026-11-02T12:28"
+          "title": "SafeGrd",
+          "url": "https://www.producthunt.com/products/safegrd",
+          "desc": "Safae database backups that AI can restore but not delete Discussion | Link",
+          "published": "2026-11-02T03:51"
         }
       ]
     }
