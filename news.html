@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <title>AI 科技早报 - 鸡仔</title>
-<meta name="description" content="每天早上 8 点，AI 精选最值得读的科技新闻。">
+<meta name="description" content="打开即现查现算的 AI 早报：每次打开现查权威科技媒体、现调 AI 选稿写摘要，绝不展示旧数据。">
 <link rel="alternate" type="application/rss+xml" title="今日科技早报 RSS" href="feed.xml">
 <style>
   :root {
@@ -108,6 +108,12 @@
   .archive-list button.active { color: var(--ink); font-weight: 700; }
   .archive-list .cnt { font-size: 12px; color: var(--grey); }
 
+  /* ── 实时加载态 / 失败态 ────────── */
+  .briefing-state { padding: 96px var(--pad-x); text-align: center; }
+  .briefing-state .state-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+  .briefing-state .state-sub { font-size: 14px; line-height: 1.9; color: var(--grey); max-width: 560px; margin: 0 auto 24px; }
+  .briefing-state .btn { display: inline-block; }
+
   /* ── 操作区 / 按钮 / 提示 ──────────── */
   .pane-actions { display: flex; gap: 12px; justify-content: center; margin: 32px 0 48px; flex-wrap: wrap; }
   .btn {
@@ -171,6 +177,15 @@
 </header>
 
 <main>
+<div id="briefing-loading" class="briefing-state">
+<p class="state-title">正在实时生成今日早报…</p>
+<p class="state-sub">现查 10 个权威 RSS 源、现调 AI 选稿写摘要，已等待 <span id="loading-elapsed">0</span> 秒。请稍候，不要刷新。</p>
+</div>
+<div id="briefing-error" class="briefing-state" style="display:none;">
+<p class="state-title">实时早报生成失败</p>
+<p class="state-sub" id="error-detail">服务器暂时无法现查新闻或生成摘要。本页不展示旧数据，请稍后重试。</p>
+<button class="btn btn-primary" onclick="loadZaobao()">重新生成</button>
+</div>
 <div id="briefing-section" style="display:none;">
 <div class="briefing-feed">
 <div class="feed-head" id="feed-head" style="display:none;">
@@ -292,21 +307,47 @@ btn.addEventListener('click', function() { loadArchiveItem(btn.getAttribute('dat
 });
 document.getElementById('briefing-side').style.display = '';
 }
+/* 实时早报：每次打开现调 mu-node 实时接口，不读任何静态快照。
+   失败只显示错误、绝不回退旧数据。 */
+var BRIEFING_LIVE_URL = 'https://mu-node.xiaomuhe.cn/api/briefing-live';
 var zaobaoLoading = false;
+var loadingTimer = null;
 async function loadZaobao(fromArchive) {
 if (zaobaoLoading) return; zaobaoLoading = true;
+document.getElementById('briefing-error').style.display = 'none';
+document.getElementById('briefing-section').style.display = 'none';
+document.getElementById('briefing-loading').style.display = '';
+var started = Date.now();
+document.getElementById('loading-elapsed').textContent = '0';
+loadingTimer = setInterval(function() {
+document.getElementById('loading-elapsed').textContent = Math.floor((Date.now() - started) / 1000);
+}, 1000);
 try {
-const data = await fetchJson('data/briefing.json');
-if (data && data.picks && data.picks.length) {
+const r = await fetch(BRIEFING_LIVE_URL, { cache: 'no-store' });
+if (!r.ok) throw new Error('HTTP ' + r.status);
+const data = await r.json();
+if (!data || !data.success || !data.picks || !data.picks.length) {
+throw new Error((data && data.error) || 'empty');
+}
 renderBriefing(data);
+document.getElementById('feed-count').textContent = data.picks.length + ' 条 · 实时生成于 ' +
+(data.generated_at || '') + (data.duration_ms ? ' · 耗时 ' + (data.duration_ms / 1000).toFixed(1) + ' 秒' : '');
+document.getElementById('briefing-loading').style.display = 'none';
 document.querySelectorAll('#archive-list button').forEach(function(b, i) {
 b.classList.toggle('active', i === 0);
 });
 if (!fromArchive) loadArchiveList(data.date);
 if (fromArchive) window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-} catch (e) { console.error('加载早报失败:', e);}
+} catch (e) {
+console.error('加载实时早报失败:', e);
+document.getElementById('briefing-loading').style.display = 'none';
+document.getElementById('error-detail').textContent =
+'服务器暂时无法现查新闻或生成摘要（' + e.message + '）。本页不展示旧数据，请稍后重试。';
+document.getElementById('briefing-error').style.display = '';
+} finally {
+clearInterval(loadingTimer);
 zaobaoLoading = false;
+}
 }
 
 loadZaobao();

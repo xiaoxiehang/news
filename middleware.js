@@ -22,6 +22,12 @@ export default function middleware(request) {
 
   const SUBDOMAINS = ['price.xiaojj.pro', 'video.xiaojj.pro', 'tv.xiaojj.pro'];
 
+  // 早报 RSS 动态化（2026-11-08）：feed.xml 不再是静态文件，
+  // 重写到 mu-node 实时接口，每次请求现拉 RSS + 现调 LLM 现拼 RSS。
+  if (pathname === '/feed.xml' && (host === '1.xiaojj.pro' || host === 'xiaojj.pro')) {
+    return rewrite(new URL('https://mu-node.xiaomuhe.cn/api/briefing-live?format=rss'));
+  }
+
   // 旧页面 301 跳转（2026-10 网站结构重组：资讯/创作聚合页；2026-10-02 精简：HN/归档/quiz tab 已下线）
   const LEGACY_REDIRECTS = {
     '/zaobao.html': '/news.html',

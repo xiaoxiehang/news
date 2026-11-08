@@ -214,17 +214,22 @@
 
 <script src="scripts/footer.js"></script>
 <script>
-// 今日条：读当天早报数据，第一条标题 + 条数
+// 今日条：读实时早报接口，第一条标题 + 条数。
+// 接口失败或超时（60 秒）时保留静态通用文案，绝不展示旧数据。
 (function() {
-  fetch('data/briefing.json', { cache: 'no-store' })
-    .then(function(r) { return r.json(); })
+  var ctrl = ('AbortController' in window) ? new AbortController() : null;
+  var timer = null;
+  if (ctrl) timer = setTimeout(function() { ctrl.abort(); }, 60000);
+  fetch('https://mu-node.xiaomuhe.cn/api/briefing-live', { cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
+    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function(b) {
-      var picks = b.picks || [];
+      var picks = (b && b.picks) || [];
       if (!picks.length) return;
       document.getElementById('today-headline').textContent = picks[0].title || 'AI 早报';
       document.getElementById('today-more').textContent = '等 ' + picks.length + ' 条早报 →';
     })
-    .catch(function() { /* 静态文案兜底 */ });
+    .catch(function() { /* 实时接口失败时保留静态通用文案 */ })
+    .finally(function() { if (timer) clearTimeout(timer); });
 })();
 // 产品行入场
 (function() {
