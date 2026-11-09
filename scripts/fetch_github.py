@@ -171,6 +171,7 @@ CATEGORY_OVERRIDES = {
 # YuJunZhiXue/dsh-purge：多模型越狱（破甲）提示词切换工具，与 gpt-instruct 同类，不适合公开站点（2026-10-29 夜间质检）。
 # Ebony-Vinyl/dsh-our-free-model：dsh 插件，免登录/免 API Key 不限量调用 DeepSeek/Kimi 等付费模型，
 # 与 dsh-purge 同属 dsh 破甲家族且撞"不推拼团黑号"红线，不适合公开站点（2026-11-02 夜间质检）。
+# noob-hackers/infect：安卓病毒感染工具，不适合公开站点（2026-11-09 夜间质检）。
 CATEGORY_EXCLUDE = {
     'stashapp/stash',
     'Igglybuff/awesome-piracy',
@@ -179,6 +180,7 @@ CATEGORY_EXCLUDE = {
     'YuJunZhiXue/dsh-purge',
     'Ebony-Vinyl/dsh-our-free-model',
     'HunYiSage/dsh-purge',  # 2026-11-04：dsh 破甲家族新变体（"Jailbreak for every model"），与已拉黑的 YuJunZhiXue/dsh-purge 同名同类
+    'noob-hackers/infect',  # 2026-11-09：安卓病毒感染工具，不适合公开站点
 }
 
 

@@ -79,7 +79,8 @@ const CATEGORY_OVERRIDES = {
 // Ebony-Vinyl/dsh-our-free-model：dsh 插件，免登录/免 API Key 不限量调用 DeepSeek/Kimi 等付费模型，
 // 与 dsh-purge 同属 dsh 破甲家族且撞"不推拼团黑号"红线，不适合公开站点（2026-11-02 夜间质检）
 // HunYiSage/dsh-purge：dsh 破甲家族新变体（"Jailbreak for every model"），与已拉黑的 YuJunZhiXue/dsh-purge 同名同类，不适合公开站点（2026-11-04 夜间质检）
-const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy', 'MDX-Tom/gpt-instruct', 'laoma528/awesome-zhuiju-free', 'YuJunZhiXue/dsh-purge', 'Ebony-Vinyl/dsh-our-free-model', 'HunYiSage/dsh-purge']);
+// noob-hackers/infect：安卓病毒感染工具，不适合公开站点（2026-11-09 夜间质检）
+const CATEGORY_EXCLUDE = new Set(['stashapp/stash', 'Igglybuff/awesome-piracy', 'MDX-Tom/gpt-instruct', 'laoma528/awesome-zhuiju-free', 'YuJunZhiXue/dsh-purge', 'Ebony-Vinyl/dsh-our-free-model', 'HunYiSage/dsh-purge', 'noob-hackers/infect']);
 
 function recentDate(days) {
   const d = new Date(Date.now() - days * 86400000);
