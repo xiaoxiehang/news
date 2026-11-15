@@ -31,15 +31,61 @@ def _norm(title):
     return re.sub(r'[\s\W_]+', '', (title or '').lower())
 
 
+def _collect_from_rss(sunday, missing_days):
+    """归档缺失时的兜底候选源：直接抓 RSS，按发布时间（CST）落到缺失日期。
+
+    2026-11-15 新增：早报 2026-11-08 实时化后 data/archive/briefing-*.json 停更，
+    周盘点曾因此 0 候选整周跳过（2026-11-14 期 Actions 失败）。归档有数据时不用本兜底。
+    """
+    try:
+        import feedparser
+        import requests
+        from fetch_rss import FEEDS, AI_KEYWORDS, clean_html
+    except Exception as e:
+        print('   RSS 兜底不可用: %s' % e)
+        return []
+    from datetime import timezone as _tz
+    cst = _tz(timedelta(hours=8))
+    ua = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'}
+    out = []
+    for name, url, ai_filter, _limit in FEEDS:
+        try:
+            r = requests.get(url, headers=ua, timeout=25)
+            r.raise_for_status()
+            fp = feedparser.parse(r.content)
+        except Exception as e:
+            print('   RSS 兜底抓取失败 %s: %s' % (name, e))
+            continue
+        for e in fp.entries:
+            title = (e.get('title') or '').strip()
+            link = (e.get('link') or '').strip()
+            pp = e.get('published_parsed') or e.get('updated_parsed')
+            if not title or not link or not pp:
+                continue
+            dt = datetime(*pp[:6], tzinfo=_tz.utc).astimezone(cst)
+            day = dt.strftime('%Y-%m-%d')
+            if day not in missing_days:
+                continue
+            desc = clean_html(e.get('summary') or e.get('description') or '')[:200]
+            if ai_filter and not AI_KEYWORDS.search('%s %s' % (title, desc)):
+                continue
+            out.append({'title': title, 'summary': desc, 'source': name,
+                        'url': link, 'date': day})
+    print('   RSS 兜底补回 %d 条' % len(out))
+    return out
+
+
 def collect_candidates(sunday):
     """收集最近 7 天（含周日）的 briefing picks，去重。"""
     seen = set()
     cands = []
+    missing_days = set()
     for i in range(6, -1, -1):
         d = (sunday - timedelta(days=i)).strftime('%Y-%m-%d')
         path = os.path.join(SITE_ROOT, 'data', 'archive', 'briefing-%s.json' % d)
         if not os.path.isfile(path):
             print('   跳过缺失: %s' % d)
+            missing_days.add(d)
             continue
         with open(path, encoding='utf-8') as f:
             data = json.load(f)
@@ -51,6 +97,13 @@ def collect_candidates(sunday):
             cands.append({'title': p.get('title', ''), 'summary': p.get('summary', ''),
                           'source': p.get('source', ''), 'url': p.get('url', ''),
                           'date': d})
+    if missing_days:
+        for c in _collect_from_rss(sunday, missing_days):
+            key = _norm(c.get('title', ''))
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            cands.append(c)
     print('collect: %d 条候选（去重后）' % len(cands))
     return cands
 
