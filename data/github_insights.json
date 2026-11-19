@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19 04:40:37",
+  "updated_at": "2026-11-19 14:10:00",
   "insights": {
     "freeCodeCamp/freeCodeCamp": {
       "what": "免费学编程、数学和计算机基础的课程平台。",
@@ -4570,6 +4570,16 @@
       "what": "整理医疗 AI 数据集的授权和来源记录，方便核查。",
       "why_hot": "医疗 AI 越来越看重数据合规，哈希留证也避免公开原始数据。",
       "who": "做医疗 AI 数据治理和合规的人值得看看。"
+    },
+    "huggingface/datasets": {
+      "what": "AI 模型训练用的最大现成数据集中心，加载和处理数据都很方便。",
+      "why_hot": "Hugging Face 官方出品，数据集数量多、更新快，几乎是做 AI 的标配工具。",
+      "who": "做机器学习、需要找训练数据的人。"
+    },
+    "anefzaoui/misterdownloadmanager": {
+      "what": "纯 Rust 从头写的开源下载管理器，界面干净、功能齐全。",
+      "why_hot": "Rust 原生实现性能强，刚开源就冲上新星榜，下载工具里少见的干净之作。",
+      "who": "想找轻量开源下载工具的 Windows 用户。"
     }
   }
 }
