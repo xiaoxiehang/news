@@ -181,6 +181,8 @@ CATEGORY_EXCLUDE = {
     'Ebony-Vinyl/dsh-our-free-model',
     'HunYiSage/dsh-purge',  # 2026-11-04：dsh 破甲家族新变体（"Jailbreak for every model"），与已拉黑的 YuJunZhiXue/dsh-purge 同名同类
     'noob-hackers/infect',  # 2026-11-09：安卓病毒感染工具，不适合公开站点
+    'BaaRai/ARTEX',  # 2026-11-21 用户定：AI 自主渗透测试工具，攻防双用，不适合公开站点
+    'Z4nzu/hackingtool',  # 2026-11-21 用户定：黑客工具集合，与 ARTEX 同批入黑名单
 }
 
 
