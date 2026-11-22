@@ -68,6 +68,9 @@ const CATEGORY_OVERRIDES = {
   'team-spotube/spotube': 'media', // 开源音乐流媒体 App，被 frontend-mobile 查询误吸入
   'redis/redis': 'backend-infra', // 数据库，被 devtools 查询误吸入（"developers" 全文匹配）
   'thedaviddias/Front-End-Checklist': 'frontend-mobile', // 2026-10-22 夜间质检：纯前端开发 checklist，被 ai-apps 查询误吸入
+  // 2026-11-22 夜间质检新增（实时 tab 只过滤不搬运）
+  'showlab/Code2Video': 'research', // [ICML 2026] 论文实现（代码生成视频），被 topic:education 误吸入 education
+  'code-dot-org/code-dot-org': 'education', // code.org 官网代码库（CS 教育平台），被 research 查询误吸入
 };
 
 // 内容黑名单：不宜在公开站点展示的项目（2026-10-13 夜间质检）

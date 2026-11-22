@@ -160,6 +160,9 @@ CATEGORY_OVERRIDES = {
     # 2026-10-22 夜间质检新增（管线侧搬运归位）
     'thedaviddias/Front-End-Checklist': 'frontend-mobile',  # 纯前端开发 checklist（for humans），被 ai-apps 查询误吸入
     'redis/redis': 'backend-infra',  # 2026-10-22 夜间质检：数据库，被 devtools 查询误吸入（"developers" 全文匹配）
+    # 2026-11-22 夜间质检新增（管线侧搬运归位）
+    'showlab/Code2Video': 'research',  # [ICML 2026] 论文实现（代码生成视频），被 topic:education 误吸入 education
+    'code-dot-org/code-dot-org': 'education',  # code.org 官网代码库（CS 教育平台），被 research 查询误吸入
 }
 
 # 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
