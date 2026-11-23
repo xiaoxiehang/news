@@ -163,6 +163,10 @@ CATEGORY_OVERRIDES = {
     # 2026-11-22 夜间质检新增（管线侧搬运归位）
     'showlab/Code2Video': 'research',  # [ICML 2026] 论文实现（代码生成视频），被 topic:education 误吸入 education
     'code-dot-org/code-dot-org': 'education',  # code.org 官网代码库（CS 教育平台），被 research 查询误吸入
+    # 2026-11-23 夜间质检新增（管线侧搬运归位）
+    'microsoft/Web-Dev-For-Beginners': 'education',  # 24 周 Web 开发入门课程，被 devtools 查询误吸入（快照 devtools 里已移除，education 保留）
+    'huggingface/datasets': 'ai',  # AI 模型数据集中心，被 topic:audio 误吸入 media（同 transformers 前例）
+    'plotly/react-plotly.js': 'frontend-mobile',  # Plotly 的 React 图表组件（自标 topic:fintech），被 fintech 查询误吸入
 }
 
 # 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
