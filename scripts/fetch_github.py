@@ -167,6 +167,11 @@ CATEGORY_OVERRIDES = {
     'microsoft/Web-Dev-For-Beginners': 'education',  # 24 周 Web 开发入门课程，被 devtools 查询误吸入（快照 devtools 里已移除，education 保留）
     'huggingface/datasets': 'ai',  # AI 模型数据集中心，被 topic:audio 误吸入 media（同 transformers 前例）
     'plotly/react-plotly.js': 'frontend-mobile',  # Plotly 的 React 图表组件（自标 topic:fintech），被 fintech 查询误吸入
+    # 2026-11-26 夜间质检新增（管线侧搬运归位）
+    'go-gitea/gitea': 'backend-infra',  # 自托管 Git 服务，被 frontend-mobile 查询误吸入（同 coolify 前例）
+    'supabase/supabase': 'backend-infra',  # Postgres 开发平台，被 frontend-mobile 查询误吸入（同 coolify 前例）
+    'appwrite/appwrite': 'backend-infra',  # 后端云平台（Auth/数据库/存储），被 frontend-mobile 查询误吸入（同 coolify 前例）
+    'byoungd/up': 'education',  # 人生进阶指南（学习/创业/财富/人生），非 AI 应用，被 ai-apps 查询误吸入
 }
 
 # 内容黑名单：命中查询但不宜在公开站点展示的项目，直接从所有榜单/分类剔除。
@@ -179,6 +184,7 @@ CATEGORY_OVERRIDES = {
 # Ebony-Vinyl/dsh-our-free-model：dsh 插件，免登录/免 API Key 不限量调用 DeepSeek/Kimi 等付费模型，
 # 与 dsh-purge 同属 dsh 破甲家族且撞"不推拼团黑号"红线，不适合公开站点（2026-11-02 夜间质检）。
 # noob-hackers/infect：安卓病毒感染工具，不适合公开站点（2026-11-09 夜间质检）。
+# usestrix/strix：AI 自主渗透测试工具，攻防双用，与 ARTEX 同类，按 2026-11-21 用户口径拉黑（2026-11-26 夜间质检）。
 CATEGORY_EXCLUDE = {
     'stashapp/stash',
     'Igglybuff/awesome-piracy',
@@ -190,6 +196,7 @@ CATEGORY_EXCLUDE = {
     'noob-hackers/infect',  # 2026-11-09：安卓病毒感染工具，不适合公开站点
     'BaaRai/ARTEX',  # 2026-11-21 用户定：AI 自主渗透测试工具，攻防双用，不适合公开站点
     'Z4nzu/hackingtool',  # 2026-11-21 用户定：黑客工具集合，与 ARTEX 同批入黑名单
+    'usestrix/strix',  # 2026-11-26 夜间质检：AI 自主渗透测试工具，攻防双用，与 ARTEX 同类，按 2026-11-21 用户口径拉黑
 }
 
 
