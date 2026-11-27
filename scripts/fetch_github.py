@@ -197,6 +197,7 @@ CATEGORY_EXCLUDE = {
     'BaaRai/ARTEX',  # 2026-11-21 用户定：AI 自主渗透测试工具，攻防双用，不适合公开站点
     'Z4nzu/hackingtool',  # 2026-11-21 用户定：黑客工具集合，与 ARTEX 同批入黑名单
     'usestrix/strix',  # 2026-11-26 夜间质检：AI 自主渗透测试工具，攻防双用，与 ARTEX 同类，按 2026-11-21 用户口径拉黑
+    'hacksider/Deep-Live-Cam',  # 2026-11-27 用户定：实时换脸/deepfake 工具，与真人肖像红线及小红书手册 §7⑨ 冲突，拉黑
 }
 
 
